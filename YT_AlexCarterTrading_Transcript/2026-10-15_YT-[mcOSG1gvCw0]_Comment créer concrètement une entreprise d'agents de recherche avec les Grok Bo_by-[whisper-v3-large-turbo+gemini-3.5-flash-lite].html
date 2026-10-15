@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment créer concrètement une entreprise d&#x27;agents de recherche avec les Grok Bots (Tutoriel pour débutants) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment créer concrètement une entreprise d&#x27;agents de recherche avec les Grok Bots (Tutoriel pour débutants)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-15</span>
+                <span class="badge">⏱️ 00:14:55</span>
+                <span class="badge">🆔 <code>mcOSG1gvCw0</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=mcOSG1gvCw0" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo de la chaîne Alex Carter aborde l'automatisation avancée de la recherche et de la veille stratégique pour le trading à travers les agents autonomes, en mettant l'accent sur l'écosystème xAI et l'outil GrokBot. L'animateur démontre comment s'affranchir de la surcharge informationnelle et de la surveillance manuelle des marchés (crypto, forex, actions, contrats à terme) grâce à des agents persistants capables de tourner 24h/24 et 7j/7 sans nécessiter de compétences en développement ou de configuration complexe de serveurs distants.<br><br>L'analyse démontre le passage d'une IA conversationnelle passive — qui ne réagit qu'aux sollicitations directes — à une architecture d'agents proactifs dotés d'un environnement informatique persistant. Les démonstrations pratiques se concentrent sur la création de bots spécialisés pour le scan des marchés, la gestion de portefeuille et l'analyse de données en arrière-plan, tout en maintenant une distinction stricte et sécurisée entre l'analyse automatisée et l'exécution réelle des ordres financiers.<br><br>Le tutoriel détaille pas à pas l'installation de l'application de bureau, la configuration des rôles opérationnels (comme le scanner de marché ou l'agent de portefeuille) et l'intégration de plugins de productivité (Google Sheets, Gmail, Slack). Enfin, une revue comparative des modèles de pointe (Grok 4.6, Claude Opus, GPT, Gemini) et des grilles tarifaires de la plateforme permet aux traders d'évaluer le retour sur investissement de ces infrastructures d'agents autonomes.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **GrokBot** : Application de bureau autonome basée sur un cadre d'agents persistants fonctionnant 24h/24 et 7j/7 pour automatiser la recherche, l'analyse et la surveillance sans compétences en code.<br>* **Grok 4.6 (xAI)** : Modèle de pointe développé par l'entreprise d'Elon Musk, offrant des performances comparables aux modèles haut de gamme pour un coût optimisé et une intégration native.<br>* **Claude / Claude Opus (Anthropic)** : Modèle de raisonnement avancé hautement performant que GrokBot peut exécuter en arrière-plan, évitant ainsi des configurations de connexions MCP manuelles et complexes.<br>* **ChatGPT (OpenAI)** : Assistant conversationnel généraliste de référence, idéal pour les requêtes rapides et l'explication de concepts, mais limité par l'absence d'agents persistants en arrière-plan.<br>* **Gemini (Google)** : Modèle conversationnel performant pour la recherche ancrée et la récupération de données en direct, bien que dépourvu d'ordinateur persistant autonome.<br>* **TradingView** : Plateforme de référence mentionnée pour l'analyse technique, l'étude des graphiques et l'application des stratégies de scalping et de risk management.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView utilisé pour concevoir et backtester des indicateurs et des scripts de trading algorithmique.<br>* **Claude Code** : Environnement et outil de développement avancé évoqué dans le contexte des configurations d'agents et de l'automatisation technique.<br>* **Google Sheets** : Tableur cloud connectable via les plugins du bot pour centraliser les requêtes API en direct et le suivi des positions.<br>* **Gmail & Slack** : Outils de communication et de messagerie intégrables pour la réception automatisée des rapports de marché et des alertes de portefeuille.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Dépassement du modèle conversationnel passif** : Contrairement aux chatbots traditionnels qui exigent une intervention humaine constante, les agents autonomes travaillent en arrière-plan de manière continue, éliminant la friction opérationnelle du trading quotidien.<br>* **Surveillance multi-marchés universelle** : L'infrastructure de recherche automatisée s'applique indifféremment au trading de cryptomonnaies, au forex, aux actions et aux contrats à terme, s'adaptant à toutes les classes d'actifs.<br>* **Architecture d'agent scanner de marché** : Configuration d'un bot dédié qui analyse chaque matin la liste de surveillance, détecte les actifs sortant de leur plage normale et génère un rapport avant l'ouverture des graphiques.<br>* **Automatisation du récapitulatif de portefeuille** : Connexion des agents aux échanges ou à des tableurs via des requêtes API en direct pour auditer les mouvements nocturnes et identifier les positions nécessitant une intervention.<br>* **Détection des valeurs atypiques (Outliers)** : Implémentation d'algorithmes de surveillance pour repérer les volumes inhabituels et les ruptures de structure clé, évitant ainsi le contrôle visuel manuel permanent des graphiques.<br>* **Principe de précaution en matière d'exécution** : Séparation stricte et recommandée entre l'utilisation des agents pour l'analyse, le reporting et la recherche, et l'autorisation d'exécuter de réels ordres financiers sur les marchés.<br>* **Rééquilibrage dynamique des allocations** : Programmation d'alertes automatisées pour notifier le trader dès qu'une position s'écarte d'un seuil critique (par exemple 10 %) par rapport à l'allocation cible du portefeuille.<br>* **Optimisation des coûts d'infrastructure** : Utilisation de Grok 4.6 comme alternative économique aux abonnements multiples, permettant d'accéder à une intelligence de pointe sans multiplier les charges fixes.<br>* **Apprentissage comportemental par rétroaction** : Capacité pour l'agent d'observer et d'assimiler progressivement les processus d'analyse technique propres au trader pour en reproduire les schémas au fil du temps.<br>* **Gestion des flux d'actualités et du bruit informationnel** : Filtrage continu des flux d'information sur X et les portails d'actualités pour ne conserver que les données directement pertinentes pour les actifs détenus ou surveillés.<br>* **Intégration d'outils tiers unifiés** : Centralisation des flux de travail grâce aux connecteurs natifs vers les suites bureautiques et de communication (Google Sheets, Slack, Gmail) sans configuration de serveurs VPS complexes.<br>* **Évolutivité des rôles opérationnels** : Flexibilité de la plateforme permettant d'assigner aux bots des missions variées allant de la recherche de projets et de la prospection jusqu'au rôle de chef de cabinet exécutif.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">GrokBot</span><span class="tool-tag">Grok 4.6 (xAI)</span><span class="tool-tag">Claude / Claude Opus (Anthropic)</span><span class="tool-tag">ChatGPT (OpenAI)</span><span class="tool-tag">Gemini (Google)</span><span class="tool-tag">TradingView</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Dépassement du modèle conversationnel passif** : Contrairement aux chatbots traditionnels qui exigent une intervention humaine constante, les agents autonomes travaillent en arrière-plan de manière continue, éliminant la friction opérationnelle du trading quotidien.</span></li><li><span class="point-bullet">✦</span><span>Surveillance multi-marchés universelle** : L&#x27;infrastructure de recherche automatisée s&#x27;applique indifféremment au trading de cryptomonnaies, au forex, aux actions et aux contrats à terme, s&#x27;adaptant à toutes les classes d&#x27;actifs.</span></li><li><span class="point-bullet">✦</span><span>Architecture d&#x27;agent scanner de marché** : Configuration d&#x27;un bot dédié qui analyse chaque matin la liste de surveillance, détecte les actifs sortant de leur plage normale et génère un rapport avant l&#x27;ouverture des graphiques.</span></li><li><span class="point-bullet">✦</span><span>Automatisation du récapitulatif de portefeuille** : Connexion des agents aux échanges ou à des tableurs via des requêtes API en direct pour auditer les mouvements nocturnes et identifier les positions nécessitant une intervention.</span></li><li><span class="point-bullet">✦</span><span>Détection des valeurs atypiques (Outliers)** : Implémentation d&#x27;algorithmes de surveillance pour repérer les volumes inhabituels et les ruptures de structure clé, évitant ainsi le contrôle visuel manuel permanent des graphiques.</span></li><li><span class="point-bullet">✦</span><span>Principe de précaution en matière d&#x27;exécution** : Séparation stricte et recommandée entre l&#x27;utilisation des agents pour l&#x27;analyse, le reporting et la recherche, et l&#x27;autorisation d&#x27;exécuter de réels ordres financiers sur les marchés.</span></li><li><span class="point-bullet">✦</span><span>Rééquilibrage dynamique des allocations** : Programmation d&#x27;alertes automatisées pour notifier le trader dès qu&#x27;une position s&#x27;écarte d&#x27;un seuil critique (par exemple 10 %) par rapport à l&#x27;allocation cible du portefeuille.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des coûts d&#x27;infrastructure** : Utilisation de Grok 4.6 comme alternative économique aux abonnements multiples, permettant d&#x27;accéder à une intelligence de pointe sans multiplier les charges fixes.</span></li><li><span class="point-bullet">✦</span><span>Apprentissage comportemental par rétroaction** : Capacité pour l&#x27;agent d&#x27;observer et d&#x27;assimiler progressivement les processus d&#x27;analyse technique propres au trader pour en reproduire les schémas au fil du temps.</span></li><li><span class="point-bullet">✦</span><span>Gestion des flux d&#x27;actualités et du bruit informationnel** : Filtrage continu des flux d&#x27;information sur X et les portails d&#x27;actualités pour ne conserver que les données directement pertinentes pour les actifs détenus ou surveillés.</span></li><li><span class="point-bullet">✦</span><span>Intégration d&#x27;outils tiers unifiés** : Centralisation des flux de travail grâce aux connecteurs natifs vers les suites bureautiques et de communication (Google Sheets, Slack, Gmail) sans configuration de serveurs VPS complexes.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:37</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici comment construire réellement une entreprise d&#x27;agents de recherche en utilisant GrokBot. Maintenant, voici le problème. Chaque fois que je faisais défiler les actualités, que je consultais X, que je lisais des annonces, je ratais toujours le seul détail qui importait vraiment. Non pas qu&#x27;il n&#x27;était pas là, mais parce que personne n&#x27;a le temps de lire entre les lignes sur tout, tous les jours. Alors ce que j&#x27;ai fait, c&#x27;est que j&#x27;ai construit une équipe d&#x27;agents de recherche qui fait ça pour moi maintenant, 24 heures sur 24, 7 jours sur 7 en arrière-plan. Et soit dit en passant, que vous fassiez du trading de crypto, de forex, d&#x27;actions ou de contrats à terme, peu importe, ce même système exact fonctionne pour vous aussi. Donc dans cette vidéo, je vous montre exactement comment je l&#x27;ai construit et comment vous pouvez construire le même.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (site de la Fed) et plateforme de graphiques financiers (TradingView).
+[DESC_IMAGE_1 CONTENT] Calendrier des réunions de mars, avril, juin et juillet avec liens vers les déclarations, notes d&#x27;implémentation et procès-verbaux (Minutes).
+[DESC_IMAGE_2 CONTENT] Fenêtre de recherche de symboles filtrée sur les actions (Stocks) avec la liste des tickers NASDAQ et leurs cours/variations en arrière-plan.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et consultation de données officielles macroéconomiques sur le site de la Fed, puis recherche de tickers boursiers sur une plateforme de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000009_seg1.jpg" alt="Capture d&#x27;écran du site officiel de la Réserve fédérale (Federal Reserve) montrant le calendrier des réunions du FOMC et les publications officielles." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Capture d&#x27;écran du site officiel de la Réserve fédérale (Federal Reserve) montrant le calendrier des réunions du FOMC et les publications officielles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000028_seg1.jpg" alt="Interface de recherche de symboles sur une plateforme financière (type TradingView) affichant une liste de grandes actions technologiques (NVDA, TSLA, AAPL, MSFT, etc.)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000028_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Interface de recherche de symboles sur une plateforme financière (type TradingView) affichant une liste de grandes actions technologiques (NVDA, TSLA, AAPL, MSFT, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:37 - 00:00:58</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">par vous-même. À la fin de cette vidéo, vous allez comprendre pourquoi je pense sincèrement que c&#x27;est l&#x27;un des meilleurs outils sortis cette année, parce qu&#x27;il élimine pratiquement toute la friction qui empêche les traders ordinaires, des gens comme vous et moi, de faire tourner leur propre système fonctionnant en continu. Vous n&#x27;avez pas besoin d&#x27;être développeur. Vous n&#x27;avez pas besoin de connaître une seule ligne de code.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> X (Twitter), Terminal Linux (CLI), Interface de chat d&#x27;agent IA (Portfolio Agent)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commandes système Linux (ssh, ufw, systemctl, nano), instructions de prompt pour un assistant de rééquilibrage de portefeuille (allocation, dérive, alertes).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration du serveur via le terminal, consultation d&#x27;un post sur les agents IA et configuration d&#x27;un agent de gestion de portefeuille.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000043_seg2.jpg" alt="Capture d&#x27;écran d&#x27;un fil X (Twitter) montrant une publication de Miles Deutscher sur une IA neuronale et un logiciel agentique." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000043_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un fil X (Twitter) montrant une publication de Miles Deutscher sur une IA neuronale et un logiciel agentique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000048_seg2.jpg" alt="Terminal Linux affichant des commandes SSH, la configuration d&#x27;un pare-feu (ufw) et la gestion des utilisateurs (adduser, usermod)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000048_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:48</span>
+                        <span class="caption-text">Terminal Linux affichant des commandes SSH, la configuration d&#x27;un pare-feu (ufw) et la gestion des utilisateurs (adduser, usermod).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000053_seg2.jpg" alt="Interface de chat d&#x27;un agent IA nommé &quot;Portfolio Agent&quot; avec un prompt détaillé pour le rééquilibrage automatisé de portefeuille." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000053_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Interface de chat d&#x27;un agent IA nommé &quot;Portfolio Agent&quot; avec un prompt détaillé pour le rééquilibrage automatisé de portefeuille.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:58 - 00:01:18</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Suivez-moi simplement étape par étape. Donc, sans plus tarder, entrons dans le vif du sujet. Maintenant, avant d&#x27;aborder le bot lui-même, parlons de l&#x27;origine de tout cela. Parce que beaucoup d&#x27;entre vous connaissent le nom de Grok, mais vous ne connaissez pas vraiment son histoire. Grok a été créé par XAI, qu&#x27;Elon Musk a lancé en 2023 avec fondamentalement un seul objectif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de bot Market Scanner / Navigateur web (pages d&#x27;actualités et article Forbes).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Instructions de scan de marché automatisé pour la détection d&#x27;anomalies de volume et de structures de marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;historique et des origines de Grok.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000103_seg3.jpg" alt="Image #1 @ 00:01:03 : Interface d&#x27;un bot de marché affichant des instructions de scan technique automatisé (Market Scanner) et des configurations de routines." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000103_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:03</span>
+                        <span class="caption-text">Image #1 @ 00:01:03 : Interface d&#x27;un bot de marché affichant des instructions de scan technique automatisé (Market Scanner) et des configurations de routines.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:18 - 00:01:54</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Construire une IA qui pouvait rivaliser avec OpenAI et comprendre réellement le monde, et pas seulement répondre à des questions. La première version, Grok 1, est sortie en novembre 2023 et a été intégrée directement dans X. Donc, si vous aviez X Premium, vous y aviez déjà accès sans même réaliser ce que vous utilisiez. À partir de là, ça a évolué vite. Grok 2, puis Grok 3, puis Grok 4. Chacune réduisant l&#x27;écart avec GPT et Claude. Et honnêtement, dès Grok 3, les gens ont arrêté de l&#x27;appeler l&#x27;IA de Twitter et ont commencé à la prendre au sérieux en tant que véritable modèle de pointe. Et maintenant, plus récemment, ils ont sorti Grok 4.6, ce que je vais</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des pages de blogs, des sites d&#x27;actualités technologiques et la documentation officielle de xAI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif détaillant l&#x27;historique des versions de Grok (Grok-1, Grok-2, Grok-3) et leurs performances comparées.
+[DESC_IMAGE_1] Lecture et présentation des caractéristiques techniques et des benchmarks de Grok-1 par le présentateur.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000127_seg4.jpg" alt="Capture d&#x27;écran montrant l&#x27;article officiel de xAI sur le développement et la sortie de Grok-1." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000127_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:27</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;article officiel de xAI sur le développement et la sortie de Grok-1.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000136_seg4.jpg" alt="Capture d&#x27;écran montrant l&#x27;annonce officielle du modèle Grok-2 Beta Release datée du 13 août 2024." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000136_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;annonce officielle du modèle Grok-2 Beta Release datée du 13 août 2024.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000145_seg4.jpg" alt="Capture d&#x27;écran d&#x27;un article de blog sur le site Latenode intitulé &quot;I Just Tested Grok 3 - And It&#x27;s Both Terrifying and Brilliant&quot;." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000145_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article de blog sur le site Latenode intitulé &quot;I Just Tested Grok 3 - And It&#x27;s Both Terrifying and Brilliant&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:54 - 00:02:29</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">plus tard parce que ça compte vraiment pour la tarification. Mais voici la partie que la plupart des gens ratent. Grok a cessé d&#x27;être juste un chatbot il y a un moment. XAI a pris ce même modèle et a construit un cadre d&#x27;agents autour. C&#x27;est de ça qu&#x27;on est vraiment venus parler aujourd&#x27;hui. Donc ça, c&#x27;est GrokBot, et honnêtement, l&#x27;appeler juste un outil IA ne lui rend même pas justice. C&#x27;est fondamentalement une équipe complète d&#x27;agents qui ne pointent jamais, n&#x27;ont jamais besoin de rappels, et continuent juste de bosser en arrière-plan 24h/24 et 7j/7. Vous n&#x27;avez pas besoin d&#x27;un VPS qui tourne en continu. Vous n&#x27;avez pas besoin de configurer des fichiers de mémoire pendant des heures. Vous le téléchargez,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web et application de bureau Grok / xAI pour la gestion d&#x27;agents IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Listes d&#x27;agents IA autonomes (Chief, Inbox Manager, Account Manager, Talent Scout, Expense Manager) avec des tâches assignées, des récapitulatifs de réunions et des statuts de suivi.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers l&#x27;interface de xAI pour illustrer le fonctionnement des agents autonomes Grok Bot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000203_seg5.jpg" alt="Interface de X avec le menu latéral et la section Grok affichant une bannière &#x27;Meet Grok Bot&#x27;." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000203_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:03</span>
+                        <span class="caption-text">Interface de X avec le menu latéral et la section Grok affichant une bannière &#x27;Meet Grok Bot&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000212_seg5.jpg" alt="Page web de présentation de Grok Bot montrant un panneau d&#x27;application de bureau avec une liste d&#x27;agents et le créateur &#x27;New agent&#x27;." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000212_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:12</span>
+                        <span class="caption-text">Page web de présentation de Grok Bot montrant un panneau d&#x27;application de bureau avec une liste d&#x27;agents et le créateur &#x27;New agent&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000220_seg5.jpg" alt="Interface de l&#x27;application Grok Bot affichant une conversation active avec différents agents spécialisés (Chief, Account Manager, Inbox Manager)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000220_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Interface de l&#x27;application Grok Bot affichant une conversation active avec différents agents spécialisés (Chief, Account Manager, Inbox Manager).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:29 - 00:03:04</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">connectez-vous à un compte, et vous avez déjà une équipe d&#x27;agents prêts à travailler. Si vous vous êtes déjà senti submergé en essayant de configurer un système d&#x27;IA actif en permanence pour votre trading, vous n&#x27;êtes pas seul. Et ce n&#x27;est pas votre faute. La plupart de ces outils comportent beaucoup trop de frictions. Il peut exploiter pratiquement n&#x27;importe quel modèle. Grok, Opus, GPT, Gemini, tout ce que vous voulez faire tourner en arrière-plan. Et comme il possède sa propre machine, il peut analyser des graphiques, extraire des données, exécuter des scripts et continuer à travailler pendant que vous dormez littéralement ou que vous regardez une autre vidéo sur cette chaîne. Maintenant, la plupart d&#x27;entre vous paient déjà pour ChatGPT, Gemini,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal Linux, interface Web de Claude (Anthropic), plateforme TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commandes de configuration système (SSH, pare-feu UFW), invite de texte de l&#x27;IA (Sonnet 4.5), métriques de backtest (Open PnL, profit structure, ratio de Sharpe, graphiques de performance).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un serveur distant, interaction avec un modèle d&#x27;intelligence artificielle, analyse des résultats d&#x27;un backtest de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000238_seg6.jpg" alt="Un terminal de commandes Linux affichant des instructions de configuration serveur (adduser, ssh, ufw)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000238_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Un terminal de commandes Linux affichant des instructions de configuration serveur (adduser, ssh, ufw).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000246_seg6.jpg" alt="L&#x27;interface de l&#x27;assistant IA Claude (Anthropic) avec un message d&#x27;accueil et un champ de saisie de prompt." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000246_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">L&#x27;interface de l&#x27;assistant IA Claude (Anthropic) avec un message d&#x27;accueil et un champ de saisie de prompt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000255_seg6.jpg" alt="Un rapport de backtest sur TradingView pour une stratégie &#x27;MACD Cross&#x27; montrant des métriques de performance et un graphique de rentabilité." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000255_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:55</span>
+                        <span class="caption-text">Un rapport de backtest sur TradingView pour une stratégie &#x27;MACD Cross&#x27; montrant des métriques de performance et un graphique de rentabilité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:04 - 00:03:34</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ou Claude. Donc soyons réalistes sur la raison pour laquelle c&#x27;est différent. ChatGPT est probablement toujours le meilleur assistant conversationnel généraliste sur le marché. Idéal pour des questions rapides, expliquer une configuration, rédiger quelque chose rapidement. Mais dès que vous voulez qu&#x27;il vérifie des prix pendant la nuit, qu&#x27;il analyse votre liste de surveillance pendant que vous dormez, il s&#x27;effondre. Parce que ce n&#x27;est pas un agent, c&#x27;est une conversation. Il répond quand vous le lui demandez. Il ne travaille pas quand vous ne le faites pas. Gemini s&#x27;en sort vraiment très bien pour tout ce qui est ancré dans la recherche, pour récupérer des données en direct, pour recouper des actualités.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de ChatGPT et site web d&#x27;OpenAI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte généré par l&#x27;IA contenant des estimations de prix (ex: Range $90K - $180K pour 2027) et des analyses de tendances de marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des capacités de ChatGPT en tant qu&#x27;assistant conversationnel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000319_seg7.jpg" alt="Interface de ChatGPT affichant une conversation structurée avec des prévisions de prix et des analyses de marché." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000319_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:19</span>
+                        <span class="caption-text">Interface de ChatGPT affichant une conversation structurée avec des prévisions de prix et des analyses de marché.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:35 - 00:03:53</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais même problème. Pas d&#x27;ordinateur persistant, pas de mémoire qui fait avancer une tâche toute seule. Dès que vous fermez l&#x27;onglet, le travail s&#x27;arrête. Claude, en particulier Opus, est généralement le modèle de raisonnement le plus puissant des trois, à mon avis. Et voici le point. GrokBot peut en fait faire tourner Opus en arrière-plan.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces web de Google Gemini et du site d&#x27;Anthropic (Claude Opus).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte d&#x27;analyse sur le Bitcoin (halving, outlook, adoption) et présentation des spécificités du modèle Claude Opus (fenêtre de contexte de 1M, agents IA).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des interfaces et capacités des modèles d&#x27;intelligence artificielle Gemini et Claude Opus.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000339_seg8.jpg" alt="Interface sombre de Google Gemini affichant une analyse textuelle sur le Bitcoin, les cycles de halving et l&#x27;adoption institutionnelle." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000339_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:39</span>
+                        <span class="caption-text">Interface sombre de Google Gemini affichant une analyse textuelle sur le Bitcoin, les cycles de halving et l&#x27;adoption institutionnelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000344_seg8.jpg" alt="Page Web d&#x27;Anthropic présentant Claude Opus avec la description d&#x27;un modèle de raisonnement hybride pour le codage et les agents IA." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000344_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:44</span>
+                        <span class="caption-text">Page Web d&#x27;Anthropic présentant Claude Opus avec la description d&#x27;un modèle de raisonnement hybride pour le codage et les agents IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:54 - 00:04:14</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il ne s&#x27;agit donc pas vraiment de GrokBot contre Claude. C&#x27;est l&#x27;intelligence de Claude, moins les jours de configuration manuelle qu&#x27;il faut normalement pour connecter l&#x27;utilisation de l&#x27;ordinateur, les fichiers de mémoire et les connexions MCP par vous-même. Vous pensez peut-être que votre configuration d&#x27;IA actuelle vous offre déjà une analyse solide. Pourquoi ai-je besoin d&#x27;une structure d&#x27;agent en plus ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de Claude (Anthropic), plateforme d&#x27;échange de cryptomonnaies WEEX (API Management).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Configuration de clé API (notes, passphrase, permissions Read-only/Spot/Futurs, adresse IP, code de vérification), prompt utilisateur pour analyser des données de trading au format CSV.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;une clé API sur l&#x27;exchange et exécution de scripts d&#x27;analyse de données de trading par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000404_seg9.jpg" alt="Interface de gestion des API d&#x27;une plateforme d&#x27;échange de cryptomonnaies (WEEX) affichant la fenêtre de création d&#x27;une nouvelle clé API pour un bot de trading." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000404_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Interface de gestion des API d&#x27;une plateforme d&#x27;échange de cryptomonnaies (WEEX) affichant la fenêtre de création d&#x27;une nouvelle clé API pour un bot de trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000409_seg9.jpg" alt="Interface de l&#x27;assistant IA Claude affichant un prompt d&#x27;analyse de trading (&quot;Analyze my last 90 days of trades...&quot;) avec des étapes de traitement en cours de script." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000409_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:09</span>
+                        <span class="caption-text">Interface de l&#x27;assistant IA Claude affichant un prompt d&#x27;analyse de trading (&quot;Analyze my last 90 days of trades...&quot;) avec des étapes de traitement en cours de script.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:14 - 00:04:35</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais les données montrent quelque chose de différent. Un modèle de conversation répond quand vous lui demandez. Un cadre d&#x27;agent comme GrokBot fonctionne que vous demandiez ou non. Et le dernier élément, c&#x27;est le coût et la vitesse. L&#x27;équipe d&#x27;Elon vient de lancer Grok 4.6, qui est moins cher qu&#x27;Opus, mais qui atteint un niveau de performance très similaire. Vous obtenez donc une intelligence de pointe sans avoir à exécuter cinq abonnements en parallèle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un système d&#x27;agents conversationnels et page d&#x27;actualités technologiques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Historique de conversations avec des agents spécialisés (Chief, Sales Outbound, Account Manager, Expense Manager) et texte de présentation de Grok 4.6.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers l&#x27;interface des agents autonomes et présentation de la nouvelle version du modèle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000420_seg10.jpg" alt="Capture d&#x27;écran montrant une interface de chat multi-agents avec des discussions sur la gestion des dépenses et des tâches automatisées." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000420_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une interface de chat multi-agents avec des discussions sur la gestion des dépenses et des tâches automatisées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000425_seg10.jpg" alt="Capture d&#x27;écran affichant une page d&#x27;annonce officielle intitulée &quot;Introducing Grok 4.6&quot; avec une date au 12 août 2026." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000425_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:25</span>
+                        <span class="caption-text">Capture d&#x27;écran affichant une page d&#x27;annonce officielle intitulée &quot;Introducing Grok 4.6&quot; avec une date au 12 août 2026.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:35 - 00:05:10</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est vraiment ça le fossé. Ce n&#x27;est pas que GrokBot soit plus intelligent que ChatGPT, Gemini ou Claude dans tous les cas. C&#x27;est qu&#x27;il est toujours actif. C&#x27;est du prêt-à-l&#x27;emploi et il ne vous pénalise pas pour le fait de ne pas être un développeur. Très bien, passons maintenant à la configuration parce que je sais que beaucoup d&#x27;entre vous apprennent le mieux en voyant les choses étape par étape, tout comme je le fais sur ma chaîne de tutoriels. Étape 1, allez sur la page d&#x27;inscription de GrokBot. Vous pouvez consulter le lien ci-dessous dans la description. Vous serez redirigé vers cette page où vous pourrez voir qu&#x27;il est en version bêta anticipée. Vous pouvez voir le message de lancement ici. Quand vous faites défiler</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de Grok Bot, site web officiel et navigateur web (YouTube).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Marketplace de plugins (Adobe, Airtable, Asana, Context.dev), options de téléchargement et description textuelle de la vidéo.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités, des intégrations de l&#x27;agent IA et transition vers la configuration de l&#x27;outil.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000444_seg11.jpg" alt="Interface de gestion des plugins de Grok Bot montrant la liste des intégrations disponibles comme Adobe, Airtable et Asana." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000444_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:44</span>
+                        <span class="caption-text">Interface de gestion des plugins de Grok Bot montrant la liste des intégrations disponibles comme Adobe, Airtable et Asana.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000453_seg11.jpg" alt="Page d&#x27;accueil officielle de présentation de Grok Bot, montrant le slogan d&#x27;introduction et le bouton de téléchargement pour Windows." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000453_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:53</span>
+                        <span class="caption-text">Page d&#x27;accueil officielle de présentation de Grok Bot, montrant le slogan d&#x27;introduction et le bouton de téléchargement pour Windows.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:10 - 00:05:43</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en bas, vous pouvez voir le bouton de téléchargement ici. Maintenant, cela dépend si vous avez un Mac ou Windows, mais pour ceci nous allons utiliser Windows. Puisque c&#x27;est ce que nous utilisons, cliquez dessus et une fenêtre de téléchargement apparaîtra. Suivez simplement l&#x27;installation sur votre appareil, attendez quelques minutes, et vous êtes prêts. Une fois que vous ouvrez l&#x27;application, une fenêtre de connexion apparaîtra, cliquez dessus, et suivez les instructions. Vous pouvez activer votre essai gratuit ici. Une fois que c&#x27;est configuré, vous serez de retour sur l&#x27;application de bureau. Deuxième étape, une fois que vous arrivez sur votre tableau de bord, c&#x27;est votre centre de contrôle. C&#x27;est ici que vous allez lancer vos agents. Étape</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de téléchargement et application de bureau Grok Bot.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface utilisateur de l&#x27;application Grok Bot, boutons de téléchargement et de connexion.</p>
+                        <p><strong>Action / Démonstration :</strong> Téléchargement du fichier d&#x27;installation, lancement de l&#x27;application et authentification réussie de l&#x27;utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000518_seg12.jpg" alt="Page de téléchargement web du Grok Bot montrant le bouton &quot;Download for Windows&quot;." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000518_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:18</span>
+                        <span class="caption-text">Page de téléchargement web du Grok Bot montrant le bouton &quot;Download for Windows&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000526_seg12.jpg" alt="Écran d&#x27;accueil de l&#x27;application installée &quot;Grok Bot&quot; invitant l&#x27;utilisateur à se connecter (&quot;Sign in&quot;)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000526_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:26</span>
+                        <span class="caption-text">Écran d&#x27;accueil de l&#x27;application installée &quot;Grok Bot&quot; invitant l&#x27;utilisateur à se connecter (&quot;Sign in&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000535_seg12.jpg" alt="Écran de confirmation de connexion &quot;All set! Feel free to return to Grok Bot.&quot; indiquant que la configuration est terminée." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000535_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:35</span>
+                        <span class="caption-text">Écran de confirmation de connexion &quot;All set! Feel free to return to Grok Bot.&quot; indiquant que la configuration est terminée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:43 - 00:06:10</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Trois, clique sur nouveau bot ou clique sur l&#x27;icône plus et attribue-lui un rôle. Pour le trading de crypto, voici exactement ce que je configurerais. Un agent scanner de marché. Chaque matin, il vérifie votre liste de surveillance, signale toute crypto qui sort de sa plage normale et vous envoie un résumé avant même que vous n&#x27;ouvriez vos graphiques. Un agent de portefeuille. Avec ce bot, vous pouvez le connecter à votre échange, qu&#x27;il s&#x27;agisse de votre tableur avec des requêtes API en direct ou d&#x27;une connexion de lecture directe à votre compte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de création de bot / interface de chatbot (style interface desktop sombre).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Champs de configuration du bot : &quot;Name&quot; (New Bot), &quot;Title&quot;, &quot;Describe what your agent does&quot;, &quot;Description&quot; (What this agent is for), et une option &quot;Notifications&quot; pour recevoir des alertes lorsque l&#x27;agent a terminé ou a besoin d&#x27;une entrée.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un agent ou d&#x27;un bot avec attribution de rôle et de paramètres de notification.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000550_seg13.jpg" alt="Interface de création d&#x27;un nouveau bot montrant le panneau de configuration avec les champs de nom, de description et les options de notification." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000550_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:50</span>
+                        <span class="caption-text">Interface de création d&#x27;un nouveau bot montrant le panneau de configuration avec les champs de nom, de description et les options de notification.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:10 - 00:06:29</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et chaque matin, il vous donne un récapitulatif de la nuit. Qu&#x27;est-ce qui a bougé ? Qu&#x27;est-ce qui est au programme aujourd&#x27;hui ? Et si un élément de vos positions nécessite de l&#x27;attention. Un agent de recherche que vous pouvez configurer pour scanner les actualités crypto et X toutes les quelques heures et compiler uniquement ce qui est réellement pertinent pour les pièces que vous détenez ou surveillez.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de type chat / assistant IA (interface sombre avec panneau de configuration latéral).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Nom de l&#x27;agent : &quot;Portfolio Agent&quot;, Titre : &quot;Overnight Portfolio &amp; Position Recap&quot;, Description détaillant la connexion à un compte d&#x27;échange pour obtenir un rapport matinal automatisé sur les mouvements nocturnes et les alertes de positions.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et affichage des paramètres d&#x27;un bot d&#x27;analyse de portefeuille et de récapitulatif nocturne.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000615_seg14.jpg" alt="Interface d&#x27;un agent conversationnel de gestion de portefeuille avec des paramètres de configuration à droite." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000615_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:15</span>
+                        <span class="caption-text">Interface d&#x27;un agent conversationnel de gestion de portefeuille avec des paramètres de configuration à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:29 - 00:06:47</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Quatrième étape, dans les plugins, vous pouvez le connecter à Google Sheets, Gmail, Slack et d&#x27;autres outils. De la même manière que vous connecteriez un MCP dans Claude. C&#x27;est là que ça devient puissant pour le trading en particulier, car vous pouvez littéralement lui donner un accès en lecture à vos données d&#x27;échange et lui demander de vous faire un rapport comme le ferait un analyste.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de gestion des plugins d&#x27;une application d&#x27;intelligence artificielle ou d&#x27;agent de recherche.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des plugins disponibles par catégories (Intercom, Plain, Amplitude, Antimetal, Apify, Astronomer, Mobbin) avec des boutons d&#x27;ajout (&quot;Add&quot;) et une barre de recherche.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole le bouton &quot;Add&quot; du plugin Astronomer dans la marketplace.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000634_seg15.jpg" alt="Fenêtre modale affichant le catalogue de plugins (Marketplace) d&#x27;un agent de recherche." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000634_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:34</span>
+                        <span class="caption-text">Fenêtre modale affichant le catalogue de plugins (Marketplace) d&#x27;un agent de recherche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:48 - 00:07:21</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Note importante, et je dis cela à chaque fois que je parle d&#x27;automatisation et d&#x27;argent, en ce qui concerne l&#x27;exécution réelle des transactions, soyez beaucoup plus prudent. Pour le reporting et l&#x27;analyse, aucun problème. Laisser l&#x27;outil placer de vraies transactions en votre nom est une autre discussion et c&#x27;est quelque chose que vous devez évaluer sérieusement avant de le connecter. Maintenant, laissez-moi vous montrer exactement comment j&#x27;utiliserais ceci pour le trading et l&#x27;investissement, car c&#x27;est là que cela devient vraiment utile et pas seulement un jouet sympa : premier point, un récapitulatif du marché de la nuit. Au lieu de vous réveiller et de faire défiler 15 onglets, vous ouvrez un seul chat et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface logicielle de type assistant IA/chatbot (panneau de configuration et historique des conversations).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres d&#x27;un agent nommé Market Scanner, description du système automatisé, et prompt demandant une analyse de l&#x27;action des prix de Bitcoin et Ethereum, des événements de marché et des alertes de watchlist.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres et affichage du prompt de briefing matinal pour l&#x27;agent de marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000656_seg16.jpg" alt="Configuration des paramètres d&#x27;un agent IA nommé &#x27;Market Scanner&#x27; avec description de ses tâches de surveillance quotidienne." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000656_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:56</span>
+                        <span class="caption-text">Configuration des paramètres d&#x27;un agent IA nommé &#x27;Market Scanner&#x27; avec description de ses tâches de surveillance quotidienne.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000713_seg16.jpg" alt="Interface de chat affichant un prompt détaillé pour un assistant de briefing crypto matinal automatisé (analyse des prix, liquidité, alertes)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000713_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:13</span>
+                        <span class="caption-text">Interface de chat affichant un prompt détaillé pour un assistant de briefing crypto matinal automatisé (analyse des prix, liquidité, alertes).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:21 - 00:07:45</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">il vous dit ce que Bitcoin et Ethereum ont fait pendant la nuit, s&#x27;il y a eu des chasses à la liquidité et si les cryptos de votre liste de surveillance ont déclenché des alertes. Deuxièmement, des suggestions de rééquilibrage de portefeuille. Si vous êtes comme beaucoup de traders qui oublient de rééquilibrer, vous pouvez littéralement dire : signalez-moi si une position s&#x27;écarte de plus de 10 % de l&#x27;allocation cible, et il vous dira exactement quand et de combien.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de messagerie de type assistant IA dotée de différents agents spécialisés (Market Scanner, Research Agent, Portfolio Agent).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts textuels détaillant les instructions pour l&#x27;analyse automatisée des marchés crypto (mouvements overnight BTC/ETH, liquidations, alertes de watchlist) et le rééquilibrage de portefeuille (suivi d&#x27;allocation, identification de dérive, ventilation actionnable).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et programmation de routines automatisées pour les agents IA afin d&#x27;automatiser le suivi matinal des cryptomonnaies et la gestion des risques du portefeuille.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000727_seg17.jpg" alt="Interface de discussion avec le &quot;Market Scanner&quot; configuré comme un assistant automatisé de briefing matinal crypto pour analyser le Bitcoin, l&#x27;Ethereum et les alertes de la liste de surveillance." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000727_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:27</span>
+                        <span class="caption-text">Interface de discussion avec le &quot;Market Scanner&quot; configuré comme un assistant automatisé de briefing matinal crypto pour analyser le Bitcoin, l&#x27;Ethereum et les alertes de la liste de surveillance.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000733_seg17.jpg" alt="Interface de discussion avec le &quot;Portfolio Agent&quot; configuré comme un assistant automatisé de rééquilibrage de portefeuille pour surveiller les allocations d&#x27;actifs et détecter les dérives." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000733_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:33</span>
+                        <span class="caption-text">Interface de discussion avec le &quot;Portfolio Agent&quot; configuré comme un assistant automatisé de rééquilibrage de portefeuille pour surveiller les allocations d&#x27;actifs et détecter les dérives.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:46 - 00:08:11</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Trois, le scan des valeurs atypiques. De la même manière que j&#x27;utilise ce concept sur ma chaîne d&#x27;analyse technique. Vous pouvez lui faire scanner des cryptos qui montrent un volume inhabituel ou qui cassent une structure clé. Ainsi, vous ne vérifiez pas manuellement les graphiques toute la journée. Quatre, les sponsorisations et la recherche de projets. Si vous gérez une page ou une chaîne crypto comme je le fais, vous pouvez littéralement lui faire analyser quels projets effectuent les plus grosses dépenses publicitaires en ce moment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de type interface de chat avec des agents IA spécialisés (Market Scanner et Research Agent).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompts structurés listant des tâches d&#x27;analyse technique automatisée (détection de volume, cassures de structure, livraison de signaux) et de veille marketing.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents agents IA configurés pour automatiser la surveillance du marché des cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000752_seg18.jpg" alt="Interface de l&#x27;agent Market Scanner montrant un prompt configuré pour détecter les anomalies de volume et les cassures de structure de marché." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000752_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:52</span>
+                        <span class="caption-text">Interface de l&#x27;agent Market Scanner montrant un prompt configuré pour détecter les anomalies de volume et les cassures de structure de marché.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000804_seg18.jpg" alt="Interface de l&#x27;agent Research Agent affichant un prompt axé sur le suivi des dépenses publicitaires et l&#x27;analyse des opportunités de sponsoring crypto." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000804_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:04</span>
+                        <span class="caption-text">Interface de l&#x27;agent Research Agent affichant un prompt axé sur le suivi des dépenses publicitaires et l&#x27;analyse des opportunités de sponsoring crypto.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:11 - 00:08:33</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Comme ça, vous savez qui contacter. Cinq : la formation à l&#x27;apprentissage et au flux de travail. Vous pouvez vous enregistrer en train de faire votre propre processus d&#x27;analyse technique et il apprendra réellement à en reproduire des parties pour vous avec le temps. Mais voici le truc. GrokBot n&#x27;est pas seulement conçu pour le trading de cryptomonnaies. Si vous avez d&#x27;autres tâches pour gérer votre entreprise ou votre vie, GrokBot peut s&#x27;en occuper aussi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de type application de chat IA (agents autonomes / bots de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt configurant l&#x27;assistant d&#x27;analyse technique (&quot;Act as my personal technical analysis learning assistant...&quot;), options pour ajouter Kraken ou utiliser un tableur, et liste des agents dans le panneau latéral gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage d&#x27;un prompt textuel détaillé pour entraîner l&#x27;agent à reproduire les processus d&#x27;analyse technique et de trading de l&#x27;utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000816_seg19.jpg" alt="Interface de l&#x27;agent conversationnel montrant un prompt détaillé pour configurer un assistant d&#x27;apprentissage d&#x27;analyse technique, avec des options de connexion à Kraken et un panneau latéral affichant différents agents (Portfolio Agent, Market Scanner, Research Agent)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000816_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:16</span>
+                        <span class="caption-text">Interface de l&#x27;agent conversationnel montrant un prompt détaillé pour configurer un assistant d&#x27;apprentissage d&#x27;analyse technique, avec des options de connexion à Kraken et un panneau latéral affichant différents agents (Portfolio Agent, Market Scanner, Research Agent).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:33 - 00:09:06</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez le configurer pour les ventes, la prospection, la recherche de talents, la gestion des médias payants, la gestion des dépenses, le suivi de la performance des produits, la reproduction des bugs, le suivi de la santé des comptes, et même un rôle complet de chef de cabinet. GrokBot peut vraiment tout faire. Les cas d&#x27;utilisation liés à la crypto sont simplement ce vers quoi je l&#x27;oriente en ce moment parce que c&#x27;est ce qui est pertinent pour vous et moi. Très bien, parlons des prix, parce que je sais que c&#x27;est là que beaucoup d&#x27;entre vous vont avoir des avis. Cursor Ultra est à 200 $ par mois, facturé mensuellement. Cela inclut le propre ordinateur de GrokBot. Il se connecte à vos outils, exécute des routines selon un calendrier déterminé,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web officiel de Grok Bot, interface de tarification et interface de démonstration mobile.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des rôles configurables (Sales Outbound, Talent Scout, Paid Media, Bug Reproduction, etc.) et tableaux comparatifs des prix ($200, $300, $120/seat).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web pour présenter les cas d&#x27;usage et les grilles tarifaires des abonnements.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000842_seg20.jpg" alt="Capture montrant l&#x27;interface Web de présentation des différents rôles et fonctionnalités de Grok Bot, avec un aperçu mobile sur la droite." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000842_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:42</span>
+                        <span class="caption-text">Capture montrant l&#x27;interface Web de présentation des différents rôles et fonctionnalités de Grok Bot, avec un aperçu mobile sur la droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000858_seg20.jpg" alt="Capture affichant la page de tarification (pricing) de Grok Bot avec les offres Cursor Ultra, SuperGrok Heavy et Cursor Premium Teams." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000858_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:58</span>
+                        <span class="caption-text">Capture affichant la page de tarification (pricing) de Grok Bot avec les offres Cursor Ultra, SuperGrok Heavy et Cursor Premium Teams.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:07 - 00:09:43</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">fonctionne partout sur ordinateur, mobile et plus encore, et vous offre des limites étendues sur les jetons AE. Supergirl Heavy coûte 300 $ par mois facturé mensuellement, et cela comprend tout ce qu&#x27;il y a dans Supergirl plus l&#x27;utilisation maximale à la vitesse la plus rapide. La capacité à résoudre des problèmes extrêmement difficiles, l&#x27;intelligence la plus puissante et un support dédié en accès anticipé. Cursor Premium Teams coûte 120 $ par utilisateur et par mois, facturé mensuellement, et cela inclut tout ce qui se trouve dans Cursor Ultra plus la facturation et les paramètres d&#x27;équipe centralisés. Un marché d&#x27;équipe pour les compétences et les plugins, des analyses d&#x27;utilisation partagées et SAML,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de tarification (Pricing) avec un thème sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs affichés : 200 $/mois, 300 $/mois, 120 $/seat/month, ainsi que les fonctionnalités incluses pour chaque formule.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole ou clique sur le bouton &quot;Get SuperGrok Heavy&quot;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000916_seg21.jpg" alt="Capture d&#x27;écran montrant une page de tarification avec trois offres différentes : Cursor Ultra à 200 $, SuperGrok Heavy à 300 $ par mois et Cursor Premium Teams à 120 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000916_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:16</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une page de tarification avec trois offres différentes : Cursor Ultra à 200 $, SuperGrok Heavy à 300 $ par mois et Cursor Premium Teams à 120 $ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:43 - 00:10:19</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ou O-I-D-C-S-S-O. Comparez maintenant les prix avec d&#x27;autres modèles comme ChatGPT, Google Gemini et Claude d&#x27;Anthropic. ChatGPT Plus coûte 20 dollars par mois, ce qui vous donne l&#x27;expérience standard à laquelle la plupart des gens sont habitués. Mais si vous voulez leur modèle de raisonnement de premier ordre, ChatGPT Pro coûte 200 dollars par mois. Donc, rien que là, vous payez la même chose que pour le niveau supérieur de GrokBot, mais vous obtenez toujours seulement une conversation, et non un agent toujours actif doté de son propre ordinateur. Gemini est similaire. Google AI Pro, qui s&#x27;appelait auparavant Gemini Advanced, coûte 19,99 dollars par mois pour le niveau standard. Mais si vous</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Pages web de tarification et de comparaison de modèles d&#x27;intelligence artificielle (ChatGPT, outils de développement).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs mensuels affichés (0$, 8$, 20$, 100$, 200$, 300$), fonctionnalités incluses par abonnement (limites d&#x27;usage, modèles de raisonnement, agents).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation comparative des différentes offres tarifaires des services d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000952_seg22.jpg" alt="Capture d&#x27;écran montrant la page de tarification de ChatGPT avec les différentes offres (Free à 0$, Go à 8$, Plus à 20$ et Pro à 100$ par mois)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_000952_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:52</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la page de tarification de ChatGPT avec les différentes offres (Free à 0$, Go à 8$, Plus à 20$ et Pro à 100$ par mois).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001010_seg22.jpg" alt="Capture d&#x27;écran présentant une grille de tarifs pour des abonnements avancés (Cursor Ultra à 200$, SuperGrok Heavy à 300$, Cursor Premium Teams à 120$)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001010_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:10</span>
+                        <span class="caption-text">Capture d&#x27;écran présentant une grille de tarifs pour des abonnements avancés (Cursor Ultra à 200$, SuperGrok Heavy à 300$, Cursor Premium Teams à 120$).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:19 - 00:10:40</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">veulent leur niveau ultra avec le plus de capacités, cela passe à 99,99 $ par mois. Et il y a un niveau encore plus élevé à 199,99 $ par mois. Encore une fois, c&#x27;est de l&#x27;argent réel pour un modèle qui ne fonctionne toujours que lorsque vous le sollicitez activement. Et Claude, maximum cinq fois, c&#x27;est 100 $ par mois et maximum 20 fois.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de Gemini (Google).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau comparatif des prix des abonnements : Free ($0), Google AI Plus ($4.99), Google AI Pro ($19.99), et Google AI Ultra ($99.99 / mois).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et surbrillance textuelle des tarifs des formules payantes de l&#x27;intelligence artificielle Gemini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001024_seg23.jpg" alt="Capture d&#x27;écran de la page de tarification de Gemini affichant les différents abonnements, avec une mise en surbrillance sur l&#x27;offre Google AI Ultra à 99,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001024_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:24</span>
+                        <span class="caption-text">Capture d&#x27;écran de la page de tarification de Gemini affichant les différents abonnements, avec une mise en surbrillance sur l&#x27;offre Google AI Ultra à 99,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:40 - 00:11:04</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Leur niveau le plus élevé est de 200 $ par mois. Donc, vous payez le prix de GrokBot pour l&#x27;intelligence de Claude, sauf que vous devez toujours le surveiller, ouvrir le chat et faire avancer la conversation vous-même. Donc, quand on met tout bout à bout, 20 $ à 300 $ pour ChatGPT, 20 $ à 200 $ pour Gemini, 100 $ à 200 $ pour Claude, vous dépensez déjà de vrai argent pour les niveaux supérieurs de n&#x27;importe lequel d&#x27;entre eux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Pages web de tarification des services d&#x27;IA (Claude, ChatGPT, Gemini).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de prix, abonnements mensuels, comparaisons d&#x27;utilisation (de 0 $ à 200 $ par mois).</p>
+                        <p><strong>Action / Démonstration :</strong> Comparaison des coûts mensuels des différents abonnements d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001046_seg24.jpg" alt="Capture d&#x27;écran montrant un tableau comparatif des tarifs pour Claude, avec le niveau Max 20x à 200 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001046_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:46</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un tableau comparatif des tarifs pour Claude, avec le niveau Max 20x à 200 $ par mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001052_seg24.jpg" alt="Capture d&#x27;écran du site officiel de ChatGPT affichant les différents abonnements (Free, Go, Plus à 20 $ et Pro jusqu&#x27;à 100 $)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001052_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:52</span>
+                        <span class="caption-text">Capture d&#x27;écran du site officiel de ChatGPT affichant les différents abonnements (Free, Go, Plus à 20 $ et Pro jusqu&#x27;à 100 $).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001058_seg24.jpg" alt="Capture d&#x27;écran du site de Gemini affichant les grilles tarifaires allant de gratuit à 199,99 $ par mois pour Google AI Ultra." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001058_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:58</span>
+                        <span class="caption-text">Capture d&#x27;écran du site de Gemini affichant les grilles tarifaires allant de gratuit à 199,99 $ par mois pour Google AI Ultra.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:04 - 00:11:24</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La différence avec GrokBot à cette même tranche de prix de 200 à 300 dollars, c&#x27;est que vous ne payez pas pour une conversation plus intelligente. Vous payez pour quelque chose qui fonctionne 24 heures sur 24 et 7 jours sur 7 sans vous. Écoutez, 200 dollars, c&#x27;est beaucoup, et je ne vais pas faire semblant que ça ne l&#x27;est pas. Ce n&#x27;est pas pour quelqu&#x27;un qui se lance tout juste dans la crypto avec un abonnement à 20 dollars.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de tarification et interface de chat d&#x27;un bot d&#x27;automatisation (Grok Bots / Market Scanner).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs de 200$/mois et 300$/mois, fonctionnalités d&#x27;automatisation 24/7, routines programmées, et prompts de scan de marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des coûts des abonnements d&#x27;agents IA autonomes et démonstration d&#x27;une interface de scanner de marché automatisé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001109_seg25.jpg" alt="Page de tarification affichant les offres Cursor Ultra à 200$/mois et SuperGrok Heavy à 300$/mois, détaillant les fonctionnalités comme &quot;Grok Bot&#x27;s own computer&quot;." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001109_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:09</span>
+                        <span class="caption-text">Page de tarification affichant les offres Cursor Ultra à 200$/mois et SuperGrok Heavy à 300$/mois, détaillant les fonctionnalités comme &quot;Grok Bot&#x27;s own computer&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001114_seg25.jpg" alt="Interface de l&#x27;agent Market Scanner montrant un prompt d&#x27;analyse technique automatisée et des routines programmées." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001114_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:14</span>
+                        <span class="caption-text">Interface de l&#x27;agent Market Scanner montrant un prompt d&#x27;analyse technique automatisée et des routines programmées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001119_seg25.jpg" alt="Page de tarification similaire à l&#x27;image 1, montrant les abonnements logiciels à 200$ et 300$ par mois." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001119_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:19</span>
+                        <span class="caption-text">Page de tarification similaire à l&#x27;image 1, montrant les abonnements logiciels à 200$ et 300$ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:25 - 00:12:01</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est pour les personnes qui dépensent déjà de l&#x27;argent réel en crédits API ou en abonnements IA multiples et qui veulent les regrouper en un seul système toujours actif. Si ce n&#x27;est pas encore votre cas, il n&#x27;y a aucun problème. Vous pouvez tirer énormément de valeur des outils gratuits et continuer à trader intelligemment. Maintenant, avant de terminer, laissez-moi passer en revue une rapide foire aux questions car je sais qu&#x27;un grand nombre d&#x27;entre vous aura exactement ces questions dans les commentaires. En quoi GrokBot est-il différent des assistants IA ? Les bots ont leur propre ordinateur, donc ils peuvent travailler à l&#x27;intérieur de vos applications et de vos outils. Ils fonctionnent également en parallèle, 24h/24 et 7j/7, même lorsque votre ordinateur portable est fermé. Pour qui GrokBot est-il disponible aujourd&#x27;hui ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de tarification et de FAQ (interface web sombre).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;abonnements IA mensuels (200 $, 300 $, 120 $/siège) et foire aux questions sur Grok Bot et la sécurité des données.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différents abonnements payants et options de tarification pour les outils IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001134_seg26.jpg" alt="Capture d&#x27;écran montrant une page de tarification avec des abonnements IA (Cursor Ultra à 200 $/mois, SuperGrok Heavy à 300 $/mois)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001134_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:34</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une page de tarification avec des abonnements IA (Cursor Ultra à 200 $/mois, SuperGrok Heavy à 300 $/mois).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001143_seg26.jpg" alt="Capture d&#x27;écran montrant la section FAQ d&#x27;un site web liée à Grok Bot et ses fonctionnalités de confidentialité et de sécurité." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001143_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:43</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la section FAQ d&#x27;un site web liée à Grok Bot et ses fonctionnalités de confidentialité et de sécurité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:02 - 00:12:24</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">GrokBot est accessible aujourd&#x27;hui pour les abonnés de Cursor Ultra, Super Grok Heavy et Cursor Premium Team. Est-ce que GrokBot est disponible pour les entreprises ? Bientôt. Nous prévoyons d&#x27;ouvrir GrokBot aux équipes et aux entreprises dans les semaines à venir. Pour l&#x27;instant, vous pouvez vous inscrire sur la liste d&#x27;attente. Je mettrai le lien ci-dessous. Où puis-je parler à GrokBot ? Travaillez avec GrokBot depuis votre bureau, macOS ou Windows, ou depuis votre téléphone avec l&#x27;application iOS.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de FAQ sur fond sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affichant : « Who is Grok Bot available for today? » avec la réponse indiquant la disponibilité pour les abonnés Cursor Ultra, SuperGrok Heavy et Cursor Premium Teams, ainsi que d&#x27;autres questions de FAQ.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et consultation de la FAQ officielle concernant Grok Bot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001207_seg27.jpg" alt="Capture d&#x27;écran montrant la section FAQ d&#x27;un site web, avec une question ouverte sur la disponibilité de Grok Bot." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001207_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:07</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la section FAQ d&#x27;un site web, avec une question ouverte sur la disponibilité de Grok Bot.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:24 - 00:12:47</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Est-ce que les bots partagent un seul ordinateur ? Oui. Chaque GrokBot partage un unique ordinateur cloud persistant. Vos bots partagent cette machine, ces fichiers, ce navigateur, ces identifiants, afin de pouvoir se transmettre le travail et conserver le contexte. L&#x27;isolation se fait par utilisateur, et non par GrokBot. Comment GrokBot gère-t-il mes données et ma confidentialité ? GrokBot utilise le même SSO de Cursor, la même authentification et le même mode de confidentialité auquel vous faites déjà confiance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web officielle de présentation de Grok Bot / xAI avec menu supérieur (Products, Solutions, Developer, Company, Pricing, News) et interface de FAQ interactive.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de la FAQ expliquant que chaque Grok Bot partage un unique ordinateur cloud persistant (machine, fichiers, navigateur, identifiants) pour conserver le contexte et se transmettre le travail, l&#x27;isolation se faisant par utilisateur et non par bot.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et lecture de la FAQ officielle pour illustrer le fonctionnement technique et l&#x27;architecture des bots partagés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001230_seg28.jpg" alt="Capture d&#x27;écran montrant la foire aux questions (FAQ) officielle concernant Grok Bot, avec la question « Do Bots share one computer? » ouverte." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001230_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:30</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la foire aux questions (FAQ) officielle concernant Grok Bot, avec la question « Do Bots share one computer? » ouverte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:47 - 00:13:25</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Votre ordinateur cloud est chiffré en transit et au repos avec une option de désactivation de l&#x27;entraînement. Les actions sensibles peuvent faire l&#x27;objet d&#x27;une révision automatique avant leur exécution. Les administrateurs d&#x27;entreprise peuvent configurer des certificats DLP, des proxys et des contrôles réseau au démarrage. Très bien, et regardez, pour les prochaines années, deux types de traders existeront : ceux qui utilisent l&#x27;IA et ceux qui font encore tout manuellement. Même marché, résultats très différents. Voici comment vous placer du bon côté. J&#x27;ai rassemblé tout cela au sein de la communauté AI Trade Edge : chaque invite, chaque bot, chaque modèle, chaque guide étape par étape que j&#x27;utilise personnellement, le tout au même endroit et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une page d&#x27;information et de FAQ sur la sécurité.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte décrivant la sécurité des ordinateurs cloud, le chiffrement en transit et au repos, l&#x27;option de désactivation de l&#x27;entraînement et les configurations administrateur (DLP, certificats, proxys).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des spécifications de confidentialité et de sécurité associées au bot d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001257_seg29.jpg" alt="Capture d&#x27;écran montrant la FAQ sur la confidentialité et la sécurité de Grok Bot, détaillant le chiffrement cloud et les modes de confidentialité." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001257_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:57</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la FAQ sur la confidentialité et la sécurité de Grok Bot, détaillant le chiffrement cloud et les modes de confidentialité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:25 - 00:14:04</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce que je construis à l&#x27;avenir est ajouté directement dans le groupe dès sa sortie. Nous testons également des stratégies provenant de tout Internet, en les automatisant à l&#x27;aide de PineScript, en les exécutant en direct et en partageant exactement ce qui fonctionne et ce qui ne fonctionne pas. Vous n&#x27;obtenez donc pas seulement des outils, vous obtenez une opération de recherche en direct à l&#x27;intérieur. Il y a aussi un cours complet de trading agentique de 2,5 heures, du débutant à l&#x27;expert, sans aucune base en programmation nécessaire. À la fin, vous aurez votre propre système de trading IA fonctionnant en direct, quelque chose que la plupart des traders particuliers ne savent même pas être possible en ce moment, 79,99 $ par mois, un bon trade.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme TradingView, interface de cours en ligne.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code Pine Script V5 (RSI VWAP + Extreme Reversal Setup), graphique de prix Bitcoin, modules de cours (OpenClaw, Agentic Bots, Python Bot, VPS, Live-Ops).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du code source et de l&#x27;indicateur appliqué sur un graphique de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001335_seg30.jpg" alt="Code source Pine Script affiché sur le site web d&#x27;Alex Carter Trading." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001335_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:35</span>
+                        <span class="caption-text">Code source Pine Script affiché sur le site web d&#x27;Alex Carter Trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001344_seg30.jpg" alt="Graphique TradingView sur Binance montrant le Bitcoin (BTC/USD) en unité 2h avec l&#x27;indicateur personnalisé RSI-VWAP." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001344_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:44</span>
+                        <span class="caption-text">Graphique TradingView sur Binance montrant le Bitcoin (BTC/USD) en unité 2h avec l&#x27;indicateur personnalisé RSI-VWAP.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001354_seg30.jpg" alt="Interface de cours en ligne montrant différents modules de formation sur le trading algorithmique et l&#x27;intelligence artificielle." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001354_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:54</span>
+                        <span class="caption-text">Interface de cours en ligne montrant différents modules de formation sur le trading algorithmique et l&#x27;intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:04 - 00:14:37</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">couvre cela et les 100 premiers membres bloquent ce tarif de façon permanente après cela le prix augmente le lien est dans la description vous ne pouvez vraiment pas vous permettre de manquez ça donc voilà grokbot ce que c&#x27;est pourquoi je pense qu&#x27;il bat actuellement les alternatives pour un travail permanent exactement comment le configurer et comment vous pouvez le pointer directement vers votre trading et investissement de crypto je vais continuer à tester ceci au cours des prochaines semaines et voir comment il tient face aux conditions réelles du marché alors assurez-vous d&#x27;être abonné et d&#x27;avoir les notifications activées car je partagerai des mises à jour au fur et à mesure et si</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Grok Bot et panneau de l&#x27;agent de recherche avec historique des scans de marché et routines.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyses techniques textuelles pour plusieurs cryptomonnaies (ruptures de structure, volumes, prix actuels) et agents actifs dans le panneau latéral (Research Agent, Market Scanner, Portfolio Agent).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des fonctionnalités de l&#x27;agent de recherche et des analyses de cryptomonnaies automatisées par le bot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001429_seg31.jpg" alt="Interface de l&#x27;agent de recherche (Research Agent) affichant des analyses de marché détaillées sur différentes cryptomonnaies (SUI, PEPE, WIF, AVAX, XRP, LINK, DOGE, ETH, BTC, SOL, BNB)." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001429_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:29</span>
+                        <span class="caption-text">Interface de l&#x27;agent de recherche (Research Agent) affichant des analyses de marché détaillées sur différentes cryptomonnaies (SUI, PEPE, WIF, AVAX, XRP, LINK, DOGE, ETH, BTC, SOL, BNB).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:37 - 00:14:56</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous voulez le guide complet étape par étape sur la façon de construire votre propre système de trading agentique en utilisant Claude cette vidéo apparaît à l&#x27;écran également allez voir ça ensuite si vous avez trouvé cela utile laissez un pouce bleu cela aide vraiment la chaîne abonnez-vous si ce n&#x27;est pas déjà fait et je vous vois dans la prochaine</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de cours en ligne (Trading AI Full Course).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Plan de cours structuré en modules (Cold Open + Sources, Foundations, The Complete AI Trading Stack).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle de la structure du cours pour construire un système de trading agentique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001442_seg32.jpg" alt="Interface du cours &#x27;Trading AI Full Course&#x27; montrant la carte complète des modules de formation avec les sections 00, 01 et 02." loading="lazy" onclick="openLightbox('../screenshots/mcOSG1gvCw0/mcOSG1gvCw0_001442_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:42</span>
+                        <span class="caption-text">Interface du cours &#x27;Trading AI Full Course&#x27; montrant la carte complète des modules de formation avec les sections 00, 01 et 02.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
