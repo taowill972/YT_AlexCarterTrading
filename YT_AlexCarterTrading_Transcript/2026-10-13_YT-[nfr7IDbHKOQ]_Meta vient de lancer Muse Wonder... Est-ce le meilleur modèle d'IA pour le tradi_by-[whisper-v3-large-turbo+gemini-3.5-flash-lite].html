@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d&#x27;IA pour le trading ? — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d&#x27;IA pour le trading ?</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-13</span>
+                <span class="badge">⏱️ 00:10:56</span>
+                <span class="badge">🆔 <code>nfr7IDbHKOQ</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=nfr7IDbHKOQ" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo intitulée **Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d'IA pour le trading ?**, Alex Carter détaille une approche stratégique et pratique du trading et de l'automatisation par agents IA.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **TradingView & Claude Code** : Analyse technique avancée et automatisation algorithmique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- Respect rigoureux du ratio risque/rendement et du money management.<br>- Automatisation méthodique des déclencheurs d'ordres via des agents intelligents.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView &amp; Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Respect rigoureux du ratio risque/rendement et du money management.</span></li><li><span class="point-bullet">✦</span><span>Automatisation méthodique des déclencheurs d&#x27;ordres via des agents intelligents.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:33</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mark Zuckerberg et Meta viennent de lancer Muse Wonder, une toute nouvelle famille de modèles de pointe, et Meta le présente comme son modèle le plus avancé à ce jour pour le travail d&#x27;agent personnel et professionnel. Aujourd&#x27;hui, Internet a déjà des avis bien arrêtés sur ses performances réelles. Certaines personnes disent qu&#x27;il est meilleur que Claude Opus. D&#x27;autres disent qu&#x27;il n&#x27;arrive même pas à la cheville. Donc dans la vidéo d&#x27;aujourd&#x27;hui, je vais décortiquer exactement ce qu&#x27;est Muse Wonder, comment il se positionne par rapport aux autres modèles de pointe, ce que disent réellement les benchmarks, à quel point cette chose est vraiment sûre, et combien cela va</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant les plateformes X (Twitter) et le site web officiel de Meta.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de benchmarks et scores de performance comparant les modèles d&#x27;IA (Muse Wonder, Claude Fable 5.1, GPT-6 Astra) sur divers critères (Personal Superintelligence Index, Legal agent work, Financial analyst research).
+[SCÉNARIO] Présentation et analyse comparative des performances des nouveaux modèles d&#x27;intelligence artificielle de Meta par rapport à la concurrence.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000008_seg1.jpg" alt="Capture d&#x27;écran de l&#x27;interface X (Twitter) affichant un post de Mark Zuckerberg présentant les modèles Muse Wonder avec un tableau comparatif des performances." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000008_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface X (Twitter) affichant un post de Mark Zuckerberg présentant les modèles Muse Wonder avec un tableau comparatif des performances.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000025_seg1.jpg" alt="Capture d&#x27;écran du site officiel de Meta affichant les benchmarks détaillés de Muse Wonder et Muse Wonder Full par rapport à d&#x27;autres modèles de pointe." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000025_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Capture d&#x27;écran du site officiel de Meta affichant les benchmarks détaillés de Muse Wonder et Muse Wonder Full par rapport à d&#x27;autres modèles de pointe.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:01:11</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ça vous coûte de l&#x27;utiliser. Et restez jusqu&#x27;à la fin, car je vais vous montrer exactement qui devrait utiliser ce modèle et qui devrait s&#x27;en tenir à autre chose. Rien que cette partie pourrait vous faire économiser beaucoup d&#x27;argent. Bref, entrons dans le vif du sujet. Alors tout d&#x27;abord, qu&#x27;est-ce que c&#x27;est réellement que Muse Wonder ? Meta vient de lancer deux modèles ici, pas un seul. Muse Wonder et une version plus grande appelée Muse wonderful. Tous deux sont conçus spécifiquement pour des tâches agentiques personnelles et professionnelles, ce qui signifie qu&#x27;ils ne sont pas de simples chatbots qui répondent à des questions. Ils sont conçus pour aller réellement faire des choses pour vous. Naviguer sur le web, écrire du code, gérer de longues tâches en plusieurs étapes, ce genre de choses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web officiel Meta (documentation, produits, modèles, API).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options d&#x27;intégration et de développement : Muse Code (coding multi-agent avec Muse Wonder / Muse Wonder Full), Meta Model API, et OpenRouter.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différentes méthodes pour accéder et utiliser les modèles d&#x27;IA de Meta.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000043_seg2.jpg" alt="Capture d&#x27;écran montrant le site web de Meta avec la page &quot;More ways to build&quot; présentant les options Muse Code, Meta Model API et OpenRouter." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000043_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le site web de Meta avec la page &quot;More ways to build&quot; présentant les options Muse Code, Meta Model API et OpenRouter.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:12 - 00:01:37</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce qui est intéressant, c&#x27;est que Meta construit tout cela autour de deux idées principales, la mémoire active et l&#x27;attention active. La mémoire active signifie fondamentalement que le modèle se souvient de ce qui compte pour vous d&#x27;une conversation à l&#x27;autre. Il ne repart donc pas de zéro à chaque fois. Et l&#x27;attention active signifie qu&#x27;il s&#x27;accroche réellement à la tâche difficile. En essayant différentes approches, en surmontant les obstacles, en s&#x27;adaptant quand quelque chose ne fonctionne pas du premier coup, au lieu d&#x27;abandonner ou d&#x27;inventer une réponse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de recherche Meta AI Research affichant de la documentation technique et des benchmarks de performance d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif sur la mémoire active et l&#x27;attention active, accompagné de graphiques à barres de benchmarks (MemoryBench, SWE-Marathon, FocusBench) avec des pourcentages de score.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle et explication des concepts clés de recherche en IA de Meta (mémoire et attention active).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000118_seg3.jpg" alt="Capture d&#x27;écran du site Meta AI Research présentant la section &#x27;Active Memory&#x27; avec des explications textuelles et un graphique d&#x27;évaluation &#x27;MemoryBench&#x27;." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000118_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Meta AI Research présentant la section &#x27;Active Memory&#x27; avec des explications textuelles et un graphique d&#x27;évaluation &#x27;MemoryBench&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000131_seg3.jpg" alt="Capture d&#x27;écran du site Meta AI Research présentant la section &#x27;Active Focus&#x27; avec des graphiques de performance &#x27;SWE-Marathon&#x27; et &#x27;FocusBench&#x27;." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000131_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Meta AI Research présentant la section &#x27;Active Focus&#x27; avec des graphiques de performance &#x27;SWE-Marathon&#x27; et &#x27;FocusBench&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:37 - 00:02:01</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En ce moment, Muse Wonder est en direct sur la première API de Meta et à l&#x27;intérieur de Muse Code. Muse Wonderful, le plus grand, est actuellement disponible uniquement pour les abonnés de Muse Code. C&#x27;est donc un bref aperçu. Maintenant, parlons de la façon dont nous sommes réellement arrivés ici. Voici quelque chose que je trouve assez fou. Toute cette sortie s&#x27;est produite seulement six semaines après le modèle précédent de Meta, Muse Spark 1.3.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de la plateforme Meta présentant différentes versions de modèles d&#x27;IA et de tarifications.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Informations tarifaires (Input $4.00, Cached input $0.20, Output $20.00) et description des modèles Muse Wonder et Muse Spark 1.3.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des fonctionnalités et tarifs des nouveaux modèles d&#x27;IA de Meta.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000143_seg4.jpg" alt="Capture d&#x27;écran montrant les options &#x27;Muse Wonder&#x27; et &#x27;Muse Wonder Full&#x27; sur une interface web Meta avec les tarifs associés." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000143_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:43</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les options &#x27;Muse Wonder&#x27; et &#x27;Muse Wonder Full&#x27; sur une interface web Meta avec les tarifs associés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000155_seg4.jpg" alt="Capture d&#x27;écran présentant le modèle &#x27;Muse Spark 1.3&#x27; sur une page web Meta dédiée aux workflows d&#x27;agents." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000155_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Capture d&#x27;écran présentant le modèle &#x27;Muse Spark 1.3&#x27; sur une page web Meta dédiée aux workflows d&#x27;agents.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:01 - 00:02:36</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a 14 mois, Meta a fondamentalement refondu l&#x27;ensemble de ses efforts en matière d&#x27;IA. Ils ont reconstruit leur architecture à partir des principes fondamentaux, et Muse Wonder est le résultat de ce travail qui atteint enfin la pointe de la technologie. Les deux modèles ont été entraînés au centre de données Prometheus de Meta, d&#x27;une échelle gigawatt, et Meta qualifie cela de démarche de mise à l&#x27;échelle prévisible et rigoureuse, ce qui signifie que chaque sortie est censée constituer une étape intentionnelle et mesurable, et non pas simplement une amélioration aléatoire, et honnêtement, quand on regarde le bond de MuseSpark 1.3 à MuseWonder en seulement six semaines, on a bien l&#x27;impression que cette approche de mise à l&#x27;échelle fonctionne. Alors, penchons-nous maintenant sur les chiffres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web officiel de Meta / Recherche IA</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique &#x27;Artificial Intelligence Index&#x27; comparant les performances de différents modèles (Claude Opus 5.5, Muse Wonder Full, GPT-6, Gemini, etc.) avec des scores allant de 30 à 58.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats de performance et du classement des nouveaux modèles de Meta sur un graphique comparatif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000228_seg5.jpg" alt="Graphique en barres de l&#x27;Artificial Intelligence Index montrant le classement comparatif des modèles d&#x27;IA avec des scores chiffrés." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000228_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:28</span>
+                        <span class="caption-text">Graphique en barres de l&#x27;Artificial Intelligence Index montrant le classement comparatif des modèles d&#x27;IA avec des scores chiffrés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:03:13</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parce que c&#x27;est là que ça devient intéressant. Sur l&#x27;indice d&#x27;intelligence d&#x27;Artificial Analysis, MuseWonder a obtenu un score de 52 et MuseWonder Full a obtenu 56 avec un effort de raisonnement maximal. Comparez cela à MUSE Spark 1.3, qui était à 48. C&#x27;est donc un gain solide en seulement six semaines. Maintenant, là où ça devient vraiment intéressant, c&#x27;est du côté des agents. MUSE Wonderful a fait un bond de 24 points sur Terminal Bench 4.0, passant de 33 % à 57 %. Sur GDPVAL, qui teste le travail professionnel réel, il a gagné 176 points ELO.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un tableau de documentation Meta et le réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Scores de benchmarks et texte de publication (Artificial Analysis Index, scores de 52 et 56 pour Muse Wonder et Muse Wonder Full).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats d&#x27;évaluation des performances des modèles d&#x27;IA par le présentateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000245_seg6.jpg" alt="Un tableau de performances comparatives de modèles d&#x27;IA montrant les scores sur différents benchmarks incluant l&#x27;Artificial Analysis Index." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000245_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Un tableau de performances comparatives de modèles d&#x27;IA montrant les scores sur différents benchmarks incluant l&#x27;Artificial Analysis Index.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000255_seg6.jpg" alt="Une publication sur le réseau social X par Artificial Analysis détaillant les scores des modèles Muse Wonder et Muse Wonder Full." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000255_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:55</span>
+                        <span class="caption-text">Une publication sur le réseau social X par Artificial Analysis détaillant les scores des modèles Muse Wonder et Muse Wonder Full.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000304_seg6.jpg" alt="Une suite de la publication sur X détaillant les gains de performance et les scores spécifiques par benchmark agentique." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000304_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:04</span>
+                        <span class="caption-text">Une suite de la publication sur X détaillant les gains de performance et les scores spécifiques par benchmark agentique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:13 - 00:03:35</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et sur AA Briefcase, il a gagné 148 points de concessionnaire. Ce ne sont pas de petites améliorations. Ce sont le genre de bons en avant qui changent réellement ce que le modèle peut faire pour vous en pratique. Muse Wonderful se classe également dans le top trois sur six des dix évaluations de l&#x27;indice d&#x27;intelligence. Il est particulièrement fort dans le travail de connaissance agentique et le raisonnement scientifique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une interface de type réseau social (X) et un site de recherche en IA (Meta).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif des performances des modèles Muse Wonder Full et Muse Wonder, scores d&#x27;évaluation, indices d&#x27;intelligence et classements (scores chiffrés, pourcentages et classements ELO).</p>
+                        <p><strong>Action / Démonstration :</strong> Défilement de texte et affichage d&#x27;un graphique comparatif de performance des modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000318_seg7.jpg" alt="Capture d&#x27;écran d&#x27;une publication sur le réseau social X détaillant les performances et les scores d&#x27;évaluation des modèles d&#x27;intelligence artificielle Muse." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000318_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:18</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une publication sur le réseau social X détaillant les performances et les scores d&#x27;évaluation des modèles d&#x27;intelligence artificielle Muse.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000324_seg7.jpg" alt="Graphique comparatif &quot;Artificial Analysis Intelligence Index&quot; affichant les différents modèles et leurs scores, avec des flèches illustrant la progression." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000324_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:24</span>
+                        <span class="caption-text">Graphique comparatif &quot;Artificial Analysis Intelligence Index&quot; affichant les différents modèles et leurs scores, avec des flèches illustrant la progression.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000329_seg7.jpg" alt="Capture d&#x27;écran similaire à la première montrant le texte sur les performances de Muse Wonder Full avec une phrase en surbrillance bleue." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000329_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Capture d&#x27;écran similaire à la première montrant le texte sur les performances de Muse Wonder Full avec une phrase en surbrillance bleue.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:35 - 00:03:54</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il est en fait en tête du classement pour le PIB.PDF à 33 %, se classe au deuxième rang pour le PIBVAL et arrive en tête du classement CRIT-PT pour le raisonnement scientifique à 33 %. Maintenant, voici quelque chose que je trouvais vraiment surprenant. Les deux modèles utilisent en fait moins de jetons de sortie que MuseSpark 1.3.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un tableau de benchmarks, un post sur X (Twitter) et une page de tarification de modèles d&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Scores de performance sur des benchmarks (GDP.pdf, CritPt), détails de tarification (Input : 4,00 $, Output : 20,00 $).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats de benchmarks et des spécificités tarifaires des nouveaux modèles d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000340_seg8.jpg" alt="Tableau de benchmarks affichant les performances de différents modèles d&#x27;IA sur plusieurs métriques (GDP.pdf, JobBench, OSWorld V2.1)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000340_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Tableau de benchmarks affichant les performances de différents modèles d&#x27;IA sur plusieurs métriques (GDP.pdf, JobBench, OSWorld V2.1).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000345_seg8.jpg" alt="Publication sur le réseau social X détaillant les performances du modèle Muse Wonder Full (max) sur divers benchmarks (GDP.pdf, CritPt)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000345_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Publication sur le réseau social X détaillant les performances du modèle Muse Wonder Full (max) sur divers benchmarks (GDP.pdf, CritPt).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000350_seg8.jpg" alt="Interface de tarification et de description des modèles Muse Wonder et Muse Wonder Full avec les coûts d&#x27;utilisation (Input, Cached input, Output)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000350_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:50</span>
+                        <span class="caption-text">Interface de tarification et de description des modèles Muse Wonder et Muse Wonder Full avec les coûts d&#x27;utilisation (Input, Cached input, Output).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:55 - 00:04:14</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">On parle d&#x27;environ 54 000 jetons de sortie par tâche, soit une baisse d&#x27;environ 10 % par rapport à avant. C&#x27;est inférieur à Gemini 4 Argon et Claude Fable 5.1, mais supérieur à GPT 6.1 Sol et GPT 6 Astra. Ce n&#x27;est donc pas le modèle le plus efficace du marché, mais ce n&#x27;est certainement pas le moins efficace non plus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de X (Twitter) avec un panneau latéral de navigation et un fil d&#x27;actualité central contenant du texte formaté.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte détaillé comparant le nombre de jetons de sortie et d&#x27;entrée, ainsi que le coût par tâche (ex: 4$ par million de jetons d&#x27;entrée, 20$ par million de jetons de sortie, totalisant 4,52$ par tâche) pour différents modèles d&#x27;IA comme Muse Wonder, Claude Fable 5.1, GPT-6 Astra et Gemini 4 Argon.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et lecture à l&#x27;écran du post X détaillant les métriques d&#x27;efficacité en jetons et les coûts des différents modèles d&#x27;IA comparés dans la vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000400_seg9.jpg" alt="Capture d&#x27;écran de l&#x27;interface du réseau social X (Twitter) affichant un post détaillé sur les performances et les coûts par tâche des modèles d&#x27;intelligence artificielle (Muse Wonder, Gemini 4 Argon, Claude Fable 5.1, GPT-6.1 Sol, etc.)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000400_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:00</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface du réseau social X (Twitter) affichant un post détaillé sur les performances et les coûts par tâche des modèles d&#x27;intelligence artificielle (Muse Wonder, Gemini 4 Argon, Claude Fable 5.1, GPT-6.1 Sol, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:15 - 00:04:38</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais voici la partie qui pourrait vraiment importer le plus si vous êtes développeur. Le coût. Bien qu&#x27;il soit efficace avec les jetons de sortie, le coût par tâche de Muse Wonders s&#x27;élève à 4,52 dollars, principalement en raison du nombre de jetons d&#x27;entrée qu&#x27;il utilise. À titre de comparaison, c&#x27;est moins cher que Claude Opus 5.5 à 5,98 dollars et que Claude Fable 5.1 à 7,63 dollars.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de documentation et de tarification (Meta / Modèles IA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs affichés par million de jetons : Input ($4.00), Cached input ($0.20), Output ($20.00) pour Muse Wonder, et tableau comparatif pour Claude Opus (Cache reads $0.20 vs $0.50, Input tokens $4 vs $5, Output tokens $20 vs $25, Cache writes $5 vs $6.25).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et analyse détaillée des coûts par tâche et par jeton pour les différents modèles de langages.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000420_seg10.jpg" alt="Capture d&#x27;écran montrant les détails tarifaires des modèles &#x27;Muse Wonder&#x27; et &#x27;Muse Wonder Full&#x27;." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000420_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:20</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les détails tarifaires des modèles &#x27;Muse Wonder&#x27; et &#x27;Muse Wonder Full&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000432_seg10.jpg" alt="Tableau de tarification comparant les coûts par million de jetons entre Claude Opus 5.5 et Claude Opus 5." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000432_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:32</span>
+                        <span class="caption-text">Tableau de tarification comparant les coûts par million de jetons entre Claude Opus 5.5 et Claude Opus 5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:38 - 00:04:58</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais c&#x27;est plus cher que GPT-6 Astra à 3,26 dollars et Gemini 4 Argon à seulement 1,99 dollar. Donc, selon ce que vous cherchez à optimiser, l&#x27;intelligence brute, le coût ou l&#x27;efficacité des jetons, le meilleur modèle change honnêtement. Et c&#x27;est exactement pourquoi Internet n&#x27;arrive pas à se mettre d&#x27;accord sur celui-ci.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la documentation et les pages de tarification d&#x27;OpenAI et les benchmarks de Meta.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;API d&#x27;OpenAI ($10/M tokens d&#x27;entrée, $50/M tokens de sortie) et tableau de scores de performance par benchmark (JobBench, OSWorld V2.1, MemoryBench, Terminal-Bench 4.0-AA, DeepSWE 1.1).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des spécifications techniques, des tarifs et des performances comparatives des différents modèles d&#x27;IA sur le web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000443_seg11.jpg" alt="Capture d&#x27;écran montrant la page web d&#x27;OpenAI avec des détails techniques sur le modèle GPT-6 Astra, incluant les tarifs d&#x27;API de 10 $ par million de jetons d&#x27;entrée et 50 $ par million de jetons de sortie." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000443_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:43</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la page web d&#x27;OpenAI avec des détails techniques sur le modèle GPT-6 Astra, incluant les tarifs d&#x27;API de 10 $ par million de jetons d&#x27;entrée et 50 $ par million de jetons de sortie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000448_seg11.jpg" alt="Capture d&#x27;écran d&#x27;un tableau comparatif de performances sur le site de Meta montrant des métriques de benchmarks pour différents modèles sur des tâches de programmation et de raisonnement (JobBench, OSWorld, MemoryBench, Terminal-Bench, DeepSWE)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000448_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un tableau comparatif de performances sur le site de Meta montrant des métriques de benchmarks pour différents modèles sur des tâches de programmation et de raisonnement (JobBench, OSWorld, MemoryBench, Terminal-Bench, DeepSWE).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:58 - 00:05:31</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant parlons de programmation, car c&#x27;est là que beaucoup de gens utilisent réellement ces modèles au jour le jour. Sur l&#x27;indice des agents de programmation d&#x27;Artificial Analysis, Muse Wonderful a atteint 68 à l&#x27;effort maximum dans Muse Code, se plaçant juste aux côtés de Claude Sonnet 5.5, qui a également obtenu 68. Claude Opus 5.5 est arrivé à 66. Muse Wonder, le modèle plus petit, a obtenu 63. Pour situer le contexte, Muse Spark 1.3 n&#x27;était qu&#x27;à 54. Donc encore une fois, un vrai bond en avant, et non pas marginal. Mais il y a quelque chose de plus profond qui se passe et qui</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site web Artificial Analysis.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte informatif et métriques de performance surlignées en bleu : « Muse Wonder Full achieves 68 on the Artificial Analysis Coding Agents Index at max effort in Muse Code, alongside Claude Code with Sonnet 5.5 (max, 68) and Opus 5.5 (max, 66) ».</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur ou l&#x27;interface met en surbrillance le paragraphe concernant les performances en programmation (Coding Agent) des modèles comparés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000507_seg12.jpg" alt="Capture d&#x27;écran du site Artificial Analysis montrant les performances des modèles d&#x27;IA, avec une ligne de texte surlignée en bleu détaillant le score de Muse Wonder Full sur l&#x27;indice des agents de programmation." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000507_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:07</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Artificial Analysis montrant les performances des modèles d&#x27;IA, avec une ligne de texte surlignée en bleu détaillant le score de Muse Wonder Full sur l&#x27;indice des agents de programmation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:06:07</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je pense que c&#x27;est en réalité la partie la plus importante de toute cette version, et c&#x27;est quelque chose que la plupart des gens négligent complètement. Meta a testé dans quelle mesure ces modèles se généralisaient à des tâches pour lesquelles ils n&#x27;avaient pas été spécifiquement entraînés, essentiellement des problèmes hors distribution non familiers, et ce qu&#x27;ils ont découvert, c&#x27;est que Muse Wonderful performe encore mieux sur des tâches non familières que ce que l&#x27;on pourrait prédire sur la base de ses seules performances d&#x27;entraînement. L&#x27;explication de Meta est qu&#x27;il est construit sur un modèle de base plus grand et plus fort, et qu&#x27;une base plus forte a tendance à se reporter plus efficacement sur des situations que le modèle n&#x27;a jamais vues auparavant. Pourquoi est-ce que cela vous importe vraiment ? Parce qu&#x27;un agent personnel va exécuter</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la documentation de recherche Meta AI Research.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte technique décrivant la généralisation des modèles, les performances sur des tâches in-distribution et out-of-distribution, et les modèles Muse Spark 1.3 et Muse Wonder Full.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et lecture de la documentation de recherche Meta AI sur la généralisation des modèles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000540_seg13.jpg" alt="Capture d&#x27;écran du site web de recherche Meta affichant la section intitulée &#x27;Capabilities That Generalize&#x27; qui explique comment les modèles gèrent des tâches non familières." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000540_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:40</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de recherche Meta affichant la section intitulée &#x27;Capabilities That Generalize&#x27; qui explique comment les modèles gèrent des tâches non familières.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000549_seg13.jpg" alt="Suite du texte sur le site Meta AI Research, avec une sélection de texte en surbrillance sur le modèle &#x27;Muse Wonder Full&#x27; et ses performances sur des tâches hors distribution." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000549_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:49</span>
+                        <span class="caption-text">Suite du texte sur le site Meta AI Research, avec une sélection de texte en surbrillance sur le modèle &#x27;Muse Wonder Full&#x27; et ses performances sur des tâches hors distribution.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:07 - 00:06:29</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">dans des combinaisons d&#x27;objectifs et d&#x27;outils que personne n&#x27;avait anticipées pendant l&#x27;entraînement. Donc cette capacité de généralisation est honnêtement bien plus importante que n&#x27;importe quel score de référence. Maintenant, parlons de quelque chose qui ne reçoit pas assez d&#x27;attention : la sécurité. Et je pense vraiment que cela compte beaucoup plus ici qu&#x27;avec un chatbot normal, parce que nous parlons d&#x27;un agent qui peut prendre de véritables actions en votre nom.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site web Meta AI Research.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de performance (In-Distribution vs Out-of-Distribution Performance) et statistiques de sécurité (Attack Success Rate, Violation Rate).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page web pour illustrer la capacité de généralisation et les aspects de sécurité des modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000613_seg14.jpg" alt="Interface Meta AI Research montrant un graphique de performance de généralisation (Capabilities That Generalize)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000613_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:13</span>
+                        <span class="caption-text">Interface Meta AI Research montrant un graphique de performance de généralisation (Capabilities That Generalize).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000618_seg14.jpg" alt="Interface Meta AI Research abordant la sécurité avec des graphiques sur l&#x27;exécution de code non autorisé et la gestion des informations personnelles (Safety at the Frontier)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000618_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:18</span>
+                        <span class="caption-text">Interface Meta AI Research abordant la sécurité avec des graphiques sur l&#x27;exécution de code non autorisé et la gestion des informations personnelles (Safety at the Frontier).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:30 - 00:07:06</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Lecture de vos messages, de votre calendrier, de vos documents privés. Meta a entraîné la famille Muse Wonder spécifiquement pour être plus résistante aux instructions contradictoires et plus prudente avec les informations privées. Lors de tests d&#x27;attaques par exécution de code non autorisée, Muse Wonder présente un taux de réussite des attaques inférieur à celui des modèles concurrents. Et rappelez-vous, plus c&#x27;est bas, mieux c&#x27;est ici. En matière de gestion des informations personnelles, il présente également des taux de violation inférieurs. Meta qualifie également cela de sa protection la plus puissante à ce jour contre la mauvaise utilisation des agents CBRN. C&#x27;est-à-dire chimique, biologique, radiologique et nucléaire, tout en préservant</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de recherche Meta AI présentant la documentation de la famille de modèles Muse Wonder.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques statistiques comparant les taux de réussite d&#x27;attaques et de violations (Muse Wonder, Claude Fable, GPT-6 Astra) ainsi que des benchmarks de cyber-sécurité.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des métriques de sécurité et de robustesse des modèles face aux instructions contradictoires et aux informations privées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000639_seg15.jpg" alt="Graphiques de performance de sécurité montrant les taux de réussite d&#x27;exécution de code non autorisé et de mauvaise gestion d&#x27;informations personnelles pour Muse Wonder et d&#x27;autres modèles d&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000639_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:39</span>
+                        <span class="caption-text">Graphiques de performance de sécurité montrant les taux de réussite d&#x27;exécution de code non autorisé et de mauvaise gestion d&#x27;informations personnelles pour Muse Wonder et d&#x27;autres modèles d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000657_seg15.jpg" alt="Texte explicatif de Meta sur la sécurité et la responsabilité, accompagné de graphiques supplémentaires évaluant les risques CBRN et la cyber-sécurité (bioTIER, Cyber Misuse Refusal Benchmark, Cyber Defense Compliance Benchmark)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000657_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:57</span>
+                        <span class="caption-text">Texte explicatif de Meta sur la sécurité et la responsabilité, accompagné de graphiques supplémentaires évaluant les risques CBRN et la cyber-sécurité (bioTIER, Cyber Misuse Refusal Benchmark, Cyber Defense Compliance Benchmark).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:06 - 00:07:40</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des capacités cybernétiques de pointe pour un usage défensif légitime. Sur le banc d&#x27;essai de refus des risques biologiques et le banc d&#x27;essai de refus des utilisations cybernétiques malveillantes, Muse Wonder obtient des taux de refus plus élevés, ce qui est encore une fois la direction que l&#x27;on souhaite voir. Donc, pour être honnête, de tout ce qui se trouve dans cette version, c&#x27;est peut-être la partie que je respecte le plus. Parce qu&#x27;un agent plus intelligent qui n&#x27;est pas correctement aligné est bien plus dangereux qu&#x27;un simple chatbot intelligent qui se contente de répondre à des questions. Meta qualifie Muse Wonder de modèle le plus aligné à ce jour, et a annoncé qu&#x27;un rapport de sécurité complet serait bientôt publié. Très bien,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de recherche Meta AI affichant des graphiques de performance.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Trois graphiques en barres représentant les benchmarks &#x27;bioTIER&#x27;, &#x27;Cyber Misuse Refusal Benchmark&#x27;, et &#x27;Cyber Defense Compliance Benchmark&#x27;, avec des taux chiffrés pour différents modèles (Claude, Muse Wonder, GPT).</p>
+                        <p><strong>Action / Démonstration :</strong> Un curseur de souris pointe sur l&#x27;une des barres du graphique bioTIER pour mettre en avant les performances du modèle Muse Wonder.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000715_seg16.jpg" alt="Capture d&#x27;écran montrant les résultats de benchmarks de sécurité et de refus pour les modèles IA, notamment &#x27;Muse Wonder&#x27;, sur le site de Meta AI." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000715_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:15</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les résultats de benchmarks de sécurité et de refus pour les modèles IA, notamment &#x27;Muse Wonder&#x27;, sur le site de Meta AI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:40 - 00:08:13</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parlons des tarifs et de la façon dont vous pouvez réellement accéder à cette chose. Muse Wonder est facturé 4 dollars par million de tokens d&#x27;entrée, 0,20 dollar par million de tokens d&#x27;entrée en cache, et 20 dollars par million de tokens de sortie. Les deux modèles disposent d&#x27;une fenêtre de contexte d&#x27;un million de tokens, tout comme MuseSpark 1.3, et ils prennent en charge le texte, l&#x27;image, la vidéo et l&#x27;audio comme entrées, bien que la sortie soit textuelle uniquement pour l&#x27;instant. En termes de disponibilité, MuseWonder est en ligne dès maintenant sur l&#x27;API propriétaire de Meta et au sein de MuseCode. MuseWonder Full,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web officiel (Meta / Documentation / Modèles)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs affichés : Muse Wonder à 4,00 $ pour l&#x27;entrée (Input), 0,20 $ pour l&#x27;entrée en cache (Cached input), et 20,00 $ pour la sortie (Output). Muse Wonder Full accessible via abonnement Muse Code.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des grilles tarifaires et des options d&#x27;accès aux différents modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000748_seg17.jpg" alt="Capture d&#x27;écran montrant les grilles tarifaires et les détails des modèles Muse Wonder et Muse Wonder Full avec leurs coûts par million de tokens." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000748_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:48</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les grilles tarifaires et les détails des modèles Muse Wonder et Muse Wonder Full avec leurs coûts par million de tokens.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:13 - 00:08:32</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">the more powerful one, is only available if you&#x27;re subscribed to MuseCode, specifically on the power usage plan at $50 a month or the maximum usage plan at $200 a month. Pricing per token for Muse Wonderful hasn&#x27;t actually been announced yet, so we don&#x27;t have a clean cost per task number for it.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de Meta (Documentation, Products, Models, Resources, Community) présentant les tarifs de Muse Code et Muse Wonder.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;abonnement (50 $ et 200 $ par mois), fenêtres de contexte (1M), coûts par Mtok input/output, et indications de disponibilité des modèles.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation comparative des abonnements et des coûts des différents modèles d&#x27;IA sur le site web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000818_seg18.jpg" alt="Capture d&#x27;écran montrant la page des plans d&#x27;abonnement de Muse Code avec les tarifs Power Usage à 50,00 $/mois et Maximum Usage à 200,00 $/mois." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000818_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:18</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la page des plans d&#x27;abonnement de Muse Code avec les tarifs Power Usage à 50,00 $/mois et Maximum Usage à 200,00 $/mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000827_seg18.jpg" alt="Tableau des modèles et des prix affichant les détails de tarification pour &#x27;muse-wonder-1.0&#x27; et l&#x27;absence de prix annoncés pour &#x27;muse-wonder-full-1.0&#x27;." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000827_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:27</span>
+                        <span class="caption-text">Tableau des modèles et des prix affichant les détails de tarification pour &#x27;muse-wonder-1.0&#x27; et l&#x27;absence de prix annoncés pour &#x27;muse-wonder-full-1.0&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:33 - 00:09:11</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais au vu de ses performances, je pense vraiment qu&#x27;il sera proposé à un tarif premium une fois que ce sera annoncé. Si vous voulez simplement l&#x27;essayer sans vous engager dans un abonnement, vous pouvez passer directement par l&#x27;API du modèle ou même l&#x27;intégrer à vos outils existants via OpenRouter. Très bien, et regardez, au cours des prochaines années, deux types de traders existeront : ceux qui utilisent l&#x27;IA et ceux qui font encore tout manuellement. Même marché, des résultats très différents. Voici comment vous placer du bon côté. J&#x27;ai tout rassemblé au sein de la communauté AI TradeEdge. Chaque prompt, chaque bot, chaque modèle, chaque guide étape par étape que j&#x27;utilise personnellement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de Meta (Meta AI) et ses options de développement.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Cartes interactives présentant les options &#x27;Muse Code&#x27;, &#x27;Meta Model API&#x27; (accès direct et abordable) et &#x27;OpenRouter&#x27; pour intégrer les modèles dans des workflows existants.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et survol de la section &#x27;Meta Model API&#x27; sur le site de Meta.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000842_seg19.jpg" alt="Capture d&#x27;écran du site web de Meta montrant les options d&#x27;intégration de ses modèles d&#x27;IA, avec les sections &#x27;Muse Code&#x27;, &#x27;Meta Model API&#x27; et &#x27;OpenRouter&#x27;." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000842_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:42</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de Meta montrant les options d&#x27;intégration de ses modèles d&#x27;IA, avec les sections &#x27;Muse Code&#x27;, &#x27;Meta Model API&#x27; et &#x27;OpenRouter&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:11 - 00:09:47</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">tout au même endroit et tout ce que je construis à l&#x27;avenir est ajouté directement dans le groupe dès sa sortie. Nous testons également des stratégies provenant de tout l&#x27;internet, en les automatisant à l&#x27;aide de PineScript, en les exécutant en direct, et en partageant exactement ce qui fonctionne et ce qui ne fonctionne pas. Vous n&#x27;obtenez donc pas seulement des outils. Vous obtenez une opération de recherche en direct. À l&#x27;intérieur, il y a aussi un cours complet de trading agentique. 2,5 heures. Du débutant à l&#x27;expert. Aucune base en programmation n&#x27;est nécessaire. D&#x27;ici la fin, vous aurez votre propre système de trading par IA opérationnel en direct. Quelque chose que la plupart des traders particuliers ne savent même pas</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme Alex Carter Trading, TradingView (courtier Binance).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt de génération Pine Script v5 (RSI VWAP longueur 15, niveaux 10/90, Extreme Reversal Setup multiplicateur 3), graphique chandelier BTCUSD 2h (77 109,72 $), indicateur RSI-VWAP et boîte de statistiques de position/PnL non réalisé (-9 978,27 USD).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la structure de prompt IA pour générer le script Pine Script, puis affichage de l&#x27;exécution et des signaux de la stratégie sur un graphique de marché réel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000920_seg20.jpg" alt="Page web présentant le prompt pour Claude Code destiné à générer automatiquement un indicateur Pine Script v5 (RSI-VWAP et Extreme Reversal Setup)." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000920_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:20</span>
+                        <span class="caption-text">Page web présentant le prompt pour Claude Code destiné à générer automatiquement un indicateur Pine Script v5 (RSI-VWAP et Extreme Reversal Setup).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000929_seg20.jpg" alt="Graphique TradingView sur la paire BTC/USD en unités de 2 heures, affichant des signaux de trading automatisés et l&#x27;indicateur RSI-VWAP avec fenêtre de PnL." loading="lazy" onclick="openLightbox('../screenshots/nfr7IDbHKOQ/nfr7IDbHKOQ_000929_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:29</span>
+                        <span class="caption-text">Graphique TradingView sur la paire BTC/USD en unités de 2 heures, affichant des signaux de trading automatisés et l&#x27;indicateur RSI-VWAP avec fenêtre de PnL.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:47 - 00:10:05</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">possible dès maintenant. 79,99 $ par mois. Un seul bon trade le rembourse. Et les 100 premiers membres verrouillent ce tarif définitivement. Après cela, le prix augmente. Le lien est dans la description. Vous ne pouvez vraiment pas vous permettre de rater ça. Voilà donc l&#x27;analyse complète de Muse Wonder et Muse Wonderful.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de vente en ligne Whop.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification à 79,99 $/mois (réduction de 20 %), FAQ sur les outils de trading IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la page d&#x27;abonnement au service de trading.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:06 - 00:10:40</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce que c&#x27;est réellement, comment il se positionne face à la concurrence, les vrais chiffres de benchmark, les améliorations en matière de sécurité, et exactement ce que cela va vous coûter. Écoutez, je pense vraiment que c&#x27;est une étape véritablement majeure pour Meta. Le bond réalisé en seulement six semaines est franchement incroyable. Et les chiffres de généralisation sont la partie qui m&#x27;enthousiasme le plus pour la suite. Pas seulement les scores de benchmark sur lesquels tout le monde débat en ligne. Alors dites-moi dans les commentaires. Êtes-vous Team Claude, Team GPT, ou passez-vous à Trimuse Wonder ? Je suis curieux de voir ce que vous en pensez. Et si vous voulez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:40 - 00:10:56</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le guide complet étape par étape sur la façon de construire votre propre système de trading egenic en utilisant Claude, cette vidéo apparaît également à l&#x27;écran. Allez la voir ensuite. Quoi qu&#x27;il en soit, si cette vidéo a été utile, assurez-vous de l&#x27;aimer et de vous abonner pour plus d&#x27;analyses comme celle-ci. Je vous vois les gars dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une page de recherche Meta AI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Présentation du projet &#x27;Muse Kitchen&#x27; avec les contrôles de jeu (WASD, Espace, E, Shift).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur un site de recherche en intelligence artificielle, non pertinent pour le trading.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
