@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `2 / 186` (`1.1%`)
+- **Vidéos traitées** : `3 / 186` (`1.6%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -19,6 +19,7 @@
 | :--- | :--- | :--- | :--- | :--- | :---: |
 | 2026-10-15 | [mcOSG1gvCw0](https://www.youtube.com/watch?v=mcOSG1gvCw0) | **Comment créer concrètement une entreprise d'agents de recherche avec les Grok Bots (Tutoriel pour débutants)** | [2026-10-15_YT-[mcOSG1gvCw0]_Comment créer concrètement une entreprise d'agents de recherche avec les Grok Bo_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-10-15_YT-[mcOSG1gvCw0]_Comment créer concrètement une entreprise d'agents de recherche avec les Grok Bo_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-10-15_YT-[mcOSG1gvCw0]_Comment créer concrètement une entreprise d'agents de recherche avec les Grok Bo_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `59` |
 | 2026-10-13 | [nfr7IDbHKOQ](https://www.youtube.com/watch?v=nfr7IDbHKOQ) | **Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d'IA pour le trading ?** | [2026-10-13_YT-[nfr7IDbHKOQ]_Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d'IA pour le tradi_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-10-13_YT-[nfr7IDbHKOQ]_Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d'IA pour le tradi_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-10-13_YT-[nfr7IDbHKOQ]_Meta vient de lancer Muse Wonder... Est-ce le meilleur modèle d'IA pour le tradi_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `36` |
+| 2026-10-10 | [3Hh_ot2VgDc](https://www.youtube.com/watch?v=3Hh_ot2VgDc) | **I Found The Easiest Way To Automate My Entire Trading System Using Claude Code** | [2026-10-10_YT-[3Hh_ot2VgDc]_I Found The Easiest Way To Automate My Entire Trading System Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-10-10_YT-[3Hh_ot2VgDc]_I Found The Easiest Way To Automate My Entire Trading System Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-10-10_YT-[3Hh_ot2VgDc]_I Found The Easiest Way To Automate My Entire Trading System Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `46` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
