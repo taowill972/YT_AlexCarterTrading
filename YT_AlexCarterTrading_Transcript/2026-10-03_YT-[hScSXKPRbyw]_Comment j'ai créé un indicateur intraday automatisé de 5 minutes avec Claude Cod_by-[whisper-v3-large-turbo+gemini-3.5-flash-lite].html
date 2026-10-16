@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment j&#x27;ai créé un indicateur intraday automatisé de 5 minutes avec Claude Code (Tutoriel Débutant) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment j&#x27;ai créé un indicateur intraday automatisé de 5 minutes avec Claude Code (Tutoriel Débutant)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-03</span>
+                <span class="badge">⏱️ 00:10:17</span>
+                <span class="badge">🆔 <code>hScSXKPRbyw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=hScSXKPRbyw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo de la chaîne Alex Carter propose une méthode de day trading intraday sur un horizon de 5 minutes, conçue pour combler l'écart entre l'attente prolongée des placements à long terme et le stress intense du scalping à court terme. La stratégie repose sur la synergie de trois indicateurs techniques universels et accessibles : le VWAP (Volume Weighted Average Price) pour identifier le prix de juste valeur et repérer les extensions de marché, le RSI (14) agissant comme filtre de momentum pour confirmer les zones de surachat (>70) ou de survente (<30), et l'indicateur de volume couplé à une moyenne mobile sur 30 périodes pour valider la force institutionnelle du mouvement. Qu'il s'agisse de cryptomonnaies (Bitcoin, Ethereum, Solana), d'actions, de forex ou de contrats à terme, la configuration cherche à exploiter les retournements de tendance lorsque le prix casse le VWAP en direction opposée à son extension, appuyé par un volume significatif et un RSI sortant des extrêmes.<br><br>Au-delà de l'approche discrétionnaire manuelle, le cœur de la démonstration réside dans l'automatisation de cette stratégie sans aucune compétence en programmation. Grâce à l'utilisation de l'assistant IA Claude Code, l'auteur traduit la logique mathématique des indicateurs en un script Pine Script complet et fonctionnel pour TradingView. Le code généré permet de tracer automatiquement des triangles de signal (verts pour l'achat, rouges pour la vente) directement sur les bougies du graphique. En configurant des alertes automatisées, le trader s'affranchit de la surveillance constante des écrans, transformant une méthode technique classique en un système d'alerte ou d'exécution prêt pour le trading algorithmique.<br><br>Pour exécuter ces stratégies dans des conditions optimales, la vidéo met en avant des plateformes d'échange adaptées aux contrats à terme USDT-M, telles que Blowfin (sans KYC obligatoire pour le trading de base et généreux bonus de dépôt) et Mexi (alternatives aux paires variées avec un KYC rapide). L'architecture de la méthode intègre une gestion des risques rigoureuse basée sur une marge isolée pour limiter l'exposition, des leviers modérés de 5x à 10x pour les débutants, un placement de stop-loss au-delà du récent pivot déclencheur, et un ratio risque/rendement fixé entre 1:1,5 et 1:2. L'écosystème présenté débouche ainsi sur une transition fluide entre analyse technique, prototypage par intelligence artificielle et mise en place opérationnelle sur les marchés.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Claude Code** : Assistant de développement par intelligence artificielle utilisé pour traduire une stratégie de trading en langage Pine Script prêt à l'emploi.<br>* **TradingView** : Plateforme de graphisme boursier incontournable servant à l'analyse technique, au test des indicateurs et à l'exécution du code Pine Script via l'éditeur dédié.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView permettant de créer des indicateurs personnalisés, des scripts de backtesting et des alertes automatisées.<br>* **Blowfin** : Échangeur de cryptomonnaies orienté contrats à terme, privilégié pour son absence de KYC obligatoire pour le trading de base et ses bonus de dépôt.<br>* **Mexi** : Plateforme d'échange alternative offrant une grande profondeur de paires de trading, la bascule entre services centralisés et dérivés décentralisés, et des avantages pour les nouveaux utilisateurs.<br>* **VWAP (Volume Weighted Average Price)** : Indicateur technique de référence mesurant le prix moyen pondéré par le volume pour identifier la juste valeur institutionnelle de la session.<br>* **RSI (Relative Strength Index)** : Oscillateur de momentum standard paramétré sur une longueur de 14, utilisé pour filtrer les zones de surachat et de survente extrêmes.<br>* **Indicateur de Volume avec Moyenne Mobile (30 périodes)** : Outil de confirmation de tendance mesurant l'intensité des flux financiers par rapport à leur moyenne historique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Horizon temporel optimal** : L'utilisation d'unités de temps de 5 minutes offre un juste milieu idéal en day trading, permettant d'entrer et sortir de positions rapidement sans subir la pression psychologique et la réactivité extrême du scalping pur.<br>* **Universalité des marchés** : La configuration technique présentée ne se limite pas à un seul actif ; elle s'applique avec la même efficacité au Bitcoin, à l'Ethereum, à Solana, ainsi qu'aux marchés traditionnels du forex, des actions et des contrats à terme.<br>* **Logique du VWAP** : Le VWAP sert de boussole de juste valeur quotidienne. Lorsque le prix s'en écarte de manière significative, il se trouve en zone d'extension, préparant le terrain pour un retour opportun vers la moyenne.<br>* **Filtrage par le RSI** : Le RSI (14) confirme la validité du mouvement en s'assurant que le prix ne dessine pas une simple mèche aléatoire, mais qu'il atteint des seuils de survente (<30) ou de surachat (>70) avant d'amorcer son retournement.<br>* **Validation par le volume** : Aucune entrée n'est considérée comme valide sans l'approbation du volume ; la barre active doit obligatoirement dépasser la moyenne mobile des volumes sur 30 périodes dans la direction de la bougie pour attester d'une réelle implication des gros capitaux.<br>* **Configuration d'achat (Long)** : Un signal haussier est validé lorsque le prix évolue sous le VWAP puis le traverse à la hausse, que le RSI sort de la zone de survente (<30) en repartant vers le haut, et que le volume dépasse sa moyenne avec une bougie verte.<br>* **Configuration de vente (Short)** : Un signal baissier requiert un prix évoluant au-dessus du VWAP qui redescend en le traversant, un RSI sortant de la zone de surachat (>70) vers le bas, et un volume supérieur à sa moyenne couplé à une bougie rouge.<br>* **Gestion rigoureuse du risque** : L'utilisation exclusive de la marge isolée est fortement recommandée pour les débutants afin de compartimenter le risque et d'interdire toute contamination des pertes à l'ensemble du portefeuille.<br>* **Contrôle de l'effet de levier** : Pour préserver le capital lors de l'apprentissage, un effet de levier modéré compris entre 5x et 10x est conseillé sur les contrats à terme USDT-M, en attendant de maîtriser parfaitement la volatilité du sous-jacent.<br>* **Placement des stops et ratio R:R** : Le stop-loss doit être placé méthodiquement juste au-delà du récent point haut ou point bas déclencheur, en visant systématiquement un ratio risque/rendement minimal compris entre 1:1,5 et 1:2.<br>* **Prototypage par IA sans code** : L'intégration de Claude Code permet d'automatiser la traduction d'une stratégie textuelle en code Pine Script fonctionnel en quelques secondes, éliminant la barrière de la programmation informatique pour les traders particuliers.<br>* **Optimisation du temps par les alertes** : L'automatisation du traçage des signaux graphiques (triangles verts et rouges) couplée au système d'alertes de TradingView libère le trader de la surveillance obsessionnelle des écrans, garantissant une réactivité immédiate dès que toutes les conditions du setup sont réunies.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude Code</span><span class="tool-tag">TradingView</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Blowfin</span><span class="tool-tag">Mexi</span><span class="tool-tag">VWAP (Volume Weighted Average Price)</span><span class="tool-tag">RSI (Relative Strength Index)</span><span class="tool-tag">Indicateur de Volume avec Moyenne Mobile (30 périodes)</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Horizon temporel optimal** : L&#x27;utilisation d&#x27;unités de temps de 5 minutes offre un juste milieu idéal en day trading, permettant d&#x27;entrer et sortir de positions rapidement sans subir la pression psychologique et la réactivité extrême du scalping pur.</span></li><li><span class="point-bullet">✦</span><span>Universalité des marchés** : La configuration technique présentée ne se limite pas à un seul actif ; elle s&#x27;applique avec la même efficacité au Bitcoin, à l&#x27;Ethereum, à Solana, ainsi qu&#x27;aux marchés traditionnels du forex, des actions et des contrats à terme.</span></li><li><span class="point-bullet">✦</span><span>Logique du VWAP** : Le VWAP sert de boussole de juste valeur quotidienne. Lorsque le prix s&#x27;en écarte de manière significative, il se trouve en zone d&#x27;extension, préparant le terrain pour un retour opportun vers la moyenne.</span></li><li><span class="point-bullet">✦</span><span>Filtrage par le RSI** : Le RSI (14) confirme la validité du mouvement en s&#x27;assurant que le prix ne dessine pas une simple mèche aléatoire, mais qu&#x27;il atteint des seuils de survente (&lt;30) ou de surachat (&gt;70) avant d&#x27;amorcer son retournement.</span></li><li><span class="point-bullet">✦</span><span>Validation par le volume** : Aucune entrée n&#x27;est considérée comme valide sans l&#x27;approbation du volume ; la barre active doit obligatoirement dépasser la moyenne mobile des volumes sur 30 périodes dans la direction de la bougie pour attester d&#x27;une réelle implication des gros capitaux.</span></li><li><span class="point-bullet">✦</span><span>Configuration d&#x27;achat (Long)** : Un signal haussier est validé lorsque le prix évolue sous le VWAP puis le traverse à la hausse, que le RSI sort de la zone de survente (&lt;30) en repartant vers le haut, et que le volume dépasse sa moyenne avec une bougie verte.</span></li><li><span class="point-bullet">✦</span><span>Configuration de vente (Short)** : Un signal baissier requiert un prix évoluant au-dessus du VWAP qui redescend en le traversant, un RSI sortant de la zone de surachat (&gt;70) vers le bas, et un volume supérieur à sa moyenne couplé à une bougie rouge.</span></li><li><span class="point-bullet">✦</span><span>Gestion rigoureuse du risque** : L&#x27;utilisation exclusive de la marge isolée est fortement recommandée pour les débutants afin de compartimenter le risque et d&#x27;interdire toute contamination des pertes à l&#x27;ensemble du portefeuille.</span></li><li><span class="point-bullet">✦</span><span>Contrôle de l&#x27;effet de levier** : Pour préserver le capital lors de l&#x27;apprentissage, un effet de levier modéré compris entre 5x et 10x est conseillé sur les contrats à terme USDT-M, en attendant de maîtriser parfaitement la volatilité du sous-jacent.</span></li><li><span class="point-bullet">✦</span><span>Placement des stops et ratio R:R** : Le stop-loss doit être placé méthodiquement juste au-delà du récent point haut ou point bas déclencheur, en visant systématiquement un ratio risque/rendement minimal compris entre 1:1,5 et 1:2.</span></li><li><span class="point-bullet">✦</span><span>Prototypage par IA sans code** : L&#x27;intégration de Claude Code permet d&#x27;automatiser la traduction d&#x27;une stratégie textuelle en code Pine Script fonctionnel en quelques secondes, éliminant la barrière de la programmation informatique pour les traders particuliers.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:33</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous ne supportez pas d&#x27;attendre des jours qu&#x27;un placement se concrétise, mais que vous ne voulez pas non plus du stress d&#x27;être un spéculateur à court terme invétéré, il y a en fait un juste milieu. Cela s&#x27;appelle le day trading, où vous entrez et sortez en quelques minutes, et non en quelques jours, mais sans la pression du temps de réaction d&#x27;un scalpeur. Donc, dans cette vidéo, je vais vous donner une stratégie de day trading de cinq minutes utilisant seulement trois indicateurs auxquels vous avez probablement déjà accès. Cette stratégie fonctionne sur n&#x27;importe quel marché. Donc, que vous fassiez du crypto, des actions, du forex ou des contrats à terme, celle-ci est pour vous. Et restez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading BloFin intégrée avec les graphiques TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers du Bitcoin/USDT montrant l&#x27;évolution des prix sur une période intrajournalière avec des fluctuations baissières puis haussières, affichant les prix en temps réel (autour de 83 675.5 USDT) et la barre d&#x27;outils graphique en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation et analyse d&#x27;un graphique en chandeliers sur l&#x27;unité de temps de 5 minutes pour illustrer le concept de day trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000008_seg1.jpg" alt="Capture d&#x27;écran montrant un graphique de trading en chandeliers japonais pour le contrat perpetual Bitcoin/USDT sur l&#x27;exchange BloFin, avec une unité de temps à 5 minutes." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000008_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un graphique de trading en chandeliers japonais pour le contrat perpetual Bitcoin/USDT sur l&#x27;exchange BloFin, avec une unité de temps à 5 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:01:09</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">autour parce que à la fin je vais vous montrer comment transformer toute cette stratégie manuelle en un système entièrement automatisé qui trace vos entrées pour vous. Aucun codage requis. Donc sans plus attendre, entrons dans le vif du sujet. Très bien les gars, étape numéro une, choisir le bon échangeur crypto. Pour cette stratégie, nous allons utiliser Blowfin comme notre plateforme principale. Blowfin n&#x27;exige pas de vérification KYC obligatoire pour le trading de base, ce qui signifie que vous pouvez commencer à trader immédiatement. De plus, les nouveaux utilisateurs peuvent gagner jusqu&#x27;à 5 000 USDT grâce à des bonus de dépôt et de volume de trading. Maintenant, si vous voulez un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (Pine Editor, graphique de prix), plateforme d&#x27;échange BloFin, site web informatif Crypto Vanguards.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source Pine Script v5 pour l&#x27;automatisation des entrées et alertes de trading, formulaire d&#x27;inscription BloFin, article informatif sur les règles KYC.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage du code de script de trading et présentation des interfaces d&#x27;échange et de documentation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000042_seg2.jpg" alt="Écran divisé montrant un graphique des prix Bitcoin/USD à gauche et l&#x27;éditeur Pine Script de TradingView à droite avec du code de stratégie de trading." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000042_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Écran divisé montrant un graphique des prix Bitcoin/USD à gauche et l&#x27;éditeur Pine Script de TradingView à droite avec du code de stratégie de trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000051_seg2.jpg" alt="Page d&#x27;inscription de l&#x27;échange de cryptomonnaies BloFin avec une offre de bonus de bienvenue." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000051_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Page d&#x27;inscription de l&#x27;échange de cryptomonnaies BloFin avec une offre de bonus de bienvenue.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:09 - 00:01:38</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">alternative avec encore plus de paires de trading et la possibilité de basculer entre les fonctionnalités d&#x27;un échange centralisé et le trading de contrats perpétuels décentralisés, vous pouvez utiliser Mexi. Ils offrent jusqu&#x27;à 10 000 USDT de bonus pour les nouveaux utilisateurs en ce moment. Les deux plateformes fonctionnent parfaitement pour cette stratégie, alors choisissez celle qui correspond le mieux à vos besoins. Pour vous inscrire sur Blofen, cliquez sur le premier lien dans la description. Vous serez redirigé vers la page d&#x27;inscription où il vous suffit d&#x27;entrer vos informations et de créer un compte. Aucun KYC n&#x27;est nécessaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> MEXC, BloFin</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de trading, capitalisation boursière, graphique des prix BTCUSDT (Timeframe 5m), carnet d&#x27;ordres, formulaire d&#x27;inscription.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur les plateformes de cryptomonnaies MEXC et BloFin, présentation des paires de trading et des bonus d&#x27;inscription.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000116_seg3.jpg" alt="Interface de la plateforme MEXC affichant le tableau des paires de trading et le marché des tokens (Alpha)." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000116_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Interface de la plateforme MEXC affichant le tableau des paires de trading et le marché des tokens (Alpha).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000124_seg3.jpg" alt="Interface de trading de la plateforme BloFin avec un graphique des prix BTCUSDT en bougies japonaises et le carnet d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000124_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Interface de trading de la plateforme BloFin avec un graphique des prix BTCUSDT en bougies japonaises et le carnet d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000131_seg3.jpg" alt="Page d&#x27;inscription de la plateforme BloFin avec une offre de bonus de bienvenue en partenariat avec Mister Crypto." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000131_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme BloFin avec une offre de bonus de bienvenue en partenariat avec Mister Crypto.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:02:12</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez commencer à trader immédiatement. Si vous préférez Mexi, utilisez le deuxième lien ci-dessous. Vous devrez effectuer une vérification KYC rapide sur Mexi, mais c&#x27;est rapide et sécurisé. Personnellement, j&#x27;ai des comptes sur les deux plateformes selon ce que je trade. L&#x27;étape numéro deux consiste à déposer des fonds. Laissez-moi vous montrer comment faire cela rapidement avant de passer à la stratégie. Une fois connecté à votre plateforme, cliquez sur actifs en haut à droite, puis choisissez aperçu. Une fois sur la page d&#x27;aperçu, cliquez sur dépôt. Choisissez la coin que vous souhaitez déposer. Je recommande l&#x27;USDT et sélectionnez la bonne</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échanges de cryptomonnaies MEXC et BloFin (interfaces web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaires d&#x27;inscription, liens de parrainage, offres de bonus de bienvenue (10 000 USDT) et bannières promotionnelles de plateformes de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des plateformes partenaires mentionnées dans le segment audio (Mexi/MEXC et BloFin) pour l&#x27;ouverture de comptes de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000147_seg4.jpg" alt="Interface d&#x27;inscription de la plateforme d&#x27;échange MEXC montrant un formulaire avec des options de connexion par email, téléphone ou services tiers, ainsi qu&#x27;une offre promotionnelle de 10 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000147_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Interface d&#x27;inscription de la plateforme d&#x27;échange MEXC montrant un formulaire avec des options de connexion par email, téléphone ou services tiers, ainsi qu&#x27;une offre promotionnelle de 10 000 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000155_seg4.jpg" alt="Page d&#x27;accueil de la plateforme BloFin intitulée &quot;BloFin - Where Whales are Made&quot;, affichant les menus de navigation (Buy Crypto, Markets, Futures, Copy Trading) et un bouton &quot;Trade Now&quot;." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000155_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme BloFin intitulée &quot;BloFin - Where Whales are Made&quot;, affichant les menus de navigation (Buy Crypto, Markets, Futures, Copy Trading) et un bouton &quot;Trade Now&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:12 - 00:02:45</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">réseau blockchain. Assurez-vous de choisir le bon réseau pour éviter de perdre vos fonds. Confirmez les détails, puis scannez le code QR ou copiez l&#x27;adresse de dépôt pour transférer vos fonds depuis votre portefeuille ou un autre échange. Si vous souhaitez déposer en monnaie fiat, cherchez l&#x27;option d&#x27;achat de crypto en haut du menu, puis sélectionnez l&#x27;achat rapide. Choisissez votre devise, entrez le montant, sélectionnez votre mode de paiement et cliquez sur continuer. Une fois vos fonds déposés, il est temps d&#x27;ouvrir une position. L&#x27;étape numéro trois consiste à ouvrir votre première position. Survolez les contrats à terme</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Blofin (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de dépôt de cryptomonnaies (Réseau TRC20, adresse de dépôt, code QR) et options de paiement en monnaie fiat (Google Pay, SEPA, SWIFT, Simplex, Alchemy).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus de dépôt de cryptomonnaies et de sélection des options de paiement en monnaie fiat sur l&#x27;échange Blofin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000221_seg5.jpg" alt="Interface de la plateforme Blofin montrant les détails d&#x27;un dépôt de cryptomonnaie avec le réseau Tron (TRC20), un code QR et l&#x27;adresse de dépôt, ainsi qu&#x27;une notification de succès de copie." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000221_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:21</span>
+                        <span class="caption-text">Interface de la plateforme Blofin montrant les détails d&#x27;un dépôt de cryptomonnaie avec le réseau Tron (TRC20), un code QR et l&#x27;adresse de dépôt, ainsi qu&#x27;une notification de succès de copie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000229_seg5.jpg" alt="Page d&#x27;accueil de la plateforme Blofin avec un menu déroulant ouvert sous l&#x27;onglet &quot;Buy Crypto&quot;, proposant les options &quot;Quick Buy&quot;, &quot;Bank Transfer&quot; et &quot;Crypto Deposit&quot;." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000229_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:29</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Blofin avec un menu déroulant ouvert sous l&#x27;onglet &quot;Buy Crypto&quot;, proposant les options &quot;Quick Buy&quot;, &quot;Bank Transfer&quot; et &quot;Crypto Deposit&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000237_seg5.jpg" alt="Fenêtre de sélection des méthodes de paiement fiat sur Blofin, affichant Google Pay, les virements bancaires (SEPA, SWIFT) et des options de tiers comme Simplex ou Alchemy." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000237_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Fenêtre de sélection des méthodes de paiement fiat sur Blofin, affichant Google Pay, les virements bancaires (SEPA, SWIFT) et des options de tiers comme Simplex ou Alchemy.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:45 - 00:03:21</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">dans le menu supérieur, puis sélectionnez les contrats futures USDT-M. Cela vous mènera à l&#x27;interface de trading où toute la magie opère. Choisissez l&#x27;actif que vous souhaitez négocier dans le coin supérieur gauche. Pour cet exemple, j&#x27;utiliserai Bitcoin, BTC slash USDT, mais cette stratégie fonctionne sur n&#x27;importe quelle paire crypto. Après cela, sélectionnez votre type d&#x27;ordre, limite ou marché. Pour les débutants, je recommande de commencer par des ordres au marché pour une exécution instantanée. Ensuite, choisissez votre type de effet de levier. Vous pouvez utiliser la marge croisée ou la marge isolée. Personnellement, j&#x27;utilise toujours la marge isolée car elle limite votre risque uniquement à cette spécifique</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BloFin (interface Futures USDT-M)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais BTC/USDT Perpetuel (unité de temps 5m), carnet d&#x27;ordres en temps réel, panneau de passage d&#x27;ordres (Limit/Market/Trigger, effet de levier 5x, mode Isolé)</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme et sélection de la paire BTC/USDT pour préparer la stratégie de trading futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000254_seg6.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading de l&#x27;échange BloFin montrant le graphique du Bitcoin (BTC/USDT) en unités de 5 minutes, avec le carnet d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000254_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:54</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading de l&#x27;échange BloFin montrant le graphique du Bitcoin (BTC/USDT) en unités de 5 minutes, avec le carnet d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:21 - 00:03:58</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">position. Si le trade tourne mal, vous ne perdez que ce que vous avez mis dans le trade. Vous pouvez utiliser un effet de levier élevé sur ces plateformes, mais pour les débutants, je recommande de commencer par un effet de levier de cinq à dix fois jusqu&#x27;à ce que vous soyez à l&#x27;aise avec les mouvements du marché. Entrez les détails de votre trade, vérifiez que tout est correct, puis cliquez sur acheter à long terme ou vendre à découvert pour ouvrir votre position. Une fois votre ordre exécuté, vous pouvez le voir sous l&#x27;onglet des positions au bas de l&#x27;écran. Maintenant que vous savez comment naviguer sur la plateforme, passons à la stratégie proprement dite qui peut vous faire gagner 100 dollars par jour. Très bien, voici donc la stratégie elle-même et je veux vous montrer exactement quoi ajouter à votre graphique et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin (plateforme d&#x27;échange crypto) et graphique TradingView intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpétuel, effet de levier 5x, carnet d&#x27;ordres, panneau de gestion des positions (marge isolée, prix d&#x27;entrée, PnL).</p>
+                        <p><strong>Action / Démonstration :</strong> Ajustement de l&#x27;effet de levier à 5x, puis ouverture d&#x27;une position longue (&quot;Buy long&quot;) sur le BTCUSDT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000331_seg7.jpg" alt="Fenêtre de réglage de l&#x27;effet de levier sur la plateforme BloFin, positionnée sur 5x." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000331_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:31</span>
+                        <span class="caption-text">Fenêtre de réglage de l&#x27;effet de levier sur la plateforme BloFin, positionnée sur 5x.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000340_seg7.jpg" alt="Interface de trading de BloFin montrant le graphique du BTCUSDT et le panneau de passage d&#x27;ordre avec le bouton &quot;Buy long&quot;." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000340_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Interface de trading de BloFin montrant le graphique du BTCUSDT et le panneau de passage d&#x27;ordre avec le bouton &quot;Buy long&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000349_seg7.jpg" alt="Tableau des positions ouvertes sur BloFin affichant un contrat BTCUSDT actif avec un effet de levier de 5x." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000349_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:49</span>
+                        <span class="caption-text">Tableau des positions ouvertes sur BloFin affichant un contrat BTCUSDT actif avec un effet de levier de 5x.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:58 - 00:04:30</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ce que vous recherchez avant d&#x27;automatiser quoi que ce soit. Nous utilisons trois indicateurs ensemble. Tous existent déjà sur TradingView, vous n&#x27;avez encore besoin de rien de personnalisé. C&#x27;est une version manuelle et une fois que vous l&#x27;aurez comprise, l&#x27;automatiser avec Claude aura beaucoup plus de sens. Donc si vous n&#x27;avez pas encore TradingView, cliquez sur le lien dans la description ci-dessous. Si vous achetez la version pro, vous obtiendrez une réduction et cela aidera grandement la chaîne. Le premier indicateur est le prix moyen pondéré par le volume. Recherchez VWAP dans la bibliothèque d&#x27;indicateurs de TradingView et ajoutez-le à votre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Blofin, YouTube.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de prix du Bitcoin (BTC/USDT perpétuel en timeframe 5 minutes), indicateurs techniques standards sur TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse visuelle des graphiques de trading et présentation de la configuration des indicateurs avant automatisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000406_seg8.jpg" alt="Graphique TradingView affichant Bitcoin/USD Tether sur l&#x27;exchange Blofin avec des indicateurs de volume et de momentum (RSI) dans les sous-fenêtres." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000406_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Graphique TradingView affichant Bitcoin/USD Tether sur l&#x27;exchange Blofin avec des indicateurs de volume et de momentum (RSI) dans les sous-fenêtres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000422_seg8.jpg" alt="Graphique TradingView en chandeliers japonais centré sur les mouvements de prix récents du Bitcoin/USD Tether avec curseur réticule." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000422_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:22</span>
+                        <span class="caption-text">Graphique TradingView en chandeliers japonais centré sur les mouvements de prix récents du Bitcoin/USD Tether avec curseur réticule.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:30 - 00:05:08</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">graphique. Laissez-le sur les paramètres de session ou ancré pour qu&#x27;il se réinitialise chaque jour. Le VWAP vous indique le prix de juste valeur pour la journée basé sur le volume. Lorsque le prix se négocie bien au-dessus ou en dessous du VWAP, il est étiré, et c&#x27;est exactement le genre d&#x27;extrême contre lequel nous voulons trader sur un graphique de cinq minutes. Ensuite, ajoutez le RSI standard avec une longueur de 14. C&#x27;est notre filtre de momentum. Nous cherchons à ce que le RSI soit suracheté au-dessus de 70 ou oversold en dessous de 30 pour confirmer que le mouvement est étiré et pas seulement une mèche aléatoire loin du VWAP. Ensuite, ajoutez l&#x27;indicateur de volume standard avec une moyenne mobile sur 30 périodes tracée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading BloFin (graphique TradingView intégré)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT en unité de temps 5 minutes, indicateur VWAP Session (ligne blanche), prix actuel autour de 84 062,9 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique de l&#x27;action des prix par rapport au VWAP journalier pour identifier les zones de juste valeur et les écarts de prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000440_seg9.jpg" alt="Graphique en chandeliers japonais du contrat perpétuel Bitcoin/USDT sur l&#x27;interface de trading BloFin avec l&#x27;indicateur VWAP affiché." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000440_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:40</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du contrat perpétuel Bitcoin/USDT sur l&#x27;interface de trading BloFin avec l&#x27;indicateur VWAP affiché.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:08 - 00:05:30</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en blanc. Tout comme avant, nous ne cherchons pas un volume élevé en général. Nous voulons un volume supérieur à cette moyenne de 30 périodes et qui correspond à la direction de la bougie. Ainsi, nous savons que de l&#x27;argent réel soutient le mouvement et qu&#x27;il ne s&#x27;agit pas seulement de bruit. Pour une configuration acheteuse, vous devez vérifier si le prix se négocie en dessous du VWAP et s&#x27;il remonte à travers celui-ci. Et un RSI qui sort de la zone de survente, c&#x27;est-à-dire en dessous de 30, et qui repart à la hausse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading TradingView intégrée à la plateforme d&#x27;échange BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix Bitcoin (BTC/USD Perpétuel) en unités de 5 minutes, indicateur VWAP, histogramme de volume avec moyenne mobile sur 30 périodes, et oscillateur RSI (14 périodes).</p>
+                        <p><strong>Action / Démonstration :</strong> Explication de la corrélation entre les mouvements de prix, la direction des bougies et les pics de volume supérieurs à la moyenne mobile.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000513_seg10.jpg" alt="Graphique en chandeliers japonais illustrant l&#x27;analyse du volume de trading et du RSI sur l&#x27;actif Bitcoin." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000513_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:13</span>
+                        <span class="caption-text">Graphique en chandeliers japonais illustrant l&#x27;analyse du volume de trading et du RSI sur l&#x27;actif Bitcoin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:30 - 00:06:03</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La barre de volume actuelle doit être au-dessus de la moyenne mobile du volume et la bougie est verte. Pour un scénario de vente à découvert, le prix doit évoluer au-dessus du VWAP et redescendre en le traversant. Un RSI sort de la zone de surachat, c&#x27;est-à-dire au-dessus de 70, et redescend. Et la barre de volume actuelle est au-dessus de la moyenne mobile du volume et la bougie est rouge. Lorsque ces trois éléments s&#x27;alignent en même temps, c&#x27;est votre signal. J&#x27;utilise Bitcoin USDT pour cet exemple car c&#x27;est la paire la plus liquide et les données de volume sont propres, mais cette configuration exacte fonctionne sur Ethereum, Solana, ou vraiment n&#x27;importe quel</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading (plateforme BloFin / TradingView)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers (Bitcoin/USD Tether Perpetual Swap), indicateur de volume avec moyenne mobile, indicateur RSI dans le panneau inférieur, et lignes de VWAP.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique illustrant le scénario de vente à découvert avec le croisement du VWAP et le RSI sortant de la zone de surachat.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000539_seg11.jpg" alt="Un graphique de trading montrant les prix du Bitcoin, les volumes et un indicateur RSI sur une interface de type TradingView / BloFin, avec une zone cerclée au niveau d&#x27;un sommet de prix." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000539_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:39</span>
+                        <span class="caption-text">Un graphique de trading montrant les prix du Bitcoin, les volumes et un indicateur RSI sur une interface de type TradingView / BloFin, avec une zone cerclée au niveau d&#x27;un sommet de prix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:03 - 00:06:21</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">paire liquide. La logique ne change pas. Pour la gestion des risques, je fais simple. Un stop loss juste au-delà du récent plus haut ou plus bas qui a déclenché la configuration. Et je cherche un ratio risque/rendement d&#x27;au moins 1 pour 1,5 à 1 pour 2. Donc maintenant, vous comprenez exactement comment cette stratégie fonctionne manuellement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de trading intégré (interface type TradingView / BloFin)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT (intervalle 5m), outils de gestion du risque (stop-loss et take-profit avec ratio RR affiché à 1:1.68 ou similaire), histogrammes de volume, et oscillateur RSI en sous-fenêtre.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et visualisation d&#x27;un trade avec placement du stop loss au-delà du récent plus haut et définition d&#x27;un ratio risque/rendement cible.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000608_seg12.jpg" alt="Un graphique en chandeliers japonais montrant la paire Bitcoin/USD (contrat perpétuel Tether) sur l&#x27;exchange BloFin, avec un outil de position (long/short) affichant un ratio risque/rendement, ainsi que des volumes et un indicateur technique de type RSI en bas." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000608_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:08</span>
+                        <span class="caption-text">Un graphique en chandeliers japonais montrant la paire Bitcoin/USD (contrat perpétuel Tether) sur l&#x27;exchange BloFin, avec un outil de position (long/short) affichant un ratio risque/rendement, ainsi que des volumes et un indicateur technique de type RSI en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:22 - 00:06:40</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais c&#x27;est là que ça devient vraiment intéressant. Au lieu de regarder des graphiques toute la journée et de faire ça manuellement, j&#x27;ai donné cette stratégie exacte à Claude et je lui ai demandé de m&#x27;écrire un PineScript complet. Comme ça, TradingView peut détecter automatiquement ces signaux pour moi. Et voici le prompt que j&#x27;utilise. Je vais l&#x27;afficher à l&#x27;écran dès maintenant pour que vous puissiez le copier exactement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, BloFin, interface CLI Claude Code (terminal).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Contrat perpétuel BTC/USDT, indicateur VWAP, RSI (période 14), volume avec moyenne mobile, code Pine Script généré via un prompt IA combinant plusieurs conditions techniques (VWAP, RSI suracheté/survendu, volume).</p>
+                        <p><strong>Action / Démonstration :</strong> Passage d&#x27;une analyse technique manuelle à l&#x27;utilisation de l&#x27;assistant IA Claude pour rédiger un script Pine personnalisé, puis visualisation du résultat avec les signaux d&#x27;achat et de vente automatiques sur le graphique TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000626_seg13.jpg" alt="Graphique TradingView (Bitcoin / USD Tether Perpetual Swap Contract sur BloFin en unité 5 minutes) montrant les chandeliers, le volume et le RSI inférieur avec des annotations jaunes manuscrites." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000626_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:26</span>
+                        <span class="caption-text">Graphique TradingView (Bitcoin / USD Tether Perpetual Swap Contract sur BloFin en unité 5 minutes) montrant les chandeliers, le volume et le RSI inférieur avec des annotations jaunes manuscrites.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000631_seg13.jpg" alt="Interface en ligne de commande de l&#x27;outil &quot;Claude Code&quot; (version v2.1.272, Claude Pro) affichant un prompt détaillé pour la génération d&#x27;un indicateur Pine Script v5 combinant VWAP, RSI et Volume." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000631_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Interface en ligne de commande de l&#x27;outil &quot;Claude Code&quot; (version v2.1.272, Claude Pro) affichant un prompt détaillé pour la génération d&#x27;un indicateur Pine Script v5 combinant VWAP, RSI et Volume.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000636_seg13.jpg" alt="Graphique TradingView sur l&#x27;unité 5 minutes affichant désormais la stratégie automatisée avec des indicateurs visuels d&#x27;achat (triangles verts &quot;BUY&quot;) et de vente (triangles rouges &quot;SELL&quot;) générés par le script Pine personnalisé." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000636_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:36</span>
+                        <span class="caption-text">Graphique TradingView sur l&#x27;unité 5 minutes affichant désormais la stratégie automatisée avec des indicateurs visuels d&#x27;achat (triangles verts &quot;BUY&quot;) et de vente (triangles rouges &quot;SELL&quot;) générés par le script Pine personnalisé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:41 - 00:07:00</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est tout. C&#x27;est le prompt complet. Vous collez ça dans Claude. J&#x27;utilise Claude Code ici. Et en quelques secondes, il crache un PineScript complet et fonctionnel dans un fichier Bloc-notes. Maintenant, ce prompt exact, ainsi que le script Pine utilisé dans cette vidéo, est disponible dans mon groupe privé. Vous trouverez le lien ci-dessous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Claude Code (CLI), Explorateur de fichiers Windows, Navigateur web (site Alex Carter Trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt complet pour un indicateur Pine Script (v5) combinant VWAP, RSI (14) et Volume, liste de fichiers de stratégie de trading, et explications textuelles sur le site web.
+[DESC_ACTION] Présentation du prompt utilisé dans Claude Code, de l&#x27;arborescence des fichiers générés et de la plateforme web de la communauté.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000646_seg14.jpg" alt="Capture d&#x27;un terminal de commande affichant Claude Code avec un prompt détaillé pour créer un indicateur Pine Script combinant VWAP, RSI et Volume." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000646_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:46</span>
+                        <span class="caption-text">Capture d&#x27;un terminal de commande affichant Claude Code avec un prompt détaillé pour créer un indicateur Pine Script combinant VWAP, RSI et Volume.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000650_seg14.jpg" alt="Explorateur de fichiers Windows montrant le dossier &#x27;Claude Trading Telegram&#x27; contenant divers scripts de stratégie de trading et documents texte (ex. VWAP_RSI_VOL_5m Intraday Strategy)." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000650_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:50</span>
+                        <span class="caption-text">Explorateur de fichiers Windows montrant le dossier &#x27;Claude Trading Telegram&#x27; contenant divers scripts de stratégie de trading et documents texte (ex. VWAP_RSI_VOL_5m Intraday Strategy).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000655_seg14.jpg" alt="Capture du site web &#x27;Alex Carter Trading&#x27; montrant la section &#x27;How It Works&#x27; expliquant la logique des indicateurs (RSI VWAP, Extreme Reversal Setup, Buy Signal)." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000655_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:55</span>
+                        <span class="caption-text">Capture du site web &#x27;Alex Carter Trading&#x27; montrant la section &#x27;How It Works&#x27; expliquant la logique des indicateurs (RSI VWAP, Extreme Reversal Setup, Buy Signal).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:00 - 00:07:18</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ouvrez le fichier bloc-notes, appuyez sur Ctrl plus A pour sélectionner tout le code, puis sur Ctrl plus C pour le copier. C&#x27;est tout ce dont vous avez besoin. Maintenant, mettons-le dans TradingView. Ouvrez TradingView et allez sur n&#x27;importe quel graphique. Je vais utiliser à nouveau le Bitcoin. En bas à droite de l&#x27;écran, cliquez sur l&#x27;onglet Éditeur Pine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bloc-notes Windows et plateforme de graphiques financiers TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source en langage Pine Script (ou similaire) dans le Bloc-notes, et graphique de prix en chandeliers pour Bitcoin (BTC/USDT) sur TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du code source dans le Bloc-notes pour le copier, puis affichage du graphique vierge de Bitcoin sur TradingView pour y intégrer le script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000704_seg15.jpg" alt="Image montrant un fichier Bloc-notes ouvert avec du code source en cours de sélection (surligné en bleu)." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000704_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:04</span>
+                        <span class="caption-text">Image montrant un fichier Bloc-notes ouvert avec du code source en cours de sélection (surligné en bleu).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000713_seg15.jpg" alt="Image montrant l&#x27;interface d&#x27;un graphique TradingView avec une paire de trading Bitcoin sur un échange." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000713_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:13</span>
+                        <span class="caption-text">Image montrant l&#x27;interface d&#x27;un graphique TradingView avec une paire de trading Bitcoin sur un échange.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:18 - 00:07:53</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que l&#x27;éditeur est ouvert, vous y verrez du code par défaut. Sélectionnez tout, supprimez-le, et collez ce code de script Pine. Cliquez maintenant sur Ajouter au graphique. C&#x27;est le bouton tout en haut de l&#x27;éditeur Pine. TradingView va compiler le script et l&#x27;appliquer directement sur votre graphique. Et voilà. Vous pouvez voir les signaux d&#x27;achat et de vente tracés automatiquement directement sur les bougies. Des triangles verts pour les positions acheteuses, des triangles rouges pour les positions vendeuses, tout se déclenche exactement de la manière dont nous l&#x27;avons configuré manuellement. Maintenant, une fois que vous l&#x27;avez réglé et que vous êtes prêt à configurer une alerte pour ne jamais rater un mouvement, cliquez sur l&#x27;icône du réveil tout en haut de TradingView.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, éditeur Pine Script, graphique de trading Blofin (Bitcoin/USD Tether Perpetual Swap).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source Pine Script affichant des fonctions de stratégie, des conditions d&#x27;entrée/sortie (longEntry, shortEntry) et des configurations d&#x27;alertes.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur clique sur le bouton &quot;Ajouter au graphique&quot; (&quot;Add to chart&quot;) pour compiler et appliquer la stratégie au graphique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000727_seg16.jpg" alt="Interface divisée en deux montrant un graphique de prix Bitcoin à gauche et l&#x27;éditeur Pine Script de TradingView à droite avec du code source." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000727_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:27</span>
+                        <span class="caption-text">Interface divisée en deux montrant un graphique de prix Bitcoin à gauche et l&#x27;éditeur Pine Script de TradingView à droite avec du code source.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:53 - 00:08:29</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vue ou faites un clic droit sur l&#x27;une des formes de signal, sélectionnez &quot;ajouter une alerte&quot; et définissez vos conditions. TradingView vous avertira dès qu&#x27;un signal se déclenche, directement sur votre téléphone. Donc, au lieu de fixer l&#x27;écran pendant des heures en attendant un croisement, le code fait tout le travail difficile pour vous. Dès que toutes vos conditions s&#x27;alignent parfaitement, boum, vous recevez une alerte, vous exécutez et c&#x27;est tout. Maintenant, si vous voulez aller encore plus loin et faire en sorte qu&#x27;il s&#x27;exécute et ouvre des trades automatiquement sur votre exchange dès qu&#x27;un signal se déclenche, je m&#x27;occupe de vous. J&#x27;ai créé un groupe privé où je partage tous mes cas d&#x27;utilisation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (Graphique de trading en ligne).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers du Bitcoin affichant des signaux d&#x27;achat (triangles verts) et de vente (triangles rouges), ainsi qu&#x27;une liste d&#x27;alertes actives dans le panneau latéral droit.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et visualisation des alertes de trading pour automatiser la surveillance des signaux sur le graphique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000802_seg17.jpg" alt="Capture d&#x27;écran d&#x27;un graphique TradingView sur la paire BITCOIN/USD avec un panneau d&#x27;alertes ouvert sur le côté droit." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000802_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:02</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un graphique TradingView sur la paire BITCOIN/USD avec un panneau d&#x27;alertes ouvert sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:29 - 00:09:03</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour Claude Code, de son intégration avec Telegram, TradingView, et de la recherche de baleines sur Hyperliquid. Le tout automatiquement. Tout ce que je vous ai montré aujourd&#x27;hui, tout est dans le groupe. Et j&#x27;ajoute constamment de nouvelles choses, de nouvelles stratégies, de nouveaux prompts, de nouvelles intégrations. Chaque fois que je construis quelque chose de nouveau, ça va directement là-dedans. Le prix est de 79,99 $ par mois. Et honnêtement, quand on y pense, ce que c&#x27;est vraiment, la configuration de trading par IA la plus avancée disponible pour les traders particuliers en ce moment, constamment mise à jour avec tout inclus. À l&#x27;intérieur, il y a aussi un cours complet de trading agentique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des pages de documentation et de vente (Whop).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes décrivant les fonctionnalités (Chart Reading, Chart Control, Pine Script, Multi-Chart &amp; Watchlist) et offre d&#x27;abonnement.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation commerciale de la communauté et des fonctionnalités du système d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:04 - 00:09:24</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">2 heures et demie. Du niveau débutant à expert. Aucune expérience en programmation requise. À la fin, vous aurez votre propre système de trading par IA opérationnel en direct. Quelque chose que la plupart des traders particuliers ne savent même pas être possible actuellement. 79,99 $ par mois. Un seul bon trade le rentabilise. Et les 100 premiers membres bloquent ce tarif définitivement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de formation en ligne et interface de vente Whop.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Intitulés des modules de formation sur l&#x27;IA et le trading, descriptions techniques des leçons, et tarifs de l&#x27;abonnement.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du programme complet du cours de trading par IA et de l&#x27;offre d&#x27;abonnement mensuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000909_seg19.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface des modules de cours &quot;Trading AI Full Course&quot;, avec les modules numérotés 21 à 26 détaillant des sujets comme OpenClaw, les bots agentiques, Python, le déploiement sur VPS Hostinger, et un tableau de bord Live-Ops." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000909_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:09</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface des modules de cours &quot;Trading AI Full Course&quot;, avec les modules numérotés 21 à 26 détaillant des sujets comme OpenClaw, les bots agentiques, Python, le déploiement sur VPS Hostinger, et un tableau de bord Live-Ops.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000919_seg19.jpg" alt="Capture d&#x27;écran de la plateforme de vente Whop affichant la page du créateur Alex Carter pour le programme &quot;AI Trade Edge&quot; tarifé à 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000919_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:19</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme de vente Whop affichant la page du créateur Alex Carter pour le programme &quot;AI Trade Edge&quot; tarifé à 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:24 - 00:09:58</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Après cela, le prix augmente. Le lien est dans la description. Vous ne pouvez vraiment pas vous permettre de rater ça. Et c&#x27;est exactement comme ça que j&#x27;ai automatisé cette stratégie en utilisant Claude. Si vous voulez vraiment mettre cela en pratique, assurez-vous d&#x27;utiliser Blofin ou Mexi. Puisque ce genre de configuration fonctionne beaucoup plus fluidement là-bas que sur la plupart des autres plateformes d&#x27;échange, les liens sont plus bas si vous voulez voir une démonstration complète de la façon dont je trade en utilisant uniquement mon Telegram, la démonstration complète de tous les cas d&#x27;utilisation sur TradingView et de la façon dont je tracke automatiquement les plus gros trades des baleines sur Hyperliquid, cliquez sur la vidéo qui apparaît à l&#x27;écran.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, BloFin, MEXC, Terminal de commande (Claude Code / Script CLI)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix Bitcoin (perpétuel), indicateurs techniques (RSI, moyennes mobiles), page de parrainage MEXC (10 000 USDT), tableau d&#x27;analyse multi-timeframe (Weekly, Daily, 4H, 1H) avec niveaux clés (Supports, Résistances) et recommandations d&#x27;entrées (LONG, Stop Loss, Take Profit).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un graphique de trading, affichage d&#x27;un lien d&#x27;inscription affilié et démonstration d&#x27;un rapport d&#x27;analyse automatisé multi-timeframe dans un terminal.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000932_seg20.jpg" alt="Graphique en chandeliers japonais de Bitcoin sur BloFin montrant l&#x27;évolution des prix et des indicateurs techniques." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000932_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:32</span>
+                        <span class="caption-text">Graphique en chandeliers japonais de Bitcoin sur BloFin montrant l&#x27;évolution des prix et des indicateurs techniques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000941_seg20.jpg" alt="Page d&#x27;inscription de la plateforme d&#x27;échange MEXC proposant une offre de bonus de bienvenue de 10 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000941_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:41</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme d&#x27;échange MEXC proposant une offre de bonus de bienvenue de 10 000 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/hScSXKPRbyw/hScSXKPRbyw_000949_seg20.jpg" alt="Rapport d&#x27;analyse multi-timeframe pour BTCUSDT affiché dans un terminal de commande, incluant EMA, RSI, MACD et recommandations de trade." loading="lazy" onclick="openLightbox('../screenshots/hScSXKPRbyw/hScSXKPRbyw_000949_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:49</span>
+                        <span class="caption-text">Rapport d&#x27;analyse multi-timeframe pour BTCUSDT affiché dans un terminal de commande, incluant EMA, RSI, MACD et recommandations de trade.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:58 - 00:10:16</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">dès maintenant et si vous voulez le guide complet étape par étape sur la façon de construire votre propre système de trading agentique en utilisant Claude. Cette vidéo s&#x27;affiche également à l&#x27;écran. Allez la voir ensuite. Si vous avez trouvé cela utile, laissez un pouce bleu. Cela aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
