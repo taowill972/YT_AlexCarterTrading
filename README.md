@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `47 / 186` (`25.3%`)
+- **Vidéos traitées** : `48 / 186` (`25.8%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -64,6 +64,7 @@
 | 2026-07-28 | [9aeh_X0oyDk](https://www.youtube.com/watch?v=9aeh_X0oyDk) | **How I Turned Claude Into The Ultimate Trading Partner** | [2026-07-28_YT-[9aeh_X0oyDk]_How I Turned Claude Into The Ultimate Trading Partner_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-28_YT-[9aeh_X0oyDk]_How I Turned Claude Into The Ultimate Trading Partner_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-28_YT-[9aeh_X0oyDk]_How I Turned Claude Into The Ultimate Trading Partner_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-07-25 | [Do_zGODbck8](https://www.youtube.com/watch?v=Do_zGODbck8) | **How to Trade Crypto on Autopilot Using Toobit Synapse & MEXC AI** | [2026-07-25_YT-[Do_zGODbck8]_How to Trade Crypto on Autopilot Using Toobit Synapse & MEXC AI_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-25_YT-[Do_zGODbck8]_How to Trade Crypto on Autopilot Using Toobit Synapse & MEXC AI_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-25_YT-[Do_zGODbck8]_How to Trade Crypto on Autopilot Using Toobit Synapse & MEXC AI_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-07-24 | [naNtdVfPhLM](https://www.youtube.com/watch?v=naNtdVfPhLM) | **How I Built a No-Code Trading Bot Using Claude** | [2026-07-24_YT-[naNtdVfPhLM]_How I Built a No-Code Trading Bot Using Claude_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-24_YT-[naNtdVfPhLM]_How I Built a No-Code Trading Bot Using Claude_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-24_YT-[naNtdVfPhLM]_How I Built a No-Code Trading Bot Using Claude_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-07-23 | [o9ZVi4vdy9c](https://www.youtube.com/watch?v=o9ZVi4vdy9c) | **I Rebuilt a Nobel Prize Quant Strategy Using Claude Code** | [2026-07-23_YT-[o9ZVi4vdy9c]_I Rebuilt a Nobel Prize Quant Strategy Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-23_YT-[o9ZVi4vdy9c]_I Rebuilt a Nobel Prize Quant Strategy Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-23_YT-[o9ZVi4vdy9c]_I Rebuilt a Nobel Prize Quant Strategy Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
