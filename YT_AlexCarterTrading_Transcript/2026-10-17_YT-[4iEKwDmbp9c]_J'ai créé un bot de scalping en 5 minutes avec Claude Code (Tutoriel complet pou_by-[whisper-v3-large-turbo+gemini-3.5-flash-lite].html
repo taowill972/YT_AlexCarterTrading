@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 J&#x27;ai créé un bot de scalping en 5 minutes avec Claude Code (Tutoriel complet pour débutants) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 J&#x27;ai créé un bot de scalping en 5 minutes avec Claude Code (Tutoriel complet pour débutants)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-17</span>
+                <span class="badge">⏱️ 00:11:08</span>
+                <span class="badge">🆔 <code>4iEKwDmbp9c</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=4iEKwDmbp9c" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>La vidéo de la chaîne Alex Carter aborde l'art du scalping sur le graphique de cinq minutes, considéré comme le « juste milieu » idéal pour capturer des configurations rentables sans subir le bruit excessif du graphique d'une minute ni l'attente stérile du graphique de quinze minutes. La stratégie présentée repose sur un système de retour à la moyenne combinant trois indicateurs techniques majeurs : le VWAP avec bandes d'écart-type, le RSI stochastique et le volume relatif (R Vol). Ensemble, ils permettent d'identifier les moments où le prix devient sur-étendu et s'apprête à effectuer un retournement brusque.<br><br>Pour s'affranchir de la surveillance manuelle et exténuante des graphiques tout au long de la journée, le présentateur démontre comment utiliser l'intelligence artificielle — plus précisément **Claude Code** — pour transformer cette stratégie en un script Pine entièrement automatisé en quelques secondes. Ce tutoriel pas à pas guide les débutants depuis l'inscription sur une plateforme de contrats à terme adaptée (comme UBIT ou Blofin) jusqu'à l'exécution du code sur **TradingView**, permettant de générer automatiquement des flèches de signal d'achat et de vente ainsi que des alertes mobiles en temps réel.<br><br>Enfin, l'intervention met en lumière l'émergence des bots de trading agentiques capables d'interagir avec les écosystèmes financiers. En combinant l'analyse technique rigoureuse, l'automatisation par IA et des outils de notification instantanée, les traders peuvent concevoir un système de scalping quasi-autonome, optimisant ainsi leur gestion du temps et leur réactivité sur les marchés des cryptomonnaies, des actions ou des indices.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Claude Code** : Modèle d'intelligence artificielle avancé utilisé pour générer instantanément et sans effort un script Pine complet et fonctionnel à partir d'un prompt textuel.<br>* **TradingView** : Plateforme de graphisme et d'analyse technique de pointe intégrant l'éditeur PineScript, l'affichage des indicateurs et la configuration d'alertes en temps réel.<br>* **UBIT** : Échange de contrats à terme sur cryptomonnaies favorisant le trading sans KYC obligatoire pour les dépôts directs, offrant de généreux bonus de bienvenue et plus de 500 paires de trading (USDT-M).<br>* **Blofin** : Alternative boursière recommandée ne nécessitant pas de vérification KYC pour le trading de base, proposant également des bonus attractifs pour les nouveaux utilisateurs.<br>* **Telegram** : Outil de messagerie instantanée intégré dans les cas d'utilisation avancés pour recevoir des notifications automatisées de signaux de trading.<br>* **Hyperliquid** : Plateforme décentralisée utilisée dans le cadre de stratégies avancées pour la recherche et le suivi d'activités de « baleines ».<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>1. **Juste milieu temporel (Timeframe 5 minutes)** : Le choix de l'unité de temps de 5 minutes offre le compromis parfait pour le scalping, générant assez d'opportunités quotidiennes tout en filtrant le bruit erratique du graphique en 1 minute.<br>2. **Logique de retour à la moyenne (*Mean Reversion*)** : La stratégie cherche à capitaliser sur les mouvements où le prix s'estompe ou s'étire excessivement au-delà de sa zone de juste valeur, anticipant un rebond ou une correction rapide.<br>3. **Indicateur 1 : Le VWAP et ses bandes d'écart-type** : Pondéré par le volume réel plutôt que par le simple prix, il sert de zone de référence centrale, les bandes positionnées à 1 et 2 écarts-types agissant comme des déclencheurs de sur-extension.<br>4. **Indicateur 2 : Le RSI Stochastique (14, 14, 3, 3)** : Utilisé comme validateur de momentum, il confirme la sur-extension du prix (sous 20 pour les achats, au-dessus de 80 pour les ventes) et repère l'incurvation des lignes vers le retournement.<br>5. **Indicateur 3 : Le Volume Relatif (R Vol, longueur 20)** : Cet indicateur jauge la participation réelle du marché en comparant le volume de la bougie actuelle à sa moyenne récente, exigeant un seuil supérieur à 1,5 pour valider la force du signal.<br>6. **Conditions strictes pour un Signal d'Achat (Long)** : Le prix doit casser la bande VWAP inférieure, le RSI stochastique doit être sous 20 et s'incurver vers le haut, et le R Vol doit dépasser 1,5 sur une bougie verte.<br>7. **Conditions strictes pour un Signal de Vente (Short)** : Le prix doit dépasser la bande VWAP supérieure, le RSI stochastique doit être au-dessus de 80 et s'incurver vers le bas, et le R Vol doit dépasser 1,5 sur une bougie rouge.<br>8. **Automatisation par IA (*Prompt Engineering*)** : L'utilisation de Claude Code permet d'automatiser la traduction d'une règle de trading complexe en un script Pine prêt à l'emploi, éliminant les biais psychologiques et la surveillance visuelle constante.<br>9. **Sécurité et gestion des dépôts (*Risk Management* opérationnel)** : Recommandation systématique d'effectuer un transfert test de faible montant (10 à 20 dollars) et d'utiliser des réseaux rapides et économiques comme le TRC20 pour éviter la perte définitive de fonds.<br>10. **Intégration d'alertes instantanées** : La configuration des alertes conditionnelles sur TradingView (signaux long et court) permet d'externaliser la surveillance du marché et d'être notifié directement sur mobile dès l'alignement des critères.<br>11. **Accessibilité sans KYC** : L'utilisation d'échanges comme UBIT ou Blofin permet de s'affranchir des contraintes d'identité pour les dépôts de cryptomonnaies existantes, accélérant l'accès opérationnel aux marchés des futures.<br>12. **Évolution vers des bots agentiques** : La centralisation des scripts, des intégrations Telegram et des flux de données préfigure la construction de systèmes de trading entièrement autonomes capables d'opérer sur les cryptos, actions et indices.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude Code</span><span class="tool-tag">TradingView</span><span class="tool-tag">UBIT</span><span class="tool-tag">Blofin</span><span class="tool-tag">Telegram</span><span class="tool-tag">Hyperliquid</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>1. **Juste milieu temporel (Timeframe 5 minutes)** : Le choix de l&#x27;unité de temps de 5 minutes offre le compromis parfait pour le scalping, générant assez d&#x27;opportunités quotidiennes tout en filtrant le bruit erratique du graphique en 1 minute.</span></li><li><span class="point-bullet">✦</span><span>2. **Logique de retour à la moyenne (*Mean Reversion*)** : La stratégie cherche à capitaliser sur les mouvements où le prix s&#x27;estompe ou s&#x27;étire excessivement au-delà de sa zone de juste valeur, anticipant un rebond ou une correction rapide.</span></li><li><span class="point-bullet">✦</span><span>3. **Indicateur 1 : Le VWAP et ses bandes d&#x27;écart-type** : Pondéré par le volume réel plutôt que par le simple prix, il sert de zone de référence centrale, les bandes positionnées à 1 et 2 écarts-types agissant comme des déclencheurs de sur-extension.</span></li><li><span class="point-bullet">✦</span><span>4. **Indicateur 2 : Le RSI Stochastique (14, 14, 3, 3)** : Utilisé comme validateur de momentum, il confirme la sur-extension du prix (sous 20 pour les achats, au-dessus de 80 pour les ventes) et repère l&#x27;incurvation des lignes vers le retournement.</span></li><li><span class="point-bullet">✦</span><span>5. **Indicateur 3 : Le Volume Relatif (R Vol, longueur 20)** : Cet indicateur jauge la participation réelle du marché en comparant le volume de la bougie actuelle à sa moyenne récente, exigeant un seuil supérieur à 1,5 pour valider la force du signal.</span></li><li><span class="point-bullet">✦</span><span>6. **Conditions strictes pour un Signal d&#x27;Achat (Long)** : Le prix doit casser la bande VWAP inférieure, le RSI stochastique doit être sous 20 et s&#x27;incurver vers le haut, et le R Vol doit dépasser 1,5 sur une bougie verte.</span></li><li><span class="point-bullet">✦</span><span>7. **Conditions strictes pour un Signal de Vente (Short)** : Le prix doit dépasser la bande VWAP supérieure, le RSI stochastique doit être au-dessus de 80 et s&#x27;incurver vers le bas, et le R Vol doit dépasser 1,5 sur une bougie rouge.</span></li><li><span class="point-bullet">✦</span><span>8. **Automatisation par IA (*Prompt Engineering*)** : L&#x27;utilisation de Claude Code permet d&#x27;automatiser la traduction d&#x27;une règle de trading complexe en un script Pine prêt à l&#x27;emploi, éliminant les biais psychologiques et la surveillance visuelle constante.</span></li><li><span class="point-bullet">✦</span><span>9. **Sécurité et gestion des dépôts (*Risk Management* opérationnel)** : Recommandation systématique d&#x27;effectuer un transfert test de faible montant (10 à 20 dollars) et d&#x27;utiliser des réseaux rapides et économiques comme le TRC20 pour éviter la perte définitive de fonds.</span></li><li><span class="point-bullet">✦</span><span>10. **Intégration d&#x27;alertes instantanées** : La configuration des alertes conditionnelles sur TradingView (signaux long et court) permet d&#x27;externaliser la surveillance du marché et d&#x27;être notifié directement sur mobile dès l&#x27;alignement des critères.</span></li><li><span class="point-bullet">✦</span><span>11. **Accessibilité sans KYC** : L&#x27;utilisation d&#x27;échanges comme UBIT ou Blofin permet de s&#x27;affranchir des contraintes d&#x27;identité pour les dépôts de cryptomonnaies existantes, accélérant l&#x27;accès opérationnel aux marchés des futures.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:32</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pendant que tout le monde se fait découper sur le graphique d&#x27;une minute ou s&#x27;endort en attendant sur le 15, le graphique de cinq minutes est tranquillement l&#x27;endroit où les vrais scalpeurs font du profit. C&#x27;est assez rapide pour attraper plusieurs configurations par jour, mais assez lent pour ne pas trader du simple bruit. Ce n&#x27;est pas une coïncidence. C&#x27;est le juste milieu. Et aujourd&#x27;hui, je ne vous donne pas seulement la stratégie. Je vous donne la configuration complète, étape par étape. Et ce n&#x27;est pas seulement un truc de crypto. Ça marche sur littéralement n&#x27;importe quelle paire liquide que vous lui lancez, et ensuite je vais vous montrer quelque chose qui change tout.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (graphique financier avec panneau d&#x27;outils et indicateurs)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Chandeliers japonais, bandes de Bollinger, oscillateur de momentum dans le panneau inférieur, volumes en bas, paire BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT en unité de temps 5m.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du graphique de 5 minutes illustrant une configuration de scalping avec des cercles jaunes dessinés pour mettre en évidence un signal.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000008_seg1.jpg" alt="Un graphique en chandeliers japonais en unité de temps 5 minutes sur TradingView montrant le contrat perpétuel Bitcoin/USDT, avec des bandes de Bollinger et un oscillateur de type RSI/Stochastique en sous-fenêtre, ainsi que des annotations manuscrites jaunes." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000008_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Un graphique en chandeliers japonais en unité de temps 5 minutes sur TradingView montrant le contrat perpétuel Bitcoin/USDT, avec des bandes de Bollinger et un oscillateur de type RSI/Stochastique en sous-fenêtre, ainsi que des annotations manuscrites jaunes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:32 - 00:01:07</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai pris cette stratégie exacte, je l&#x27;ai donnée à Claude, et en quelques secondes, il m&#x27;a créé un script Pine entièrement automatisé qui attrape tous les signaux pour moi. Pas de graphiques ouverts toute la journée. Pas de devinettes. Et restez jusqu&#x27;à la fin parce que je vais vous montrer comment obtenir tous mes prompts, stratégies et configurations, et comment construire votre propre bot de trading agentique avec Claude qui peut trader des cryptos, des actions, des indices, et plus encore. Donc, entrons dans le vif du sujet. Très bien les gars, étape numéro one, inscrivez-vous sur un échange. Pour cette stratégie, nous allons utiliser UBIT. C&#x27;est l&#x27;un de mes échanges préférés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (Pine Editor et graphique de prix) et plateforme d&#x27;échange YUBIT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source en Pine Script (alertcondition, plot, stochastique, VWAP) et interface d&#x27;inscription YUBIT avec code de parrainage &quot;ALEX&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation simultanée d&#x27;un script Pine automatisé et de la plateforme partenaire pour les utilisateurs mentionnée en fin de segment.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000041_seg2.jpg" alt="Capture d&#x27;écran divisée montrant à gauche un graphique TradingView avec un signal &quot;SELL&quot; et à droite l&#x27;éditeur Pine Script de TradingView contenant le code source." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000041_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Capture d&#x27;écran divisée montrant à gauche un graphique TradingView avec un signal &quot;SELL&quot; et à droite l&#x27;éditeur Pine Script de TradingView contenant le code source.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000058_seg2.jpg" alt="Page d&#x27;inscription de la plateforme YUBIT avec un visuel de boîte cadeau remplie de pièces et de trophées pour un programme d&#x27;affiliation." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000058_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:58</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme YUBIT avec un visuel de boîte cadeau remplie de pièces et de trophées pour un programme d&#x27;affiliation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:07 - 00:01:29</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour le trading de contrats à terme en ce moment, et ils ont de sérieux bonus pour les nouveaux utilisateurs. Jusqu&#x27;à 50 000 dollars de bonus rien que pour votre inscription et en négociant via mon lien ci-dessous. Si UBIT ne vous convient pas, vous pouvez utiliser Blofin comme alternative. Blofin ne requiert pas de vérification KYC obligatoire pour le trading de base, ce qui signifie que vous pouvez commencer à trader immédiatement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateformes d&#x27;échange de cryptomonnaies YUBIT et BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails des bonus de trading, montants de dépôts requis, volumes de trading et caractéristiques des bourses (frais, effet de levier).
+[DESC_IMAGE_1] Interface web montrant les bonus d&#x27;inscription et de trading.
+[DESC_IMAGE_2] Détails des bonus de parrainage et de dépôt.
+[DESC_IMAGE_3] Présentation des avantages de BloFin.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur les pages de bonus et de présentation des courtiers.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000113_seg3.jpg" alt="Interface du site YUBIT affichant les récompenses de trading de contrats à terme et de nouvelles boîtes mystères." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000113_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:13</span>
+                        <span class="caption-text">Interface du site YUBIT affichant les récompenses de trading de contrats à terme et de nouvelles boîtes mystères.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000118_seg3.jpg" alt="Page web de YUBIT montrant les bons de position et les programmes de récompenses pour les dépôts et le trading." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000118_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Page web de YUBIT montrant les bons de position et les programmes de récompenses pour les dépôts et le trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000124_seg3.jpg" alt="Page de revue et de présentation de la plateforme BloFin détaillant ses principales caractéristiques (pas de KYC, frais, etc.)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000124_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Page de revue et de présentation de la plateforme BloFin détaillant ses principales caractéristiques (pas de KYC, frais, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:30 - 00:02:06</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">De plus, les nouveaux utilisateurs peuvent gagner jusqu&#x27;à 5 000 $USDT grâce à des bonus de dépôt et de volume de trading. Je mettrai les deux liens ci-dessous. Une fois sur la page d&#x27;UBIT, vous pouvez vous inscrire avec votre e-mail, votre numéro de téléphone, ou vous connecter via Google ou Apple ID. Pour ce tutoriel, j&#x27;utiliserai l&#x27;e-mail. Entrez simplement vos informations, créez un mot de passe fort, acceptez les conditions d&#x27;utilisation et cliquez sur s&#x27;inscrire. Entrez le code de vérification par e-mail et votre compte est prêt. Tout le processus prend moins de 30 secondes, et gardez à l&#x27;esprit qu&#x27;UBIT est une plateforme sans KYC, vous n&#x27;avez pas besoin de compléter la vérification d&#x27;identité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme d&#x27;échange YUBIT</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;inscription, champs pour e-mail/mot de passe, code de parrainage &#x27;ALEX&#x27;, et bannières promotionnelles pour les bonus de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la page d&#x27;inscription et de la page d&#x27;accueil de la plateforme YUBIT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000139_seg4.jpg" alt="Page d&#x27;inscription de la plateforme YUBIT avec un formulaire pour s&#x27;inscrire par e-mail ou téléphone et un code de parrainage." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000139_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:39</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme YUBIT avec un formulaire pour s&#x27;inscrire par e-mail ou téléphone et un code de parrainage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000157_seg4.jpg" alt="Page d&#x27;accueil de la plateforme d&#x27;échange YUBIT mettant en avant le trading de crypto, d&#x27;or et d&#x27;actions, ainsi qu&#x27;un bonus de dépôt." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000157_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme d&#x27;échange YUBIT mettant en avant le trading de crypto, d&#x27;or et d&#x27;actions, ainsi qu&#x27;un bonus de dépôt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:43</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vérification pour commencer à trader, ce qui le rend accessible même dans les régions restreintes, et cela signifie que vous pouvez commencer à trader presque instantanément après votre inscription. Allez dans votre portefeuille et cliquez sur déposer. Sélectionnez la cryptomonnaie que vous souhaitez déposer. L&#x27;USDT est idéal pour le trading. Ensuite, sélectionnez votre réseau de dépôt. Je recommande le TRC20. C&#x27;est rapide et les frais sont très bas. Vous verrez alors votre adresse de dépôt personnelle. Copiez-la soigneusement. Allez sur votre échange ou portefeuille actuel. Collez l&#x27;adresse et envoyez vos fonds. Envoyez toujours d&#x27;abord un petit montant test, peut-être 10 à 20 dollars, juste pour confirmer</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web et plateforme d&#x27;échange de cryptomonnaies Yubit (interfaces de dépôt et de retrait).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection de cryptomonnaies (USDT, BTC, ETH), choix des réseaux de blockchain (Arbitrum One, Ethereum ERC20, BNB Smart Chain, Tron TRC20) et champs de saisie pour adresses de portefeuille.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme, sélection des options de dépôt et configuration d&#x27;un transfert de fonds en cryptomonnaie.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000215_seg5.jpg" alt="Page d&#x27;accueil de la plateforme de trading Yubit montrant l&#x27;interface principale avec les options de dépôt et de navigation." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000215_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme de trading Yubit montrant l&#x27;interface principale avec les options de dépôt et de navigation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000224_seg5.jpg" alt="Interface de dépôt de la plateforme Yubit permettant de sélectionner la cryptomonnaie (USDT) et le réseau de transfert (Tron, Ethereum, BNB, etc.)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000224_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:24</span>
+                        <span class="caption-text">Interface de dépôt de la plateforme Yubit permettant de sélectionner la cryptomonnaie (USDT) et le réseau de transfert (Tron, Ethereum, BNB, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000234_seg5.jpg" alt="Interface de retrait de la plateforme Yubit affichant les options pour effectuer un retrait on-chain d&#x27;USDT avec le carnet d&#x27;adresses." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000234_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:34</span>
+                        <span class="caption-text">Interface de retrait de la plateforme Yubit affichant les options pour effectuer un retrait on-chain d&#x27;USDT avec le carnet d&#x27;adresses.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:43 - 00:03:18</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">tout arrive correctement avant d&#x27;envoyer le montant total. C&#x27;est très important. Envoyer sur le mauvais réseau peut signifier la perte de vos fonds. Si vous n&#x27;avez pas encore de crypto et que vous souhaitez en acheter directement sur UBIT, c&#x27;est également possible. Mais pour cela, vous devrez d&#x27;abord compléter la procédure KYC. Allez sur l&#x27;icône de votre profil sur la page d&#x27;accueil et cliquez sur KYC. Cliquez sur vérifier maintenant. Fournissez votre e-mail, vos informations personnelles, vos documents de vérification et un selfie. Une fois que c&#x27;est approuvé, vous pouvez utiliser l&#x27;option d&#x27;achat rapide sur UBIT pour acheter de la crypto directement avec de la monnaie fiduciaire en utilisant une carte de crédit ou de débit. Si vous</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies YUBIT</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation de la plateforme, options de compte, interfaces d&#x27;achat direct et processus de vérification d&#x27;identité KYC.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme YUBIT pour montrer l&#x27;achat direct de cryptos et le processus de vérification d&#x27;identité.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000251_seg6.jpg" alt="Interface de la plateforme YUBIT montrant l&#x27;outil &#x27;Quick Buy&#x27; pour acheter des cryptomonnaies par carte ou paiement tiers." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000251_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Interface de la plateforme YUBIT montrant l&#x27;outil &#x27;Quick Buy&#x27; pour acheter des cryptomonnaies par carte ou paiement tiers.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000300_seg6.jpg" alt="Page d&#x27;accueil de la plateforme YUBIT avec un menu déroulant affichant le profil utilisateur et les options de sécurité et de KYC." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000300_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme YUBIT avec un menu déroulant affichant le profil utilisateur et les options de sécurité et de KYC.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000309_seg6.jpg" alt="Fenêtre de vérification d&#x27;identité (KYC) sur YUBIT proposant de scanner un QR code ou de copier un lien pour continuer sur mobile." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000309_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Fenêtre de vérification d&#x27;identité (KYC) sur YUBIT proposant de scanner un QR code ou de copier un lien pour continuer sur mobile.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:18 - 00:03:40</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">avez déjà des cryptos sur un autre échange ou portefeuille, vous pouvez entièrement ignorer la procédure KYC et déposer directement, ce qui est l&#x27;option la plus rapide pour la plupart des gens. Cliquez sur futures dans la barre de navigation supérieure et cliquez sur USDT-M. Cela vous amènera à l&#x27;interface de trading des futures UBIT. Maintenant, cela peut sembler un peu intimidant au début, mais je vais décortiquer chaque section pour que tout devienne parfaitement clair.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de crypto-monnaies Yubit (section Dépôt et Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de dépôt USDT, menu de sélection des marchés perpétuels USDT-M (BTCUSDT, ETHUSDT, etc.), et interface de trading Futures affichant le solde disponible de 51 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers les menus de dépôt et d&#x27;accès aux marchés de contrats à terme (Futures USDT-M).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000323_seg7.jpg" alt="Interface de dépôt de fonds en crypto-monnaie sur la plateforme Yubit." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000323_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Interface de dépôt de fonds en crypto-monnaie sur la plateforme Yubit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000329_seg7.jpg" alt="Menu déroulant de navigation affichant les options de compte et de trading (USDT-M Perpetual)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000329_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Menu déroulant de navigation affichant les options de compte et de trading (USDT-M Perpetual).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000334_seg7.jpg" alt="Interface de trading de contrats Futures BTCUSDT avec graphique de prix en chandeliers et carnet d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000334_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Interface de trading de contrats Futures BTCUSDT avec graphique de prix en chandeliers et carnet d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:04:09</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En haut à gauche, vous avez le sélecteur de paires de trading. C&#x27;est ici que vous choisissez quel actif trader. UBIT propose plus de 500 paires de trading, du Bitcoin et de l&#x27;Ethereum jusqu&#x27;aux memecoins et aux principaux altcoins. Vous pouvez choisir entre les perpétuels sur marge USDT et les perpétuels sur marge de coin, qui sont des transactions réglées dans votre propre crypto au lieu de l&#x27;USDT. Au centre se trouve le graphique des prix propulsé par TradingView avec tous les outils de dessin et indicateurs techniques dont vous avez besoin pour l&#x27;analyse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme de trading YUBIT (section Futures)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des paires de trading (FARTCOIN/USDT, LINK/USDT, AVAX/USDT, etc.) avec leurs prix, variations sur 24h et volumes, ainsi que les onglets de filtrage (Favorites, USDT-M, Coin-M, Metals, Stocks) et le carnet d&#x27;ordres à droite.</p>
+                        <p><strong>Action / Démonstration :</strong> Manipulation de l&#x27;interface pour parcourir et sélectionner des paires de trading dans le menu déroulant de gauche.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000347_seg8.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme d&#x27;échange YUBIT montrant le sélecteur de paires de trading en haut à gauche avec la liste des cryptomonnaies disponibles en perpétuels USDT-M." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000347_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:47</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme d&#x27;échange YUBIT montrant le sélecteur de paires de trading en haut à gauche avec la liste des cryptomonnaies disponibles en perpétuels USDT-M.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:09 - 00:04:44</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur le côté droit se trouve le carnet d&#x27;ordres qui montre tous les ordres d&#x27;achat et de vente en direct sur le marché. Et en bas se trouve votre panneau de gestion des ordres. C&#x27;est ici que vous suivez vos positions ouvertes, vos ordres ouverts et votre historique de trading. Tout ce dont vous avez besoin est ici même sur un seul écran. Très bien, avant d&#x27;aborder les indicateurs, une chose rapide. Si vous n&#x27;avez pas encore TradingView, cliquez sur le lien dans la description ci-dessous. Si vous achetez la version pro, vous obtiendrez une réduction et cela aide vraiment énormément la chaîne. Très bien, entrons dans le vif du sujet. Nous allons trader du Bitcoin USDT sur le graphique de cinq minutes, mais honnêtement, cela fonctionne tout aussi bien sur Ethereum,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Yubit (interface Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix, carnet d&#x27;ordres en direct (carnet de commandes), boutons d&#x27;achat/vente (Open Long / Open Short) et panneau de suivi des positions et du solde du compte (Equity 51.00 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading, explication de la disposition des éléments de l&#x27;exchange (carnet d&#x27;ordres à droite et panneau de gestion des ordres en bas).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000418_seg9.jpg" alt="Interface de trading Yubit montrant un graphique en chandeliers au centre, le carnet d&#x27;ordres à droite et le panneau de gestion des positions en bas." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000418_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:18</span>
+                        <span class="caption-text">Interface de trading Yubit montrant un graphique en chandeliers au centre, le carnet d&#x27;ordres à droite et le panneau de gestion des positions en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:45 - 00:05:20</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Solana, ou toute paire majeure liquide sur n&#x27;importe quel marché. La logique ne change pas. Cette stratégie utilise trois indicateurs superposés et toute l&#x27;idée est de capturer des mouvements de retour à la moyenne marqués. Fondamentalement, des moments où le prix devient sur-étendu et revient brusquement en arrière. Le premier indicateur est le VWAP avec des bandes d&#x27;écart-type. Contrairement à une moyenne mobile classique, ce VWAP est pondéré par le volume, il réagit donc là où l&#x27;argent réel s&#x27;échange et pas seulement au prix. Nous l&#x27;utilisons comme notre zone de juste valeur. Lorsque le prix dépasse les bandes, c&#x27;est notre déclencheur de retour à la moyenne. Pour l&#x27;activer</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de trading TradingView intégré à l&#x27;interface de l&#x27;échange BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers (bougies japonaises) du Bitcoin en unité de temps 5 minutes, superposition d&#x27;indicateurs de bandes de type moyenne mobile/enveloppes, oscillateur en sous-fenêtre (type RSI ou Stochastique) et histogramme de volume en bas. Annotations dessinées à main levée entourant une zone de sur-extension et de retournement.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse visuelle d&#x27;une configuration de retour à la moyenne (mean reversion) sur le prix du Bitcoin, en observant la sortie des bandes et la réaction de l&#x27;oscillateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000453_seg10.jpg" alt="Graphique TradingView sur BloFin montrant le cours du Bitcoin (BTC/USDT Perpetual) avec des indicateurs techniques et des annotations sous forme de cercles jaunes." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000453_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:53</span>
+                        <span class="caption-text">Graphique TradingView sur BloFin montrant le cours du Bitcoin (BTC/USDT Perpetual) avec des indicateurs techniques et des annotations sous forme de cercles jaunes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:20 - 00:05:54</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">allez simplement dans les indicateurs tout en haut de votre graphique, recherchez VWAP, et cliquez dessus pour l&#x27;ajouter. Ensuite, cliquez sur la petite icône de paramètres à côté. Sous l&#x27;onglet style ou paramètres, assurez-vous que les bandes sont activées, réglez-le sur l&#x27;écart type, et définissez les multiplicateur sur un et deux. Une fois que c&#x27;est fait, cliquez simplement sur OK et vous verrez le VWAP avec ses bandes tracées directement sur votre graphique. L&#x27;indicateur, l&#x27;indicateur numéro deux est le RSI stochastique. C&#x27;est notre confirmation de momentum. Il nous indique quand le prix est étiré et commence réellement à se replier. Pour l&#x27;activer, allez dans les indicateurs</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres VWAP avec onglets Inputs, Style, Visibility, et options pour les bandes (Bands Calculation Mode, Bands Multiplier).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres et des multiplicateurs de bandes pour l&#x27;indicateur VWAP.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000528_seg11.jpg" alt="Fenêtre de configuration des paramètres de l&#x27;indicateur VWAP sur un graphique de trading." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000528_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:28</span>
+                        <span class="caption-text">Fenêtre de configuration des paramètres de l&#x27;indicateur VWAP sur un graphique de trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:54 - 00:06:26</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Encore une fois, cherchez le RSI stochastique et cliquez dessus pour l&#x27;ajouter. Ensuite, cliquez sur l&#x27;icône des paramètres à côté. Changez la longueur du RSI à 14, la longueur du stochastique à 14, et laissez le lissage K et D à 3 et 3. Cliquez sur OK, et vous le verrez tracé dans son propre panneau sous votre graphique. Le troisième indicateur est le volume relatif, ou R vol pour faire court. Au lieu d&#x27;une simple barre de volume, le R vol compare le volume des bougies actuelles à leur moyenne récente afin que vous puissiez réellement dire quand une vraie participation entre sur le marché. Pour</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de trading (TradingView / BloFin)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres du Stoch RSI : K=3, D=3, longueur du RSI=14, longueur du stochastique=14, source=Close.</p>
+                        <p><strong>Action / Démonstration :</strong> Modification et configuration des paramètres de l&#x27;indicateur technique Stoch RSI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000602_seg12.jpg" alt="Fenêtre de configuration des paramètres du Stoch RSI sur un graphique de trading montrant le réglage de la longueur du RSI à 14." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000602_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:02</span>
+                        <span class="caption-text">Fenêtre de configuration des paramètres du Stoch RSI sur un graphique de trading montrant le réglage de la longueur du RSI à 14.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:26 - 00:06:59</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">activez-le, allez dans les indicateurs, recherchez le volume relatif et cliquez dessus pour l&#x27;ajouter. Ensuite, cliquez sur l&#x27;icône des paramètres et définissez la longueur sur 20. Cliquez sur OK et vous le verrez s&#x27;afficher dans son propre panneau à côté de votre volume. Voici ce que vous recherchez réellement. Pour une configuration d&#x27;achat, le prix doit passer sous la bande VWAP inférieure. Le RSI stochastique doit être inférieur à 20 et s&#x27;incurver vers le haut. Un Arvol doit dépasser 1,5 sur une bougie verte. Les trois réunis signifient que la baisse était exagérée et que les acheteurs viennent de revenir. Pour une configuration de vente, le prix doit dépasser</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de l&#x27;indicateur &quot;Rel vol&quot; (Anchor Timeframe : 5 minutes, Length : 20, Calculation Mode : Cumulative) avec Stoch RSI et graphique de prix Bitcoin en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de l&#x27;indicateur de volume relatif (Relative Volume) sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000634_seg13.jpg" alt="Fenêtre de configuration de l&#x27;indicateur &quot;Rel vol&quot; (Relative Volume) affichée par-dessus un graphique TradingView avec les paramètres de longueur et d&#x27;unité de temps." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000634_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:34</span>
+                        <span class="caption-text">Fenêtre de configuration de l&#x27;indicateur &quot;Rel vol&quot; (Relative Volume) affichée par-dessus un graphique TradingView avec les paramètres de longueur et d&#x27;unité de temps.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:59 - 00:07:31</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la bande VWAP supérieure. Le RSI Stochastique doit être au-dessus de 80 et s&#x27;incurver vers le bas. Un Arvol doit dépasser 1,5 sur une bougie rouge. Les trois ensemble signifient que le mouvement s&#x27;essouffle et que les vendeurs viennent de prendre le contrôle. Lorsque ces trois conditions sont réunies en même temps sur le graphique en cinq minutes, c&#x27;est votre signal. Simple sur le papier, mais surveiller l&#x27;alignement de ces trois conditions manuellement, bougie par bougie, toute la journée ? C&#x27;est épuisant, et c&#x27;est exactement pour cela que je ne voulais plus le faire manuellement. Au lieu de regarder des graphiques toute la journée et de faire cela à l&#x27;œil, j&#x27;ai confié cette stratégie exacte à Claude et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (Graphique de trading en ligne)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bitcoin/USD Tether Perpetual Swap Contract (en unité de temps 5 minutes), Bandes VWAP, Stochastique RSI avec niveau 80, indicateur de volume (Arvol).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique illustrant la stratégie de retournement avec la bande VWAP supérieure et le RSI stochastique au-dessus de 80 qui s&#x27;incurve vers le bas.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000707_seg14.jpg" alt="Graphique TradingView montrant le prix du Bitcoin avec des bandes VWAP, un RSI Stochastique au-dessus de 80 et des annotations en cercle jaune sur les zones clés." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000707_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:07</span>
+                        <span class="caption-text">Graphique TradingView montrant le prix du Bitcoin avec des bandes VWAP, un RSI Stochastique au-dessus de 80 et des annotations en cercle jaune sur les zones clés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:31 - 00:08:05</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">je lui ai demandé de m&#x27;écrire un PineScript complet pour que Trade and View puisse détecter automatiquement ces signaux pour moi et voici le prompt que j&#x27;ai utilisé je vais l&#x27;afficher à l&#x27;écran dès maintenant pour que vous puissiez le copier exactement c&#x27;est le prompt complet collez ça dans Claude j&#x27;utilise Claude Code ici et en quelques secondes il crache un PineScript complet et fonctionnel dans un fichier bloc-notes maintenant ce prompt exact ainsi que le PineScript utilisé dans cette vidéo est disponible dans mon groupe privé vous pouvez trouver le lien en bas ouvrez ce fichier appuyez sur contrôle plus a pour tout sélectionner le code puis contrôle plus c pour le copier</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Explorateur de fichiers Windows, navigateur web (interface Alex Carter Trading), éditeur de texte.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Règles de trading détaillées (VWAP, Stoch RSI, RVOL), liste de fichiers de scripts de trading, interface web présentant les conditions de signal (Buy Signal / Sell Signal).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des instructions textuelles du prompt pour générer le script Pine Script et affichage de l&#x27;interface de ressources de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000740_seg15.jpg" alt="Un document texte affichant les règles d&#x27;entrée pour des signaux de trading Long et Short basés sur un VWAP ancré, un Stochastic RSI et le volume relatif (RVOL)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000740_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:40</span>
+                        <span class="caption-text">Un document texte affichant les règles d&#x27;entrée pour des signaux de trading Long et Short basés sur un VWAP ancré, un Stochastic RSI et le volume relatif (RVOL).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000748_seg15.jpg" alt="Un explorateur de fichiers Windows montrant un dossier contenant divers scripts et stratégies de trading de type Pine Script et Python." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000748_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:48</span>
+                        <span class="caption-text">Un explorateur de fichiers Windows montrant un dossier contenant divers scripts et stratégies de trading de type Pine Script et Python.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000757_seg15.jpg" alt="Une interface web de la plateforme Alex Carter Trading détaillant le fonctionnement des signaux d&#x27;achat et de vente basés sur des indicateurs techniques." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000757_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:57</span>
+                        <span class="caption-text">Une interface web de la plateforme Alex Carter Trading détaillant le fonctionnement des signaux d&#x27;achat et de vente basés sur des indicateurs techniques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:05 - 00:08:36</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est tout ce dont vous avez besoin. Maintenant, introduisons cela dans TradingView. Ouvrez TradingView et allez sur n&#x27;importe quel graphique. Je vais utiliser à nouveau le Bitcoin. Au bas de l&#x27;écran, cliquez sur l&#x27;onglet Éditeur PineScript. Si vous ne le voyez pas, allez dans la barre d&#x27;outils inférieure et cliquez sur Éditeur PineScript. Une fois l&#x27;éditeur ouvert, vous y verrez du code par défaut. Sélectionnez-le entièrement et supprimez-le. Ensuite, collez le code que Claude vient de vous donner. Cliquez maintenant sur Ajouter au graphique. C&#x27;est le bouton en haut à droite de l&#x27;éditeur de script Pine. TradingView va compiler le script et l&#x27;appliquer directement sur votre graphique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix du Bitcoin avec affichage du symbole BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT sur le broker BloFin.</p>
+                        <p><strong>Action / Démonstration :</strong> Ouverture d&#x27;un graphique TradingView pour préparer l&#x27;intégration du code Pine Script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000813_seg16.jpg" alt="Un graphique en chandeliers du contrat perpétuel Bitcoin/USDT sur TradingView." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000813_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:13</span>
+                        <span class="caption-text">Un graphique en chandeliers du contrat perpétuel Bitcoin/USDT sur TradingView.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:37 - 00:09:10</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et voilà. Vous pouvez voir les bandes VWAP sur le graphique, le panneau du RSI stochastique en dessous, l&#x27;indicateur RRVL, et les signaux d&#x27;achat et de vente tracés automatiquement. Flèches vertes pour les achats, flèches rouges pour les ventes. Tout se déclenche exactement de la manière dont nous l&#x27;avons configuré manuellement. Mais maintenant, cela le fait pour vous automatiquement toutes les cinq minutes sur Bitcoin USDT ou n&#x27;importe quelle paire que vous avez ciblée. Maintenant, pour configurer des alertes, cliquez sur l&#x27;icône de réveil en haut de TradingView, sélectionnez créer une alerte, et dans le menu déroulant des conditions, vous verrez les conditions d&#x27;alerte que Claude</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / BloFin (Bitcoin/USD Tether Perpetual Swap Contract, unité de temps 5m).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bandes VWAP sur le graphique principal, indicateur RSI stochastique dans le panneau inférieur, et indicateur de volume.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et analyse des indicateurs techniques et des bandes VWAP sur le graphique du Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000845_seg17.jpg" alt="Graphique de trading montrant le cours du Bitcoin avec des bandes VWAP et un indicateur RSI stochastique en sous-panneau." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000845_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:45</span>
+                        <span class="caption-text">Graphique de trading montrant le cours du Bitcoin avec des bandes VWAP et un indicateur RSI stochastique en sous-panneau.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:10 - 00:09:43</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ajouté, signal long et signal court. Configurez-les et TradingView vous avertira dès qu&#x27;un signal se déclenche directement sur votre téléphone. Donc maintenant, au lieu de surveiller le graphique manuellement, TradingView fait tout le travail pour vous. Dès que les trois conditions sont réunies, vous recevez une alerte. Vous la vérifiez, vous l&#x27;exécutez sur UBIT et c&#x27;est tout. Maintenant, si vous voulez aller encore plus loin et faire en sorte qu&#x27;il s&#x27;exécute automatiquement sur votre exchange dès qu&#x27;un signal se déclenche, j&#x27;ai ce qu&#x27;il vous faut. J&#x27;ai créé un groupe privé où je partage tous mes cas d&#x27;utilisation pour Claude Code, de son intégration avec Telegram,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, YUBIT (exchange crypto)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix du Bitcoin, indicateurs techniques, panneau latéral d&#x27;alertes configurées sur TradingView, et carnet d&#x27;ordres / détails de position sur YUBIT.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et démonstration d&#x27;alertes de trading automatiques, puis passage à l&#x27;exécution d&#x27;un ordre d&#x27;achat sur la plateforme de futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000918_seg18.jpg" alt="Graphique TradingView affichant le contrat perpétuel Bitcoin/USD sur BloFin, avec un panneau d&#x27;alertes actif sur la droite montrant une alerte d&#x27;achat configurée." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000918_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:18</span>
+                        <span class="caption-text">Graphique TradingView affichant le contrat perpétuel Bitcoin/USD sur BloFin, avec un panneau d&#x27;alertes actif sur la droite montrant une alerte d&#x27;achat configurée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000935_seg18.jpg" alt="Interface de trading de la plateforme YUBIT affichant le graphique du Bitcoin (Futures), un carnet d&#x27;ordres, et une notification confirmant l&#x27;exécution d&#x27;un ordre d&#x27;achat." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000935_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:35</span>
+                        <span class="caption-text">Interface de trading de la plateforme YUBIT affichant le graphique du Bitcoin (Futures), un carnet d&#x27;ordres, et une notification confirmant l&#x27;exécution d&#x27;un ordre d&#x27;achat.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:43 - 00:10:11</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">TradingView, et la recherche de baleines sur Hyperliquid. Tout cela de manière automatique. Tout ce que je vous ai montré aujourd&#x27;hui, c&#x27;est entièrement inclus dans le groupe. Et j&#x27;ajoute constamment de nouvelles choses, de nouvelles stratégies, de nouveaux prompts, de nouvelles intégrations. Chaque fois que je construis quelque chose de nouveau, ça va directement là-dedans. Le prix est de 79,99 $ par mois. Et honnêtement, quand on y pense, quand on réalise ce que c&#x27;est vraiment, la configuration de trading par IA la plus avancée disponible pour les traders particuliers en ce moment, constamment mise à jour avec tout ce qui est inclus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web Whop et documentation de plateforme de trading (WEEX / API).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Listes des fonctionnalités de trading automatisé : Futures Trading (prix, positions, ordres long/short, effet de levier, stop-loss), Spot Trading (solde, achat/vente), et informations de compte (commissions, historique).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages inclus dans le groupe d&#x27;abonnement et des outils automatisés disponibles pour les membres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000950_seg19.jpg" alt="Interface web détaillant les fonctionnalités complètes d&#x27;API et de trading pour l&#x27;intégration de la plateforme WEEX, montrant les capacités sur les contrats futures et le marché au comptant (spot)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000950_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:50</span>
+                        <span class="caption-text">Interface web détaillant les fonctionnalités complètes d&#x27;API et de trading pour l&#x27;intégration de la plateforme WEEX, montrant les capacités sur les contrats futures et le marché au comptant (spot).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000957_seg19.jpg" alt="Page de la plateforme Whop présentant le groupe d&#x27;abonnement &quot;AI Trade Edge&quot; d&#x27;Alex Carter à 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_000957_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:57</span>
+                        <span class="caption-text">Page de la plateforme Whop présentant le groupe d&#x27;abonnement &quot;AI Trade Edge&quot; d&#x27;Alex Carter à 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:12 - 00:10:47</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">À l&#x27;intérieur, il y a aussi un cours complet de trading agentique. 2 heures et demie. De débutant à expert. Aucun bagage en programmation n&#x27;est nécessaire. À la fin, vous aurez votre propre système de trading par IA en direct. Quelque chose que la plupart des traders particuliers ne savent même pas être possible en ce moment. 79,99 $ par mois. Un bon trade couvre ce montant. Et les 100 premiers membres bloquent ce tarif de façon permanente. Après cela, le prix augmente. Le lien est dans la description. Vous ne pouvez vraiment pas vous permettre de rater ça. Et c&#x27;est tout les gars. C&#x27;est comme ça qu&#x27;on prend une stratégie sur Internet, qu&#x27;on la confie à Claude et qu&#x27;on obtient un système fonctionnel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de formation en ligne / Interface web Easypanel et plateforme de paiement Whop</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres des modules du cours de trading agentique incluant &#x27;OpenClaw — Power &amp; Risk&#x27;, &#x27;Agentic Bots with Hermes + OpenClaw&#x27;, &#x27;Build Your Own Python Bot&#x27;, et &#x27;Deploy to Hostinger VPS&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers les modules du programme complet de formation au trading par IA et présentation de l&#x27;offre commerciale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_001021_seg20.jpg" alt="Interface du cours en ligne &#x27;Trading AI Full Course&#x27; montrant les modules de formation sous forme de cartes interactives (modules 21 à 26)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_001021_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:21</span>
+                        <span class="caption-text">Interface du cours en ligne &#x27;Trading AI Full Course&#x27; montrant les modules de formation sous forme de cartes interactives (modules 21 à 26).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:47 - 00:11:08</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">PineScript dans TradingView. Pas de code, pas de surveillance manuelle des graphiques. Si vous voulez voir une démonstration complète de la façon dont je trade en utilisant uniquement mon Telegram et la démonstration complète de tous les cas d&#x27;utilisation sur TradingView, cliquez sur la vidéo qui apparaît à l&#x27;écran dès maintenant. Si vous avez trouvé cela utile, laissez un pouce bleu. Cela aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Terminal de commande / CLI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix, indicateurs techniques (EMA, RSI, MACD), tableau d&#x27;analyse multi-timeframe (Weekly, Daily, 4-Hour, 1-Hour) avec scores de biais, niveaux clés (support/résistance) et configuration de trade (Entry, Stop Loss, Take Profit).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique de graphiques et affichage d&#x27;un rapport de confluence multi-timeframe avec recommandations de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_001052_seg21.jpg" alt="Graphique TradingView affichant la paire Bitcoin/USD Tether Perpetual Swap Contract sur un intervalle de 5 minutes, avec des indicateurs techniques et un signal de vente (SELL)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_001052_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:52</span>
+                        <span class="caption-text">Graphique TradingView affichant la paire Bitcoin/USD Tether Perpetual Swap Contract sur un intervalle de 5 minutes, avec des indicateurs techniques et un signal de vente (SELL).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_001057_seg21.jpg" alt="Interface de terminal de commande présentant un rapport d&#x27;analyse multi-timeframe complet pour BTCUSDT Perp avec des tableaux de métriques (EMA Trend, RSI, MACD) et des recommandations de trade (LONG)." loading="lazy" onclick="openLightbox('../screenshots/4iEKwDmbp9c/4iEKwDmbp9c_001057_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:57</span>
+                        <span class="caption-text">Interface de terminal de commande présentant un rapport d&#x27;analyse multi-timeframe complet pour BTCUSDT Perp avec des tableaux de métriques (EMA Trend, RSI, MACD) et des recommandations de trade (LONG).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
