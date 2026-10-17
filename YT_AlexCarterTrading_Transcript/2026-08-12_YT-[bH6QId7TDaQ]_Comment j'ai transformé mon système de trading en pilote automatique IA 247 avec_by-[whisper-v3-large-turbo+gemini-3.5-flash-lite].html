@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment j&#x27;ai transformé mon système de trading en pilote automatique IA 24/7 avec Claude — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment j&#x27;ai transformé mon système de trading en pilote automatique IA 24/7 avec Claude</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-12</span>
+                <span class="badge">⏱️ 00:11:50</span>
+                <span class="badge">🆔 <code>bH6QId7TDaQ</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=bH6QId7TDaQ" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo présente une transformation radicale du trading de cryptomonnaies grâce à l'intégration d'une intelligence artificielle avancée, orchestrée par Claude et Claude Code. L'auteur démontre comment automatiser l'intégralité d'un système de trading pour le faire tourner en pilote automatique 24h/24 et 7j/7 sur un serveur cloud distant, s'affranchissant ainsi de la surveillance constante des graphiques et des transactions manquées. Le système combine l'analyse technique automatisée, la génération de scripts de trading, l'exécution d'ordres via des webhooks et le suivi en temps réel du marché.<br><br>Au cœur de cette architecture, l'IA interprète l'historique des prix pour tracer instantanément des supports et résistances, rédige et débogue des stratégies en Pine Script, et réalise des analyses de confluence multi-périodes (hebdomadaire, journalier, 4h, 1h). La démonstration en direct prouve la puissance de l'outil : d'un simple prompt textuel ou via une interface Telegram, il est possible d'ouvrir des positions avec effet de levier, de définir des stop-loss et des take-profit, et d'extraire des tableaux de bord financiers complets comprenant courbes de capital, taux de réussite et frais de financement.<br><br>Enfin, la vidéo explore des stratégies quantitatives avancées, telles que le *funding rate farming* (capture des taux de financement positifs ou négatifs) et le *whale tracking* (suivi des portefeuilles intelligents). En analysant les données publiques de 33 000 adresses sur la plateforme décentralisée Hyperliquid, l'IA compare les comportements des 20 traders les plus rentables par rapport aux plus perdants. Cette analyse croisée permet d'identifier les divergences de positionnement institutionnel pour générer des signaux à forte conviction, le tout synthétisé dans un rapport alpha matinal automatisé.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **Claude / Claude Code** : Modèle linguistique de pointe et environnement de développement en ligne de commande utilisé pour coder, analyser les marchés, automatiser les bots et interpréter les données on-chain en langage naturel.<br>* **TradingView** : Plateforme de cartographie financière et d'analyse technique utilisée pour exécuter des scripts Pine Script et relayer des signaux de trading en temps réel via des webhooks.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView utilisé pour concevoir, tester et automatiser des stratégies et indicateurs techniques personnalisés.<br>* **Hyperliquid** : Échange perpétuel décentralisé (DEX) fonctionnant sur sa propre blockchain, sans KYC, dont la transparence totale de l'historique des transactions permet d'analyser les portefeuilles des meilleures baleines.<br>* **Telegram** : Application de messagerie instantanée transformée ici en interface de commande mobile pour exécuter des trades, recevoir des alertes en temps réel et scanner les opportunités de marché à distance.<br>* **Serveur Cloud (VPS)** : Infrastructure d'hébergement distante assurant l'exécution ininterrompue 24h/24 et 7j/7 des bots de trading, avec des mécanismes de redémarrage automatique en cas de panne.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Automatisation complète du cycle de trading** : Le système s'affranchit des contraintes humaines en lisant les graphiques, en exécutant les ordres, en gérant le risque (stop-loss et take-profit) et en envoyant des rapports quotidiens de manière totalement autonome.<br>* **Réduction drastique du temps d'analyse** : Des tâches chronophages comme le tracé manuel des supports/résistances ou l'analyse multi-période, qui prenaient auparavant des dizaines de minutes, sont exécutées par l'IA en quelques secondes.<br>* **Interface de commande en langage naturel** : La possibilité d'ouvrir une position (ex: long x5 sur ETH avec gestion du risque) ou d'extraire un tableau de bord financier complet à partir d'une simple phrase simplifie radicalement l'interaction avec les marchés.<br>* **Exploitation des taux de financement (*Funding Rate Farming*)** : Le scanner automatisé identifie les paires présentant les rendements annualisés les plus élevés (50 % à 100%+) pour permettre aux traders de percevoir des paiements réguliers toutes les huit heures sans spéculer sur la direction des prix.<br>* **Analyse on-chain et suivi des « baleines » (*Whale Tracking*)** : L'extraction et le classement des 33 000 portefeuilles d'Hyperliquid permettent d'isoler les 20 traders les plus rentables pour copier ou anticiper leurs mouvements d'achat et de vente en temps réel.<br>* **Détection des divergences de marché** : Le croisement des positions entre les portefeuilles les plus rentables et les plus perdants met en lumière les « trades encombrés » (consensus) et les divergences stratégiques majeures (ex: l'argent intelligent achète ce que les particuliers vendent).<br>* **Exécution cloud sécurisée et résiliente** : Le bot de trading ne tourne pas sur un ordinateur portable personnel mais sur un serveur cloud distant, garantissant une continuité de service 24/7 même en cas de coupure de courant ou de Wi-Fi.<br>* **Brief alpha quotidien matinal** : Un rapport automatisé est généré et envoyé chaque matin avant l'ouverture de la session, synthétisant l'état des baleines, l'analyse graphique et la configuration à plus forte conviction dimensionnée selon le profil de risque exact.<br>* **Intégration transparente via Webhooks** : La liaison directe entre les alertes de stratégies générées sur TradingView et l'exchange permet une exécution instantanée des ordres sans latence humaine.<br>* **Compression du temps de développement** : Des projets qui prenaient autrefois des semaines ou des mois de codage peuvent désormais être développés et déployés en une seule après-midi grâce aux capacités de programmation de Claude Code.<br>* **Changement de paradigme sur l'avantage concurrentiel** : En quantitatif, l'avantage ne réside pas dans la détention d'une stratégie parfaite dès le départ, mais dans la capacité à tester itérativement un grand nombre d'idées assez rapidement pour identifier celles qui fonctionnent.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude / Claude Code</span><span class="tool-tag">TradingView</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Hyperliquid</span><span class="tool-tag">Telegram</span><span class="tool-tag">Serveur Cloud (VPS)</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Automatisation complète du cycle de trading** : Le système s&#x27;affranchit des contraintes humaines en lisant les graphiques, en exécutant les ordres, en gérant le risque (stop-loss et take-profit) et en envoyant des rapports quotidiens de manière totalement autonome.</span></li><li><span class="point-bullet">✦</span><span>Réduction drastique du temps d&#x27;analyse** : Des tâches chronophages comme le tracé manuel des supports/résistances ou l&#x27;analyse multi-période, qui prenaient auparavant des dizaines de minutes, sont exécutées par l&#x27;IA en quelques secondes.</span></li><li><span class="point-bullet">✦</span><span>Interface de commande en langage naturel** : La possibilité d&#x27;ouvrir une position (ex: long x5 sur ETH avec gestion du risque) ou d&#x27;extraire un tableau de bord financier complet à partir d&#x27;une simple phrase simplifie radicalement l&#x27;interaction avec les marchés.</span></li><li><span class="point-bullet">✦</span><span>Exploitation des taux de financement (*Funding Rate Farming*)** : Le scanner automatisé identifie les paires présentant les rendements annualisés les plus élevés (50 % à 100%+) pour permettre aux traders de percevoir des paiements réguliers toutes les huit heures sans spéculer sur la direction des prix.</span></li><li><span class="point-bullet">✦</span><span>Analyse on-chain et suivi des « baleines » (*Whale Tracking*)** : L&#x27;extraction et le classement des 33 000 portefeuilles d&#x27;Hyperliquid permettent d&#x27;isoler les 20 traders les plus rentables pour copier ou anticiper leurs mouvements d&#x27;achat et de vente en temps réel.</span></li><li><span class="point-bullet">✦</span><span>Détection des divergences de marché** : Le croisement des positions entre les portefeuilles les plus rentables et les plus perdants met en lumière les « trades encombrés » (consensus) et les divergences stratégiques majeures (ex: l&#x27;argent intelligent achète ce que les particuliers vendent).</span></li><li><span class="point-bullet">✦</span><span>Exécution cloud sécurisée et résiliente** : Le bot de trading ne tourne pas sur un ordinateur portable personnel mais sur un serveur cloud distant, garantissant une continuité de service 24/7 même en cas de coupure de courant ou de Wi-Fi.</span></li><li><span class="point-bullet">✦</span><span>Brief alpha quotidien matinal** : Un rapport automatisé est généré et envoyé chaque matin avant l&#x27;ouverture de la session, synthétisant l&#x27;état des baleines, l&#x27;analyse graphique et la configuration à plus forte conviction dimensionnée selon le profil de risque exact.</span></li><li><span class="point-bullet">✦</span><span>Intégration transparente via Webhooks** : La liaison directe entre les alertes de stratégies générées sur TradingView et l&#x27;exchange permet une exécution instantanée des ordres sans latence humaine.</span></li><li><span class="point-bullet">✦</span><span>Compression du temps de développement** : Des projets qui prenaient autrefois des semaines ou des mois de codage peuvent désormais être développés et déployés en une seule après-midi grâce aux capacités de programmation de Claude Code.</span></li><li><span class="point-bullet">✦</span><span>Changement de paradigme sur l&#x27;avantage concurrentiel** : En quantitatif, l&#x27;avantage ne réside pas dans la détention d&#x27;une stratégie parfaite dès le départ, mais dans la capacité à tester itérativement un grand nombre d&#x27;idées assez rapidement pour identifier celles qui fonctionnent.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:35</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer exactement comment j&#x27;ai transformé tout mon système de trading en un pilote automatique IA 24h/24 et 7j/7 en utilisant Claude. Et je vais vous le prouver dès maintenant, en direct sur mon propre compte, ce qui signifie plus besoin de fixer des graphiques toute la journée et plus de transactions manquées pendant que vous dormez. Maintenant, tout ce système peut lire mes graphiques, exécuter mes transactions, gérer mon risque et m&#x27;envoyer un rapport complet chaque matin, entièrement de manière autonome. Je vais vous montrer comment il fonctionne, où l&#x27;obtenir et les trois outils exacts que j&#x27;utilise pour construire ceci étape par étape afin que vous puissiez construire le même système pour</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande (Claude Code)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Informations de version (Claude Code v2.1.91, Opus 4.6, 1M context, Claude Max) et invite de commande active.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage du terminal prêt pour la saisie de commandes ou de prompts pour l&#x27;automatisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000009_seg1.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface en ligne de commande de l&#x27;outil Claude Code." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface en ligne de commande de l&#x27;outil Claude Code.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:35 - 00:01:09</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous-même donc entrons dans le vif du sujet maintenant avant de vous montrer les outils je veux rapidement vous dire pourquoi je construis réellement ceci je fais du trading de crypto depuis des années je gère une chaîne axée sur les cryptomonnaies je partage des stratégies des guides des comparatifs chaque jour et je m&#x27;en sors bien mais j&#x27;ai toujours su que les traders qui gagnent vraiment au plus haut niveau ne se contentent pas de lire les graphiques mieux que tout le monde. Ils ont des systèmes, ils ont de l&#x27;automatisation, ils ont un avantage qui se compose au fil du temps. Donc ce n&#x27;est pas seulement une vidéo sur</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading WEEX, site web &quot;Exchange Comparer&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de prix cryptos, carnet d&#x27;ordres, détails de position ETH/USDT, scores d&#x27;évaluation d&#x27;échange crypto.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur une plateforme de comparaison d&#x27;échanges et consultation d&#x27;une interface de trading de crypto-monnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000043_seg2.jpg" alt="Interface de trading affichant un graphique de prix avec des bougies, un carnet d&#x27;ordres et une position ouverte sur ETH/USDT." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000043_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Interface de trading affichant un graphique de prix avec des bougies, un carnet d&#x27;ordres et une position ouverte sur ETH/USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000052_seg2.jpg" alt="Page web d&#x27;un comparateur d&#x27;échanges de cryptomonnaies présentant le classement et le score de la plateforme OKX." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000052_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:52</span>
+                        <span class="caption-text">Page web d&#x27;un comparateur d&#x27;échanges de cryptomonnaies présentant le classement et le score de la plateforme OKX.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000100_seg2.jpg" alt="Interface de la plateforme de trading WEEX montrant des graphiques de marché et les détails d&#x27;une position ouverte." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000100_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Interface de la plateforme de trading WEEX montrant des graphiques de marché et les détails d&#x27;une position ouverte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:09 - 00:01:41</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Outils d&#x27;IA. C&#x27;est moi qui vous montre exactement ce que je suis en train de construire en ce moment et pourquoi je crois sincèrement que c&#x27;est ainsi que je vais atteindre mon premier million. Et je veux vous emmener avec moi à chaque étape. Alors laissez-moi vous montrer à quoi cela ressemble exactement. La première chose que je veux vous montrer, et c&#x27;est celle qui m&#x27;a vraiment époustouflé la première fois que je l&#x27;ai vue, Claude lit l&#x27;historique des prix, identifie les niveaux les plus significatifs, les trace directement sur votre graphique et vous dit lesquels comptent le plus en ce moment, regardez le graphique, lignes vertes pour le support, lignes rouges pour</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange crypto WEEX et terminal de commande Claude Code.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers BTC/USDT, indicateurs de volume, carnet d&#x27;ordres, informations de funding rate et interface CLI Claude Code.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme de trading et utilisation de l&#x27;outil de développement en ligne de commande.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000117_seg3.jpg" alt="Interface de la plateforme de trading WEEX affichant un graphique de prix BTC/USDT, un carnet d&#x27;ordres et les détails du compte." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000117_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Interface de la plateforme de trading WEEX affichant un graphique de prix BTC/USDT, un carnet d&#x27;ordres et les détails du compte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000125_seg3.jpg" alt="Terminal de commande affichant l&#x27;interface de Claude Code v1.1.92 avec un message d&#x27;installation native." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000125_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Terminal de commande affichant l&#x27;interface de Claude Code v1.1.92 avec un message d&#x27;installation native.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:41 - 00:02:14</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les étiquettes de prix de résistance le nombre de fois que chaque niveau a été testé tout est tracé automatiquement et ensuite il vous indique exactement où se situe le prix en ce moment par rapport à ces niveaux et vous donne un biais directionnel basé sur l&#x27;historique de la façon dont le prix a réagi à chacun d&#x27;eux. Cela me prenait 20 minutes à tracer manuellement sur chaque graphique. Claude le fait en quelques secondes. Et ce n&#x27;est que le point de départ. Vous pouvez également demander à Claude d&#x27;écrire des stratégies PineScript complètes à partir d&#x27;un anglais simple, de déboguer vos indicateurs existants, d&#x27;exécuter une confluence multi-période complète</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, WEEX, interface textuelle / terminal d&#x27;analyse.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Niveaux de prix (supports et résistances), nombre de tests par niveau, notes sur le volume et l&#x27;historique des prix, règles d&#x27;entrée/sortie basées sur les bandes de Bollinger et le RSI.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;analyse automatisée des niveaux de support/résistance et du biais directionnel du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000150_seg4.jpg" alt="Graphique TradingView sur l&#x27;interface WEEX affichant le cours du Bitcoin (BTC/USDT) en unités de 5 minutes avec des lignes de support (vertes) et de résistance (rouges) annotées." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000150_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Graphique TradingView sur l&#x27;interface WEEX affichant le cours du Bitcoin (BTC/USDT) en unités de 5 minutes avec des lignes de support (vertes) et de résistance (rouges) annotées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000158_seg4.jpg" alt="Analyse textuelle détaillée sous forme de tableaux et de notes dans une interface en ligne de commande ou un rapport, listant les niveaux de résistance, les supports, la position actuelle du prix et le biais directionnel." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000158_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Analyse textuelle détaillée sous forme de tableaux et de notes dans une interface en ligne de commande ou un rapport, listant les niveaux de résistance, les supports, la position actuelle du prix et le biais directionnel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:14 - 00:02:47</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">analyse sur les graphiques hebdomadaire, journalier, en quatre heures et en une heure simultanément, et obtenez une recommandation de trade spécifique avec un point d&#x27;entrée, un stop-loss et un take-profit, le tout à partir d&#x27;une seule invite. Mais c&#x27;est là que ça devient entièrement mains libres. Vous pouvez connecter n&#x27;importe laquelle de ces stratégies directement à votre exchange via un webhook TradingView. Lorsque votre stratégie génère un signal sur TradingView, Claude le reçoit instantanément par le webhook et exécute le trade automatiquement sur votre exchange. Entrée, stop-loss, take-profit, tout est fait. Sans que vous ne touchiez à rien, le signal est arrivé,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (Claude Code session)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de décomposition multi-timeframe (Weekly, Daily, 4-Hour, 1-Hour avec EMA Trend, RSI, MACD Hist, Price vs EMAs et Bias), niveaux clés (résistances et supports journaliers), recommandation de trade LONG (Entry, Stop Loss, Take Profit, R:R), et avertissements importants.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats d&#x27;une analyse automatisée multi-timeframe avec génération d&#x27;une recommandation de trade spécifique et gestion des risques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000223_seg5.jpg" alt="Un rapport de confluence multi-timeframe pour BTCUSDT Perp s&#x27;affiche dans un terminal, présentant un tableau de décomposition par unité de temps, des niveaux clés, une recommandation de trade LONG et des avertissements importants." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000223_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Un rapport de confluence multi-timeframe pour BTCUSDT Perp s&#x27;affiche dans un terminal, présentant un tableau de décomposition par unité de temps, des niveaux clés, une recommandation de trade LONG et des avertissements importants.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:47 - 00:03:21</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Claude l&#x27;a traité. Trade ouvert. Confirmation en retour avec chaque détail. Tu construis la stratégie une seule fois, et à partir de ce moment-là, elle tourne toute seule. Maintenant, celui-ci, c&#x27;est celui qui a complètement changé ma routine quotidienne. J&#x27;ai construit mon propre assistant de trading IA en utilisant Claude et Telegram, et il trouve des trades rentables pour moi en utilisant l&#x27;IA la plus puissante disponible actuellement, plus intelligente que n&#x27;importe quel humain ne pourrait l&#x27;être. Il exécute les trades, gère mes positions, m&#x27;envoie des alertes en temps réel et génère des rapports de portefeuille complets. Le tout à partir d&#x27;un simple message sur mon téléphone. Ce matin, j&#x27;ai placé un trade depuis mon lit, j&#x27;ai pris</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Hyperdash (plateforme d&#x27;analyse) et application de messagerie type Telegram / bot Claude.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Métriques de portefeuilles (Abraxas Capital, Cumberland), valeurs de positions, leviers, biais de marché, et résultats de scan des taux de financement (funding rates) pour des paires futures (ACTUSDT, DOGEUSDT, ADAUSDT, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de données analytiques de portefeuilles sur Hyperdash, puis démonstration d&#x27;un bot Telegram automatisé propulsé par Claude effectuant un scan de 690 paires futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000256_seg6.jpg" alt="Interface Hyperdash affichant le tableau de bord Explore avec des graphiques de positionnement de portefeuilles et de performance de marché." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000256_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:56</span>
+                        <span class="caption-text">Interface Hyperdash affichant le tableau de bord Explore avec des graphiques de positionnement de portefeuilles et de performance de marché.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000313_seg6.jpg" alt="Interface de messagerie ClaudeTelegramBot montrant un échange de commandes pour scanner les paires futures et afficher les taux de financement les plus élevés." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000313_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:13</span>
+                        <span class="caption-text">Interface de messagerie ClaudeTelegramBot montrant un échange de commandes pour scanner les paires futures et afficher les taux de financement les plus élevés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:21 - 00:03:53</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les bénéfices de la salle de sport, je n&#x27;ai touché à aucun graphique. Voici Claude qui s&#x27;exécute sur mon ordinateur. Ça a l&#x27;air simple. Juste une interface textuelle. Mais regardez ce qu&#x27;il peut faire. Vous pouvez pratiquement ouvrir une position de trading avec une seule phrase. Ouvre un long x5 sur ETH avec 10 dollars. Définis un stop-loss à moins 3 % et un take-profit à plus 8 %. Regardez-le réfléchir. Et voilà. Position ouverte. Stop-loss défini. Take-profit défini. Confirmation avec tous les détails. Une seule phrase. C&#x27;est fait. Maintenant, laissez-moi vous montrer quelque chose qui vraiment</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Claude Code (terminal de commande CLI) et la plateforme de trading WEEX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Terminal Claude Code avec version et invites de commandes ; interface WEEX avec graphiques en chandeliers, carnet d&#x27;ordres et onglet des ordres ouverts (&quot;Open orders&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;outil d&#x27;IA textuel Claude Code puis bascule sur l&#x27;interface de l&#x27;échange WEEX pour illustrer l&#x27;exécution d&#x27;ordres de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000329_seg7.jpg" alt="Interface textuelle de Claude Code v2.1.91 dans un terminal sur fond bleu." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000329_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Interface textuelle de Claude Code v2.1.91 dans un terminal sur fond bleu.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000345_seg7.jpg" alt="Interface de l&#x27;échange de cryptomonnaies WEEX montrant un graphique de trading et des ordres ouverts." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000345_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Interface de l&#x27;échange de cryptomonnaies WEEX montrant un graphique de trading et des ordres ouverts.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:53 - 00:04:23</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">m&#x27;a époustouflé la première fois que j&#x27;ai exécuté ceci. Donne-moi un tableau de bord complet de portefeuille. Toutes mes positions, mes profits et pertes, mes frais de financement, ma courbe de capital sous forme de rapport visuel. Regarde-le fonctionner. Il extrait chaque donnée de mon compte en ce moment même. Et voici ce qu&#x27;il génère. Un tableau de bord complet en mode sombre. Une courbe de capital. Un taux de réussite. Des revenus de financement ventilés par crypto. Chaque position ouverte avec la distance de liquidation mise en surbrillance. C&#x27;est le genre de rapport qu&#x27;un desk de trading professionnel produirait.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande interactif et tableau de bord web personnalisé (WEEX Portfolio Dashboard).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails de position ETH (Side: LONG, Size: 0.024 ETH, Entry Price: $2,052.00, Leverage: 5x, Take Profit, Stop Loss) et métriques de portefeuille (Margin Allocation, Funding Rate Opportunities).</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution d&#x27;une commande textuelle pour générer un rapport visuel complet du portefeuille en HTML.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000401_seg8.jpg" alt="Interface de terminal de commande affichant l&#x27;exécution d&#x27;un script Python pour l&#x27;ouverture d&#x27;une position longue sur l&#x27;ETH avec des ordres de Take Profit et Stop Loss." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000401_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:01</span>
+                        <span class="caption-text">Interface de terminal de commande affichant l&#x27;exécution d&#x27;un script Python pour l&#x27;ouverture d&#x27;une position longue sur l&#x27;ETH avec des ordres de Take Profit et Stop Loss.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000416_seg8.jpg" alt="Tableau de bord de portefeuille WEEX généré automatiquement montrant l&#x27;allocation des marges et les opportunités de taux de financement." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000416_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:16</span>
+                        <span class="caption-text">Tableau de bord de portefeuille WEEX généré automatiquement montrant l&#x27;allocation des marges et les opportunités de taux de financement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:24 - 00:04:46</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je l&#x27;ai obtenu en quelques secondes à partir d&#x27;une seule consigne. Et soit dit en passant, si vous trouvez cela utile jusqu&#x27;à présent, restez jusqu&#x27;à la fin parce que je vais vous montrer comment configurer tout cela vous-même. Continuez à regarder. Très bien, laissez-moi vous en montrer plus. Vous pouvez également connecter ceci à votre Telegram pour envoyer des commandes directement depuis votre téléphone. Vous pouvez taper analyser toutes les paires futures et trouver les taux de financement les plus élevés en ce moment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de documentation et application de messagerie Telegram connectée à Claude Code.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Section &#x27;Creative Use Cases&#x27;, description du journal de trading automatisé, et invite (prompt) sur Telegram : &#x27;Scan all futures pairs and find the highest funding rates right now&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des cas d&#x27;utilisation avancés de l&#x27;IA en trading et démonstration d&#x27;une requête sur un bot Telegram pour analyser les taux de financement des contrats futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000429_seg9.jpg" alt="Page web de documentation Alex Carter Trading montrant des cas d&#x27;utilisation créatifs pour l&#x27;IA, comme un journal de trading automatisé et la copie de configurations de trade." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000429_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:29</span>
+                        <span class="caption-text">Page web de documentation Alex Carter Trading montrant des cas d&#x27;utilisation créatifs pour l&#x27;IA, comme un journal de trading automatisé et la copie de configurations de trade.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000441_seg9.jpg" alt="Interface d&#x27;une application de messagerie (Telegram) montrant un bot connecté à une session Claude Code, avec un utilisateur demandant de scanner les paires futures pour trouver les taux de financement les plus élevés." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000441_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Interface d&#x27;une application de messagerie (Telegram) montrant un bot connecté à une session Claude Code, avec un utilisateur demandant de scanner les paires futures pour trouver les taux de financement les plus élevés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:47 - 00:05:06</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il a scanné chaque paire, les a classées par taux de financement, a calculé le rendement annualisé, et m&#x27;a dit exactement dans quelle direction me positionner pour récolter ce financement instantanément. Maintenant, si vous ne savez pas ce que sont les taux de financement, c&#x27;est essentiellement de l&#x27;argent gratuit que la bourse verse toutes les huit heures aux traders qui sont positionnés du bon côté du marché.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application Telegram et échange de cryptomonnaies WEEX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste de taux de financement avec des pourcentages positifs et négatifs pour diverses cryptomonnaies (ACTUSDT, DOGEUSDT, APTUSDT, etc.), ainsi qu&#x27;une interface de trading de contrats perpétuels avec graphique des prix et carnet d&#x27;ordres.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats d&#x27;un scan automatisé des taux de financement suivi d&#x27;une illustration de l&#x27;interface d&#x27;échange pour illustrer le positionnement sur les marchés dérivés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000452_seg10.jpg" alt="Capture d&#x27;écran d&#x27;un bot Telegram affichant un scan des taux de financement (Funding Rate Scan) pour différentes paires crypto, classées entre les taux les plus élevés où les longs paient les shorts et ceux où les shorts paient les longs." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000452_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:52</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un bot Telegram affichant un scan des taux de financement (Funding Rate Scan) pour différentes paires crypto, classées entre les taux les plus élevés où les longs paient les shorts et ceux où les shorts paient les longs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000501_seg10.jpg" alt="Interface de la plateforme de trading WEEX affichant le graphique de la paire BTC/USDT, un carnet d&#x27;ordres et les informations de taux de financement (Funding rate / Countdown)." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000501_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:01</span>
+                        <span class="caption-text">Interface de la plateforme de trading WEEX affichant le graphique de la paire BTC/USDT, un carnet d&#x27;ordres et les informations de taux de financement (Funding rate / Countdown).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:07 - 00:05:36</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Lorsque le financement est positif, les positions longues paient les courtes. Lorsque le financement est négatif, les positions courtes paient les longues. Et certains de ces taux sont extrêmement élevés. Ce que fait ce scanner, c&#x27;est trouver les paires où ce taux est le plus élevé, calculer ce que cela donne sur une base annuelle, parfois 50 %, 100 %, voire plus, et vous dire exactement dans quelle direction ouvrir une position pour vous asseoir et percevoir ce paiement toutes les huit heures. Vous n&#x27;essayez même pas de prédire la direction des prix. Vous cultivez simplement le taux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application de messagerie Telegram et plateforme d&#x27;échange de cryptomonnaies WEEX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Classement des paires crypto par taux de financement (le plus haut où les longs paient les shorts, et le plus bas où les shorts paient les longs) avec pourcentages et prévisions, ainsi qu&#x27;un graphique de trading avec carnet d&#x27;ordres.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats d&#x27;un scan de taux de financement via un bot Telegram et visualisation de l&#x27;interface de trading d&#x27;un exchange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000514_seg11.jpg" alt="Capture d&#x27;écran montrant un message Telegram d&#x27;un bot de scan des taux de financement (Funding Rate Scan) affichant les paires avec les taux les plus élevés et les plus bas." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000514_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:14</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un message Telegram d&#x27;un bot de scan des taux de financement (Funding Rate Scan) affichant les paires avec les taux les plus élevés et les plus bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000529_seg11.jpg" alt="Interface de trading de la plateforme WEEX montrant un graphique de prix en chandelier, un carnet d&#x27;ordres et les onglets de gestion des ordres ouverts." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000529_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:29</span>
+                        <span class="caption-text">Interface de trading de la plateforme WEEX montrant un graphique de prix en chandelier, un carnet d&#x27;ordres et les onglets de gestion des ordres ouverts.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:37 - 00:05:58</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et maintenant, au lieu de vérifier manuellement chaque paire vous-même, ce que personne ne fait, Claude le fait en quelques secondes et vous sert l&#x27;opportunité sur un plateau. Maintenant, cette prochaine section, c&#x27;est là que ça devient vraiment intéressant. Et honnêtement, c&#x27;est l&#x27;une de mes choses préférées que j&#x27;ai construites avec Claude. Et si vous pouviez analyser 33 000 portefeuilles sur Hyperliquid ? Trouver les 20 traders les plus rentables.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes Bash/Python, navigateur web (site web Alex Carter Trading, plateforme Hyperliquid Leaderboard).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Scripts d&#x27;API de trading, informations de position (ETHUSDT, levier 10x), guide de configuration de Whale Tracker, données de portefeuilles de traders sur le leaderboard (valeurs de comptes, PnL, ROI).</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution de commandes de trading via script, présentation d&#x27;un outil de suivi de portefeuilles (&quot;Whale Tracker&quot;) et consultation du classement des meilleurs traders.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000542_seg12.jpg" alt="Un terminal de commandes affichant des scripts Python et des messages de confirmation de trading (ouverture d&#x27;une position LONG ETHUSDT avec effet de levier)." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000542_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:42</span>
+                        <span class="caption-text">Un terminal de commandes affichant des scripts Python et des messages de confirmation de trading (ouverture d&#x27;une position LONG ETHUSDT avec effet de levier).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000548_seg12.jpg" alt="Une page web de présentation intitulée &quot;Whale Tracker Setup Guide&quot; proposant le téléchargement d&#x27;un outil Claude Code pour scanner plus de 33 000 portefeuilles Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000548_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Une page web de présentation intitulée &quot;Whale Tracker Setup Guide&quot; proposant le téléchargement d&#x27;un outil Claude Code pour scanner plus de 33 000 portefeuilles Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000553_seg12.jpg" alt="Le tableau de classement (Leaderboard) de la plateforme Hyperliquid affichant les portefeuilles de traders avec leurs valeurs de compte, PnL et ROI." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000553_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:53</span>
+                        <span class="caption-text">Le tableau de classement (Leaderboard) de la plateforme Hyperliquid affichant les portefeuilles de traders avec leurs valeurs de compte, PnL et ROI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:58 - 00:06:30</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">voyez exactement ce qu&#x27;ils achètent en ce moment leurs prix d&#x27;entrée leur effet de levier leur PNL non réalisé et obtenez un plan de négociation complet basé sur tout cela aucune clé API nécessaire pas de code pas de recherche manuelle maintenant Hyperliquid très rapidement c&#x27;est un échange perpétuel décentralisé fonctionnant sur sa propre blockchain pas de KYC pas d&#x27;intermédiaire et comme c&#x27;est entièrement sur la chaîne chaque transaction, chaque position, chaque portefeuille, tout est public. C&#x27;est ce qui rend cela possible. Très bien, laissez-moi ouvrir Claude Code et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes CLI et documentation officielle (GitBook / Site Web Hyperliquid Docs).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Plan de trading XMR (Token: XMR, Direction: LONG, Current Price: ~$328, Entry Zone: $325-330, Stop Loss: $305, Leverage: 5x, Position Size: 15% of account) et documentation de la blockchain Hyperliquid.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un plan de trading complet basé sur l&#x27;analyse des positions des baleines suivi d&#x27;une explication de la plateforme Hyperliquid.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000606_seg13.jpg" alt="Un terminal de commandes affichant un plan de trading détaillé pour XMR Long, incluant les zones d&#x27;entrée, le stop loss, le take profit, et le levier." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000606_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:06</span>
+                        <span class="caption-text">Un terminal de commandes affichant un plan de trading détaillé pour XMR Long, incluant les zones d&#x27;entrée, le stop loss, le take profit, et le levier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000614_seg13.jpg" alt="La page de documentation officielle d&#x27;Hyperliquid (&quot;Hyperliquid Docs&quot;) expliquant ce qu&#x27;est la plateforme et son architecture technique (Layer 1, HyperBFT)." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000614_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:14</span>
+                        <span class="caption-text">La page de documentation officielle d&#x27;Hyperliquid (&quot;Hyperliquid Docs&quot;) expliquant ce qu&#x27;est la plateforme et son architecture technique (Layer 1, HyperBFT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:30 - 00:06:53</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">je vous montre ça en direct. Voici la première chose que je veux vous montrer. Claude analyse les 20 portefeuilles les plus rentables sur Hyperliquid en ce moment, extrait toutes les positions ouvertes et les classe par rentabilité totale. Le tout en un seul coup. Regardez ce qui se passe. Claude se connecte aux points de terminaison publics d&#x27;Hyperliquid, commence à extraire les données des portefeuilles sur 33 000 adresses, les classe par rentabilité et commence à rédiger le rapport.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes / Script CLI</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des positions clés (Coin, Direction, Size, Entry, Leverage, uPnL) pour diverses cryptomonnaies (BTC, ETH, SOL, ENA, LINK, FARTCOIN, WLD, AAVE, HYPE, MON, DOGE, PUMP) ainsi que des métriques de PnL mensuel et d&#x27;Account Value.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats de l&#x27;analyse des portefeuilles de baleines sur Hyperliquid par un script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000636_seg14.jpg" alt="Un terminal de commandes affichant les données extraites des portefeuilles les plus rentables sur Hyperliquid, incluant les positions ouvertes et les PnL." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000636_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:36</span>
+                        <span class="caption-text">Un terminal de commandes affichant les données extraites des portefeuilles les plus rentables sur Hyperliquid, incluant les positions ouvertes et les PnL.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:53 - 00:07:16</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tu peux le voir fonctionner à travers les portefeuilles en temps réel. Les prix d&#x27;entrée, l&#x27;effet de levier, les profits et pertes non réalisés, tout arrive en direct. Et voici le résultat. Les 20 principales baleines classées, chaque position ouverte listée. Et en bas, le résumé du sentiment global. En ce moment, l&#x27;argent intelligent est acheteur net sur le Bitcoin et vendeur net sur presque tout le reste, en particulier Ethereum.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes / console en ligne de commande.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Données JSON structurées comprenant les clés : &quot;coin&quot;, &quot;direction&quot;, &quot;size&quot;, &quot;entry_price&quot;, &quot;unrealized_pnl&quot;, &quot;leverage&quot;, &quot;liquidation_price&quot; pour différentes cryptomonnaies (WIF, MOODENG, HYPE, VIRTUAL, MORPHO).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage en temps réel des données de suivi des portefeuilles et positions des baleines dans la console.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000659_seg15.jpg" alt="Un terminal de commandes affichant des données JSON en direct sur les positions ouvertes de baleines (prix d&#x27;entrée, effet de levier, PnL)." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000659_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:59</span>
+                        <span class="caption-text">Un terminal de commandes affichant des données JSON en direct sur les positions ouvertes de baleines (prix d&#x27;entrée, effet de levier, PnL).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:17 - 00:07:51</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est le genre de signal qui prenait autrefois des heures à être reconstitué manuellement. Claude le fait en moins d&#x27;une minute. Maintenant, c&#x27;est là que ça devient vraiment intéressant, ce prompt compare les 20 portefeuilles les plus rentables aux 20 portefeuilles qui perdent le plus et trouve chaque jeton où ils se trouvent de chaque côté de la transaction, regardez-le extraire les deux groupes simultanément, les portefeuilles rentables d&#x27;un côté, les portefeuilles perdants de l&#x27;autre, et ensuite il commence à croiser les positions, voici le résultat, vous pouvez voir là où les deux groupes sont d&#x27;accord, ils sont tous les deux acheteurs sur Sui, donc c&#x27;est un trade encombré, mais regardez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal CLI / Claude Code.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau comparatif de positions (ETH, FARTCOIN, XMR, etc.) opposant les portefeuilles gagnants (long) aux perdants (short) avec signaux associés.</p>
+                        <p><strong>Action / Démonstration :</strong> Génération automatique de signaux de trading contrariants via l&#x27;analyse de portefeuilles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000725_seg16.jpg" alt="Terminal affichant l&#x27;analyse comparative (&quot;Smart Money vs Rekt Money&quot;) basée sur 33 381 portefeuilles Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000725_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:25</span>
+                        <span class="caption-text">Terminal affichant l&#x27;analyse comparative (&quot;Smart Money vs Rekt Money&quot;) basée sur 33 381 portefeuilles Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:51 - 00:08:27</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">alors que l&#x27;argent intelligent est massivement acheteur sur XMR, TRX, Pendle et Far coin, tandis que les traders particuliers sont vendeurs sur ces cryptos, cette divergence exacte, c&#x27;est le signal, c&#x27;est le genre d&#x27;analyse que les fonds spéculatifs paient cher, vous l&#x27;obtenez grâce à un outil d&#x27;IA à 20 dollars et à une API publique gratuite, et si vous voulez la configuration complète d&#x27;Hyperliquid, le code des compétences, chaque instruction, le système complet de suivi des baleines, je vais vous dire exactement comment obtenir tout cela dans un instant. Continuez à regarder. Maintenant, si vous êtes prêt à aller encore plus loin, vous pouvez utiliser Claude code pour créer un bot de trading entièrement automatisé du début à la fin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes et interface web de configuration de compte/API.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux statistiques comparatifs entre l&#x27;argent intelligent et les particuliers sur Hyperliquid, et liste des capacités de trading via API (Futures, Spot, Account Info).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse des divergences de positionnement entre investisseurs professionnels et particuliers, puis présentation des options d&#x27;automatisation par API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000800_seg17.jpg" alt="Un tableau de données dans un terminal affichant les positions des traders (&#x27;Smart&#x27; vs &#x27;Rekt&#x27;) sur différentes cryptomonnaies avec les points clés en bas." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000800_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:00</span>
+                        <span class="caption-text">Un tableau de données dans un terminal affichant les positions des traders (&#x27;Smart&#x27; vs &#x27;Rekt&#x27;) sur différentes cryptomonnaies avec les points clés en bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000818_seg17.jpg" alt="Une interface web détaillant les fonctionnalités d&#x27;API pour le trading de Futures et Spot (gestion des ordres, positions, effet de levier)." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000818_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:18</span>
+                        <span class="caption-text">Une interface web détaillant les fonctionnalités d&#x27;API pour le trading de Futures et Spot (gestion des ordres, positions, effet de levier).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:27 - 00:08:51</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour la crypto, les actions, ou n&#x27;importe quel marché que vous tradez. Et honnêtement, c&#x27;est ainsi que Claude va changer notre façon de trader pour toujours. Et nous avons déjà fait cela auparavant. Laissez-moi vous montrer à quoi ressemble réellement le résultat final. C&#x27;est le tableau de bord, une seule URL, chaque position, votre courbe de capital, l&#x27;état de vos bots, vos données sur les baleines, tout en direct, tout en un seul endroit. Fini les multiples onglets de navigateur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> WEEX Dashboard</p>
+                        <p><strong>Contenu textuel & Code :</strong> Métriques de compte (Equity: 19.78, Available: 19.78, Margin Used: 0.00, Unrealized PNL: 0.00), Closed PNL (Today, 7 Days, 30 Days), Equity Curve (Last 90 days), Open Positions, Recent Signals.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du tableau de bord de trading et des métriques de performance du compte.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000845_seg18.jpg" alt="Tableau de bord WEEX affichant le compte, la courbe d&#x27;équité sur 90 jours, les positions ouvertes et les signaux récents." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000845_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:45</span>
+                        <span class="caption-text">Tableau de bord WEEX affichant le compte, la courbe d&#x27;équité sur 90 jours, les positions ouvertes et les signaux récents.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:51 - 00:09:26</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Fini de douter de vos entrées. Et chaque matin, avant même d&#x27;ouvrir votre ordinateur portable, ce brief alpha quotidien est déjà dans votre boîte de réception. Chaque jour, à l&#x27;heure et prêt à être lu. Il a déjà scanné les baleines, lu les graphiques, vérifié votre compte et vous a transmis l&#x27;unique configuration à la plus forte conviction pour la journée. Dimensionnée selon votre risque exact. Un seul prompt. Toute la stack. Et le bot lui-même n&#x27;est pas installé sur votre ordinateur portable. Il tourne 24/7 sur un serveur cloud. S&#x27;il plante, il redémarre tout seul. Si votre Wi-Fi coupe, il continue de tourner. Votre ordinateur portable n&#x27;est que la télécommande.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal CLI</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de données marché (BTC, ETH, SOL), prix, variations 24h, RSI, distance EMA 200 et zones de réaction.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution d&#x27;un script d&#x27;analyse et affichage d&#x27;un rapport quotidien automatisé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000900_seg19.jpg" alt="Terminal de commande affichant un brief de marché automatisé pour BTC, ETH et SOL avec métriques et analyse technique." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000900_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:00</span>
+                        <span class="caption-text">Terminal de commande affichant un brief de marché automatisé pour BTC, ETH et SOL avec métriques et analyse technique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:26 - 00:09:46</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Désormais, la barrière mathématique pour construire tout cela a pratiquement disparu. Avant des modèles performants comme CloudCode, cela aurait pris des semaines, voire des mois, à mettre en place. Maintenant, vous pouvez passer d&#x27;une idée à un système fonctionnel en une après-midi, et cela a son importance car la plupart des stratégies ne fonctionnent pas. L&#x27;avantage ne réside pas dans le fait d&#x27;avoir une stratégie parfaite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de cours en ligne (Trading AI) et interface de graphique financier TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Image 1 : Statistiques de performance de bots (Sovereign2013 avec $3.3M, Alpha Arena montrant Claude à +31%, et Jake Nesler avec $100K+). Image 2 : Graphique en chandeliers BTCUSDT, bandes de Bollinger (BB 30 SMA close 2), indicateur RSI (14 close) et volumes.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des résultats de trading automatisés par IA, puis analyse technique sur le graphique de prix du Bitcoin avec indicateurs de momentum et de volatilité.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000931_seg20.jpg" alt="Une page web présentant le cours &#x27;Trading AI Full Course&#x27; avec trois encadrés de cas pratiques et de performances de bots dopés à l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000931_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:31</span>
+                        <span class="caption-text">Une page web présentant le cours &#x27;Trading AI Full Course&#x27; avec trois encadrés de cas pratiques et de performances de bots dopés à l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000941_seg20.jpg" alt="Un graphique TradingView affichant le contrat perpétuel BTCUSDT sur Bybit en unité de temps 5 minutes, avec les indicateurs Bollinger Bands et RSI." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_000941_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:41</span>
+                        <span class="caption-text">Un graphique TradingView affichant le contrat perpétuel BTCUSDT sur Bybit en unité de temps 5 minutes, avec les indicateurs Bollinger Bands et RSI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:46 - 00:10:08</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est dans le fait d&#x27;être capable de tester suffisamment d&#x27;idées assez vite pour trouver celles qui fonctionnent vraiment. D&#x27;accord. Et regardez, au cours des prochaines années, deux types de traders existeront. Ceux qui utilisent l&#x27;IA et ceux qui font encore tout manuellement. Même marché. Des résultats très différents. Voici comment vous placer du bon côté. J&#x27;ai tout rassemblé au sein de la communauté AI Trade Edge.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (intégré / courtier WEEX)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT.P, unité de temps 5m, chandeliers japonais, cours affiché à 69 894,2 USDT, boutons Buy/Sell WEEX.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et observation du graphique de cours du Bitcoin pour comparer le comportement du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001002_seg21.jpg" alt="Graphique TradingView en chandeliers 5 minutes de la paire BTC/USDT Perpetual Contract sur l&#x27;échange WEEX." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001002_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:02</span>
+                        <span class="caption-text">Graphique TradingView en chandeliers 5 minutes de la paire BTC/USDT Perpetual Contract sur l&#x27;échange WEEX.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:08 - 00:10:44</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Chaque prompt, chaque bot, chaque modèle, chaque guide étape par étape que j&#x27;utilise personnellement, tout au même endroit, et tout ce que je créerai à l&#x27;avenir est ajouté directement dans le groupe dès sa sortie. Nous testons également des stratégies provenant de tout Internet, en les automatisant à l&#x27;aide de PineScript, en les exécutant en direct et en partageant exactement ce qui fonctionne et ce qui ne fonctionne pas. Ainsi, vous n&#x27;obtenez pas seulement des outils, vous bénéficiez d&#x27;une véritable opération de recherche en direct. À l&#x27;intérieur, se trouve également un cours complet de trading agentique de 2,5 heures, de débutant à expert, aucune expérience en codage n&#x27;est nécessaire, d&#x27;ailleurs</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation web d&#x27;intégration WEEX, TradingView (Binance BTC/USD).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des fonctionnalités de trading automatique WEEX (ordres spot/futures, SL/TP, levier) ; graphique en chandeliers japonais 2h, indicateur RSI-VWAP Indicator %, signaux BUY/SELL et métriques de position (Realized PnL, Unrealized PnL).</p>
+                        <p><strong>Action / Démonstration :</strong> Explication des capacités de l&#x27;agent de trading WEEX suivie d&#x27;une démonstration d&#x27;analyse technique et de signaux de trading sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001017_seg22.jpg" alt="Page de documentation et guide d&#x27;intégration détaillant les capacités de l&#x27;outil de trading automatisé WEEX (Futures, Spot et gestion du compte)." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001017_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:17</span>
+                        <span class="caption-text">Page de documentation et guide d&#x27;intégration détaillant les capacités de l&#x27;outil de trading automatisé WEEX (Futures, Spot et gestion du compte).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001035_seg22.jpg" alt="Graphique TradingView du cours BTC/USD en données 2h avec l&#x27;indicateur RSI-VWAP, des signaux d&#x27;achat/vente superposés et une fenêtre de métriques PnL." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001035_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:35</span>
+                        <span class="caption-text">Graphique TradingView du cours BTC/USD en données 2h avec l&#x27;indicateur RSI-VWAP, des signaux d&#x27;achat/vente superposés et une fenêtre de métriques PnL.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:44 - 00:11:18</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">fin de compte vous aurez votre propre système de trading IA en fonctionnement réel quelque chose que la plupart des traders particuliers ne savent même pas être possible en ce moment 79,99 dollars par mois un seul bon trade couvre ce montant et les 100 premiers membres bloquent ce tarif de façon permanente après cela le prix augmente le lien est dans la description vous ne pouvez vraiment pas vous permettre de rater ça et c&#x27;est tout c&#x27;est ainsi que je transforme tout mon système de trading en un pilote automatique IA 24h/24 et 7j/7 et comment vous pouvez en faire partie trois outils superposés fonctionnant 24h/24 et 7j/7 effectuant le travail de tout un trading</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, plateforme Whop, terminal de commandes (Claude Code)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix avec indicateurs de zones, interface de vente Whop avec tarif d&#x27;abonnement, et invite de commande dans un terminal.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;offre commerciale et visualisation d&#x27;un graphique de trading couplé à un assistant IA en terminal.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001109_seg23.jpg" alt="Graphique financier TradingView en arrière-plan avec des boîtes de zones et un terminal de commande Claude Code en bas à droite." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001109_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:09</span>
+                        <span class="caption-text">Graphique financier TradingView en arrière-plan avec des boîtes de zones et un terminal de commande Claude Code en bas à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:18 - 00:11:51</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">bureau pendant que vous continuez votre vie. Si vous voulez approfondir l&#x27;un de ces sujets individuellement, le guide complet TradingView Telegram et le suivi des baleines Hyperliquid, toutes ces vidéos s&#x27;affichent à l&#x27;écran en ce moment même, allez les consulter à votre rythme. Et si vous voulez le guide complet étape par étape pour construire votre propre système de trading agentique en utilisant Claude, cette vidéo s&#x27;affiche également à l&#x27;écran, allez la regarder ensuite. Si vous avez trouvé cela utile, laissez un j&#x27;aime, cela aide vraiment la chaîne, abonnez-vous si ce n&#x27;est pas déjà fait, et je vous retrouve dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading décentralisée Hyperliquid (section Leaderboard).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de classement affichant les dix meilleurs traders avec des colonnes : Rank, Trader (adresses de portefeuille masquées), Account Value, PnL (30D), ROI (30D) et Volume (30D).</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation du classement des baleines et des meilleurs traders sur Hyperliquid.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001126_seg24.jpg" alt="Capture d&#x27;écran montrant le classement (Leaderboard) de la plateforme Hyperliquid avec les adresses des traders, la valeur du compte, le PnL, le ROI et le volume." loading="lazy" onclick="openLightbox('../screenshots/bH6QId7TDaQ/bH6QId7TDaQ_001126_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:26</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le classement (Leaderboard) de la plateforme Hyperliquid avec les adresses des traders, la valeur du compte, le PnL, le ROI et le volume.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
