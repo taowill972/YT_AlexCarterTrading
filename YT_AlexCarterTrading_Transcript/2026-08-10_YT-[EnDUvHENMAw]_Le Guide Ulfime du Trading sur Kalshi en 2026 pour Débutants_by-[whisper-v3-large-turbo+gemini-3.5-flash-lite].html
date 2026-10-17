@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Le Guide Ulfime du Trading sur Kalshi en 2026 pour Débutants — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Le Guide Ulfime du Trading sur Kalshi en 2026 pour Débutants</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-10</span>
+                <span class="badge">⏱️ 00:15:23</span>
+                <span class="badge">🆔 <code>EnDUvHENMAw</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=EnDUvHENMAw" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo de la chaîne Alex Carter propose une immersion complète et analytique au sein de l'écosystème Kalshi, positionné comme le plus grand marché de prédiction réglementé aux États-Unis, tout en étendant ses fonctionnalités vers le trading de cryptomonnaies à effet de levier (jusqu'à 6,1x) via des contrats perpétuels (*perps*). L'analyse démontre comment transformer des événements macroéconomiques, politiques, sportifs ou culturels en opportunités de trading structurées grâce à des contrats binaires (Oui/Non) dont la valorisation oscille entre 0 $ et 1 $ en temps réel, s'apparentant structurellement au trading d'options à risque défini et plafonné. <br><br>Au-delà de l'interface grand public, la présentation lève le voile sur **Kalshi Pro**, un terminal avancé destiné aux opérateurs cherchant à optimiser leurs exécutions. Sont notamment décortiqués l'intégration native de graphiques **TradingView**, la lecture fine du carnet d'ordres (*order book*), l'analyse des spreads et des volumes, ainsi que la gestion rigoureuse des flux de capitaux. La stratégie d'exécutions rapides et de suivi des cotations en direct s'appuie sur une infrastructure technique moderne, offrant aux traders quantitatifs et systématiques un terrain de jeu inédit pour appliquer des modèles prédictifs, du scalping haute fréquence et une diversification multi-actifs au sein d'un même compte régulé.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Kalshi / Kalshi Pro** : Plateforme centrale de marchés de prédiction réglementés et de trading de contrats perpétuels crypto offrant des interfaces standard et professionnelles avec carnets d'ordres complets.<br>* **TradingView** : Outil de cartographie et d'analyse technique avancé intégré nativement dans l'interface Pro pour l'étude des paires de crypto-monnaies et des graphiques de probabilité.<br>* **Grok Bots** : Assistants IA mentionnés dans le positionnement technologique global de la chaîne pour l'optimisation et l'automatisation des stratégies de marché.<br>* **Claude Code** : Environnement de développement et d'assistance par intelligence artificielle utilisé pour coder et affiner des scripts de trading algorithmique.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView employé pour concevoir, backtester et déployer des indicateurs personnalisés et des stratégies automatisées.<br>* **Portefeuilles Web3 & Solutions de Paiement** : Passerelles de financement instantané incluant MetaMask, Phantom, Trust Wallet, Google Pay, ainsi que des exchanges partenaires (Coinbase, Uphold, Cash App).<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Structure des contrats binaires** : Chaque marché repose sur une proposition binaire (Oui/Non) se réglant strictement à 0 $ ou 1 $, éliminant le risque de perte illimitée inhérent aux options traditionnelles.<br>* **Dynamique de probabilité en temps réel** : Les prix des contrats agissent comme un pourcentage de probabilité implicite, évoluant dynamiquement au gré des flux d'actualités, des sondages ou des scores en direct.<br>* **Avantages de Kalshi Pro pour l'analyse quantitative** : Déblocage de métriques indispensables telles que le volume, le spread acheteur/vendeur, la profondeur du carnet d'ordres et la taille exacte des positions.<br>* **Gestion du risque (*Risk Management*) intégrée** : Perte maximale mathématiquement plafonnée au montant investi par contrat (maximum 1 $ par part), simplifiant le calcul du ratio risque/rendement.<br>* **Diversification multi-classes d'actifs** : Possibilité de router du capital entre des marchés décorrélés (politique, météo, sport, matières premières) et des dérivés crypto à effet de levier modéré (jusqu'à 6,1x).<br>* **Stratégie de financement et liquidité** : Utilisation de dépôts instantanés via carte ou Google Pay (0 % de frais) pour saisir des opportunités de scalping rapide sans friction de trésorerie.<br>* **Exploitation du carnet d'ordres** : Lecture des flux d'ordres passifs et agressifs sur la gauche des graphiques de probabilité pour identifier les déséquilibres temporaires d'offre et de demande.<br>* **Dimension sociale et *Sentiment Analysis*** : Utilisation du fil communautaire intégré pour sonder l'opinion des pairs, repérer des biais de marché et contrarier ou valider ses propres hypothèses de trading.<br>* **Contraintes géographiques et conformité** : Nécessité de vérifier l'éligibilité réglementaire selon les États américains (restrictions notables dans l'Illinois, le Michigan, le New Jersey, etc.).<br>* **Arbitrage événementiel** : Mise en place de stratégies réactives face aux flux d'informations continus (sondages politiques, matchs de tennis point par point, publications économiques).<br>* **Automatisation potentielle** : Synergie entre les données de Kalshi Pro et l'utilisation de scripts Pine Script ou d'assistants de code pour modéliser des prises de position algorithmiques.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Kalshi / Kalshi Pro</span><span class="tool-tag">TradingView</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Claude Code</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Portefeuilles Web3 &amp; Solutions de Paiement</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Structure des contrats binaires** : Chaque marché repose sur une proposition binaire (Oui/Non) se réglant strictement à 0 $ ou 1 $, éliminant le risque de perte illimitée inhérent aux options traditionnelles.</span></li><li><span class="point-bullet">✦</span><span>Dynamique de probabilité en temps réel** : Les prix des contrats agissent comme un pourcentage de probabilité implicite, évoluant dynamiquement au gré des flux d&#x27;actualités, des sondages ou des scores en direct.</span></li><li><span class="point-bullet">✦</span><span>Avantages de Kalshi Pro pour l&#x27;analyse quantitative** : Déblocage de métriques indispensables telles que le volume, le spread acheteur/vendeur, la profondeur du carnet d&#x27;ordres et la taille exacte des positions.</span></li><li><span class="point-bullet">✦</span><span>Gestion du risque (*Risk Management*) intégrée** : Perte maximale mathématiquement plafonnée au montant investi par contrat (maximum 1 $ par part), simplifiant le calcul du ratio risque/rendement.</span></li><li><span class="point-bullet">✦</span><span>Diversification multi-classes d&#x27;actifs** : Possibilité de router du capital entre des marchés décorrélés (politique, météo, sport, matières premières) et des dérivés crypto à effet de levier modéré (jusqu&#x27;à 6,1x).</span></li><li><span class="point-bullet">✦</span><span>Stratégie de financement et liquidité** : Utilisation de dépôts instantanés via carte ou Google Pay (0 % de frais) pour saisir des opportunités de scalping rapide sans friction de trésorerie.</span></li><li><span class="point-bullet">✦</span><span>Exploitation du carnet d&#x27;ordres** : Lecture des flux d&#x27;ordres passifs et agressifs sur la gauche des graphiques de probabilité pour identifier les déséquilibres temporaires d&#x27;offre et de demande.</span></li><li><span class="point-bullet">✦</span><span>Dimension sociale et *Sentiment Analysis*** : Utilisation du fil communautaire intégré pour sonder l&#x27;opinion des pairs, repérer des biais de marché et contrarier ou valider ses propres hypothèses de trading.</span></li><li><span class="point-bullet">✦</span><span>Contraintes géographiques et conformité** : Nécessité de vérifier l&#x27;éligibilité réglementaire selon les États américains (restrictions notables dans l&#x27;Illinois, le Michigan, le New Jersey, etc.).</span></li><li><span class="point-bullet">✦</span><span>Arbitrage événementiel** : Mise en place de stratégies réactives face aux flux d&#x27;informations continus (sondages politiques, matchs de tennis point par point, publications économiques).</span></li><li><span class="point-bullet">✦</span><span>Automatisation potentielle** : Synergie entre les données de Kalshi Pro et l&#x27;utilisation de scripts Pine Script ou d&#x27;assistants de code pour modéliser des prises de position algorithmiques.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:34</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est le guide ultime de CalSHI dont vous aurez besoin. Après cette vidéo, vous saurez tout sur le trading sur CalSHI, même si vous ne l&#x27;avez jamais utilisé auparavant. Je vais tout couvrir, de l&#x27;ouverture de votre compte au placement de votre premier trade sur un marché de prédiction, jusqu&#x27;à la manière de trader des cryptomonnaies avec effet de levier. Je couvrirai à la fois le CalSHI simple, adapté aux débutants, et aussi CalSHI Pro pour les utilisateurs avancés. Entrons donc dans le vif du sujet. Tout d&#x27;abord, CalSHI a commencé comme un marché de prédiction aux États-Unis où l&#x27;on trade sur des résultats du monde réel. C&#x27;est maintenant le plus grand qui existe et il est totalement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading et site web Kalshi (kalshi.com).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix des cryptomonnaies (BTC), options d&#x27;ordres UP/DOWN, effet de levier (3.6x), et guide pour débutants Kalshi News.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme de trading Kalshi et présentation du guide pour débutants.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000008_seg1.jpg" alt="Interface de trading Kalshi montrant le graphique du Bitcoin (BTC) avec un cours à 64,203 $ et un panneau de commande d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000008_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Interface de trading Kalshi montrant le graphique du Bitcoin (BTC) avec un cours à 64,203 $ et un panneau de commande d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000025_seg1.jpg" alt="Page web du blog Kalshi News affichant l&#x27;article &quot;What Is Kalshi? A Beginner&#x27;s Guide&quot; avec un grand logo vert." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000025_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Page web du blog Kalshi News affichant l&#x27;article &quot;What Is Kalshi? A Beginner&#x27;s Guide&quot; avec un grand logo vert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:34 - 00:01:08</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">réglementés et maintenant ils s&#x27;étendent à bien plus que de simples prédictions. Vous pouvez trader des cryptos avec effet de levier sur le même compte jusqu&#x27;à 6,1x et nous couvrons tout cela dans cette vidéo. Donc pour commencer, vous allez vouloir créer un compte. Vous pouvez vous inscrire avec Google, Apple, ou simplement votre e-mail. Le lien est juste en bas si vous voulez y aller directement. Et soit dit en passant, si vous vous inscrivez via mon lien sur les prédictions, vous obtenez un bonus pouvant aller jusqu&#x27;à 500 $ une fois que vous commencez à trader, et sur les contrats perpétuels, vous obtenez un bonus de 25 $ juste pour avoir commencé. Ça vaut donc vraiment le coup de le récupérer avant de vous lancer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading et de prédictions Kalshi (Kalshi Pro)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC PERP, carnet d&#x27;ordres (order book), options de levier, marchés de prédiction politique (Michigan Democratic Senate nominee)</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme, présentation de l&#x27;interface de trading perpétuel et démonstration de la création de compte utilisateur</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000042_seg2.jpg" alt="Interface de trading Kalshi Pro affichant un graphique en chandeliers du BTC PERP avec le carnet d&#x27;ordres et les options de levier." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000042_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Interface de trading Kalshi Pro affichant un graphique en chandeliers du BTC PERP avec le carnet d&#x27;ordres et les options de levier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000051_seg2.jpg" alt="Écran de création de compte Kalshi Perpetuals proposant des options de connexion via Google, Apple ou Email." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000051_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Écran de création de compte Kalshi Perpetuals proposant des options de connexion via Google, Apple ou Email.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000059_seg2.jpg" alt="Page d&#x27;accueil de la plateforme Kalshi montrant les marchés de prédictions, les options de paris et un aperçu publicitaire de Kalshi Pro." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000059_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Kalshi montrant les marchés de prédictions, les options de paris et un aperçu publicitaire de Kalshi Pro.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:08 - 00:01:40</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous ne voyez pas l&#x27;invite tout de suite, allez simplement en haut à droite là où il est écrit s&#x27;inscrire et vous verrez ces mêmes options. Processus assez standard. Ils vous demanderont de vérifier deux ou trois choses mais une fois que vous y êtes, vous avez fondamentalement accès à tout ce que vous voyez sur mon écran en ce moment. Très bien, alors maintenant parlons du financement de votre compte parce que c&#x27;est là que les gens s&#x27;embrouillent un peu. En haut à droite, cliquez sur ces trois lignes et allez à ajouter des fonds. C&#x27;est une façon d&#x27;y accéder. Vous pouvez aussi cliquer sur déposer des espèces directement sur la page d&#x27;accueil et vous verrez trois options de virement instantané.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de prédiction et de trading Kalshi.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de création de compte, marchés électoraux (Michigan Democratic Senate nominee) avec cotes et graphiques d&#x27;évolution des probabilités.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du processus d&#x27;inscription puis navigation sur le tableau de bord des marchés de prédiction.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000116_seg3.jpg" alt="Page de connexion/inscription de la plateforme Kalshi avec les options d&#x27;authentification Google, Apple et Email." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000116_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Page de connexion/inscription de la plateforme Kalshi avec les options d&#x27;authentification Google, Apple et Email.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000124_seg3.jpg" alt="Interface principale du site de prédictions Kalshi affichant un marché sur les élections et des graphiques de probabilités." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000124_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Interface principale du site de prédictions Kalshi affichant un marché sur les élections et des graphiques de probabilités.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:40 - 00:02:03</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Carte, Google Pay et crypto. Si vous cliquez sur plus d&#x27;options, vous verrez également le virement bancaire, qui prend au moins un jour ouvrable et celui-là a un minimum de 1 000 dollars, mais pas de maximum. C&#x27;est donc plutôt destiné aux personnes qui déplacent des montants plus importants. Maintenant, voici quelque chose d&#x27;important. Vous savez, si vous connectez votre carte ou Google Pay, il y a zero pour cent de frais de traitement sur ceux-là, ce qui est honnêtement génial.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web Kalshi (plateforme de marché de prédiction)
+[CONTenu] Options de dépôt : Card (marquée &quot;Most popular&quot;), Google Pay, Crypto, et Wire transfer (&quot;Up to 1 business day&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Un curseur de souris clique sur l&#x27;option &quot;Wire transfer&quot;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000146_seg4.jpg" alt="Fenêtre modale de dépôt sur la plateforme Kalshi montrant les différentes méthodes de paiement disponibles (Card, Google Pay, Crypto, Wire transfer)." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000146_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:46</span>
+                        <span class="caption-text">Fenêtre modale de dépôt sur la plateforme Kalshi montrant les différentes méthodes de paiement disponibles (Card, Google Pay, Crypto, Wire transfer).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:03 - 00:02:36</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc vous n&#x27;êtes pas pénalisé juste pour avoir fait un dépôt. Donc personnellement, si vous voulez l&#x27;option la plus rapide, je connecte simplement votre carte ou Google Pay directement et vous y êtes en quelques secondes. Mais si vous avez déjà des crypto-monnaies, vous pouvez aussi opter pour cette voie. Cliquez sur l&#x27;option crypto et vous verrez trois choix : dépôt sécurisé, dépôt standard, et acheter des crypto-monnaies. Sur dépôt sécurisé, vous pouvez connecter votre compte directement depuis des plateformes d&#x27;échange comme Coinbase, Uphold, Cash App, et quelques autres. Ou si vous avez des crypto-monnaies qui dorment dans un portefeuille, vous pouvez connecter Metamask, Phantom, Trust Wallet, et plus encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de courtage et de prédiction Kalshi.
+[CONTenu] Options de dépôt : carte bancaire (marquée comme &#x27;Most popular&#x27;), Google Pay, et crypto-monnaies, avec la mention &#x27;Instant transfer - No fees on first deposit&#x27;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différentes options de dépôt de fonds sur le compte utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000211_seg5.jpg" alt="Fenêtre de dépôt sur la plateforme Kalshi affichant les différentes méthodes de paiement disponibles." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000211_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Fenêtre de dépôt sur la plateforme Kalshi affichant les différentes méthodes de paiement disponibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:37 - 00:03:12</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si votre plateforme d&#x27;échange n&#x27;est pas répertoriée, vous pouvez faire un dépôt standard à la place, tout comme un transfert de cryptomonnaie normal. Choisissez votre jeton, comme l&#x27;USDT, choisissez votre réseau, cliquez sur afficher l&#x27;adresse, copiez cette adresse et allez la coller dans votre plateforme d&#x27;échange pour l&#x27;envoyer. Gardez simplement à l&#x27;esprit qu&#x27;il y a un minimum de 3 $ sur celui-ci. Et si vous n&#x27;avez pas du tout de cryptomonnaie, vous pouvez simplement l&#x27;acheter instantanément en utilisant votre carte par l&#x27;intermédiaire de fournisseurs comme Coinbase, Cash App ou Robinhood directement dans l&#x27;application. Si vous débutez tout juste, je suggère d&#x27;avoir un dépôt maximum journalier de pas plus de 500 $, ce qui, honnêtement, est amplement suffisant pour</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de prédiction et de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection de réseau pour le dépôt de crypto-actifs avec les différents réseaux disponibles (Tron, Arbitrum, BNB Chain, Polygon, Ethereum, Solana, Optimism) et sélection du jeton USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du réseau de transfert (clic sur le réseau Tron) pour effectuer un dépôt standard de cryptomonnaie sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000246_seg6.jpg" alt="Interface de la plateforme Kalshi affichant une fenêtre modale de sélection du réseau pour un dépôt de cryptomonnaie (choix entre Tron, Arbitrum, BNB Chain, Polygon, Ethereum, Solana, Optimism)." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000246_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Interface de la plateforme Kalshi affichant une fenêtre modale de sélection du réseau pour un dépôt de cryptomonnaie (choix entre Tron, Arbitrum, BNB Chain, Polygon, Ethereum, Solana, Optimism).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:12 - 00:03:48</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la plupart des gens commencent. Et connecter votre carte ou votre banque rend également les retraits beaucoup plus rapides puisque cela va directement au même endroit. Maintenant qu&#x27;il est approvisionné, nous pouvons commencer à trader. La première fonctionnalité que nous allons aborder est le marché de prédiction classique. La façon dont fonctionne la prédiction Kalshi est en fait assez simple une fois qu&#x27;on le voit. Chaque marché que vous voyez ici est une question par oui ou par non, et chacun a un prix qui lui est associé. Donc par exemple, juste ici, qui sera le vainqueur du championnat Wyndham ? Nous avons différents joueurs listés, et oui signifie que ce joueur finit par remporter le tournoi. Si nous faisons défiler vers le bas, vous verrez bien d&#x27;autres marchés de ce genre. Maintenant, voici le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de trading de prédictions)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Solde du portefeuille de 98,41 $, onglets Predictions et Perpetuals, détails du compte (solde cash, taux d&#x27;intérêt à 3.25%, niveau d&#x27;API Basic, absence de positions ouvertes).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du compte approvisionné prêt pour le trading et vérification du solde du portefeuille.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000321_seg7.jpg" alt="Vue d&#x27;ensemble de l&#x27;interface du portefeuille sur la plateforme Kalshi montrant le solde du compte après le dépôt." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000321_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:21</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de l&#x27;interface du portefeuille sur la plateforme Kalshi montrant le solde du compte après le dépôt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:48 - 00:04:10</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">partie importante. Ces prix montent et descendent toute la journée en fonction de ce qui se passe réellement, et chaque contrat finit par se régler à zéro ou un dollar. C&#x27;est basé purement sur la probabilité que cet événement se produise. Donc si Cameron Young finit par gagner, ce « oui » passe de 9,9 cents jusqu&#x27;à un dollar. S&#x27;il ne gagne pas, ce même 9,9 cents tombe à zéro.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de contrats prédictifs Kalshi.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Marché « Wyndham Championship Winner » : courbe de cote de Cameron Young (9,9% / YES 9,9¢, NO 90,2¢) et Koivun (5,1%), volume total de 32 294 658 $, panneau de passage d&#x27;ordre avec sélection Buy/Sell.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du fonctionnement des contrats à règlement binaire (0 $ ou 1 $) et de la fluctuation des prix en fonction des probabilités de victoire en temps réel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000353_seg8.jpg" alt="Interface du marché de prédiction Kalshi affichant le graphique des probabilités et le carnet d&#x27;ordres pour le vainqueur du tournoi de golf Wyndham Championship (Cameron Young vs Koivun)." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000353_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Interface du marché de prédiction Kalshi affichant le graphique des probabilités et le carnet d&#x27;ordres pour le vainqueur du tournoi de golf Wyndham Championship (Cameron Young vs Koivun).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:11 - 00:04:30</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc c&#x27;est un peu comme le trading d&#x27;options, sauf qu&#x27;il n&#x27;y a pas de potentiel de gain ou de perte illimité et fou. Comme quand on achète une option d&#x27;achat ou de vente. C&#x27;est plafonné à un dollar. Pire des cas, ça tombe à zéro. C&#x27;est aussi simple que ça. Et ce n&#x27;est pas seulement le golf ni même le sport en général. Vous pouvez parier sur des élections, de la politique, du sport, de la culture pop, et même sur des matières premières comme le pétrole ou l&#x27;or.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de marchés de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de probabilité pour Cameron Young (9,9%) et Jackson Koivun (5,1%), cotations des contrats YES (9.9¢) / NO (90.2¢), volume total de 32 294 659 $, et panneau d&#x27;exécution d&#x27;ordre.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du mécanisme d&#x27;un contrat de prédiction (binaire, plafonné entre 0 et 1 dollar) appliqué à un événement sportif.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000415_seg9.jpg" alt="Graphique d&#x27;évolution des probabilités et panneau d&#x27;ordre sur la plateforme Kalshi pour le marché « Wyndham Championship Winner »." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000415_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:15</span>
+                        <span class="caption-text">Graphique d&#x27;évolution des probabilités et panneau d&#x27;ordre sur la plateforme Kalshi pour le marché « Wyndham Championship Winner ».</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:30 - 00:04:55</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, que vous suiviez la politique de près, que vous aimiez le sport, ou que vous ayez simplement un avis bien tranché sur le fait qu&#x27;une certaine affaire de célébrité se produise ou non, il y a vraiment un marché pour presque tout ici. Maintenant, en plus de tous ces marchés d&#x27;événements, CalSheet propose aussi quelque chose qu&#x27;on appelle des « perps », et c&#x27;est spécifiquement pour la crypto. Mais le truc, c&#x27;est que ce n&#x27;achète pas du trading de crypto traditionnel où vous achetez une vraie pièce et surveillez le prix exact.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de marchés de prédiction et contrats perpétuels)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Cotes et probabilités de prédiction (50%, 16%, 37%), cours cryptos (BTC à $64,203, ETH à $1,867.5), niveaux de levier max (6.1X, 4.8X, 3.5X), volumes sur 24h et mini-graphiques en ligne (sparklines).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme Kalshi, passage de la catégorie Culture vers l&#x27;onglet des contrats perpétuels (PERPS) et consultation de la liste des paires crypto négociables.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000436_seg10.jpg" alt="Interface Kalshi affichant la catégorie Culture avec des marchés de prédiction (Oscars, casting James Bond, Rotten Tomatoes)." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000436_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:36</span>
+                        <span class="caption-text">Interface Kalshi affichant la catégorie Culture avec des marchés de prédiction (Oscars, casting James Bond, Rotten Tomatoes).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000442_seg10.jpg" alt="Page d&#x27;accueil/élections de Kalshi avec graphique de probabilités pour Michigan Democratic Senate nominee et curseur sur l&#x27;onglet PERPS." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000442_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:42</span>
+                        <span class="caption-text">Page d&#x27;accueil/élections de Kalshi avec graphique de probabilités pour Michigan Democratic Senate nominee et curseur sur l&#x27;onglet PERPS.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000449_seg10.jpg" alt="Section PERPS (contrats perpétuels) de Kalshi listant plusieurs crypto-monnaies (BTC, ETH, HYPE, SOL, SUI, ZEC, XRP) avec prix, variations et leviers." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000449_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:49</span>
+                        <span class="caption-text">Section PERPS (contrats perpétuels) de Kalshi listant plusieurs crypto-monnaies (BTC, ETH, HYPE, SOL, SUI, ZEC, XRP) avec prix, variations et leviers.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:55 - 00:05:15</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Au lieu de cela, avec les perps, vous pariez simplement sur le fait que le prix monte ou baisse sur une période définie. C&#x27;est donc une façon binaire bien plus simple de jouer sur les mouvements de cours des cryptos sans détenir réellement l&#x27;actif ni avoir à gérer un portefeuille rempli de tokens. Nous aborderons le bonus pour cela dans une seconde, mais sachez simplement qu&#x27;il s&#x27;agit d&#x27;un produit distinct qui se trouve juste aux côtés de ces marchés de prédiction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de trading de contrats perpétuels et de prédictions)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix du BTC sur 1 heure, prix actuel de 64,203 $, options d&#x27;effet de levier (3.6x), boutons de pari &quot;UP&quot; ou &quot;DOWN&quot;, et détails de la position.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de trading de contrats perpétuels (perps) sur la plateforme Kalshi.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000500_seg11.jpg" alt="Interface de trading de contrats perpétuels sur la plateforme Kalshi affichant le graphique du cours du Bitcoin (BTC) à 64,198 $ avec les options de levier." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000500_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:00</span>
+                        <span class="caption-text">Interface de trading de contrats perpétuels sur la plateforme Kalshi affichant le graphique du cours du Bitcoin (BTC) à 64,198 $ avec les options de levier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000505_seg11.jpg" alt="Vue de l&#x27;interface Kalshi montrant le sélecteur d&#x27;options &quot;UP&quot; ou &quot;DOWN&quot; pour parier sur la direction du prix du Bitcoin sur les perpétuels." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000505_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:05</span>
+                        <span class="caption-text">Vue de l&#x27;interface Kalshi montrant le sélecteur d&#x27;options &quot;UP&quot; ou &quot;DOWN&quot; pour parier sur la direction du prix du Bitcoin sur les perpétuels.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:16 - 00:05:40</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et honnêtement, l&#x27;un de mes aspects préférés sur la plateforme, c&#x27;est simplement de faire défiler les marchés en direct, parce qu&#x27;on peut voir les choses bouger en temps réel, peu importe ce qui vous intéresse. En ce moment même, si je fais défiler, on a le marché du candidat démocrate qui évolue activement à mesure que de nouveaux sondages sortent. On a des matchs de tennis en direct où les cotes s&#x27;actualisent littéralement point par point au fur et à mesure que le match se déroule. Le Bitcoin a un marché de prix en direct qui bouge toutes les quelques minutes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web / plateforme de marché de prédictions Kalshi.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Marchés en direct affichés : &quot;MI-13 Democratic nominee?&quot; (Donavan McKinney à 91%, Shri Thanedar à 7%, volume de $3,119,168) et &quot;BTC 15 min - $64,248.85 target&quot; (Down 96%, Up 4%). Interface de passage d&#x27;ordre sur la droite pour acheter/vendre des contrats (&quot;YES 91.5¢&quot;, &quot;NO 9.9¢&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la navigation sur le flux en direct (section LIVE) de Kalshi pour consulter l&#x27;évolution en temps réel des cote et probabilités des marchés de prédiction.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000522_seg12.jpg" alt="Interface de la plateforme de marchés de prédiction Kalshi montrant la section des événements en direct, notamment la primaire démocrate MI-13 et un marché de prédiction du cours de Bitcoin." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000522_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:22</span>
+                        <span class="caption-text">Interface de la plateforme de marchés de prédiction Kalshi montrant la section des événements en direct, notamment la primaire démocrate MI-13 et un marché de prédiction du cours de Bitcoin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:40 - 00:06:15</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a des matchs de cricket en direct en ce moment avec des cotes qui oscillent à chaque série de six lancers, et ce n&#x27;est que la surface. Il y a des trucs sur le cycle de l&#x27;actualité, des cérémonies de remise de prix, même des événements météorologiques qui se produisent en temps réel aussi. Donc vraiment, peu importe ce qui se passe dans le monde en ce moment, il y a de fortes chances pour que CalSh ait déjà un marché en direct qui suit cela, et vous pouvez simplement vous lancer et regarder les cotes bouger au fur et à mesure que ça se produit. Maintenant, CalShe a aussi un côté social, ce qui, je pense, est plutôt sous-estimé. Il y a toute une section où vous pouvez réellement publier vos transactions et voir ce que les autres échangent et quelles sont leurs opinions sur la direction que prend un marché. Donc c&#x27;est un peu</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de prédiction et de paris Kalshi.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Cotes en temps réel, volumes de transactions, probabilités et graphiques d&#x27;évolution des marchés de prédiction (sports et actualités politiques).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents marchés de prédiction disponibles sur la plateforme Kalshi.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000549_seg13.jpg" alt="Interface de la plateforme Kalshi affichant des marchés de paris en direct sur le cricket (West Indies vs Pakistan) et le tennis." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000549_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:49</span>
+                        <span class="caption-text">Interface de la plateforme Kalshi affichant des marchés de paris en direct sur le cricket (West Indies vs Pakistan) et le tennis.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000558_seg13.jpg" alt="Interface de Kalshi montrant un marché de prédiction politique sur les élections au sénat américain avec un graphique d&#x27;évolution des cotes." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000558_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Interface de Kalshi montrant un marché de prédiction politique sur les élections au sénat américain avec un graphique d&#x27;évolution des cotes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:15 - 00:06:52</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">comme un fil communautaire intégré. Vous pouvez le faire défiler, voir l&#x27;avis de quelqu&#x27;un sur la raison pour laquelle il pense qu&#x27;un certain résultat va se réaliser, être d&#x27;accord ou pas d&#x27;accord avec cela, et honnêtement, c&#x27;est un bon moyen de repérer des choses auxquelles vous n&#x27;auriez peut-être pas pensé vous-même avant de placer un trade. Si vous cliquez sur « plus » dans le menu, c&#x27;est là que vous trouverez les politiques de Calci, les valeurs de leur entreprise, ainsi qu&#x27;un ensemble d&#x27;outils de recherche. Donc, si vous souhaitez un jour approfondir la manière dont la plateforme fonctionne réellement, leurs conditions d&#x27;utilisation, ou simplement consulter des recherches pour appuyer un trade que vous envisagez de faire, tout se trouve juste là dans cet onglet. Il y a aussi Calci Pro, qui est un cran au-dessus de la version standard. Avec</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de marchés de prédiction Kalshi (interface web du fil social et page de politique).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publications d&#x27;utilisateurs avec paris « Yes / No », options de trading, et pourcentages de sondages sur la régulation des marchés (89%, 79%, Bipartisan Support).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et défilement sur le fil communautaire de la plateforme Kalshi pour illustrer les fonctionnalités sociales du site.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000624_seg14.jpg" alt="Capture d&#x27;écran de la plateforme Kalshi montrant le fil communautaire (social feed) avec des publications d&#x27;utilisateurs et des pronostics de marchés de prédiction." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000624_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:24</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Kalshi montrant le fil communautaire (social feed) avec des publications d&#x27;utilisateurs et des pronostics de marchés de prédiction.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:52 - 00:07:25</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pro vous obtenez accès à beaucoup plus de données et d&#x27;outils que le compte standard ne vous montre tout simplement pas des choses comme le volume, le spread, la taille des positions, le moment où un événement a réellement commencé et un tas d&#x27;autres métriques que les traders sérieux vont vouloir s&#x27;ils gèrent des positions plus importantes ou essaient de chronométrer leurs entrées plus précisément donc si vous vous trouvez à trader beaucoup et à vouloir plus de visibilité sur ce qui se passe réellement sous le capot d&#x27;un marché c&#x27;est là que pro entre en jeu donc disons que vous cliquez sur l&#x27;un des marchés ici au lieu du simple achat et de la vente que vous obtenez sur le normal</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi Pro (version bêta)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de données de marché incluant le volume sur 24h, le volume sur 5m, le spread, la taille des positions et les horodatages des événements.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités professionnelles et des métriques détaillées disponibles sur la plateforme Kalshi Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000700_seg15.jpg" alt="Capture d&#x27;écran de l&#x27;interface de Kalshi Pro montrant les marchés de prédiction et les données de trading avancées." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000700_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de Kalshi Pro montrant les marchés de prédiction et les données de trading avancées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:25 - 00:07:58</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">version pro, vous en voyez beaucoup plus, vous avez le carnet d&#x27;ordres complet, les volumes, les noms, l&#x27;expiration, tout est affiché juste là. C&#x27;est une vue beaucoup plus détaillée pour quiconque essaie vraiment de trader sérieusement. Maintenant, l&#x27;autre chose qui change par rapport au compte standard de Cash App, c&#x27;est qu&#x27;avec la version pro, vous pouvez réellement trader des crypto-monnaies comme sur un échange de crypto traditionnel, avec de vrais chiffres, et pas seulement avec des hausses ou des baisses comme les contrats perpetuals sur le compte classique. Ici, vous pouvez voir le sélecteur de paires, un graphique TradingView complet, le carnet d&#x27;ordres, le panneau d&#x27;ordres, et vos positions juste ici en bas.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi Pro (plateforme de trading et marchés de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Carnets d&#x27;ordres complets, volumes, prix d&#x27;actifs, taux de financement, expiration des contrats et graphiques de prix en temps réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités professionnelles de la plateforme de trading Kalshi Pro.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000733_seg16.jpg" alt="Interface de trading Kalshi Pro montrant les marchés de prédiction avec un graphique de prix et un carnet d&#x27;ordres détaillé." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000733_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:33</span>
+                        <span class="caption-text">Interface de trading Kalshi Pro montrant les marchés de prédiction avec un graphique de prix et un carnet d&#x27;ordres détaillé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000741_seg16.jpg" alt="Interface Kalshi Pro affichant la section &#x27;Perpetuals&#x27; pour le trading de cryptomonnaies avec carnet d&#x27;ordres et options de position longue/courte." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000741_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:41</span>
+                        <span class="caption-text">Interface Kalshi Pro affichant la section &#x27;Perpetuals&#x27; pour le trading de cryptomonnaies avec carnet d&#x27;ordres et options de position longue/courte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000750_seg16.jpg" alt="Vue d&#x27;ensemble de la plateforme Kalshi listant diverses cryptomonnaies (ETH, HYPE, SOL, SUI, etc.) avec leurs variations et volumes sur 24h." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000750_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:50</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la plateforme Kalshi listant diverses cryptomonnaies (ETH, HYPE, SOL, SUI, etc.) avec leurs variations et volumes sur 24h.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:58 - 00:08:20</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en bas. Fondamentalement, un terminal de trading complet et lorsque vous allez dans votre portefeuille ici, vous pouvez voir toutes vos positions en un seul endroit et vous pouvez facilement basculer entre les prédictions et les perpetuals directement depuis ce même écran. Encore une fois, étant donné que c&#x27;est toujours en version bêta, attendez-vous à ce que certaines choses évoluent, mais nous entrerons plus en détail sur CalSharks Pro dans nos prochaines vidéos.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi Pro (plateforme de trading et de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de navigation supérieur avec les sections Markets, Canvas, Perpetuals, Portfolio, et les sous-onglets Predictions et Perpetuals.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation vers l&#x27;onglet Portfolio pour afficher l&#x27;ensemble des positions en un seul endroit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000803_seg17.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface sombre de Kalshi Pro avec le curseur de la souris sur l&#x27;onglet &#x27;PORTFOLIO&#x27; dans la barre de navigation supérieure." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000803_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:03</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface sombre de Kalshi Pro avec le curseur de la souris sur l&#x27;onglet &#x27;PORTFOLIO&#x27; dans la barre de navigation supérieure.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:20 - 00:08:42</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors restez à l&#x27;écoute pour cela et assurez-vous de vous abonner pour ne pas le manquer. Petite note avant d&#x27;aller plus loin, CalShe est légal au niveau fédéral et disponible dans la plupart des États. Mais à l&#x27;heure actuelle, c&#x27;est restreint dans une poignée d&#x27;États comme l&#x27;Arizona, l&#x27;Illinois, le Massachusetts, le Michigan, le Nevada, le New Jersey et quelques autres. Cette liste change en fait assez souvent au fur et à mesure que les régulateurs s&#x27;affrontent sur ce sujet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site d&#x27;information de Kalshi (Kalshi News).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte juridique et explicatif sur la structure réglementaire de Kalshi, sa régulation fédérale par la CFTC et sa distinction avec les paris sportifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et lecture d&#x27;un article expliquant le statut juridique fédéral de Kalshi face aux lois des différents États.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000826_seg18.jpg" alt="Capture d&#x27;écran du site web de Kalshi montrant un article comparant les marchés de prédiction et les paris sportifs traditionnels sous l&#x27;angle réglementaire." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000826_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:26</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web de Kalshi montrant un article comparant les marchés de prédiction et les paris sportifs traditionnels sous l&#x27;angle réglementaire.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000836_seg18.jpg" alt="Suite de l&#x27;article sur Kalshi détaillant la décision de justice fédérale concernant la régulation par la CFTC." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000836_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:36</span>
+                        <span class="caption-text">Suite de l&#x27;article sur Kalshi détaillant la décision de justice fédérale concernant la régulation par la CFTC.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:42 - 00:09:04</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, vérifiez bien deux fois quand vous vous inscrivez. Ils feront en sorte que ce soit évident dans les deux cas. Alors, regardons vraiment un vrai marché, le vainqueur du championnat Wyndham. Cliquons dessus. Sur la gauche, vous verrez tous les ordres qui défilent, et en faisant défiler le graphique, vous pouvez littéralement regarder la probabilité bouger en temps réel pour différents joueurs. En ce moment, nous avons Young, Koivun et Matsuyama qui apparaissent ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de prédictions Kalshi (kalshi.com).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de probabilités pour le vainqueur du tournoi de golf Wyndham Championship (Cameron Young à 9,9 %, Jackson Koivun à 5,1 %), volumes de transactions et carnets d&#x27;ordres d&#x27;achat/vente.</p>
+                        <p><strong>Action / Démonstration :</strong> Recherche d&#x27;un marché spécifique (« Wyndham Championship Winner ») et navigation vers sa page détaillée pour analyser les cotes et les graphiques de prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000848_seg19.jpg" alt="Interface de la plateforme Kalshi montrant la barre de recherche avec une requête en cours sur « Wyndham »." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000848_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:48</span>
+                        <span class="caption-text">Interface de la plateforme Kalshi montrant la barre de recherche avec une requête en cours sur « Wyndham ».</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000853_seg19.jpg" alt="Page du marché « Wyndham Championship Winner » sur la plateforme Kalshi, affichant un graphique de probabilités et le carnet de trading à droite." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000853_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:53</span>
+                        <span class="caption-text">Page du marché « Wyndham Championship Winner » sur la plateforme Kalshi, affichant un graphique de probabilités et le carnet de trading à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:04 - 00:09:27</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ces gars n&#x27;ont pas encore tapé leur premier coup quand je filme ceci, donc c&#x27;est plutôt calme en ce moment. Mais une fois que le jeu commencera, ça va bouger beaucoup. Si vous regardez la semaine dernière, vous pouvez voir Koivun monter, puis redescendre. Tout cela reflète exactement ce qui se passe en direct sur le parcours. Il y a aussi une petite fonctionnalité de chat en haut où les gens lancent des idées, ainsi qu&#x27;un fil d&#x27;activité où vous pouvez réellement voir ce que font les autres traders.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de marchés prédictifs)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de probabilité temporels affichant les courbes de Cameron Young (9,1% puis 9,9%) et Jackson Koivun (4,7%), ainsi que le carnet de commandes/panneau de transaction à droite pour Cameron Young (YES à 9,9¢, NO à 90,2¢) et un volume global de 32 308 077 $.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et consultation des graphiques et des cotes des différents participants au tournoi de golf sur Kalshi.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000910_seg20.jpg" alt="Capture d&#x27;écran de la plateforme Kalshi montrant le marché prédictif du Wyndham Championship Winner, avec les graphiques de probabilité pour Cameron Young et Jackson Koivun." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000910_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:10</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Kalshi montrant le marché prédictif du Wyndham Championship Winner, avec les graphiques de probabilité pour Cameron Young et Jackson Koivun.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:27 - 00:09:49</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez définir un minimum, alors j&#x27;ai augmenté le mien à 10 000 $ juste pour voir les gros joueurs. Et la plus grande partie de ce qui s&#x27;y passe, ce sont des gens qui vendent des « non » à environ 90,2 cents, prenant un petit pourcentage de rendement mais sur un montant de capital énorme. Très bien, voyons exactement comment cela fonctionne. Donc nous sommes toujours sur le marché du vainqueur du championnat Wyndham, et j&#x27;ai Cameron Young affiché juste ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de marché de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Contrats de prédiction pour le Wyndham Championship Winner avec les options « YES 9.9¢ » et « NO 90.2¢ », et des transactions affichant des volumes importants (ex: 25 000 contrats à 99.9¢, 15 000 à 99.7¢, 33 500 à 97.9¢ et 22 425.04 à 90.1¢).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et consultation des transactions de gros volumes sur les options « Non » pour différents participants du marché de prédiction.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000933_seg21.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Kalshi affichant les marchés de prédiction pour le vainqueur du tournoi Wyndham Championship, avec l&#x27;historique des transactions sur le panneau de gauche montrant des achats massifs de contrats « Non » (Bought No) pour divers golfeurs." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000933_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:33</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Kalshi affichant les marchés de prédiction pour le vainqueur du tournoi Wyndham Championship, avec l&#x27;historique des transactions sur le panneau de gauche montrant des achats massifs de contrats « Non » (Bought No) pour divers golfeurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:49 - 00:10:19</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il s&#x27;échange à 9,9 cents, ce qui lui donne 9,9 % de chances de gagner. Si vous regardez le graphique en haut, vous pouvez voir que sa courbe monte ces derniers jours pour atteindre environ cette fourchette de 10 % maintenant, tandis que Jackson Koivin se situe à 5 %. Cela vous donne donc un bon aperçu visuel de la façon dont ces probabilités évoluent en temps réel au fil du tournoi. Maintenant, sur le côté droit, voici le panneau des ordres. Vous avez deux onglets en haut, acheter et vendre, et je l&#x27;ai configuré en dollars en ce moment au lieu des contrats.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de marché de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de probabilité montrant Cameron Young à 10 % (9,9 cents) et Jackson Koivun à 5 %, volume total de 32 308 134 $.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse des cotes et des graphiques de probabilité des différents candidats pour le tournoi de golf.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_000957_seg22.jpg" alt="Capture d&#x27;écran de la plateforme de prédiction Kalshi montrant le marché du vainqueur du Wyndham Championship avec les graphiques de probabilité pour Cameron Young et Jackson Koivun." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_000957_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:57</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme de prédiction Kalshi montrant le marché du vainqueur du Wyndham Championship avec les graphiques de probabilité pour Cameron Young et Jackson Koivun.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:20 - 00:10:57</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En dessous de ça, vous pouvez voir le marché. Vainqueur du championnat Wyndham, Cameron Young, puis deux boutons, oui à 9,9 cents et non à 90,2 cents. Maintenant, gardez à l&#x27;esprit que ce chiffre n&#x27;est pas fixe. Il va évoluer au fur et à mesure que les cotes changent sur ce dans quoi vous avez pris position. Et au passage, vous gagnez en fait des intérêts sur votre argent disponible qui se trouve là. En ce moment, c&#x27;est 3,25 %, ce qui est un petit bonus sympa juste pour avoir des fonds déposés sur la plateforme. Cliquons sur oui, car je pense que Cameron Young a une chance ici. Je vais saisir un montant dans le champ des dollars. Faisons les choses en grand pour cet exemple.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de prédiction / trading Kalshi (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de suivi des probabilités pour les joueurs (Cameron Young à 9,9%, Koivun à 5,1%), volume de transactions de $32,308,166, et panneau de passe d&#x27;ordre avec les boutons &quot;YES 9.9¢&quot; et &quot;NO 90.2¢&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Explication du fonctionnement des contrats de marché de prédiction, observation des variations de cotes et pointage sur le bouton &quot;NO&quot; à 90.2 cents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001029_seg23.jpg" alt="Interface du marché de prédiction Kalshi affichant les cotes pour le tournoi de golf Wyndham Championship (Cameron Young)." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001029_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:29</span>
+                        <span class="caption-text">Interface du marché de prédiction Kalshi affichant les cotes pour le tournoi de golf Wyndham Championship (Cameron Young).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:57 - 00:11:17</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et disons 10 000 dollars, juste pour que vous puissiez voir comment les chiffres évoluent. Juste ici sur la droite, cela détaille le trade pour moi. Les cotes montrent une chance de 11 % et puis le grand chiffre, le paiement maximum. Si cela se réalise d&#x27;ici l&#x27;expiration du marché le 22 août 2026, mon paiement serait de 95 017,27 dollars.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme web de marchés de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Marché &quot;Wyndham Championship Winner&quot;, sélection Cameron Young (contrat YES à 9.9¢), montant saisi de 10 000 $, cotes calculées à 11 % de chance, paiement potentiel maximal de 95 017,27 $, graphique comparatif des probabilités (Young à 9,9 %, Koivun à 5,1 %).</p>
+                        <p><strong>Action / Démonstration :</strong> Simulation de saisie d&#x27;un ordre d&#x27;achat pour illustrer le calcul du paiement maximum et des probabilités affichées par la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001102_seg24.jpg" alt="Interface de la plateforme de marchés de prédiction Kalshi montrant la simulation d&#x27;un ordre d&#x27;achat de 10 000 $ sur le joueur Cameron Young." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001102_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:02</span>
+                        <span class="caption-text">Interface de la plateforme de marchés de prédiction Kalshi montrant la simulation d&#x27;un ordre d&#x27;achat de 10 000 $ sur le joueur Cameron Young.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:18 - 00:11:36</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, cela transforme 10 000 $ en pratiquement 95 000 $ si Cameron Young gagne ce tournoi. Une fois que tout semble correct, je clique simplement sur « Review Buy » tout en bas. Cela affichera un écran de confirmation montrant tout une fois de plus. Et une fois que vous confirmez, vous êtes dans le trade. Évidemment, vous n&#x27;êtes pas obligé d&#x27;y aller aussi fort.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de prédictions et marchés financiers)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sélection de Cameron Young (YES à 9.9¢), montant saisi de 10 000 $, paiement maximum estimé à 95 017,27 $, et bouton « Review Buy ».</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un ordre d&#x27;achat de 10 000 $ sur la victoire de Cameron Young avant de cliquer sur « Review Buy ».</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001122_seg25.jpg" alt="Capture d&#x27;écran de la plateforme Kalshi montrant le marché du Wyndham Championship Winner, avec un graphique des cotes et le panneau de commande pour parier sur le golfeur Cameron Young." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001122_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:22</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Kalshi montrant le marché du Wyndham Championship Winner, avec un graphique des cotes et le panneau de commande pour parier sur le golfeur Cameron Young.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:36 - 00:12:10</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez saisir 10 $, 50 $, peu importe ce qui convient à votre capital, et la case des gains se met à jour instantanément, vous savez donc toujours exactement ce que vous risquez et ce que vous pouvez gagner avant même d&#x27;appuyer sur ce bouton. Maintenant, disons que Cameron Young a fait un excellent tour, et je veux sécuriser du profit sans attendre que tout le tournoi se termine. Je retourne donc sur le marché, et cette fois, au lieu de cliquer sur acheter en haut, je clique sur l&#x27;onglet vendre. Une fois que tout semble bon, je clique sur examiner la vente, et c&#x27;est vraiment la beauté de la chose. Vous n&#x27;êtes pas bloqué jusqu&#x27;à la résolution. Si</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de marchés de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de probabilité temporelle (Cameron Young à 9,9 %, Koivun à 5,1 %), panneau de passage d&#x27;ordre pour Cameron Young avec options YES (9.9¢) / NO (90.2¢), champ de saisie du montant en dollars, cotes (11% chance) et gain maximal potentiel (Max payout).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface Kalshi expliquant comment saisir un montant pour visualiser instantanément le risque et le gain potentiel avant de valider l&#x27;achat.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001144_seg26.jpg" alt="Interface de la plateforme de marchés de prédiction Kalshi affichant le graphique des probabilités pour le tournoi &quot;Wyndham Championship Winner&quot; (Cameron Young) et le panneau de saisie d&#x27;ordre d&#x27;achat." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001144_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:44</span>
+                        <span class="caption-text">Interface de la plateforme de marchés de prédiction Kalshi affichant le graphique des probabilités pour le tournoi &quot;Wyndham Championship Winner&quot; (Cameron Young) et le panneau de saisie d&#x27;ordre d&#x27;achat.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:10 - 00:12:31</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les cotes tournent en votre faveur dès le début, vous pouvez simplement encaisser la victoire directement et passer au trade suivant. Pas besoin d&#x27;attendre que le tournoi se termine vraiment. Maintenant, disons que vous avez plusieurs paris en cours en même temps et que vous vous demandez où vous pouvez réellement tout voir au même endroit. Super simple. Cliquez simplement ici sur votre portefeuille en haut à droite et vous pouvez littéralement tout voir ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de trading d&#x27;événements et de marchés de prédiction).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Marchés de prédiction sportifs (Wyndham Championship, LIV Golf, Ryder Cup 2027), règles d&#x27;évaluation des contrats (Market Rules), cotes en temps réel, pourcentages de probabilité, solde du portefeuille ($98.64 Portfolio).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme Kalshi, consultation des marchés actifs et affichage des règles de résolution des contrats pour la clôture des positions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001215_seg27.jpg" alt="Page des règles du marché « Wyndham Championship Winner » sur la plateforme Kalshi avec le panneau de passation d&#x27;ordre pour le joueur Cameron Young." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001215_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:15</span>
+                        <span class="caption-text">Page des règles du marché « Wyndham Championship Winner » sur la plateforme Kalshi avec le panneau de passation d&#x27;ordre pour le joueur Cameron Young.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001220_seg27.jpg" alt="Tableau de bord principal de Kalshi présentant divers marchés de prédiction sportifs en direct (Golf, Ryder Cup) avec leurs cotes et probabilités." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001220_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:20</span>
+                        <span class="caption-text">Tableau de bord principal de Kalshi présentant divers marchés de prédiction sportifs en direct (Golf, Ryder Cup) avec leurs cotes et probabilités.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:31 - 00:13:06</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">votre valeur totale, le changement sur les dernières 24 heures, votre rendement non réalisé, la valeur de votre position, votre solde de liquidités plus vos intérêts et toutes les récompenses que vous avez récoltées en chemin. Si vous faites défiler vers le bas à partir d&#x27;ici, vous verrez toutes vos positions individuelles listées, et si vous cliquez sur l&#x27;une d&#x27;entre elles, cela vous amène directement sur la page de ce marché où vous pouvez soit renforcer votre position, soit la vendre, exactement comme nous venons de le voir. Donc, en réalité, votre page de portefeuille est votre base de référence. Tout ce que vous suivez est sur un seul écran et vous n&#x27;êtes qu&#x27;à un clic de gérer n&#x27;importe quoi</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Kalshi (plateforme de prédiction et de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Valeur totale du portefeuille ($98.64), changement sur 24h (-$0.12, -0.12%), rendement non réalisé ($0, +0%), valeur des positions ($1.88), solde de liquidités ($96.76), taux d&#x27;intérêt (3.25%), récompenses ($0.00), niveau API (Basic).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différentes métriques et soldes du compte utilisateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001240_seg28.jpg" alt="Vue d&#x27;ensemble du tableau de bord du portefeuille sur la plateforme Kalshi montrant les métriques clés." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001240_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:40</span>
+                        <span class="caption-text">Vue d&#x27;ensemble du tableau de bord du portefeuille sur la plateforme Kalshi montrant les métriques clés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:06 - 00:13:43</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">seul trade. Très bien, maintenant parlons des frais parce que c&#x27;est honnêtement la partie que Cash App ne rend pas super évidente. Il faut pour ainsi dire creuser un peu. Faites défiler tout en bas de la page d&#x27;accueil, cliquez sur la grille tarifaire et vous verrez une fourchette qui a l&#x27;honnêteté de paraître confuse au début. Voici donc la version simple. Il y a des frais de maker et des frais de taker. Les frais de maker sont pour les ordres en attente, ce qui signifie que vous aidez le marché donc vous payez moins. Les frais de taker sont pour les ordres de marché. Vous voulez entrer tout de suite donc vous payez un peu plus. Le maximum que vous payerez the and never is d&#x27;environ 1,75 centime par contrat et le moins cher</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de Kalshi (Interface de courtier / plateforme de prédiction).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus du pied de page incluant Product, Company et Help (avec l&#x27;option &quot;Fee schedule&quot; visible dans la colonne Help).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site pour localiser la grille des frais tarifaires depuis le pied de page de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001315_seg29.jpg" alt="Capture d&#x27;écran montrant le pied de page (footer) du site web de Kalshi, avec différentes sections de liens dont le lien vers la grille tarifaire (Fee schedule)." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001315_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:15</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le pied de page (footer) du site web de Kalshi, avec différentes sections de liens dont le lien vers la grille tarifaire (Fee schedule).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:43 - 00:14:15</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les transactions ne coûtent presque rien. En gros, les marchés qui affichent des probabilités de 50-50 coûtent le plus cher en frais parce que c&#x27;est l&#x27;issue la plus incertaine. Mais quelque chose comme un grand favori à 90 % dans un match sportif ? ces frais tombent à moins d&#x27;un centime. Les ordres au marché coûtent environ quatre fois plus cher que les ordres à cours limité, alors gardez cela à l&#x27;esprit. À part ça, pas de frais de règlement, pas de frais d&#x27;adhésion, les dépôts ACH et les retraits sont gratuits. Les cartes de débit peuvent vous coûter jusqu&#x27;à deux pour cent, alors soyez simplement vigilants selon la façon approvisionnez votre compte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web Kalshi (plateforme de prédiction et de marchés financiers).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau listant différentes séries de marchés (US gas price, ATP Tennis Match, Ballon d&#x27;Or, prix du Bitcoin, etc.) avec les colonnes &quot;maker fees&quot;, &quot;multiplier&quot; et &quot;Fee range (100 contracts)&quot; affichant des montants en dollars (ex: $0.07 - $1.75).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des grilles de frais par le présentateur sur la plateforme Kalshi.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001351_seg30.jpg" alt="Capture d&#x27;écran de la plateforme Kalshi montrant la grille tarifaire des frais de transaction pour différents marchés de prédiction." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001351_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:51</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Kalshi montrant la grille tarifaire des frais de transaction pour différents marchés de prédiction.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:16 - 00:14:37</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, par où devriez-vous réellement commencer ? Honnêtement, commencez par ce que vous savez déjà. Kalshi propose des milliers de marchés, donc si vous suivez de près le sport, commencez par là. Si vous aimez les actions, ils ont même des marchés sur le prix du Bitcoin ou le S&amp;P 500 à une certaine échéance. Commencez simplement petit, 5, 10, peut-être 100 contrats. Familiarisez-vous avec la plateforme, puis augmentez la mise une fois que vous savez ce que vous faites.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de prédiction et de trading Kalshi (site web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Catégories de marchés (Trending, Politics, Sports, Crypto, Economics, Finance), graphiques de probabilités, cours des cryptomonnaies (Bitcoin à 64,189 $, Ethereum, Solana, Sui) et sections de trading perpétuel.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers les différentes catégories de marchés de la plateforme Kalshi pour illustrer la diversité des options de trading disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001421_seg31.jpg" alt="Capture d&#x27;écran de la plateforme Kalshi montrant l&#x27;onglet Culture avec un graphique d&#x27;évolution des cotes et différentes catégories de marchés disponibles." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001421_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:21</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Kalshi montrant l&#x27;onglet Culture avec un graphique d&#x27;évolution des cotes et différentes catégories de marchés disponibles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001426_seg31.jpg" alt="Capture d&#x27;écran de la plateforme Kalshi sur la section Crypto, affichant les marchés de cryptomonnaies, les contrats perpétuels et les options de prédiction de prix pour le Bitcoin." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001426_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:26</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Kalshi sur la section Crypto, affichant les marchés de cryptomonnaies, les contrats perpétuels et les options de prédiction de prix pour le Bitcoin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:37 - 00:14:59</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Assurez-vous d&#x27;utiliser le lien d&#x27;inscription en bas dans la description si vous voulez commencer. En plus, rappelez-vous de ce bonus, jusqu&#x27;à 500 dollars sur les prédictions, 25 dollars sur les contrats perpétuels juste pour vous lancer. Dites-moi dans les commentaires quels marchés vous prévoyez de trader et si vous avez des questions sur la façon dont tout cela fonctionne. J&#x27;ai vraiment l&#x27;intention d&#x27;aller beaucoup plus en profondeur là-dessus au cours des prochaines vidéos.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme de prédiction Kalshi (Kalshi Perpetuals).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de connexion (Google, Apple, Email) et divers marchés de prédiction politique avec volumes, multiplicateurs et pourcentages (ex: détroit d&#x27;Ormuz, extraterrestres, procureur général).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des étapes de création de compte et navigation à travers les différentes catégories de marchés de prédiction de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001443_seg32.jpg" alt="Page d&#x27;inscription à la plateforme Kalshi Perpetuals proposant de créer un compte avec Google, Apple ou un e-mail." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001443_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:43</span>
+                        <span class="caption-text">Page d&#x27;inscription à la plateforme Kalshi Perpetuals proposant de créer un compte avec Google, Apple ou un e-mail.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EnDUvHENMAw/EnDUvHENMAw_001454_seg32.jpg" alt="Interface de la plateforme de prédiction Kalshi affichant la catégorie &#x27;Politics&#x27; avec différents marchés de prédiction et leurs probabilités en pourcentage." loading="lazy" onclick="openLightbox('../screenshots/EnDUvHENMAw/EnDUvHENMAw_001454_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:54</span>
+                        <span class="caption-text">Interface de la plateforme de prédiction Kalshi affichant la catégorie &#x27;Politics&#x27; avec différents marchés de prédiction et leurs probabilités en pourcentage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:59 - 00:15:22</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Des choses comme la mise en place d&#x27;automatisations et de stratégies de suivi sur CalSHE. Alors restez à l&#x27;écoute pour ça. Et si vous voulez le guide étape par étape complet sur la façon de construire votre propre système de trading agentique en utilisant Claude, cette vidéo apparaît également à l&#x27;écran. Allez y jeter un œil ensuite. Si vous avez trouvé cela utile, laissez un pouce bleu. Cela aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun élément d&#x27;interface affiché.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun contenu, code ou graphique visible.</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune action démontrée à l&#x27;écran.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
