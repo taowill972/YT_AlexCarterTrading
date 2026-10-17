@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment j&#x27;ai automatisé mes 3 stratégies Supertrend avec Claude (Tutoriel complet pour débutants) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment j&#x27;ai automatisé mes 3 stratégies Supertrend avec Claude (Tutoriel complet pour débutants)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-08-11</span>
+                <span class="badge">⏱️ 00:13:59</span>
+                <span class="badge">🆔 <code>EIgwI1Eld8g</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=EIgwI1Eld8g" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo plonge au cœur de l'automatisation du trading de dérivés en mariant l'analyse technique traditionnelle à la puissance des assistants de code conversationnels. L'auteur y aborde le problème récurrent de la fatigue visuelle et du manque de réactivité face aux graphiques, en confiant à l'intelligence artificielle le soin de coder des stratégies basées sur le Supertrend. L'objectif est d'éliminer les faux signaux en range et de s'affranchir des veilles graphiques interminables pour laisser TradingView identifier et tracer instantanément les opportunités d'achat ou de vente.<br><br>Trois configurations distinctes sont minutieusement décortiquées et prêtes à l'automatisation via Pine Script et Claude : le triple Supertrend aux paramètres croisés, l'association du Supertrend avec la moyenne mobile exponentielle à 200 périodes, et enfin le couplage avec le nuage Kumo de l'indicateur Ichimoku. Chacune de ces méthodes vise à filtrer le bruit des marchés directionnels à fort momentum tout en encadrant strictement les risques grâce à des règles de gestion rigoureuses et des leviers adaptés aux traders de tous niveaux.<br><br>L'approche démontre qu'il n'est plus nécessaire de posséder des compétences approfondies en programmation pour concevoir des scripts sur mesure. En combinant des échanges de cryptomonnaies performants et des invites (prompts) structurées destinées à Claude, le trader débutant comme confirmé peut bâtir un écosystème de scalping et de day trading entièrement automatisé, sécurisant ainsi ses prises de position sans céder aux biais psychologiques inhérents au trading manuel.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Claude (Anthropic)** : Assistant conversationnel et IA générative utilisé pour rédiger l'intégralité des scripts Pine Script sur mesure sans compétences préalables en codage.<br>* **TradingView** : Plateforme d'analyse graphique et d'édition de code (Pine Editor) servant à compiler et exécuter les indicateurs et scripts automatisés.<br>* **Bybit** : Échange centralisé de premier plan pour le trading de produits dérivés, offrant des bonus de bienvenue et des options de marge avancées.<br>* **BingX** : Échange alternatif proposé pour les utilisateurs ne souhaitant pas se soumettre à une vérification KYC obligatoire pour le trading de base.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView utilisé pour implémenter, tester et tracer les stratégies Supertrend personnalisées.<br>* **Supertrend** : Indicateur technique pivot pour la détection du momentum et des tendances à court terme via des paramètres d'ATR modulables.<br>* **Moyenne Mobile Exponentielle 200 (EMA 200)** : Indicateur de tendance macroéconomique à long terme servant de filtre directionnel majeur.<br>* **Ichimoku (Nuage Kumo)** : Indicateur technique sophistiqué utilisé pour filtrer les entrées de marché grâce à sa zone de support et de résistance dynamique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Dépassement du trading manuel** : L'automatisation des stratégies par l'IA permet de s'affranchir du stress lié à la surveillance continue des graphiques et d'éviter les opportunités manquées dues à un manque de réactivité.<br>* **Limitation des faux signaux du Supertrend** : Utilisé isolément, le Supertrend génère de faux signaux répétés en période de marché en range ; l'utilisation combinée de plusieurs indicateurs sert de filtre correctif indispensable.<br>* **Stratégie 1 (Triple Supertrend)** : Superposition de trois indicateurs Supertrend aux paramètres distincts (ATR 12/3, 10/1 et 11/2) pour n'entrer en position que lorsque l'intégralité des lignes s'aligne sur la même couleur.<br>* **Stratégie 2 (Supertrend + EMA 200)** : Combinaison d'un Supertrend aux paramètres par défaut avec une moyenne mobile exponentielle à 200 périodes pour valider les tendances à court terme dans le sens de la tendance de fond.<br>* **Stratégie 3 (Supertrend + Ichimoku)** : Filtrage strict des signaux Supertrend en exigeant que le prix évolue clairement au-dessus ou en dessous du nuage Kumo violet pour valider respectivement les positions long et short.<br>* **Gestion du risque et effet de levier** : Recommandation d'utiliser la marge isolée plutôt que croisée afin de circonscrire le risque à une position spécifique, avec un effet de levier modéré de 5x à 10x pour les débutants.<br>* **Règles de sortie rigoureuses** : Application systématique d'un ratio risk/reward avec un niveau de take profit fixé à 1,5, ou sortie anticipée du trade dès qu'une ligne change de couleur ou que le prix réintègre le nuage Kumo.<br>* **Accessibilité sans compétences en code** : Utilisation de prompts textuels précis adressés à Claude pour générer instantanément le code source prêt à être copié-collé dans l'éditeur Pine de TradingView.<br>* **Flexibilité des plateformes d'échange** : Choix entre Bybit (nécessitant un KYC rapide mais offrant des avantages maximaux) et BingX (alternative sans KYC obligatoire pour le trading de base) pour exécuter les ordres dérivés.<br>* **Exécution instantanée pour débutants** : Préférence pour les ordres au marché sur les plateformes de futures pour garantir une exécution immédiate lors de l'apprentissage des configurations graphiques automatisées.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude (Anthropic)</span><span class="tool-tag">TradingView</span><span class="tool-tag">Bybit</span><span class="tool-tag">BingX</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Supertrend</span><span class="tool-tag">Moyenne Mobile Exponentielle 200 (EMA 200)</span><span class="tool-tag">Ichimoku (Nuage Kumo)</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Dépassement du trading manuel** : L&#x27;automatisation des stratégies par l&#x27;IA permet de s&#x27;affranchir du stress lié à la surveillance continue des graphiques et d&#x27;éviter les opportunités manquées dues à un manque de réactivité.</span></li><li><span class="point-bullet">✦</span><span>Limitation des faux signaux du Supertrend** : Utilisé isolément, le Supertrend génère de faux signaux répétés en période de marché en range ; l&#x27;utilisation combinée de plusieurs indicateurs sert de filtre correctif indispensable.</span></li><li><span class="point-bullet">✦</span><span>Stratégie 1 (Triple Supertrend)** : Superposition de trois indicateurs Supertrend aux paramètres distincts (ATR 12/3, 10/1 et 11/2) pour n&#x27;entrer en position que lorsque l&#x27;intégralité des lignes s&#x27;aligne sur la même couleur.</span></li><li><span class="point-bullet">✦</span><span>Stratégie 2 (Supertrend + EMA 200)** : Combinaison d&#x27;un Supertrend aux paramètres par défaut avec une moyenne mobile exponentielle à 200 périodes pour valider les tendances à court terme dans le sens de la tendance de fond.</span></li><li><span class="point-bullet">✦</span><span>Stratégie 3 (Supertrend + Ichimoku)** : Filtrage strict des signaux Supertrend en exigeant que le prix évolue clairement au-dessus ou en dessous du nuage Kumo violet pour valider respectivement les positions long et short.</span></li><li><span class="point-bullet">✦</span><span>Gestion du risque et effet de levier** : Recommandation d&#x27;utiliser la marge isolée plutôt que croisée afin de circonscrire le risque à une position spécifique, avec un effet de levier modéré de 5x à 10x pour les débutants.</span></li><li><span class="point-bullet">✦</span><span>Règles de sortie rigoureuses** : Application systématique d&#x27;un ratio risk/reward avec un niveau de take profit fixé à 1,5, ou sortie anticipée du trade dès qu&#x27;une ligne change de couleur ou que le prix réintègre le nuage Kumo.</span></li><li><span class="point-bullet">✦</span><span>Accessibilité sans compétences en code** : Utilisation de prompts textuels précis adressés à Claude pour générer instantanément le code source prêt à être copié-collé dans l&#x27;éditeur Pine de TradingView.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité des plateformes d&#x27;échange** : Choix entre Bybit (nécessitant un KYC rapide mais offrant des avantages maximaux) et BingX (alternative sans KYC obligatoire pour le trading de base) pour exécuter les ordres dérivés.</span></li><li><span class="point-bullet">✦</span><span>Exécution instantanée pour débutants** : Préférence pour les ordres au marché sur les plateformes de futures pour garantir une exécution immédiate lors de l&#x27;apprentissage des configurations graphiques automatisées.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;avais l&#x27;habitude de rester assis là pendant des heures, à passer d&#x27;une ligne super trend à une autre sur mon graphique, en attendant qu&#x27;elles finissent toutes par s&#x27;aligner. Et la moitié du temps, au moment où je le remarquais, le trade était déjà parti. Alors j&#x27;ai arrêté de le faire manuellement. À la place, j&#x27;ai pris trois de mes stratégies super trend préférées, et je les ai toutes confiées à Claude.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Indicateurs Super Trend multiples, chandeliers BTCUSDT en timeframe 30m, lignes de tendance et outils de mesure de position (Long/Short avec PnL et ratio risque/rendement).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique des configurations Super Trend et placement d&#x27;outils de mesure de position de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000005_seg1.jpg" alt="Graphique en chandeliers japonais BTCUSDT sur l&#x27;unité de temps 30 minutes, montrant un indicateur Super Trend vert et une ligne de tendance bleue." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000005_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:05</span>
+                        <span class="caption-text">Graphique en chandeliers japonais BTCUSDT sur l&#x27;unité de temps 30 minutes, montrant un indicateur Super Trend vert et une ligne de tendance bleue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000011_seg1.jpg" alt="Graphique BTCUSDT 30 minutes avec un outil de position Long mesurant le risque/rendement (Risk/Reward Ratio : 3.68) et une zone cerclée au niveau du point d&#x27;entrée." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000011_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Graphique BTCUSDT 30 minutes avec un outil de position Long mesurant le risque/rendement (Risk/Reward Ratio : 3.68) et une zone cerclée au niveau du point d&#x27;entrée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000016_seg1.jpg" alt="Graphique BTCUSDT 30 minutes illustrant une position Short avec plusieurs lignes Super Trend empilées et un outil Risk/Reward affichant un ratio de 1.5." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000016_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Graphique BTCUSDT 30 minutes illustrant une position Short avec plusieurs lignes Super Trend empilées et un outil Risk/Reward affichant un ratio de 1.5.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:22 - 00:00:59</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer exactement comment j&#x27;ai automatisé les trois pour que TradingView attrape chaque signal pour moi, le trace directement sur le graphique, et m&#x27;alerte dès qu&#x27;il est prêt, sans que je regarde une seule bougie, sans savoir coder, et sans payer pour un groupe de signaux hors de prix. Et à la fin, je vous donnerai les invites exactes que j&#x27;utilise pour chaque stratégie, afin que vous puissiez les copier et construire la même configuration vous-même dans les 10 prochaines minutes. Passons donc directement aux choses sérieuses. Très bien, les gars, étape numéro une, inscrivez-vous sur un échange. Pour cette stratégie, nous allons utiliser Bybit. C&#x27;est l&#x27;un de mes principaux échanges pour le trading de produits dérivés et ils sont</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Boîte de dialogue &quot;Create alert on&quot; avec la condition &quot;ST+Ichimoku (10, 3, 9, 26, 52, 26, 1...)&quot;; panneau latéral montrant des notifications Webhook exécutées.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;une alerte automatisée liée à un indicateur combiné sur le graphique de TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000031_seg2.jpg" alt="Fenêtre de création d&#x27;alerte sur un graphique TradingView pour le contrat BTCUSDT avec une stratégie combinant Supertrend et nuage d&#x27;Ichimoku." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000031_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;alerte sur un graphique TradingView pour le contrat BTCUSDT avec une stratégie combinant Supertrend et nuage d&#x27;Ichimoku.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:59 - 00:01:23</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">offrant des bonus absolument fous en ce moment. Voici la partie importante. Si Bybit n&#x27;est pas disponible dans votre pays ou que vous ne voulez pas faire de KYC, vous pouvez utiliser BingX comme alternative. Et le meilleur dans tout ça ? BingX n&#x27;exige pas de vérification KYC obligatoire pour le trading de base. BingX offre également jusqu&#x27;à 9 800 USDT de bonus de bienvenue. Je mettrai les liens des deux en description. Mais pour cette vidéo, nous allons utiliser Bybit.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces web des courtiers crypto Bybit et BingX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres promotionnelles, montants de bonus (30 000 USDT, 9 800+ USDT), et formulaires d&#x27;inscription.
+[DESC_IMAGE_1] Navigation sur les plateformes d&#x27;échange alternatives pour présenter les bonus et options sans KYC.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000105_seg3.jpg" alt="Interface de la plateforme Bybit affichant la section &quot;Rewards Hub&quot; avec les bonus de dépôt de 30 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000105_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Interface de la plateforme Bybit affichant la section &quot;Rewards Hub&quot; avec les bonus de dépôt de 30 000 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000111_seg3.jpg" alt="Page d&#x27;accueil de la plateforme BingX mettant en avant l&#x27;événement promotionnel &quot;Can&#x27;t Win the Final Battle Without You!&quot; avec une mascotte animée." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000111_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:11</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme BingX mettant en avant l&#x27;événement promotionnel &quot;Can&#x27;t Win the Final Battle Without You!&quot; avec une mascotte animée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000117_seg3.jpg" alt="Page d&#x27;inscription de la plateforme BingX montrant les bonus de bienvenue (&quot;9,800+ USDT Welcome Gift&quot;) et le formulaire de création de compte." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000117_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme BingX montrant les bonus de bienvenue (&quot;9,800+ USDT Welcome Gift&quot;) et le formulaire de création de compte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:24 - 00:01:55</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour vous inscrire sur Bybit et réclamer jusqu&#x27;à 30 000 USDT de bonus, cliquez sur le lien tout en haut de la description. Vous serez redirigé vers la page d&#x27;inscription où il vous suffit d&#x27;entrer vos informations et de créer un compte. Vous devrez compléter la vérification KYC sur Bybit pour profiter de tous les services sur leur plateforme. Personnellement, je n&#x27;ai aucun problème avec le KYC. C&#x27;est rapide et sécurisé. Mais si vous préférez une option sans KYC obligatoire, c&#x27;est pourquoi j&#x27;ai fourni BingX comme alternative ci-dessous. La deuxième étape consiste à déposer des fonds.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur Web affichant les interfaces d&#x27;inscription des plateformes d&#x27;échange crypto Bybit et BingX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Statistiques de la plateforme (volume de trading 24h, utilisateurs enregistrés), bonus de bienvenue (USDT), champs de saisie pour e-mail/mot de passe et code de parrainage.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des étapes pour s&#x27;inscrire sur les bourses de crypto-monnaies partenaires et bénéficier des bonus de bienvenue.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000132_seg4.jpg" alt="Page d&#x27;inscription de la plateforme Bybit affichant les statistiques clés et le formulaire de création de compte avec code de parrainage." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000132_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:32</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme Bybit affichant les statistiques clés et le formulaire de création de compte avec code de parrainage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000147_seg4.jpg" alt="Page d&#x27;inscription de la plateforme BingX présentant les bonus de bienvenue et le formulaire de création de compte." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000147_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:47</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme BingX présentant les bonus de bienvenue et le formulaire de création de compte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:55 - 00:02:30</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Laissez-moi vous montrer comment déposer des fonds avant que nous ne plongions dans la stratégie. Une fois que vous êtes connecté à Bybit, cliquez sur Actifs dans le coin supérieur droit, puis cliquez sur Dépôt. Choisissez la pièce que vous souhaitez déposer. Je recommande l&#x27;USDT et sélectionnez le bon réseau de blockchain. Assurez-vous de choisir le bon réseau pour éviter de perdre vos fonds. Nous confirmerons les détails puis scannez le code QR ou copiez l&#x27;adresse de dépôt pour transférer vos fonds depuis votre portefeuille ou un autre échange. Si vous souhaitez déposer en utilisant une monnaie fiat, cliquez sur Acheter des cryptos en haut du menu, puis sélectionnez Dépôt fiat. Choisissez votre devise, entrez le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de dépôt de cryptomonnaies, sélection de l&#x27;USDT et choix des réseaux blockchain (TRC20, ERC20, Mantle Network).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur l&#x27;interface de l&#x27;exchange pour initier un dépôt de fonds en USDT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000204_seg5.jpg" alt="Page d&#x27;accueil de la plateforme Bybit avec le curseur sur le bouton de dépôt dans le coin supérieur droit." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000204_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Bybit avec le curseur sur le bouton de dépôt dans le coin supérieur droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000213_seg5.jpg" alt="Interface de dépôt Bybit montrant la sélection de la crypto USDT et le menu déroulant des réseaux (chaînes) avec TRON (TRC20) sélectionné." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000213_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Interface de dépôt Bybit montrant la sélection de la crypto USDT et le menu déroulant des réseaux (chaînes) avec TRON (TRC20) sélectionné.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:30 - 00:03:06</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">montant, sélectionnez votre mode de paiement et cliquez sur continuer. Une fois vos fonds déposés, il est temps d&#x27;ouvrir une position. L&#x27;étape numéro trois consiste à ouvrir votre première position. Cliquez sur trader dans le menu supérieur, puis sélectionnez futures. Cela vous mènera à l&#x27;interface de trading. Choisissez l&#x27;actif que vous souhaitez négocier dans le coin supérieur gauche. Pour cet exemple, j&#x27;utiliserai Bitcoin. Sélectionnez votre type d&#x27;ordre, limite, au marché ou conditionnel. Pour les débutants, je recommande de commencer par des ordres au marché pour une exécution instantanée. Saisissez les détails de votre trade tels que la quantité et le prix. Ensuite, choisissez votre effet de levier</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bybit (interface web et interface de trading futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de cryptomonnaies (BTC/USDT, SOL/USDT, etc.), graphiques de prix en chandeliers, carnet d&#x27;ordres (Order Book), options de position (Long/Short, Isolé/Cross, effet de levier).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme Bybit et transition vers l&#x27;interface de trading futures pour ouvrir une position.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000239_seg6.jpg" alt="Page d&#x27;accueil de la plateforme Bybit affichant différents jetons et paires de cryptomonnaies." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000239_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:39</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Bybit affichant différents jetons et paires de cryptomonnaies.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000248_seg6.jpg" alt="Interface de trading futures de Bybit montrant un graphique en chandeliers du BTC/USDT, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000248_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Interface de trading futures de Bybit montrant un graphique en chandeliers du BTC/USDT, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:06 - 00:03:29</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">type. Vous pouvez utiliser la marge croisée ou la marge isolée. Personnellement, j&#x27;utilise la marge isolée car elle limite votre risque à cette position spécifique uniquement. Vous pouvez utiliser jusqu&#x27;à 100 fois de effet de levier sur un pari d&#x27;achat, mais pour les débutants, je recommande de commencer avec 5 fois à 10 fois de effet de levier jusqu&#x27;à ce que vous soyez à l&#x27;aise. Confirmez les détails de votre ordre, puis cliquez sur acheter slash long ou vendre slash short pour ouvrir votre position.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange Bybit (TradingView intégré).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers du BTCUSDT en unité de temps 5m, carnet d&#x27;ordres, et panneau de passage d&#x27;ordres affichant les options de marge (Isolated, Cross, Portfolio).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et explication du mode de marge isolée dans le panneau de trading de Bybit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000312_seg7.jpg" alt="Interface de trading de Bybit montrant le graphique du BTCUSDT avec le menu de sélection du type de marge ouvert (Isolated)." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000312_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:12</span>
+                        <span class="caption-text">Interface de trading de Bybit montrant le graphique du BTCUSDT avec le menu de sélection du type de marge ouvert (Isolated).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:29 - 00:03:51</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois votre ordre exécuté, vous pouvez le voir sous l&#x27;onglet Positions en bas de l&#x27;écran. Maintenant que vous savez comment utiliser les produits dérivés sur Bybit, passons à la stratégie proprement dite qui peut vous faire réaliser des profits importants par jour. Très bien, entrons maintenant directement dans les stratégies. Nous allons utiliser l&#x27;indicateur Super Trend, qui est l&#x27;un des moyens les plus simples pour trouver les tendances sur le marché.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bybit (trading de produits dérivés).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique du BTCUSDT en unités de 5 minutes, carnet d&#x27;ordres (order book) à droite, et onglet &quot;Positions (1)&quot; en bas affichant une position ouverte sur le contrat BTCUSDT Perp avec un effet de levier isolé de 50x.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une position ouverte et active dans le tableau de bord de trading après exécution d&#x27;un ordre.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000334_seg8.jpg" alt="Interface de trading de Bybit affichant un graphique en chandeliers du BTCUSDT avec l&#x27;onglet des positions ouvertes en bas et le panneau de passage d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000334_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Interface de trading de Bybit affichant un graphique en chandeliers du BTCUSDT avec l&#x27;onglet des positions ouvertes en bas et le panneau de passage d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:52 - 00:04:29</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, allez sur Trade and View. Vous pouvez utiliser la version gratuite pour cela. Cliquez sur indicateurs, tapez super trend et sélectionnez celui-ci ici, c&#x27;est vraiment simple, si la ligne est verte c&#x27;est un signal d&#x27;achat, mais si la ligne est rouge il est temps d&#x27;ouvrir une position short, maintenant il est vrai aussi que l&#x27;indicateur super trend a quelques problèmes quand vous l&#x27;utilisez seul, l&#x27;indicateur identifie les tendances quand le marché a un fort momentum dans une direction, mais il va constamment vous donner des signaux d&#x27;achat et de vente même quand le marché évolue en range et manque de momentum significatif et vous pouvez perdre beaucoup d&#x27;argent aussi. Donc à cause de cela, allons directement à nos trois</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (Graphique de prix crypto)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique du BTCUSDT Perpetual Contract (Bybit) en unité de temps 30 minutes, avec l&#x27;indicateur technique Supertrend (paramètres 10, 3) affichant des zones vertes (signal haussier) et rouges (signal baissier).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur pointe sur le graphique au moment du basculement de l&#x27;indicateur Supertrend du vert au rouge, illustrant un signal de vente (short).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000401_seg9.jpg" alt="Capture d&#x27;écran montrant un graphique de trading TradingView avec l&#x27;indicateur Supertrend appliqué sur une paire crypto." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000401_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:01</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un graphique de trading TradingView avec l&#x27;indicateur Supertrend appliqué sur une paire crypto.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:29 - 00:05:05</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">stratégies qui vont vous aider à ne pas perdre d&#x27;argent lorsque vous tradez. La première stratégie est très simple. Vous allez sur votre graphique Bitcoin sur TradingView, vous cliquez sur les indicateurs et vous ajoutez trois indicateurs Supertrend à votre graphique. Oui, vous avez bien entendu, trois fois le même indicateur. Ensuite, allez dans les paramètres du premier et changez la période ATR à 12 et le multiplicateur ATR à 3. Pour le deuxième indicateur, définissez les valeurs à 10 et 1. Et enfin, pour le troisième indicateur, définissez les valeurs à 11 et 2. Le secret est de trader lorsque toutes les lignes de l&#x27;indicateur sont de la même couleur. Comme vous pouvez le voir</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Graphique de trading BTCUSDT (Bybit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bougies japonaises (BTCUSDT 30m), prix actuel à 70 637,0 USDT, indicateur Supertrend (10, 3) affichant les bandes de tendance vertes et rouges.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la configuration initiale du graphique Bitcoin avec le premier indicateur Supertrend.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000438_seg10.jpg" alt="Graphique TradingView du contrat perpétuel BTCUSDT en unités 30 minutes avec un premier indicateur Supertrend appliqué." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000438_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Graphique TradingView du contrat perpétuel BTCUSDT en unités 30 minutes avec un premier indicateur Supertrend appliqué.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:05 - 00:05:38</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, certaines lignes sont vertes et d&#x27;autres sont rouges. Cela montre que le marché n&#x27;est pas en plein momentum et qu&#x27;il évolue peut-être latéralement. Il est donc préférable d&#x27;attendre que toutes les lignes prennent la même couleur avant de trader. Si toutes les lignes deviennent vertes, cela montre que le marché a un fort momentum et vous pouvez prendre une position acheteuse. Mais si toutes les lignes sont rouges, vous pouvez ouvrir une position vendeuse. Si vous suivez cette approche, vous pouvez potentiellement prendre des positions au bon moment et augmenter vos profits. Maintenant, si vous prenez une nouvelle position, il est également important de savoir comment sortir de cette même position. Pour cela, il existe différentes</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de trading (TradingView / interface Bybit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpetual Contract en unité de temps 30 minutes, indicateur technique à lignes multiples alternant entre le vert et le rouge montrant un marché sans momentum clair.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse visuelle du manque de momentum et de l&#x27;évolution latérale des prix, en expliquant qu&#x27;il faut attendre que toutes les lignes prennent la même couleur avant de trader.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000513_seg11.jpg" alt="Un graphique de trading affichant des bougies japonaises et des lignes d&#x27;indicateur mixtes (vertes et rouges) sur le contrat BTCUSDT, avec des annotations entourant les zones de consolidation latérale." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000513_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:13</span>
+                        <span class="caption-text">Un graphique de trading affichant des bougies japonaises et des lignes d&#x27;indicateur mixtes (vertes et rouges) sur le contrat BTCUSDT, avec des annotations entourant les zones de consolidation latérale.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:38 - 00:06:13</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">façons de le faire. Une méthode consiste à définir un niveau de take profit avec un ratio de 1,5. Vous sortez du trade et sécurisez vos profits lorsque le prix atteint ce niveau. Une autre stratégie de sortie intervient lorsque l&#x27;une des lignes change de couleur. Ainsi, comme vous pouvez le voir ici, si vous étiez entré dans un trade lorsque toutes les lignes étaient vertes, vous auriez réalisé un profit significatif et vous sortiriez du trade une fois que l&#x27;une des lignes devient rouge. Passons à la deuxième stratégie, celle-ci consiste à associer l&#x27;indicateur Supertrend à une moyenne mobile sur 200 jours. Cette stratégie est puissante car l&#x27;indicateur Supertrend identifie efficacement les positions courtes</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT avec indicateur de tendance coloré (lignes rouges et vertes délimitant des canaux).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique de la configuration des prix et des changements de couleur des lignes indicatrices pour illustrer la stratégie de sortie de trade.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000547_seg12.jpg" alt="Graphique en chandeliers japonais du contrat perpétuel BTCUSDT sur un intervalle de 30 minutes, illustrant un indicateur technique de type canal/bandes avec des zones colorées en rouge et vert." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000547_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:47</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du contrat perpétuel BTCUSDT sur un intervalle de 30 minutes, illustrant un indicateur technique de type canal/bandes avec des zones colorées en rouge et vert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:13 - 00:06:42</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">...tendances à court terme. Bien que vous puissiez facilement identifier des tendances à long terme avec une moyenne mobile à 200 jours, allez dans l&#x27;onglet des indicateurs et ajoutez l&#x27;indicateur Supertrend au graphique en utilisant les paramètres par défaut. Ensuite, ajoutez une moyenne mobile exponentielle avec une longueur de 200. Pour modifier la longueur, vous pouvez cliquer ici dans les paramètres, cliquer ici sur les données d&#x27;entrée et modifier la longueur à 200. Maintenant, vous n&#x27;ouvrirez une position acheteuse que lorsque la ligne du Supertrend est verte et que le prix est au-dessus de la moyenne mobile à 200 jours.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView intégré à Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers du contrat perpétuel BTCUSDT en unité de temps 30 minutes, avec la barre d&#x27;outils supérieure de TradingView visible.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur se déplace pour cliquer sur l&#x27;onglet d&#x27;insertion des indicateurs techniques afin d&#x27;ajouter le Supertrend.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000621_seg13.jpg" alt="Capture d&#x27;écran montrant le curseur de la souris pointant vers l&#x27;onglet des indicateurs sur un graphique de trading." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000621_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:21</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le curseur de la souris pointant vers l&#x27;onglet des indicateurs sur un graphique de trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:42 - 00:07:15</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et vous n&#x27;ouvrirez une position courte que lorsque la ligne de super tendance est rouge et qu&#x27;elle se trouve en dessous de la moyenne mobile à 200 jours. Ici, vous pouvez voir que la ligne de super tendance est verte, mais le prix n&#x27;est pas au-dessus de la 200, vous pouvez donc attendre que le prix croise au-dessus de la 200 comme ici. Et si la ligne reste verte, c&#x27;est le moment idéal pour ouvrir une position longue. Vous pouvez régler le niveau de take profit à un ratio de 1,5, sortir du trade et sécuriser vos profits lorsque le prix atteint ce niveau, ou sortir du trade lorsque la ligne devient rouge comme je vous l&#x27;ai dit plus tôt. Un exemple différent est celui-ci où vous pouvez voir</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (interface graphique de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT (Bybit, 30 min), Supertrend (zones colorées rouge/verte), moyenne mobile à 200 périodes (ligne bleue), avec une zone encerclée montrant un changement de signal de tendance.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du graphique pour expliquer les conditions d&#x27;ouverture d&#x27;une position courte (short) en fonction de la position du prix par rapport à la moyenne mobile et à la Supertrend.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000650_seg14.jpg" alt="Graphique en chandeliers japonais du contrat perpétuel BTCUSDT sur un intervalle de 30 minutes, illustrant une configuration de trading avec la Supertrend et une moyenne mobile." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000650_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:50</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du contrat perpétuel BTCUSDT sur un intervalle de 30 minutes, illustrant une configuration de trading avec la Supertrend et une moyenne mobile.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:15 - 00:07:48</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">que la ligne super trend est rouge mais vous devez attendre jusqu&#x27;à ce que le prix chute en dessous de la moyenne mobile à 200 jours et si la ligne reste rouge c&#x27;est le moment d&#x27;ouvrir une position short en passant à notre troisième et dernière stratégie cela implique d&#x27;utiliser l&#x27;indicateur ichimoku donc allez dans l&#x27;onglet des indicateurs tapez ichimoku et sélectionnez celui-ci ici ses paramètres par défaut sont désordonnés donc pour faciliter la lecture vous pouvez modifier en décortiquant les cases ici et changer ces arrière-plans de tracé en violet mais comment ça fonctionne cette zone violette est le nuage Kumo vous n&#x27;ouvrirez une position long que si le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT, chandelier en unité de temps 30 minutes, ligne Supertrend rouge, moyenne mobile bleue (200 jours), et zones de positions/backtest (rectangles vert et rouge).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique de la stratégie combinant le Supertrend rouge et le passage du prix sous la moyenne mobile pour initier une position short.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000723_seg15.jpg" alt="Graphique de trading montrant le contrat perpétuel BTCUSDT sur Bybit avec une ligne Supertrend rouge et une moyenne mobile." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000723_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:23</span>
+                        <span class="caption-text">Graphique de trading montrant le contrat perpétuel BTCUSDT sur Bybit avec une ligne Supertrend rouge et une moyenne mobile.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:48 - 00:08:22</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La ligne Supertrend est verte et le prix est au-dessus du nuage Kumo. Ne prenez pas de position si le prix est à l&#x27;intérieur ou en dessous du nuage Kumo, et vous n&#x27;ouvrirez une position short que lorsque la ligne Supertrend sera rouge et que le prix sera en dessous du nuage Kumo. Vous pouvez voir ici que la ligne Supertrend est verte mais que le prix est actuellement en dessous du nuage Kumo, vous devez donc patienter. Alors que le prix entre dans le nuage Kumo, je vous recommandes d&#x27;attendre qu&#x27;il remonte au-dessus du nuage Kumo. Une fois qu&#x27;il dépasse le nuage Kumo, assurez-vous que la ligne Supertrend reste verte et vous pourrez alors entrer sur votre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Supertrend (10, 3), Ichimoku Cloud (9, 26, 52, 26), paires BTCUSDT Perpetual 30 min.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse de la position du prix par rapport au nuage Kumo et à la ligne Supertrend pour déterminer les conditions d&#x27;achat (long).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000756_seg16.jpg" alt="Graphique TradingView en unités de 30 minutes montrant le contrat perpétuel BTCUSDT sur Bybit, avec les indicateurs Supertrend et Ichimoku (Kumo) affichés et des zones entourées pour illustrer la stratégie." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000756_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:56</span>
+                        <span class="caption-text">Graphique TradingView en unités de 30 minutes montrant le contrat perpétuel BTCUSDT sur Bybit, avec les indicateurs Supertrend et Ichimoku (Kumo) affichés et des zones entourées pour illustrer la stratégie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:22 - 00:08:49</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">position longue. Je vais vous montrer un autre exemple. Vous pouvez voir ici que la ligne super trend est rouge. Avant d&#x27;entrer dans le trade, vous devez attendre que le prix chute en dessous du nuage Kumo. Pour la stratégie de sortie, vous pouvez également définir un niveau de take profit à un ratio de profit de 1,5 ou sortir du trade une fois que le prix pénètre à l&#x27;intérieur du nuage Kumo. Rappelez-vous simplement que cette stratégie fonctionne beaucoup mieux si vous utilisez Bybit ou BingX plutôt que d&#x27;autres bourses. Assurez-vous donc de cliquer sur mes liens ci-dessous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface graphique de trading (TradingView / Bybit).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Supertrend, Ichimoku (9, 26, 52, 26), paires BTCUSDT Perpetual Contract.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse d&#x27;une configuration de vente (short) avec le passage du prix sous le nuage Kumo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000829_seg17.jpg" alt="Graphique de trading montrant le prix du BTCUSDT avec l&#x27;indicateur Supertrend et le nuage Ichimoku (Kumo) sur une interface similaire à TradingView/Bybit." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000829_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:29</span>
+                        <span class="caption-text">Graphique de trading montrant le prix du BTCUSDT avec l&#x27;indicateur Supertrend et le nuage Ichimoku (Kumo) sur une interface similaire à TradingView/Bybit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:50 - 00:09:23</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc maintenant vous comprenez exactement comment ces trois stratégies fonctionnent manuellement. Mais c&#x27;est là que ça devient vraiment intéressant. Au lieu de surveiller des graphiques toute la journée et de faire ça à la main, j&#x27;ai donné chacune de ces stratégies exactes à Claude et je lui ai demandé de m&#x27;écrire un script Pine complet pour chacune, afin que TradingView puisse détecter automatiquement ces signaux pour moi, peu importe la stratégie que je souhaite utiliser. Commençons par la stratégie numéro une, le triple super trend. Voici le prompt exact que j&#x27;ai utilisé. Je vais l&#x27;afficher à l&#x27;écran dès maintenant pour que vous puissiez le copier exactement. Ce prompt exact</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Windows PowerShell (Claude Code)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code Pine Script v5, indicateur Supertrend, EMA 200, règles d&#x27;entrée/sortie, paramètres ATR.</p>
+                        <p><strong>Action / Démonstration :</strong> Génération et configuration d&#x27;un script de stratégie de trading via l&#x27;assistant IA Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000858_seg18.jpg" alt="Graphique de trading en chandeliers montrant l&#x27;indicateur Supertrend sur une paire crypto." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000858_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:58</span>
+                        <span class="caption-text">Graphique de trading en chandeliers montrant l&#x27;indicateur Supertrend sur une paire crypto.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000907_seg18.jpg" alt="Interface de terminal Windows PowerShell affichant l&#x27;outil Claude Code en cours d&#x27;utilisation avec un prompt de génération de stratégie Pine Script." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000907_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:07</span>
+                        <span class="caption-text">Interface de terminal Windows PowerShell affichant l&#x27;outil Claude Code en cours d&#x27;utilisation avec un prompt de génération de stratégie Pine Script.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000915_seg18.jpg" alt="Document textuel présentant le prompt #1 pour une stratégie &quot;Triple Supertrend&quot; avec règles d&#x27;entrée et de sortie détaillées." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000915_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:15</span>
+                        <span class="caption-text">Document textuel présentant le prompt #1 pour une stratégie &quot;Triple Supertrend&quot; avec règles d&#x27;entrée et de sortie détaillées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:23 - 00:10:00</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ainsi que le script Pine utilisé dans cette vidéo est disponible dans mon groupe privé. Vous trouverez le lien ci-dessous. Ouvrez TradingView, allez sur n&#x27;importe quel graphique, je vais utiliser Bitcoin à nouveau et en bas à droite de l&#x27;écran, cliquez sur l&#x27;onglet Éditeur Pine. Sélectionnez tout le code par défaut, supprimez-le et collez ce script Pine. Cliquez sur &quot;Ajouter au graphique&quot; et, comme par magie, TradingView le compile et trace les trois lignes SuperTrend directement sur les bougies avec des triangles verts et rouges indiquant exactement où la stratégie serait entrée. Maintenant, pour la stratégie numéro deux, le SuperTrend plus l&#x27;EMA 200. Même processus. Voici la consigne. Collez ceci dans un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (interface web de graphiques boursiers).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix du Bitcoin (BTCUSDT Perpetual Contract), unité de temps 2h, affichant les bougies vertes et rouges ainsi que l&#x27;histogramme de volume en bas, avec une infobulle indiquant « Change symbol ».</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection ou survol du symbole du graphique pour choisir une crypto-monnaie (Bitcoin), conformément aux instructions audio.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000932_seg19.jpg" alt="Graphique en chandeliers japonais affichant la paire BTCUSDT sur l&#x27;unité de temps 2 heures (Bybit) dans l&#x27;interface de TradingView." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_000932_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:32</span>
+                        <span class="caption-text">Graphique en chandeliers japonais affichant la paire BTCUSDT sur l&#x27;unité de temps 2 heures (Bybit) dans l&#x27;interface de TradingView.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:00 - 00:10:37</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nouvel onglet de l&#x27;éditeur Pine, cliquez sur Ajouter au graphique, et maintenant vous avez la moyenne mobile exponentielle à 200 périodes tracée avec la ligne Super Trend. Et la stratégie marque automatiquement chaque base acheteuse et vendeuse sur ce filtre de tendance. Et enfin, stratégie numéro trois, Super Trend plus nuage Ichimoku. Voici ce script. Collez-le, appuyez sur Ajouter au graphique, et maintenant le nuage Kumo est ombré directement sur votre graphique avec des signaux d&#x27;achat et de vente qui se déclenchent dès que le prix passe au-dessus ou en dessous. Maintenant, pour n&#x27;importe laquelle de ces trois stratégies, vous pouvez cliquer sur le testeur de stratégie et voir le test rétrospectif complet. Taux de réussite, facteur de profit, courbe de capital, tout y est.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Explorateur de fichiers Windows</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT.P (2h, Bybit), indicateurs ST+EMA200 et ST+Ichimoku, repères BUY/SELL/TP/SL, fichiers de stratégie (.txt, .py, .pine, .json)</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation des signaux générés par la stratégie Supertrend + EMA 200 sur TradingView, navigation dans les scripts de trading, puis test visuel de la stratégie Supertrend + Ichimoku.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001010_seg20.jpg" alt="Graphique TradingView de BTCUSDT (unité de temps 2h sur Bybit) affichant l&#x27;indicateur ST+EMA200 avec le tracé de la moyenne mobile 200, du Supertrend et les repères de signaux Achat/Vente (BUY/SELL) avec TP/SL." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001010_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:10</span>
+                        <span class="caption-text">Graphique TradingView de BTCUSDT (unité de temps 2h sur Bybit) affichant l&#x27;indicateur ST+EMA200 avec le tracé de la moyenne mobile 200, du Supertrend et les repères de signaux Achat/Vente (BUY/SELL) avec TP/SL.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001019_seg20.jpg" alt="Fenêtre de l&#x27;explorateur de fichiers Windows montrant le dossier &quot;Claude Trading Telegram&quot; avec les fichiers de stratégies et scripts Python/Pine Script." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001019_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:19</span>
+                        <span class="caption-text">Fenêtre de l&#x27;explorateur de fichiers Windows montrant le dossier &quot;Claude Trading Telegram&quot; avec les fichiers de stratégies et scripts Python/Pine Script.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001028_seg20.jpg" alt="Graphique TradingView de BTCUSDT (unité de temps 2h sur Bybit) montrant la stratégie Supertrend associée au nuage Ichimoku (ST+Ichimoku) avec les signaux d&#x27;entrée et de sortie affichés." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001028_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:28</span>
+                        <span class="caption-text">Graphique TradingView de BTCUSDT (unité de temps 2h sur Bybit) montrant la stratégie Supertrend associée au nuage Ichimoku (ST+Ichimoku) avec les signaux d&#x27;entrée et de sortie affichés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:37 - 00:11:11</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc vous savez exactement comment cette stratégie aurait fonctionné historiquement avant de risquer un seul dollar. Et si vous ouvrez le testeur et que vous n&#x27;aimez pas ce que vous voyez, peut-être que le taux de réussite n&#x27;est pas assez élevé sur la version Ichimoku ou que la courbe de capital sur le triple super trend n&#x27;est pas aussi lisse que vous le souhaitez. Ne stressez pas. C&#x27;est tout à fait normal. Chaque condition de marché est différente et c&#x27;est là que vous la personnalisez. Retournez simplement voir Claude et affinez le prompt. Dites-lui. Ajoutez un filtre RSI pour ne pas entrer quand le marché est suracheté. Réinjectez cela dans Claude, copiez le nouveau code, collez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Terminal CLI (Claude Code)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT.P 6h (Bybit), indicateurs Supertrend / Ichimoku, signaux BUY/SELL, prompt CLI : &quot;Add an RSI filter so we don&#x27;t enter when the market&#x27;s overbought.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse visuelle du comportement des signaux sur le graphique de prix et ajout d&#x27;une condition de filtrage RSI dans le code via le terminal de l&#x27;assistant IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001046_seg21.jpg" alt="Graphique TradingView (BTCUSDT 6h sur Bybit) affichant les signaux d&#x27;entrée et de sortie (BUY, SELL, TP/SL) d&#x27;une stratégie automatisée." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001046_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:46</span>
+                        <span class="caption-text">Graphique TradingView (BTCUSDT 6h sur Bybit) affichant les signaux d&#x27;entrée et de sortie (BUY, SELL, TP/SL) d&#x27;une stratégie automatisée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001102_seg21.jpg" alt="Interface terminal CLI de Claude Code recevant un prompt pour ajouter un filtre RSI à la stratégie Supertrend / Ichimoku Cloud." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001102_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:02</span>
+                        <span class="caption-text">Interface terminal CLI de Claude Code recevant un prompt pour ajouter un filtre RSI à la stratégie Supertrend / Ichimoku Cloud.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:11 - 00:11:47</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">l&#x27;intégrer, cliquer sur enregistrer, et continuer à répéter cela jusqu&#x27;à ce que la courbe de capital commence à grimper de la manière que vous voulez. Une fois que vous avez affiné la stratégie qui correspond le mieux à votre style, configurez des alertes pour ne jamais manquer un signal. Cliquez sur l&#x27;icône du réveil en haut de TradingView ou faites un clic droit sur l&#x27;une des formes de signal et sélectionnez &quot;ajouter une alerte&quot;, puis définissez vos conditions. TradingView vous avertira à la seconde où l&#x27;une de ces trois stratégies émet un signal directement sur votre téléphone. Ainsi, au lieu de rester assis là pendant des heures à attendre que la tendance s&#x27;aligne, le code fait tout le travail difficile pour les trois stratégies en même temps. Dès que les conditions sont réunies, boum, vous recevez l&#x27;alerte, vous exécutez et vous êtes</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT.P, indicateurs Supertrend/Ichimoku/RSI/EMA200, métriques de backtesting (Max drawdown 43.49%, CAGR 4.15%).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation des signaux de stratégie sur graphique et analyse des métriques de performance globales.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001120_seg22.jpg" alt="Graphique TradingView 3D BTCUSDT affichant les indicateurs Supertrend, Ichimoku et RSI avec signaux d&#x27;achat/vente." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001120_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:20</span>
+                        <span class="caption-text">Graphique TradingView 3D BTCUSDT affichant les indicateurs Supertrend, Ichimoku et RSI avec signaux d&#x27;achat/vente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001138_seg22.jpg" alt="Tableau de bord de backtest TradingView affichant les statistiques de performance et de drawdown de la stratégie." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001138_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:38</span>
+                        <span class="caption-text">Tableau de bord de backtest TradingView affichant les statistiques de performance et de drawdown de la stratégie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:47 - 00:12:05</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est fait. Maintenant, si vous voulez aller encore plus loin et faire en sorte qu&#x27;un trade s&#x27;ouvre automatiquement sur votre exchange dès qu&#x27;un signal se déclenche, j&#x27;ai ce qu&#x27;il vous faut. J&#x27;ai mis en place un groupe privé où je partage tous mes cas d&#x27;usage de Claude Code, de son intégration avec Telegram et TradingView jusqu&#x27;à la recherche de baleines sur Hyperliquid. Tout cela de façon automatique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Whop, Telegram (ClaudeTelegramBot)</p>
+                        <p><strong>Contenu textuel & Code :</strong> - TradingView : Paire BTCUSDT.P (Perpetual Contract 2h sur Bybit), indicateur ST+EMA200, signaux BUY / SELL et niveaux de Take Profit / Stop Loss (Long TP/SL, Short TP/SL).
+- Whop : Offre &quot;AI Trade Edge&quot; par Alex Carter ($79.99/month), accès aux bots de trading IA, templates et guides.
+- Telegram : Instructions du bot `ClaudeTelegramBot` (`To pair: DM me anything — you&#x27;ll get a 6-char code`, `/telegram:access pair &lt;code&gt;`), commandes `/start` et `/status`, message de validation &quot;Paired! Say hi to Claude.&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de signaux techniques sur un graphique Bitcoin, présentation du groupe privé sur Whop, puis configuration et appairage d&#x27;un bot Telegram lié à Claude Code.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001152_seg23.jpg" alt="Graphique TradingView en unités de temps 2h pour la paire BTCUSDT (Bybit), affichant l&#x27;indicateur ST+EMA200 et divers signaux d&#x27;achat et de vente." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001152_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:52</span>
+                        <span class="caption-text">Graphique TradingView en unités de temps 2h pour la paire BTCUSDT (Bybit), affichant l&#x27;indicateur ST+EMA200 et divers signaux d&#x27;achat et de vente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001156_seg23.jpg" alt="Page de la plateforme Whop présentant l&#x27;espace privé &quot;AI Trade Edge&quot; d&#x27;Alex Carter au tarif de 79.99 $/mois." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001156_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:56</span>
+                        <span class="caption-text">Page de la plateforme Whop présentant l&#x27;espace privé &quot;AI Trade Edge&quot; d&#x27;Alex Carter au tarif de 79.99 $/mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001201_seg23.jpg" alt="Interface Telegram affichant une discussion avec le bot &quot;ClaudeTelegramBot&quot; permettant de connecter Telegram à une session Claude Code." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001201_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:01</span>
+                        <span class="caption-text">Interface Telegram affichant une discussion avec le bot &quot;ClaudeTelegramBot&quot; permettant de connecter Telegram à une session Claude Code.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:06 - 00:12:30</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce que je vous ai montré aujourd&#x27;hui, tout est dans le groupe. Et j&#x27;ajoute constamment de nouvelles choses, de nouvelles stratégies, de nouveaux prompts, de nouvelles intégrations. Chaque fois que je crée quelque chose de nouveau, cela va directement là-dedans. Le prix est de 79,99 $ par mois. Et honnêtement, quand vous pensez à ce que c&#x27;est vraiment, la configuration de trading par IA la plus à la pointe de la technologie disponible pour les traders particuliers en ce moment, constamment mise à jour avec tout d&#x27;inclus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;abonnement Whop et pages web de documentation des outils de trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification d&#x27;abonnement à 79,99 $/mois et descriptifs de fonctionnalités d&#x27;IA pour le trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation commerciale de la communauté et des outils d&#x27;abonnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001218_seg24.jpg" alt="Page de la plateforme Whop affichant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001218_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:18</span>
+                        <span class="caption-text">Page de la plateforme Whop affichant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:31 - 00:12:54</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">À l&#x27;intérieur, il y a aussi un cours complet de trading agentique. 2,5 heures. De débutant à expert. Aucune expérience en programmation n&#x27;est nécessaire. À la fin, vous aurez votre propre système de trading IA fonctionnant en direct. Quelque chose que la plupart des traders particuliers ne savent même pas être possible à l&#x27;heure actuelle. 79,99 $ par mois. Un seul bon trade le rembourse. Et les 100 premiers membres bloquent ce tarif de manière permanente.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de cours en ligne et plateforme de vente Whop</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des modules de formation (Hyperliquid Whale Tracker, TradingView MCP, Firecrawl MCP, Claude Routines, Pine Script backtest, Telegram Control Plane, WEEX Webhook)</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du programme du cours complet de trading agentique et des différents modules disponibles pour les utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001237_seg25.jpg" alt="Interface de la plateforme montrant les modules de formation du cours &quot;Trading AI Full Course&quot; avec des leçons numérotées sur le trading agentique et l&#x27;automatisation." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001237_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:37</span>
+                        <span class="caption-text">Interface de la plateforme montrant les modules de formation du cours &quot;Trading AI Full Course&quot; avec des leçons numérotées sur le trading agentique et l&#x27;automatisation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:54 - 00:13:30</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Après cela, le prix augmente. Le lien est dans la description. Vous ne pouvez vraiment pas vous permettre de rater ça. Et c&#x27;est exactement comme ça que j&#x27;ai automatisé ces trois stratégies super trend en utilisant Claude. Pas de codage, pas de bot Discord à 100 $, juste l&#x27;IA qui fait le plus gros du travail. Si vous voulez vraiment les mettre en pratique, assurez-vous d&#x27;utiliser Bybit ou BingX. Car ces stratégies y fonctionnent bien plus fluidement que sur la plupart des autres plateformes. Les liens sont ci-dessous et vous pouvez obtenir jusqu&#x27;à 30 000 USDT et des bonus sur Bybit. Si vous voulez voir une démonstration complète de la façon dont je trade en utilisant uniquement mon Telegram,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView et la plateforme d&#x27;échange BingX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix cryptographique avec indicateur Super Trend (&quot;Triple ST&quot;) et signaux d&#x27;exécution (Buy, Sell, TP/SL). Interface d&#x27;inscription avec champs email/mot de passe et bonus de bienvenue.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un graphique de trading automatisé suivi d&#x27;une promotion de la plateforme partenaire BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001303_seg26.jpg" alt="Un graphique TradingView affichant le cours BTCUSDT en unités de 2 heures sur Bybit, intégrant une stratégie Super Trend automatisée avec des signaux d&#x27;achat et de vente." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001303_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:03</span>
+                        <span class="caption-text">Un graphique TradingView affichant le cours BTCUSDT en unités de 2 heures sur Bybit, intégrant une stratégie Super Trend automatisée avec des signaux d&#x27;achat et de vente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001321_seg26.jpg" alt="La page d&#x27;inscription de la plateforme d&#x27;échange de cryptomonnaies BingX, mettant en avant un bonus de bienvenue et un formulaire de création de compte." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001321_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:21</span>
+                        <span class="caption-text">La page d&#x27;inscription de la plateforme d&#x27;échange de cryptomonnaies BingX, mettant en avant un bonus de bienvenue et un formulaire de création de compte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:30 - 00:13:59</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la démo complète de tous les cas d&#x27;utilisation sur TradingView, et comment je suis automatiquement les plus gros trades des baleines sur Hyperliquid, cliquez sur la vidéo qui apparaît à l&#x27;écran dès maintenant. Et si vous voulez le guide complet étape par étape sur la façon de construire votre propre système de trading agentique avec Claude, cette vidéo apparaît également à l&#x27;écran. Allez voir ça ensuite. Si vous avez trouvé cela utile, laissez un pouce bleu. Ça aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading décentralisée Hyperliquid.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix journalier (1D) de la paire HYPE/USDC, carnet d&#x27;ordres (Order Book) en temps réel, indicateur de volume (Volume SMA), et données de marché (prix actuel autour de 36.27 USD).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et affichage de l&#x27;interface de trading d&#x27;Hyperliquid pour analyser les prix et le carnet d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001337_seg27.jpg" alt="Interface de trading de la plateforme Hyperliquid montrant le graphique en chandeliers de la paire HYPE/USDC, avec le carnet d&#x27;ordres à droite et les volumes en bas." loading="lazy" onclick="openLightbox('../screenshots/EIgwI1Eld8g/EIgwI1Eld8g_001337_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:37</span>
+                        <span class="caption-text">Interface de trading de la plateforme Hyperliquid montrant le graphique en chandeliers de la paire HYPE/USDC, avec le carnet d&#x27;ordres à droite et les volumes en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
