@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 How I Built a No-Code Trading Bot Using Claude — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 How I Built a No-Code Trading Bot Using Claude</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-07-24</span>
+                <span class="badge">⏱️ 00:11:21</span>
+                <span class="badge">🆔 <code>naNtdVfPhLM</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=naNtdVfPhLM" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo intitulée **How I Built a No-Code Trading Bot Using Claude**, Alex Carter détaille une approche stratégique et pratique du trading et de l'automatisation par agents IA.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **TradingView & Claude Code** : Analyse technique avancée et automatisation algorithmique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- Respect rigoureux du ratio risque/rendement et du money management.<br>- Automatisation méthodique des déclencheurs d'ordres via des agents intelligents.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView &amp; Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Respect rigoureux du ratio risque/rendement et du money management.</span></li><li><span class="point-bullet">✦</span><span>Automatisation méthodique des déclencheurs d&#x27;ordres via des agents intelligents.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:24</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Right now, solo traders with zero coding background are building trading bots that used to take hedge funds like Renaissance Technologies years and billions of dollars to build. No team, no developers, just plain English typed into one tool. And today, I&#x27;m not just going to talk about it. I&#x27;m going to show you exactly how to build your first working trading bot in under a few minutes. Real setup, real exchange connection, real trade execution.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:24 - 00:01:01</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Plus, stick around, because at the end, I&#x27;m also going to show you how Robinhood just did the same thing for stocks, connecting AI agents directly to real brokerage accounts. And almost nobody&#x27;s talking about it yet. Let&#x27;s get into it. There is a hedge fund called Renaissance Technologies. Their internal medallion fund has averaged 66% gross returns annually since 1988. Not 10%, not 20%, 66% every single year. For over three decades, it is the greatest trading track record in history. They do not have better instincts than you. They do not read charts faster than you.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:02 - 00:01:27</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">What they have is a system, fully automated, running 24 hours a day, scanning data, finding patterns, executing trades, all without a human touching a single button. AI-driven hedge funds outperform their non-AI peers by 12% on average in 2024. That is the machine you have been competing against every time you open a trade manually. There are two things I want to walk you through today.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:28 - 00:02:01</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The first is Claude Cowork. This is Claude&#x27;s agentic mode. It doesn&#x27;t just talk, it actually acts. It can open your apps, read and edit files on your computer, run scheduled tasks, and remember context across sessions so it knows what you told it yesterday. It knows your trading setup. It works for you in the background while you&#x27;re doing something else. The second is Claude code. This is the version we&#x27;re actually going to use today to build your bot. It doesn&#x27;t just talk, it acts as well, but it&#x27;s built specifically to write and execute code, connect to API, and run</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:01 - 00:02:21</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">real commands on your machine. That&#x27;s what makes it the right tool for actually building and connecting a trading bot rather than just managing files and tasks in the background. So keep co-work in mind for managing your files, schedules, and background tasks. But for today, we&#x27;re going hands-on with Claude Code.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:21 - 00:02:43</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Here&#x27;s exactly how to set it up. All right, so to get started, you need to download the Claude desktop app. Head over to claude.com slash download. You&#x27;ll see the download page right here. You&#x27;ll see download options for Mac and Windows. Just click on your operating system, and the download will start automatically. Once it&#x27;s installed and you open it up, you&#x27;ll land on the main interface.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:43 - 00:03:02</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">It looks similar to a chat window, but this is where all the power lives. Now, to access Cowork specifically, you&#x27;ll need a Cloud Pro or Cloud Max. Cowork is a premium feature. Once you&#x27;re on the right plan, you&#x27;ll see the Cowork option available in your interface. When you first open Cowork, it will ask you to set up your connected folders.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:02 - 00:03:21</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">These are the folders on your computer that Cloud is allowed to access. I recommend creating a dedicated folder for your crypto work. Something like Claude Trading and importing it there. That way Claude has access to everything it needs without touching the rest of your computer. And that&#x27;s it. You&#x27;re installed and ready to go.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:21 - 00:03:56</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Now that Claude&#x27;s installed let&#x27;s connect it to an actual exchange. So it can start pulling real data and placing real trades. To connect Claude directly to your exchange we&#x27;re going to use 2Bit. 2Bit just released what they&#x27;re calling the AI agent trade kit. and this is by far the most exciting thing I&#x27;ve seen released on any exchange this year. If you don&#x27;t have a 2Bit account yet, now is actually a great time to sign up. Click the link in the description below. You&#x27;ll land on the 2Bit page and you can sign up with your email in less than a minute. Set a strong password, verify your email, and you&#x27;re in. And just by signing up</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:56 - 00:04:19</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">through my link, you&#x27;ll get a $30 futures bonus plus one month of VIP status. Completely free, just for registering. I&#x27;ll mention more bonuses later in the video as well. Once you&#x27;re logged in, you&#x27;ll land on the main dashboard. Before we set up the API, I want to show you a smart way to do this, using a subaccount. This is how I recommend doing it because it keeps your main account protected.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:19 - 00:04:41</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Once you&#x27;re logged in, click on your profile icon at the top right. Then click on subaccount. Click create subaccount. You can choose between a regular email or a virtual email. Get the verification code, set a strong password, and confirm. Your subaccount is now ready. Step two, set up the API key. Click on your profile icon again, and this time click on API management.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:41 - 00:05:17</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">At the top right, click new API. Under the note field, give it a name, something like AI agent trading, so you know exactly what this key is for. For permissions, choose read and write. This is what allows the AI agent to actually place orders on your behalf. If you just want to use this for analysis only, you can choose read only. You can enable spot, contracts, or both depending on what markets you want the agent to trade. For IP settings, if you have a dedicated workspace, I&#x27;d recommend selecting allow trusted IPs only and entering your IP address. This is the most</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:17 - 00:05:51</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">secure option. If you move around a lot, you can select unrestricted, but keep in mind your API key will only be valid for three months in that case. Once everything looks good, click confirm. Step 3. Save your keys. You&#x27;ll now see your access key and secret key. Copy both of them carefully and store them somewhere offline, like a notes app that&#x27;s not connected to the internet, or write them down. This is important because the secret key is only shown once. If you lose it, you&#x27;ll need to create a new API key. All right, now the fun part. Open up Claude. Give it this exact prompt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:51 - 00:06:11</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">I want you to connect to my 2-bit exchange account using these API credentials. Once connected, check my account balance so I can confirm you have access. If everything is set up correctly, Claude will confirm it has access and show you your account balance. From that point on, you can just start giving it commands. For example, what&#x27;s the price of Bitcoin right now?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:11 - 00:06:36</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">It pulls live market data instantly. Buy 10 USDT worth of Bitcoin at market price. It places the order immediately. Show me my open futures positions. It shows you exactly what you have running. Set a stop loss on my BTC position at $60,000 and it will be done. It&#x27;s genuinely that simple and because everything runs locally on your machine, your API keys are never sent anywhere.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:36 - 00:06:56</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The AI just uses them to sign requests on your device. That right there, that&#x27;s technically your first bot. It&#x27;s already checking balances, pulling live prices, and executing trades off a single sentence. But let me show you how far this actually goes once you start using Claude code specifically. You can basically open a trade position with a single sentence.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:57 - 00:07:31</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Open a five times long on ETH with $10. Set stop loss at minus 3% and take profit at plus 8%. Watch it think and there it is. Position open. Stop loss set. Take profit set. Confirm back with every detail. One sentence. Done. Now let me show you something that genuinely blew my mind the first time I ran this. Give me a full portfolio dashboard. All my positions, P&amp;L, funding fees, equity curve as a visual report. Watch it work. It is pulling every piece of data from my account</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:31 - 00:07:49</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">right now. And here is what it generates. A full dark theme dashboard, equity curve, win rate, funding income broken down by coin, every open position with liquidation distance highlighted. This is the kind of report a professional trading desk would produce. I got it in seconds from one prompt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:49 - 00:08:10</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">And every morning before you even open your laptop, this daily alpha brief is already in your inbox, every day on time and ready to read. It has already scanned the whales, read the charts, checked your account, and handed you the single highest conviction setup for the day. And the bot itself is not sitting on your laptop. It is running 24-7 on a cloud server.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:10 - 00:08:30</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">If it crashes, it restarts itself. If your Wi-Fi drops, it keeps going. Your laptop is just the remote control. Now, before capable models like Claude Code, this would have taken weeks, if not months, to put together. Now you can go from idea to a working system in an afternoon. And it&#x27;s not just crypto exchanges doing this.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:31 - 00:09:01</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Robinhood just connected Claude, ChatGPT, and Grok directly to real brokerage accounts. And almost nobody noticed. Here&#x27;s what it actually is. Robinhood built an MCP server. the same open standard that lets AI agents take real actions, not just chat. You connect your AI to it, open a dedicated agentic account, and your AI can research, analyze, and place stock trades inside that account. Once connected, your agent can build portfolios. It can automate strategies.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:02 - 00:09:26</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">It can rebalance your portfolio and pull market research to build you a bull and bear case. Setup on Claw Desktop takes three steps. Go to Settings, then Connectors, then Add Custom Connector. Paste in agent.robinhood.com.mcp.trading. Authenticate and Robinhood prompts you to open your Agentic account. Autonomous AI trading just went from sci-fi to a settings menu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:28 - 00:09:51</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">All right, and look, for the next few years, two kinds of traders will exist. The ones using AI and the ones still doing everything manually. Same market, very different outcomes. Here is how you get on the right side of that. I have put together everything inside the AI Trade Edge community. Every prompt, every bot, every template, every step-by-step guide I personally use, all in one place.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:52 - 00:10:11</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">And everything I build going forward gets added straight into the group the moment it drops. We are also testing strategies from all over the internet. automating them using PineScript, running them live, and sharing exactly what works and what does not. So you are not just getting tools. You are getting a live research operation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:12 - 00:10:35</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Inside, there is also a full agentic trading course. 2.5 hours. Beginner to expert. No coding background needed. By the end of it, you will have your own AI trading system running live, something most retail traders do not even know is possible right now. $79.99 a month. One good trade covers it. And the first 100 members lock in that rate permanently.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:35 - 00:11:07</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">After that, the price goes up. The link is in the description. You genuinely cannot afford to miss this. So that&#x27;s it. You now know how to go from zero to a fully connected trade execute an AI bot using Claude code in less time than it takes to make coffee. If you want to go deep on any of these individually, the full trade in view, telegram walkthrough, and in hyper liquid whale tracking. Those videos are all popping up on screen right now. Go and check those out at your own pace. And if you want the full step-by-step guide on how to build your own agentic trading</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:07 - 00:11:20</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">system using Claude, that video is popping up on screen as well. Go and check that out next. If you found this useful, leave a like. It really does help the channel. Subscribe if you have not already, and I will see you in the next one.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
