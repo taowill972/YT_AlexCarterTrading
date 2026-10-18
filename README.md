@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `70 / 186` (`37.6%`)
+- **Vidéos traitées** : `71 / 186` (`38.2%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -87,6 +87,7 @@
 | 2026-06-20 | [t4GSCXvFb8E](https://www.youtube.com/watch?v=t4GSCXvFb8E) | **Mon plan de trading exact à 1M$ + Mes outils avec Claude** | [2026-06-20_YT-[t4GSCXvFb8E]_Mon plan de trading exact à 1M$ + Mes outils avec Claude_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-20_YT-[t4GSCXvFb8E]_Mon plan de trading exact à 1M$ + Mes outils avec Claude_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-20_YT-[t4GSCXvFb8E]_Mon plan de trading exact à 1M$ + Mes outils avec Claude_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `41` |
 | 2026-06-18 | [etoHR6hLmzc](https://www.youtube.com/watch?v=etoHR6hLmzc) | **Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants)** | [2026-06-18_YT-[etoHR6hLmzc]_Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-18_YT-[etoHR6hLmzc]_Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-18_YT-[etoHR6hLmzc]_Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `46` |
 | 2026-06-17 | [UZ1w-UTm2uU](https://www.youtube.com/watch?v=UZ1w-UTm2uU) | **How to Trade Crypto on BingX 2026 (Step-By-Step)** | [2026-06-17_YT-[UZ1w-UTm2uU]_How to Trade Crypto on BingX 2026 (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-17_YT-[UZ1w-UTm2uU]_How to Trade Crypto on BingX 2026 (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-17_YT-[UZ1w-UTm2uU]_How to Trade Crypto on BingX 2026 (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-06-06 | [z97Efri-XM0](https://www.youtube.com/watch?v=z97Efri-XM0) | **Claim Your FREE $127 on Toobit With These Simple Steps** | [2026-06-06_YT-[z97Efri-XM0]_Claim Your FREE $127 on Toobit With These Simple Steps_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-06_YT-[z97Efri-XM0]_Claim Your FREE $127 on Toobit With These Simple Steps_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-06_YT-[z97Efri-XM0]_Claim Your FREE $127 on Toobit With These Simple Steps_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
