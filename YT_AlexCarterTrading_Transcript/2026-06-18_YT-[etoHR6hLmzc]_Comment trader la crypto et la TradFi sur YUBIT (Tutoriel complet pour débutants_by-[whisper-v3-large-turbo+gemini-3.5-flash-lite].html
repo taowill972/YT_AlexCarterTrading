@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-06-18</span>
+                <span class="badge">⏱️ 00:14:49</span>
+                <span class="badge">🆔 <code>etoHR6hLmzc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=etoHR6hLmzc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo intitulée **Comment trader la crypto et la TradFi sur YUBIT (Tutoriel complet pour débutants)**, Alex Carter détaille une approche stratégique et pratique du trading et de l'automatisation par agents IA.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **TradingView & Claude Code** : Analyse technique avancée et automatisation algorithmique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- Respect rigoureux du ratio risque/rendement et du money management.<br>- Automatisation méthodique des déclencheurs d'ordres via des agents intelligents.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView &amp; Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Respect rigoureux du ratio risque/rendement et du money management.</span></li><li><span class="point-bullet">✦</span><span>Automatisation méthodique des déclencheurs d&#x27;ordres via des agents intelligents.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:22</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La plupart des tutoriels de trading ont tendance à tout surcompliquer, mais trader sur UBIT est en réalité très simple. C&#x27;est l&#x27;une des rares plateformes axées sur la crypto où je peux trader du bitcoin et de l&#x27;or sur le même compte. Et dans cette vidéo, je vais vous accompagner pour passer de débutant complet à placer en toute confiance votre tout premier trade sur UBIT. Aucune étape sautée, aucune supposition faite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading en ligne YUBIT (interface futures et gestion de portefeuille)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT, carnet d&#x27;ordres, panneau de passage d&#x27;ordres (Open Long / Open Short) et soldes de compte en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de trading futures et présentation des différents comptes d&#x27;actifs de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000011_seg1.jpg" alt="Interface de trading futures de la plateforme YUBIT avec le graphique du Bitcoin et le carnet d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000011_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:11</span>
+                        <span class="caption-text">Interface de trading futures de la plateforme YUBIT avec le graphique du Bitcoin et le carnet d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000017_seg1.jpg" alt="Vue d&#x27;ensemble du portefeuille utilisateur (Assets) sur la plateforme YUBIT avec les différents comptes (Funding, Futures, Spot, TradFi)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000017_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Vue d&#x27;ensemble du portefeuille utilisateur (Assets) sur la plateforme YUBIT avec les différents comptes (Funding, Futures, Spot, TradFi).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:23 - 00:00:43</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et avec mon lien exclusif ci-dessous, vous débloquez jusqu&#x27;à 50 000 dollars de bonus de bienvenue, quelque chose que je vais vous expliquer en détail pour que vous ne manquiez pas un seul dollar. À la fin de cette vidéo, vous saurez exactement comment utiliser UBIT et comment réclamer chaque bonus à votre disposition. Alors, commençons. Maintenant, avant de plonger dans le vif du sujet, laissez-moi vous dire rapidement pourquoi je recommande UBIT.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme d&#x27;échange de crypto-monnaies UBIT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paliers de bonus de bienvenue, sections de trading de futures, offres de boîtes mystères (de 50 USDT à 15 000 USDT) et exigences de volume de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages et des bonus d&#x27;inscription exclusifs liés à la plateforme UBIT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000028_seg2.jpg" alt="Capture d&#x27;écran de la page des récompenses de la plateforme UBIT, montrant les paliers de bonus pour le trading de futures et les boîtes mystères." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000028_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Capture d&#x27;écran de la page des récompenses de la plateforme UBIT, montrant les paliers de bonus pour le trading de futures et les boîtes mystères.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000033_seg2.jpg" alt="Page d&#x27;accueil de la plateforme UBIT présentant l&#x27;échange pour les cryptos, l&#x27;or et les actions avec le bouton pour réclamer le bonus de 50 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000033_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:33</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme UBIT présentant l&#x27;échange pour les cryptos, l&#x27;or et les actions avec le bouton pour réclamer le bonus de 50 000 USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:44 - 00:01:04</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parce qu&#x27;il y a beaucoup d&#x27;échanges sur le marché et que celui-ci est vraiment différent. UBIT est un échange centralisé mondial fondé en août 2020. Il propose du trading au comptant, du trading de futures, du copy trading, du staking et des outils de gestion de portefeuille. C&#x27;est donc un écosystème complet, pas seulement un échange de base. Mais voici ce qui fait sort Ubit du lot par rapport à presque toutes les autres plateformes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> CoinMarketCap et interface de l&#x27;exchange YUBIT</p>
+                        <p><strong>Contenu textuel & Code :</strong> Informations sur l&#x27;échange YUBIT (volume de trading, actifs totaux, graphique BTCUSDT, carnet d&#x27;ordres)</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation générale des fonctionnalités, de l&#x27;interface de trading et des données de marché de l&#x27;exchange YUBIT</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000049_seg3.jpg" alt="Page CoinMarketCap consacrée à l&#x27;échange YUBIT affichant le volume spot, les actifs totaux et la description de la plateforme." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000049_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Page CoinMarketCap consacrée à l&#x27;échange YUBIT affichant le volume spot, les actifs totaux et la description de la plateforme.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000054_seg3.jpg" alt="Interface de trading de futures de la plateforme YUBIT avec un graphique en chandeliers BTCUSDT et le carnet d&#x27;ordres en direct." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000054_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:54</span>
+                        <span class="caption-text">Interface de trading de futures de la plateforme YUBIT avec un graphique en chandeliers BTCUSDT et le carnet d&#x27;ordres en direct.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000059_seg3.jpg" alt="Page d&#x27;accueil de la plateforme YUBIT présentant les services de trading pour les cryptomonnaies, l&#x27;or et les actions." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000059_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme YUBIT présentant les services de trading pour les cryptomonnaies, l&#x27;or et les actions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:05 - 00:01:27</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez trader à la fois des contrats à terme sur cryptomonnaies et des actifs financiers traditionnels. Des choses comme l&#x27;or, les actions, le pétrole et le forex, le tout dans un seul compte. C&#x27;est très rare. La plupart des plateformes vous obligent à gérer plusieurs comptes sur plusieurs plateformes. Sur Ubit, tout est regroupé au même endroit. En plus de cela, Ubit a maintenu une disponibilité de 99,9995 % depuis son lancement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading Yubit montrant des graphiques de prix, des carnets d&#x27;ordres et des listes d&#x27;actifs TradFi et actions.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des actifs TradFi (XAUUSD, GAUCNH, XAGUSD) et d&#x27;actions (INTCUSDT, TSLAUSDT, MSTRUSDT) avec leurs prix et variations sur 24 heures.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus de la plateforme pour afficher les différents marchés traditionnels et actions disponibles au trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000110_seg4.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de trading avec la section &quot;TradFi&quot; et la liste des métaux précieux (XAUUSD) sélectionnés." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000110_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de trading avec la section &quot;TradFi&quot; et la liste des métaux précieux (XAUUSD) sélectionnés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000121_seg4.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de trading de la plateforme avec l&#x27;onglet &quot;Stocks&quot; affichant divers contrats d&#x27;actions (Intel, Tesla, MicroStrategy)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000121_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de trading de la plateforme avec l&#x27;onglet &quot;Stocks&quot; affichant divers contrats d&#x27;actions (Intel, Tesla, MicroStrategy).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:27 - 00:01:46</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est une fiabilité de niveau institutionnel. Ils ont également un fonds de protection de 20 000 ETH, ce qui représente plus de 40 millions de USDT, et un système strict de preuve de réserve un pour un, ce qui signifie que chaque actif d&#x27;utilisateur est entièrement adossé, transparent et vérifiable sur CoinMarketCap. Vous pouvez aller vérifier cela vous-même.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme d&#x27;échange de cryptomonnaies YUBIT (page Proof of Reserves).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Ratios de réserve (USDT à 160 %, ETH à 125 %), fonds de protection de 20 000 ETH et 40 000 029,50 USDT, certification CoinMarketCap et explication du mécanisme de réserve 1:1.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle et vérification des données de réserve et de transparence de la plateforme YUBIT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000132_seg5.jpg" alt="Capture d&#x27;écran montrant les détails de la preuve de réserve de la plateforme YUBIT avec les ratios pour l&#x27;USDT (160 %) et l&#x27;ETH (125 %), ainsi que le fonds de protection de 20 000 ETH et 40 000 029,50 USDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000132_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:32</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les détails de la preuve de réserve de la plateforme YUBIT avec les ratios pour l&#x27;USDT (160 %) et l&#x27;ETH (125 %), ainsi que le fonds de protection de 20 000 ETH et 40 000 029,50 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000136_seg5.jpg" alt="Capture d&#x27;écran montrant l&#x27;en-tête de la page &quot;YUBIT Proof of Reserves&quot; expliquant le mécanisme de réserve strict de 1:1." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000136_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;en-tête de la page &quot;YUBIT Proof of Reserves&quot; expliquant le mécanisme de réserve strict de 1:1.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:23</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et avec mon lien dans la description, vous débloquez le pack de bonus de bienvenue complet, jusqu&#x27;à 50 000 USDT de récompenses. Je vais vous montrer exactement comment tout réclamer, alors assurez-vous d&#x27;utiliser le lien ci-dessous. Très bien, entrons dans le vif du sujet. Première chose, cliquez sur le lien dans la description. C&#x27;est important, utiliser mon lien est ce qui débloque le pack de bonus complet, sans lui vous obtiendrez une offre complètement différente. Une fois que vous êtes sur la page d&#x27;Ubit, vous pouvez vous inscrire avec votre adresse e-mail, votre numéro de téléphone ou vous connecter via Google ou Apple ID. Pour ce tutoriel, j&#x27;utiliserai l&#x27;e-mail, entrez simplement vos coordonnées, créez un mot de passe fort</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange YUBIT (pages de récompenses et d&#x27;inscription).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres de bonus de bienvenue : &quot;10,000 USDT Position Voucher&quot;, paliers de &quot;Futures Trading&quot; avec des boîtes mystères de 50 à 15 000 USDT, et code de parrainage &quot;ALEX&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page des récompenses de la plateforme et présentation de la page d&#x27;inscription avec le lien d&#x27;affiliation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000155_seg6.jpg" alt="Page des récompenses et des bonus de dépôt sur la plateforme YUBIT montrant les différents paliers de bonus en USDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000155_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Page des récompenses et des bonus de dépôt sur la plateforme YUBIT montrant les différents paliers de bonus en USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000204_seg6.jpg" alt="Page d&#x27;inscription de la plateforme YUBIT avec un visuel de boîte cadeau remplie de pièces d&#x27;or et le code de parrainage &quot;ALEX&quot; pré-rempli." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000204_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme YUBIT avec un visuel de boîte cadeau remplie de pièces d&#x27;or et le code de parrainage &quot;ALEX&quot; pré-rempli.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:23 - 00:02:54</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">mot de passe, accepter les conditions d&#x27;utilisation, et cliquer sur s&#x27;inscrire. Entrez le code de vérification par e-mail et votre compte est prêt. Tout le processus prend moins de 30 secondes. Et gardez à l&#x27;esprit, UBIT est une plateforme sans KYC. Vous n&#x27;avez pas besoin de compléter de vérification d&#x27;identité pour commencer à trader. Cela la rend accessible même dans les régions restreintes, et cela signifie que vous pouvez commencer à trader presque instantanément après vous être inscrit. Maintenant, avant de déposer quoi que ce soit, laissez-moi vous expliquer rapidement comment UBIT organise vos fonds.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme YUBIT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte sur l&#x27;absence de KYC (&quot;YUBIT does not request KYC for users to access the TradFi feature&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface utilisateur et de la politique de non-KYC de la plateforme YUBIT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000231_seg7.jpg" alt="Page d&#x27;accueil de la plateforme YUBIT mettant en avant les cryptos, l&#x27;or et les actions." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000231_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme YUBIT mettant en avant les cryptos, l&#x27;or et les actions.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000238_seg7.jpg" alt="Texte explicatif de YUBIT sur l&#x27;absence de vérification KYC pour les utilisateurs de TradFi." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000238_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Texte explicatif de YUBIT sur l&#x27;absence de vérification KYC pour les utilisateurs de TradFi.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000246_seg7.jpg" alt="Section de la plateforme YUBIT illustrant l&#x27;expérience de trading multi-appareils." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000246_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Section de la plateforme YUBIT illustrant l&#x27;expérience de trading multi-appareils.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:55 - 00:03:27</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parce que c&#x27;est un sujet qui embrouille beaucoup de débutants. UBIT sépare vos fonds dans différents portefeuilles selon ce que vous voulez faire. D&#x27;abord, vous avez votre compte de financement. C&#x27;est là qu&#x27;atterrissent vos dépôts en premier. Chaque fois que vous déposez des cryptos, elles vont directement ici. Considérez-le comme le point d&#x27;entrée principal pour votre argent. Ensuite, vous avez votre portefeuille spot. C&#x27;est là que vous détenez des actifs et que vous tradez aux prix du marché sans effet de levier. Vient ensuite votre portefeuille futures. Vous devez y transférer des fonds avant de pouvoir ouvrir des positions futures avec effet de levier. Ensuite, il y a votre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies YUBIT (section Assets / Overview).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Soldes à 0 pour chaque portefeuille (Funding Account, Futures Account, Spot Account, TradFi Account, Earn Account, etc.) et options de dépôt, retrait, transfert et trade.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents comptes et portefeuilles disponibles sur la plateforme YUBIT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000303_seg8.jpg" alt="Vue d&#x27;ensemble des portefeuilles et des comptes sur la plateforme d&#x27;échange YUBIT, montrant la liste des différents types de comptes (Funding, Futures, Spot, TradFi, Earn)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000303_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:03</span>
+                        <span class="caption-text">Vue d&#x27;ensemble des portefeuilles et des comptes sur la plateforme d&#x27;échange YUBIT, montrant la liste des différents types de comptes (Funding, Futures, Spot, TradFi, Earn).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:27 - 00:03:46</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Portefeuille TradFi. C&#x27;est spécifiquement pour négocier des actifs financiers traditionnels comme l&#x27;or, les actions, le pétrole et le forex. Vous avez également votre compte d&#x27;épargne. C&#x27;est là vont vos fonds lorsque vous générez des revenus passifs grâce aux plans d&#x27;épargne flexibles et fixes d&#x27;Ubit. Ensuite, il y a le compte de trading TAP.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange Yubit (section TradFi Account).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Affichage du solde total des actifs à 0 OUSDdu ($0) et du PnL non réalisé à 0 OUSDdu, ainsi que le tableau des détails des actifs (Asset, Balance, Occupied margin, Available margin, Margin Level, Action).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu latéral pour afficher la section TradFi Account de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000332_seg9.jpg" alt="Vue d&#x27;ensemble du compte TradFi sur la plateforme Yubit montrant le solde total des actifs et les détails des actifs." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000332_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:32</span>
+                        <span class="caption-text">Vue d&#x27;ensemble du compte TradFi sur la plateforme Yubit montrant le solde total des actifs et les détails des actifs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:46 - 00:04:22</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici l&#x27;expérience de trading crypto ludifiée d&#x27;Ubit, où vous pouvez obtenir des rendements allant jusqu&#x27;à 33 fois. C&#x27;est une façon complètement différente d&#x27;interagir avec le marché et honnêtement l&#x27;une des fonctionnalités les plus uniques de la plateforme. Et enfin, le compte de marché de prédiction. C&#x27;est pour les fonctionnalités de marché de prédiction d&#x27;Ubit, où vous pouvez prendre des positions sur les résultats du marché. La chose clé à retenir est que chaque dépôt va directement dans votre compte de financement d&#x27;abord et à partir de là, vous transférez vers le portefeuille dont vous avez besoin selon ce que vous voulez faire, je vais vous montrer exactement comment faire cela étape par étape très bien, allons-y</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange Ubit (sections Tap Trading, Prediction Market, Funding Account).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Multiplicateurs de rendement (jusqu&#x27;à 33x), soldes de comptes en USDT, graphiques de prix en direct et détails des actifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers les différentes fonctionnalités de trading et de gestion de compte de la plateforme Ubit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000355_seg10.jpg" alt="Interface de l&#x27;expérience de trading ludifiée &#x27;Tap Trading&#x27; sur la plateforme Ubit avec des multiplicateurs de rendement." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000355_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Interface de l&#x27;expérience de trading ludifiée &#x27;Tap Trading&#x27; sur la plateforme Ubit avec des multiplicateurs de rendement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000404_seg10.jpg" alt="Vue du compte de marché de prédiction (Prediction Market Account) sur l&#x27;interface de la plateforme Ubit." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000404_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Vue du compte de marché de prédiction (Prediction Market Account) sur l&#x27;interface de la plateforme Ubit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000413_seg10.jpg" alt="Vue du compte de financement (Funding Account) et du détail des actifs de la plateforme Ubit." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000413_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:13</span>
+                        <span class="caption-text">Vue du compte de financement (Funding Account) et du détail des actifs de la plateforme Ubit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:22 - 00:04:41</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">de l&#x27;argent sur votre compte et commencez à débloquer ces bonus, allez dans votre portefeuille et cliquez sur dépôt, sélectionnez la cryptomonnaie que vous voulez déposer, l&#x27;USDT est idéal pour le trading, puis sélectionnez votre réseau de dépôt, je recommande le TRC20, c&#x27;est rapide et les frais sont très bas. Vous verrez alors votre adresse de dépôt personnelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:42 - 00:05:02</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Copiez-la attentivement. Allez sur votre échange ou portefeuille actuel. Collez l&#x27;adresse et envoyez vos fonds. Envoyez toujours d&#x27;abord un petit montant de test, peut-être 10 à 20 dollars, juste pour confirmer que tout arrive correctement avant d&#x27;envoyer le montant total. C&#x27;est très important. Envoyer sur le mauvais réseau peut signifier la perte de vos fonds. C&#x27;est maintenant que les bonus entrent en jeu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un échange de cryptomonnaies (Yubit / plateforme d&#x27;échange).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaires de dépôt et de retrait avec sélection de réseau (TRON TRC20), montants en USDT et frais de transaction.</p>
+                        <p><strong>Action / Démonstration :</strong> Validation d&#x27;une transaction de retrait et configuration d&#x27;un dépôt de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000447_seg12.jpg" alt="Fenêtre contextuelle de confirmation de retrait d&#x27;USDT sur un échange." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000447_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:47</span>
+                        <span class="caption-text">Fenêtre contextuelle de confirmation de retrait d&#x27;USDT sur un échange.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000452_seg12.jpg" alt="Page de dépôt de cryptomonnaies sur l&#x27;interface d&#x27;un échange (Yubit)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000452_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:52</span>
+                        <span class="caption-text">Page de dépôt de cryptomonnaies sur l&#x27;interface d&#x27;un échange (Yubit).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:03 - 00:05:30</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et celui-ci est important. Avec mon lien, vous débloquez jusqu&#x27;à 50 000 USDT de bonus de bienvenue. Voici comment cela se décompose. Si vous déposez au moins 100 $ et atteignez 10 000 $ de volume de trading, vous obtenez un bon de position de 1 000 $. Cela monte progressivement jusqu&#x27;à un bon de position de 10 000 $ si vous déposez 10 000 $ et atteignez 2 millions de dollars de volume de trading. En plus de cela, il y a des récompenses de boîtes mystères pour le trading de contrats futures.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies Yubit (section Rewards).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des récompenses de dépôt et de trading affichant des bons de position de 1 000 USDT, 1 500 USDT, 3 000 USDT, 5 000 USDT et 10 000 USDT, avec les conditions de dépôt minimum et de volume de trading futures requis pour chaque niveau.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle et explication des différents paliers de bonus de bienvenue et des conditions d&#x27;obtention associées sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000509_seg13.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Yubit montrant les différents paliers de bonus de bienvenue et de bons de position, du premier palier à 1 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000509_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:09</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Yubit montrant les différents paliers de bonus de bienvenue et de bons de position, du premier palier à 1 000 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000523_seg13.jpg" alt="Vue de l&#x27;interface de Yubit montrant le palier supérieur des bonus de bienvenue, avec un bon de position de 10 000 USDT nécessitant un dépôt et un volume de trading plus élevés." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000523_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:23</span>
+                        <span class="caption-text">Vue de l&#x27;interface de Yubit montrant le palier supérieur des bonus de bienvenue, avec un bon de position de 10 000 USDT nécessitant un dépôt et un volume de trading plus élevés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:30 - 00:05:50</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">atteignez 100 000 dollars de volume de trading, et vous obtenez une boîte mystère d&#x27;une valeur d&#x27;au moins 50 USDT, et cela va jusqu&#x27;à 50 millions de dollars de volume de trading. Et vous visez une boîte mystère de 15 000 USDT. Tout cela se cumule. Donc, plus vous déposez et tradez, plus vous débloquez.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:51 - 00:06:25</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Make sure you use my link down below to get access to all of this. If you don&#x27;t have crypto yet, and want to buy directly on UBIT. That&#x27;s also possible. But for this, you will need to complete KYC first. Go to your profile icon on the homepage and click KYC. Click verify now. Provide your email, your personal information, your verification documents, and a selfie. Once that&#x27;s approved, you can use the quick buy option on UBIT to purchase crypto directly with fiat currency using a credit or debit card. If you already have crypto on another exchange or wallet,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:25 - 00:06:58</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">you can skip KYC entirely and just deposit directly, which is the faster option for most people. All right, now that you have funds in your funding wallet, let&#x27;s move them over to your futures wallet so you can start trading. Click on wallets, then overview. Click transfer. Make sure you&#x27;re sending funds from your funding wallet to your futures wallet. Enter the amount you want to transfer or click max to transfer everything. Review the details and click confirm. Now your futures wallet is funded and you&#x27;re ready to trade. Click on futures in the top navigation bar and click</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:58 - 00:07:35</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">on USDT-M. This will bring you to the UBIT futures trading interface. Now it might look a little overwhelming at first but I&#x27;ll break down every section so it makes perfect sense. In the top left you have the trading pair selector. This is where you choose which asset to trade. UBIT has over 500 trading pairs from Bitcoin and Ethereum all the way to meme coins and major altcoins. You can select between USDT margin perpetuals and coin margin perpetuals, which are trades settled in your own crypto instead of USDT. In the center is the price chart powered by TradingView with all the</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies YUBIT (interface de trading Futures USDT-M)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers (Timeframe 15m) pour BTCUSDT, prix actuel autour de 66 358.6 USDT, carnet d&#x27;ordres (Order Book) en temps réel, panneau de gestion des ordres (Market, Limit, Trigger) avec effet de levier (10x), et détails du solde du compte (51.0000 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation générale de l&#x27;interface de trading futures de la plateforme YUBIT et explication des différentes sections (sélecteur de paire, graphique, carnet d&#x27;ordres, panneau d&#x27;ordres).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000707_seg17.jpg" alt="Interface de trading de contrats futures USDT-M de la plateforme YUBIT affichant la paire BTCUSDT en unités 15 minutes, avec le graphique des prix à gauche, le carnet d&#x27;ordres au centre et le panneau de passage d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000707_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:07</span>
+                        <span class="caption-text">Interface de trading de contrats futures USDT-M de la plateforme YUBIT affichant la paire BTCUSDT en unités 15 minutes, avec le graphique des prix à gauche, le carnet d&#x27;ordres au centre et le panneau de passage d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:35 - 00:07:53</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">drawing tools and technical indicators you need for analysis. On the right side is the order book, showing all live buy and sell orders in the market. And at the bottom is your order management panel. This is where you track your open positions, open orders, and trade history. Everything you need is right here on one screen.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:54 - 00:08:13</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Before placing any trade, you need to configure two very important settings. First, margin mode. At the top of the order panel, you&#x27;ll see options for cross, isolated, merge, and split. I strongly recommend using isolated as a beginner. This means if the trade goes wrong, you only lose the margin you put into that specific position.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Yubit (panneau de trading Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre modale &quot;Adjust Trading Mode&quot; montrant les options Cross, Isolated, Merge et Split, ainsi qu&#x27;une description textuelle du Cross Margin Mode et Merge Mode. Graphique BTCUSDT en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et explication des différents modes de marge (cross, isolated, merge, split) sur le panneau d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000759_seg19.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;échange Yubit affichant une fenêtre modale pour ajuster le mode de trading et les options de marge." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000759_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:59</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;échange Yubit affichant une fenêtre modale pour ajuster le mode de trading et les options de marge.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:13 - 00:08:33</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The rest of your account is completely safe. Crossmargin uses your entire futures balance as collateral, which is much riskier. Second, leverage. UBIT supports up to 200 times leverage on crypto futures. But do not use high leverage as a beginner. Stick to 5 times maximum when you&#x27;re just starting out.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies YUBIT (Futures Trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre pop-up &quot;Adjust Trading Mode&quot; affichant les options &quot;Cross&quot; et &quot;Isolated&quot;, avec la description explicative du Cross Margin Mode et une option &quot;Apply to all trading pairs&quot;. Le graphique BTCUSDT et le carnet d&#x27;ordres sont visibles en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur clique sur le mode &quot;Cross&quot; pour configurer le type de marge des contrats futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000818_seg20.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme YUBIT montrant la fenêtre modale de sélection du mode de marge (Cross/Isolated)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000818_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:18</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme YUBIT montrant la fenêtre modale de sélection du mode de marge (Cross/Isolated).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:34 - 00:08:56</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Here&#x27;s how leverage works. If you have $100 and you use 5 times leverage, you now control a $500 position. That means profits are amplified, but so are losses. So keep it low, keep it safe, and build from there. Also keep in mind, UBIT has position tiers that determine your maximum open leverage based on your current positions and pending orders.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies YUBIT</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de réglage du levier (réglé sur 5x) et tableau des &quot;Position Tiers&quot; avec les paliers de levier et de marge.</p>
+                        <p><strong>Action / Démonstration :</strong> Ajustement du levier de trading à 5x et consultation des paliers de position (Position Tiers).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000839_seg21.jpg" alt="Interface de trading montrant une fenêtre contextuelle pour ajuster le levier à 5x sur la paire BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000839_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:39</span>
+                        <span class="caption-text">Interface de trading montrant une fenêtre contextuelle pour ajuster le levier à 5x sur la paire BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000850_seg21.jpg" alt="Page Web affichant les différents niveaux de position (Position Tiers) et les leviers maximums associés pour les futures USDT-M de BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000850_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:50</span>
+                        <span class="caption-text">Page Web affichant les différents niveaux de position (Position Tiers) et les leviers maximums associés pour les futures USDT-M de BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:56 - 00:09:14</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, à mesure que la taille de votre position augmente, le levier maximal disponible s&#x27;ajuste en conséquence. Pour ce tutoriel, j&#x27;utiliserai un effet de levier de 5x sur marge isolée. Très bien, plaçons un ordre d&#x27;achat, ce qui signifie que nous parions que le Bitcoin va monter. Dans le panneau des ordres, je vais sélectionner un ordre au marché pour qu&#x27;il s&#x27;exécute immédiatement au prix actuel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:15 - 00:09:45</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, définissez votre quantité d&#x27;ordre. Je recommande de cliquer sur &quot;commander par valeur USDT&quot; afin que vous puissiez simplement saisir le montant que vous souhaitez échanger. Disons une position de 100 dollars. Avec un effet de levier de 5 fois, cela signifie que vous n&#x27;utilisez que 20 dollars de votre propre capital comme marge. Maintenant, et c&#x27;est très important, définissez toujours un take profit et un stop loss avant d&#x27;ouvrir le trade. Cliquez sur l&#x27;onglet TP barre oblique SL et ajoutez vos prix de take profit et de stop loss. Vous pouvez également utiliser les paramètres avancés pour affiner ces niveaux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies YUBIT (section Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais de la paire BTCUSDT en unité de temps 15m, carnet d&#x27;ordres en temps réel, panneau de passage d&#x27;ordre avec sélection de l&#x27;effet de levier (isolé 5x) et saisie de la valeur de position à 100 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie du montant de la position en USDT (100) et configuration de l&#x27;effet de levier pour un ordre sur le marché des futures Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000922_seg23.jpg" alt="Interface de trading de contrats futures sur la plateforme YUBIT affichant le graphique du BTCUSDT avec un carnet d&#x27;ordres et le panneau de saisie d&#x27;ordre à droite." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000922_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:22</span>
+                        <span class="caption-text">Interface de trading de contrats futures sur la plateforme YUBIT affichant le graphique du BTCUSDT avec un carnet d&#x27;ordres et le panneau de saisie d&#x27;ordre à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:45 - 00:10:10</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est non négociable. N&#x27;ouvrez jamais un trade sans stop loss. Une fois que tout est configuré, cliquez sur &quot;ouvrir long&quot; si vous pensez que le prix va monter ou sur &quot;ouvrir short&quot; si vous pensez qu&#x27;il va baisser. Votre trade est maintenant actif. Vous le verrez apparaître dans le panneau des positions en bas. Votre prix d&#x27;entrée, vos profits et pertes actuels, votre prix de liquidation, ainsi que vos niveaux de stop loss et de take profit sont tous visibles directement là.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;échange de cryptomonnaies / courtier en ligne (section Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix (bougies japonaises vertes et rouges), carnet d&#x27;ordres (order book) en temps réel, champs de saisie pour le montant, le Take Profit (72 500) et le Stop Loss (64 300), ainsi que les boutons d&#x27;exécution &quot;Open Long&quot; et &quot;Open Short&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris clique sur le bouton vert &quot;Open Long&quot; pour exécuter un ordre d&#x27;achat à terme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_000952_seg24.jpg" alt="Interface de trading affichant un graphique des prix en chandelier, un carnet d&#x27;ordres et le panneau de passage d&#x27;ordre avec les boutons d&#x27;achat/vente (Open Long / Open Short)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_000952_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:52</span>
+                        <span class="caption-text">Interface de trading affichant un graphique des prix en chandelier, un carnet d&#x27;ordres et le panneau de passage d&#x27;ordre avec les boutons d&#x27;achat/vente (Open Long / Open Short).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:11 - 00:10:45</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">To close your position, you can either let your take profit or stop loss close it automatically, or you can click close in the positions panel and choose how much of the position you want to close, whether that&#x27;s 25%, 50%, or the full 100%. Before we continue, just a reminder that if you use my link below to register on UBIT, you can claim up to 50,000 USDT in bonuses. It&#x27;s a great way to support the channel and help me continue making videos like this completely for free. Now here&#x27;s one of the most unique things</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading crypto Yubit (section Futures, page d&#x27;inscription et page des récompenses).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Positions ouvertes BTCUSDT, prix d&#x27;entrée, marge, PnL non réalisé, formulaires d&#x27;inscription avec code promo et paliers de récompenses de dépôt (1000 USDT à 10000 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la gestion des positions sur Yubit, promotion de l&#x27;affiliation et affichage des bonus de dépôt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001019_seg25.jpg" alt="Interface de trading Yubit montrant le panneau des positions ouvertes pour BTCUSDT avec les options de clôture." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001019_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:19</span>
+                        <span class="caption-text">Interface de trading Yubit montrant le panneau des positions ouvertes pour BTCUSDT avec les options de clôture.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001028_seg25.jpg" alt="Page d&#x27;inscription de la plateforme Yubit avec un code de parrainage affilié pré-rempli." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001028_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:28</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme Yubit avec un code de parrainage affilié pré-rempli.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001036_seg25.jpg" alt="Page des récompenses et bonus de dépôt de la plateforme Yubit affichant différents paliers de bons de position." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001036_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:36</span>
+                        <span class="caption-text">Page des récompenses et bonus de dépôt de la plateforme Yubit affichant différents paliers de bons de position.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:45 - 00:11:17</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à propos d&#x27;UBIT et de quelque chose que presque aucun autre échange ne propose. UBIT vous donne accès aux actifs de la finance traditionnelle, les marchés financiers traditionnels directement depuis le même compte. Nous parlons d&#x27;or, d&#x27;argent, de pétrole, du S&amp;P 500, du NASDAQ, du Dow Jones, et d&#x27;actions individuelles comme NVIDIA, Tesla, et Amazon. Le tout au même endroit, aucun compte séparé n&#x27;est nécessaire. Et en ce moment, UBIT propose des frais de négociation nuls sur les produits traditionnels, ce qui représente un avantage massif, en particulier pour les traders actifs et les scalpeurs. La plupart des plateformes facturent encore</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme de trading YUBIT et documentation associée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais de l&#x27;actif XAUUSD avec unités de temps (15m), prix actuel à 4328.56, options de levier (500x) et carnet de positions en bas de page.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur l&#x27;interface de trading YUBIT pour présenter l&#x27;accès aux actifs de la finance traditionnelle (TradFi).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001053_seg26.jpg" alt="Interface de trading de la plateforme YUBIT affichant le graphique de l&#x27;actif TradFi XAUUSD (or contre USD) avec les indicateurs de prix et le panneau de passage d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001053_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:53</span>
+                        <span class="caption-text">Interface de trading de la plateforme YUBIT affichant le graphique de l&#x27;actif TradFi XAUUSD (or contre USD) avec les indicateurs de prix et le panneau de passage d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:17 - 00:11:40</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">frais sur ces marchés. Sur UBIT, vous conservez une plus grande partie de vos profits. De plus, vous pouvez négocier des actifs TradFi avec un effet de levier allant jusqu&#x27;à 500 fois, l&#x27;une des offres d&#x27;effet de levier les plus élevées disponibles sur le marché. Pour commencer, cliquez sur TradFi dans la barre de menu. Cliquez sur Activer maintenant, acceptez les termes et conditions, et votre portefeuille TradFi sera créé. Ensuite, dans la fenêtre pop-up, cliquez sur Transférer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading YUBIT et documentation web YUBIT TradFi.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix XAUUSD, options de levier 500x, carnets d&#x27;ordres et conditions d&#x27;utilisation du service.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme YUBIT, présentation des fonctionnalités de levier et affichage des conditions d&#x27;activation TradFi.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001123_seg27.jpg" alt="Interface de trading YUBIT affichant le graphique du XAUSD avec un effet de levier de 500x." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001123_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:23</span>
+                        <span class="caption-text">Interface de trading YUBIT affichant le graphique du XAUSD avec un effet de levier de 500x.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001129_seg27.jpg" alt="Documentation de la plateforme YUBIT TradFi détaillant les fonctionnalités de performance et l&#x27;effet de levier jusqu&#x27;à 500x." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001129_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:29</span>
+                        <span class="caption-text">Documentation de la plateforme YUBIT TradFi détaillant les fonctionnalités de performance et l&#x27;effet de levier jusqu&#x27;à 500x.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001134_seg27.jpg" alt="Fenêtre de conditions générales (Terms and Conditions) sur la plateforme YUBIT lors de l&#x27;activation du service TradFi." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001134_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:34</span>
+                        <span class="caption-text">Fenêtre de conditions générales (Terms and Conditions) sur la plateforme YUBIT lors de l&#x27;activation du service TradFi.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:41 - 00:12:17</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Entrez le montant de USDT que vous souhaitez transférer dans votre portefeuille TradFi et confirmez. Une fois votre portefeuille TradFi approvisionné, cliquez sur l&#x27;actif que vous souhaitez négocier. Par exemple, l&#x27;or, XAUSD, ou le S&amp;P 500. Vous verrez le graphique de trading avec tous les outils dont vous avez besoin. Dans le panneau d&#x27;ordres sur la droite, sélectionnez votre direction, achetez ou vendez, choisissez votre type d&#x27;ordre, entrez le montant de votre ordre et ajoutez votre take profit et stop loss. Ensuite, cliquez pour passer l&#x27;ordre. Vous pouvez voir toutes vos positions Trad 5 ouvertes sous l&#x27;onglet des positions au bas de l&#x27;écran. Maintenant, au-delà du trading, UBIT a une fonctionnalité</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de courtage/trading YUBIT (section TradFi).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de prix en chandelier, liste des actifs (XAUUSD, USDJPY, US30, SP500, etc.), panneau d&#x27;ordre d&#x27;achat/vente avec gestion des lots et de la marge, paramètres de Take-Profit et Stop-Loss.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection d&#x27;un actif dans la liste déroulante et configuration des options de gestion du risque (TP/SL) pour un trade.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001150_seg28.jpg" alt="Interface de trading TradFi montrant le graphique de l&#x27;or (XAUUSD) avec un menu déroulant affichant divers actifs disponibles (Forex, indices, métaux)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001150_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:50</span>
+                        <span class="caption-text">Interface de trading TradFi montrant le graphique de l&#x27;or (XAUUSD) avec un menu déroulant affichant divers actifs disponibles (Forex, indices, métaux).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001208_seg28.jpg" alt="Interface de la plateforme affichant une fenêtre modale pour configurer les niveaux de Take-Profit (TP) et Stop-Loss (SL) sur l&#x27;actif S&amp;P 500 (SP500)." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001208_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:08</span>
+                        <span class="caption-text">Interface de la plateforme affichant une fenêtre modale pour configurer les niveaux de Take-Profit (TP) et Stop-Loss (SL) sur l&#x27;actif S&amp;P 500 (SP500).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:17 - 00:12:53</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">that I think is genuinely useful, the UBIT card. Click on quick buy and select the UBIT card tab in the drop down. With this card, you can spend your USDT worldwide instantly. So instead of having to off-ramp your profits to a bank first, you can just use your trading profits directly in real life. That makes crypto a lot more practical for everyday use. Right now, UBIT offers a virtual card and the physical card is coming soon. To apply, click apply now. Complete your application and once your card is ready, you can start using it immediately. And if you&#x27;re not actively trading,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:53 - 00:13:30</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous n&#x27;êtes pas obligé de laisser vos fonds inactifs. Avec Ubit Earn, vous pouvez générer un revenu passif sur vos avoirs en cryptomonnaies. Ubit offre de 12 % à 120 % de taux annuel effectif global grâce à des options flexibles, fixes et de placement automatique. Cliquez sur « Earn » dans la barre de menu. Vous verrez plusieurs plans vedettes avec leurs taux annuels affichés. Sélectionnez le plan qui vous convient. Entrez le montant que vous souhaitez investir, acceptez l&#x27;accord d&#x27;utilisation et cliquez sur « S&#x27;abonner maintenant ». C&#x27;est tout. Vos fonds travaillent désormais pour vous, même lorsque vous ne tradez pas. Avant de conclure, voici les règles essentielles que vous devez suivre lors du trading, en particulier</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies Ubit (section Earn).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de staking/placement pour l&#x27;USDT affichant des taux d&#x27;intérêt annualisés (APR) de 2% à 15% en flexible et des durées fixes de 7, 30 ou 90 jours avec des taux de 3.6% à 5%.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et survol des différentes options de placement (flexible et fixe) sur la plateforme Ubit Earn.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001302_seg30.jpg" alt="Capture d&#x27;écran de l&#x27;interface Ubit Earn montrant les options de placement en USDT avec des taux variables et fixes, et un curseur de souris survolant l&#x27;option Flexible/Fixed-term." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001302_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:02</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface Ubit Earn montrant les options de placement en USDT avec des taux variables et fixes, et un curseur de souris survolant l&#x27;option Flexible/Fixed-term.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001311_seg30.jpg" alt="Capture d&#x27;écran montrant l&#x27;onglet &#x27;Fixed-term&#x27; sélectionné sur la plateforme Ubit Earn avec les différentes durées (7, 30, 90 jours) et taux associés pour l&#x27;USDT." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001311_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:11</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;onglet &#x27;Fixed-term&#x27; sélectionné sur la plateforme Ubit Earn avec les différentes durées (7, 30, 90 jours) et taux associés pour l&#x27;USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:30 - 00:13:54</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en tant que débutant. Commencez avec de petites tailles de position. Ne risquez pas plus de deux à cinq pour cent de votre compte sur un seul trade. Utilisez toujours un stop loss. C&#x27; n&#x27;est pas négociable. N&#x27;ouvrez jamais un trade sans un. Gardez un effet de levier bas. Commencez à cinq fois maximum. Un effet de levier élevé, c&#x27;est comme ça que les débutants font sauter leurs comptes rapidement. Tenez un journal de trading. Notez chaque trade. Votre entrée, votre sortie, votre raisonnement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Yubit (section Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais BTCUSDT (15m), carnet d&#x27;ordres en temps réel, curseur d&#x27;effet de levier configuré à 5x, et options de configuration de Stop Loss et Take Profit.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du placement d&#x27;ordres et configuration des paramètres de gestion des risques (effet de levier 5x, Stop Loss) sur une plateforme d&#x27;échange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001336_seg31.jpg" alt="Interface principale de trading futures sur Yubit affichant le graphique du BTC/USDT en 15 minutes, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001336_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:36</span>
+                        <span class="caption-text">Interface principale de trading futures sur Yubit affichant le graphique du BTC/USDT en 15 minutes, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001342_seg31.jpg" alt="Fenêtre contextuelle &quot;Advanced TP/SL&quot; (Take Profit / Stop Loss) sur la plateforme Yubit permettant de configurer les niveaux de sortie." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001342_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:42</span>
+                        <span class="caption-text">Fenêtre contextuelle &quot;Advanced TP/SL&quot; (Take Profit / Stop Loss) sur la plateforme Yubit permettant de configurer les niveaux de sortie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:55 - 00:14:23</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est ainsi que vous vous améliorez réellement au fil du temps et que vous ne risquez jamais plus que ce que vous pouvez vous permettre de perdre. Le trading est une compétence. Cela demande du temps, de la répétition et de la discipline. Commencez doucement, restez constant, et les résultats viendront. Très bien, c&#x27;est tout ce que vous devez savoir pour commencer sur UBIT. Vous savez maintenant comment créer votre compte, effectuer un dépôt, naviguer sur l&#x27;interface des contrats à terme, placer votre premier trade, accéder aux actifs TradFi, utiliser la carte UBIT et gagner un revenu passif avec UBIT Earn.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme de courtage et d&#x27;échange YUBIT (section Futures et page d&#x27;accueil).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais de la paire BTCUSDT, carnet d&#x27;ordres en temps réel, carnets de prix, boutons d&#x27;exécution Open Long / Open Short et options de levier.
+[DESC_IMAGE_1] Navigation sur l&#x27;interface de trading de la plateforme YUBIT avec visualisation du graphique des prix et des carnets d&#x27;ordres.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/etoHR6hLmzc/etoHR6hLmzc_001402_seg32.jpg" alt="Interface de trading futures de la plateforme YUBIT affichant le graphique du BTCUSDT en unités 15 minutes avec le carnet d&#x27;ordres et les options d&#x27;ordre d&#x27;achat/vente." loading="lazy" onclick="openLightbox('../screenshots/etoHR6hLmzc/etoHR6hLmzc_001402_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:02</span>
+                        <span class="caption-text">Interface de trading futures de la plateforme YUBIT affichant le graphique du BTCUSDT en unités 15 minutes avec le carnet d&#x27;ordres et les options d&#x27;ordre d&#x27;achat/vente.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:23 - 00:14:43</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous êtes prêt à commencer, utilisez le lien dans la description. Il active votre pack de bonus de bienvenue complet d&#x27;une valeur pouvant aller jusqu&#x27;à 50 000 USDT de récompenses. Ceux-ci sont uniquement disponibles via mon lien, alors assurez-vous de l&#x27;utiliser. Je mettrai également en ligne d&#x27;autres tutoriels UBIT couvrant le copy trading, les configurations de contrats à terme avancés et les stratégies TradFi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-34">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:43 - 00:14:49</span>
+                <span class="segment-idx">Segment #34</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">So make sure you subscribe and hit the notification bell so you don&#x27;t miss those. I&#x27;ll see you in the next one.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
