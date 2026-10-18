@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `75 / 186` (`40.3%`)
+- **Vidéos traitées** : `76 / 186` (`40.9%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -92,6 +92,7 @@
 | 2026-06-04 | [lvTSLvQQZeA](https://www.youtube.com/watch?v=lvTSLvQQZeA) | **BingX vs Toobit: Which Platform Has the Better Trading Bots?** | [2026-06-04_YT-[lvTSLvQQZeA]_BingX vs Toobit Which Platform Has the Better Trading Bots_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-04_YT-[lvTSLvQQZeA]_BingX vs Toobit Which Platform Has the Better Trading Bots_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-04_YT-[lvTSLvQQZeA]_BingX vs Toobit Which Platform Has the Better Trading Bots_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-06-02 | [mJTvFDSaKV0](https://www.youtube.com/watch?v=mJTvFDSaKV0) | **How Bybit TradeGPT Made My Crypto Research EASIER** | [2026-06-02_YT-[mJTvFDSaKV0]_How Bybit TradeGPT Made My Crypto Research EASIER_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-02_YT-[mJTvFDSaKV0]_How Bybit TradeGPT Made My Crypto Research EASIER_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-02_YT-[mJTvFDSaKV0]_How Bybit TradeGPT Made My Crypto Research EASIER_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-30 | [Tn_qWmPVKJk](https://www.youtube.com/watch?v=Tn_qWmPVKJk) | **​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)** | [2026-05-30_YT-[Tn_qWmPVKJk]_​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-30_YT-[Tn_qWmPVKJk]_​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-30_YT-[Tn_qWmPVKJk]_​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-05-28 | [lMSCL4It7tI](https://www.youtube.com/watch?v=lMSCL4It7tI) | **Claim Your FREE iPhone 17 Pro On WEEX With This Method** | [2026-05-28_YT-[lMSCL4It7tI]_Claim Your FREE iPhone 17 Pro On WEEX With This Method_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-28_YT-[lMSCL4It7tI]_Claim Your FREE iPhone 17 Pro On WEEX With This Method_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-28_YT-[lMSCL4It7tI]_Claim Your FREE iPhone 17 Pro On WEEX With This Method_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
