@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `73 / 186` (`39.2%`)
+- **Vidéos traitées** : `74 / 186` (`39.8%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -90,6 +90,7 @@
 | 2026-06-06 | [z97Efri-XM0](https://www.youtube.com/watch?v=z97Efri-XM0) | **Claim Your FREE $127 on Toobit With These Simple Steps** | [2026-06-06_YT-[z97Efri-XM0]_Claim Your FREE $127 on Toobit With These Simple Steps_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-06_YT-[z97Efri-XM0]_Claim Your FREE $127 on Toobit With These Simple Steps_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-06_YT-[z97Efri-XM0]_Claim Your FREE $127 on Toobit With These Simple Steps_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-06-05 | [D8eIukpQ6HA](https://www.youtube.com/watch?v=D8eIukpQ6HA) | **Claude Code + Outils de Trading = 10 000 $/Mois** | [2026-06-05_YT-[D8eIukpQ6HA]_Claude Code + Outils de Trading = 10 000 $Mois_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-05_YT-[D8eIukpQ6HA]_Claude Code + Outils de Trading = 10 000 $Mois_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-05_YT-[D8eIukpQ6HA]_Claude Code + Outils de Trading = 10 000 $Mois_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `20` |
 | 2026-06-04 | [lvTSLvQQZeA](https://www.youtube.com/watch?v=lvTSLvQQZeA) | **BingX vs Toobit: Which Platform Has the Better Trading Bots?** | [2026-06-04_YT-[lvTSLvQQZeA]_BingX vs Toobit Which Platform Has the Better Trading Bots_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-04_YT-[lvTSLvQQZeA]_BingX vs Toobit Which Platform Has the Better Trading Bots_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-04_YT-[lvTSLvQQZeA]_BingX vs Toobit Which Platform Has the Better Trading Bots_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-06-02 | [mJTvFDSaKV0](https://www.youtube.com/watch?v=mJTvFDSaKV0) | **How Bybit TradeGPT Made My Crypto Research EASIER** | [2026-06-02_YT-[mJTvFDSaKV0]_How Bybit TradeGPT Made My Crypto Research EASIER_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-06-02_YT-[mJTvFDSaKV0]_How Bybit TradeGPT Made My Crypto Research EASIER_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-06-02_YT-[mJTvFDSaKV0]_How Bybit TradeGPT Made My Crypto Research EASIER_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
