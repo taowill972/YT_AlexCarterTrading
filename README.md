@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `57 / 186` (`30.6%`)
+- **Vidéos traitées** : `58 / 186` (`31.2%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -74,6 +74,7 @@
 | 2026-07-13 | [BMyA3VNSBj0](https://www.youtube.com/watch?v=BMyA3VNSBj0) | **How I Built a Polymarket AI Trader using Claude (Insane Results)** | [2026-07-13_YT-[BMyA3VNSBj0]_How I Built a Polymarket AI Trader using Claude (Insane Results)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-13_YT-[BMyA3VNSBj0]_How I Built a Polymarket AI Trader using Claude (Insane Results)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-13_YT-[BMyA3VNSBj0]_How I Built a Polymarket AI Trader using Claude (Insane Results)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-07-11 | [PfxWzJuPo-8](https://www.youtube.com/watch?v=PfxWzJuPo-8) | **Bitget GetAgent Changed My Crypto Trading Forever** | [2026-07-11_YT-[PfxWzJuPo-8]_Bitget GetAgent Changed My Crypto Trading Forever_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-11_YT-[PfxWzJuPo-8]_Bitget GetAgent Changed My Crypto Trading Forever_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-11_YT-[PfxWzJuPo-8]_Bitget GetAgent Changed My Crypto Trading Forever_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-07-10 | [JirhultjZ7o](https://www.youtube.com/watch?v=JirhultjZ7o) | **How I Built 2 Trading Bots With Claude That Made Me $13,364** | [2026-07-10_YT-[JirhultjZ7o]_How I Built 2 Trading Bots With Claude That Made Me $13,364_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-10_YT-[JirhultjZ7o]_How I Built 2 Trading Bots With Claude That Made Me $13,364_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-10_YT-[JirhultjZ7o]_How I Built 2 Trading Bots With Claude That Made Me $13,364_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-07-08 | [aynjmrDLCCc](https://www.youtube.com/watch?v=aynjmrDLCCc) | **Comment j'ai transformé n'importe quelle stratégie de trading en bot IA avec Claude** | [2026-07-08_YT-[aynjmrDLCCc]_Comment j'ai transformé n'importe quelle stratégie de trading en bot IA avec Cla_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-07-08_YT-[aynjmrDLCCc]_Comment j'ai transformé n'importe quelle stratégie de trading en bot IA avec Cla_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-07-08_YT-[aynjmrDLCCc]_Comment j'ai transformé n'importe quelle stratégie de trading en bot IA avec Cla_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `44` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
