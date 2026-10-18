@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment je trade comme un quant avec Toobit Synapse — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment je trade comme un quant avec Toobit Synapse</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-06-25</span>
+                <span class="badge">⏱️ 00:08:57</span>
+                <span class="badge">🆔 <code>3aXoNsyr_sA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=3aXoNsyr_sA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo, Alex Carter explore l'intégration des outils d'intelligence artificielle de niveau institutionnel appliqués au trading de cryptomonnaies, en se concentrant particulièrement sur l'outil *Synapse* de la plateforme Toobit. L'analyste met en lumière la mutation radicale du paysage du trading particulier, où l'accès en temps réel à des données complexes, autrefois réservé aux détenteurs de terminaux professionnels ou de desks quantitatifs, est désormais démocratisé grâce à des assistants conversationnels avancés. La démonstration détaille comment exploiter l'IA pour s'affranchir du bruit des graphiques, automatiser la recherche de marché et structurer instantanément des analyses multi-dimensionnelles intégrant l'action des prix, le volume et le sentiment social.<br><br>Au-delà de la simple présentation d'un outil de chat, la stratégie démontrée repose sur une approche systématique et augmentée du trading. Carter aborde la transition inévitable entre les méthodes manuelles traditionnelles et le trading agentique, illustrant comment des technologies de pointe comme le protocole MCP (*Model Context Protocol*) permettent à une IA d'interagir directement avec les flux de marché en direct. Sont également passés en revue les concepts d'automatisation avancée, l'utilisation de scripts sur mesure pour coder des logiques de décision, ainsi que la structuration d'une démarche rigoureuse de gestion des risques pour transformer des données brutes en opportunités exploitables.<br><br>Enfin, la vidéo positionne ces innovations technologiques au sein d'un écosystème d'apprentissage communautaire et pratique, à travers des structures telles que *AI TradeEdge*. L'objectif affiché est de fournir aux traders particuliers les clés méthodologiques — allant du codage de stratégies algorithmiques via *Pine Script* et *Claude Code* jusqu'à l'utilisation de bots de surveillance — pour rivaliser à armes égales avec les acteurs institutionnels. L'intervention se conclut par une invitation pragmatique à structurer ses processus de décision et à capitaliser sur l'automatisation pour éliminer les biais émotionnels inhérents au trading discrétionnaire.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Toobit Synapse** : Assistant d'analyse de marché propulsé par l'IA et intégré directement à la plateforme Toobit, offrant un accès direct aux données en temps réel pour générer des rapports de niveau institutionnel.<br>* **Protocole MCP (Model Context Protocol)** : Technologie sous-jacente permettant aux modèles d'IA de se connecter dynamiquement aux flux de données de marché en temps réel et aux serveurs externes sans recourir à de simples estimations statiques.<br>* **Claude** : Modèle de langage de grande taille de pointe développé par Anthropic, servant de moteur d'intelligence artificielle pour interpréter les signaux de marché et structurer les rapports.<br>* **TradingView / Pine Script** : Environnement de graphitage et langage de programmation propriétaire utilisé pour concevoir, backtester et automatiser des stratégies de scalping et de swing trading.<br>* **Claude Code** : Outil de développement assisté par IA employé pour concevoir, prototyper et structurer des systèmes de trading algorithmique et des scripts d'automatisation complexes.<br>* **Grok Bots** : Outils d'automatisation et de surveillance automatisée utilisés pour scanner les marchés en continu et relayer des alertes opportunes aux traders.<br>* **AI TradeEdge** : Communauté de trading quantitative et opération de recherche en direct centralisant des invites, des bots, des modèles et un cursus complet de formation au trading agentique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Démocratisation de l'analyse institutionnelle** : L'utilisation d'assistants connectés en temps réel permet aux traders particuliers de s'affranchir des limites des graphiques manuels pour obtenir instantanément des synthèses comparables aux prestations de terminaux professionnels.<br>* **Élimination du bruit informationnel** : Les outils d'IA agissent comme un filtre structurel, transformant une masse brute de données de prix et de volumes en signaux clairs, exploitables et contextualisés.<br>* **Intégration du sentiment de marché** : La puissance du protocole MCP réside dans sa capacité à croiser instantanément l'action des prix et des volumes avec des données exogènes issues des flux d'actualités et des réseaux sociaux.<br>* **Architecture des rapports structurés** : Un processus d'analyse rigoureux doit obligatoirement disséquer le résumé exécutif, l'action des prix, les schémas techniques, l'analyse du volume, l'évaluation du sentiment et l'identification précise des zones de support et de résistance.<br>* **Nécessité absolue du Risk Management** : Indépendamment de la sophistication des modèles prédictifs ou des analyses générées par l'IA, chaque position doit intégrer une gestion stricte du risque pour faire face à la volatilité intrinsèque des cryptomonnaies.<br>* **Transition vers le trading agentique** : L'avenir de la rentabilité repose sur l'adoption de systèmes autonomes ou semi-autonomes capables de surveiller le marché 24h/24 et 7j/7 sans subir de frictions émotionnelles.<br>* **Automatisation des stratégies par le code** : Le passage d'une idée discrétionnaire à un système algorithmique fonctionnel s'appuie sur la traduction de règles logiques via des environnements de script et des assistants de codage avancés.<br>* **Suppression des biais émotionnels** : L'automatisation et l'assistance algorithmique permettent d'éliminer la peur, l'euphorie et le FOMO, garantissant une exécution froide et disciplinée des plans de trading.<br>* **Approche empirique et communautaire** : Le succès en trading quantitatif nécessite un processus itératif de test en conditions réelles, de partage des stratégies fonctionnelles et d'élimination rapide des approches inopérantes au sein de groupes de recherche spécialisés.<br>* **Évolution de la valeur du temps pour le trader** : Déléguer l'analyse lourde et la surveillance continue à l'intelligence artificielle libère un temps précieux, recentrant l'intervention humaine sur la validation des risques et l'ajustement macro-stratégique.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Toobit Synapse</span><span class="tool-tag">Protocole MCP (Model Context Protocol)</span><span class="tool-tag">Claude</span><span class="tool-tag">TradingView / Pine Script</span><span class="tool-tag">Claude Code</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">AI TradeEdge</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Démocratisation de l&#x27;analyse institutionnelle** : L&#x27;utilisation d&#x27;assistants connectés en temps réel permet aux traders particuliers de s&#x27;affranchir des limites des graphiques manuels pour obtenir instantanément des synthèses comparables aux prestations de terminaux professionnels.</span></li><li><span class="point-bullet">✦</span><span>Élimination du bruit informationnel** : Les outils d&#x27;IA agissent comme un filtre structurel, transformant une masse brute de données de prix et de volumes en signaux clairs, exploitables et contextualisés.</span></li><li><span class="point-bullet">✦</span><span>Intégration du sentiment de marché** : La puissance du protocole MCP réside dans sa capacité à croiser instantanément l&#x27;action des prix et des volumes avec des données exogènes issues des flux d&#x27;actualités et des réseaux sociaux.</span></li><li><span class="point-bullet">✦</span><span>Architecture des rapports structurés** : Un processus d&#x27;analyse rigoureux doit obligatoirement disséquer le résumé exécutif, l&#x27;action des prix, les schémas techniques, l&#x27;analyse du volume, l&#x27;évaluation du sentiment et l&#x27;identification précise des zones de support et de résistance.</span></li><li><span class="point-bullet">✦</span><span>Nécessité absolue du Risk Management** : Indépendamment de la sophistication des modèles prédictifs ou des analyses générées par l&#x27;IA, chaque position doit intégrer une gestion stricte du risque pour faire face à la volatilité intrinsèque des cryptomonnaies.</span></li><li><span class="point-bullet">✦</span><span>Transition vers le trading agentique** : L&#x27;avenir de la rentabilité repose sur l&#x27;adoption de systèmes autonomes ou semi-autonomes capables de surveiller le marché 24h/24 et 7j/7 sans subir de frictions émotionnelles.</span></li><li><span class="point-bullet">✦</span><span>Automatisation des stratégies par le code** : Le passage d&#x27;une idée discrétionnaire à un système algorithmique fonctionnel s&#x27;appuie sur la traduction de règles logiques via des environnements de script et des assistants de codage avancés.</span></li><li><span class="point-bullet">✦</span><span>Suppression des biais émotionnels** : L&#x27;automatisation et l&#x27;assistance algorithmique permettent d&#x27;éliminer la peur, l&#x27;euphorie et le FOMO, garantissant une exécution froide et disciplinée des plans de trading.</span></li><li><span class="point-bullet">✦</span><span>Approche empirique et communautaire** : Le succès en trading quantitatif nécessite un processus itératif de test en conditions réelles, de partage des stratégies fonctionnelles et d&#x27;élimination rapide des approches inopérantes au sein de groupes de recherche spécialisés.</span></li><li><span class="point-bullet">✦</span><span>Évolution de la valeur du temps pour le trader** : Déléguer l&#x27;analyse lourde et la surveillance continue à l&#x27;intelligence artificielle libère un temps précieux, recentrant l&#x27;intervention humaine sur la validation des risques et l&#x27;ajustement macro-stratégique.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:33</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tubit vient de lancer un outil d&#x27;analyse par IA de niveau institutionnel avec un accès direct au marché disponible pour absolument tous les traders sur la plateforme, et la plupart d&#x27;entre nous ignorent même son existence. Il s&#x27;appelle Synapse. Propulsé par le protocole MCP, il vous permet de discuter avec une IA pour analyser le marché, élaborer des stratégies et prendre des décisions de trading, tout en un seul endroit, en quelques secondes. Maintenant, je fais du trading de crypto depuis des ans, et je peux vous dire le temps que j&#x27;ai perdu à fixer des graphiques, à traverser ce brouhaha en essayant de comprendre ce que le marché fait réellement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web Toobit, graphique TradingView (WEEX).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Contrat perpétuel Bitcoin/Tether (BTCUSDT), indicateur technique inférieur (DHLB-ATR), signaux d&#x27;achat (Long) et de vente (Short), prix actuels et échelles temporelles (4h).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique d&#x27;un graphique de prix et visualisation de signaux de trading sur un graphique en chandeliers.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000025_seg1.jpg" alt="Graphique TradingView sur 4 heures de la paire Bitcoin/Tether (BTCUSDT) sur la plateforme WEEX montrant des signaux de trading Long/Short et un indicateur technique inférieur." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000025_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Graphique TradingView sur 4 heures de la paire Bitcoin/Tether (BTCUSDT) sur la plateforme WEEX montrant des signaux de trading Long/Short et un indicateur technique inférieur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:01:09</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">s&#x27;accumule et Synapse est fondamentalement la réponse à tout cela donc dans cette vidéo je vais vous montrer exactement ce qu&#x27;est Read Synapse, comment le trouver, comment l&#x27;utiliser étape par étape et ce qui arrive ensuite, allons-y mais avant d&#x27;entrer dans le vif du sujet si vous ne vous êtes pas encore inscrit sur Bybit c&#x27;est le meilleur moment pour le faire en utilisant le lien dans la description vous pouvez obtenir jusqu&#x27;à 8810 dollars de récompenses plus des bonus VIP exclusifs disponibles uniquement via mon lien. Rien qu&#x27;en vous inscrivant, vous obtenez un bonus futures de 30 dollars et le niveau VIP 1 pendant un mois. En plus de cela, il y a un palier de dépôt</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la bourse de cryptomonnaies Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Textes publicitaires, fonctionnalités IA de Toobit Synapse, période d&#x27;activité promotionnelle, et offres de bonus (30 $ Futures Bonus + VIP1).
+[DESC_IMAGE_1] Présentation des fonctionnalités clés de Toobit Synapse (All-in-One Trading Hub, 24/7 Market Watchdog, Perfect Discipline).
+[DESC_IMAGE_2] Affichage de l&#x27;offre promotionnelle Toobit x Mister Crypto avec un compte à rebours et des graphiques de récompenses en USDT.
+[DESC_IMAGE_3] Détails des conditions d&#x27;inscription pour obtenir un bonus de 30 $ sur les Futures et le statut VIP1.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et défilement sur les pages web promotionnelles de la plateforme Toobit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000042_seg2.jpg" alt="Page de présentation de &quot;Toobit Synapse&quot; mettant en avant trois fonctionnalités clés : All-in-One Trading Hub, Your 24/7 Market Watchdog et Perfect Discipline." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000042_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Page de présentation de &quot;Toobit Synapse&quot; mettant en avant trois fonctionnalités clés : All-in-One Trading Hub, Your 24/7 Market Watchdog et Perfect Discipline.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000051_seg2.jpg" alt="Page promotionnelle de partenariat entre Toobit et Mister Crypto offrant 8 810 $ de récompenses et des bonus VIP exclusifs." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000051_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Page promotionnelle de partenariat entre Toobit et Mister Crypto offrant 8 810 $ de récompenses et des bonus VIP exclusifs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000100_seg2.jpg" alt="Suite de la page promotionnelle de Toobit détaillant l&#x27;offre d&#x27;inscription incluant 30 $ de bonus Futures et le statut VIP1 pendant un mois." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000100_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Suite de la page promotionnelle de Toobit détaillant l&#x27;offre d&#x27;inscription incluant 30 $ de bonus Futures et le statut VIP1 pendant un mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:09 - 00:01:32</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">défi où vous pouvez débloquer jusqu&#x27;à 750 USDT et un défi de trading d&#x27;une valeur allant jusqu&#x27;à 150 USDT. Tout cela se cumule. Le lien est dans la description. Cliquez dessus, inscrivez-vous, et entrons dans Synapse. Alors d&#x27;abord, qu&#x27;est-ce que c&#x27;est réellement, Synapse ? 2-bit Synapse est un assistant propulsé par l&#x27;IA conçu pour être votre co-pilote personnel sur le marché de la crypto.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails des récompenses du défi de trading (150 USDT, paliers de volume), description de l&#x27;outil IA Synapse et de son intégration avec Claude et le Model Context Protocol (MCP).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des conditions de participation aux défis de trading et explication des fonctionnalités de Synapse sur la plateforme Toobit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000115_seg3.jpg" alt="Interface de Toobit montrant les détails du défi de trading avec des paliers de gains en USDT basés sur le volume de trades." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000115_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Interface de Toobit montrant les détails du défi de trading avec des paliers de gains en USDT basés sur le volume de trades.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000120_seg3.jpg" alt="Page d&#x27;accueil de l&#x27;événement promotionnel Toobit x Mister Crypto avec un compte à rebours et un bouton d&#x27;inscription." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000120_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Page d&#x27;accueil de l&#x27;événement promotionnel Toobit x Mister Crypto avec un compte à rebours et un bouton d&#x27;inscription.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000126_seg3.jpg" alt="Section FAQ du site Toobit expliquant ce qu&#x27;est Synapse, un assistant IA propulsé par Claude." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000126_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Section FAQ du site Toobit expliquant ce qu&#x27;est Synapse, un assistant IA propulsé par Claude.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:32 - 00:01:53</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pensez-y comme à un analyste professionnel assis à côté de vous vingt-quatre heures sur vingt-quatre et sept jours sur sept, à la différence qu&#x27;il ne dort jamais, ne devient jamais émetionnel, et traite les données beaucoup plus rapidement que n&#x27;importe quel humain ne pourrait jamais le faire. Il est propulsé par Claude, l&#x27;un des modèles d&#x27;IA les plus avancés au monde, et il utilise quelque chose appelé le Protocole de Contexte de Modèle, ou MCP, pour intégrer des données de marché en temps réel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading crypto Toobit (pages d&#x27;analyse Synapse et FAQ).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyses techniques détaillées (rupture de support, phase d&#x27;accélération, profil de volume, facteurs baissiers/haussiers) et description de l&#x27;outil IA Synapse.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et lecture de l&#x27;analyse automatisée du marché et de la FAQ de l&#x27;assistant IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000137_seg4.jpg" alt="Interface web de Toobit affichant les observations techniques clés et l&#x27;analyse du sentiment de marché générées par l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000137_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:37</span>
+                        <span class="caption-text">Interface web de Toobit affichant les observations techniques clés et l&#x27;analyse du sentiment de marché générées par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000143_seg4.jpg" alt="Section FAQ de Toobit Synapse expliquant ce qu&#x27;est l&#x27;assistant IA basé sur Claude et le protocole MCP." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000143_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:43</span>
+                        <span class="caption-text">Section FAQ de Toobit Synapse expliquant ce qu&#x27;est l&#x27;assistant IA basé sur Claude et le protocole MCP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:53 - 00:02:12</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est ce qui le différencie du simple fait de poser des questions à ChatGPT sur Bitcoin. Synapse a un accès direct au marché en temps réel. Il ne devine pas. Il lit le marché en ce moment même. Et voici ce qu&#x27;il fait réellement pour vous. Il automatise des recherches de marché complexes et génère des stratégies. Ainsi, vous pouvez prendre des décisions plus rapides et plus éclairées sans passer des heures à faire l&#x27;analyse vous-même.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies Toobit, comprenant l&#x27;interface de trading Spot/Futures et les pages d&#x27;information de l&#x27;outil Synapse.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT à 62,345.0, carnet d&#x27;ordres en temps réel, effet de levier 20x, et texte descriptif sur les avantages de Synapse (automatisation de la recherche de marché, analyse du sentiment, Model Context Protocol).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme Toobit montrant à la fois l&#x27;interface de trading en temps réel et la documentation explicative de l&#x27;assistant IA Synapse.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000158_seg5.jpg" alt="Interface de trading de la plateforme Toobit montrant un graphique des prix BTCUSDT en unités de 15 minutes, un carnet d&#x27;ordres et les options de passage d&#x27;ordres d&#x27;achat/vente (long/short)." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000158_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Interface de trading de la plateforme Toobit montrant un graphique des prix BTCUSDT en unités de 15 minutes, un carnet d&#x27;ordres et les options de passage d&#x27;ordres d&#x27;achat/vente (long/short).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000203_seg5.jpg" alt="Page Web de présentation de &quot;Toobit Synapse&quot;, détaillant les fonctionnalités et les avantages de cet assistant IA propulsé par Claude et utilisant le Model Context Protocol (MCP)." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000203_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:03</span>
+                        <span class="caption-text">Page Web de présentation de &quot;Toobit Synapse&quot;, détaillant les fonctionnalités et les avantages de cet assistant IA propulsé par Claude et utilisant le Model Context Protocol (MCP).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:13 - 00:02:31</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il décode le bruit du marché. Au lieu de vous noyer dans les données, vous obtenez des réponses simples et en temps réel sur les tendances et les signaux. Ce qui se passe, pourquoi cela se passe, et quoi faire à ce sujet. De plus, il vous donne accès à des stratégies complètes générées par l&#x27;IA qui sont prêtes à être mises en œuvre. Vous n&#x27;avez pas besoin d&#x27;une équipe de quants pour trader comme eux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme Toobit affichant des rapports de trading détaillés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyses textuelles structurées comprenant des facteurs haussiers/baissiers, des implications de trading pour différents types de traders, et des observations techniques sur les niveaux de prix (Ethereum).</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation et lecture d&#x27;un rapport d&#x27;analyse de marché généré ou hébergé sur une plateforme d&#x27;échange de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000217_seg6.jpg" alt="L&#x27;image 1 présente les implications de trading et la conclusion d&#x27;un rapport d&#x27;analyse de marché sur la plateforme Toobit." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000217_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:17</span>
+                        <span class="caption-text">L&#x27;image 1 présente les implications de trading et la conclusion d&#x27;un rapport d&#x27;analyse de marché sur la plateforme Toobit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000226_seg6.jpg" alt="L&#x27;image 2 affiche l&#x27;analyse technique et l&#x27;analyse du sentiment de marché pour le contrat ETH-SWAP-USDT sur la plateforme Toobit." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000226_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">L&#x27;image 2 affiche l&#x27;analyse technique et l&#x27;analyse du sentiment de marché pour le contrat ETH-SWAP-USDT sur la plateforme Toobit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:31 - 00:02:50</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un clic et vous avez une analyse complète. Maintenant, gardez à l&#x27;esprit qu&#x27;il y a aussi une prochaine phase qui arrive. Des fonctionnalités telles qu&#x27;un chien de garde du marché par IA 24h/24 et 7j/7 qui surveille le marché pour vous en permanence et envoie des alertes instantanées lorsque la bonne opportunité se présente. Et une gestion automatisée des ordres avec des règles intelligentes pour protéger vos profits et limiter vos pertes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web / Plateforme d&#x27;échange crypto Toobit Synapse.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Présentation de trois fonctionnalités : &#x27;All-in-One Trading Hub&#x27;, &#x27;Your 24/7 Market Watchdog&#x27; et &#x27;Perfect Discipline&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des fonctionnalités à venir pour illustrer le discours sur la surveillance du marché par IA 24h/24 et 7j/7.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000236_seg7.jpg" alt="Capture d&#x27;écran de la plateforme Toobit Synapse présentant les fonctionnalités à venir, notamment &#x27;Your 24/7 Market Watchdog&#x27;." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000236_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Toobit Synapse présentant les fonctionnalités à venir, notamment &#x27;Your 24/7 Market Watchdog&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:50 - 00:03:27</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout cela arrive bientôt. Mais ce qui est disponible dès maintenant est déjà incroyablement puissant. Alors entrons dans le vif du sujet. Et soit dit en passant, je vais vous montrer quelque chose à la fin de cette vidéo qui, je pense, va complètement changer votre façon d&#x27;aborder le trading avec l&#x27;IA. Alors restez avec moi jusqu&#x27;à la fin. Très bien. Alors trouvons réellement Synapse sur la plateforme. C&#x27;est très simple. Une fois que vous êtes connecté à votre compte 2-bit, allez dans la barre de navigation supérieure, cliquez sur trade. Et dans le menu déroulant, vous verrez 2-bit Synapse. Il suffit de cliquer dessus. Vous arriverez sur la page de Synapse. Et tout de suite, vous pouvez voir exactement ce qu&#x27;il fait. Trois choses. Il agit comme votre analyste personnel. Plus besoin</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme éducative Trading AI, site web de l&#x27;échange de cryptomonnaies Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Mentions de performances de bots IA (Claude, DeepSeek, Grok, GPT-5) et présentation de l&#x27;outil &#x27;Toobit Synapse&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation visuelle des outils et fonctionnalités de trading assistés par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000300_seg8.jpg" alt="Capture d&#x27;écran montrant une page de cours intitulée &#x27;Trading AI Full Course&#x27; présentant différents cas d&#x27;utilisation de bots propulsés par l&#x27;intelligence artificielle." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000300_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une page de cours intitulée &#x27;Trading AI Full Course&#x27; présentant différents cas d&#x27;utilisation de bots propulsés par l&#x27;intelligence artificielle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000309_seg8.jpg" alt="Page d&#x27;accueil de la plateforme d&#x27;échange de cryptomonnaies Toobit avec un arrière-plan montrant un stade de football." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000309_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme d&#x27;échange de cryptomonnaies Toobit avec un arrière-plan montrant un stade de football.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000318_seg8.jpg" alt="Écran de présentation de Toobit affichant le texte &#x27;AI now helps you make sense of the markets with Toobit Synapse&#x27;." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000318_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:18</span>
+                        <span class="caption-text">Écran de présentation de Toobit affichant le texte &#x27;AI now helps you make sense of the markets with Toobit Synapse&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:27 - 00:04:04</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">de longues heures avec des graphiques sans fin. Synapse automatise l&#x27;analyse et génère des stratégies pour vous. Ensuite, il interprète les signaux. Au lieu de vous noyer dans les données, vous obtenez des réponses simples en temps réel sur les tendances du marché. Le bruit se transforme en informations exploitables, et il vous donne accès aux meilleures stratégies. Vous n&#x27;avez pas besoin d&#x27;une équipe de quants pour trader comme eux. Des stratégies complètes générées par IA prêtes en un seul clic. Et dès maintenant, vous pouvez obtenir une analyse par IA de niveau institutionnel pour les principales cryptos. Bitcoin, Ethereum, Solana et Doge. Très bien, allons l&#x27;utiliser pour de vrai.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web / Plateforme Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Cartes d&#x27;information décrivant les fonctionnalités &quot;Your Personal Analyst&quot;, &quot;Speak to the Signals&quot; et &quot;Access Top Strategies&quot; d&#x27;analyse automatisée par IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration et présentation des modules de l&#x27;outil Synapse AI sur la plateforme Toobit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000337_seg9.jpg" alt="Présentation des fonctionnalités de Synapse AI sur le site Toobit sous la bannière &quot;Master the Markets&quot;." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000337_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:37</span>
+                        <span class="caption-text">Présentation des fonctionnalités de Synapse AI sur le site Toobit sous la bannière &quot;Master the Markets&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:04 - 00:04:24</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Étape par étape. Première étape, sélectionnez la cryptomonnaie que vous voulez analyser. Vous verrez les options juste là. Bitcoin, ETH, Solana, Doge. Cliquez simplement sur la paire pour laquelle vous souhaitez obtenir une analyse. Deuxième étape, une fois que vous avez sélectionné votre paire, cliquez sur Try 2-Bit Synapse. Et ensuite, c&#x27;est là que ça devient intéressant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web / Plateforme Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Boutons de sélection de paires de cryptomonnaies : BTC (sélectionné), ETH, SOL, DOGE, ainsi qu&#x27;un bouton d&#x27;action &quot;Try Toobit Synapse&quot; et un texte descriptif sur l&#x27;analyse par IA.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de la cryptomonnaie BTC (Bitcoin) sur l&#x27;interface pour lancer l&#x27;analyse.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000409_seg10.jpg" alt="Interface Web de la plateforme Toobit montrant les options de cryptomonnaies (BTC, ETH, SOL, DOGE) pour l&#x27;analyse par IA." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000409_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:09</span>
+                        <span class="caption-text">Interface Web de la plateforme Toobit montrant les options de cryptomonnaies (BTC, ETH, SOL, DOGE) pour l&#x27;analyse par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:24 - 00:04:47</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fenêtre de discussion va apparaître. Elle se connecte aux serveurs MCP, et en quelques secondes, vous obtiendrez un aperçu d&#x27;analyse IA détaillé généré par Synapse. Maintenant, il ne s&#x27;agit pas d&#x27;une simple réponse de chatbot. C&#x27;est un rapport structuré, de niveau professionnel. Laissez-moi vous guider à travers ce que vous regardez réellement. Vous avez le résumé exécutif tout en haut, un aperçu clair de la situation actuelle de l&#x27;actif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Toobit avec assistant d&#x27;analyse IA intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Rapport textuel structuré, prix du Bitcoin à $62,430.50, plus haut sur 24h à $65,595.70, plus bas à $61,877.10, variation de -2,76% et volume de 116,6 millions de contrats.</p>
+                        <p><strong>Action / Démonstration :</strong> Génération et affichage d&#x27;un rapport d&#x27;analyse technique automatisé pour les contrats futures Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000430_seg11.jpg" alt="Interface Toobit affichant la génération en cours d&#x27;un rapport d&#x27;analyse technique IA sur BTC-SWAP-USDT suite à une requête utilisateur." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000430_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:30</span>
+                        <span class="caption-text">Interface Toobit affichant la génération en cours d&#x27;un rapport d&#x27;analyse technique IA sur BTC-SWAP-USDT suite à une requête utilisateur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000436_seg11.jpg" alt="Rapport structuré complet généré par l&#x27;IA sur Toobit montrant le résumé exécutif et l&#x27;aperçu du marché pour les contrats BTC-SWAP-USDT." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000436_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:36</span>
+                        <span class="caption-text">Rapport structuré complet généré par l&#x27;IA sur Toobit montrant le résumé exécutif et l&#x27;aperçu du marché pour les contrats BTC-SWAP-USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:48 - 00:05:07</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, l&#x27;aperçu de l&#x27;action des prix, ce que les prix ont fait, les mouvements clés et le contexte. Ensuite, les schémas d&#x27;analyse technique, c&#x27;est là que ça devient approfondi. Synapse identifie les configurations graphiques, les structures de tendance et les signaux qui vous prendraient normalement beaucoup de temps à tracer manuellement. Ensuite, l&#x27;analyse du volume, car le prix sans le volume est incomplet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading et d&#x27;échange de cryptomonnaies Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aperçu du marché (Current Price Action) avec le prix actuel à 62 430,50 $, le plus haut sur 24h à 65 595,70 $, le plus bas sur 24h à 61 877,10 $, une variation de prix de -1 771,30 $ (-2,76 %) et un volume de trading de 116,6 millions de contrats, ainsi qu&#x27;une section d&#x27;analyse technique (Hourly Trend Breakdown).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation textuelle et chiffrée de l&#x27;action des prix et du rapport d&#x27;analyse de marché sur la plateforme Toobit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000453_seg12.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit affichant un rapport d&#x27;analyse de marché détaillé pour les contrats futures Bitcoin (BTC-SWAP-USDT)." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000453_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:53</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit affichant un rapport d&#x27;analyse de marché détaillé pour les contrats futures Bitcoin (BTC-SWAP-USDT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:08 - 00:05:28</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Synapse lit les deux. Ensuite, l&#x27;évaluation du sentiment du marché. C&#x27;est là que le MCP brille vraiment. Il intègre non seulement les données de prix, mais aussi des signaux de sentiment provenant de flux d&#x27;actualités et de données sociales. Ensuite, les niveaux clés, vos zones de support et de résistance clairement définies. Et enfin, la conclusion, un résumé clair et exploitable de ce que tout cela signifie pour votre trade.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme Web / Interface de type Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Niveaux de résistance (Immediate : 62,555 $, Primary : 64,000 $, Strong : 65,595 $), Niveaux de support (Immediate : 62,309 $, Primary : 61,877 $, Secondary : 61,500 $), et une section &quot;Market Sentiment Assessment&quot; indiquant un sentiment baissier à neutre (bearish-to-neutral).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse textuelle des données de marché et affichage des niveaux clés de support et de résistance par le modèle MCP.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000513_seg13.jpg" alt="Capture d&#x27;écran montrant une interface sombre affichant des niveaux de support et de résistance ainsi qu&#x27;une évaluation du sentiment du marché générée par le MCP." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000513_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:13</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une interface sombre affichant des niveaux de support et de résistance ainsi qu&#x27;une évaluation du sentiment du marché générée par le MCP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:28 - 00:05:59</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout cela, sur une seule page simple, en quelques secondes. Et une fois que vous avez le rapport, vous pouvez le copier ou le partager directement, depuis la fenêtre de chat. Maintenant, juste en toute franchise ici. L&#x27;analyse par IA est fournie à titre de référence uniquement et ne constitue pas un conseil en investissement. Les investissements en cryptomonnaies comportent des risques très élevés. Veuillez investir avec prudence et gérer vos risques de manière appropriée. Écoutez, je veux prendre un moment ici parce que je pense qu&#x27;il est facile de faire défiler rapidement ce genre de chose et de ne pas vraiment apprécier ce que c&#x27;est.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Toobit (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de conclusion sur BTC-SWAP-USDT, avertissement sur les risques (Disclaimer / Risk Warning), boutons &quot;Copy&quot; et &quot;Share&quot;, horodatage de la dernière mise à jour.</p>
+                        <p><strong>Action / Démonstration :</strong> Survol du curseur de la souris sur le bouton &quot;Share&quot; pour partager le rapport d&#x27;analyse.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000536_seg14.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit affichant la section de conclusion d&#x27;un rapport d&#x27;analyse cryptographique avec des boutons de partage et de copie." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000536_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:36</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit affichant la section de conclusion d&#x27;un rapport d&#x27;analyse cryptographique avec des boutons de partage et de copie.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:59 - 00:06:24</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La plupart des traders particuliers prennent des décisions basées sur des informations incomplètes, des réactions émotionnelles, ou simplement en copiant ce que quelqu&#x27;un d&#x27;autre a dit sur Twitter. Et les traders qui sont constamment rentables, ils ont des systèmes, ils ont des données, ils ont des analyses. Synapse donne fondamentalement à chaque trader sur 2Bit accès à ce même niveau d&#x27;analyse, le genre qui nécessitait auparavant soit un terminal Bloomberg, soit une équipe d&#x27;analystes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading et d&#x27;analyse Toobit (tableaux de données de marché, rapports d&#x27;analyse textuelle et interface Web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Données de marché en temps réel, taux de financement, volumes sur 24h, capitalisation boursière, et rapports d&#x27;analyse technique automatisés sur les contrats Bitcoin (prix actuel à 62,430.50 $, plus/moins hauts sur 24h).
+[DESC_IMAGE_3] Navigation sur la plateforme Toobit et consultation des données de marché et d&#x27;analyses automatisées.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000606_seg15.jpg" alt="Image #1 @ 00:06:06 : Un tableau de classement des marchés affichant divers actifs (BCH, ZEC, SP500, ADA, XAU, etc.) avec leurs prix, taux de financement, volumes et capitalisation boursière." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000606_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:06</span>
+                        <span class="caption-text">Image #1 @ 00:06:06 : Un tableau de classement des marchés affichant divers actifs (BCH, ZEC, SP500, ADA, XAU, etc.) avec leurs prix, taux de financement, volumes et capitalisation boursière.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000612_seg15.jpg" alt="Image #2 @ 00:06:12 : Une page de rapports de marché de la plateforme Toobit détaillant l&#x27;action des prix des contrats à terme Bitcoin (BTC-SWAP-USDT) et une analyse technique horaire." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000612_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Image #2 @ 00:06:12 : Une page de rapports de marché de la plateforme Toobit détaillant l&#x27;action des prix des contrats à terme Bitcoin (BTC-SWAP-USDT) et une analyse technique horaire.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000618_seg15.jpg" alt="Image #3 @ 00:06:18 : La page d&#x27;accueil de la plateforme Toobit mettant en avant une analyse IA de niveau institutionnel propulsée par le protocole MCP, avec des sélecteurs de cryptomonnaies (BTC, ETH, SOL, DOGE)." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000618_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:18</span>
+                        <span class="caption-text">Image #3 @ 00:06:18 : La page d&#x27;accueil de la plateforme Toobit mettant en avant une analyse IA de niveau institutionnel propulsée par le protocole MCP, avec des sélecteurs de cryptomonnaies (BTC, ETH, SOL, DOGE).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:25 - 00:06:44</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est intégré directement dans la bourse que vous utilisez déjà. En plus de ça, comme c&#x27;est alimenté par MCP et Claude, ça ne se contente pas de récupérer des données statiques. Ça lit le marché en temps réel. C&#x27;est un très gros avantage. Donc si vous n&#x27;utilisez pas ça, vous laissez passer une opportunité en or. C&#x27;est aussi simple que ça. Très bien. Et écoutez, pendant les quelques années à venir, deux types de traders vont exister.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bourse crypto Toobit, graphique TradingView intégré et interface de chat IA (Toobit Synapse / MCP).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix baissier du Bitcoin (BTC), carnet d&#x27;ordres (order book), et rapport d&#x27;analyse technique détaillé basé sur l&#x27;IA (Executive Summary, Market Overview).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme d&#x27;échange Toobit, visualisation d&#x27;un carnet d&#x27;ordres et génération d&#x27;un rapport d&#x27;analyse de marché en temps réel par l&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000635_seg16.jpg" alt="Interface de trading de la bourse Toobit montrant un graphique de prix en chandeliers et un carnet d&#x27;ordres en temps réel." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000635_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:35</span>
+                        <span class="caption-text">Interface de trading de la bourse Toobit montrant un graphique de prix en chandeliers et un carnet d&#x27;ordres en temps réel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000639_seg16.jpg" alt="Interface de l&#x27;assistant IA de Toobit affichant un rapport d&#x27;analyse technique automatisé pour le marché BTC-SWAP-USDT." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000639_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:39</span>
+                        <span class="caption-text">Interface de l&#x27;assistant IA de Toobit affichant un rapport d&#x27;analyse technique automatisé pour le marché BTC-SWAP-USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:45 - 00:07:22</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceux qui utilisent l&#x27;IA et ceux qui font encore tout manuellement. Même marché, des résultats très différents. Voici comment vous mettre du bon côté de la barrière. J&#x27;ai regroupé tout cela au sein de la communauté AI TradeEdge. Chaque invite, chaque bot, chaque modèle, chaque guide étape par étape que j&#x27;utilise personnellement, le tout au même endroit, et tout ce que je construirai à l&#x27;avenir sera ajouté directement dans le groupe dès sa sortie. Nous testons également des stratégies provenant de tout Internet, en les automatisant à l&#x27;aide de PineScript, en les exécutant en direct et en partageant exactement ce qui fonctionne et ce qui ne fonctionne pas. Ainsi, vous n&#x27;êtes pas seulement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, plateforme Whop (page de vente et interface de cours).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Présentation des fonctionnalités de la communauté AI TradeEdge : scan de portefeuilles de baleines, analyse de sentiment, idées de trade, recherche de portefeuilles Hyperliquid, et données en temps réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page de présentation et les modules de la formation/communauté AI TradeEdge.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000654_seg17.jpg" alt="Page de vente de la communauté &quot;AI TradeEdge&quot; hébergée sur la plateforme Whop, présentée par Alex Carter, avec affichage du prix (79.99$/mois) et d&#x27;un bouton d&#x27;accès." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000654_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:54</span>
+                        <span class="caption-text">Page de vente de la communauté &quot;AI TradeEdge&quot; hébergée sur la plateforme Whop, présentée par Alex Carter, avec affichage du prix (79.99$/mois) et d&#x27;un bouton d&#x27;accès.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000703_seg17.jpg" alt="Interface de la section &quot;What It Can Do&quot; présentant les fonctionnalités de l&#x27;outil d&#x27;IA (Whale Scanning, Sentiment Analysis, Trade Ideas, Wallet Lookup, Smart vs. Rekt, Real-Time Data)." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000703_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:03</span>
+                        <span class="caption-text">Interface de la section &quot;What It Can Do&quot; présentant les fonctionnalités de l&#x27;outil d&#x27;IA (Whale Scanning, Sentiment Analysis, Trade Ideas, Wallet Lookup, Smart vs. Rekt, Real-Time Data).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:22 - 00:07:52</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">obtenir des outils. Vous obtenez une opération de recherche en direct. À l&#x27;intérieur, il y a aussi un cours complet de trading agentique. 2,5 heures. Du débutant à l&#x27;expert. Aucune base en programmation n&#x27;est nécessaire. À la fin, vous aurez votre propre système de trading IA fonctionnant en direct. Quelque chose que la plupart des traders particuliers ne savent même pas être possible actuellement. 79,99 $ par mois. Un seul bon trade couvre ce montant. Et les 100 premiers membres bloquent ce tarif définitivement. Après cela, le prix augmente. Le lien est dans la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une plateforme de cours en ligne et le portail de vente Whop.</p>
+                        <p><strong>Contenu textuel & Code :</strong> &quot;The complete course map&quot; avec les modules de formation, et l&#x27;offre d&#x27;abonnement &quot;AI Trade Edge&quot; à 79.99$ / mois.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des modules et de la plateforme d&#x27;accès aux outils de trading par Alex Carter.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000729_seg18.jpg" alt="Capture d&#x27;écran du site web montrant la carte du cours complet de trading IA en 27 modules." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000729_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:29</span>
+                        <span class="caption-text">Capture d&#x27;écran du site web montrant la carte du cours complet de trading IA en 27 modules.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000744_seg18.jpg" alt="Page de vente de la plateforme Whop pour le programme &quot;AI Trade Edge&quot; d&#x27;Alex Carter affichée à l&#x27;écran." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000744_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:44</span>
+                        <span class="caption-text">Page de vente de la plateforme Whop pour le programme &quot;AI Trade Edge&quot; d&#x27;Alex Carter affichée à l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:52 - 00:08:10</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous ne pouvez sincèrement pas vous permettre de rater ça. Et c&#x27;est tout. Une excellente analyse institutionnelle est désormais accessible au bout de vos doigts. Et écoutez, si vous n&#x27;êtes pas encore sur 2Bit, vous laissez sincèrement de l&#x27;argent gratuit sur la table en ce moment même. Le lien est dans la description. 8 810 dollars de récompenses potentielles.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Toobit (site web)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Présentation d&#x27;une analyse IA de niveau institutionnel avec accès direct au marché (Toobit Synapse) et offre promotionnelle de 8 810 de récompenses avec un compte à rebours.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme Toobit et de ses fonctionnalités de trading assistées par IA ainsi que des bonus promotionnels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000756_seg19.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit montrant la présentation de &#x27;Toobit Synapse&#x27; avec des boutons de sélection pour BTC, ETH, SOL et DOGE." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000756_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:56</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit montrant la présentation de &#x27;Toobit Synapse&#x27; avec des boutons de sélection pour BTC, ETH, SOL et DOGE.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000801_seg19.jpg" alt="Capture d&#x27;écran d&#x27;une page promotionnelle de Toobit en partenariat avec Mister Crypto, affichant des récompenses et un compte à rebours." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000801_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:01</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une page promotionnelle de Toobit en partenariat avec Mister Crypto, affichant des récompenses et un compte à rebours.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:10 - 00:08:34</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">30 dollars juste pour l&#x27;inscription. Un statut VIP 1 pendant un mois. Des bonus sur les dépôts, des bonus de trading, tout se cumule. L&#x27;inscription prend deux minutes et ça en vaut déjà la peine avant même de placer le moindre trade. Si vous voulez aller encore plus loin et voir comment trader réellement sur Tubit, pour les dépôts, les contrats futures, avec la présentation complète de la plateforme, j&#x27;ai aussi une vidéo pour ça. Regardez-la à l&#x27;écran dès maintenant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Toobit (plateforme d&#x27;échange crypto / broker), section</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000816_seg20.jpg" alt="Page des récompenses et challenges Toobit (&quot;Unlock Trial Funds&quot;) affichant les paliers de bonus en USDT selon le volume de trading." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000816_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:16</span>
+                        <span class="caption-text">Page des récompenses et challenges Toobit (&quot;Unlock Trial Funds&quot;) affichant les paliers de bonus en USDT selon le volume de trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000822_seg20.jpg" alt="Terminal de trading Futures sur Toobit affichant le graphique en bougies 15m de BTCUSDT, le carnet d&#x27;ordres et le panneau d&#x27;exécution d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000822_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:22</span>
+                        <span class="caption-text">Terminal de trading Futures sur Toobit affichant le graphique en bougies 15m de BTCUSDT, le carnet d&#x27;ordres et le panneau d&#x27;exécution d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000828_seg20.jpg" alt="Terminal de trading Toobit Futures avec le menu déroulant des contrats USDT-M ouvert (BTC, ETH, SOL, DOGE, XRP, SUI, BNB)." loading="lazy" onclick="openLightbox('../screenshots/3aXoNsyr_sA/3aXoNsyr_sA_000828_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:28</span>
+                        <span class="caption-text">Terminal de trading Toobit Futures avec le menu déroulant des contrats USDT-M ouvert (BTC, ETH, SOL, DOGE, XRP, SUI, BNB).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:35 - 00:08:59</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous voulez le guide complet étape par étape sur la façon de construire votre propre système de trading algorithmique en utilisant Claude, cette vidéo apparaît également à l&#x27;écran. Allez la voir ensuite. Si cette vidéo a été utile, laissez un pouce bleu, ça aide vraiment la chaîne, abonnez-vous si vous voulez d&#x27;autres tutoriels comme celui-ci, je vais couvrir chaque nouvelle fonctionnalité que Bittensor déploie dès sa sortie et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
