@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment trader 24h/24 et 7j/7 avec les bots de trading Bitget (Guide étape par étape) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment trader 24h/24 et 7j/7 avec les bots de trading Bitget (Guide étape par étape)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-06-26</span>
+                <span class="badge">⏱️ 00:18:00</span>
+                <span class="badge">🆔 <code>W3E-H8l2HuA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=W3E-H8l2HuA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>La présente intervention, orchestrée par l'analyste de la chaîne Alex Carter, lève le voile sur l'automatisation complète des stratégies de trading crypto 24h/24 et 7j/7 grâce à l'écosystème de bots de la plateforme Bitget. L'exposé commence par un comparatif pragmatique entre le trader manuel dépendant de ses graphiques et les investisseurs institutionnels ("smart money") qui misent sur l'efficacité algorithmique pour éliminer l'émotion humaine de l'équation. S'adressant aussi bien aux débutants qu'aux opérateurs chevronnés, la vidéo détaille le processus d'onboarding, l'optimisation des bonus de bienvenue (jusqu'à 6 200 USDT) et la sécurisation des dépôts en USDT.<br><br>Le cœur de la démonstration repose sur une revue systématique et chirurgicale des différents types de bots disponibles, classés en deux grandes catégories : **Spot** (sans effet de levier) et **Futures** (avec effet de levier). L'analyste décortique les mécanismes fondamentaux des outils phares tels que le *Spot Grid* (idéal pour les marchés en *range*), le *Spot Auto Invest* (DCA passif et multi-actifs), le *Spot Martingale* (lissage du prix d'entrée par paliers de baisse), ainsi que le *Spot Trend Following* (basé sur des indicateurs techniques comme le MACD, le RSI ou les bandes de Bollinger). Chaque configuration est passée au crible — modes manuel vs IA, paramètres arithmétiques vs géométriques, conditions de déclenchement, *take profit*, *stop loss* et options de conservation des actifs.<br><br>Enfin, la vidéo met en lumière des fonctionnalités avancées d'optimisation du capital, telles que le transfert automatique des bénéfices, le mode de réinvestissement des grilles, et l'utilisation des portefeuilles intelligents. L'objectif est clairement affiché : fournir un guide étape par étape actionnable pour configurer des stratégies algorithmiques robustes, adaptées à chaque profil de risque et à chaque régime de marché, qu'il soit haussier, baissier ou strictement stagnant.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **Bitget Bots** : Plateforme centralisant plus de 10 types de bots de trading automatisés (Spot et Futures) incluant grilles, DCA, Martingale et suivi de tendance.<br>- **Spot Grid** : Bot algorithmique plaçant un maillage d'ordres d'achat et de vente dans une fourchette de prix prédéfinie pour capitaliser sur la volatilité latérale.<br>- **Spot Auto Invest** : Outil de DCA automatisé permettant l'accumulation périodique (horaire, quotidienne, hebdomadaire, mensuelle) de portefeuilles multi-actifs personnalisables.<br>- **Spot Martingale** : Stratégie de récupération de baisse qui renforce l'exposition par paliers lorsque le prix chute, abaissant le point d'entrée moyen avant de clôturer en bénéfice.<br>- **Spot Trend Following** : Bot directionnel automatisant l'exécution des ordres en se basant sur des indicateurs techniques majeurs (MACD, RSI, Bandes de Bollinger, Moyennes Mobiles).<br>- **Grok Bots** : Assistant d'intelligence artificielle intégré (mentionné dans l'introduction globale de la chaîne) pour assister dans la sélection et la conception des stratégies de trading.<br>- **Claude Code** : Environnement et assistant de code (évoqué dans les compétences de la chaîne) utilisé pour le prototypage ou l'automatisation avancée de scripts de trading.<br>- **TradingView** : Plateforme de graphisme et d'analyse technique de référence (mentionnée dans l'écosystème global) pour le design et le backtesting de stratégies Pine Script.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- **Dichotomie Spot vs Futures** : Le choix entre les bots Spot (sans effet de levier, axés sur l'accumulation et le risque modéré) et Futures (avec effet de levier, nécessitant une gestion stricte de la volatilité et du risque de liquidation) doit correspondre au profil de risque de l'opérateur.<br>- **Sécurisation des flux de capitaux** : Lors des transferts de fonds (USDT), la stricte correspondance des réseaux des deux côtés (envoi et réception) est impérative pour éviter la perte définitive des actifs.<br>- **Exploitation des marchés en range avec le Spot Grid** : Le bot de grille est mathématiquement taillé pour les marchés stagnants ou oscillants, achetant automatiquement bas et revendant haut sans intervention humaine.<br>- **Arbitrage des modes de grille (Arithmétique vs Géométrique)** : L'espacement arithmétique (intervalles de prix égaux) est idéal pour les plages de prix stables, tandis que l'espacement géométrique (intervalles en pourcentage) s'adapte mieux aux actifs connaissant de fortes variations relatives.<br>- **Stratégie de sortie et conservation des actifs** : Le choix entre le mode "Vendre tout à la résiliation" (conversion en USDT) et le mode "Conservation" (réinvestissement des profits de grille directement dans l'actif sous-jacent) dépend de l'horizon haussier à long terme de l'utilisateur.<br>- **Lissage du risque par la Martingale** : Le bot *Spot Martingale* gère les replis de marché en augmentant la taille des ordres de sécurité par paliers de baisse définis, abaissant ainsi le prix d'entrée moyen avant de déclencher un *take profit* en cycle unique.<br>- **Diversification intelligente avec l'Auto Invest** : Le DCA automatisé permet de sranchiriser le timing de marché en répartissant le capital sur un panier de 10 cryptomonnaies maximum, avec des fréquences paramétrables allant de l'horaire au mensuel.<br>- **Automatisation technique par le Trend Following** : Déléguer l'exécution à des indicateurs techniques reconnus (MACD, RSI, Bandes de Bollinger, Moyennes Mobiles) permet d'éliminer les biais psychologiques liés à la prise de position manuelle en rupture de tendance.<br>- **Optimisation des flux de trésorerie** : L'activation de la fonction de transfert automatique des bénéfices permet d'extraire les gains d'arbitrage générés vers le compte principal sans perturber le fonctionnement en cours du bot.<br>- **Gestion des paramètres avancés** : L'utilisation rigoureuse des conditions de déclenchement, des seuils de *Take Profit* (TP) et de *Stop Loss* (SL), ainsi que du glissement limité (*slippage*), constitue la pierre angulaire d'un bon *Risk Management* algorithmique.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Bitget Bots</span><span class="tool-tag">Spot Grid</span><span class="tool-tag">Spot Auto Invest</span><span class="tool-tag">Spot Martingale</span><span class="tool-tag">Spot Trend Following</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Claude Code</span><span class="tool-tag">TradingView</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Dichotomie Spot vs Futures** : Le choix entre les bots Spot (sans effet de levier, axés sur l&#x27;accumulation et le risque modéré) et Futures (avec effet de levier, nécessitant une gestion stricte de la volatilité et du risque de liquidation) doit correspondre au profil de risque de l&#x27;opérateur.</span></li><li><span class="point-bullet">✦</span><span>Sécurisation des flux de capitaux** : Lors des transferts de fonds (USDT), la stricte correspondance des réseaux des deux côtés (envoi et réception) est impérative pour éviter la perte définitive des actifs.</span></li><li><span class="point-bullet">✦</span><span>Exploitation des marchés en range avec le Spot Grid** : Le bot de grille est mathématiquement taillé pour les marchés stagnants ou oscillants, achetant automatiquement bas et revendant haut sans intervention humaine.</span></li><li><span class="point-bullet">✦</span><span>Arbitrage des modes de grille (Arithmétique vs Géométrique)** : L&#x27;espacement arithmétique (intervalles de prix égaux) est idéal pour les plages de prix stables, tandis que l&#x27;espacement géométrique (intervalles en pourcentage) s&#x27;adapte mieux aux actifs connaissant de fortes variations relatives.</span></li><li><span class="point-bullet">✦</span><span>Stratégie de sortie et conservation des actifs** : Le choix entre le mode &quot;Vendre tout à la résiliation&quot; (conversion en USDT) et le mode &quot;Conservation&quot; (réinvestissement des profits de grille directement dans l&#x27;actif sous-jacent) dépend de l&#x27;horizon haussier à long terme de l&#x27;utilisateur.</span></li><li><span class="point-bullet">✦</span><span>Lissage du risque par la Martingale** : Le bot *Spot Martingale* gère les replis de marché en augmentant la taille des ordres de sécurité par paliers de baisse définis, abaissant ainsi le prix d&#x27;entrée moyen avant de déclencher un *take profit* en cycle unique.</span></li><li><span class="point-bullet">✦</span><span>Diversification intelligente avec l&#x27;Auto Invest** : Le DCA automatisé permet de sranchiriser le timing de marché en répartissant le capital sur un panier de 10 cryptomonnaies maximum, avec des fréquences paramétrables allant de l&#x27;horaire au mensuel.</span></li><li><span class="point-bullet">✦</span><span>Automatisation technique par le Trend Following** : Déléguer l&#x27;exécution à des indicateurs techniques reconnus (MACD, RSI, Bandes de Bollinger, Moyennes Mobiles) permet d&#x27;éliminer les biais psychologiques liés à la prise de position manuelle en rupture de tendance.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des flux de trésorerie** : L&#x27;activation de la fonction de transfert automatique des bénéfices permet d&#x27;extraire les gains d&#x27;arbitrage générés vers le compte principal sans perturber le fonctionnement en cours du bot.</span></li><li><span class="point-bullet">✦</span><span>Gestion des paramètres avancés** : L&#x27;utilisation rigoureuse des conditions de déclenchement, des seuils de *Take Profit* (TP) et de *Stop Loss* (SL), ainsi que du glissement limité (*slippage*), constitue la pierre angulaire d&#x27;un bon *Risk Management* algorithmique.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:36</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La plupart des traders sont encore assis devant leurs écrans, à observer les bougies, en attendant le point d&#x27;entrée parfait. Pendant ce temps, les &quot;smart money&quot; ont configuré un bot il y a trois semaines et n&#x27;y ont plus touché depuis. BitGet propose plus de 10 bots de trading différents, et dans cette vidéo, je vais vous les présenter un par un, étape par étape, afin que vous puissiez choisir le bon et le lancer en quelques minutes. Que vous souhaitiez exploiter des marchés stagnants avec un bot de grille, faire du DCA automatiquement, ou laisser l&#x27;IA choisir la stratégie à votre place. Tout est là. Entrons dans le vif du sujet. Avant de plonger dans le vif du sujet, si vous n&#x27;avez pas encore de compte BitGet, cliquez sur le lien dans la description ci-dessous. Et je tiens à être très clair ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies BitGet (section bots de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix, statistiques de performance de bots (ROI jusqu&#x27;à +22599.94%, APY backtestés, max drawdown, durée d&#x27;exécution) et options de configuration de bots (Spot, Futures, IA).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents types de bots de trading automatisés disponibles sur la plateforme BitGet, avec sélection et tri des performances.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000009_seg1.jpg" alt="Interface de la plateforme BitGet affichant un graphique de bougies japonaises en haut et les options de bots de trading spot sur le panneau de gauche." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface de la plateforme BitGet affichant un graphique de bougies japonaises en haut et les options de bots de trading spot sur le panneau de gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000018_seg1.jpg" alt="Section &quot;Elite trading bot&quot; montrant plusieurs cartes de bots avec leurs performances de rendement (ROI), de durée d&#x27;exécution et de drawdown." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000018_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Section &quot;Elite trading bot&quot; montrant plusieurs cartes de bots avec leurs performances de rendement (ROI), de durée d&#x27;exécution et de drawdown.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000027_seg1.jpg" alt="Section &quot;AI bots&quot; présentant une grille de bots de trading propulsés par l&#x27;IA avec leurs APY backtestés et un menu déroulant de tri." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000027_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:27</span>
+                        <span class="caption-text">Section &quot;AI bots&quot; présentant une grille de bots de trading propulsés par l&#x27;IA avec leurs APY backtestés et un menu déroulant de tri.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:36 - 00:01:15</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a beaucoup de sites frauduleux qui se font passer pour BitGit. Mon lien ci-dessous, assurez-vous d&#x27;atterrir sur le vrai. Maintenant, les nouveaux utilisateurs qui s&#x27;inscrivent via mon lien peuvent obtenir jusqu&#x27;à 6 200 USDT de bonus. Et voici exactement à quoi cela ressemble. Vous obtenez un bon de boost de position de contrats à terme Bitcoin de 200 USDT rien qu&#x27;en vous connectant pendant trois jours consécutifs durant votre période de débutant. C&#x27;est fondamentalement de l&#x27;argent gratuit juste pour vous être connecté. Ensuite, il y a un défi de dépôt et de trading. En commençant à partir de seulement 50 USDT, vous pouvez gagner jusqu&#x27;à 6 000 USDT en atteignant des objectifs de dépôt net, de volume de trading au comptant,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies Bitget (Rewards Center).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte promotionnel indiquant &#x27;Get up to 6,200 USDT in new user rewards&#x27;, ainsi que les tâches de dépôt et de volume de trading (Net deposit, Spot trading volume, Futures trading volume).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des pages de bonus et de récompenses pour nouveaux utilisateurs sur Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000046_seg2.jpg" alt="Capture d&#x27;écran du site Bitget montrant le centre de récompenses pour les nouveaux utilisateurs avec une offre de bonus de 6 200 USDT." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000046_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:46</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Bitget montrant le centre de récompenses pour les nouveaux utilisateurs avec une offre de bonus de 6 200 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000105_seg2.jpg" alt="Capture d&#x27;écran du site Bitget détaillant le défi de dépôt et de trading avec différentes tâches et paliers de récompense en USDT." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000105_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Bitget détaillant le défi de dépôt et de trading avec différentes tâches et paliers de récompense en USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:15 - 00:01:51</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et des jalons de volume de trading sur les contrats à terme. Et en plus de cela, vous pouvez gagner jusqu&#x27;à 120 % de taux annuel effectif global pendant trois jours si vous investissez jusqu&#x27;à 1 000 USDT. Tout cela vous appartient, mais seulement si vous vous inscrivez en utilisant mon lien ci-dessous. Je vous montrerai exactement comment réclamer ces avantages à la fin de la vidéo. Une fois que vous êtes connecté, assurez-vous d&#x27;avoir des fonds sur votre compte. Survolez simplement l&#x27;icône de votre profil, cliquez sur dépôt, sélectionnez USDT, choisissez votre réseau et envoyez vos fonds, assurez-vous que le réseau correspond des deux côtés, à l&#x27;envoi et à la réception, c&#x27;est important, si vous vous trompez là-dessus, vous pourriez perdre vos fonds, vos fonds.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres promotionnelles &quot;Earn&quot; (120 % 3-day APR), bonus de bienvenue de 6 200 USDT, options de dépôt de cryptomonnaies (USDT, réseau TRC20).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur l&#x27;interface d&#x27;inscription et de dépôt de la bourse Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000124_seg3.jpg" alt="Interface Bitget montrant les récompenses &quot;New Earn users only&quot; avec une offre de 120 % d&#x27;APR sur 3 jours pour les nouveaux utilisateurs investissant jusqu&#x27;à 1 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000124_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Interface Bitget montrant les récompenses &quot;New Earn users only&quot; avec une offre de 120 % d&#x27;APR sur 3 jours pour les nouveaux utilisateurs investissant jusqu&#x27;à 1 000 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000133_seg3.jpg" alt="Page d&#x27;inscription de Bitget mettant en avant le partenariat avec la Liga et un bonus de bienvenue de 6 200 USDT avec un champ pour code de parrainage." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000133_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:33</span>
+                        <span class="caption-text">Page d&#x27;inscription de Bitget mettant en avant le partenariat avec la Liga et un bonus de bienvenue de 6 200 USDT avec un champ pour code de parrainage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000142_seg3.jpg" alt="Interface de dépôt de la plateforme Bitget permettant de sélectionner une cryptomonnaie (USDT, USDC, ETH, etc.) et un réseau blockchain (TRC20)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000142_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Interface de dépôt de la plateforme Bitget permettant de sélectionner une cryptomonnaie (USDT, USDC, ETH, etc.) et un réseau blockchain (TRC20).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:51 - 00:02:26</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">généralement arriver en quelques minutes et ensuite nous pouvons commencer à automatiser dirigez-vous vers trade sur la barre de navigation supérieure faites défiler un peu vers le bas sur le menu déroulant et sélectionnez bots juste ici vous pouvez voir deux catégories principales spot et futures spot signifie que vous faites tourner un bot sans effet de levier futures signifie que vous avez un effet de levier disponible et vous pouvez choisir avec lequel vous voulez travailler juste ici sous spot vous trouverez spot grid spot martingale spot auto invest spot trend following et smart portfolio sous futures vous trouverez futures grid futures martingale futures trend following funding rate arbitrage</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies Bitget</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de navigation affichant les options Spot, Margin, Onchain, Convert, Launchhub, Copy et Bots, ainsi qu&#x27;un sous-menu pour les bots de trading (Spot et Futures).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole l&#x27;option &#x27;Bots&#x27; dans le menu déroulant de la section Trade.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000200_seg4.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Bitget montrant le menu déroulant de l&#x27;onglet Trade avec l&#x27;option &#x27;Bots&#x27; sélectionnée." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000200_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Bitget montrant le menu déroulant de l&#x27;onglet Trade avec l&#x27;option &#x27;Bots&#x27; sélectionnée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:26 - 00:03:01</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">bot de signal de futures et grille de position de futures avant d&#x27;entrer dans chaque bot cliquez sur aperçu en haut cela vous donne une vue d&#x27;ensemble de tout en haut vous pouvez voir vos actifs totaux le PNL d&#x27;aujourd&#x27;hui et combien de bots en cours d&#x27;exécution vous avez actuellement faites défiler un peu vers le bas et vous verrez la section des bots recommandés juste à côté c&#x27;est là que vous trouverez tous les bots au comptant et de futures répertoriés nous couvrirons chacun d&#x27;eux dans un instant faites défiler un peu plus vers le bas et vous verrez les bots de trading d&#x27;élite ce sont les bots les plus performants de la plateforme mis à jour toutes les heures avec de très</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de crypto-monnaies Bitget (section Trading Bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Actifs totaux (0.0000 USDT), PNL du jour (-0.0107 USDT), bots en cours (0), options de bots (Spot grid, Futures trend-following, Spot Martingale, Futures grid) et classement des bots élites.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et défilement sur la page de présentation des bots de trading automatisés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000235_seg5.jpg" alt="Interface Bitget affichant la section &#x27;Trading bots&#x27; avec un aperçu des actifs totaux, du PNL et des catégories de bots recommandés." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000235_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:35</span>
+                        <span class="caption-text">Interface Bitget affichant la section &#x27;Trading bots&#x27; avec un aperçu des actifs totaux, du PNL et des catégories de bots recommandés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000244_seg5.jpg" alt="Défilement de l&#x27;interface Bitget révélant la section &#x27;Elite trading bot&#x27; avec des exemples de performances par paires de crypto-monnaies." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000244_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Défilement de l&#x27;interface Bitget révélant la section &#x27;Elite trading bot&#x27; avec des exemples de performances par paires de crypto-monnaies.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:01 - 00:03:37</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des critères stricts définis par BitGit. Vous pouvez basculer et trier ceux-ci par type, paire, direction, ROI, PNL, nombre de copieurs et prélèvement. Vous pouvez voir la paire, le type de bot, la direction, le temps d&#x27;exécution, le ROI en pourcentage et en USDT, la courbe d&#x27;équité, le prélèvement maximum, l&#x27;AUM, le ratio de partage des profits et le trader derrière celui-ci. Faites défiler un peu plus bas et vous verrez la section des bots IA. Les mêmes options de tri ici, plus deux supplémentaires : l&#x27;appétit pour le risque et les utilisateurs du bot. Vous pouvez également voir l&#x27;APY testé rétrospectivement, le prélèvement maximum,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange BitGit (section Elite trading bot)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de tri (ROI, PNL, Copieurs, Drawdown), paires affichées (RIVERUSDT, BEATUSDT, GWEIUSDT), pourcentages de ROI, montants en USDT, temps d&#x27;exécution (Runtime) et courbes d&#x27;équité.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et affichage du menu déroulant pour trier les bots de trading selon différents critères de performance.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000310_seg6.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface des bots de trading élite de BitGit avec les options de tri et les performances des différents bots." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000310_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:10</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface des bots de trading élite de BitGit avec les options de tri et les performances des différents bots.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:38 - 00:03:59</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">investissement minimum requis pour copier le bot, et la durée recommandée. Et tout en bas, Bitget propose un cours accéléré sur tous les bots. Idéal pour une lecture rapide si vous voulez approfondir l&#x27;un d&#x27;entre eux. Passons maintenant à chaque bot un par un. Retournez en haut de la page et cliquez sur Spot Trading. Le bot Spot Grid est l&#x27;un des bots les plus populaires de la plateforme. Le principe est simple.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitget (section Trading Bots / Academy).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Statistiques de bots de trading (ROI &gt; 3000%, runtimes en jours, AUM, max drawdown).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de sélection des bots et consultation des tutoriels de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000343_seg7.jpg" alt="Interface de la section Académie et introduction aux produits avec un tutoriel sur les Futures Grid." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000343_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:43</span>
+                        <span class="caption-text">Interface de la section Académie et introduction aux produits avec un tutoriel sur les Futures Grid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000348_seg7.jpg" alt="Liste de bots de trading (AI bots) affichant les performances ROI et la durée d&#x27;exécution (runtime)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000348_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Liste de bots de trading (AI bots) affichant les performances ROI et la durée d&#x27;exécution (runtime).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000354_seg7.jpg" alt="Tableau de bord Bitget présentant les différentes catégories de bots de trading Spot et Futures." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000354_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:54</span>
+                        <span class="caption-text">Tableau de bord Bitget présentant les différentes catégories de bots de trading Spot et Futures.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:59 - 00:04:24</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il place une série d&#x27;ordres d&#x27;achat et de vente dans une fourchette de prix. Il achète bas et vend haut automatiquement à mesure que le prix monte et descend. Cela fonctionne mieux sur les marchés stagnants ou en range, où le prix ne cesse de rebondir entre les niveaux. Cliquez sur Spot Grid. Vous verrez une interface de trading avec le graphique au milieu, les bots listés à gauche, un sélecteur de paires en haut à gauche, et les options de mode IA et manuel à droite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitget (section Trading Bots / Spot grid).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots de trading (Spot grid, Spot auto-invest+, Spot Martingale, Spot trend-following), graphique des prix Bitcoin (BTC/USDT) en unités 4H, et performances de stratégies de bots (APY backtesté, drawdown maximum).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de la fonctionnalité &#x27;Spot grid&#x27; puis navigation vers l&#x27;interface de configuration du bot pour BTC/USDT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000405_seg8.jpg" alt="Interface Bitget affichant les différents types de bots de trading spot, avec le curseur sur &#x27;Spot grid&#x27;." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000405_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:05</span>
+                        <span class="caption-text">Interface Bitget affichant les différents types de bots de trading spot, avec le curseur sur &#x27;Spot grid&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000418_seg8.jpg" alt="Interface de configuration du &#x27;Spot grid&#x27; sur Bitget montrant un graphique des prix BTC/USDT en arrière-plan avec des options de stratégie IA ou manuelle." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000418_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:18</span>
+                        <span class="caption-text">Interface de configuration du &#x27;Spot grid&#x27; sur Bitget montrant un graphique des prix BTC/USDT en arrière-plan avec des options de stratégie IA ou manuelle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:24 - 00:04:56</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vos bots de course apparaissent en bas. À la fois les bots créés par vous-même et les bots de copy trading. Les bots IA que vous avez vus sur la page de vue d&#x27;ensemble sont ici aussi avec toutes les mêmes statistiques. Si vous voulez en utiliser un, cliquez simplement sur utiliser en haut à droite de n&#x27;importe quel bot IA. Il vous montrera la grille, tous les niveaux de prix où le bot placera des ordres d&#x27;achat et de vente. Tout ce que vous avez à faire est de définir votre montant d&#x27;investissement et vous avez terminé. Vous verrez également deux options ici. Vendre tout à la résiliation, ce qui signifie que lorsque vous arrêtez le bot, il vendra tous vos avoirs.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (Trading bots / Spot grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTC/USDT en timeframe 4h, liste des configurations de bots spot grid avec métriques (Backtested APY de 1.70% et 60.83%, drawdowns, investissement min).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des bots de trading automatisés et des stratégies IA sur Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000432_seg9.jpg" alt="Interface de la plateforme Bitget montrant la section des bots de trading avec les options de grille Spot et les performances des bots AI." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000432_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:32</span>
+                        <span class="caption-text">Interface de la plateforme Bitget montrant la section des bots de trading avec les options de grille Spot et les performances des bots AI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:56 - 00:05:31</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">de retour en mode USDT et conservation, qui s&#x27;utilise lorsque vous êtes haussier sur la cryptomonnaie à long terme. En mode conservation, les profits de la grille sont utilisés pour acheter davantage de l&#x27;actif au prix du marché au lieu d&#x27;être convertis en USDT. C&#x27;est idéal si vous souhaitez accumuler pendant que le bot fonctionne. Une fois que vous avez défini votre montant d&#x27;investissement, cliquez sur créer et confirmez. Vous pouvez le voir s&#x27;exécuter dans votre section de bots en cours. Si vous préférez une approche plus manuelle, vous pouvez définir votre propre plage de prix, le nombre de grilles, et choisir entre le type de grille arithmétique ou géométrique. L&#x27;arithmétique espace les grilles de manière égale en prix. C&#x27;est bien pour les plages stables.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (Trading Bots, Spot Grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT, fourchette de prix 53684.17 - 68315.83, 26 grilles arithmétiques, mode HODL activable.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et lancement d&#x27;un bot de trading sur grille avec explication du mode de conservation (HODL).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000505_seg10.jpg" alt="Interface Bitget montrant la configuration d&#x27;un bot Spot Grid pour BTC/USDT avec une info-bulle explicative sur le mode HODL." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000505_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:05</span>
+                        <span class="caption-text">Interface Bitget montrant la configuration d&#x27;un bot Spot Grid pour BTC/USDT avec une info-bulle explicative sur le mode HODL.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000514_seg10.jpg" alt="Fenêtre modale de confirmation d&#x27;ordre sur Bitget affichant les paramètres du bot Grid avant le lancement." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000514_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:14</span>
+                        <span class="caption-text">Fenêtre modale de confirmation d&#x27;ordre sur Bitget affichant les paramètres du bot Grid avant le lancement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000523_seg10.jpg" alt="Interface de création manuelle d&#x27;un bot Spot Grid sur Bitget avec les champs de prix et de grilles vides." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000523_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:23</span>
+                        <span class="caption-text">Interface de création manuelle d&#x27;un bot Spot Grid sur Bitget avec les champs de prix et de grilles vides.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:32 - 00:05:52</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les espaces géométriques les répartissent par pourcentage. C&#x27;est mieux pour les actifs qui connaissent des variations en pourcentage plus importantes. Saisissez votre montant d&#x27;investissement et cliquez sur créer. Vous pouvez également consulter les paramètres avancés. Des éléments tels que la condition de départ, la condition de fin, le take profit et le stop loss, le slippage, la grille suiveuse, ainsi que les mêmes options de vente à la fin et de mode de conservation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bitget (Spot Grid Bot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Configuration de bot Spot Grid (types de grille arithmétique ou géométrique, investissement en USDT, paramètres avancés : conditions de déclenchement, TP/SL, trailing grid) et graphique de prix BTC/USDT en unités 4h.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du type de grille géométrique dans le panneau de configuration puis visualisation des paramètres avancés et des bots en cours d&#x27;exécution.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000537_seg11.jpg" alt="Interface de la plateforme Bitget montrant la configuration d&#x27;un bot de trading Spot Grid avec le menu déroulant du type de grille ouvert." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000537_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:37</span>
+                        <span class="caption-text">Interface de la plateforme Bitget montrant la configuration d&#x27;un bot de trading Spot Grid avec le menu déroulant du type de grille ouvert.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000547_seg11.jpg" alt="Interface Bitget montrant les paramètres avancés de création d&#x27;un bot de grille et le panneau inférieur des bots en cours d&#x27;exécution." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000547_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:47</span>
+                        <span class="caption-text">Interface Bitget montrant les paramètres avancés de création d&#x27;un bot de grille et le panneau inférieur des bots en cours d&#x27;exécution.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:53 - 00:06:14</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a aussi le transfert automatique des bénéfices. Une fois activé, chaque profit d&#x27;arbitrage généré est automatiquement transféré sur votre compte principal. Aucun retrait manuel n&#x27;est nécessaire, et les bénéfices ne seront pas réinvestis. Spot Auto Invest est un excellent choix pour les débutants. Au lieu d&#x27;essayer de chronométrer le marché, vous achetez par lots automatiquement, ce que l&#x27;on appelle aussi la moyenne d&#x27;achat en dollars.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme de trading Bitget (section Bots de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres avancés du bot incluant les options de déclenchement, Take Profit / Stop Loss, et transfert automatique des bénéfices.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et configuration des paramètres d&#x27;un bot de trading Spot Auto Invest.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000558_seg12.jpg" alt="Interface de configuration d&#x27;un bot de trading avec panneau de graphiques au centre et options avancées sur le panneau latéral droit." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000558_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Interface de configuration d&#x27;un bot de trading avec panneau de graphiques au centre et options avancées sur le panneau latéral droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:14 - 00:06:34</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous le configurez, vous l&#x27;oubliez et vous accumulez au fil du temps. Ici, vous pouvez voir des portefeuilles recommandés, allant de ceux inspirés du NASDAQ au S&amp;P 500, jusqu&#x27;à un mélange minimaliste d&#x27;actions et d&#x27;or. Vous pouvez voir le taux annuel en pourcentage (APR), les cryptomonnaies recommandées et le nombre total d&#x27;utilisations pour chacun d&#x27;eux. Cliquez sur « Utiliser » sur l&#x27;un d&#x27;eux et cela vous amène à la configuration manuelle. Vous pouvez voir la paire et la répartition.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitget, section des bots de trading (Spot auto-invest+).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Portefeuilles recommandés (Nasdaq 100 ETF avec 1.11% APR, S&amp;P 500 ETF avec 0.29% APR, et Minimalist stock + gold avec 0.52% APR).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents portefeuilles d&#x27;investissement automatique et de leurs taux de rendement (APR) sur Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000619_seg13.jpg" alt="Interface Bitget affichant le menu Spot auto-invest+ avec les options de portefeuilles recommandés comme le Nasdaq 100 ETF (QQQ) et le SP 500 ETF (SPY) ainsi que leurs APR respectifs." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000619_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:19</span>
+                        <span class="caption-text">Interface Bitget affichant le menu Spot auto-invest+ avec les options de portefeuilles recommandés comme le Nasdaq 100 ETF (QQQ) et le SP 500 ETF (SPY) ainsi que leurs APR respectifs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000624_seg13.jpg" alt="Suite du panneau latéral sur Bitget montrant les options de portefeuilles d&#x27;investissement automatique, incluant le portefeuille Minimalist stock + gold et ses détails." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000624_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:24</span>
+                        <span class="caption-text">Suite du panneau latéral sur Bitget montrant les options de portefeuilles d&#x27;investissement automatique, incluant le portefeuille Minimalist stock + gold et ses détails.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:34 - 00:06:55</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez ajouter jusqu&#x27;à 10 pièces en cliquant sur le bouton Ajouter en haut à droite. Le ratio restant vous montre comment la répartition est divisée. Il doit toujours être égal à 100 %. Ensuite, définissez votre investissement par transaction, puis définissez votre fréquence d&#x27;investissement. Mensuelle, hebdomadaire, quotidienne ou horaire. Vous pouvez également définir l&#x27;heure locale à laquelle l&#x27;achat s&#x27;exécute.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bitget (Spot auto-invest+ / Trading bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Allocation de crypto à 100% (QQQON), ratio restant à 0%, montant d&#x27;investissement par transaction en USDT, et sélecteur de fréquence d&#x27;investissement (Monthly, Weekly, Daily, Hourly).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de l&#x27;investissement automatique (Auto-invest) en sélectionnant la fréquence et le montant des transactions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000639_seg14.jpg" alt="Interface de la plateforme Bitget montrant le menu &#x27;Spot auto-invest+&#x27; avec le graphique du Bitcoin en arrière-plan et les paramètres d&#x27;allocation de crypto." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000639_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:39</span>
+                        <span class="caption-text">Interface de la plateforme Bitget montrant le menu &#x27;Spot auto-invest+&#x27; avec le graphique du Bitcoin en arrière-plan et les paramètres d&#x27;allocation de crypto.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000650_seg14.jpg" alt="Gros plan sur les paramètres de l&#x27;outil &#x27;Spot auto-invest+&#x27; sur Bitget, mettant en évidence les options de configuration de la fréquence d&#x27;investissement (mensuelle, hebdomadaire, quotidienne, horaire)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000650_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:50</span>
+                        <span class="caption-text">Gros plan sur les paramètres de l&#x27;outil &#x27;Spot auto-invest+&#x27; sur Bitget, mettant en évidence les options de configuration de la fréquence d&#x27;investissement (mensuelle, hebdomadaire, quotidienne, horaire).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:55 - 00:07:17</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a une option pour passer le premier ordre d&#x27;achat immédiatement après la configuration si vous voulez commencer tout de suite. Dans les paramètres avancés, vous pouvez modifier le nom du plan d&#x27;investissement et définir une fourchette de prix pour l&#x27;exécution des achats. Une fois que c&#x27;est fait, cliquez sur Créer. Le Spot Martingale est un bot qui achète automatiquement plus d&#x27;un actif à mesure que le prix baisse, ce qui réduit votre prix d&#x27;entrée moyen, puis prend ses bénéfices lorsque le prix se redresse.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange de crypto-monnaies Bitget (section Bots de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration du bot Spot auto-invest+, allocation d&#x27;actifs, fréquence d&#x27;investissement, fourchette de prix et options avancées.
+[HON] Configuration et paramétrage d&#x27;un plan d&#x27;investissement automatisé (DCA) avec définition d&#x27;une fourchette de prix et d&#x27;un premier ordre immédiat.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000700_seg15.jpg" alt="Interface Bitget montrant les paramètres avancés de Spot auto-invest avec l&#x27;option de premier ordre d&#x27;achat immédiat cochée." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000700_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Interface Bitget montrant les paramètres avancés de Spot auto-invest avec l&#x27;option de premier ordre d&#x27;achat immédiat cochée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000706_seg15.jpg" alt="Interface Bitget avec les paramètres avancés développés affichant le nom du plan et la fourchette de prix d&#x27;achat." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000706_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:06</span>
+                        <span class="caption-text">Interface Bitget avec les paramètres avancés développés affichant le nom du plan et la fourchette de prix d&#x27;achat.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000711_seg15.jpg" alt="Vue d&#x27;ensemble de la page d&#x27;accueil des bots de trading de Bitget listant les différentes stratégies disponibles." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000711_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:11</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la page d&#x27;accueil des bots de trading de Bitget listant les différentes stratégies disponibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:17 - 00:07:52</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il est conçu pour récupérer des baisses automatiquement. Tout comme SpotGrid, vous pouvez utiliser les bots IA ou passer directement au manuel. En manuel, vous avez deux options, normal et inversé. Le mode normal achète davantage à mesure que le prix baisse et prend des bénéfices à la hausse. Le mode inversé fait le contraire. Il vend davantage à mesure que le prix monte et rachète à la baisse, ce qui est utile pour les configurations baissières. Vous avez une condition de déclenchement basée sur des paliers de baisse de prix, cela définit de combien le prix doit baisser avant que le bot n&#x27;ajoute à votre position. L&#x27;objectif de take profit en cycle unique est le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (Trading bots - Spot Martingale)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers BTC/USDT en unité 4h, options de configuration manuelle (&quot;Normal&quot; / &quot;Reverse&quot;), paramètres de déclenchement (Price drop steps, TP target) et de taille d&#x27;investissement (Base order size, Safety order size).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du mode manuel pour le bot Spot Martingale sur la plateforme Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000726_seg16.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;échangeur Bitget montrant la configuration d&#x27;un bot Spot Martingale pour la paire BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000726_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:26</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;échangeur Bitget montrant la configuration d&#x27;un bot Spot Martingale pour la paire BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:52 - 00:08:10</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pourcentage de profit auquel le bot clôture le cycle et prend ses bénéfices sous l&#x27;investissement vous avez trois paramètres clés la taille de l&#x27;ordre de base le montant de l&#x27;achat initial lorsque le bot démarre la taille de l&#x27;ordre de sécurité la quantité que le bot ajoute chaque fois que le prix baisse d&#x27;un palier, le nombre maximal d&#x27;ordres de sécurité, le nombre maximal de fois que le bot ajoutera à la position.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange Bitget (Trading bots - Spot Martingale)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique TradingView BTC/USDT en unités 4h, paramètres de configuration du bot incluant &quot;Base order quantity&quot; et &quot;Safety order quantity&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et explication des paramètres clés du bot Spot Martingale (taille de l&#x27;ordre de base, ordre de sécurité, TP target).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000757_seg17.jpg" alt="Interface de configuration du bot de trading Spot Martingale sur la plateforme Bitget montrant les paramètres de base, d&#x27;ordres de sécurité et de prise de bénéfices." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000757_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:57</span>
+                        <span class="caption-text">Interface de configuration du bot de trading Spot Martingale sur la plateforme Bitget montrant les paramètres de base, d&#x27;ordres de sécurité et de prise de bénéfices.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:12 - 00:08:40</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans les paramètres avancés, vous pouvez configurer la méthode de calcul du take-profit, le nombre de cycles, la condition de démarrage, les paramètres de sécurité incluant le levier, la condition de fin, la condition de stop-loss, la vente de tout à la fin, et le renouvellement automatique avec les profits, ce qui redémarre automatiquement le bot en utilisant les profits du cycle précédent. Une fois que c&#x27;est fait, cliquez sur créer et il apparaîtra dans vos bots en cours. Spot Trend Following vous permet d&#x27;automatiser le trading sur la base d&#x27;indicateurs techniques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (Trading bot interface - Spot Martingale)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres avancés de trading : calcul du take-profit, nombre de cycles (infini), conditions de démarrage, paramètres de sécurité, stop-loss, et récapitulatif d&#x27;investissement (2.03 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres avancés du bot de trading Martingale et clic sur le bouton de création/confirmation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000819_seg18.jpg" alt="Interface Bitget affichant les paramètres avancés de configuration d&#x27;un bot Spot Martingale (TP calculation, cycles, safety order parameters, SL conditions, etc.) avec un graphique de prix en arrière-plan." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000819_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:19</span>
+                        <span class="caption-text">Interface Bitget affichant les paramètres avancés de configuration d&#x27;un bot Spot Martingale (TP calculation, cycles, safety order parameters, SL conditions, etc.) avec un graphique de prix en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000833_seg18.jpg" alt="Fenêtre modale de confirmation des paramètres du bot (Price drop steps, Single-cycle TP target, Base order size, Investment total de 2.03 USDT)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000833_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:33</span>
+                        <span class="caption-text">Fenêtre modale de confirmation des paramètres du bot (Price drop steps, Single-cycle TP target, Base order size, Investment total de 2.03 USDT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:40 - 00:09:17</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, au lieu de surveiller les graphiques vous-même, le bot lit les signaux et les exécute pour vous. Sur le côté droit, vous pouvez voir les meilleurs bots et quel indicateur technique ils utilisent. Vous pouvez choisir entre le MACD, les bandes de Bollinger, la moyenne mobile et le RSI. Cliquez sur Utiliser sur le bot de votre choix et cela vous amène au formulaire de placement d&#x27;ordre. Vous pouvez voir toutes les informations détaillées. Le rendement annuel en pourcentage (APY) testé rétrospectivement, l&#x27;horizon temporel, le prélèvement maximal, le nombre de transactions et le taux de réussite. Saisissez votre montant d&#x27;investissement et cliquez sur créer. Dans les paramètres avancés, vous pouvez définir la prise de profit et le stop-loss avec l&#x27;option de vendre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitget (section Trading bots / Spot trend-following)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC/USDT (61746.00$), indicateur Bollinger Bands (BOLL 20,2), indicateur MACD (12,26,9), et panneau latéral affichant les meilleurs bots classés (MACD-4H) avec leurs performances de backtest (59.00% APY, 43.80% APY) et boutons d&#x27;utilisation (&quot;Use&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection ou survol d&#x27;un bot de trading automatisé basé sur l&#x27;indicateur MACD sur le panneau de droite de la plateforme Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000849_seg19.jpg" alt="Interface de trading de la plateforme Bitget montrant un graphique des prix de la paire BTC/USDT en unités de 4 heures avec les indicateurs techniques des bandes de Bollinger et du MACD, ainsi que le panneau latéral des bots de trading de suivi de tendance." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000849_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:49</span>
+                        <span class="caption-text">Interface de trading de la plateforme Bitget montrant un graphique des prix de la paire BTC/USDT en unités de 4 heures avec les indicateurs techniques des bandes de Bollinger et du MACD, ainsi que le panneau latéral des bots de trading de suivi de tendance.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:17 - 00:09:54</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à la clôture à nouveau. La grille de position au comptant est similaire à la grille au comptant mais conçue pour la constitution de positions. Elle vous aide à accumuler une position progressivement sur une fourchette de prix plutôt que de simplement trader en entrées et sorties. Au moment de ce enregistrement, il n&#x27;y a pas de bots en direct disponibles à copier pour celui-ci, mais la configuration est la même que pour la grille au comptant. Vous définissez une fourchette de prix, un nombre de grilles, un montant d&#x27;investissement, et le bot s&#x27;occupe du reste. Les indicateurs clés à examiner lors de l&#x27;évaluation de l&#x27;un d&#x27;eux sont le rendement annuel sur 30 jours, le profit par grille, la période recommandée et le nombre de grilles. Smart Portfolio est un bot de portefeuille multi-actifs avec</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitget (interface de trading et pages de documentation/bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de trading BTC/USDT, graphiques en chandeliers, paramètres de grille (APY sur 30 jours, fourchette de prix, profit par grille), et guides de configuration de bot.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités de la grille de position au comptant (Spot Position Grid) et de ses paramètres de configuration sur Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000926_seg20.jpg" alt="Interface Bitget affichant une pop-up d&#x27;explication sur la grille de position au comptant (&quot;Spot position grid&quot;)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000926_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:26</span>
+                        <span class="caption-text">Interface Bitget affichant une pop-up d&#x27;explication sur la grille de position au comptant (&quot;Spot position grid&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000935_seg20.jpg" alt="Graphique de prix BTC/USDT sur l&#x27;interface de trading Bitget avec le panneau de configuration du bot de grille de position." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000935_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:35</span>
+                        <span class="caption-text">Graphique de prix BTC/USDT sur l&#x27;interface de trading Bitget avec le panneau de configuration du bot de grille de position.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000945_seg20.jpg" alt="Page web de documentation Bitget montrant les étapes de configuration d&#x27;un bot de trading avec des menus déroulants." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_000945_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:45</span>
+                        <span class="caption-text">Page web de documentation Bitget montrant les étapes de configuration d&#x27;un bot de trading avec des menus déroulants.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:54 - 00:10:21</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">rééquilibrage automatique. Au lieu de gérer des pièces individuelles, vous configurez un panier d&#x27;actifs et le bot les maintient équilibrés pour vous. Ici, vous pouvez voir tous les portefeuilles recommandés. Des choses comme un tracker inspiré de Mag7, un tracker inspiré d&#x27;OzShares, un Bitcoin Plus, Gold Hedge, et plus encore. Cliquez sur Utiliser sur l&#x27;un d&#x27;eux et vous verrez l&#x27;allocation cryptographique complète, tout comme l&#x27;investissement automatique au comptant. Vous pouvez ajouter jusqu&#x27;à 10 pièces et BitGit pré-remplit l&#x27;allocation pour vous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitget (Trading Bots - Smart Portfolio).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral droit affichant les portefeuilles &quot;Mag 7&quot; (APR 128,97 %) et &quot;iShares-inspired tracker&quot; (APR 128,78 %), ainsi qu&#x27;un graphique en chandeliers BTC/USDT en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et sélection des portefeuilles recommandés pour le rééquilibrage automatique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001001_seg21.jpg" alt="Capture d&#x27;écran de l&#x27;interface Bitget montrant les portefeuilles intelligents recommandés et un graphique de prix BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001001_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:01</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface Bitget montrant les portefeuilles intelligents recommandés et un graphique de prix BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:21 - 00:10:40</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce que vous avez à faire est de définir le mode de rééquilibrage. Le premier mode est proportionnel. Cela rééquilibre en fonction du ratio de la valeur de chaque actif. Le deuxième est le rééquilibrage temporel. Cela rééquilibre à des intervalles de temps définis, indépendamment des mouvements de prix. Le troisième est le déséquilibre. Cela ne rééquilibre que lorsque le portefeuille s&#x27;écarte au-delà d&#x27;un seuil défini.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de bot de trading Bitget (Smart Portfolio)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection du mode de rééquilibrage affichant &#x27;Proportional&#x27;, &#x27;Timed rebalance&#x27; et &#x27;Unbalanced&#x27;, avec la liste des actifs du portefeuille (AMZNON, GOOGLON, METAON, NVDAON, TSLAON) configurés chacun à 14%.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection ou survol du paramètre &#x27;Rebalance mode&#x27; pour choisir entre le rééquilibrage proportionnel et le rééquilibrage temporel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001026_seg22.jpg" alt="Interface de configuration du Smart Portfolio montrant le menu déroulant du mode de rééquilibrage avec les options Proportional, Timed rebalance et Unbalanced." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001026_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:26</span>
+                        <span class="caption-text">Interface de configuration du Smart Portfolio montrant le menu déroulant du mode de rééquilibrage avec les options Proportional, Timed rebalance et Unbalanced.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:40 - 00:11:19</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans les paramètres avancés, vous pouvez activer la vente totale à la clôture et le transfert d&#x27;actifs. Une fois fait, cliquez sur créer et vous pouvez voir le bot fonctionner. Au fait, si vous ne vous êtes pas encore inscrit sur Bitget, c&#x27;est le moment idéal pour le faire. Le lien est dans la description ci-dessous. N&#x27;oubliez pas, seul mon lien vous donne droit au pack de bonus complet de 6 200 USDT. N&#x27;utilisez aucun autre lien. Il y a beaucoup de faux sites Bitget et mon lien vous garantit d&#x27;être sur le vrai. Passons maintenant aux contrats à terme. Les mêmes bots, mais avec un effet de levier, ce qui signifie des gains potentiels plus importants mais aussi des pertes potentielles plus importantes. Commencez avec un faible effet de levier jusqu&#x27;à ce que vous sachiez que le bot fonctionne</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange cryptographique Bitget (site web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;inscription, bonus de bienvenue de 6 200 USDT, et sélection de bots de trading de contrats futures (Futures grid, Martingale, etc.).
+[DESC_IMAGE_3] Navigation dans les différentes options de bots de trading automatisé sur Bitget (Futures).</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001050_seg23.jpg" alt="Page d&#x27;inscription de Bitget avec une promotion La Liga et un champ de code de parrainage." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001050_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:50</span>
+                        <span class="caption-text">Page d&#x27;inscription de Bitget avec une promotion La Liga et un champ de code de parrainage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001100_seg23.jpg" alt="Centre de récompenses de Bitget affichant les bonus pour les nouveaux utilisateurs." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001100_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:00</span>
+                        <span class="caption-text">Centre de récompenses de Bitget affichant les bonus pour les nouveaux utilisateurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001109_seg23.jpg" alt="Tableau de bord des bots de trading Bitget avec les options de bots Futures (Futures grid, Martingale, Signal bot, etc.)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001109_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:09</span>
+                        <span class="caption-text">Tableau de bord des bots de trading Bitget avec les options de bots Futures (Futures grid, Martingale, Signal bot, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:19 - 00:11:52</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la première est la grille de contrats à terme, c&#x27;est la même chose que la grille au comptant mais avec un effet de levier, vous pouvez amplifier vos gains ou pertes potentiels selon les mouvements du marché, vous pouvez voir les recommandations de l&#x27;IA avec toutes les informations dont vous avez besoin, la direction, l&#x27;utilisation de l&#x27;effet de levier, l&#x27;APY testé rétrospectivement, le prélèvement maximal, l&#x27;investissement minimum, la durée recommandée et le total des utilisateurs. Cliquez sur utiliser sur n&#x27;importe quel bot. Vous verrez la grille. Tout ce que vous avez à faire est d&#x27;entrer votre marge. Vous pouvez également ajuster l&#x27;effet de levier ici jusqu&#x27;à 150 fois,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bitget (section Trading bots &gt; Futures grid).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT en unités 4h avec barres de volume, prix actuel autour de 61697.4 USD, et panneaux latéraux affichant les performances de stratégies de grilles de contrats à terme (rendements APY, drawdowns, investissement minium).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et explication des fonctionnalités des bots de grille de contrats à terme et des recommandations de l&#x27;IA sur Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001127_seg24.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading Bitget montrant la section des bots de grille de contrats à terme (Futures grid) avec un graphique en chandeliers BTCUSDT et des recommandations de stratégies basées sur l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001127_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:27</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading Bitget montrant la section des bots de grille de contrats à terme (Futures grid) avec un graphique en chandeliers BTCUSDT et des recommandations de stratégies basées sur l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:52 - 00:12:24</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">mais je recommanderais fortement de rester bas, peut-être cinq à dix fois, jusqu&#x27;à ce que vous ayez confirmé que le bot fonctionne bien. Vous pouvez également voir le prix de liquidation estimé ici, qui est le niveau de prix auquel votre position serait automatiquement fermée et votre marge perdue. Gardez un œil sur ceci. Pour une approche manuelle, cliquez sur Manuel. Vous verrez trois options de direction, Long, Short et Neutre. Long signifie que le bot réalise des bénéfices lorsque le prix monte, short lorsqu&#x27;il descend, et neutre réalise des bénéfices grâce aux mouvements de prix dans les deux directions dans la plage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;exchange Bitget (Trading bots - Futures grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT en unités de 4h, carnet d&#x27;ordres de la grille, paramètres du bot (effet de levier 1X, marge disponible 54.19 USDT, prix de liquidation estimé)</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la configuration d&#x27;un bot de trading de type Futures Grid et pointage vers le bouton de création de position longue.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001200_seg25.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;exchange Bitget montrant le panneau de configuration d&#x27;un bot &#x27;Futures grid&#x27; pour BTCUSDT avec un graphique en chandeliers en arrière-plan et le curseur sur le bouton &#x27;Create (Long)&#x27;." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001200_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:00</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;exchange Bitget montrant le panneau de configuration d&#x27;un bot &#x27;Futures grid&#x27; pour BTCUSDT avec un graphique en chandeliers en arrière-plan et le curseur sur le bouton &#x27;Create (Long)&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:25 - 00:13:00</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Définissez votre fourchette de prix, le nombre de grilles, le type de grille et la marge. Les paramètres avancés sont les mêmes que pour la grille au comptant. Une fois terminé, cliquez sur Créer. Le Martingale sur Futures repose sur le même concept que le Martingale au comptant, mais vous disposez désormais de trois options : IA, En vedette et Manuel. Et vous pouvez vous positionner à l&#x27;achat ou à la vente. Vous pouvez voir la direction et effet de levier sur les bots IA et En vedette. Cliquez sur Utiliser et vous verrez la grille, la saisie de la marge et le sélecteur d&#x27;effet de levier. Pour le mode manuel, vous pouvez soit cliquer sur Copier vers la création manuelle pour reproduire les paramètres du bot actuel comme point de départ, soit recommencer à zéro. Mêmes paramètres et paramètres avancés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (plateforme d&#x27;échange de cryptomonnaies et interface de bots de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots de trading (Futures Grid, Futures Martingale), graphiques de prix en chandeliers japonais (BTCUSDT), métriques de performance (APY backtesté, drawdown).
+[COMPTE] Navigation dans les options de bots de trading de la plateforme Bitget et sélection de la stratégie de Martingale sur Futures.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001234_seg26.jpg" alt="Image #1 : Vue d&#x27;ensemble de la section des bots de trading de Bitget, montrant divers types de bots disponibles comme la grille Futures et le Martingale Futures." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001234_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:34</span>
+                        <span class="caption-text">Image #1 : Vue d&#x27;ensemble de la section des bots de trading de Bitget, montrant divers types de bots disponibles comme la grille Futures et le Martingale Futures.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001242_seg26.jpg" alt="Image #2 : Interface détaillée du bot Martingale Futures sur Bitget avec un graphique de prix BTCUSDT en arrière-plan et des options de configuration pour l&#x27;intelligence artificielle et les stratégies manuelles." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001242_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:42</span>
+                        <span class="caption-text">Image #2 : Interface détaillée du bot Martingale Futures sur Bitget avec un graphique de prix BTCUSDT en arrière-plan et des options de configuration pour l&#x27;intelligence artificielle et les stratégies manuelles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:00 - 00:13:20</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">comme le Spot Martingale, mais avec l&#x27;option supplémentaire d&#x27;aller long ou short. Une fois que vous avez tout configuré, cliquez sur aperçu pour voir la grille avant de vous engager ou sur créer pour lancer le bot immédiatement. Le suivi de tendance Futures, c&#x27;est la même chose que le suivi de tendance spot, mais vous avez maintenant l&#x27;option d&#x27;aller long ou short et vous pouvez ajouter du levier. Tout le reste fonctionne de la même manière que la version spot.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Bitget (section Trading Bots / Futures Martingale).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Configuration d&#x27;un bot Futures Martingale : options Long/Short, levier (5x), pas de baisse de prix, cible de TP par cycle, marges et nombre max d&#x27;ordres de sécurité.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et validation des paramètres d&#x27;un bot de trading automatisé de type Martingale sur les Futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001305_seg27.jpg" alt="Interface Bitget affichant l&#x27;outil Futures Martingale avec le graphique du BTCUSDT en arrière-plan et le panneau de configuration du bot à droite." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001305_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:05</span>
+                        <span class="caption-text">Interface Bitget affichant l&#x27;outil Futures Martingale avec le graphique du BTCUSDT en arrière-plan et le panneau de configuration du bot à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001310_seg27.jpg" alt="Pop-up de confirmation des paramètres du bot Futures Martingale sur Bitget (Direction Long, Levier 5x, marge, etc.)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001310_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:10</span>
+                        <span class="caption-text">Pop-up de confirmation des paramètres du bot Futures Martingale sur Bitget (Direction Long, Levier 5x, marge, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:20 - 00:13:53</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le bot de signaux futures est destiné aux utilisateurs plus avancés qui souhaitent connecter des signaux externes, comme ceux de TradingView, directement à un bot de trading en direct sur Bitget. Vous verrez deux onglets, mes signaux et créer un signal. Dans mes signaux, vous pouvez voir tous les signaux que vous avez déjà créés et leurs performances. Pour créer un signal, voici comment cela fonctionne étape par étape. Étape 1 : donnez un nom à votre signal, quelque chose comme tendance haussière BTC, et une description optionnelle de la stratégie. Étape 2 : ouvrez TradingView et allez sur la stratégie ou l&#x27;indicateur que vous souhaitez connecter.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Plateforme de trading Bitget (Trading Bots)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphiques de prix (AEROUSDT, BTCUSDT), indicateurs techniques (BB + RSI Divergence Strategy), panneau latéral de configuration de bot de signaux futures.
+[DESC_IMAGE_2] Navigation dans l&#x27;interface du bot de signaux futures pour connecter des signaux externes (TradingView) à un bot de trading en direct sur Bitget.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001328_seg28.jpg" alt="Graphique TradingView affichant la paire AERO/USDT en unité journalière avec des indicateurs techniques et des signaux d&#x27;achat/vente." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001328_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:28</span>
+                        <span class="caption-text">Graphique TradingView affichant la paire AERO/USDT en unité journalière avec des indicateurs techniques et des signaux d&#x27;achat/vente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001336_seg28.jpg" alt="Interface de la plateforme Bitget montrant le &quot;Futures signal bot&quot; avec les onglets &quot;My signals&quot; et &quot;Create signal&quot; ainsi qu&#x27;un graphique BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001336_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:36</span>
+                        <span class="caption-text">Interface de la plateforme Bitget montrant le &quot;Futures signal bot&quot; avec les onglets &quot;My signals&quot; et &quot;Create signal&quot; ainsi qu&#x27;un graphique BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:53 - 00:14:14</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Configurez votre script d&#x27;alerte avec les conditions qui déclencheront le signal. Étape trois, copiez l&#x27;URL du webhook fournie par Bitget et collez-la dans votre configuration d&#x27;alerte TradingView. Important, chaque webhook ne doit être connecté qu&#x27;à une seule alerte TradingView pour éviter les erreurs d&#x27;exécution. Ensuite, ajoutez le script de message fourni par Bitget dans le champ du message d&#x27;alerte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitget (interface de trading et bots), TradingView (interface de graphique et configuration d&#x27;alertes)</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de webhook Bitget (`api.bitget.com/...`), paramètres de notification TradingView (Webhook URL, Notify in app, Play sound)</p>
+                        <p><strong>Action / Démonstration :</strong> Copie de l&#x27;URL du webhook depuis l&#x27;interface Bitget et collage de cette URL dans le champ Webhook URL de TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001359_seg29.jpg" alt="Interface Bitget affichant les étapes de configuration du bot de signaux (Futures signal bot), incluant l&#x27;URL du webhook à copier." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001359_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:59</span>
+                        <span class="caption-text">Interface Bitget affichant les étapes de configuration du bot de signaux (Futures signal bot), incluant l&#x27;URL du webhook à copier.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001404_seg29.jpg" alt="Interface TradingView montrant la fenêtre de configuration des alertes (« Notifications ») avec l&#x27;option Webhook URL cochée et l&#x27;URL collée." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001404_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:04</span>
+                        <span class="caption-text">Interface TradingView montrant la fenêtre de configuration des alertes (« Notifications ») avec l&#x27;option Webhook URL cochée et l&#x27;URL collée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001409_seg29.jpg" alt="Interface Bitget similaire à la première image, montrant l&#x27;étape 3 d&#x27;association du signal avec l&#x27;avertissement concernant l&#x27;unicité du webhook." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001409_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:09</span>
+                        <span class="caption-text">Interface Bitget similaire à la première image, montrant l&#x27;étape 3 d&#x27;association du signal avec l&#x27;avertissement concernant l&#x27;unicité du webhook.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:14 - 00:14:34</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Étape quatre, retournez sur Bitget, cliquez sur créer un signal pour activer le robot et suivre les performances dans l&#x27;onglet Mes Signaux. Étape cinq, si vous voulez l&#x27;arrêter, allez dans Robots en cours, sélectionnez le robot, cliquez sur Mettre fin et confirmez. Toutes les positions ouvertes seront fermées au prix du marché et vos fonds retourneront sur votre compte. L&#x27;arrêt est définitif et stoppe tout trading immédiatement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitget (Trading Bots / Futures signal bot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique TradingView BTCUSDT (4h), tableau de bord des robots en cours (Running bots), métriques de PnL et de marge.</p>
+                        <p><strong>Action / Démonstration :</strong> Activation d&#x27;un signal/robot sur Bitget, puis navigation vers l&#x27;onglet des robots en cours pour sélectionner l&#x27;option de terminaison du robot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001419_seg30.jpg" alt="Interface Bitget affichant le graphique BTCUSDT en 4h avec le panneau &quot;Futures signal bot&quot; et l&#x27;onglet &quot;My signals&quot;." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001419_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:19</span>
+                        <span class="caption-text">Interface Bitget affichant le graphique BTCUSDT en 4h avec le panneau &quot;Futures signal bot&quot; et l&#x27;onglet &quot;My signals&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001424_seg30.jpg" alt="Interface Bitget montrant l&#x27;onglet &quot;Running bots&quot; avec un robot actif (&quot;BTC LONG TREND&quot;) et un menu contextuel ouvert pour y mettre fin (&quot;Terminate&quot;)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001424_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:24</span>
+                        <span class="caption-text">Interface Bitget montrant l&#x27;onglet &quot;Running bots&quot; avec un robot actif (&quot;BTC LONG TREND&quot;) et un menu contextuel ouvert pour y mettre fin (&quot;Terminate&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:35 - 00:14:55</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La grille de position futures repose sur le même concept que la grille de position spot, conçue pour construire progressivement une position à effet de levier à travers la fourchette de prix. La configuration reflète celle de la grille de position spot, avec l&#x27;ajout de l&#x27;effet de levier et des options de direction long et short. Au moment de cet enregistrement, il n&#x27;y a pas de futures disponibles. La grille de position est la même que la grille de position spot.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bitget (Trading Bots, Futures position grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT en unité de temps 4h, paires de trading, indicateurs de prix (61753.4), et menu de configuration de bot &#x27;Futures position grid&#x27; affichant un onglet vide &#x27;No data found&#x27; sur le volet droit.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Bitget pour sélectionner le bot de type &#x27;Futures position grid&#x27; afin de configurer une grille de position à effet de levier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001440_seg31.jpg" alt="Interface de la plateforme Bitget montrant la section des bots de trading, plus particulièrement le menu &#x27;Futures position grid&#x27; sélectionné dans le panneau latéral gauche, avec un graphique en chandeliers du BTCUSDT en arrière-plan." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001440_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:40</span>
+                        <span class="caption-text">Interface de la plateforme Bitget montrant la section des bots de trading, plus particulièrement le menu &#x27;Futures position grid&#x27; sélectionné dans le panneau latéral gauche, avec un graphique en chandeliers du BTCUSDT en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:55 - 00:15:28</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le dernier emplacement est l&#x27;arbitrage des taux de financement. L&#x27;arbitrage des taux de financement est l&#x27;un des bots les plus intéressants de la plateforme et l&#x27;un de ceux que la plupart des gens négligent. Voici comment cela fonctionne. Sur les marchés à terme, les traders paient ou reçoivent un taux de financement toutes les quelques heures selon que le marché penche vers l&#x27;achat ou la vente. Ce bot prend une position sur le marché au comptant et une position opposée sur les contrats à terme, il est donc neutre par rapport au marché. Il se fiche de la direction dans laquelle le prix évolue. Il se contente de percevoir le taux de financement comme un revenu passif. Ici, vous pouvez voir la paire au comptant et la paire de contrats à terme côte à côte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitget (interface de trading de bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire USDCUSDT perpetual (chandelier en unité 4h), rendement historique affiché (+6.61% sur 30 jours, +0.6% sur 30 jours, +0.97% sur 90 jours), taux de financement actuel (+0.0036% / 00:44:20), paramètres de configuration de l&#x27;investissement (barre de curseur avec 34.14 USDT) et options de paramètres avancés.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la section de configuration d&#x27;un bot d&#x27;arbitrage de taux de financement sur l&#x27;échange Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001503_seg32.jpg" alt="Interface de la plateforme Bitget montrant le panneau de configuration pour un bot d&#x27;arbitrage des taux de financement (Funding rate arbitrage) avec un graphique des prix en chandeliers japonais pour la paire USDCUSDT en arrière-plan." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001503_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:15:03</span>
+                        <span class="caption-text">Interface de la plateforme Bitget montrant le panneau de configuration pour un bot d&#x27;arbitrage des taux de financement (Funding rate arbitrage) avec un graphique des prix en chandeliers japonais pour la paire USDCUSDT en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:15:29 - 00:16:03</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Utilisez le sélecteur de paires en haut à gauche du graphique pour choisir votre paire et voir l&#x27;APR sur trois jours, l&#x27;APR sur 30 jours et l&#x27;APR sur 90 jours. Cela vous indique combien vous pourriez gagner en taux annualisé. Vous pouvez également voir le taux de financement actuel, le compte à rebours jusqu&#x27;au prochain paiement de financement, et le taux de base, qui est la différence entre le prix au comptant et le prix des contrats à terme. Saisissez le montant de votre investissement. Dans les paramètres avancés, vous pouvez définir le montant par base d&#x27;entrée par lot, ce qui vous permet d&#x27;entrer uniquement lorsque le taux de financement est supérieur à un certain seuil, et de vendre à</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface Web de l&#x27;échange de cryptomonnaies Bitget (Trading bot - Funding rate arbitrage).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique TradingView pour la paire USDCUSDT en timeframe 4h, affichage des taux d&#x27;APR sur 3, 30 et 90 jours, taux de financement actuel (+0.0036% / 00:43:51), paramètres d&#x27;investissement et bouton de création de bot.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de configuration pour l&#x27;arbitrage des taux de financement sur Bitget.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001537_seg33.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Bitget montrant la section d&#x27;arbitrage de taux de financement avec un graphique en chandeliers et le panneau de configuration à droite." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001537_seg33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:15:37</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Bitget montrant la section d&#x27;arbitrage de taux de financement avec un graphique en chandeliers et le panneau de configuration à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-34">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:16:03 - 00:16:38</span>
+                <span class="segment-idx">Segment #34</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">résiliation. Une fois fait, cliquez sur créer et vous pouvez voir le bot fonctionner. Très bien, et regardez, pour les prochaines années, deux types de traders existeront. Ceux qui utilisent l&#x27;IA et ceux qui font encore tout manuellement, même marché, très résultats différents, voici comment vous mettez du bon côté de cela, j&#x27;ai rassemblé tout à l&#x27;intérieur de la communauté AI Trade Edge, chaque prompt, chaque bot, chaque modèle, chaque guide étape par étape que j&#x27;utilise personnellement, tout en un seul endroit, et tout ce que je construirai à l&#x27;avenir sera ajouté directement dans le groupe dès sa sortie, nous testons également</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant Twitter/X, Whop et une interface de documentation sur l&#x27;IA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte promotionnel comparant le trading manuel et l&#x27;IA, tarifs d&#x27;abonnement et fonctionnalités de suivi des portefeuilles rentables sur Hyperliquid.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur les pages de présentation et de vente du programme de trading automatisé par IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001621_seg34.jpg" alt="Page de vente de la plateforme Whop montrant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter à 79,99$/mois." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001621_seg34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:16:21</span>
+                        <span class="caption-text">Page de vente de la plateforme Whop montrant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter à 79,99$/mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001629_seg34.jpg" alt="Interface de documentation &quot;What It Can Do&quot; listant les fonctionnalités de suivi des baleines, analyse de sentiment et idées de trade." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001629_seg34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:16:29</span>
+                        <span class="caption-text">Interface de documentation &quot;What It Can Do&quot; listant les fonctionnalités de suivi des baleines, analyse de sentiment et idées de trade.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-35">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:16:38 - 00:17:07</span>
+                <span class="segment-idx">Segment #35</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des stratégies provenant de tout l&#x27;internet, en les automatisant grâce à Pine Script, en les exécutant en direct et en partageant exactement ce qui fonctionne et ce qui ne fonctionne pas, de sorte que vous n&#x27;obtenez pas seulement des outils, vous obtenez une opération de recherche en direct. À l&#x27;intérieur, il y a aussi un cours complet de trading agentique de 2,5 heures, du débutant à l&#x27;expert, aucune compétence en programmation n&#x27;est nécessaire. À la fin, vous aurez votre propre système de trading IA en cours d&#x27;exécution en direct, quelque chose que la plupart des traders particuliers ne savent même pas être possible en ce moment.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, éditeur Pine Script, plateforme de cours en ligne.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source Pine Script (fonctions plotshape, alertcondition pour long et shortEntry), graphique en chandeliers japonais ETH/USD.
+[DESC_IMAGE_3] Analyse visuelle du code Pine Script et des graphiques de prix en temps réel pour configurer des alertes de trading automatisées.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001645_seg35.jpg" alt="Un graphique TradingView à gauche affichant l&#x27;actif ETHEREUM/USD sur un échange BloFin, et un éditeur Pine Script à droite montrant du code pour des conditions d&#x27;entrée long/short et des alertes." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001645_seg35.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:16:45</span>
+                        <span class="caption-text">Un graphique TradingView à gauche affichant l&#x27;actif ETHEREUM/USD sur un échange BloFin, et un éditeur Pine Script à droite montrant du code pour des conditions d&#x27;entrée long/short et des alertes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-36">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:17:07 - 00:17:44</span>
+                <span class="segment-idx">Segment #36</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">79,99 $ par mois. Un seul bon trade suffit pour le rembourser. Et les 100 premiers membres bloquent ce tarif définitivement. Après cela, le prix augmentera. Le lien est dans la description. Vous ne pouvez vraiment pas vous permettre de rater ça. Et voilà. Chaque bot BitGet a été couvert étape par étape. Si vous voulez une présentation plus détaillée de toute la plateforme BitGet, y compris la façon de trader les contrats futures manuellement et d&#x27;utiliser le copy trading, cliquez sur la vidéo qui apparaît sur votre écran en ce moment même. Elle vous guidera à travers tout le reste que vous devez savoir. Et si vous voulez le guide complet étape par étape sur la façon de construire votre propre système de trading agentique</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Whop, Plateforme d&#x27;échange de cryptomonnaies BitGet</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification d&#x27;abonnement (79,99 $/mois), options de bots de trading BitGet (Spot, Futures Grid, Martingale, Trend-following, Funding rate arbitrage)</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu des bots de trading sur BitGet et présentation de l&#x27;offre d&#x27;abonnement sur Whop.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001726_seg36.jpg" alt="Interface de la plateforme BitGet montrant le menu des bots de trading (Spots, Futures grid, Martingale, etc.)." loading="lazy" onclick="openLightbox('../screenshots/W3E-H8l2HuA/W3E-H8l2HuA_001726_seg36.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:17:26</span>
+                        <span class="caption-text">Interface de la plateforme BitGet montrant le menu des bots de trading (Spots, Futures grid, Martingale, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-37">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:17:44 - 00:18:00</span>
+                <span class="segment-idx">Segment #37</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En utilisant Claude, cette vidéo apparaît à l&#x27;écran également. Allez voir ça ensuite. Si vous avez trouvé cela utile, laissez un pouce bleu, ça aide vraiment la chaîne. Abonnez-vous si vous voulez plus de contenu comme celui-ci, et laissez un commentaire en bas pour me dire quel bot vous allez essayer en premier. Je vous vois dans la prochaine !</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucune interface visible.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun contenu informatif ou technique affiché.</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune action ou manipulation en cours.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
