@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `84 / 186` (`45.2%`)
+- **Vidéos traitées** : `85 / 186` (`45.7%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -101,6 +101,7 @@
 | 2026-05-16 | [iusBnt0p98M](https://www.youtube.com/watch?v=iusBnt0p98M) | **I Found The EASIEST Polymarket Strategies That Work Every Time** | [2026-05-16_YT-[iusBnt0p98M]_I Found The EASIEST Polymarket Strategies That Work Every Time_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-16_YT-[iusBnt0p98M]_I Found The EASIEST Polymarket Strategies That Work Every Time_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-16_YT-[iusBnt0p98M]_I Found The EASIEST Polymarket Strategies That Work Every Time_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-15 | [ayy1T3YfGKU](https://www.youtube.com/watch?v=ayy1T3YfGKU) | **How to Copy Profitable Crypto Traders on Binance (Step-By-Step)** | [2026-05-15_YT-[ayy1T3YfGKU]_How to Copy Profitable Crypto Traders on Binance (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-15_YT-[ayy1T3YfGKU]_How to Copy Profitable Crypto Traders on Binance (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-15_YT-[ayy1T3YfGKU]_How to Copy Profitable Crypto Traders on Binance (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-14 | [wItSZVBPxmA](https://www.youtube.com/watch?v=wItSZVBPxmA) | **The Best Crypto Trading Bot for 2026 (It’s Not Who You Think)** | [2026-05-14_YT-[wItSZVBPxmA]_The Best Crypto Trading Bot for 2026 (It’s Not Who You Think)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-14_YT-[wItSZVBPxmA]_The Best Crypto Trading Bot for 2026 (It’s Not Who You Think)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-14_YT-[wItSZVBPxmA]_The Best Crypto Trading Bot for 2026 (It’s Not Who You Think)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-05-13 | [GMyRcmC9Of0](https://www.youtube.com/watch?v=GMyRcmC9Of0) | **How to Trade 24/7 with Binance Trading Bots  (Step-by-Step Guide)** | [2026-05-13_YT-[GMyRcmC9Of0]_How to Trade 247 with Binance Trading Bots (Step-by-Step Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-13_YT-[GMyRcmC9Of0]_How to Trade 247 with Binance Trading Bots (Step-by-Step Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-13_YT-[GMyRcmC9Of0]_How to Trade 247 with Binance Trading Bots (Step-by-Step Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `4` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
