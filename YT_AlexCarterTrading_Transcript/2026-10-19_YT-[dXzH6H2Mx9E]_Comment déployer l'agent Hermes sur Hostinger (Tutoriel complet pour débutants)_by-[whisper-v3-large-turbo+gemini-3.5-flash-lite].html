@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment déployer l&#x27;agent Hermes sur Hostinger (Tutoriel complet pour débutants) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment déployer l&#x27;agent Hermes sur Hostinger (Tutoriel complet pour débutants)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-10-19</span>
+                <span class="badge">⏱️ 00:10:11</span>
+                <span class="badge">🆔 <code>dXzH6H2Mx9E</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=dXzH6H2Mx9E" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo de la chaîne Alex Carter propose un guide pratique et approfondi sur le déploiement d'un agent de trading et d'automatisation auto-améliorable, nommé Hermes Agent, sur une infrastructure cloud Hostinger. Contrairement aux agents conversationnels traditionnels caractérisés par une mémoire à court terme volatile, l'agent Hermes se distingue par une boucle d'apprentissage intégrée et une mémoire persistante. Chaque interaction, recherche ou tâche exécutée permet au système de générer de nouvelles compétences et d'affiner ses performances en continu, éliminant ainsi les limites inhérentes à l'exécution locale sur des ordinateurs portables sujets aux mises en veille et aux coupures.<br><br>L'analyste démontre l'intégralité du processus de configuration, depuis l'acquisition d'un VPS Hostinger optimisé avec des modèles Docker préconfigurés jusqu'à l'initialisation de l'agent en mode CLI (Command Line Interface). En s'appuyant sur des passerelles unifiées telles que les crédits Nexus AI et Oxylabs, l'agent accède de manière transparente à des LLM de pointe (Claude, Gemini, GPT) ainsi qu'à des outils de scraping web avancés. Cette architecture robuste garantit une disponibilité de 24h/24 et 7j/7, indispensable pour surveiller les marchés, automatiser des stratégies de scalping ou de swing trading, et exécuter des flux de travail multi-agents sans interruption matérielle.<br><br>Enfin, la vidéo repositionne cette infrastructure technique dans une perspective stratégique pour les traders quantitatifs. L'utilisation d'un agent hébergé sur le cloud permet d'interfacer des scripts d'automatisation (tels que Pine Script sur TradingView) avec des modèles d'intelligence artificielle capables d'analyser les conditions de marché en temps réel, d'appliquer des règles strictes de gestion du risque et d'interagir via des applications de messagerie (Telegram, Discord, WhatsApp). L'objectif affiché est de doter les traders d'un avantage compétitif structurel face à l'exécution manuelle, en combinant la puissance des grands modèles de langage et la fiabilité d'une infrastructure serveur dédiée.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Hermes Agent** : Agent IA open source développé par Noose Research, doté d'une boucle d'apprentissage intégrée et d'une mémoire persistante pour s'améliorer au fil des interactions.<br>* **Hostinger VPS** : Solution d'hébergement cloud offrant un catalogue Docker préconfiguré permettant de déployer l'agent Hermes en quelques secondes sans manipulation complexe de terminal.<br>* **Nexus AI** : Passerelle d'API unifiée permettant à l'agent Hermes d'accéder à plus de 200 modèles de pointe, incluant Claude, Gemini et GPT, via un système de crédits intégrés.<br>* **Oxylabs** : Fournisseur de services de données et de web scraping intégré, permettant à l'agent d'extraire de manière fiable des informations sur des sites complexes et riches en JavaScript.<br>* **Docker / Docker Management** : Outil de conteneurisation utilisé par Hostinger pour automatiser le déploiement et l'exécution isolée des services de l'agent Hermes sur le VPS.<br>* **Claude / Claude Code** : Modèle de langage avancé d'Anthropic utilisé pour alimenter les capacités de raisonnement, de développement et d'automatisation de l'agent.<br>* **Grok Bots** : Systèmes de bots conversationnels et d'analyse de marché intégrés dans l'écosystème d'automatisation pour le traitement des flux de données.<br>* **TradingView & Pine Script** : Plateforme de graphisme et langage de programmation incontournable pour concevoir, backtester et automatiser les stratégies de trading et de scalping.<br>* **Canaux de Communication (Telegram, Slack, Discord, WhatsApp, Signal)** : Passerelles de messagerie connectées à l'agent pour recevoir des alertes en temps réel et interagir avec les flux de travail.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>1. **Dépassement de la mémoire volatile** : La principale faille des assistants IA traditionnels réside dans leur incapacité à retenir les instructions d'une session à l'autre, obligeant l'utilisateur à répéter les mêmes prompts ; Hermes résout ce problème grâce à une persistance de la mémoire stockée directement sur le VPS.<br>2. **Indépendance vis-à-vis de l'infrastructure locale** : Faire tourner un agent de trading sur un ordinateur personnel expose le système à des risques majeurs de coupure (mise en veille, redémarrage, pertes de mémoire) ; un VPS cloud garantit une exécution continue 24h/24 et 7j/7.<br>3. **Déploiement conteneurisé simplifié** : L'utilisation des modèles Docker préconfigurés sur Hostinger élimine la barrière technique de l'installation manuelle en ligne de commande, permettant un lancement rapide en quelques clics.<br>4. **Gestion centralisée des clés API via Nexus AI** : L'utilisation de crédits unifiés évite la complexité de la configuration manuelle de multiples clés API pour des fournisseurs distincts (Anthropic, OpenAI, Google), tout en automatisant l'accès aux LLM.<br>5. **Extraction de données robuste avec Oxylabs** : L'intégration de services de scraping spécialisés permet à l'agent de contourner les blocages web et d'analyser des sources de données financières complexes et dynamiques en temps réel.<br>6. **Souveraineté et sécurité des données** : Toutes les compétences acquises par l'agent, les logs et les clés API configurées résident exclusivement sur le VPS privé de l'utilisateur, garantissant la confidentialité des stratégies de trading.<br>7. **Sauvegardes et résilience serveur** : Le recours à des sauvegardes régulières (hebdomadaires par défaut, modulables en journalières) sur l'infrastructure Hostinger assure une restauration rapide en cas de besoin opérationnel.<br>8. **Scalabilité multi-marchés** : Le framework d'agentique déployé est agnostique quant aux classes d'actifs tradées (crypto, actions, contrats à terme, Forex), s'adaptant à toute stratégie fournie par l'utilisateur.<br>9. **Intégration transparente avec les outils de messagerie** : La possibilité de brancher l'agent sur des applications comme Telegram, Discord ou WhatsApp permet au trader de surveiller ses positions et d'interagir avec son bot à distance.<br>10. **Synergie entre IA et Pine Script** : L'association d'un agent auto-améliorable et des scripts de trading (TradingView) permet d'optimiser l'exécution des stratégies de scalping et de swing trading en réduisant l'intervention humaine manuelle.<br>11. **Surveillance proactive des ressources** : Le suivi rigoureux des soldes de crédits (Nexus AI et Oxylabs) est impératif pour éviter l'interruption des réponses et de l'exécution des tâches autonomes de l'agent.<br>12. **Avantage concurrentiel de l'automatisation** : Dans un marché financier global, l'adoption d'agents IA hébergés sur le cloud crée une rupture nette de performance par rapport aux traders exécutant l'intégralité de leurs processus manuellement.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Hermes Agent</span><span class="tool-tag">Hostinger VPS</span><span class="tool-tag">Nexus AI</span><span class="tool-tag">Oxylabs</span><span class="tool-tag">Docker / Docker Management</span><span class="tool-tag">Claude / Claude Code</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">TradingView &amp; Pine Script</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>1. **Dépassement de la mémoire volatile** : La principale faille des assistants IA traditionnels réside dans leur incapacité à retenir les instructions d&#x27;une session à l&#x27;autre, obligeant l&#x27;utilisateur à répéter les mêmes prompts ; Hermes résout ce problème grâce à une persistance de la mémoire stockée directement sur le VPS.</span></li><li><span class="point-bullet">✦</span><span>2. **Indépendance vis-à-vis de l&#x27;infrastructure locale** : Faire tourner un agent de trading sur un ordinateur personnel expose le système à des risques majeurs de coupure (mise en veille, redémarrage, pertes de mémoire) ; un VPS cloud garantit une exécution continue 24h/24 et 7j/7.</span></li><li><span class="point-bullet">✦</span><span>3. **Déploiement conteneurisé simplifié** : L&#x27;utilisation des modèles Docker préconfigurés sur Hostinger élimine la barrière technique de l&#x27;installation manuelle en ligne de commande, permettant un lancement rapide en quelques clics.</span></li><li><span class="point-bullet">✦</span><span>4. **Gestion centralisée des clés API via Nexus AI** : L&#x27;utilisation de crédits unifiés évite la complexité de la configuration manuelle de multiples clés API pour des fournisseurs distincts (Anthropic, OpenAI, Google), tout en automatisant l&#x27;accès aux LLM.</span></li><li><span class="point-bullet">✦</span><span>5. **Extraction de données robuste avec Oxylabs** : L&#x27;intégration de services de scraping spécialisés permet à l&#x27;agent de contourner les blocages web et d&#x27;analyser des sources de données financières complexes et dynamiques en temps réel.</span></li><li><span class="point-bullet">✦</span><span>6. **Souveraineté et sécurité des données** : Toutes les compétences acquises par l&#x27;agent, les logs et les clés API configurées résident exclusivement sur le VPS privé de l&#x27;utilisateur, garantissant la confidentialité des stratégies de trading.</span></li><li><span class="point-bullet">✦</span><span>7. **Sauvegardes et résilience serveur** : Le recours à des sauvegardes régulières (hebdomadaires par défaut, modulables en journalières) sur l&#x27;infrastructure Hostinger assure une restauration rapide en cas de besoin opérationnel.</span></li><li><span class="point-bullet">✦</span><span>8. **Scalabilité multi-marchés** : Le framework d&#x27;agentique déployé est agnostique quant aux classes d&#x27;actifs tradées (crypto, actions, contrats à terme, Forex), s&#x27;adaptant à toute stratégie fournie par l&#x27;utilisateur.</span></li><li><span class="point-bullet">✦</span><span>9. **Intégration transparente avec les outils de messagerie** : La possibilité de brancher l&#x27;agent sur des applications comme Telegram, Discord ou WhatsApp permet au trader de surveiller ses positions et d&#x27;interagir avec son bot à distance.</span></li><li><span class="point-bullet">✦</span><span>10. **Synergie entre IA et Pine Script** : L&#x27;association d&#x27;un agent auto-améliorable et des scripts de trading (TradingView) permet d&#x27;optimiser l&#x27;exécution des stratégies de scalping et de swing trading en réduisant l&#x27;intervention humaine manuelle.</span></li><li><span class="point-bullet">✦</span><span>11. **Surveillance proactive des ressources** : Le suivi rigoureux des soldes de crédits (Nexus AI et Oxylabs) est impératif pour éviter l&#x27;interruption des réponses et de l&#x27;exécution des tâches autonomes de l&#x27;agent.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:29</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ceci est le guide ultime pour déployer votre propre agent de trading auto-améliorable sur Hostinger, étape par étape, depuis la création de votre compte jusqu&#x27;à la configuration de votre VPS, en passant par le déploiement de l&#x27;agent Hermes et sa mise en ligne. Je vais vous guider à travers littéralement tout dans cette seule vidéo, et restez bien jusqu&#x27;au bout car à la fin, je vous montrerai comment vous pouvez créer votre propre agent fonctionnant 24h/24 et 7j/7 en utilisant Claude sur votre propre infrastructure. Alors sans plus attendre, entrons dans le vif du sujet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Hostinger website, Hostinger dashboard, Trading AI course platform</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;hébergement ($6.49/mo), options de déploiement d&#x27;agent IA, menu de gestion du compte (Websites, Domains, Emails, AI agents), et modules de cours sur le trading algorithmique assisté par LLM.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page de présentation de l&#x27;offre d&#x27;agent IA, visualisation du tableau de bord utilisateur et présentation du programme de formation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000007_seg1.jpg" alt="Page web de l&#x27;hébergeur Hostinger proposant le déploiement de l&#x27;agent Hermes en un clic pour 6,49 $/mois." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000007_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:07</span>
+                        <span class="caption-text">Page web de l&#x27;hébergeur Hostinger proposant le déploiement de l&#x27;agent Hermes en un clic pour 6,49 $/mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000014_seg1.jpg" alt="Tableau de bord d&#x27;administration Hostinger personnalisé au nom d&#x27;Alex avec des options de configuration et la section Hermes Agent." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000014_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:14</span>
+                        <span class="caption-text">Tableau de bord d&#x27;administration Hostinger personnalisé au nom d&#x27;Alex avec des options de configuration et la section Hermes Agent.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000021_seg1.jpg" alt="Plateforme de cours en ligne montrant le plan de cours intitulé &quot;Trading AI Full Course&quot; avec différentes études de cas." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000021_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:21</span>
+                        <span class="caption-text">Plateforme de cours en ligne montrant le plan de cours intitulé &quot;Trading AI Full Course&quot; avec différentes études de cas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:29 - 00:00:54</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais d&#x27;abord, laissez-moi vous dire pourquoi vous avez réellement besoin de ceci. J&#x27;ai donc créé des robots de trading depuis un certain temps maintenant, et il y a une chose que je déteste sincèrement chez presque tous les agents IA du marché, c&#x27;est qu&#x27;ils oublient tout. La plupart des agents sont coincés avec cette mémoire à court terme, donc ils ne s&#x27;améliorent jamais vraiment, et vous finissez par répéter les mêmes instructions à chaque fois que vous ouvrez une nouvelle session, même si vous faites tourner un agent de trading censé apprendre votre stratégie au fil du temps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de trading (TradingView ou plateforme similaire) et interface de terminal en ligne de commande (CLI).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix ETH/USD avec indicateurs techniques, et rapport d&#x27;analyse de code Pine Script listant des bugs logiques, erreurs de syntaxe et problèmes de repeint (repainting).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un graphique de trading technique et analyse automatisée de code de stratégie de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000035_seg2.jpg" alt="Capture d&#x27;écran montrant un graphique de trading de crypto-monnaies avec des signaux d&#x27;achat et de vente, ainsi qu&#x27;un indicateur de momentum dans le panneau inférieur." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000035_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:35</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un graphique de trading de crypto-monnaies avec des signaux d&#x27;achat et de vente, ainsi qu&#x27;un indicateur de momentum dans le panneau inférieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000042_seg2.jpg" alt="Capture d&#x27;écran montrant un terminal de commande affichant une analyse détaillée d&#x27;un script Pine Script avec un tableau des erreurs et problèmes détectés." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000042_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal de commande affichant une analyse détaillée d&#x27;un script Pine Script avec un tableau des erreurs et problèmes détectés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:54 - 00:01:14</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, Hermes Agent règle ce problème. Il est doté de cette boucle d&#x27;apprentissage intégrée qui affine réellement ses propres compétences et construit une mémoire persistante à partir de chaque interaction. Donc, que vous l&#x27;utilisiez pour la recherche, l&#x27;automatisation, ou même pour l&#x27;intégrer dans votre propre configuration d&#x27;agent de trading, il devient véritablement plus intelligent au fur et à mesure que vous l&#x27;utilisez au lieu de revenir à zéro.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Hermes Agent, tableau de bord analytique web et page d&#x27;accueil de la plateforme de courtage Alpaca.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Lignes de commande pour l&#x27;agent IA, tableau comparatif de performance de modèles (Qwen, DeepSeek, Claude, Grok, Gemini, GPT) avec métriques (P&amp;L, Win Rate), et interface de présentation d&#x27;API financière.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des outils d&#x27;IA et des plateformes d&#x27;intégration financière.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000059_seg3.jpg" alt="Interface de l&#x27;agent Hermes Agent affichant un terminal noir avec des lignes de commande." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000059_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Interface de l&#x27;agent Hermes Agent affichant un terminal noir avec des lignes de commande.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000104_seg3.jpg" alt="Tableau de statistiques de trading comparant différents modèles de langage avec des graphiques en barres." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000104_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:04</span>
+                        <span class="caption-text">Tableau de statistiques de trading comparant différents modèles de langage avec des graphiques en barres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000109_seg3.jpg" alt="Page d&#x27;accueil de la plateforme Alpaca présentant une API de trading pour actions, options et cryptomonnaies." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000109_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:09</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Alpaca présentant une API de trading pour actions, options et cryptomonnaies.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:14 - 00:01:37</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et Hostinger élimine tous les tracas liés à la configuration. Ils disposent d&#x27;un modèle Docker préconfiguré qui permet de le lancer en quelques secondes. Pas besoin de terminal, ni d&#x27;expérience avec Docker. L&#x27;outil que nous déployons aujourd&#x27;hui s&#x27;appelle donc Hermes Agent, créé par Noose Research, l&#x27;un des principaux laboratoires d&#x27;IA open source du moment. Et la différence entre celui-ci et votre chatbot classique, c&#x27;est cette boucle d&#x27;apprentissage intégrée dont je viens de parler.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, tableau de bord Hostinger, site web officiel de Nous Research et Hermes Agent.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface utilisateur avec des options de configuration d&#x27;applications IA, modules de déploiement et description de Hermes Agent comme agent open source sous licence MIT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation visuelle de la plateforme d&#x27;hébergement et du site officiel du projet Hermes Agent.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000120_seg4.jpg" alt="Capture d&#x27;écran montrant le tableau de bord Hostinger avec le menu des applications IA, mettant en évidence l&#x27;agent Hermes Agent." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000120_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le tableau de bord Hostinger avec le menu des applications IA, mettant en évidence l&#x27;agent Hermes Agent.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000126_seg4.jpg" alt="Page d&#x27;accueil officielle du site web de Hermes Agent par Nous Research avec fond bleu vif." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000126_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:26</span>
+                        <span class="caption-text">Page d&#x27;accueil officielle du site web de Hermes Agent par Nous Research avec fond bleu vif.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000131_seg4.jpg" alt="Page web de présentation de Nous Research expliquant qu&#x27;ils ont créé Hermes Agent, un outil open source de premier plan." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000131_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:31</span>
+                        <span class="caption-text">Page web de présentation de Nous Research expliquant qu&#x27;ils ont créé Hermes Agent, un outil open source de premier plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:37 - 00:01:55</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il ne fait pas seulement que répondre pour oublier aussitôt. Il crée de nouvelles compétences à partir de ce qu&#x27;il fait, affine ces compétences au fur et à mesure que vous l&#x27;utilisez, et construit une mémoire persistante qui prend réellement de la valeur avec le temps. En plus de cela, il se connecte à plus de 200 modèles via OpenRotor, ainsi qu&#x27;à des fournisseurs directs comme Anthropic et OpenAI.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant les sites d&#x27;Hostinger et la documentation officielle d&#x27;Hermes Agent.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif des fonctionnalités d&#x27;Hermes Agent, tarifs d&#x27;hébergement VPS, et détails sur les intégrations (Telegram, Discord, Slack, etc.).
+[DESC_IMAGE_3] Navigation et présentation des offres d&#x27;hébergement pour le déploiement de l&#x27;agent.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:56 - 00:02:19</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et ça se branche directement sur les plateformes que vous utilisez probablement déjà. Telegram, Slack, Discord, WhatsApp, et même Signal et l&#x27;e-mail. Maintenant, voici la partie que la plupart des gens négligent complètement. Un agent IA n&#x27;est aussi bon que l&#x27;infrastructure sur laquelle il tourne. Si vous faites tourner ça localement sur votre propre ordinateur portable, à la seconde où votre ordinateur se met en veille, votre agent s&#x27;éteint avec lui.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant des pages de documentation et des articles sur l&#x27;intelligence artificielle (Hostinger, Vantiq).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif sur les agents IA, les fonctionnalités multi-plateformes et les limites des IA statiques par rapport aux IA dynamiques.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et défilement sur des pages web présentant des solutions et articles sur l&#x27;infrastructure des agents IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000201_seg6.jpg" alt="Capture d&#x27;écran montrant les fonctionnalités clés de l&#x27;agent Hermes sur le site Hostinger, incluant la messagerie multi-plateforme." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000201_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les fonctionnalités clés de l&#x27;agent Hermes sur le site Hostinger, incluant la messagerie multi-plateforme.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000207_seg6.jpg" alt="Article du site Vantiq intitulé &quot;Still relying on static AI? That&#x27;s not intelligence.&quot; illustrant la nécessité d&#x27;une IA dynamique." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000207_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Article du site Vantiq intitulé &quot;Still relying on static AI? That&#x27;s not intelligence.&quot; illustrant la nécessité d&#x27;une IA dynamique.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000213_seg6.jpg" alt="Suite de l&#x27;article Vantiq avec du texte en surbrillance détaillant les capacités requises pour une IA moderne et adaptative." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000213_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Suite de l&#x27;article Vantiq avec du texte en surbrillance détaillant les capacités requises pour une IA moderne et adaptative.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:19 - 00:02:44</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Redémarrez votre machine et la mémoire peut être complètement effacée, et vous êtes également limité par le matériel que vous possédez personnellement, ce qui signifie qu&#x27;il est fondamentalement impossible d&#x27;évoluer. C&#x27;est exactement le problème de l&#x27;IA statique que résout Hermes Agent. Chaque interaction devient une compétence persistante. Ainsi, au lieu que votre agent reste le même pour toujours, il devient réellement plus intelligent à mesure que vous l&#x27;utilisez. Très bien, alors commençons vraiment depuis le tout début.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site officiel de Hermes Agent (Nous Research) et un article sur dealon.ai.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte de présentation de Hermes Agent (« The Agent That Grows With You ») et boutons de téléchargement pour Windows ou cloud.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web de Hermes Agent pour illustrer la solution aux problèmes des systèmes d&#x27;IA statiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000238_seg7.jpg" alt="Capture du site officiel de Hermes Agent de Nous Research avec le slogan &#x27;The Agent That Grows With You&#x27; sur fond bleu vif." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000238_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:38</span>
+                        <span class="caption-text">Capture du site officiel de Hermes Agent de Nous Research avec le slogan &#x27;The Agent That Grows With You&#x27; sur fond bleu vif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:45 - 00:03:18</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La première chose dont vous avez besoin, c&#x27;est d&#x27;un compte Hostinger. Rendez-vous donc sur le lien dans la description ci-dessous. Cela vous mènera directement sur la page de destination de l&#x27;agent Hermes. Cliquez sur s&#x27;inscrire dans le coin supérieur droit et vous pourrez créer votre compte en moins d&#x27;une minute en utilisant soit votre e-mail, soit votre compte Google. Remplissez vos coordonnées, définissez un mot de passe, et vous y êtes. Une fois connecté, vous arriverez directement ici sur votre tableau de bord. C&#x27;est votre centre de contrôle pour votre VPS, votre facturation et vos modèles Docker. Maintenant que vous êtes connecté, configurons le forfait. Juste ici sur la page de destination de Hostinger</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, site Hostinger et panneau d&#x27;administration (hPanel).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offre de déploiement d&#x27;agent IA à 6,49 $/mois, options d&#x27;inscription, menu latéral avec outils de développement et liste de tâches (to-dos).
+[DESC_IMAGE_3] Navigation dans le tableau de bord pour configurer un compte et accéder aux services d&#x27;hébergement et d&#x27;intelligence artificielle.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000253_seg8.jpg" alt="Page d&#x27;accueil du site Hostinger présentant le déploiement de l&#x27;agent Hermes en un clic." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000253_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:53</span>
+                        <span class="caption-text">Page d&#x27;accueil du site Hostinger présentant le déploiement de l&#x27;agent Hermes en un clic.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000301_seg8.jpg" alt="Formulaire d&#x27;inscription (Register) avec options de connexion via Google, GitHub ou e-mail." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000301_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Formulaire d&#x27;inscription (Register) avec options de connexion via Google, GitHub ou e-mail.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000310_seg8.jpg" alt="Tableau de bord d&#x27;administration Hostinger (hPanel) montrant les sections de gestion des applications et outils de développement." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000310_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:10</span>
+                        <span class="caption-text">Tableau de bord d&#x27;administration Hostinger (hPanel) montrant les sections de gestion des applications et outils de développement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:18 - 00:03:52</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">page, vous verrez le plan de l&#x27;agent Hermes. Et c&#x27;est celui que je recommande. Il est livré avec la configuration du catalogue Docker entièrement pré-construite. Il n&#x27;y a pas de frais par agent et cela vous donne assez de puissance de calcul pour des flux de travail multi-agents et des processus de longue durée sans que rien ne s&#x27;arrête brusquement. Cliquez sur choisir ce plan juste ici. Cela vous amène au paiement. Et avant de confirmer quoi que ce soit, vous verrez un champ pour un code promo. Tapez mon code, Alex Carter 10, et vous verrez 10 % de réduction sur votre total. Confirmez, finalisez votre paiement, et vous êtes officiellement configuré. Maintenant, voici quelque chose qui compte beaucoup,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Hostinger (panneau de configuration et tarification d&#x27;agents IA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;abonnement pour Hermes Agent (5,99 $/mois pour 24 mois), options de gestion et résumé de commande avec code promo.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des plans tarifaires et options de déploiement pour l&#x27;agent Hermes sur Hostinger.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000327_seg9.jpg" alt="Interface de Hostinger montrant les options de tarification pour l&#x27;agent Hermes avec des abonnements de 24 mois, 12 mois et 1 mois." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000327_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:27</span>
+                        <span class="caption-text">Interface de Hostinger montrant les options de tarification pour l&#x27;agent Hermes avec des abonnements de 24 mois, 12 mois et 1 mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000335_seg9.jpg" alt="Suite de la page de tarification de l&#x27;agent Hermes avec le bouton de sélection du plan." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000335_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Suite de la page de tarification de l&#x27;agent Hermes avec le bouton de sélection du plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000343_seg9.jpg" alt="Page de résumé de commande Hostinger montrant le plan KVM 2 et le code promo ALEXCARTER10 appliqué." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000343_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:43</span>
+                        <span class="caption-text">Page de résumé de commande Hostinger montrant le plan KVM 2 et le code promo ALEXCARTER10 appliqué.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:52 - 00:04:19</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">particulièrement si vous prévoyez de l&#x27;utiliser pour de véritables besoins professionnels. Vos données restent les vôtres. Chaque compétence qu&#x27;il apprend, chaque clé API que vous connectez, tout cela réside entièrement sur votre propre VPS privé. Rien de tout cela ne se trouve sur une plateforme tierce. Votre serveur lui-même bénéficie de plus d&#x27;une décennie d&#x27;expérience en infrastructure de Hostinger, hébergé dans ses propres centres de données propriétaires, surveillé par ses équipes de sécurité internes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web (Navigateur) - Site Hostinger, section FAQ et page de présentation des fonctionnalités de déploiement.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif sur la sécurité des données (&quot;Is my data private and secure?&quot;, environnements isolés, conteneurs sécurisés) et fonctionnalités de déploiement (Launch in one click, Security, Built in Docker manager).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web pour illustrer la sécurité, l&#x27;isolation des données des utilisateurs et la simplicité de déploiement des agents IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000359_seg10.jpg" alt="Interface web de Hostinger montrant la FAQ détaillée sur la sécurité et la confidentialité des données pour l&#x27;agent Hermes." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000359_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:59</span>
+                        <span class="caption-text">Interface web de Hostinger montrant la FAQ détaillée sur la sécurité et la confidentialité des données pour l&#x27;agent Hermes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000406_seg10.jpg" alt="Page web de présentation de l&#x27;hébergeur Hostinger intitulée &quot;Why run Hermes Agent on Hostinger&quot; avec les avantages clés présentés sous forme de cartes." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000406_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Page web de présentation de l&#x27;hébergeur Hostinger intitulée &quot;Why run Hermes Agent on Hostinger&quot; avec les avantages clés présentés sous forme de cartes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:20 - 00:04:39</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si jamais vous ratez quelque chose, vous pouvez toujours revenir en arrière. Des sauvegardes hebdomadaires sont incluses par défaut et vous pouvez passer à des sauvegardes quotidiennes. Maintenant, déployons concrètement cette chose. Une fois que votre VPS est prêt, rendez-vous dans le tableau de bord de votre VPS et allez dans le gestionnaire Docker, puis dans le catalogue. Juste ici, recherchez l&#x27;agent Hermes et cliquez sur sélectionner.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site web et le panneau d&#x27;administration de l&#x27;hébergeur Hostinger.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Articles de support technique sur les sauvegardes et interfaces de sélection d&#x27;agents IA (OpenClaw, Hermes Agent, n8n) et d&#x27;outils de développement (VPS, GPU).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans la documentation sur les sauvegardes puis basculement vers le tableau de bord pour configurer un outil ou un agent d&#x27;automatisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000425_seg11.jpg" alt="Page de documentation Hostinger expliquant la gestion et la création de sauvegardes de sites web." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000425_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:25</span>
+                        <span class="caption-text">Page de documentation Hostinger expliquant la gestion et la création de sauvegardes de sites web.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000429_seg11.jpg" alt="Tableau de bord Hostinger présentant des outils d&#x27;IA et d&#x27;automatisation avec des options pour OpenClaw et Hermes Agent." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000429_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:29</span>
+                        <span class="caption-text">Tableau de bord Hostinger présentant des outils d&#x27;IA et d&#x27;automatisation avec des options pour OpenClaw et Hermes Agent.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:39 - 00:04:59</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, pendant le déploiement, il va vous demander de penser à un nom d&#x27;utilisateur et à un mot de passe administrateur. Allez-y, configurez-les dès maintenant et assurez-vous de les conserver en lieu sûr, dans un endroit sûr. Vous en aurez besoin plus tard. Maintenant, voici quelque chose de vraiment utile. Vous n&#x27;avez pas vraiment besoin de gérer vos propres clés API si vous ne le souhaitez pas. Hostinger vous permet de connecter Hermes en utilisant leurs crédits intégrés à la place.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de gestion cloud / Docker Manager</p>
+                        <p><strong>Contenu textuel & Code :</strong> Champs de configuration utilisateur, clés API Nexos et Oxylabs, gestion des crédits AI Router</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des identifiants administrateur et suivi du déploiement de l&#x27;application</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000444_seg12.jpg" alt="Interface de configuration montrant les champs ADMIN_USERNAME et ADMIN_PASSWORD pour le déploiement de Hermes Agent." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000444_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:44</span>
+                        <span class="caption-text">Interface de configuration montrant les champs ADMIN_USERNAME et ADMIN_PASSWORD pour le déploiement de Hermes Agent.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000454_seg12.jpg" alt="Tableau de bord montrant la gestion des fournisseurs d&#x27;IA (AI Router et Oxylabs) avec une notification de déploiement en cours." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000454_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:54</span>
+                        <span class="caption-text">Tableau de bord montrant la gestion des fournisseurs d&#x27;IA (AI Router et Oxylabs) avec une notification de déploiement en cours.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:59 - 00:05:26</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les crédits Nexus AI donnent à Hermes accès à des modèles comme Claude, Gemini et GPT via une passerelle unique. Et si vous avez ajouté des crédits Nexus lors de l&#x27;achat de votre VPS, cette clé API est générée et renseignée pour vous automatiquement. Il n&#x27;y a donc rien à copier ni à coller. Les crédits Oxylab fonctionnent de la même manière mais pour la recherche sur le web et l&#x27;extraction de données, permettant à votre agent de lire de manière fiable les pages riches en JavaScript et les sites qui bloquent normalement les requêtes de base.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de bord web de gestion VPS et Nexus AI (interface utilisateur hébergée).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Section &quot;Manage your AI provider&quot; affichant des options de crédits (&quot;Pay as you go credits&quot;, &quot;Oxylabs AI credits&quot;) avec une infobulle indiquant : &quot;Credits are consumed based on the AI model used. Top up to continue using AI features.&quot; Une notification en bas à droite indique &quot;Your application is being deployed&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Survol de l&#x27;interface pour afficher les détails sur la consommation des crédits des modèles d&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000506_seg13.jpg" alt="Capture d&#x27;écran montrant le tableau de bord de gestion d&#x27;une application VPS avec une section dédiée aux crédits de fournisseurs d&#x27;IA et une infobulle explicative." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000506_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:06</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le tableau de bord de gestion d&#x27;une application VPS avec une section dédiée aux crédits de fournisseurs d&#x27;IA et une infobulle explicative.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:27 - 00:06:02</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez acheté des crédits de scraping, cette clé se remplit aussi automatiquement. Maintenant, si vous préférez le faire manuellement, vous pouvez toujours entrer vos propres clés API Nexus, AI ou Oxylab dans ces champs vous-même. Et si vous n&#x27;avez ajouté aucun crédit du tout lors de l&#x27;achat, ne vous inquiétez pas. Hermes se déplacera quand même, vous aurez juste besoin de configurer vos propres identifiants de fournisseur ensuite avant qu&#x27;il ne puisse réellement exécuter des tâches. Vous pouvez fournir une clé API dès maintenant pendant le déploiement et en ajouter d&#x27;autres fournisseurs plus tard, alors ne réfléchissez pas trop à cette étape. Une fois que vous avez rempli les champs requis, cliquez sur déployer et la plateforme crée et démarre automatiquement le conteneur de l&#x27;agent Hermes ainsi que les arrière-plans requis.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Panneau d&#x27;administration web d&#x27;hébergement et de gestion cloud.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration des crédits API, conteneurs Docker et jetons d&#x27;accès pour IDEs.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le tableau de bord pour configurer les crédits API et vérifier l&#x27;état des applications.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000536_seg14.jpg" alt="Interface de gestion affichant les crédits pour les fournisseurs d&#x27;IA (AI Router nexos.ai et Oxylab)." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000536_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:36</span>
+                        <span class="caption-text">Interface de gestion affichant les crédits pour les fournisseurs d&#x27;IA (AI Router nexos.ai et Oxylab).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000545_seg14.jpg" alt="Gestionnaire Docker listant les applications en cours d&#x27;exécution avec le statut &#x27;Running&#x27;." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000545_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:45</span>
+                        <span class="caption-text">Gestionnaire Docker listant les applications en cours d&#x27;exécution avec le statut &#x27;Running&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000554_seg14.jpg" alt="Page de connexion des IDEs à Hostinger MCP avec options pour VS Code, Cursor et Claude Code." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000554_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:54</span>
+                        <span class="caption-text">Page de connexion des IDEs à Hostinger MCP avec options pour VS Code, Cursor et Claude Code.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:02 - 00:06:37</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">services. Une fois le déploiement terminé, Hermes s&#x27;exécute à l&#x27;intérieur d&#x27;un conteneur Docker et vous y accédez par le terminal. Donc depuis le tableau de bord de votre VPS, appuyez simplement sur le bouton d&#x27;ouverture juste à côté de votre projet Hermes, et cela ouvre directement une interface de commande Hermes. Maintenant, la première fois que vous ouvrez Hermes à l&#x27;intérieur du conteneur, il lance une courte procédure de configuration, et vous utilisez simplement vos touches fléchées pour naviguer et la touche entrée ou espace pour sélectionner. D&#x27;abord, il vous demandera de choisir un mode de configuration. Je vais sélectionner la configuration complète ici car la configuration rapide vous connecte simplement via le portail de news sans clés API, mais la configuration complète</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface Web / Tableau de bord de l&#x27;agent Hermes (Nous Research).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Écran de connexion authentifié et console interactive de l&#x27;agent Hermes demandant la configuration d&#x27;un fournisseur de modèle (/setup, /model).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;accès à l&#x27;interface Web d&#x27;Hermes et de son écran de configuration initiale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000611_seg15.jpg" alt="Page de connexion (Sign In) de l&#x27;agent Hermes avec champs Username et Password." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000611_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:11</span>
+                        <span class="caption-text">Page de connexion (Sign In) de l&#x27;agent Hermes avec champs Username et Password.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000620_seg15.jpg" alt="Interface Web de l&#x27;agent Hermes affichant l&#x27;écran de configuration initiale (Setup Required) avec les commandes disponibles." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000620_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:20</span>
+                        <span class="caption-text">Interface Web de l&#x27;agent Hermes affichant l&#x27;écran de configuration initiale (Setup Required) avec les commandes disponibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:37 - 00:06:56</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous permet de connecter vos propres fournisseurs, y compris ces crédits nexus.ai et Oxylabs dont nous venons de parler. Ensuite, sélectionnez votre fournisseur de modèle. Si vous achetez des crédits nexus comme nous l&#x27;avons fait, choisissez simplement nexus gateway dans la liste. Votre clé API est déjà remplie, donc laissez-la telle quelle et continuez.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Hermes Agent (interface de chat et de configuration d&#x27;agent IA)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection des fournisseurs d&#x27;API incluant Nous Portal, Fireworks AI, OpenRouter, Anthropic, OpenAI, Qwen, xAI Grok, DeepSeek, Google AI Studio, Ollama Cloud et diverses options personnalisées.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du fournisseur de modèle d&#x27;intelligence artificielle dans l&#x27;interface de l&#x27;agent.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000641_seg16.jpg" alt="Interface de configuration du chat Hermes Agent affichant une liste déroulante pour la sélection du fournisseur de modèle d&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000641_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:41</span>
+                        <span class="caption-text">Interface de configuration du chat Hermes Agent affichant une liste déroulante pour la sélection du fournisseur de modèle d&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:56 - 00:07:31</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, il vous demandera de sélectionner votre backend de terminal et de l&#x27;exécuter sur SSH, que vous faites tourner sur une machine distante. Et c&#x27;est tout. Une fois la configuration terminée, Hermes démarre directement en mode CLI et vous pouvez commencer à interagir avec votre agent directement depuis le terminal. Maintenant, rappelez-vous, au début de la vidéo, j&#x27;ai mentionné que cela fonctionne parfaitement si vous faites tourner un agent de trading censé apprendre votre stratégie au fil du temps. Eh bien, j&#x27;ai en fait préparé un cours complet et gratuit exactement sur la façon de faire cela. Comment construire votre propre bot de trading agentique qui ne dort littéralement jamais en tournant 24h/24 et 7j/7 sur exactement ce même</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface CLI Hermes Agent et plateforme web du cours.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Messages de démarrage de l&#x27;agent Hermes (&quot;summoning hermes...&quot;) et invite de commande interactive.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de l&#x27;agent Hermes en mode CLI.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000705_seg17.jpg" alt="Interface de l&#x27;agent Hermes montrant l&#x27;écran de terminal CLI intégré avec les messages d&#x27;initialisation." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000705_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:05</span>
+                        <span class="caption-text">Interface de l&#x27;agent Hermes montrant l&#x27;écran de terminal CLI intégré avec les messages d&#x27;initialisation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:31 - 00:08:08</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La configuration Hostinger que nous venons de déployer. Et le meilleur, c&#x27;est peu importe le marché que vous tradez, qu&#x27;il s&#x27;agisse de crypto, d&#x27;actions, de contrats à terme ou du Forex. Le framework fonctionne de la même manière. Vous le pointez simplement vers les actifs que vous tradez, vous lui donnez votre stratégie, et il tourne en continu en arrière-plan, surveillant le marché, exécutant votre logique, et ne ratant jamais une session parce que votre ordinateur s&#x27;est mis en veille ou que vous avez fermé votre navigateur. Je mettrai le lien vers le cours gratuit dans la description ci-dessous. Donc si vous vouliez un agent IA qui trade réellement pour vous au lieu de simplement discuter avec vous, allez voir ça juste après cette vidéo. Très bien, et regardez,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, BloFin, et interface web de formation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de recherche de symboles, graphiques de prix Bitcoin, indicateurs techniques (bandes de Bollinger, oscillateurs, volumes) et plan de cours.
+[DESC_IMAGE_3] Navigation dans la plateforme éducative et analyse de graphiques multi-actifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000740_seg18.jpg" alt="Interface de recherche de symboles sur TradingView montrant différentes classes d&#x27;actifs (crypto, actions, forex, etc.)." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000740_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:40</span>
+                        <span class="caption-text">Interface de recherche de symboles sur TradingView montrant différentes classes d&#x27;actifs (crypto, actions, forex, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000750_seg18.jpg" alt="Graphique TradingView pour un contrat perpétuel Bitcoin/USD sur BloFin avec des indicateurs techniques et des signaux d&#x27;achat/vente." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000750_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:50</span>
+                        <span class="caption-text">Graphique TradingView pour un contrat perpétuel Bitcoin/USD sur BloFin avec des indicateurs techniques et des signaux d&#x27;achat/vente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000759_seg18.jpg" alt="Page web du cours &quot;Trading AI Full Course&quot; affichant la carte complète du programme de formation." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000759_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:59</span>
+                        <span class="caption-text">Page web du cours &quot;Trading AI Full Course&quot; affichant la carte complète du programme de formation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:08 - 00:08:44</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pendant les quelques prochaines années, deux sortes de traders existeront. Ceux qui utilisent l&#x27;IA et ceux qui font encore tout manuellement. Même marché, résultats très différents. Voici comment vous vous mettez du bon côté de cela. J&#x27;ai rassemblé tout à l&#x27;intérieur de la communauté AI Trade Edge. Chaque invite, chaque bot, chaque modèle, chaque guide étape par étape que j&#x27;utilise personnellement, le tout au même endroit, et tout ce que je construirai à l&#x27;avenir sera ajouté directement dans le groupe dès sa sortie. Nous testons également des stratégies provenant de tout l&#x27;internet, en les automatisant à l&#x27;aide de PineScript, en les exécutant en direct, et</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, site web de la communauté Alex Carter Trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique des prix du BTCUSDT avec indicateurs de volume et interface utilisateur de TradingView ; liste des capacités des 78 outils permettant à Claude de contrôler TradingView (lecture de graphiques, données OHLCV en direct, valeurs d&#x27;indicateurs RSI/MACD/EMA/Bollinger, modification des symboles, des unités de temps, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;un graphique de trading crypto en chandeliers japonais et présentation des fonctionnalités de l&#x27;outil d&#x27;intelligence artificielle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000817_seg19.jpg" alt="Capture d&#x27;écran d&#x27;un graphique TradingView montrant le contrat perpétuel Bitcoin/Tether sur un graphique en chandeliers de 5 minutes." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000817_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:17</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un graphique TradingView montrant le contrat perpétuel Bitcoin/Tether sur un graphique en chandeliers de 5 minutes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000826_seg19.jpg" alt="Interface de la communauté Alex Carter Trading détaillant les fonctionnalités et le contrôle des graphiques via Claude." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000826_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:26</span>
+                        <span class="caption-text">Interface de la communauté Alex Carter Trading détaillant les fonctionnalités et le contrôle des graphiques via Claude.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:44 - 00:09:17</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">en partageant exactement ce qui fonctionne et ce qui ne fonctionne pas. Vous n&#x27;obtenez donc pas seulement des outils. Vous obtenez une opération de recherche en direct. 79,99 dollars par mois. Un seul bon trade le rentabilise. Et les 100 premiers membres bloquent ce tarif de façon permanente. Après cela, le prix augmente. Le lien est dans la description. Vous ne pouvez vraiment pas vous permettre de rater ça. Un conseil rapide avant de terminer. Si vous utilisez des crédits nexus.ai ou Oxylabs, vous pouvez vérifier votre solde et recharger à tout moment. Depuis le gestionnaire Docker, puis Projets, vos cartes de crédit s&#x27;affichent tout en haut de la page.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme e-commerce Whop et tableau de bord de gestion de serveur cloud.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification d&#x27;abonnement (79,99 $/mois au lieu de 99,99 $), statistiques d&#x27;utilisation du CPU (2%), de la mémoire (11%) et stockage du serveur.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la page d&#x27;abonnement au service et affichage du panneau de contrôle technique du serveur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000852_seg20.jpg" alt="Capture d&#x27;écran de la plateforme de vente Whop affichant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000852_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:52</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme de vente Whop affichant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000909_seg20.jpg" alt="Tableau de bord d&#x27;hébergement ou de gestion de serveur (VPS/Cloud) affichant le statut de l&#x27;application Hermes Agent et les métriques système." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000909_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:09</span>
+                        <span class="caption-text">Tableau de bord d&#x27;hébergement ou de gestion de serveur (VPS/Cloud) affichant le statut de l&#x27;application Hermes Agent et les métriques système.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:17 - 00:09:40</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Surveillez simplement votre solde nexus.ai. S&#x27;il s&#x27;épuise, Hermes arrête de générer des réponses jusqu&#x27;à ce que vous rechargiez. Donc, pour récapituler, la mémoire de votre agent survit et redémarre parce qu&#x27;elle fonctionne sur des volumes Docker persistants. Vos ressources VPS sont entièrement dédiées afin que rien ne soit bridé. Et c&#x27;est en ligne 24 heures sur 24 et 7 jours sur 7 sur tous les canaux que vous utilisez, vos données ne quittant jamais votre propre serveur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de bord d&#x27;hébergement VPS (Hostinger)</p>
+                        <p><strong>Contenu textuel & Code :</strong> État du conteneur Hermes Agent (Running), utilisation du processeur (2 %), utilisation de la mémoire (11 %), utilisation du disque (6 Go / 100 Go), adresse IP et emplacement du serveur.</p>
+                        <p><strong>Action / Démonstration :</strong> Surveillance des ressources système et de l&#x27;état de l&#x27;application Hermes Agent sur le VPS.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000929_seg21.jpg" alt="Tableau de bord d&#x27;hébergement VPS montrant l&#x27;application Hermes Agent en cours d&#x27;exécution avec des statistiques de ressources (CPU, mémoire, disque)." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000929_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:29</span>
+                        <span class="caption-text">Tableau de bord d&#x27;hébergement VPS montrant l&#x27;application Hermes Agent en cours d&#x27;exécution avec des statistiques de ressources (CPU, mémoire, disque).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:41 - 00:10:11</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, si vous en avez assez des agents IA qui oublient tout dès que vous fermez l&#x27;onglet, allez récupérer le premier lien dans la description ci-dessous et utilisez le code Alex Carter 10 pour obtenir une réduction exclusive de 10 % sur le plan VPS Hermes Agent. Et si vous voulez le guide complet étape par étape sur la façon de construire votre propre système de trading agentique avec Claude, cette vidéo apparaît également à l&#x27;écran. Allez voir ça ensuite. Si vous avez trouvé cela utile, laissez un pouce bleu, cela aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Sites web promotionnels (Hostinger, plateforme de cours en ligne Trading AI).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offre tarifaire VPS pour Hermes Agent (6.49$/mo) et statistiques de performance de différents modèles d&#x27;IA (Claude, DeepSeek, Grok, GPT-5).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation commerciale et promotion des liens affiliés du VPS Hermes Agent et du cours de trading IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000948_seg22.jpg" alt="Page web de l&#x27;hébergeur Hostinger montrant l&#x27;offre pour le déploiement de Hermes Agent à 6,49 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000948_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:48</span>
+                        <span class="caption-text">Page web de l&#x27;hébergeur Hostinger montrant l&#x27;offre pour le déploiement de Hermes Agent à 6,49 $ par mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000956_seg22.jpg" alt="Page de présentation du cours &quot;Trading AI Full Course&quot; avec des statistiques sur les performances des intelligences artificielles." loading="lazy" onclick="openLightbox('../screenshots/dXzH6H2Mx9E/dXzH6H2Mx9E_000956_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:56</span>
+                        <span class="caption-text">Page de présentation du cours &quot;Trading AI Full Course&quot; avec des statistiques sur les performances des intelligences artificielles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
