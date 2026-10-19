@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 How I Track All Whale Traders With Claude Code — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 How I Track All Whale Traders With Claude Code</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-04-08</span>
+                <span class="badge">⏱️ 00:09:43</span>
+                <span class="badge">🆔 <code>wSoBeIcZAHg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=wSoBeIcZAHg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo dévoile une méthodologie de pointe en trading quantitatif, exploitant l'intelligence artificielle agentique pour analyser en temps réel l'écosystème on-chain de Hyperliquid. En s'affranchissant des méthodes de recherche manuelles et des clés API complexes, l'approche repose sur un agent IA connecté directement aux endpoints publics d'une blockchain de type exchange décentralisé (DEX). L'objectif est d'extraire la substantifique moelle du comportement des portefeuilles les plus rentables (les « baleines » ou « smart money ») pour identifier des divergences de positionnement massives face aux investisseurs particuliers (le « retail »).<br><br>Les stratégies décortiquées s'articulent autour de l'analyse comparative et du croisement de données comportementales à grande échelle. En scannant instantanément des dizaines de milliers de portefeuilles, l'outil hiérarchise les traders selon leur P&L global, met en lumière les accumulations ou les désinvestissements sectoriels (comme le biais haussier sur le Bitcoin et baissier sur Ethereum), et détecte les anomalies de marché. Cette approche permet de repérer des configurations à haute conviction où la smart money prend le contre-pied exact du grand public, transformant ces frictions de marché en opportunités directionnelles nettes.<br><br>Enfin, les démonstrations pratiques illustrent la génération automatisée de plans de trading complets et instantanés. Qu'il s'agisse d'auditer l'historique de performance d'un portefeuille spécifique, d'établir un briefing matinal automatisé ou de calculer des points d'entrée, des stop-loss et des take-profits précis basés sur des métriques de levier et d'exposition réelle, la démarche démontre l'avantage compétitif immense conféré par l'automatisation par l'IA. Elle rappelle toutefois que ces signaux on-chain doivent impérativement s'intégrer dans un cadre rigoureux de gestion des risques et d'analyse technique traditionnelle.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **Claude Code** : Version agentique et autonome de Claude AI capable d'interagir directement avec des API publiques pour exécuter des requêtes complexes en langage naturel.<br>* **Hyperliquid** : Exchange décentralisé (DEX) de type perpetual fonctionnant sur sa propre blockchain, offrant une transparence totale et publique de l'ensemble des positions, portefeuilles et historiques de trade sans nécessiter de KYC.<br>* **TradingView** : Plateforme de graphisme et d'analyse technique utilisée en conjonction avec les signaux on-chain pour valider les configurations graphiques.<br>* **Grok Bots** : Outils d'automatisation et de traitement de données souvent couplés aux boucles de rétroaction pour le scalping et le suivi des flux.<br>* **Telegram** : Canal de messagerie utilisé pour la réception des briefings matinales et des notifications de plans de trading automatisés.<br>* **AI Trade Edge Community** : Communauté et hub centralisant l'accès aux codes de compétences (skill codes), prompts, modèles et guides étape par étape de la stratégie.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Exploitation de la transparence on-chain** : L'architecture décentralisée d'Hyperliquid rend l'intégralité des positions, des prix d'entrée, des leviers et des P&L non réalisés de 33 000 portefeuilles publiquement accessibles via son API gratuite.<br>* **Analyse de divergence Smart Money vs Retail** : La stratégie centrale consiste à comparer le positionnement des 20 portefeuilles les plus rentables face aux 20 plus perdants afin de repérer les actifs où les deux groupes s'opposent frontalement.<br>* **Détection des trades encombrés** : L'outil isole instantanément les consensus unanimes (par exemple, un achat massif partagé sur Sui) pour éviter les pièges de liquidité ou, au contraire, identifier les désalignements forts.<br>* **Génération automatisée de plans de trading** : En cas de divergence maximale (comme sur le Monero ou l'Ethereum), l'IA synthétise un plan complet incluant le sens de la transaction, le prix d'entrée, le stop-loss et plusieurs niveaux de take-profit.<br>* **Audit granulaire des portefeuilles d'élite** : Il est possible d'analyser l'historique complet d'une baleine spécifique (plus gros gains, pertes, profils de risque et effet de levier moyen, souvent situés entre 3x et 10x) pour décider s'il est pertinent de répliquer ses mouvements.<br>* **Briefing matinal macro-comportemental** : Un scan automatisé quotidien de 50 portefeuilles majeurs permet de cartographier dès l'ouverture des marchés les accumulations en cours et les positions ouvertes au cours des dernières 24 heures.<br>* **Calcul précis du levier et de l'exposition** : L'analyse en direct permet de connaître l'effet de levier moyen employé par l'argent intelligent sur un token donné (par exemple, ~19x sur l'ETH), offrant une vision claire du degré de conviction des opérateurs.<br>* **Gestion rigoureuse du sizing de position** : Les plans de trade fournis intègrent des recommandations de gestion du capital, telles que l'allocation d'un pourcentage fixe (ex: 15 %) du capital total par trade.<br>* **Complémentarité impérative avec l'analyse technique** : Les données de suivi des baleines ne constituent qu'une pièce du puzzle et doivent obligatoirement être croisées avec des graphiques de prix et des règles strictes de risk management.<br>* **Avantage asymétrique de l'automatisation** : L'utilisation d'agents IA permet de réaliser en moins d'une minute des analyses de flux de données qui nécessiteraient des heures de recherche manuelle, redéfinissant les standards du trading pour les investisseurs particuliers.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude Code</span><span class="tool-tag">Hyperliquid</span><span class="tool-tag">TradingView</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Telegram</span><span class="tool-tag">AI Trade Edge Community</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Exploitation de la transparence on-chain** : L&#x27;architecture décentralisée d&#x27;Hyperliquid rend l&#x27;intégralité des positions, des prix d&#x27;entrée, des leviers et des P&amp;L non réalisés de 33 000 portefeuilles publiquement accessibles via son API gratuite.</span></li><li><span class="point-bullet">✦</span><span>Analyse de divergence Smart Money vs Retail** : La stratégie centrale consiste à comparer le positionnement des 20 portefeuilles les plus rentables face aux 20 plus perdants afin de repérer les actifs où les deux groupes s&#x27;opposent frontalement.</span></li><li><span class="point-bullet">✦</span><span>Détection des trades encombrés** : L&#x27;outil isole instantanément les consensus unanimes (par exemple, un achat massif partagé sur Sui) pour éviter les pièges de liquidité ou, au contraire, identifier les désalignements forts.</span></li><li><span class="point-bullet">✦</span><span>Génération automatisée de plans de trading** : En cas de divergence maximale (comme sur le Monero ou l&#x27;Ethereum), l&#x27;IA synthétise un plan complet incluant le sens de la transaction, le prix d&#x27;entrée, le stop-loss et plusieurs niveaux de take-profit.</span></li><li><span class="point-bullet">✦</span><span>Audit granulaire des portefeuilles d&#x27;élite** : Il est possible d&#x27;analyser l&#x27;historique complet d&#x27;une baleine spécifique (plus gros gains, pertes, profils de risque et effet de levier moyen, souvent situés entre 3x et 10x) pour décider s&#x27;il est pertinent de répliquer ses mouvements.</span></li><li><span class="point-bullet">✦</span><span>Briefing matinal macro-comportemental** : Un scan automatisé quotidien de 50 portefeuilles majeurs permet de cartographier dès l&#x27;ouverture des marchés les accumulations en cours et les positions ouvertes au cours des dernières 24 heures.</span></li><li><span class="point-bullet">✦</span><span>Calcul précis du levier et de l&#x27;exposition** : L&#x27;analyse en direct permet de connaître l&#x27;effet de levier moyen employé par l&#x27;argent intelligent sur un token donné (par exemple, ~19x sur l&#x27;ETH), offrant une vision claire du degré de conviction des opérateurs.</span></li><li><span class="point-bullet">✦</span><span>Gestion rigoureuse du sizing de position** : Les plans de trade fournis intègrent des recommandations de gestion du capital, telles que l&#x27;allocation d&#x27;un pourcentage fixe (ex: 15 %) du capital total par trade.</span></li><li><span class="point-bullet">✦</span><span>Complémentarité impérative avec l&#x27;analyse technique** : Les données de suivi des baleines ne constituent qu&#x27;une pièce du puzzle et doivent obligatoirement être croisées avec des graphiques de prix et des règles strictes de risk management.</span></li><li><span class="point-bullet">✦</span><span>Avantage asymétrique de l&#x27;automatisation** : L&#x27;utilisation d&#x27;agents IA permet de réaliser en moins d&#x27;une minute des analyses de flux de données qui nécessiteraient des heures de recherche manuelle, redéfinissant les standards du trading pour les investisseurs particuliers.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:20</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">What if you could scan 33,000 wallets on Hyperliquid? Find the top 20 most profitable traders. See exactly what they&#x27;re buying right now. Their entry prices, their leverage, their unrealized P&amp;L, and get a complete trade plan based on all of it. No API keys needed, no coding, no manual research.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (CLI) / Script de suivi de portefeuilles crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Rapport « Hyperliquid Whale Report » montrant le portefeuille #1 (0xecb6...2b00) avec un PnL global de +204,4M$, un PnL mensuel de +5,2M$, une valeur de compte de 71,8M$, ainsi qu&#x27;un tableau des positions clés (Coin, Direction, Size, Entry, Leverage, uPnL) pour BTC, ETH, SOL, ENA, LINK, FARTCOIN, WLD, AAVE, HYPE, MON, DOGE.</p>
+                        <p><strong>Action / Démonstration :</strong> Génération et affichage du rapport d&#x27;analyse automatisé des portefeuilles les plus rentables.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000005_seg1.jpg" alt="Capture d&#x27;écran d&#x27;un terminal en ligne de commande affichant un rapport détaillé sur les baleines du protocole Hyperliquid avec les performances et positions ouvertes du top 1 trader." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000005_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:05</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un terminal en ligne de commande affichant un rapport détaillé sur les baleines du protocole Hyperliquid avec les performances et positions ouvertes du top 1 trader.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:55</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">In this video, I&#x27;m going to show you exactly what this looks like live on screen. Every feature, every use case. and at the end i&#x27;ll tell you exactly how you can get all of this for yourself so without any further ado let&#x27;s get straight into it all right you need one tool for this setup this will be very quick claude code this is the agentic version of claude ai it doesn&#x27;t just talk it actually acts it connects to hyperliquid&#x27;s public api scans thousands of wallets ranks traders by profitability and gives you a complete breakdown of what smart money is doing right now all from plain english</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web du guide de configuration de Whale Tracker et site officiel de Claude (Anthropic).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif sur le scan de plus de 33 000 portefeuilles Hyperliquid, options de téléchargement de compétences et commande d&#x27;installation `irm https://claude.ai/install.ps1 | iex`.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page de présentation du script de suivi de baleines et passage à la page de téléchargement/installation de l&#x27;outil Claude Code.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000029_seg2.jpg" alt="Guide d&#x27;installation du Whale Tracker d&#x27;Alex Carter Trading, montrant un outil Claude Code pour scanner les portefeuilles Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000029_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:29</span>
+                        <span class="caption-text">Guide d&#x27;installation du Whale Tracker d&#x27;Alex Carter Trading, montrant un outil Claude Code pour scanner les portefeuilles Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000037_seg2.jpg" alt="Page web de présentation de Claude Code (&quot;Built for tinkerers&quot;), affichant les liens et la commande d&#x27;installation PowerShell." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000037_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:37</span>
+                        <span class="caption-text">Page web de présentation de Claude Code (&quot;Built for tinkerers&quot;), affichant les liens et la commande d&#x27;installation PowerShell.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:55 - 00:01:14</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The pro plan at $20 a month is all you need. Now, Hyperliquid. Very quickly. It&#x27;s a decentralized perpetual exchange running on its own blockchain. No KYC. No middleman. And because it&#x27;s fully on-chain, every single trade, every position, every wallet, it&#x27;s all public. That&#x27;s what makes this possible.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation en ligne Hyperliquid (GitBook) et interface de trading décentralisée Hyperliquid.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif sur la blockchain L1 Hyperliquid, le consensus HyperBFT, ainsi que les options de connexion de portefeuilles (Log in with Email, MetaMask, OKX Wallet, WalletConnect, Coinbase Wallet).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la documentation officielle puis affichage du module de connexion utilisateur sans KYC de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000100_seg3.jpg" alt="Documentation officielle de Hyperliquid (Hyperliquid Docs) présentant la description et la vue d&#x27;ensemble technique de la plateforme." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000100_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:00</span>
+                        <span class="caption-text">Documentation officielle de Hyperliquid (Hyperliquid Docs) présentant la description et la vue d&#x27;ensemble technique de la plateforme.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000104_seg3.jpg" alt="Interface de la plateforme de trading Hyperliquid affichant une fenêtre modale de connexion aux portefeuilles crypto (MetaMask, OKX Wallet, WalletConnect, etc.)." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000104_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:04</span>
+                        <span class="caption-text">Interface de la plateforme de trading Hyperliquid affichant une fenêtre modale de connexion aux portefeuilles crypto (MetaMask, OKX Wallet, WalletConnect, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:15 - 00:01:33</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Hyperliquid&#x27;s API is completely free and public, and Claude connects to it automatically with a skill code I created. And if you want the full step-by-step setup instructions, every prompt and the skill code itself, all of that is inside the AI Trade Edge community. Link is in the description. That&#x27;s the setup.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation technique Hyperliquid, page web personnalisée Alex Carter Trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liens SDK GitHub, spécifications de l&#x27;API publique, métriques de portefeuilles suivis (33,000+), liste des fonctionnalités de trading par API (ordres, positions, historique).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers la documentation et les guides de configuration pour l&#x27;intégration de l&#x27;API et du skill Claude.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000120_seg4.jpg" alt="Documentation officielle de l&#x27;API publique Hyperliquid sur le site web, affichant les liens vers les SDKs Python, Rust et Typescript." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000120_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Documentation officielle de l&#x27;API publique Hyperliquid sur le site web, affichant les liens vers les SDKs Python, Rust et Typescript.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000124_seg4.jpg" alt="Page de guide de configuration du &quot;Whale Tracker&quot; sur la plateforme Alex Carter Trading, permettant de scanner plus de 33 000 portefeuilles Hyperliquid en temps réel." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000124_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Page de guide de configuration du &quot;Whale Tracker&quot; sur la plateforme Alex Carter Trading, permettant de scanner plus de 33 000 portefeuilles Hyperliquid en temps réel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000129_seg4.jpg" alt="Interface de documentation détaillant les fonctionnalités de trading (Futures, Spot et informations de compte) ainsi que les cas d&#x27;utilisation créatifs de l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000129_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Interface de documentation détaillant les fonctionnalités de trading (Futures, Spot et informations de compte) ainsi que les cas d&#x27;utilisation créatifs de l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:02:00</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Now let me show you what it actually does. All right, let me open Claude Code and show you this live. Here&#x27;s the first thing I want to show you. Claude scans the top 20 most profitable wallets on Hyperliquid right now, pulls every open position, and ranks them by total profitability. All in one shot. Watch what happens. Claude hits Hyperliquid&#x27;s public endpoints, starts pulling wallet data across 33,000 addresses, ranks them by profitability, and starts building the report.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes Claude Code (CLI)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Informations de version (Claude Code v2.1.92, Opus 4.6), chemin du répertoire utilisateur et invite de commande vide avec le curseur.</p>
+                        <p><strong>Action / Démonstration :</strong> Ouverture du terminal pour démarrer la démonstration en direct et lancer des scripts d&#x27;analyse des portefeuilles Hyperliquid.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000140_seg5.jpg" alt="Interface de la console Claude Code v2.1.92 ouverte sur un terminal en ligne de commande." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000140_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Interface de la console Claude Code v2.1.92 ouverte sur un terminal en ligne de commande.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:01 - 00:02:23</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tu peux le voir fonctionner à travers les portefeuilles en temps réel. Les prix d&#x27;entrée, l&#x27;effet de levier, les profits et pertes non réalisés, tout arrive en direct. Et voici le résultat. Les 20 principales baleines classées, chaque position ouverte répertoriée. Et en bas, le résumé du sentiment global. En ce moment, l&#x27;argent intelligent est acheteur net sur le Bitcoin et vendeur net sur presque tout le reste, en particulier Ethereum.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes / Interpréteur de scripts</p>
+                        <p><strong>Contenu textuel & Code :</strong> Données JSON formatées listant des paires de cryptomonnaies (MOODENG, HYPE, VIRTUAL, MORPHO, IP), la direction des positions (SHORT), la taille, le prix d&#x27;entrée, les profits et pertes non réalisés (unrealized_pnl), l&#x27;effet de levier et le prix de liquidation.</p>
+                        <p><strong>Action / Démonstration :</strong> Suivi et affichage en temps réel des portefeuilles et positions ouvertes des baleines via un script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000206_seg6.jpg" alt="Capture d&#x27;écran montrant un terminal affichant des données JSON en temps réel sur les positions des baleines." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000206_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal affichant des données JSON en temps réel sur les positions des baleines.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:24 - 00:02:43</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est le genre de signal qu&#x27;il fallait des heures pour reconstituer manuellement. Claude le fait en moins d&#x27;une minute. Maintenant, c&#x27;est là que ça devient vraiment intéressant. Ce prompt compare les 20 portefeuilles les plus rentables aux 20 portefeuilles les plus perdants et trouve chaque jeton où ils sont sur des côtés opposés de la transaction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes en ligne de commande (CLI) sur fond bleu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Métriques de performance globale (« All-Time PnL +$204.4M », « Monthly PnL +$5.28M », « Account Value $71.8M ») et tableau des positions ouvertes (« Key Positions ») détaillant les cryptos (BTC, ETH, SOL, ENA, LINK, FARTCOIN, WLD, AAVE, HYPE, MON, DOGE, PUMP), la direction (LONG/SHORT), la taille, le prix d&#x27;entrée, le levier et l&#x27;uPnL.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse et affichage des données des portefeuilles des baleines de la plateforme Hyperliquid générées par l&#x27;outil.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000229_seg7.jpg" alt="Rapport détaillé dans un terminal affichant les performances (PnL et positions ouvertes) du top trader d&#x27;un tracker de baleines Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000229_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:29</span>
+                        <span class="caption-text">Rapport détaillé dans un terminal affichant les performances (PnL et positions ouvertes) du top trader d&#x27;un tracker de baleines Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:43 - 00:03:20</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Regardez-le tirer sur les deux groupes simultanément : les portefeuilles rentables d&#x27;un côté, les portefeuilles perdants de l&#x27;autre, et ensuite il commence à croiser les positions. Voici le résultat. Vous pouvez voir là où les deux groupes sont d&#x27;accord. Ils sont tous les deux acheteurs sur suey, donc c&#x27;est un trade encombré. Mais regardez ça. L&#x27;argent intelligent est massivement acheteur sur XMR, TRX, Pendle et Farcoin, tandis que les traders de détail sont vendeurs sur ces cryptos. Cette divergence juste là, c&#x27;est le signal. C&#x27;est le genre d&#x27;analyse pour laquelle les hedge funds payent. Vous l&#x27;obtenez grâce à un outil d&#x27;IA à 20 dollars et une API publique gratuite. Au fait, si vous trouvez cela utile jusqu&#x27;à présent, restez jusqu&#x27;à</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande en ligne de type CLI / script Python.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Statistiques globales (All-Time PnL +$204.4M, Monthly PnL +$5.28M, Account Value $71.8M) et tableau des positions ouvertes par crypto (BTC, ETH, SOL, ENA, LINK, etc.) avec direction, taille, prix d&#x27;entrée, levier et PnL non réalisé.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des données d&#x27;analyse des positions des traders performants (Whale Tracker).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000252_seg8.jpg" alt="Rapport de suivi des baleines sur Hyperliquid affichant les performances et les positions clés du top 20 des traders." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000252_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Rapport de suivi des baleines sur Hyperliquid affichant les performances et les positions clés du top 20 des traders.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:20 - 00:03:43</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">fin. Je vais vous montrer comment obtenir un plan de trading complet généré par IA avec un point d&#x27;entrée spécifique, un stop-loss et un take-profit, le tout basé sur le positionnement des baleines. Ça arrive dans une minute. Celui-ci, je le lance chaque fois que je cherche un setup à haute conviction. Claude trouve un token où les traders particuliers sont massivement positionnés d&#x27;un côté et où l&#x27;argent intelligent est soit neutre, soit de l&#x27;autre côté.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes ou interface CLI.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse du positionnement des baleines (100% top traders LONG, 0% rekt SHORT), tableau de plan de trading pour XMR (Monero) avec prix d&#x27;entrée ($325-330), stop-loss ($305), take-profit 1 ($355) et take-profit 2 ($385), effet de levier (5x), taille de position, et niveau de confiance (7/10) avec explications détaillées.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et explication d&#x27;un plan de trading complet généré par IA basé sur les baleines.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000326_seg9.jpg" alt="Capture d&#x27;écran montrant un terminal affichant un plan de trading généré par IA basé sur le positionnement des baleines (XMR LONG)." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000326_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:26</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal affichant un plan de trading généré par IA basé sur le positionnement des baleines (XMR LONG).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:43 - 00:04:17</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, il vous donne un trade spécifique. Regardez-le parcourir les données de divergence qu&#x27;il a déjà récupérées. Il cherche le plus grand écart entre la position des portefeuilles perdants et celle des portefeuilles rentables. Et voici le résultat. Il a signalé l&#x27;ETH où l&#x27;argent des investisseurs lambda est à 93 % net vendeur et l&#x27;argent intelligent a une exposition presque nulle du côté vendeur. Claude explique la divergence, pourquoi c&#x27;est important, puis vous donne un point d&#x27;entrée, un stop-loss et un take-profit spécifiques. C&#x27;est une idée de trade complète générée en quelques secondes sur la base de données de positionnement réelles provenant de milliers de traders en direct.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes / Interpréteur de scripts Bash et Python</p>
+                        <p><strong>Contenu textuel & Code :</strong> Scripts de traitement de données JSON, affichage de résultats agrégés pour le Smart Money (Top 25 PnL) avec des lignes pour BTC et ETH (ex: ETH: 11L / 7S (18) 61% long), et tentatives de récupération de prix via l&#x27;outil TradingView / script Weex.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution de scripts en ligne de commande pour récupérer et analyser les positions des portefeuilles et inspecter les données sur l&#x27;ETH.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000351_seg10.jpg" alt="Capture d&#x27;écran montrant un terminal de commandes avec des scripts Python et des blocs Bash exécutant l&#x27;analyse des positions des traders." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000351_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:51</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal de commandes avec des scripts Python et des blocs Bash exécutant l&#x27;analyse des positions des traders.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:17 - 00:04:50</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">portefeuilles. Maintenant, celui-ci est conçu pour lorsque vous surveillez déjà un jeton spécifique et que vous voulez savoir ce que les meilleurs traders du marché font avec. Regardez-le filtrer pour ne garder que les positions en ETH du groupe de portefeuilles rentables. Prix d&#x27;entrée moyen, effet de levier moyen, exposition totale, le tout calculé en direct. Et voici le résultat. L&#x27;entrée moyenne de l&#x27;argent intelligent sur l&#x27;ETH se situe à 2 081 $ pour les longs et 2 096 $ pour les shorts. L&#x27;effet de levier moyen est de 19,3 fois sur les longs et de 17,8 fois sur les shorts.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (script Python / interface CLI).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de métriques pour le &#x27;SMART MONEY (Top 20 by All-Time PnL)&#x27; : Traders (10 longs, 5 shorts), Avg Entry ($2,081.23 / $2,096.29), Avg Leverage (19.3x / 17.8x), Total Exposure ($8.65M / $20.17M), et PnL combiné.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des données de positionnement sur ETH filtrées par portefeuille rentable et analyse textuelle du sentiment du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000425_seg11.jpg" alt="Un terminal de commandes affichant l&#x27;analyse des positions sur ETH des baleines Hyperliquid (Smart Money et Rekt Money)." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000425_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:25</span>
+                        <span class="caption-text">Un terminal de commandes affichant l&#x27;analyse des positions sur ETH des baleines Hyperliquid (Smart Money et Rekt Money).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:50 - 00:05:25</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;exposition longue totale sur l&#x27;ensemble des principaux portefeuilles est de 8,65 millions de dollars. Et ensuite, Claude vous donne les deux côtés, le scénario haussier et le scénario baissier, basés uniquement sur la façon dont ces portefeuilles sont positionnés. C&#x27;est votre avantage. Vous savez ce que font les traders les plus rentables du marché avec le token exact que vous examinez avant d&#x27;ouvrir une seule position. Maintenant, celui-ci est mon préféré personnel. Si vous tombez un jour sur un portefeuille qui génère absolument un max de profits, vous pouvez coller l&#x27;adresse directement dans Claude et obtenir une analyse complète de tout ce que ce portefeuille a jamais fait. Regardez-le extraire l&#x27;historique complet du portefeuille.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:25 - 00:05:55</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">historique, positions ouvertes, P&amp;L total, plus grands gains, plus grosses pertes, profil de risque. Et voici le résultat. Ce portefeuille affiche un gain total de 400 000 dollars. Son plus gros gain individuel a été de 276 000 dollars sur un short DYDX. Il utilise un faible effet de levier, principalement de 3x à 10x. Et en ce moment, il détient une position long importante sur le XRP et des positions plus petites sur le BNB et le Bitcoin. Le verdict de Claude ? Oui, c&#x27;est un trader qui vaut la peine d&#x27;être suivi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de terminal de commande en ligne (CLI)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux &#x27;Wallet Overview&#x27; (Account Value: $13,910,150, Total Open Positions: 106, Long: 47, Short: 59, Net Unrealized PnL: +~$400K) et &#x27;Top 10 Biggest Winners (Unrealized)&#x27; détaillant les cryptos shortées (DYDX: +$276,096, PUMP: +$198,293, etc.) avec effet de levier.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et analyse des performances et des positions ouvertes d&#x27;un portefeuille de type &#x27;whale&#x27; sur Hyperliquid.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000532_seg13.jpg" alt="Capture d&#x27;écran montrant une interface de terminal avec des tableaux de données sur la performance d&#x27;un portefeuille sur Hyperliquid, incluant la valeur du compte, les positions ouvertes et le classement des plus gros gains." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000532_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:32</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une interface de terminal avec des tableaux de données sur la performance d&#x27;un portefeuille sur Hyperliquid, incluant la valeur du compte, les positions ouvertes et le classement des plus gros gains.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:55 - 00:06:17</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, vous pouvez suivre exactement ce que fait ce portefeuille ensuite. Celui-ci, je le lance tous les matins avant de faire quoi que ce soit d&#x27;autre. Claude extrait les 50 meilleurs portefeuilles de baleines, trouve ce qui est accumulé, ce qui est délesté, toutes les nouvelles positions ouvertes au cours des dernières 24 heures, et vous donne la transaction avec la plus forte conviction parmi les 10 portefeuilles les plus rentables, le tout formaté sous forme de briefing matinal rapide.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (CLI) / Script d&#x27;analyse Python.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de données textuels classés par tokens avec le nombre de positions Long, Short et le biais (ex: GRIFFAIN, SCR, MAV, XLM, ONDO, LIT, LINK, ZEC, ETH, MON), ainsi qu&#x27;une analyse textuelle soulignant les positions des baleines (&quot;Dumping / Exiting&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des positions des portefeuilles de baleines pour identifier les tokens délestés ou accumulés par les smart money.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000601_seg14.jpg" alt="Capture d&#x27;écran montrant un terminal de commande affichant les résultats d&#x27;une analyse automatisée des portefeuilles de baleines sur Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000601_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:01</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal de commande affichant les résultats d&#x27;une analyse automatisée des portefeuilles de baleines sur Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:17 - 00:06:49</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Regardez-le s&#x27;exécuter. Analyse de 50 portefeuilles, signalement des accumulations, signalement des sorties, extraction des nouvelles positions des dernières 24 heures. Et voici le résultat. Propre, formaté, lisible. Bitcoin et altcoins sont en cours d&#x27;accumulation. L&#x27;argent intelligent est fermement baissier sur Ethereum en ce moment. Un trader a ouvert une position vendeuse sur E&amp;A à cinq fois avec près de 950 000 dollars de profit, et un autre trader est acheteur à vingt fois sur le Bitcoin avec près de 50 000 dollars de profit. Et vous pouvez également voir le trade de plus forte conviction en ce moment</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande en ligne de texte (CLI) sur fond bleu.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Rapport « WHALE ALPHA SCAN » du 8 avril 2026. Tableau 1 (Accumulation) listant les tokens (BTC, SUI, FARTCOIN, HBAR, TRX, IMX, PENDLE, GRASS) avec le nombre de positions Long, Short et le biais haussier. Tableau 2 (Dumping / Exiting) listant les tokens à tendance baissière.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats d&#x27;un script d&#x27;analyse automatisée de 50 portefeuilles de baleines, mettant en avant les accumulations et les sorties.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000625_seg15.jpg" alt="Capture d&#x27;écran d&#x27;un terminal affichant les résultats d&#x27;analyse des positions des portefeuilles de baleines sur Hyperliquid, incluant des tableaux de données sur l&#x27;accumulation et les sorties." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000625_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:25</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un terminal affichant les résultats d&#x27;analyse des positions des portefeuilles de baleines sur Hyperliquid, incluant des tableaux de données sur l&#x27;accumulation et les sorties.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:49 - 00:07:13</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">parmi les 10 meilleurs portefeuilles avant même d&#x27;avoir bu mon café. C&#x27;est l&#x27;avantage matinal. Et celui-ci, le dernier, c&#x27;est celui que j&#x27;utilise quand je veux que Claude me dise simplement quelle est la toute meilleure caractéristique sur le marché en ce moment. Regardez-le exécuter l&#x27;analyse complète, en croisant les portefeuilles rentables avec les portefeuilles perdants, pour trouver le consensus directionnel le plus fort. Et voici le résultat. Jeton XMR. Direction long.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes / console en ligne de commande affichant du texte formaté en bleu foncé avec du texte jaune et blanc.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un tableau de données comparant &#x27;Smart Money&#x27; et &#x27;Rekt Money&#x27; pour différentes cryptomonnaies (XMR, BTC, ETH, HYPE, LIT, SUI) ainsi qu&#x27;un plan de trade détaillé pour XMR (Monero) indiquant une position LONG, un prix actuel d&#x27;environ 328 $, et une zone d&#x27;entrée.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution d&#x27;un script d&#x27;analyse de données de portefeuilles de baleines affichant les signaux et les recommandations de trading (Smart Money vs Rekt Money).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000655_seg16.jpg" alt="Capture d&#x27;écran montrant un terminal de commandes affichant l&#x27;analyse détaillée des portefeuilles de baleines (Hyperliquid Whale Scan) générée par Claude avec un plan de trade sur XMR." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000655_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:55</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal de commandes affichant l&#x27;analyse détaillée des portefeuilles de baleines (Hyperliquid Whale Scan) générée par Claude avec un plan de trade sur XMR.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:13 - 00:07:50</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Entrée 328 dollars. Stop loss 305 dollars. Premier take profit 355 dollars. Deuxième take profit 385 dollars. Taille de la position. 15 % d&#x27;un compte de 1 000 dollars. Confiance, 7 sur 10. Raisonnement, divergence parfaite à 100 % entre smart money et REC, le signal le plus rare du scan. C&#x27;est un plan de trading complet, élaboré à partir de données de positionnement réelles provenant de milliers de portefeuilles en direct en moins de quelques minutes. Une chose avant d&#x27;entrer dans le vif du sujet, faites toujours vos propres recherches. Les données de suivi des baleines ne sont qu&#x27;une pièce du puzzle,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de script / Interface CLI personnalisée</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau récapitulatif du trade plan XMR Long : Token XMR (Monero), Direction LONG, Current Price ~$328, Entry Zone $325-$330, Stop Loss $305, Take Profit 1 $355, Take Profit 2 $385, Leverage 5x, Position Size 15% of account, Confidence 7/10.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation détaillée du plan de trading et des niveaux de prix pour la crypto-monnaie Monero (XMR).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000722_seg17.jpg" alt="Capture d&#x27;écran montrant un terminal affichant le plan de trading détaillé pour XMR Long avec les paramètres d&#x27;entrée, stop loss et take profit." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000722_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:22</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un terminal affichant le plan de trading détaillé pour XMR Long avec les paramètres d&#x27;entrée, stop loss et take profit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:50 - 00:08:23</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pas toute la vue d&#x27;ensemble. Combinez toujours les données sur les baleines avec votre propre analyse de graphiques et votre gestion des risques avant de prendre toute décision de trading. Les performances passées des portefeuilles de baleines ne garantissent pas les résultats futurs. Et pour les prochaines années, deux types de traders existeront. Celui qui utilise l&#x27;IA et se simplifie la vie et celui qui ne le fait pas et fait encore tout manuellement. Et dans le même marché, cela façonnera un résultat très différent. Voici comment vous obtenez tout cela. Je lance la communauté AI Trade Edge. Chaque invite, bot, agent, modèle et guide étape par étape que j&#x27;utilise personnellement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, interface web du courtier WEEX, réseau social X (Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix du Bitcoin (BTC/USDT Perpetual Contract) en timeframe de 5 minutes avec bougies vertes et rouges, barre d&#x27;outils technique TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage et analyse visuelle de l&#x27;évolution du cours du Bitcoin sur un graphique de trading en temps réel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000815_seg18.jpg" alt="Graphique en chandeliers japonais sur l&#x27;interface TradingView montrant le contrat perpétuel BTC/USDT en unité de temps 5 minutes." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000815_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:15</span>
+                        <span class="caption-text">Graphique en chandeliers japonais sur l&#x27;interface TradingView montrant le contrat perpétuel BTC/USDT en unité de temps 5 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:23 - 00:08:59</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">to use all in one place. Everything I showed you today is inside and everything I build going forward gets added straight into the group. Every new integration, every new strategy, every new prompt, every update. This hyper liquid whale tracking setup, it&#x27;s already inside along with trading view and telegram integration. The moment you join, you get it all. The price is $79.99 a month. And honestly, when you think about what this actually is, the most cutting edge AI trading setup available to retail traders right now, constantly updated with everything included.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, interface Web Whop.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique Bitcoin perpétuel avec indicateurs de signaux de trading (Buy/Sell), indicateur technique en bas de graphique.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;un graphique technique avec signaux intégrés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000841_seg19.jpg" alt="Graphique TradingView en unité 4h pour la paire BTCUSDT sur l&#x27;exchange WEEX, affichant des signaux d&#x27;achat et de vente ainsi qu&#x27;un indicateur technique inférieur." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000841_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:41</span>
+                        <span class="caption-text">Graphique TradingView en unité 4h pour la paire BTCUSDT sur l&#x27;exchange WEEX, affichant des signaux d&#x27;achat et de vente ainsi qu&#x27;un indicateur technique inférieur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:59 - 00:09:33</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">That is not a lot of money. One good trade covers it. But the first 100 members lock in that rate permanently. After that, the price goes up. So the earlier you get in, the better the deal. The link is in the description. Get in now before the price goes up. You genuinely cannot afford to miss this. And that is it. Cloud Code and Hyperliquid&#x27;s public API, your own AI whale tracker, scanning 33,000 wallets and telling you exactly what smart money is doing right now. If you want to see the full demo on how to set up automated trade execution using Telegram and TradingView,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web Whop, interface CLI Claude Code, et site web personnel Alex Carter Trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;abonnement (79.99$/mois), interface de terminal Claude Code, et fonctionnalités du Whale Tracker (33 000+ portefeuilles scannés, sans clé API requise).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;offre payante de bots de trading et téléchargement d&#x27;une extension/skill Claude Code.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000908_seg20.jpg" alt="Page de paiement Whop affichant le produit &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79.99$/mois." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000908_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:08</span>
+                        <span class="caption-text">Page de paiement Whop affichant le produit &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79.99$/mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000916_seg20.jpg" alt="Interface de terminal de commande &quot;Claude Code V2.1.92&quot; en cours d&#x27;exécution." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000916_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:16</span>
+                        <span class="caption-text">Interface de terminal de commande &quot;Claude Code V2.1.92&quot; en cours d&#x27;exécution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000924_seg20.jpg" alt="Guide de configuration du &quot;Whale Tracker&quot; pour Claude Code permettant de scanner plus de 33 000 portefeuilles Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/wSoBeIcZAHg/wSoBeIcZAHg_000924_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:24</span>
+                        <span class="caption-text">Guide de configuration du &quot;Whale Tracker&quot; pour Claude Code permettant de scanner plus de 33 000 portefeuilles Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:33 - 00:09:43</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">check the video popping on screen right now. If you found this useful, leave a like. It really does help the channel. Subscribe if you haven&#x27;t already, and I will see you in the next one.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucun</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune action ou démonstration visible.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
