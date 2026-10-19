@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment copier des agents IA rentables sur Blofin (Guide étape par étape) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment copier des agents IA rentables sur Blofin (Guide étape par étape)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-04-16</span>
+                <span class="badge">⏱️ 00:15:13</span>
+                <span class="badge">🆔 <code>ZgM1GXu3VjQ</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=ZgM1GXu3VjQ" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo présentée par la chaîne Alex Carter explore en profondeur l'automatisation des stratégies de trading crypto sur la plateforme Blofin, en mettant particulièrement l'accent sur l'utilisation de bots de trading propulsés par l'intelligence artificielle pour générer des flux de revenus dits passifs. L'analyste y décortique une suite d'outils automatisés conçus pour fonctionner 24h/24 et 7j/7, éliminant ainsi la nécessité de surveiller en permanence les graphiques ou de céder à la pression émotionnelle des marchés. À travers une démonstration pas à pas, la vidéo enseigne comment exploiter l'assistant de configuration intelligent de Blofin pour identifier et copier des agents IA pré-entraînés, tout en maîtrisant les subtilités techniques de chaque bot disponible.<br><br>Le tutoriel ne se limite pas à une simple présentation superficielle : il détaille la configuration mécanique des stratégies phares telles que les grilles de futures, le DCA (Dollar Cost Averaging) avec et sans effet de levier, ainsi que l'utilisation de bots de signaux. L'intervenant démontre comment basculer entre les modes assistés par l'IA et le mode manuel pour garder un contrôle absolu sur les paramètres critiques. Des notions fondamentales de gestion des risques, comme l'ajustement de la fourchette de prix, l'espacement arithmétique ou géométrique des grilles, et l'intégration des ordres de sécurité, sont rigoureusement explicitées pour optimiser l'allocation du capital selon les conditions du marché.<br><br>Enfin, la vidéo tisse des ponts vers des architectures de trading plus avancées en évoquant l'intégration d'agents conversationnels et d'outils d'automatisation externes (tels que Claude Code, Grok Bots, TradingView, et Telegram). L'objectif affiché est de structurer un écosystème de trading quantitatif hybride, combinant l'analyse on-chain, l'exécution automatisée sur des bourses comme Blofin ou Hyperliquid, et un suivi nomade des performances, offrant ainsi aux traders une boîte à outils complète pour industrialiser leurs stratégies de scalping et d'investissement à long terme.<br><br>---<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **Blofin** : Plateforme centralisée de produits dérivés et de trading crypto, dotée d'un tableau de bord complet de bots automatisés et d'assistants de configuration par IA.<br>* **Grok Bots** : Agents conversationnels et d'analyse propulsés par l'IA utilisés pour assister la prise de décision et le traitement des données de marché.<br>* **Claude Code** : Modèle d'intelligence artificielle de pointe exploité pour l'ingénierie de stratégies, l'assistance au code et l'automatisation des flux de travail de trading.<br>* **TradingView** : Plateforme de charting avancée permettant d'analyser les graphiques et de générer des signaux de trading automatisés via Pine Script.<br>* **Telegram** : Application de messagerie instantanée intégrée pour recevoir des alertes en temps réel, exécuter des commandes et suivre l'activité des bots à distance.<br>* **Hyperliquid** : Protocole de finance décentralisée (DeFi) utilisé pour l'analyse des positions des baleines et le trading perpétuel avancé.<br>* **Pine Script** : Langage de programmation dédié à TradingView pour concevoir, backtester et automatiser des indicateurs et des stratégies de trading sur mesure.<br><br>---<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Allocation automatisée par IA** : L'utilisation de l'outil *EasyBot* de Blofin permet de faire correspondre instantanément le profil de risque et les attentes de marché du trader (haussier, baissier, volatil) avec le bot le plus performant basé sur des données historiques.<br>* **Grilles Futures (Futures Grid)** : Stratégie idéale pour les marchés hautement volatils et en range, consistant à placer un maillage d'ordres d'achat et de vente pour capturer les micro-fluctuations de prix tout en appliquant un effet de levier.<br>* **DCA Futures (Dollar Cost Averaging)** : Méthode combinant l'accumulation progressive d'actifs et l'effet de levier, conçue pour amplifier les rendements lors de positions directionnelles à long terme.<br>* **Grilles Spot (Spot Grid)** : Alternative sécurisée aux grilles de futures, permettant d'acheter bas et de vendre haut automatiquement dans des marchés stagnants, sans aucun risque de liquidation grâce à l'absence d'effet de levier.<br>* **DCA Spot** : L'option la plus conservatrice de la plateforme, qui élimine la charge émotionnelle en achetant périodiquement des actifs au comptant sans surendettement, idéale pour l'investissement passif à long terme.<br>* **SignalBot** : Outil de pontage permettant d'exécuter et d'automatiser des transactions en direct sur Blofin en se basant exclusivement sur les signaux techniques générés par TradingView.<br>* **TWAP (Time-Weighted Average Price)** : Algorithme de fractionnement d'ordres conçu pour répartir l'exécution d'une position importante sur une période définie afin de minimiser l'impact sur le marché et d'éviter le slippage.<br>* **Modes Arithmétique vs Géométrique** : Le mode arithmétique maintient une différence de prix absolue constante entre chaque grille (parfait pour les variations linéaires), tandis que le mode géométrique applique un espacement en pourcentage constant, s'adaptant nettement mieux à la volatilité des cryptomonnaies.<br>* **Gestion des risques et Stop-Loss** : L'activation des fonctions de take profit et de stop-loss en mode manuel est impérative pour encadrer les pertes potentielles et verrouiller les gains, en particulier lors de l'utilisation de produits dérivés à effet de levier.<br>* **Paramétrage des ordres de sécurité (DCA)** : Définition précise des paliers de prix (pourcentage de baisse déclenchant un renforcement) et du nombre maximal d'ordres de sécurité pour lisser le prix d'entrée moyen d'une position en phase de correction.<br>* **Écosystème multi-plateformes** : La synergie entre des outils de pointe (Claude, Grok, TradingView, Telegram et Blofin) permet de concevoir une infrastructure de trading quantitative semi-autonome, rationalisant l'analyse technique et le suivi des flux institutionnels (baleines).
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Blofin</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Claude Code</span><span class="tool-tag">TradingView</span><span class="tool-tag">Telegram</span><span class="tool-tag">Hyperliquid</span><span class="tool-tag">Pine Script</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Allocation automatisée par IA** : L&#x27;utilisation de l&#x27;outil *EasyBot* de Blofin permet de faire correspondre instantanément le profil de risque et les attentes de marché du trader (haussier, baissier, volatil) avec le bot le plus performant basé sur des données historiques.</span></li><li><span class="point-bullet">✦</span><span>Grilles Futures (Futures Grid)** : Stratégie idéale pour les marchés hautement volatils et en range, consistant à placer un maillage d&#x27;ordres d&#x27;achat et de vente pour capturer les micro-fluctuations de prix tout en appliquant un effet de levier.</span></li><li><span class="point-bullet">✦</span><span>DCA Futures (Dollar Cost Averaging)** : Méthode combinant l&#x27;accumulation progressive d&#x27;actifs et l&#x27;effet de levier, conçue pour amplifier les rendements lors de positions directionnelles à long terme.</span></li><li><span class="point-bullet">✦</span><span>Grilles Spot (Spot Grid)** : Alternative sécurisée aux grilles de futures, permettant d&#x27;acheter bas et de vendre haut automatiquement dans des marchés stagnants, sans aucun risque de liquidation grâce à l&#x27;absence d&#x27;effet de levier.</span></li><li><span class="point-bullet">✦</span><span>DCA Spot** : L&#x27;option la plus conservatrice de la plateforme, qui élimine la charge émotionnelle en achetant périodiquement des actifs au comptant sans surendettement, idéale pour l&#x27;investissement passif à long terme.</span></li><li><span class="point-bullet">✦</span><span>SignalBot** : Outil de pontage permettant d&#x27;exécuter et d&#x27;automatiser des transactions en direct sur Blofin en se basant exclusivement sur les signaux techniques générés par TradingView.</span></li><li><span class="point-bullet">✦</span><span>TWAP (Time-Weighted Average Price)** : Algorithme de fractionnement d&#x27;ordres conçu pour répartir l&#x27;exécution d&#x27;une position importante sur une période définie afin de minimiser l&#x27;impact sur le marché et d&#x27;éviter le slippage.</span></li><li><span class="point-bullet">✦</span><span>Modes Arithmétique vs Géométrique** : Le mode arithmétique maintient une différence de prix absolue constante entre chaque grille (parfait pour les variations linéaires), tandis que le mode géométrique applique un espacement en pourcentage constant, s&#x27;adaptant nettement mieux à la volatilité des cryptomonnaies.</span></li><li><span class="point-bullet">✦</span><span>Gestion des risques et Stop-Loss** : L&#x27;activation des fonctions de take profit et de stop-loss en mode manuel est impérative pour encadrer les pertes potentielles et verrouiller les gains, en particulier lors de l&#x27;utilisation de produits dérivés à effet de levier.</span></li><li><span class="point-bullet">✦</span><span>Paramétrage des ordres de sécurité (DCA)** : Définition précise des paliers de prix (pourcentage de baisse déclenchant un renforcement) et du nombre maximal d&#x27;ordres de sécurité pour lisser le prix d&#x27;entrée moyen d&#x27;une position en phase de correction.</span></li><li><span class="point-bullet">✦</span><span>Écosystème multi-plateformes** : La synergie entre des outils de pointe (Claude, Grok, TradingView, Telegram et Blofin) permet de concevoir une infrastructure de trading quantitative semi-autonome, rationalisant l&#x27;analyse technique et le suivi des flux institutionnels (baleines).</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:34</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a une fonctionnalité dans Blowfin que presque personne n&#x27;utilise, et c&#x27;est peut-être ce qui se rapproche le plus d&#x27;un revenu crypto passif que j&#x27;ai jamais vu. Nous parlons de six bots de trading IA qui fonctionnent 24h/24 et 7j/7. Pas de code, pas besoin de surveiller les graphiques, pas besoin de rester assis devant des écrans toute la journée. Il suffit de le configurer et de le laisser tourner. Et dans cette vidéo, je vous présente les six. À la fin de ce tutoriel, vous aurez un bot qui tourne 24 heures sur 24 et qui trade pour vous. De plus, je vais vous montrer comment j&#x27;intègre et j&#x27;automatise mon trading en ce moment même en utilisant Telegram et TradingView. Entrons donc dans le vif du sujet.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Blofin (plateforme d&#x27;échange de cryptomonnaies), interface web de trading de bots et interface de trading spot/futures avec graphiques TradingView intégrés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Types de bots (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP), options de configuration de grille (Price Range, Grid Quantity, effet de levier) et performances historiques de bots IA (APR backtestés).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu de création des bots de trading automatisé et affichage des paramètres de configuration d&#x27;une stratégie de grille de futures sur Blofin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000009_seg1.jpg" alt="Interface de création de bots sur Blofin affichant différentes catégories de bots automatisés (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP) et des stratégies IA préconfigurées." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface de création de bots sur Blofin affichant différentes catégories de bots automatisés (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP) et des stratégies IA préconfigurées.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000017_seg1.jpg" alt="Interface de trading de Blofin pour la paire BTCUSDT montrant un graphique des prix en chandelier, un carnet d&#x27;ordres en temps réel et le panneau de configuration pour un Futures Grid bot." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000017_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Interface de trading de Blofin pour la paire BTCUSDT montrant un graphique des prix en chandelier, un carnet d&#x27;ordres en temps réel et le panneau de configuration pour un Futures Grid bot.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:34 - 00:01:12</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">il. Première des choses, vous avez besoin d&#x27;un compte Blofin. Si vous n&#x27;en avez pas encore un, cliquez sur le lien dans la description. Vous aurez accès à des bonus exclusifs rien qu&#x27;en vous inscrivant et en tradant. Je vous montrerai exactement comment réclamer ceux-ci plus tard dans la vidéo. Cela prend moins d&#x27;une minute de créer votre compte. Une fois que vous êtes connecté, assurez-vous d&#x27;avoir des fonds sur votre compte. Si vous devez déposer, allez simplement dans actifs, cliquez sur dépôt, sélectionnez USDT, choisissez votre réseau. Je recommande TRC20 pour des frais bas et envoyez vos fonds. Ils arriveront en quelques minutes. Maintenant, entrons dans le vif du sujet avec les bots. Survolez futures dans le menu supérieur et cliquez sur bots de trading. C&#x27;est votre tableau de bord de bot. Tout en haut, vous</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails des bonus de bienvenue, sections &quot;Rewards Hub&quot;, &quot;Overview&quot;, soldes de compte (15.68 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme BloFin pour présenter les bonus et l&#x27;interface du compte.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000044_seg2.jpg" alt="Page des récompenses (Rewards Hub) de la plateforme BloFin montrant les bonus de bienvenue." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000044_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:44</span>
+                        <span class="caption-text">Page des récompenses (Rewards Hub) de la plateforme BloFin montrant les bonus de bienvenue.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000053_seg2.jpg" alt="Page d&#x27;accueil de la plateforme d&#x27;échange de cryptomonnaies BloFin avec le slogan &quot;Where Whales are Made&quot;." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000053_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:53</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme d&#x27;échange de cryptomonnaies BloFin avec le slogan &quot;Where Whales are Made&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000102_seg2.jpg" alt="Tableau de bord du compte utilisateur sur BloFin affichant un solde de 15.68 USDT dans la section Funding." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000102_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Tableau de bord du compte utilisateur sur BloFin affichant un solde de 15.68 USDT dans la section Funding.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:12 - 00:01:36</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">voir votre P&amp;L total, vos actifs totaux et vos bots en cours d&#x27;exécution. Faites maintenant défiler un peu vers le bas et vous verrez quelque chose de vraiment sympa. Blowfin va en fait vous faire correspondre au bon bot de trading en fonction de vos préférences. Cliquez sur essayer EasyBot. Ici, vous pouvez répondre à quelques questions comme sur quels contrats ou quelle devise aimeriez-vous vous concentrer ? Quelle direction du marché attendez-vous ? Haussière, baissière ou volatile ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange Blofin Trading Bots</p>
+                        <p><strong>Contenu textuel & Code :</strong> P&amp;L Total (0), Actifs Totaux (0.00), Bots en cours d&#x27;exécution (0), options de bots (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP) et bouton &quot;Try Easy Bot&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page des bots de trading de Blofin pour présenter les fonctionnalités de matching et de création de bots automatisés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000118_seg3.jpg" alt="Capture d&#x27;écran de l&#x27;interface des bots de trading de la plateforme Blofin montrant le tableau de bord avec les métriques P&amp;L, les actifs totaux, la section de matching des bots et les options de création de bots (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP)." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000118_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:18</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface des bots de trading de la plateforme Blofin montrant le tableau de bord avec les métriques P&amp;L, les actifs totaux, la section de matching des bots et les options de création de bots (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:36 - 00:01:54</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que vous avez terminé, cliquez sur obtenir ma correspondance. L&#x27;intelligence artificielle de Blowfin choisira la meilleure correspondance en fonction de vos critères. Vous pouvez voir le type de bot, le taux annuel en pourcentage testé sur données historiques, la période suggérée, et même la raison pour laquelle l&#x27;intelligence artificielle de Blowfin vous a associé à ce bot. C&#x27;est parfait si vous voulez simplement commencer rapidement sans trop réfléchir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme de trading de bots BioFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Actif sélectionné (BTCUSDT), orientation du marché (Bullish), type de bot recommandé (Futures Grid), APR backtesté (+737,42%), période suggérée (7 - 20 jours).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de la paire de trading et de la tendance de marché pour obtenir une correspondance de bot de trading automatisé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000141_seg4.jpg" alt="Interface des bots de trading BioFin montrant l&#x27;outil de correspondance avec suggestion de bot (Futures Grid) affichant un APR de +737,42%." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000141_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Interface des bots de trading BioFin montrant l&#x27;outil de correspondance avec suggestion de bot (Futures Grid) affichant un APR de +737,42%.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000150_seg4.jpg" alt="Fenêtre contextuelle affichant la raison de la correspondance (Reason for This Match) expliquant le fonctionnement du Futures Grid Bot." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000150_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Fenêtre contextuelle affichant la raison de la correspondance (Reason for This Match) expliquant le fonctionnement du Futures Grid Bot.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:55 - 00:02:16</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, faites défiler un peu plus bas et vous verrez la section Créer mon bot. Ici, vous pouvez voir tous les bots disponibles. Vous pouvez également voir la direction du marché et le bon bot pour cette condition de marché. Des bots haussiers, baissiers, de découpage et latéraux. Nous reviendrons sur la façon d&#x27;en créer un vous-même dans quelques minutes. Faites défiler un peu plus bas et vous verrez les bots IA fournis par Blowfin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de trading automatisé ou d&#x27;échange de cryptomonnaies.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des bots de trading classés par stratégie (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP) et filtres par direction du marché (All, Bullish, Bearish, Slicing Bots, Sideways).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différents types de bots de trading et de leur correspondance avec les conditions de marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000200_seg5.jpg" alt="Capture d&#x27;écran montrant la section &quot;Create My Bot&quot; avec les différentes catégories de robots de trading disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP) et les filtres de conditions de marché." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000200_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:00</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la section &quot;Create My Bot&quot; avec les différentes catégories de robots de trading disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP) et les filtres de conditions de marché.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:16 - 00:02:40</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, vous pouvez voir la crypto, le type de tendance dans laquelle elle se trouve, le type de robot recommandé, le biais et l&#x27;effet de levier utilisé. Vous pouvez également voir l&#x27;APR testé par anticipation, le profit par grille, la fourchette de prix et la quantité de grilles. Cela vous donne une tonne de données pour décider si vous voulez copier l&#x27;un de ces robots. Une fois que vous cliquez sur créer maintenant sur l&#x27;un de ces robots, cela vous amène au tableau de bord de trading où vous pouvez voir tous les paramètres.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de trading de cryptomonnaies / section AI Bots.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de cryptos (DOGEUSDT, BTCUSDT, SUIUSDT, SOLUSDT, ETHUSDT, XRPUSDT), types de robots (Futures DCA, Futures Grid), tendances de marché (Bullish/Bearish Trend), APR testés par anticipation (+365.07%, +467.36%, +524.31%), effets de levier (Buy 7X, Sell 10X), fourchettes de prix, et boutons &#x27;Create Now&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Survol du curseur de la souris sur le premier robot de trading (DOGEUSDT) pour la création d&#x27;un bot de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000222_seg6.jpg" alt="Capture d&#x27;écran montrant une interface de robots de trading automatisés (AI Bots) avec plusieurs paires de cryptomonnaies telles que DOGEUSDT, BTCUSDT et SUIUSDT, affichant leurs performances et paramètres." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000222_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une interface de robots de trading automatisés (AI Bots) avec plusieurs paires de cryptomonnaies telles que DOGEUSDT, BTCUSDT et SUIUSDT, affichant leurs performances et paramètres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:41 - 00:03:01</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce que vous avez à faire est de saisir votre montant d&#x27;investissement et de cliquer sur créer, qu&#x27;il s&#x27;agisse d&#x27;une position d&#x27;achat ou de vente. Maintenant que vous savez comment naviguer sur le tableau de bord, parlons de tous les types de bots disponibles. Ici, vous pouvez voir différents types de bots. Futures Grid. C&#x27;est idéal pour les marchés volatils. Il tire profit des fluctuations de prix en plaçant des ordres d&#x27;achat et de vente sur une plage de prix définie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Blofin (Interface Futures et section Trading Bots)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT (4H), indicateurs de tendance, carnet d&#x27;ordres, paramètres de bot Grid (levier x10, fourchette de prix, montant d&#x27;investissement) et liste des types de bots de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme, saisie du montant d&#x27;investissement et présentation des différents types de bots de trading disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000246_seg7.jpg" alt="Interface de trading Blofin montrant un graphique BTCUSDT Perpetual sur 4 heures, un carnet d&#x27;ordres et le panneau de configuration d&#x27;un bot Grid avec le bouton de création." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000246_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Interface de trading Blofin montrant un graphique BTCUSDT Perpetual sur 4 heures, un carnet d&#x27;ordres et le panneau de configuration d&#x27;un bot Grid avec le bouton de création.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000251_seg7.jpg" alt="Page de création de bots sur la plateforme Blofin affichant les différents types de bots disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP)." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000251_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Page de création de bots sur la plateforme Blofin affichant les différents types de bots disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:02 - 00:03:33</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Futures DCA. Il s&#x27;agit d&#x27;achats périodiques par moyennes de coûts pour les contrats à terme. Cela achète à intervalles réguliers quel que soit le prix, parfait pour l&#x27;accumulation à long terme avec effet de levier. Grid Spot. Cela fonctionne comme une grille de futures, mais sans effet de levier. Idéal pour les marchés stagnants où vous souhaitez acheter bas et vendre haut automatiquement. DCA Spot. C&#x27;est l&#x27;option la plus sûre. Cela achète la cryptomonnaie de votre choix à intervalles réguliers sans effet de levier, éliminant ainsi l&#x27;émotion de l&#x27;investissement. SignalBot. Celui-ci est unique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;une plateforme de trading (type exchange crypto).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection des bots avec les options : Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, et TWAP, ainsi qu&#x27;une section &#x27;AI Bots&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole et sélectionne l&#x27;option &#x27;Futures DCA&#x27;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000309_seg8.jpg" alt="Interface de création de bots de trading affichant les différentes stratégies disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP)." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000309_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Interface de création de bots de trading affichant les différentes stratégies disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:33 - 00:03:52</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il vous permet d&#x27;automatiser des transactions basées sur des signaux TradingView. TWAP ou prix moyen pondéré dans le temps. Cela répartit votre ordre sur une période définie pour éviter le slippage. Maintenant, laissez-moi vous montrer comment créer chacun d&#x27;eux, en commençant par le plus populaire, la grille Futures. Créons un bot de grille Futures à partir de zéro.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de trading de bots (type exchange crypto).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots disponibles : Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, et TWAP (Place scheduled orders to reduce slippage).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole et sélectionne l&#x27;option de stratégie TWAP pour la création d&#x27;un bot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000338_seg9.jpg" alt="Interface de création de bot montrant différentes stratégies de trading, avec un curseur sur l&#x27;option TWAP." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000338_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:38</span>
+                        <span class="caption-text">Interface de création de bot montrant différentes stratégies de trading, avec un curseur sur l&#x27;option TWAP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:52 - 00:04:13</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est l&#x27;un des bots les plus populaires car il tire profit de la volatilité. Cliquez sur Grille de Futures. En haut à gauche, vous pouvez sélectionner votre paire de trading. Prenons Bitcoin USDT. Vous pouvez rechercher n&#x27;importe quelle paire que vous voulez ici. Sur le côté droit, vous verrez les sélections de Blowfin AI. Ce sont des bots pré-conçus avec leurs statistiques si vous voulez les utiliser comme référence.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange de cryptomonnaies Blofin (section Futures et bots de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de création de bots (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP), graphique des prix du BTCUSDT avec indicateurs techniques, carnet d&#x27;ordres en temps réel et stratégies de grille de futures avec performances affichées (APR).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu de création de bots, sélection du type de bot &quot;Futures Grid&quot; et visualisation de l&#x27;interface de trading avec le panneau de configuration des grilles sur le côté droit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000357_seg10.jpg" alt="Interface de création de bot sur Blofin, montrant les différentes options de trading automatisé comme le Futures Grid." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000357_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Interface de création de bot sur Blofin, montrant les différentes options de trading automatisé comme le Futures Grid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000402_seg10.jpg" alt="Interface de trading Blofin pour la paire BTCUSDT, affichant un graphique en chandeliers en haut à gauche, un carnet d&#x27;ordres au centre et le module Futures Grid sur la droite." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000402_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:02</span>
+                        <span class="caption-text">Interface de trading Blofin pour la paire BTCUSDT, affichant un graphique en chandeliers en haut à gauche, un carnet d&#x27;ordres au centre et le module Futures Grid sur la droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:13 - 00:04:47</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous avez deux modes, les stratégies d&#x27;IA et le mode manuel. Commençons par la stratégie d&#x27;IA. Ici, l&#x27;IA de Blowfin vous montrera les bots pré-conçus. Vous pouvez choisir la direction ici, telle que l&#x27;achat, la vente et le neutre. Ici, vous pouvez également voir le nom du bot, l&#x27;effet de levier utilisé, le taux annuel en pourcentage (APR) testé rétroactivement, la fourchette de prix, les profits par grille et la quantité de grilles en fonction des conditions actuelles du marché. Une fois que vous cliquez sur créer maintenant, tout ce que vous avez à faire est d&#x27;entrer votre montant d&#x27;investissement total. Vous pouvez voir sur le graphique du côté gauche l&#x27;aperçu des grilles où il achètera ou vendra en fonction de vos paramètres. Maintenant, si vous voulez tout</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BloFin (interface Futures Grid).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers 4H du BTCUSDT, carnet d&#x27;ordres en temps réel, et panneaux des stratégies de bots IA (Bullish Trend - Moderate avec un APR backtesté de +309,61%, fourchette de prix 53060 - 82083,6).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et explication du mode de stratégies d&#x27;IA pour les bots de grille pré-conçus sur BloFin, montrant les performances et les paramètres de prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000422_seg11.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading BloFin affichant le graphique du BTCUSDT, le carnet d&#x27;ordres et le panneau de configuration des bots de grille (Futures Grid) avec les stratégies d&#x27;IA sélectionnées." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000422_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:22</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading BloFin affichant le graphique du BTCUSDT, le carnet d&#x27;ordres et le panneau de configuration des bots de grille (Futures Grid) avec les stratégies d&#x27;IA sélectionnées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:47 - 00:05:21</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">contrôle, vous pouvez passer en mode manuel en cliquant sur ajuster les paramètres. Ici, vous pouvez définir manuellement la fourchette de prix, le nombre de grilles et votre effet de levier. Vous pouvez également voir le take profit et le stop loss, qu&#x27;il est fortement recommandé d&#x27;activer. Ceux-ci sont optionnels, mais ils vous donnent un contrôle supplémentaire sur la gestion des risques. Vous pouvez également définir le mode de grille tel que arithmétique et géométrique. Arithmétique signifie que la différence de prix entre chaque grille est égale. Donc, si vous définissez des grilles espacées de 100 dollars, chaque grille sera exactement espacée de 100 dollars. Géométrique signifie que la différence en pourcentage entre les grilles est égale.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Blofin (section Futures Grid / Trading Bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de trading de grille (Futures Grid) incluant la fourchette de prix, le nombre de grilles (17), l&#x27;effet de levier (5x) et les champs de configuration Take Profit (TP) et Stop Loss (SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Ajustement manuel de l&#x27;effet de levier et configuration des seuils de protection (Take Profit / Stop Loss) pour un bot de grille futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000455_seg12.jpg" alt="Interface de la plateforme Blofin montrant une fenêtre pop-up pour ajuster l&#x27;effet de levier (réglé sur 5x) sur une paire BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000455_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:55</span>
+                        <span class="caption-text">Interface de la plateforme Blofin montrant une fenêtre pop-up pour ajuster l&#x27;effet de levier (réglé sur 5x) sur une paire BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000504_seg12.jpg" alt="Interface de configuration des bots de trading de Blofin, mettant en évidence les options de Take Profit et Stop Loss dans le panneau latéral droit." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000504_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:04</span>
+                        <span class="caption-text">Interface de configuration des bots de trading de Blofin, mettant en évidence les options de Take Profit et Stop Loss dans le panneau latéral droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:21 - 00:05:55</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est mieux pour les marchés volatils car cela s&#x27;ajuste à des fluctuations de prix plus importantes. Une fois que tout semble bon, cliquez sur créer et votre bot grid futures devient actif. Ensuite, voici le bot DCA futures, le « dollar cost averaging » avec effet de levier. C&#x27;est idéal si vous voulez accumuler une position au fil du temps tout en utilisant l&#x27;effet de levier pour amplifier vos rendements. Voici comment cela fonctionne : tout d&#x27;abord, sélectionnez votre paire de trading, choisissez la crypto dans laquelle vous voulez investir dans le coin supérieur gauche. Sur le côté droit, vous pouvez toujours voir deux modes comme auparavant, stratégies IA et manuel. Vous pouvez choisir entre acheter et vendre et voir le blowfin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Blofin (plateforme d&#x27;échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots de trading (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP), stratégies IA de DCA avec des APR backtestés (+14,70 %, +58,35 %), et carnet d&#x27;ordres en temps réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu de création de bots de trading automatisés puis visualisation de l&#x27;interface de trading avec le panneau Futures DCA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000530_seg13.jpg" alt="Interface de création de bot sur une plateforme crypto, affichant différentes options de bots comme le Futures Grid et le Futures DCA." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000530_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:30</span>
+                        <span class="caption-text">Interface de création de bot sur une plateforme crypto, affichant différentes options de bots comme le Futures Grid et le Futures DCA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000538_seg13.jpg" alt="Interface de trading de la plateforme Blofin montrant un graphique de prix BTCUSDT en chandelier, le carnet d&#x27;ordres et le panneau de configuration du bot Futures DCA." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000538_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:38</span>
+                        <span class="caption-text">Interface de trading de la plateforme Blofin montrant un graphique de prix BTCUSDT en chandelier, le carnet d&#x27;ordres et le panneau de configuration du bot Futures DCA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:55 - 00:06:30</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Recommandations de robots IA. Vous pouvez voir le nom, l&#x27;effet de levier utilisé, le taux annuel en pourcentage (APR) testé sur l&#x27;historique, le nombre maximal d&#x27;ordres de sécurité, les paliers de prix et le cycle de take profit. Si vous avez sélectionné celui qui vous plaît, cliquez sur créer maintenant. Ici, vous pouvez saisir le montant investi. Une fois que vous avez tout configuré, cliquez sur créer, et le bot s&#x27;occupe du reste. Maintenant, si vous voulez un contrôle total, vous pouvez l&#x27;ajuster en passant en mode manuel en cliquant sur ajuster les paramètres. Ici, vous pouvez définir manuellement les paliers de prix, le take profit par cycle et le nombre maximal d&#x27;ordres de sécurité. Les paliers de prix déterminent de combien le prix doit baisser avant que le bot n&#x27;achète à nouveau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin (Échange de cryptomonnaies / Interface Futures DCA)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT, carnet d&#x27;ordres en temps réel, et configurations de robots IA (stratégie &#x27;Long-term Moderate Bullish&#x27; avec un APR backtesté de +14,70%, 5 ordres de sécurité maximum, paliers de prix à 1,55%, et Take Profit par cycle à 3,36% ; stratégie &#x27;Mid-term Balanced Bullish&#x27; avec un APR de +56,35%, 6 ordres de sécurité, paliers à 1,40%, Take Profit à 2,04%).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et présentation des recommandations de robots IA, avec le curseur de la souris positionné sur le bouton &#x27;Create Now&#x27;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000604_seg14.jpg" alt="Interface de la plateforme BloFin affichant un graphique de prix BTCUSDT en unités 4h, le carnet d&#x27;ordres au centre et un panneau de stratégies de robots IA pour le Futures DCA sur la droite." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000604_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:04</span>
+                        <span class="caption-text">Interface de la plateforme BloFin affichant un graphique de prix BTCUSDT en unités 4h, le carnet d&#x27;ordres au centre et un panneau de stratégies de robots IA pour le Futures DCA sur la droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:31 - 00:07:03</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les ordres de sécurité maximum correspondent au nombre maximal de fois où le bot renforcera votre position. Le take profit par cycle définit le pourcentage de profit que le bot vise avant de clôturer l&#x27;ensemble de la position. Une fois que tout vous convient, cliquez sur créer et le bot sera actif. Au fait, si vous voulez les instructions de configuration complètes sur la façon de trader en utilisant votre application Telegram, comment intégrer Claude à TradingView ou analyser les baleines sur Hyperliquid, le tout automatiquement, chaque invite, chaque guide étape par étape et tous les modèles d&#x27;agents que j&#x27;utilise personnellement, tout cela se trouve à l&#x27;intérieur</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;échange de cryptomonnaies (Blofin) et page web de documentation technique.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de bot DCA (Take Profit par cycle, Max Safety Orders) et documentation sur l&#x27;automatisation de TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres d&#x27;un bot de trading automatisé et navigation dans la documentation technique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000639_seg15.jpg" alt="Interface de trading de contrats à terme (Futures DCA) affichant un graphique de prix Bitcoin, un carnet d&#x27;ordres et les paramètres de configuration du bot." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000639_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:39</span>
+                        <span class="caption-text">Interface de trading de contrats à terme (Futures DCA) affichant un graphique de prix Bitcoin, un carnet d&#x27;ordres et les paramètres de configuration du bot.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:03 - 00:07:36</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le lien de la communauté ai trade edge est dans la description le bot de grille au comptant fonctionne exactement comme la grille futures mais sans effet de levier il est parfait si vous voulez acheter bas et vendre haut automatiquement dans un marché en range sans le risque de liquidation en haut à gauche vous pouvez sélectionner votre paire de trading allons-y avec Ethereum USDT vous pouvez rechercher n&#x27;importe quelle paire que vous voulez ici sur le côté droit vous verrez les sélections de Blofin AI ce sont des bots préconçus avec leurs statistiques si vous voulez les utiliser comme référence vous avez deux modes les stratégies IA et le mode manuel commençons par</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Blofin (Interface Spot Grid et TradingView intégré).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots de trading (Spot Grid, Futures Grid, Futures DCA, Spot DCA, Signal Bot, TWAP) et stratégies AI avec Backtested APR et plages de prix.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et présentation de la stratégie &#x27;Spot Grid&#x27; pour automatiser l&#x27;achat bas et la vente haut sans effet de levier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000712_seg16.jpg" alt="Interface de création de bot sur Blofin, montrant différentes options de bots de trading dont le &#x27;Spot Grid&#x27; sélectionné par le curseur." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000712_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:12</span>
+                        <span class="caption-text">Interface de création de bot sur Blofin, montrant différentes options de bots de trading dont le &#x27;Spot Grid&#x27; sélectionné par le curseur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000720_seg16.jpg" alt="Interface de trading de la plateforme Blofin affichant un graphique en chandeliers BTC/USDT, le carnet d&#x27;ordres et les stratégies de bots &#x27;Spot Grid&#x27; sur le panneau latéral droit." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000720_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:20</span>
+                        <span class="caption-text">Interface de trading de la plateforme Blofin affichant un graphique en chandeliers BTC/USDT, le carnet d&#x27;ordres et les stratégies de bots &#x27;Spot Grid&#x27; sur le panneau latéral droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:36 - 00:08:10</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">stratégie IA. Ici, l&#x27;IA de Blofin vous montrera les bots pré-fabriqués. Ici, vous pouvez également voir le nom du bot, le taux de rendement annuel (APR) testé sur données historiques, la fourchette de prix, les profits par grille et la quantité de grilles en fonction des conditions actuelles du marché. Remarquez qu&#x27;il n&#x27;y a pas d&#x27;effet de levier ici. Vous tradez uniquement avec votre propre capital, ce qui rend cela beaucoup plus sûr. Une fois que vous cliquez sur créer maintenant, tout ce que vous avez à faire est d&#x27;entrer votre montant total d&#x27;investissement. Vous pouvez voir sur un graphique sur le côté gauche les grilles de prévision où il achètera ou vendra en fonction de vos paramètres. Le bot placera des ordres d&#x27;achat à l&#x27;extrémité inférieure de la fourchette et vendra</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Blofin (interface web de trading spot et bots grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers ETH/USDT en unité 1h, carnet d&#x27;ordres en temps réel, et options de stratégie IA de grille (Spot Grid) affichant des taux de rendement (Backtested APR) comme +478,95 % et +358,30 %, ainsi que des fourchettes de prix et le nombre de grilles.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et présentation des stratégies de bots de trading automatisés basés sur l&#x27;IA (Spot Grid) proposées par la plateforme Blofin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000745_seg17.jpg" alt="Interface de trading de la plateforme Blofin montrant le graphique de la paire ETH/USDT, le carnet d&#x27;ordres et le panneau latéral de configuration des bots &quot;Spot Grid&quot; avec des stratégies IA prédéfinies." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000745_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:45</span>
+                        <span class="caption-text">Interface de trading de la plateforme Blofin montrant le graphique de la paire ETH/USDT, le carnet d&#x27;ordres et le panneau latéral de configuration des bots &quot;Spot Grid&quot; avec des stratégies IA prédéfinies.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:10 - 00:08:44</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">des ordres sur la partie supérieure, en capturant les profits à chaque fluctuation des prix. C&#x27;est idéal pour accumuler une position au fil du temps sans effet de levier. Maintenant, si vous voulez un contrôle total, vous pouvez passer en mode manuel en cliquant sur ajuster les paramètres. Ici, vous pouvez définir manuellement la plage de prix et le nombre de grilles vous-même. Vous pouvez également définir le mode de grille, comme arithmétique et géométrique, tout comme avec la grille de contrats futures. Une fois que tout semble correct, cliquez sur créer et votre bot de grille au comptant se lance. Le bot DCA au comptant est l&#x27;option la plus sûre. Il est parfait pour les investisseurs à long terme qui veulent accumuler</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin (Échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire ETH/USDT, graphique des prix en chandelier 1h, carnet d&#x27;ordres en temps réel, panneau de configuration &quot;Spot Grid&quot; (mode Manuel sélectionné, stratégie &quot;Bullish Trend - Moderate&quot;, Backtested 7D APY +470.95%, plage de prix 1739.35 - 2355.59, 10 grilles arithmétiques).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du panneau de configuration manuelle des grilles sur BloFin pour ajuster les paramètres de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000819_seg18.jpg" alt="Interface de trading de la plateforme BloFin montrant le graphique de la paire ETH/USDT en mode Spot Grid, avec le carnet d&#x27;ordres au centre et les paramètres de stratégie manuelle sur le panneau de droite." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000819_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:19</span>
+                        <span class="caption-text">Interface de trading de la plateforme BloFin montrant le graphique de la paire ETH/USDT en mode Spot Grid, avec le carnet d&#x27;ordres au centre et les paramètres de stratégie manuelle sur le panneau de droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:44 - 00:09:19</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">sans effet de levier et sans vous soucier du timing du marché. Cliquez sur DCA au comptant. Voici comment cela fonctionne. D&#x27;abord, sélectionnez votre paire de trading. Choisissez la crypto dans laquelle vous voulez investir dans le coin supérieur gauche. Sur le côté droit, vous pouvez toujours voir deux modes comme avant, stratégies IA et manuel. Vous pouvez voir le nom, le taux annuel effectif global testé sur l&#x27;historique, les ordres de sécurité maximum, les paliers de prix et le cycle de prise de profits. Remarquez qu&#x27;il n&#x27;y a pas d&#x27;effet de levier ici. Il s&#x27;agit de trading au comptant pur, ce qui signifie que vous utilisez uniquement votre propre capital avec un risque de liquidation nul. Si vous avez sélectionné celle qui vous plaît, cliquez sur créer maintenant. Ici, vous pouvez entrer le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin (Échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT sélectionnée en haut à gauche (prix actuel autour de 67 303.92 USDT), graphique de bougies japonaises en unité 1h, carnet d&#x27;ordres (Order Book) au milieu, et module de stratégie « Spot DCA » avec des options automatisées sur la droite (« Long-term Moderate Bullish », « Mid-term Balanced Bullish »).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de la paire de trading et présentation de l&#x27;interface Spot DCA sur la plateforme BloFin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000853_seg19.jpg" alt="Interface de la plateforme BloFin montrant le graphique de la paire BTC/USDT en mode Spot, avec le carnet d&#x27;ordres au centre et les options Spot DCA sur le panneau de droite." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000853_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:53</span>
+                        <span class="caption-text">Interface de la plateforme BloFin montrant le graphique de la paire BTC/USDT en mode Spot, avec le carnet d&#x27;ordres au centre et les options Spot DCA sur le panneau de droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:19 - 00:09:53</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">montant investi. Le bot achètera automatiquement à intervalles réguliers, peu importe le prix. Cela élimine toute émotion de l&#x27;investissement et vous aide à vous constituer une position au fil du temps. Une fois que vous avez tout configuré, cliquez sur créer, et le bot s&#x27;occupe du reste. Maintenant, si vous voulez un contrôle total, vous pouvez l&#x27;ajuster en passant en mode manuel en cliquant sur ajuster les paramètres, ici vous pouvez définir manuellement les paliers de prix, le take profit par cycle et les ordres de sécurité max. C&#x27;est la stratégie ultime du &quot;régler et oublier&quot;, vous n&#x27;avez pas besoin de surveiller les graphiques, vous n&#x27;avez pas besoin de chronométrer le marché, vous laissez simplement le bot</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BloFin, interface de trading Spot et bot Spot DCA.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT au prix de 67,359.68 USD, carnet d&#x27;ordres en direct, graphique de prix avec des marqueurs verts indiquant les niveaux de &quot;Safety Orders&quot; (ordres de sécurité) du DCA, et le panneau de configuration du bot affichant une stratégie &quot;Bullish Trend - Moderate&quot; avec un Backtested 7D APR de +121.52%.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et visualisation des paramètres d&#x27;un bot Spot DCA sur la plateforme BloFin pour automatiser les achats périodiques de Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000927_seg20.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme de trading BloFin montrant le graphique de la paire BTC/USDT en unité de temps 1h, avec le carnet d&#x27;ordres et le panneau de configuration d&#x27;un bot Spot DCA (Dollar Cost Averaging)." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000927_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:27</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme de trading BloFin montrant le graphique de la paire BTC/USDT en unité de temps 1h, avec le carnet d&#x27;ordres et le panneau de configuration d&#x27;un bot Spot DCA (Dollar Cost Averaging).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:53 - 00:10:14</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">s&#x27;accumuler pour vous sur des semaines, des mois ou même des années. Une fois que tout est à votre convenance, cliquez sur créer et le bot sera actif. Maintenant, parlons du bot de signal. Celui-ci est vraiment intéressant parce qu&#x27;il vous permet d&#x27;automatiser des trades basés sur des signaux TradingView. Lorsque vous cliquez sur SignalBot, cela vous amène au tableau de bord de trading. En haut à droite, vous verrez un bouton Ajouter un signal.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Blofin (interface de bot de trading Spot DCA et menu de sélection des bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC/USDT, niveaux de safety orders d&#x27;un bot DCA, carnet d&#x27;ordres (Order Book), paramètres de configuration de bot (Price Steps, Take Profit, Invested Amount) et types de bots disponibles (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et finalisation d&#x27;un bot Spot DCA sur l&#x27;image 1, puis navigation vers le menu de création de bots pour sélectionner le Signal Bot sur l&#x27;image 2.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000959_seg21.jpg" alt="Interface de trading de la plateforme Blofin montrant un graphique BTC/USDT en bougies 1h avec les niveaux d&#x27;un bot Spot DCA configurés, un carnet d&#x27;ordres central et un panneau latéral de configuration manuelle." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_000959_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:59</span>
+                        <span class="caption-text">Interface de trading de la plateforme Blofin montrant un graphique BTC/USDT en bougies 1h avec les niveaux d&#x27;un bot Spot DCA configurés, un carnet d&#x27;ordres central et un panneau latéral de configuration manuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001004_seg21.jpg" alt="Page de sélection des bots de trading sur Blofin (&quot;Create My Bot&quot;) avec le curseur de la souris pointant sur l&#x27;option &quot;Signal Bot&quot; permettant d&#x27;automatiser des trades basés sur des signaux." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001004_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:04</span>
+                        <span class="caption-text">Page de sélection des bots de trading sur Blofin (&quot;Create My Bot&quot;) avec le curseur de la souris pointant sur l&#x27;option &quot;Signal Bot&quot; permettant d&#x27;automatiser des trades basés sur des signaux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:14 - 00:10:47</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cliquez sur ceci. Voici comment cela fonctionne. Les SignalBots de Blofin peuvent analyser les signaux générés par les scripts de stratégie TradingView. Cela signifie que si vous avez une stratégie de trading sur TradingView, vous pouvez la connecter directement à Blofin et automatiser vos trades. Maintenant, voici ce que vous devez savoir. Ne partagez votre URL de webhook ou votre jeton de signal avec personne. Blofin ne prend en charge que le mode de position à sens unique. Assurez-vous que votre stratégie TradingView ne repose pas sur le mode de couverture. Il peut y dans les risques de perte ou de retard de signal puisque cela repose sur une plateforme tierce. Très bien,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange Blofin (interface web avec graphique BTCUSDT en arrière-plan et panneau de SignalBot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre pop-up de configuration d&#x27;un signal Webhook avec des consignes textuelles (&quot;Setup Tutorial&quot;) concernant l&#x27;utilisation des scripts de stratégie TradingView, le mode de position &quot;One-way&quot;, ainsi que des champs pour nommer et décrire le signal.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un bot de signal sur Blofin pour connecter une stratégie TradingView via webhook.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001022_seg22.jpg" alt="Interface de la plateforme Blofin affichant une fenêtre modale de configuration pour ajouter un signal TradingView (&quot;Add a TradingView signal&quot;) avec des instructions et des champs de nom." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001022_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:22</span>
+                        <span class="caption-text">Interface de la plateforme Blofin affichant une fenêtre modale de configuration pour ajouter un signal TradingView (&quot;Add a TradingView signal&quot;) avec des instructions et des champs de nom.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:47 - 00:11:22</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici comment le configurer. Premièrement, créez un nom de signal et une description de signal. C&#x27;est juste pour votre propre référence. Une fois que vous avez fait cela, cliquez sur suivant. Blowfin vous fournira un webhook, une URL et un message d&#x27;alerte. Copiez cette URL de webhook. Vous en aurez besoin pour TradingView. Allez maintenant sur TradingView, ouvrez votre stratégie, cliquez sur les alertes, et collez l&#x27;URL du webhook et le message d&#x27;alerte dans vos paramètres d&#x27;alerte. Une fois que vous avez terminé, cliquez sur terminer sur Blowfin. Votre signal apparaîtra désormais dans Mes signaux. À partir de là, vous pouvez créer un bot basé sur ces signaux. Cliquez sur Créer un bot. Ici, vous pouvez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Blofin, TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de webhook Blofin, payload JSON pour l&#x27;alerte TradingView, paramètres d&#x27;alerte de prix (BNBUSDT), carnet d&#x27;ordres et graphique de trading BTCUSDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et association d&#x27;un signal webhook entre Blofin et TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001056_seg23.jpg" alt="Interface de configuration d&#x27;un signal TradingView sur la plateforme Blofin montrant l&#x27;URL du webhook et le message d&#x27;alerte JSON." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001056_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:56</span>
+                        <span class="caption-text">Interface de configuration d&#x27;un signal TradingView sur la plateforme Blofin montrant l&#x27;URL du webhook et le message d&#x27;alerte JSON.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001105_seg23.jpg" alt="Fenêtre de création d&#x27;alerte sur le graphique TradingView pour BNBUSDT (paramètres, condition, prix)." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001105_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:05</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;alerte sur le graphique TradingView pour BNBUSDT (paramètres, condition, prix).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001113_seg23.jpg" alt="Interface principale de Blofin montrant le graphique de BTCUSDT, le carnet d&#x27;ordres et le panneau latéral du Bot de signaux." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001113_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:13</span>
+                        <span class="caption-text">Interface principale de Blofin montrant le graphique de BTCUSDT, le carnet d&#x27;ordres et le panneau latéral du Bot de signaux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:22 - 00:11:50</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">modifiez le symbole, définissez votre effet de levier et saisissez votre marge investie. Dans les paramètres avancés, vous pouvez choisir vos paramètres d&#x27;entrée. Vous pouvez vous baser sur le signal TradingView, utiliser une marge fixe, un pourcentage de votre marge ou un pourcentage de votre investissement libre. Vous pouvez également activer les entrées multiples. Cela permet au bot d&#x27;ajouter à votre position si le signal se déclenche à nouveau. C&#x27;est parfait pour se renforcer progressivement dans les positions. Définissez vos niveaux de take profit et de stop loss. Une fois que vous avez terminé, cliquez sur créer le bot.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BloFin (Futures, TradingView intégré).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpetual à 67,051.1 $, carnet d&#x27;ordres en temps réel, panneau &quot;Create a bot&quot; avec sélection du symbole (BTC-USDT), levier (5x), marge investie et paramètres avancés (&quot;Advanced settings&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et paramétrage d&#x27;un bot de trading automatisé sur BloFin, ajustement de l&#x27;effet de levier et de la marge.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001129_seg24.jpg" alt="Interface de la plateforme BloFin affichant le graphique de trading du BTCUSDT en 4h, le carnet d&#x27;ordres et le panneau de configuration d&#x27;un bot de trading." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001129_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:29</span>
+                        <span class="caption-text">Interface de la plateforme BloFin affichant le graphique de trading du BTCUSDT en 4h, le carnet d&#x27;ordres et le panneau de configuration d&#x27;un bot de trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:50 - 00:12:09</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">If you ever want to delete or edit a signal, just click on more next to the signal name. The last spot is TWAP, Time-Weighted Average Price. This spot is designed to spread your order over a set period of time to avoid slippage and get a better average entry price. Here&#x27;s how it works. You can see the margin mode and leverage settings at the top.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading Blofin (graphique TradingView, carnet d&#x27;ordres, panneau Signal Bot et menu de création de bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perp, options de bots (Futures Grid, Futures DCA, Spot Grid, Spot DCA, Signal Bot, TWAP), options d&#x27;édition et de suppression de signaux.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Blofin pour montrer comment éditer/supprimer un signal puis présentation de l&#x27;option TWAP pour les bots de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001155_seg25.jpg" alt="Interface de trading Blofin montrant un graphique BTCUSDT en 4h, un carnet d&#x27;ordres et le panneau &#x27;Signal Bot&#x27; sur la droite avec un menu déroulant affichant &#x27;Edit Signal&#x27; et &#x27;Delete Signal&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001155_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:55</span>
+                        <span class="caption-text">Interface de trading Blofin montrant un graphique BTCUSDT en 4h, un carnet d&#x27;ordres et le panneau &#x27;Signal Bot&#x27; sur la droite avec un menu déroulant affichant &#x27;Edit Signal&#x27; et &#x27;Delete Signal&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001200_seg25.jpg" alt="Page de création de bots sur Blofin montrant différentes options de bots de trading, avec le curseur pointant sur l&#x27;option &#x27;TWAP&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001200_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:00</span>
+                        <span class="caption-text">Page de création de bots sur Blofin montrant différentes options de bots de trading, avec le curseur pointant sur l&#x27;option &#x27;TWAP&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:10 - 00:12:31</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, saisissez le montant que vous souhaitez investir et définissez la durée totale. Vous pouvez définir cela en heures et en minutes. Vous pouvez également modifier la fréquence, de 5 secondes jusqu&#x27;à 60 secondes. Cela contrôle la fréquence à laquelle le bot place des ordres dans la période de temps que vous avez définie. Voici pourquoi c&#x27;est utile. Si vous entrez sur une position importante, placer un seul ordre au marché important peut faire évoluer le prix contre vous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin Futures Trading Interface</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT en unités de 4 heures, carnet d&#x27;ordres en temps réel, et module de stratégie TWAP (Time-Weighted Average Price) avec les champs de saisie du montant en USDT, de la durée totale (heures et minutes), et de la fréquence des ordres (réglée à 30 secondes).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de la stratégie de trading algorithmique TWAP (montant, durée et fréquence d&#x27;exécution des ordres).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001215_seg26.jpg" alt="Interface de trading de la plateforme BloFin montrant le graphique du Bitcoin, le carnet d&#x27;ordres et le panneau de configuration de l&#x27;algorithme TWAP à droite." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001215_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:15</span>
+                        <span class="caption-text">Interface de trading de la plateforme BloFin montrant le graphique du Bitcoin, le carnet d&#x27;ordres et le panneau de configuration de l&#x27;algorithme TWAP à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:32 - 00:12:52</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">TWAP fragmente votre ordre en plus petits morceaux et les exécute au fil du temps, ce qui vous offre un meilleur prix moyen et réduit l&#x27;impact sur le marché. Une fois que vous avez terminé, cliquez sur acheter long si vous partez à l&#x27;achat ou vendre court si vous partez à la vente. Le bot répartira automatiquement votre ordre sur la période que vous avez définie. Maintenant, avant de conclure, laissez-moi vous montrer comment réclamer vos bonus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin (interface de courtier / exchange crypto)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpetual, prix actuel à 67 269,0 USDT, carnet d&#x27;ordres (Order Book), options de configuration TWAP (mode Isolé/5X, montant en USDT, durée totale, fréquence, quantité par sous-ordre) et boutons &quot;Buy long&quot; / &quot;Sell short&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un ordre de type TWAP et survol du panneau de trading pour passer un ordre long ou short sur le marché des contrats futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001237_seg27.jpg" alt="Interface de trading de la plateforme BloFin montrant le graphique du Bitcoin (BTCUSDT) en unité 4h ainsi que le panneau latéral de configuration pour un ordre TWAP avec les boutons d&#x27;exécution &quot;Buy long&quot; et &quot;Sell short&quot;." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001237_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:37</span>
+                        <span class="caption-text">Interface de trading de la plateforme BloFin montrant le graphique du Bitcoin (BTCUSDT) en unité 4h ainsi que le panneau latéral de configuration pour un ordre TWAP avec les boutons d&#x27;exécution &quot;Buy long&quot; et &quot;Sell short&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:53 - 00:13:13</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous vous êtes inscrit avec mon lien dans la description, vous avez accès à des récompenses exclusives. Allez dans le hub des récompenses de votre compte. Ici, vous pouvez voir tous les bonus disponibles, les bonus sur dépôt, les récompenses sur le volume de trading, et plus encore. Assurez-vous de les réclamer. C&#x27;est littéralement de l&#x27;argent gratuit juste pour avoir utilisé la plateforme. Les bonus exacts dépendent de votre région et du statut de votre compte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange BloFin (section Trading Bots &amp; Rewards Hub).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation, options de bots de trading (Futures Grid), et section &#x27;Rewards Hub&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole l&#x27;onglet &#x27;Rewards Hub&#x27; dans le menu supérieur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001258_seg28.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme BloFin montrant la section des bots de trading et le curseur de la souris sur l&#x27;onglet &#x27;Rewards Hub&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001258_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:58</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme BloFin montrant la section des bots de trading et le curseur de la souris sur l&#x27;onglet &#x27;Rewards Hub&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:13 - 00:13:32</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors, vérifiez votre centre de récompenses pour voir ce qui est disponible pour vous. Et au cours des prochaines années, deux types de traders existeront : l&#x27;un qui utilise l&#x27;IA et se simplifie la vie, et l&#x27;autre qui ne l&#x27;utilise pas et fait toujours tout manuellement. Et sur le même marché, cela façonnera un résultat très différent. Je lance la communauté AI Trade Edge.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface du réseau social X et plateforme de graphiques financiers TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publication textuelle sur X listant les points forts de l&#x27;IA (« AI is smarter than you », « AI never sleeps », etc.) et graphique des prix Bitcoin (autour de 69,800 - 70,000 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;arguments en faveur de l&#x27;utilisation de l&#x27;IA en trading puis affichage d&#x27;un graphique de marché pour illustrer la volatilité.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001318_seg29.jpg" alt="Capture d&#x27;écran du réseau social X montrant une publication d&#x27;Alex Carter listant les avantages du trading automatisé par l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001318_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:18</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant une publication d&#x27;Alex Carter listant les avantages du trading automatisé par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001327_seg29.jpg" alt="Graphique de trading en chandeliers japonais sur TradingView pour la paire BTCUSDT.P en unité de temps 5 minutes." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001327_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:27</span>
+                        <span class="caption-text">Graphique de trading en chandeliers japonais sur TradingView pour la paire BTCUSDT.P en unité de temps 5 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:32 - 00:13:53</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Chaque prompt, bot, agent, modèle et guide étape par étape que j&#x27;utilise personnellement, le tout réuni au même endroit. Et tout ce que je construirai à l&#x27;avenir sera ajouté directement dans le groupe. Chaque nouvelle intégration, chaque nouvelle stratégie, chaque nouveau prompt, chaque mise à jour. De l&#x27;intégration TradingView au trading sur Telegram et au suivi des baleines sur Hyperliquid.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de tutoriel ou documentation de trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif décrivant les fonctionnalités : &quot;Whale Scanning&quot;, &quot;Sentiment Analysis&quot;, &quot;Trade Ideas&quot; et &quot;Wallet Lookup&quot; connectées à Hyperliquid.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des fonctionnalités clés du système de suivi des portefeuilles de baleines.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001338_seg30.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;un guide étape par étape avec la section &quot;What It Can Do&quot; listant les fonctionnalités du tracker de baleines." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001338_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:38</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;un guide étape par étape avec la section &quot;What It Can Do&quot; listant les fonctionnalités du tracker de baleines.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:53 - 00:14:12</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dès que vous vous inscrivez, vous obtenez tout. Le prix est de 79,99 $ par mois. Et honnêtement, quand on y pense, ce que c&#x27;est vraiment, la configuration de trading par IA la plus avancée disponible pour les traders particuliers en ce moment, constamment mise à jour avec tout inclus. Ce n&#x27;est pas beaucoup d&#x27;argent. Un seul bon trade le couvre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de e-commerce Whop et site de cours en ligne de trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification d&#x27;abonnement (79,99 $ / mois) et listes de fonctionnalités IA pour TradingView (Chart Reading, Chart Control).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page de vente et présentation des capacités techniques de l&#x27;outil d&#x27;IA pour le trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001358_seg31.jpg" alt="Page de paiement Whop affichant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001358_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:58</span>
+                        <span class="caption-text">Page de paiement Whop affichant l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter au prix de 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001403_seg31.jpg" alt="Interface de cours ou documentation en ligne listant les fonctionnalités des 78 outils connectant Claude à TradingView (&quot;What It Can Do&quot;)." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001403_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:03</span>
+                        <span class="caption-text">Interface de cours ou documentation en ligne listant les fonctionnalités des 78 outils connectant Claude à TradingView (&quot;What It Can Do&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:12 - 00:14:49</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais les 100 premiers membres bloquent ce tarif de façon permanente. Après cela, le prix augmente. Donc plus vous arrivez tôt, meilleure est l&#x27;offre. Le lien est dans la description. Inscrivez-vous dès maintenant avant que le prix n&#x27;augmente. Vous ne pouvez vraiment pas vous permettre de manquer ça. Très bien, maintenant vous savez donc comment utiliser absolument tous les bots de trading sur Blowfin. Que vous souhaitiez profiter de la volatilité avec les bots de grille, accumuler avec le DCA, automatiser vos stratégies de TradingView avec les SignalBots, ou exécuter de gros ordres avec le TWAP. Vous avez les outils. Et n&#x27;oubliez pas, si vous vous êtes inscrit avec mon lien dans la description, assurez-vous de consulter le centre des récompenses et de réclamer vos bonus. Si vous voulez un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page de vente Whop et interface de bots de trading automatisés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs d&#x27;abonnement ($79.99/mois), options de bots de trading (Futures Grid, Futures DCA, Spot Grid, Signal Bot, TWAP) et métriques de performance de bots IA (APR backtesté).
+[DESC_IMAGE_1] Présentation de l&#x27;offre payante de la communauté d&#x27;Alex Carter sur Whop avec réduction promotionnelle.
+[DESC_IMAGE_2] Navigation dans le tableau de bord de configuration et sélection de bots de trading automatisés.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001421_seg32.jpg" alt="Capture d&#x27;écran montrant une page web sur la plateforme Whop avec l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter affichée à 79.99 $ par mois (au lieu de 99.99 $), incluant des outils d&#x27;IA, des templates et des guides." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001421_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:21</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une page web sur la plateforme Whop avec l&#x27;offre &quot;AI Trade Edge&quot; d&#x27;Alex Carter affichée à 79.99 $ par mois (au lieu de 99.99 $), incluant des outils d&#x27;IA, des templates et des guides.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001431_seg32.jpg" alt="Interface de création de bot de trading montrant différentes stratégies disponibles (Futures Grid, Futures DCA, Spot Grid, Signal Bot, TWAP) ainsi que des performances de bots IA pour BTCUSDT, ETHUSDT et SUIUSDT." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001431_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:31</span>
+                        <span class="caption-text">Interface de création de bot de trading montrant différentes stratégies disponibles (Futures Grid, Futures DCA, Spot Grid, Signal Bot, TWAP) ainsi que des performances de bots IA pour BTCUSDT, ETHUSDT et SUIUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:49 - 00:15:13</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour une visite guidée plus détaillée de la plateforme Blofin, comment déposer, trader des contrats à terme et utiliser toutes les fonctionnalités, cliquez sur la vidéo qui apparaît à l&#x27;écran dès maintenant. Si vous voulez voir la démonstration complète sur la façon de configurer l&#x27;exécution automatisée des trades en utilisant Telegram et TradingView, elle s&#x27;affiche également à l&#x27;écran dès maintenant. Si vous avez trouvé cela utile, laissez un pouce bleu, cela aide vraiment la chaîne, abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Blofin (interface de trading Futures et création de bot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTCUSDT Perpetual, carnet d&#x27;ordres (Order Book), paramètres de configuration de bot (effet de levier 5x, réglages avancés avec options de signaux TradingView, Fixed Margin, % of the margin, % of front investment).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un bot de trading sur Blofin avec sélection des paramètres de signal TradingView et de gestion de marge.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001455_seg33.jpg" alt="Interface de trading de la plateforme Blofin montrant un graphique BTCUSDT en chandelier (unité 4h), un carnet d&#x27;ordres au centre et un panneau de configuration de bot de trading à droite avec un menu déroulant pour les signaux TradingView." loading="lazy" onclick="openLightbox('../screenshots/ZgM1GXu3VjQ/ZgM1GXu3VjQ_001455_seg33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:55</span>
+                        <span class="caption-text">Interface de trading de la plateforme Blofin montrant un graphique BTCUSDT en chandelier (unité 4h), un carnet d&#x27;ordres au centre et un panneau de configuration de bot de trading à droite avec un menu déroulant pour les signaux TradingView.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
