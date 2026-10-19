@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment j&#x27;ai utilisé Claude pour créer une stratégie MACD rentable — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment j&#x27;ai utilisé Claude pour créer une stratégie MACD rentable</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-04-14</span>
+                <span class="badge">⏱️ 00:06:49</span>
+                <span class="badge">🆔 <code>xbeN3f-DV8E</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=xbeN3f-DV8E" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo signée Alex Carter propose une démonstration concrète et accessible de l'automatisation du trading algorithmique grâce à l'intelligence artificielle, s'adressant aux traders cherchant à s'affranchir du codage et de la surveillance obsessionnelle des écrans. En prenant l'exemple classique du MACD (*Moving Average Convergence Divergence*) sur le Bitcoin, le créateur illustre comment transformer une méthodologie visuelle trouvée en ligne en un script informatique totalement fonctionnel. L'approche repose sur l'utilisation de grands modèles de langage, en l'occurrence **Claude Code**, pour traduire instantanément une stratégie textuelle en code source propre, prêt à être compilé.<br><br>Au-delà de la simple génération de code, la démonstration détaille le pont technologique entre l'analyse technique et l'exécution opérationnelle. Le script généré intègre des conditions d'alerte sur **TradingView** capables de notifier le trader ou d'alimenter des architectures d'exécution automatisées. L'écosystème présenté va de l'analyse pure à la gamification et au trading social via des agents conversationnels et des classements de P&L (*Profit and Loss*), tout en proposant une passerelle vers des solutions d'exécution par-delà les simples alertes graphiques.<br><br>Enfin, l'intervention met en lumière l'évolution des pratiques du trading particulier, où la frontière entre le développeur quantitatif et le trader discrétionnaire s'efface. En combinant des outils de pointe comme Claude, des interfaces graphiques robustes comme TradingView et des exchanges adaptés aux produits dérivés (tels que Weeks), le flux de travail présenté démocratise des stratégies d'automatisation autrefois réservées aux desks de trading professionnels, tout en structurant une communauté autour du partage de prompts et de configurations avancées.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **Claude / Claude Code** : Assistant conversationnel et agent de développement propulsé par l'IA, utilisé ici pour générer l'intégralité du code Pine Script à partir d'un simple prompt textuel.<br>* **TradingView** : Plateforme de graphisme et d'analyse technique de référence, servant à visualiser les paires de crypto-monnaies, backtester les indicateurs et compiler le code Pine Script.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView dédié à la création d'indicateurs personnalisés et de stratégies de trading automatisées.<br>* **Weeks** : Exchange de crypto-monnaies spécialisé dans le trading de contrats à terme (*futures*), mis en avant pour ses incitations financières et bonus d'inscription.<br>* **Grok Bots / Agent P&L** : Agents conversationnels et outils de trading social intégrés dans un classement en direct, permettant de concevoir des bots de trading en langage naturel et de copier les meilleures stratégies.<br>* **Telegram** : Outil de messagerie instantanée utilisé dans l'écosystème privé du créateur pour centraliser les notifications de signaux, l'interaction avec les bots et le suivi des positions.<br>* **Hyperliquid** : Protocole de finance décentralisée (DeFi) mentionné pour le suivi automatisé de portefeuilles et la détection d'activité des grands comptes (*whale tracking*).<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Démocratisation du code par l'IA** : L'utilisation de modèles de langage comme Claude permet de s'affranchir totalement de l'apprentissage des langages de programmation complexes pour concevoir des scripts de trading sur mesure.<br>* **Mécanique de la stratégie MACD** : La stratégie de base exploite la convergence et la divergence des moyennes mobiles (lignes bleue et orange) couplées à un histogramme pour identifier les changements de dynamique de marché.<br>* **Signaux de position courte (Short)** : Un signal baissier est validé lorsque la ligne orange croise et passe au-dessus de la ligne bleue, accompagné d'un basculement de l'histogramme en territoire négatif et de bougies rouges.<br>* **Signaux de position acheteuse (Long)** : Un signal haussier est caractérisé par la ligne bleue positionnée au-dessus de la ligne orange, confirmée par un histogramme vert et des configurations de prix orientées à la hausse.<br>* **Flux de travail prompt-to-script** : Le processus de développement consiste à rédiger un prompt clair décrivant les règles d'entrée et de sortie, à le soumettre à Claude, puis à copier-coller directement le code généré dans l'éditeur Pine Script.<br>* **Compilation et intégration visuelle** : Le copier-coller du code dans l'éditeur de TradingView, suivi d'un clic sur le bouton de compilation, permet d'afficher instantanément des repères graphiques (flèches vertes et rouges) pour chaque signal détecté.<br>* **Automatisation de la veille par alertes** : La configuration des alertes TradingView basées sur les conditions du script personnalisé libère le trader de la surveillance visuelle continue des graphiques au profit d'une notification directe sur mobile.<br>* **Gestion du risque (*Risk Management*) et sorties** : Les points de sortie de position reposent soit sur la mise en place de ordres stop-loss stricts, soit sur l'attente d'un croisement inversé du MACD matérialisant l'épuisement de la tendance.<br>* **Gamification et émulation par les bots P&L** : L'utilisation d'agents de trading en compétition sur un classement en direct permet d'analyser, de rétro-analyser et de dupliquer les stratégies affichant les meilleurs rendements.<br>* **Industrialisation des cas d'usage avancés** : Le passage à l'étape supérieure implique l'interconnexion des scripts graphiques avec des webhooks et des canaux de messagerie (comme Telegram) pour exécuter des ordres réels de manière instantanée sur les exchanges.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude / Claude Code</span><span class="tool-tag">TradingView</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Weeks</span><span class="tool-tag">Grok Bots / Agent P&amp;L</span><span class="tool-tag">Telegram</span><span class="tool-tag">Hyperliquid</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Démocratisation du code par l&#x27;IA** : L&#x27;utilisation de modèles de langage comme Claude permet de s&#x27;affranchir totalement de l&#x27;apprentissage des langages de programmation complexes pour concevoir des scripts de trading sur mesure.</span></li><li><span class="point-bullet">✦</span><span>Mécanique de la stratégie MACD** : La stratégie de base exploite la convergence et la divergence des moyennes mobiles (lignes bleue et orange) couplées à un histogramme pour identifier les changements de dynamique de marché.</span></li><li><span class="point-bullet">✦</span><span>Signaux de position courte (Short)** : Un signal baissier est validé lorsque la ligne orange croise et passe au-dessus de la ligne bleue, accompagné d&#x27;un basculement de l&#x27;histogramme en territoire négatif et de bougies rouges.</span></li><li><span class="point-bullet">✦</span><span>Signaux de position acheteuse (Long)** : Un signal haussier est caractérisé par la ligne bleue positionnée au-dessus de la ligne orange, confirmée par un histogramme vert et des configurations de prix orientées à la hausse.</span></li><li><span class="point-bullet">✦</span><span>Flux de travail prompt-to-script** : Le processus de développement consiste à rédiger un prompt clair décrivant les règles d&#x27;entrée et de sortie, à le soumettre à Claude, puis à copier-coller directement le code généré dans l&#x27;éditeur Pine Script.</span></li><li><span class="point-bullet">✦</span><span>Compilation et intégration visuelle** : Le copier-coller du code dans l&#x27;éditeur de TradingView, suivi d&#x27;un clic sur le bouton de compilation, permet d&#x27;afficher instantanément des repères graphiques (flèches vertes et rouges) pour chaque signal détecté.</span></li><li><span class="point-bullet">✦</span><span>Automatisation de la veille par alertes** : La configuration des alertes TradingView basées sur les conditions du script personnalisé libère le trader de la surveillance visuelle continue des graphiques au profit d&#x27;une notification directe sur mobile.</span></li><li><span class="point-bullet">✦</span><span>Gestion du risque (*Risk Management*) et sorties** : Les points de sortie de position reposent soit sur la mise en place de ordres stop-loss stricts, soit sur l&#x27;attente d&#x27;un croisement inversé du MACD matérialisant l&#x27;épuisement de la tendance.</span></li><li><span class="point-bullet">✦</span><span>Gamification et émulation par les bots P&amp;L** : L&#x27;utilisation d&#x27;agents de trading en compétition sur un classement en direct permet d&#x27;analyser, de rétro-analyser et de dupliquer les stratégies affichant les meilleurs rendements.</span></li><li><span class="point-bullet">✦</span><span>Industrialisation des cas d&#x27;usage avancés** : Le passage à l&#x27;étape supérieure implique l&#x27;interconnexion des scripts graphiques avec des webhooks et des canaux de messagerie (comme Telegram) pour exécuter des ordres réels de manière instantanée sur les exchanges.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:37</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous pouviez prendre n&#x27;importe quelle stratégie de trading trouvée en ligne, la donner à Claude, et lui faire coder automatiquement un PineScript fonctionnel ? Pas besoin de savoir coder. Dans cette vidéo, je vais vous montrer exactement comment j&#x27;ai fait cela avec une stratégie MACD simple. Je vais vous montrer comment fonctionne la stratégie, comment j&#x27;ai rédigé le prompt pour Claude, et comment importer le PineScript terminé directement dans TradingView. Assurez-vous de regarder jusqu&#x27;à la fin car je vais également vous montrer comment accéder à tous mes prompts, stratégies et configurations. De plus, je vais vous montrer un agent IA que j&#x27;ai créé avec lequel vous pouvez créer votre propre bot de trading en utilisant un anglais simple, et rivaliser avec tout le monde sur un flux en direct.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Éditeur Pine Editor, interface web de formation de trading Alex Carter.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source Pine Script, indicateur MACD, graphiques de prix Bitcoin (BTCUSDT), métriques de risque/rendement (Reward Ratio: 2.46).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage simultané d&#x27;un graphique de trading, de code Pine Script et d&#x27;une interface de présentation des capacités d&#x27;IA pour le trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000009_seg1.jpg" alt="Un graphique TradingView à gauche affichant le Bitcoin et l&#x27;éditeur Pine Script à droite avec du code source de stratégie MACD." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Un graphique TradingView à gauche affichant le Bitcoin et l&#x27;éditeur Pine Script à droite avec du code source de stratégie MACD.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000018_seg1.jpg" alt="Un graphique en chandelier montrant une position de trading ouverte sur Bitcoin avec un indicateur MACD en bas et les métriques de P&amp;L." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000018_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Un graphique en chandelier montrant une position de trading ouverte sur Bitcoin avec un indicateur MACD en bas et les métriques de P&amp;L.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000027_seg1.jpg" alt="Une interface web de formation (Alex Carter Trading) intitulée &#x27;What It Can Do&#x27; détaillant les fonctionnalités de contrôle de graphiques par l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000027_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:27</span>
+                        <span class="caption-text">Une interface web de formation (Alex Carter Trading) intitulée &#x27;What It Can Do&#x27; détaillant les fonctionnalités de contrôle de graphiques par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:37 - 00:01:10</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">classement, et gagner un prix de ma part. Plus de détails là-dessus plus tard. Entrons dans le vif du sujet. Très bien, les gars, étape numéro une, inscrivez-vous sur un échange. Pour cette stratégie, nous allons utiliser Weeks. C&#x27;est l&#x27;un de mes échanges préférés pour le trading de contrats à terme en ce moment, et ils ont de sérieux bonus pour les nouveaux utilisateurs, jusqu&#x27;à 30 000 dollars de bonus rien que pour l&#x27;inscription et le trading. Je mettrai le lien en bas. Très bien, maintenant pour la stratégie elle-même. Avec cette stratégie, nous allons utiliser l&#x27;indicateur MACD sur TradingView et jetons-y un rapide coup d&#x27;œil. Rendez-vous sur TradingView. Je vais avoir</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> WEEX et TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;inscription WEEX avec code de parrainage et indicateur technique MACD (12, 26, 9) sur TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme d&#x27;échange WEEX pour l&#x27;inscription et analyse technique d&#x27;un indicateur de momentum.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000045_seg2.jpg" alt="Page d&#x27;inscription de l&#x27;échange WEEX montrant le bonus de bienvenue et le formulaire de création de compte." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000045_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Page d&#x27;inscription de l&#x27;échange WEEX montrant le bonus de bienvenue et le formulaire de création de compte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000102_seg2.jpg" alt="Graphique TradingView affichant l&#x27;indicateur MACD avec des histogrammes et des lignes de signal." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000102_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Graphique TradingView affichant l&#x27;indicateur MACD avec des histogrammes et des lignes de signal.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:10 - 00:01:48</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le lien dans la description si vous en avez besoin. Une fois que vous êtes sur TradingView, recherchez la paire de crypto que vous tradez. Pour cet exemple, j&#x27;utiliserai Bitcoin. Maintenant, la chose clé à garder à l&#x27;esprit est que le MACD vous permet d&#x27;identifier les tendances sur le marché. Cela signifie que vous pouvez voir si les prix montent ou descendent et prendre des décisions éclairées sur le moment d&#x27;entrer ou de sortir d&#x27;un trade. Avec un peu de pratique, vous pouvez utiliser le MACD pour faire de sérieux profits en trader de la crypto. Laissez-moi vous montrer maintenant comment utiliser le MACD. Tout ce que vous avez faîtes, c&#x27;est d&#x27;aller dans les indicateurs en haut de TradingView et de taper MACD. Simple comme bonjour. Vous verrez deux lignes, orange et bleue, et en bas un histogramme.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (ou interface de graphique intégrée d&#x27;un échange type Binance).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire Bitcoin / TetherUS Perpetual Contract, indicateur de volume (Vol) et indicateur MACD (paramètres 12, 26, 9) avec histogramme et lignes de signal.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du graphique de prix du Bitcoin et de l&#x27;indicateur MACD pour l&#x27;analyse des tendances.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000119_seg3.jpg" alt="Graphique en chandeliers japonais du Bitcoin (BTC/USDT) affichant les volumes et l&#x27;indicateur MACD en bas." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000119_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:19</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du Bitcoin (BTC/USDT) affichant les volumes et l&#x27;indicateur MACD en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:48 - 00:02:16</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;histogramme peut basculer en négatif ou en positif, et c&#x27;est la manière la plus simple de le comprendre. Chaque fois que la ligne orange passe au-dessus de la ligne bleue, c&#x27;est un signal pour entrer dans une position courte. Quand la ligne bleue croise la ligne orange, c&#x27;est un signal pour se positionner à l&#x27;achat. Laissez-moi vous montrer une façon simple d&#x27;identifier une position courte sur un graphique Bitcoin. Il suffit de chercher un croisement baissier du MACD, indiqué par la ligne orange qui passe au-dessus de la ligne bleue, et ils basculent en mode baissier sur l&#x27;histogramme, ainsi que des bougies japonaises rouges.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais du Bitcoin, volumes de transactions et indicateur MACD (lignes bleue et orange, histogramme).</p>
+                        <p><strong>Action / Démonstration :</strong> Explication du fonctionnement des signaux de croisement de l&#x27;indicateur MACD pour identifier les opportunités de trading court.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000155_seg4.jpg" alt="Un graphique TradingView affichant le cours du Bitcoin (BTC/USDT) avec l&#x27;indicateur MACD en bas." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000155_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Un graphique TradingView affichant le cours du Bitcoin (BTC/USDT) avec l&#x27;indicateur MACD en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:16 - 00:02:34</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que vous repérez ces indicateurs, il est temps d&#x27;entrer sur le marché. Regardez cet exemple de trade où vous auriez pu faire un bon profit avec cette stratégie MACD. Maintenant, je vais vous parler d&#x27;une position acheteuse potentielle. Regardez ce graphique MACD. La ligne bleue est directement au-dessus de la ligne orange, et l&#x27;histogramme est devenu vert.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Binance</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix du Bitcoin, indicateur de volume et indicateur MACD (paramètres 12, 26, 9) avec histogramme et lignes de signal.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du graphique de prix et de l&#x27;indicateur MACD pour illustrer une stratégie de trading et repérer des configurations de profit potentiel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000220_seg5.jpg" alt="Un graphique TradingView en chandeliers japonais du contrat perpétuel Bitcoin/TetherUS (BTC/USDT) sur Binance, affichant l&#x27;indicateur MACD en bas." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000220_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:20</span>
+                        <span class="caption-text">Un graphique TradingView en chandeliers japonais du contrat perpétuel Bitcoin/TetherUS (BTC/USDT) sur Binance, affichant l&#x27;indicateur MACD en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:34 - 00:03:10</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est un signal haussier positif, c&#x27;est donc le moment idéal pour passer votre ordre. Vous devez définir un stop-loss ou attendre de voir un croisement baissier sur le MACD pour en sortir. Vous pouvez repérer le croisement baissier sur le graphique et simplement le laisser tourner jusqu&#x27;à ce que vous fassiez vos profits. Vous comprenez donc maintenant exactement comment la stratégie fonctionne manuellement. Mais c&#x27;est là que ça devient vraiment intéressant. Au lieu de regarder des graphiques toute la journée et de faire cela manuellement, j&#x27;ai donné cette stratégie exacte à Claude et je lui ai demandé de m&#x27;écrire un script PineScript complet. Pour que TradingView puisse détecter automatiquement ces signaux pour moi. Et voici le prompt que j&#x27;utilise. Je vais l&#x27;afficher à l&#x27;écran dès maintenant pour que vous puissiez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Terminal CLI Claude Code (v2.1.100)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT Binance (1m), indicateur MACD (12, 26, 9), configuration de trade Long (Risk/Reward 2.46, Closed P&amp;L 270.8), prompt de programmation de stratégie Pine Script (règles de crossover MACD, signaux visuels, alertes, commission 0.1%).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration visuelle d&#x27;une configuration de sortie/entrée sur croisement MACD, puis soumission des règles de trading à Claude Code pour générer automatiquement le script de backtesting Pine Script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000243_seg6.jpg" alt="Graphique TradingView 1m (BTC/USDT) avec outil de position Long affichant un Risk/Reward de 2.46 et l&#x27;oscillateur MACD en sous-fenêtre." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000243_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Graphique TradingView 1m (BTC/USDT) avec outil de position Long affichant un Risk/Reward de 2.46 et l&#x27;oscillateur MACD en sous-fenêtre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000252_seg6.jpg" alt="Gros plan sur la sous-fenêtre de l&#x27;indicateur MACD (12, 26, 9) sur TradingView illustrant l&#x27;histogramme et les lignes de signal." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000252_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:52</span>
+                        <span class="caption-text">Gros plan sur la sous-fenêtre de l&#x27;indicateur MACD (12, 26, 9) sur TradingView illustrant l&#x27;histogramme et les lignes de signal.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000301_seg6.jpg" alt="Terminal de commande exécutant Claude Code avec un prompt pour coder une stratégie de trading Pine Script basée sur le MACD." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000301_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Terminal de commande exécutant Claude Code avec un prompt pour coder une stratégie de trading Pine Script basée sur le MACD.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:10 - 00:03:29</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">copiez-le exactement. C&#x27;est tout. C&#x27;est le prompt complet. Vous collez ça dans Claude. J&#x27;utilise Claude code ici. Et en quelques secondes, il crache un script Pine complet et fonctionnel dans un bloc-notes. Ouvrez ce fichier, appuyez sur Ctrl plus A pour tout sélectionner le code, puis sur Ctrl plus C pour le copier. C&#x27;est tout ce dont vous avez besoin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande (Claude Code) et Bloc-notes (Notepad Windows).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Prompt détaillé pour une stratégie de trading MACD sur TradingView (règles d&#x27;entrée, de sortie, alertes, backtest) et code source Pine Script complet affiché et sélectionné dans le Bloc-notes.</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie d&#x27;un prompt dans Claude Code puis ouverture et sélection intégrale du script Pine généré dans le Bloc-notes.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000315_seg7.jpg" alt="Interface du terminal Claude Code affichant un prompt détaillé pour la génération d&#x27;une stratégie de trading Pine Script basée sur le MACD." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000315_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Interface du terminal Claude Code affichant un prompt détaillé pour la génération d&#x27;une stratégie de trading Pine Script basée sur le MACD.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000324_seg7.jpg" alt="Éditeur Notepad ouvert affichant du code source Pine Script (calculs MACD, conditions d&#x27;entrée et de sortie) entièrement sélectionné par l&#x27;utilisateur." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000324_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:24</span>
+                        <span class="caption-text">Éditeur Notepad ouvert affichant du code source Pine Script (calculs MACD, conditions d&#x27;entrée et de sortie) entièrement sélectionné par l&#x27;utilisateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:29 - 00:03:49</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, passons à TradingView. Ouvrez TradingView et allez sur n&#x27;importe quel graphique. Je vais utiliser à nouveau le Bitcoin. Tout en bas de l&#x27;écran, cliquez sur l&#x27;onglet Éditeur Pine Script. Si vous ne le voyez pas, allez dans la barre d&#x27;outils en bas à droite et cliquez sur le bouton qui ressemble à un pin. Une fois l&#x27;éditeur ouvert, vous y verrez du code par défaut. Sélectionnez-le entièrement et supprimez-le.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique TradingView sur l&#x27;échange BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais du Bitcoin affichant une tendance baissière, avec les volumes en bas et les boutons d&#x27;achat/vente (BUY/SELL) en haut à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation du graphique du Bitcoin sur TradingView avant l&#x27;ouverture de l&#x27;éditeur Pine Script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000334_seg8.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface du graphique TradingView avec la paire Bitcoin/USD (BloFin) en unité journalière (1D)." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000334_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface du graphique TradingView avec la paire Bitcoin/USD (BloFin) en unité journalière (1D).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:50 - 00:04:09</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, collez le code que Claude vient de vous donner. Cliquez maintenant sur Ajouter au graphique ou sur le bouton de lecture. C&#x27;est le bouton situé en haut à droite de l&#x27;éditeur Pine Script. TradingView va compiler le script et l&#x27;appliquer directement sur votre graphique. Et voilà. Vous pouvez voir le panneau MACD en dessous du graphique et les signaux d&#x27;achat et de vente tracés automatiquement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (Pine Editor et graphique de prix)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Code source Pine Script pour une stratégie de trading incluant des conditions d&#x27;entrée (long/short), des règles de sortie et des signaux visuels, appliqué sur un graphique journalier Bitcoin/USD.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du code de la stratégie Pine Script et du graphique avant son application sur le graphique via le bouton d&#x27;ajout de l&#x27;éditeur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000355_seg9.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de TradingView avec un graphique de prix Bitcoin à gauche et l&#x27;éditeur Pine Script à droite affichant le code d&#x27;une stratégie de trading." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000355_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de TradingView avec un graphique de prix Bitcoin à gauche et l&#x27;éditeur Pine Script à droite affichant le code d&#x27;une stratégie de trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:09 - 00:04:30</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Des flèches vertes pour les longs, des flèches rouges pour les shorts. Chaque fois que les lignes se croisent et que l&#x27;histogramme confirme, le script vous le marque directement sur le graphique. Pour configurer des alertes, cliquez sur l&#x27;icône en forme de réveil en haut de TradingView. Sélectionnez Créer une alerte. Et dans le menu déroulant Condition, vous verrez les conditions d&#x27;alerte que Claude a ajoutées : signal long et signal short.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / BloFin</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais de Bitcoin (BTC/USD), indicateurs de signaux de trading (marquages Long/Short avec flèches et valeurs numériques), histogramme de volume, et oscillateur technique sous le graphique principal.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle des signaux d&#x27;achat et de vente générés automatiquement par le script sur le graphique des prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000414_seg10.jpg" alt="Graphique TradingView en unité journalière (1D) affichant le contrat perpétuel Bitcoin/USD sur BloFin avec des signaux d&#x27;achat (flèches vertes) et de vente (flèches rouges) ainsi qu&#x27;un indicateur de type MACD/oscillateur en bas." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000414_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Graphique TradingView en unité journalière (1D) affichant le contrat perpétuel Bitcoin/USD sur BloFin avec des signaux d&#x27;achat (flèches vertes) et de vente (flèches rouges) ainsi qu&#x27;un indicateur de type MACD/oscillateur en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:30 - 00:04:49</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Configurez-les et TradingView vous notifiera dès qu&#x27;un signal se déclenche. Donc maintenant, au lieu de surveiller le graphique manuellement, TradingView fait tout le travail pour vous. Dès que les lignes du MACD se croisent et que l&#x27;histogramme confirme, vous recevez une alerte directement sur votre téléphone. Et vous vous souvenez de cet agent PnL dont j&#x27;ai parlé plus tôt ? C&#x27;est là qu&#x27;il entre en jeu.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, graphique en chandeliers japonais, interface de courtier/échange (BloFin).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Signaux de trading (marquages Long/Short avec flèches bleues et rouges sur les chandeliers), histogramme des volumes, indicateur MACD avec ses lignes de signal et son histogramme coloré.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique et visualisation de la stratégie de trading automatisée avec les signaux de croisement et les alertes configurées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000435_seg11.jpg" alt="Graphique TradingView en unité journalière (1D) d&#x27;un contrat perpétuel Bitcoin (BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT - 1D - BloFin) affichant des signaux d&#x27;achat (Long) et de vente (Short) ainsi qu&#x27;un indicateur MACD en sous-fenêtre avec ses histogrammes et lignes." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000435_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:35</span>
+                        <span class="caption-text">Graphique TradingView en unité journalière (1D) d&#x27;un contrat perpétuel Bitcoin (BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT - 1D - BloFin) affichant des signaux d&#x27;achat (Long) et de vente (Short) ainsi qu&#x27;un indicateur MACD en sous-fenêtre avec ses histogrammes et lignes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:49 - 00:05:11</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est un classement en direct où votre bot affronte tous les autres bots de la plateforme. Vous pouvez même copier des stratégies directement depuis le classement. Voyez exactement ce que font les meilleurs bots et créez votre propre version. Et le trader qui occupe la première place avec le P&amp;L le plus élevé et le rendement le plus haut reçoit un prix personnel de ma part. Alors, si vous construisez quelque chose de sérieux, rendez-le public et entrez dans la compétition.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface Web (AgentPNL) et Bloc-notes Windows (Notepad)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de classement des bots (Bot, Owner, Pairs, Model, PNL, Return, Trades, Win %, Status, Strategy) et script de stratégie textuel (EMA, VWAP, RSI, ATR, Stop-Loss, Position Sizing).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du tableau de classement en direct de la plateforme et affichage du code source textuel d&#x27;une stratégie de trading algorithmique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000454_seg12.jpg" alt="Capture d&#x27;écran de l&#x27;interface AgentPNL montrant le classement en direct (Leaderboard) avec les performances des différents bots." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000454_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:54</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface AgentPNL montrant le classement en direct (Leaderboard) avec les performances des différents bots.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000500_seg12.jpg" alt="Bloc-notes affichant une stratégie de trading détaillée en anglais (indicateurs, entrées long/short, stop-loss, take-profit)." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000500_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:00</span>
+                        <span class="caption-text">Bloc-notes affichant une stratégie de trading détaillée en anglais (indicateurs, entrées long/short, stop-loss, take-profit).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000505_seg12.jpg" alt="Vue similaire de l&#x27;interface AgentPNL montrant le classement des bots de trading avec un curseur sur les retours en pourcentage." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000505_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:05</span>
+                        <span class="caption-text">Vue similaire de l&#x27;interface AgentPNL montrant le classement des bots de trading avec un curseur sur les retours en pourcentage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:11 - 00:05:31</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le lien est dans la description. Maintenant, si vous voulez aller encore plus loin et qu&#x27;un trade s&#x27;ouvre automatiquement sur votre exchange dès qu&#x27;un signal se déclenche, j&#x27;ai ce qu&#x27;il vous faut. J&#x27;ai mis en place un groupe privé où je partage tous mes cas d&#x27;usage pour Claude Code, de son intégration avec Telegram, TradingView, à la recherche de baleines sur Hyperliquid. Tout automatiquement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (Claude Code), Interface web Whop, Site de documentation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de décomposition multi-timeframe (Weekly, Daily, 4-Hour, 1-Hour) avec indicateurs EMA Trend, RSI, MACD et niveaux clés (Support/Résistance).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats d&#x27;analyse multi-timeframe et des recommandations de trade (LONG).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000516_seg13.jpg" alt="Image #1 @ 00:05:16 : Terminal de commande affichant un rapport d&#x27;analyse multi-timeframe généré par Claude Code pour BTCUSDT Perp." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000516_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:16</span>
+                        <span class="caption-text">Image #1 @ 00:05:16 : Terminal de commande affichant un rapport d&#x27;analyse multi-timeframe généré par Claude Code pour BTCUSDT Perp.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:05:59</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout ce que je vous ai montré aujourd&#x27;hui, c&#x27;est entièrement dans le groupe. Et j&#x27;ajoute constamment de nouvelles choses, de nouvelles stratégies, de nouveaux prompts, de nouvelles intégrations. Chaque fois que je construis quelque chose de nouveau, ça va directement dedans. Le prix est de 79,99 $ par mois. Et honnêtement, quand on y pense, ce que c&#x27;est réellement, la configuration de trading IA la plus révolutionnaire disponible pour les traders particuliers en ce moment, constamment mise à jour avec tout inclus. Ce n&#x27;est pas beaucoup d&#x27;argent. Un seul bon trade le couvre.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme web Whop (page produit d&#x27;abonnement &quot;AI Trade Edge&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification du service d&#x27;abonnement à 79,99 $ par mois (réduit de 99,99 $) et présentation des outils inclus (&quot;AI Tools&quot;, &quot;Templates &amp; Guides&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la page d&#x27;abonnement payant à la communauté par le présentateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000545_seg14.jpg" alt="Page d&#x27;abonnement Whop pour le service &quot;AI Trade Edge&quot; d&#x27;Alex Carter affichant le prix promotionnel de 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000545_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:45</span>
+                        <span class="caption-text">Page d&#x27;abonnement Whop pour le service &quot;AI Trade Edge&quot; d&#x27;Alex Carter affichant le prix promotionnel de 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:59 - 00:06:19</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais les 100 premiers membres bloquent ce tarif de façon permanente. Après cela, le prix augmente. Donc plus vous vous inscrivez tôt, meilleure est l&#x27;offre. Le lien est dans la description. Inscrivez-vous dès maintenant avant que le prix n&#x27;augmente. Vous ne pouvez vraiment pas vous permettre de rater ça. Et c&#x27;est tout, les gars. C&#x27;est comme ça qu&#x27;on prend une stratégie sur Internet, qu&#x27;on la confie à Claude, et qu&#x27;on obtient un script Pine fonctionnel sur TradingView.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Whop</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bitcoin/USD Tether Perpetual Swap Contract, signaux de trading Long/Short, indicateurs techniques (volume, MACD/oscillateur), prix de l&#x27;abonnement AI Trade Edge (79.99$/mois au lieu de 99.99$)</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme de vente de la formation et affichage du graphique technique BTC/USD sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000614_seg15.jpg" alt="Graphique TradingView (blofin) en journalier (1D) de la paire Bitcoin/USD Tether Perpetual Swap Contract, affichant des signaux d&#x27;achat (Long) et de vente (Short) avec des indicateurs en bas de page." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000614_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:14</span>
+                        <span class="caption-text">Graphique TradingView (blofin) en journalier (1D) de la paire Bitcoin/USD Tether Perpetual Swap Contract, affichant des signaux d&#x27;achat (Long) et de vente (Short) avec des indicateurs en bas de page.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:19 - 00:06:48</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pas de code, pas de surveillance manuelle de graphiques. Si vous voulez voir une démonstration complète de la façon dont je trade en utilisant uniquement mon Telegram et la démonstration complète de tous les cas d&#x27;utilisation sur TradingView, cliquez sur la vidéo qui apparaît à l&#x27;écran dès maintenant. Et si vous voulez voir un guide complet sur le fonctionnement d&#x27;Agent P&amp;L, comment créer votre bot, le lancer en direct et le faire figurer dans le classement, cliquez également sur la vidéo à l&#x27;écran. Si vous avez trouvé cela utile, laissez un pouce bleu. Ça aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application Telegram.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Messages Telegram avec des détails d&#x27;ordres de trading (BTC, SOL, DOGE) et une légende explicative pour l&#x27;analyse.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et envoi de captures d&#x27;écran et de prompts de trading via Telegram.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000627_seg16.jpg" alt="Interface Telegram montrant l&#x27;envoi de graphiques avec une légende détaillée pour le trading automatisé." loading="lazy" onclick="openLightbox('../screenshots/xbeN3f-DV8E/xbeN3f-DV8E_000627_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:27</span>
+                        <span class="caption-text">Interface Telegram montrant l&#x27;envoi de graphiques avec une légende détaillée pour le trading automatisé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
