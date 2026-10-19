@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Les agents autonomes de Claude ont révolutionné le trading ! — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Les agents autonomes de Claude ont révolutionné le trading !</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-04-10</span>
+                <span class="badge">⏱️ 00:08:41</span>
+                <span class="badge">🆔 <code>nyKdFpOXe9s</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=nyKdFpOXe9s" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>La vidéo de la chaîne Alex Carter met en lumière une véritable rupture technologique pour le trading algorithmique de détail : l'intégration des agents autonomes gérés par Claude (Anthropic). Contrairement aux chatbots traditionnels ou aux API de messages basiques nécessitant une gestion technique complexe, ces agents autonomes s'exécutent entièrement sur l'infrastructure cloud d'Anthropic. Ils fonctionnent en arrière-plan 24h/24 et 7j/7, indépendamment de l'état de l'ordinateur du trader, agissant comme des assistants de recherche et d'analyse infatigables capables de naviguer sur le web, d'exécuter du code et de gérer des sessions persistantes pour moins d'un dollar par jour.<br><br>La stratégie présentée ne se limite pas à la simple automatisation de tâches répétitives, mais s'attaque au cœur de la recherche de alpha et du suivi des narratifs de marché (cryptomonnaies, altcoins, IA, RWA, Layer 2). L'orateur démontre comment déléguer l'agrégation d'actualités macroéconomiques, l'analyse fondamentale de nouveaux jetons (livres blancs, fils Twitter, forums) et la surveillance en temps réel de niveaux techniques clés. Couplé à des écosystèmes d'exécution avancés comme Telegram, TradingView et le suivi des baleines sur Hyperliquid, ce dispositif permet aux traders de combler le fossé entre analyse quantitative et passage d'ordres automatisé sans avoir à maintenir des serveurs dédiés (DevOps).<br><br>Enfin, l'approche pose les bases d'une division inévitable du marché entre les acteurs traditionnels manuels et les traders augmentés par l'intelligence artificielle. En s'appuyant sur une architecture simple reposant sur quatre piliers (l'agent, l'environnement cloud, les sessions persistantes et les événements en temps réel), les particuliers disposent désormais d'une puissance de frappe opérationnelle autrefois réservée aux fonds quantitatifs institutionnels. La démonstration illustre l'accessibilité financière et technique de ces outils, redéfinissant les standards de productivité et de réactivité face à la volatilité des marchés cryptographiques.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Claude Managed Agents (Anthropic)** : Harnais d'agent pré-construit fonctionnant sur l'infrastructure cloud d'Anthropic, gérant de manière autonome le bac à sable, l'exécution d'outils et la persistance des états.<br>* **API Messages (Claude)** : Accès direct aux modèles d'Anthropic offrant un contrôle total mais exigeant de coder et de gérer soi-même la boucle d'exécution et l'environnement.<br>* **Claude Sonnet 4.6 / Opus 4.6** : Modèles de langage de pointe utilisés pour propulser l'intelligence des agents de recherche, optimisés pour la rapidité et la précision analytique.<br>* **TradingView** : Plateforme de graphisme et d'analyse technique incontournable intégrée dans les configurations de trading automatisé pour détecter les cassures de range et les niveaux clés.<br>* **Telegram** : Application de messagerie instantanée exploitée comme interface de contrôle à distance et canal de réception des alertes de trading automatisées.<br>* **Hyperliquid** : DEX et protocole de pointe utilisé pour suivre les mouvements des portefeuilles de baleines et exécuter des opérations on-chain.<br>* **Grok Bots** : Assistants conversationnels et outils d'analyse de sentiment intégrés dans les écosystèmes de veille algorithmique.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView dédié au développement d'indicateurs et de stratégies de scalping automatisables.<br>* **AI Trade Edge** : Communauté privée centralisant les guides de configuration, prompts, bots, modèles d'agents et stratégies de trading de l'auteur.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Délégation totale de la recherche fondamentale** : L'agent autonome peut scruter en quelques minutes les livres blancs, publications Reddit et fils Twitter d'un nouvel altcoin pour fournir un rapport de synthèse complet sans intervention humaine.<br>* **Veille macroéconomique en pilotage automatique** : Automatisation de la collecte des trois principales actualités impactant Bitcoin et Ethereum sur 24 heures, avec qualification immédiate du biais haussier ou baissier.<br>* **Surveillance proactive des niveaux clés** : Configuration d'agents capables de vérifier en continu si les actifs cryptographiques majeurs se maintiennent au-dessus de seuils critiques ou sortent de leurs zones de consolidation (ranges).<br>* **Détection précoce des narratifs de marché** : Analyse croisée de sources multiples par l'agent pour identifier les secteurs en forte dynamique (jetons IA, RWA, Layer 2) avant qu'ils ne fassent l'objet d'une adoption de masse.<br>* **Architecture simplifiée en quatre dimensions** : Le système repose exclusivement sur l'Agent (le cerveau), l'Environnement (le conteneur cloud géré par Anthropic), la Session (la tâche persistante) et les Événements (les flux de communication en temps réel).<br>* **Résilience et persistance opérationnelle** : Les sessions d'agents tournent en arrière-plan dans le cloud, garantissant un fonctionnement ininterrompu même en cas de coupure de connexion Internet ou d'extinction de l'ordinateur personnel.<br>* **Optimisation drastique des coûts d'infrastructure** : Absence totale de frais de serveurs ou de maintenance DevOps, avec un coût réel d'exécution facturé uniquement au temps d'activité (environ 0,08 $ par heure de session active et zéro en période d'inactivité).<br>* **Modèle économique hybride et abordable** : Un coût opérationnel réel estimé à environ 6 dollars par mois pour 50 sessions quotidiennes de trois minutes, combinant consommation de tokens, frais d'exécution et requêtes web.<br>* **Intégration multi-plateforme transparente** : Possibilité de relier les agents à des outils de messagerie (Telegram, Slack, Teams) et à des espaces de travail centralisés (Notion) pour recevoir des alertes et piloter les workflows.<br>* **Paradigme du "Trading Augmenté"** : Émergence d'une scission structurelle entre les traders exploitant l'IA autonome pour multiplier leur efficacité et ceux maintenant des processus manuels voués à l'obsolescence face à la vitesse des marchés.<br>* **Scalabilité des déploiements en production** : Validation industrielle de l'approche par de grandes structures (Sentry, Asana, Rakuten, Notion) démontrant la fiabilité de l'exécution d'agents autonomes à grande échelle.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Claude Managed Agents (Anthropic)</span><span class="tool-tag">API Messages (Claude)</span><span class="tool-tag">Claude Sonnet 4.6 / Opus 4.6</span><span class="tool-tag">TradingView</span><span class="tool-tag">Telegram</span><span class="tool-tag">Hyperliquid</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Pine Script</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Délégation totale de la recherche fondamentale** : L&#x27;agent autonome peut scruter en quelques minutes les livres blancs, publications Reddit et fils Twitter d&#x27;un nouvel altcoin pour fournir un rapport de synthèse complet sans intervention humaine.</span></li><li><span class="point-bullet">✦</span><span>Veille macroéconomique en pilotage automatique** : Automatisation de la collecte des trois principales actualités impactant Bitcoin et Ethereum sur 24 heures, avec qualification immédiate du biais haussier ou baissier.</span></li><li><span class="point-bullet">✦</span><span>Surveillance proactive des niveaux clés** : Configuration d&#x27;agents capables de vérifier en continu si les actifs cryptographiques majeurs se maintiennent au-dessus de seuils critiques ou sortent de leurs zones de consolidation (ranges).</span></li><li><span class="point-bullet">✦</span><span>Détection précoce des narratifs de marché** : Analyse croisée de sources multiples par l&#x27;agent pour identifier les secteurs en forte dynamique (jetons IA, RWA, Layer 2) avant qu&#x27;ils ne fassent l&#x27;objet d&#x27;une adoption de masse.</span></li><li><span class="point-bullet">✦</span><span>Architecture simplifiée en quatre dimensions** : Le système repose exclusivement sur l&#x27;Agent (le cerveau), l&#x27;Environnement (le conteneur cloud géré par Anthropic), la Session (la tâche persistante) et les Événements (les flux de communication en temps réel).</span></li><li><span class="point-bullet">✦</span><span>Résilience et persistance opérationnelle** : Les sessions d&#x27;agents tournent en arrière-plan dans le cloud, garantissant un fonctionnement ininterrompu même en cas de coupure de connexion Internet ou d&#x27;extinction de l&#x27;ordinateur personnel.</span></li><li><span class="point-bullet">✦</span><span>Optimisation drastique des coûts d&#x27;infrastructure** : Absence totale de frais de serveurs ou de maintenance DevOps, avec un coût réel d&#x27;exécution facturé uniquement au temps d&#x27;activité (environ 0,08 $ par heure de session active et zéro en période d&#x27;inactivité).</span></li><li><span class="point-bullet">✦</span><span>Modèle économique hybride et abordable** : Un coût opérationnel réel estimé à environ 6 dollars par mois pour 50 sessions quotidiennes de trois minutes, combinant consommation de tokens, frais d&#x27;exécution et requêtes web.</span></li><li><span class="point-bullet">✦</span><span>Intégration multi-plateforme transparente** : Possibilité de relier les agents à des outils de messagerie (Telegram, Slack, Teams) et à des espaces de travail centralisés (Notion) pour recevoir des alertes et piloter les workflows.</span></li><li><span class="point-bullet">✦</span><span>Paradigme du &quot;Trading Augmenté&quot;** : Émergence d&#x27;une scission structurelle entre les traders exploitant l&#x27;IA autonome pour multiplier leur efficacité et ceux maintenant des processus manuels voués à l&#x27;obsolescence face à la vitesse des marchés.</span></li><li><span class="point-bullet">✦</span><span>Scalabilité des déploiements en production** : Validation industrielle de l&#x27;approche par de grandes structures (Sentry, Asana, Rakuten, Notion) démontrant la fiabilité de l&#x27;exécution d&#x27;agents autonomes à grande échelle.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:26</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous aviez un assistant IA qui pouvait surveiller le marché des cryptomonnaies pour vous 24h/24 et 7j/7, faire des recherches sur les pièces, analyser les configurations, et faire tout cela automatiquement ? Pendant que vous dormez, pendant que vous travaillez, pendant que vous faites n&#x27;importe quoi d&#x27;autre ? C&#x27;est exactement ce que permettent les agents gérés de Claude. Et dans cette vidéo, je vais vous montrer ce que c&#x27;est réellement, ce qu&#x27;ils font, et comment vous pouvez les utiliser en tant que trader, même si vous n&#x27;avez jamais écrit une seule ligne de code de votre vie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de terminal CLI / Interface de script d&#x27;analyse.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse textuelle des cours du Bitcoin (~$66,850) et d&#x27;Ethereum (~$2,254), avec des liens de sources web et métriques de résistance/support.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution d&#x27;un script ou d&#x27;un prompt d&#x27;analyse automatisée des niveaux de prix des cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000013_seg1.jpg" alt="Terminal de commande affichant une analyse de prix des cryptomonnaies Bitcoin et Ethereum générée par une IA." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000013_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:13</span>
+                        <span class="caption-text">Terminal de commande affichant une analyse de prix des cryptomonnaies Bitcoin et Ethereum générée par une IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:27 - 00:00:55</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Entrons dans le vif du sujet. Donc Claude est l&#x27;IA d&#x27;Anthropic. La plupart des gens le connaissent comme un chatbot. Vous tapez quelque chose, il répond. C&#x27;est la version de base. Claude Managed Agents est un niveau complètement différent. Anthropic vous donne en fait deux façons de construire avec Claude. La première est l&#x27;API Messages. C&#x27;est un accès direct au modèle où vous contrôlez tout. Vous construisez votre propre boucle d&#x27;agent, gérez l&#x27;exécution des outils, gérez vous-même l&#x27;environnement d&#x27;exécution. Contrôle total, responsabilité totale.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation officielle de la plateforme Anthropic (platform.claude.com).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Comparaison détaillée entre &quot;Messages API&quot; (contrôle personnalisé, gestion manuelle) et &quot;Managed Agents&quot; (infrastructure gérée, $0.08 / session-hour).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des deux approches de construction proposées par Anthropic pour les développeurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000048_seg2.jpg" alt="Tableau comparatif officiel intitulé &quot;Messages API vs Managed Agents&quot; présentant les différences de fonctionnalités, de responsabilités et de tarification." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000048_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:48</span>
+                        <span class="caption-text">Tableau comparatif officiel intitulé &quot;Messages API vs Managed Agents&quot; présentant les différences de fonctionnalités, de responsabilités et de tarification.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:55 - 00:01:15</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Claude Managed Agents est différent. C&#x27;est un harnais d&#x27;agent pré-construit qui s&#x27;exécute entièrement sur l&#x27;infrastructure d&#x27;Anthropix. Vous définissez ce que l&#x27;agent doit faire. Anthropix s&#x27;occupe de tout le reste. Le bac à sable, l&#x27;exécution des outils, la gestion des états, la récupération d&#x27;erreurs. Voyez les choses ainsi. L&#x27;API Messages, c&#x27;est louer une cuisine vide.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la documentation technique d&#x27;Anthropic / Claude API Docs.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau listant les champs de configuration d&#x27;un agent (name, model, system, tools, mcp_servers, skills, callable_agents, description, metadata).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans la documentation technique pour présenter la structure et les paramètres de configuration des Claude Managed Agents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000105_seg3.jpg" alt="Documentation officielle de l&#x27;API Claude affichant le tableau des champs de configuration pour les agents gérés (Agent configuration fields)." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000105_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Documentation officielle de l&#x27;API Claude affichant le tableau des champs de configuration pour les agents gérés (Agent configuration fields).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:15 - 00:01:53</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Managed Agents embauche un chef qui apporte sa propre cuisine. Au lieu de poser une question à Claude et d&#x27;attendre une réponse, vous donnez une tâche à Claude et il va la faire de lui-même, de manière autonome. Il peut naviguer sur le web, lire des fichiers, exécuter du code, chercher des informations et vous revenir avec les résultats, tout cela sans que vous restiez assis là à le relancer à chaque étape. Et voici le point clé. Il tourne dans le cloud, sur l&#x27;infrastructure d&#x27;Anthropix. Donc il continue de travailler même si vous fermez votre ordinateur portable, même si votre connexion Internet se coupe. L&#x27;agent tourne simplement en arrière-plan en faisant son travail. Pensez-y comme à l&#x27;embauche d&#x27;un chercheur</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (CLI Claude Code) et navigateur web (site d&#x27;Anthropic).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commandes bash exécutant des scripts Python d&#x27;API de trading (weex-contract_api.py), gestion des leviers et des ordres d&#x27;achat (long) sur ETHUSDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution autonome de scripts de trading et appels d&#x27;API pour configurer un effet de levier et passer un ordre d&#x27;achat.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000125_seg4.jpg" alt="Un terminal de commandes montrant Claude Code en train d&#x27;exécuter des scripts Python pour interagir avec l&#x27;API WEEX de manière autonome." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000125_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Un terminal de commandes montrant Claude Code en train d&#x27;exécuter des scripts Python pour interagir avec l&#x27;API WEEX de manière autonome.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:53 - 00:02:27</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">analyste qui ne dort jamais, ne se fatigue jamais et vous coûte moins d&#x27;un dollar par jour à faire fonctionner. Pour les traders, c&#x27;est une très grande affaire. Vous ne construisez rien. Vous ne maintenez rien. Vous définissez simplement la tâche, et elle s&#x27;exécute. Au fait, si vous voulez les instructions de configuration complètes sur la façon de trader en utilisant votre application Telegram, comment intégrer Claude pour trader et afficher ou analyser les baleines sur Hyperliquid, le tout automatiquement, chaque instruction, chaque guide étape par étape, et tous les modèles d&#x27;agents que j&#x27;utilise personnellement. Tout cela se trouve à l&#x27;intérieur de la communauté AI Trade Edge. Le lien est dans la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation technique web et interface de présentation des agents gérés / MCP.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte comparatif sur les agents gérés, coût par heure de session, et liste des 78 outils de contrôle TradingView (lecture de graphiques, indicateurs, changement d&#x27;unités de temps).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages des agents autonomes et des fonctionnalités de pilotage de TradingView par l&#x27;IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000201_seg5.jpg" alt="Comparatif entre l&#x27;API de messages et les agents gérés (Managed Agents), illustrant la délégation complète des tâches d&#x27;infrastructure et d&#x27;exécution à l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000201_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:01</span>
+                        <span class="caption-text">Comparatif entre l&#x27;API de messages et les agents gérés (Managed Agents), illustrant la délégation complète des tâches d&#x27;infrastructure et d&#x27;exécution à l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000218_seg5.jpg" alt="Interface de documentation détaillant les capacités des 78 outils permettant à Claude de contrôler entièrement TradingView (lecture de graphiques et contrôle direct)." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000218_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:18</span>
+                        <span class="caption-text">Interface de documentation détaillant les capacités des 78 outils permettant à Claude de contrôler entièrement TradingView (lecture de graphiques et contrôle direct).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:03:00</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, laissez-moi vous montrer ce que l&#x27;agent géré de Claude fait réellement pour nous, les traders. Premièrement, la recherche de marché en pilotage automatique. Vous dites à l&#x27;agent : « Va trouver les trois principales actualités qui affectent Bitcoin et Ethereum au cours des dernières 24 heures. Résume-les et dis-moi si elles sont haussières ou baissières. » Il y va et le fait. Il navigue sur le web, lit les articles, et revient avec un résumé clair chaque matin sans que vous ayez à le petit doigt. Deuxièmement, l&#x27;analyse de pièces. Vous examinez un nouvel altcoin. Au lieu de passer une heure à lire des livres blancs, des fils Twitter,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (Claude Code dans Windows PowerShell)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt saisi : « go find the top 3 news stories affecting Bitcoin and Ethereum in the last 24 hours, summarize them, and tell me if they&#x27;re bullish or bearish » et statut « Incubating... ».</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie et exécution d&#x27;un prompt dans l&#x27;agent de recherche de marché automatisé via Claude Code.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000236_seg6.jpg" alt="Capture d&#x27;écran montrant une fenêtre de terminal Windows PowerShell exécutant Claude Code, avec un prompt demandant de trouver les 3 principales actualités sur Bitcoin et Ethereum." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000236_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant une fenêtre de terminal Windows PowerShell exécutant Claude Code, avec un prompt demandant de trouver les 3 principales actualités sur Bitcoin et Ethereum.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:00 - 00:03:34</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et des publications Reddit, vous l&#x27;envoyez à l&#x27;agent. Il fait des recherches sur le projet, analyse le sentiment, examine les actualités récentes et vous fournit un compte rendu en quelques minutes. Troisièmement, configurez la surveillance. Vous pouvez donner des instructions à l&#x27;agent pour qu&#x27;il surveille des conditions spécifiques. Est-ce que Bitcoin se maintient au-dessus d&#x27;un niveau clé ? Est-ce qu&#x27;Ethereum est sorti d&#x27;un range ? L&#x27;agent peut vérifier, faire un rapport et vous le signaler. Quatrièmement, le suivi des narratifs. Quel est le secteur en vogue en ce moment ? Les jetons IA, les RWA, les layer 2. L&#x27;agent peut analyser différentes sources et vous dire où la dynamique se construit avant que cela ne devienne évident pour tout le monde.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes Claude Code (v2.1.97)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Invite de commande et interface CLI avec des requêtes textuelles sur les niveaux de prix des cryptomonnaies (« Is Bitcoin holding above a key level? Has Ethereum broken out of a range? »).</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution et affichage d&#x27;un outil en ligne de commande pour l&#x27;analyse technique des cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000317_seg7.jpg" alt="Une interface de terminal de commandes Claude Code affichant des requêtes sur les niveaux de prix et les breakouts de Bitcoin et Ethereum." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000317_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:17</span>
+                        <span class="caption-text">Une interface de terminal de commandes Claude Code affichant des requêtes sur les niveaux de prix et les breakouts de Bitcoin et Ethereum.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:34 - 00:04:00</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ailleurs. Et comme les sessions sont persistantes, ce qui signifie que l&#x27;agent se souvient de tout de vos conversations précédentes, vous pouvez progresser au fil du temps. Il devient de plus en plus utile à mesure que vous l&#x27;utilisez. Maintenant, je laisserai le lien vers la documentation officielle dans la description ci-dessous afin que vous puissiez suivre toutes les instructions étape par étape. Mais je veux vraiment que vous compreniez comment cela fonctionne de manière globale parce que c&#x27;est en réalité très simple. Il y a quatre éléments. D&#x27;abord, l&#x27;agent. C&#x27;est le cerveau.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commandes (CLI)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Analyse des prix et niveaux clés pour Bitcoin (~66 850 $) et Ethereum (~2 254 $) avec des liens de sources (Investing.com, Ainvest, etc.) et un curseur de saisie.</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats d&#x27;une analyse automatisée des niveaux de prix et des ruptures par un agent ou un script.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000340_seg8.jpg" alt="Un terminal de commandes affichant une analyse textuelle de cryptomonnaies (Bitcoin et Ethereum) avec des sources web associées." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000340_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Un terminal de commandes affichant une analyse textuelle de cryptomonnaies (Bitcoin et Ethereum) avec des sources web associées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:00 - 00:04:22</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tu lui dis ce que c&#x27;est. Un assistant de recherche en cryptographie, un analyste de marché, tout ce que tu veux, et quels outils il a à sa disposition. Deuxièmement, l&#x27;environnement. C&#x27;est l&#x27;espace de travail, un conteneur cloud qu&#x27;Anthropic gère pour toi. C&#x27;est là que l&#x27;agent s&#x27;exécute réellement et fait son travail. Tu ne construis pas ça. Tu ne le gères pas. Anthropic s&#x27;occupe de tout cela. Troisièmement, la session.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation web officielle (Claude API Docs - Claude Managed Agents).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des outils disponibles avec leurs descriptions : Bash (commandes shell), Read/Write/Edit (gestion de fichiers), Glob/Grep (recherche), Web fetch/Web search (accès web).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des outils à la disposition de l&#x27;agent et de sa configuration.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000406_seg9.jpg" alt="Capture d&#x27;écran de la documentation de l&#x27;API Claude montrant la section des outils disponibles pour les agents gérés." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000406_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Capture d&#x27;écran de la documentation de l&#x27;API Claude montrant la section des outils disponibles pour les agents gérés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:22 - 00:04:40</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est à ce moment-là que vous le démarrez. Vous combinez l&#x27;agent et l&#x27;environnement, vous lui donnez une tâche, et il se met au travail. Une session peut durer des heures. Elle persiste malgré les déconnexions. Vous pouvez lui envoyer de nouvelles instructions en cours de route si le marché change. Et enfin, les événements. C&#x27;est ainsi qu&#x27;il communique avec vous en retour.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation officielle Claude API Docs et interface de terminal de commande.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Extrait de code cURL pour initialiser une session d&#x27;agent avec les identifiants d&#x27;agent et d&#x27;environnement, et sortie textuelle d&#x27;analyse de crypto-monnaies avec sources web.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la méthode d&#x27;initialisation d&#x27;une session d&#x27;agent suivie de l&#x27;affichage des résultats d&#x27;exécution de la tâche.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000427_seg10.jpg" alt="Documentation de l&#x27;API Claude montrant comment créer une session avec un agent managé via une requête cURL." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000427_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:27</span>
+                        <span class="caption-text">Documentation de l&#x27;API Claude montrant comment créer une session avec un agent managé via une requête cURL.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000436_seg10.jpg" alt="Interface de terminal affichant l&#x27;analyse en cours de niveaux de prix et de ruptures pour le Bitcoin et l&#x27;Ethereum générée par un agent." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000436_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:36</span>
+                        <span class="caption-text">Interface de terminal affichant l&#x27;analyse en cours de niveaux de prix et de ruptures pour le Bitcoin et l&#x27;Ethereum générée par un agent.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:41 - 00:05:01</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Alors que l&#x27;agent travaille, navigue, analyse, écrit, il vous transmet des mises à jour en temps réel. Vous pouvez le regarder travailler ou simplement attendre le résultat final. C&#x27;est tout. Agent, environnement, session, événements, quatre éléments. L&#x27;ensemble peut être configuré en moins de 10 minutes en suivant la documentation. Beaucoup d&#x27;entre vous se demandent peut-être : combien cela coûte-t-il ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Documentation Claude API Docs / Interface web de présentation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Blocs de code cURL pour l&#x27;API Anthropic et diagramme explicatif des quatre concepts clés (Agent, Environment, Session, Events).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la structure technique et de l&#x27;architecture des agents gérés par l&#x27;API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000446_seg11.jpg" alt="Documentation d&#x27;API montrant un exemple de requête cURL pour gérer les sessions et les événements de l&#x27;agent." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000446_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:46</span>
+                        <span class="caption-text">Documentation d&#x27;API montrant un exemple de requête cURL pour gérer les sessions et les événements de l&#x27;agent.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000451_seg11.jpg" alt="Schéma conceptuel représentant les quatre éléments fondamentaux : agent, environnement, session et événements." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000451_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:51</span>
+                        <span class="caption-text">Schéma conceptuel représentant les quatre éléments fondamentaux : agent, environnement, session et événements.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:01 - 00:05:20</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est la partie qui m&#x27;a le plus surpris. Il y a trois choses pour lesquelles vous payez. La première est l&#x27;utilisation des jetons. C&#x27;est la même chose que pour l&#x27;API Claude classique. Sonnet 4.6 coûte 3 dollars par million de jetons d&#x27;entrée et 15 dollars par million de jetons de sortie. Opus 4.6 coûte 5 dollars en entrée, 25 dollars en sortie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de tarification (Pricing) avec un design sombre et des sections de coûts détaillées.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs affichés : Sonnet 4.6 Tokens à 3 $ / 15 $ par million de jetons, Opus 4.6 Tokens à 5 $ / 25 $ par million, Session Runtime à 0,08 $ par heure, Web Searches à 10 $ par 1 000 recherches, ainsi qu&#x27;un exemple concret de coût mensuel évalué à environ 6 $ par mois hors jetons.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des différents composants tarifaires des agents gérés par le présentateur.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000506_seg12.jpg" alt="Un tableau des prix détaillé montrant le coût des agents gérés, incluant les tarifs des jetons pour Sonnet 4.6 et Opus 4.6, le temps d&#x27;exécution des sessions et les recherches sur le web." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000506_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:06</span>
+                        <span class="caption-text">Un tableau des prix détaillé montrant le coût des agents gérés, incluant les tarifs des jetons pour Sonnet 4.6 et Opus 4.6, le temps d&#x27;exécution des sessions et les recherches sur le web.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:20 - 00:05:53</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La plupart des tâches de recherche en trading que vous exécutez utiliseront Sonnet. C&#x27;est plus rapide et largement capable. Deuxièmement, les coûts d&#x27;exécution sont de 0,08 $ par heure de session. C&#x27;est 0,08 $ par heure d&#x27;activité de votre agent. Et le temps d&#x27;inactivité est totalement gratuit. Donc si votre agent termine une tâche et reste simplement là à attendre la suivante, vous ne payez rien. Et troisièmement, les recherches sur le web coûtent 10 $ par 1 000 recherches. Donc si votre agent parcourt le web à la recherche de nouvelles et de sentiment de marché chaque jour, cela représente toujours une fraction de centime par recherche. Qu&#x27;en est-il du coût de l&#x27;infrastructure ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de tarification (Pricing) avec interface sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Coûts affichés : Sonnet 4.6 Tokens à 3 $ / 15 $ par million de tokens, Opus 4.6 Tokens à 5 $ / 25 $ par million de tokens, Session Runtime à 0,08 $ par heure (temps actif uniquement, temps d&#x27;inactivité gratuit), Web Searches à 10 $ par 1 000 recherches, Infrastructure à 0 $. Exemple concret : 50 sessions/jour, 3 min actives chacune pour un coût de ~0,20 $/jour ou ~4 $/mois.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et explication des coûts d&#x27;exécution et de l&#x27;utilisation des différents modèles pour les agents de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000529_seg13.jpg" alt="Tableau des prix et coûts des agents managés présentant les tarifs pour Sonnet, Opus, le temps d&#x27;exécution (Session Runtime) et un exemple concret d&#x27;utilisation." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000529_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:29</span>
+                        <span class="caption-text">Tableau des prix et coûts des agents managés présentant les tarifs pour Sonnet, Opus, le temps d&#x27;exécution (Session Runtime) et un exemple concret d&#x27;utilisation.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:53 - 00:06:30</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Zéro. Pas de serveurs, pas de conteneurs, pas de DevOps. Anthropic s&#x27;occupe de tout. Le calcul du monde réel, 50 sessions par jour, chacune active pendant environ trois minutes, coûte environ 6 dollars par mois en temps d&#x27;exécution. Comparez cela à 50 à 200 dollars par mois minimum pour des serveurs auto-hébergés. Et ce, avant même de prendre en compte les heures d&#x27;ingénierie pour le construire et le maintenir. Pour un assistant de recherche en trading par IA entièrement autonome fonctionnant dans le cloud 24 heures sur 24. Ce n&#x27;est rien. Et regardez, ce n&#x27;est pas théorique. De grandes entreprises déploient déjà des agents gérés en ce moment même. Sentry l&#x27;a associé</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de présentation des prix (Pricing page)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarifs affichés : Sonnet 4.6 ($3 / $15 par M tokens), Opus 4.6 ($5 / $25 par M tokens), Session Runtime ($0.08 / heure), Web Searches ($10 / 1K searches), Infrastructure ($0). Exemple concret : 50 sessions/jour, 3 min actives (~$0.20/jour, ~$4/mois de temps d&#x27;exécution). Comparaison finale : ~6$/mois pour les agents gérés contre 50-200$/mois pour des serveurs traditionnels.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des coûts comparatifs entre l&#x27;utilisation d&#x27;agents gérés et des serveurs traditionnels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000602_seg14.jpg" alt="Un tableau de tarification détaillé montrant les coûts des agents gérés, incluant les tarifs des tokens, le temps d&#x27;exécution, les recherches web et un exemple concret comparant les coûts mensuels." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000602_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:02</span>
+                        <span class="caption-text">Un tableau de tarification détaillé montrant les coûts des agents gérés, incluant les tarifs des tokens, le temps d&#x27;exécution, les recherches web et un exemple concret comparant les coûts mensuels.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:30 - 00:07:04</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">avec leur agent de débogage pour écrire automatiquement des correctifs de code et ouvrir des demandes de tirage. Expédié en semaines au lieu de mois. Asana a construit des coéquipiers IA qui travaillent aux côtés des humains à l&#x27;intérieur des projets. Reprenant des tâches, rédigeant des livrables, passant le relais du travail. Rakuten a déployé des agents dans l&#x27;ingénierie, le produit, les ventes et la finance, connectés à Slack et Teams. Notion l&#x27;utilise pour vous permettre de déléguer du travail directement dans votre espace de travail, exécutant des dizaines de tâches en parallèle. Ce ne sont pas de petites entreprises qui font des expérimentations. Ce sont des déploiements en production à grande échelle. Et si c&#x27;est ce que</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:04 - 00:07:23</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">peut faire pour eux, imaginez ce que cela peut faire pour votre trading. Et pour les prochaines années, deux sortes de traders existeront. Celui qui utilise l&#x27;IA et se simplifie la vie, et celui qui ne le fait pas et fait encore tout manuellement. Et sur le même marché, cela façonnera un résultat très différent. Voici comment vous obtenez tout cela. Je lance la communauté AI Trade Edge.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:24 - 00:07:44</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Chaque prompt, bot, agent, modèle et guide étape par étape que j&#x27;utilise personnellement, le tout regroupé au même endroit. Et tout ce que je construirai à l&#x27;avenir sera ajouté directement dans le groupe. Chaque nouvelle intégration, chaque nouvelle stratégie, chaque nouveau prompt, chaque mise à jour. De l&#x27;intégration de TradingView au trading sur Telegram et au suivi des baleines sur Hyperliquid.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant une interface utilisateur sombre (dark mode) avec un menu de navigation par étapes en haut (01 à 05).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Présentation des fonctionnalités de suivi des baleines (&#x27;Whale Scanning&#x27;, &#x27;Sentiment Analysis&#x27;, &#x27;Trade Ideas&#x27;, &#x27;Wallet Lookup&#x27;) connectant Claude aux portefeuilles les plus rentables d&#x27;Hyperliquid.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle des capacités du système de suivi des portefeuilles de baleines sur une interface web.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000729_seg17.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;un guide ou d&#x27;une plateforme en ligne (Alex Carter Trading), avec l&#x27;étape 4 intitulée &#x27;What It Can Do&#x27; détaillée en quatre fonctionnalités principales." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000729_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:29</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;un guide ou d&#x27;une plateforme en ligne (Alex Carter Trading), avec l&#x27;étape 4 intitulée &#x27;What It Can Do&#x27; détaillée en quatre fonctionnalités principales.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:44 - 00:08:06</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The moment you join, you get it all. The price is $79.99 a month. And honestly, when you think about what this actually is, the most cutting edge AI trading setup available to retail traders right now, constantly updated with everything included. That is not a lot of money. One good trade covers it. But the first 100 members lock in that rate permanently.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Whop et une interface de documentation utilisateur.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification d&#x27;abonnement (79,99 $ / mois) et liste de fonctionnalités techniques (lecture de graphiques, données OHLCV en direct, RSI, MACD, Pine Script).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des tarifs et des fonctionnalités de l&#x27;outil d&#x27;IA pour le trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000750_seg18.jpg" alt="Capture d&#x27;écran de la plateforme Whop montrant la page de vente du produit &#x27;AI Trade Edge&#x27; d&#x27;Alex Carter au prix de 79,99 $ par mois." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000750_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:50</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Whop montrant la page de vente du produit &#x27;AI Trade Edge&#x27; d&#x27;Alex Carter au prix de 79,99 $ par mois.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000755_seg18.jpg" alt="Capture d&#x27;écran d&#x27;une interface de cours ou de documentation en ligne listant les fonctionnalités (&#x27;What It Can Do&#x27;, &#x27;Chart Reading&#x27;, &#x27;Chart Control&#x27;) d&#x27;un outil de trading piloté par IA." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000755_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:55</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une interface de cours ou de documentation en ligne listant les fonctionnalités (&#x27;What It Can Do&#x27;, &#x27;Chart Reading&#x27;, &#x27;Chart Control&#x27;) d&#x27;un outil de trading piloté par IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:06 - 00:08:41</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Après ça, le prix augmente, donc le plus tôt vous vous inscrivez, meilleure est l&#x27;offre. Le lien est dans la description, inscrivez-vous maintenant avant que le prix n&#x27;augmente. Vous ne pouvez vraiment pas vous permettre de rater ça, et voilà, une introduction aux agents gérés par Clog. Si vous voulez en savoir plus et faire une incursion en profondeur, je mettrai le guide de démarrage rapide en lien dans la description sur la façon de le configurer. Si vous voulez voir la démonstration complète sur la façon de configurer l&#x27;exécution de transactions automatisées en utilisant Telegram et TradingView, regardez la vidéo qui apparaît à l&#x27;écran en ce moment même. Si vous avez trouvé cela utile, laissez un pouce bleu, cela aide vraiment la chaîne. Abonnez-vous si ce n&#x27;est pas déjà fait, et je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Whop, Documentation Claude API, TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commandes d&#x27;installation Homebrew (`brew install anthropic/tap/ant`), indicateurs techniques et signaux de trading sur Bitcoin.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme payante, configuration d&#x27;agents gérés et analyse graphique de la paire BTCUSDT.P.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000824_seg19.jpg" alt="Documentation Claude API montrant les instructions d&#x27;installation de la CLI et du SDK." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000824_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:24</span>
+                        <span class="caption-text">Documentation Claude API montrant les instructions d&#x27;installation de la CLI et du SDK.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000832_seg19.jpg" alt="Graphique TradingView sur une période 4h montrant le contrat perpétuel Bitcoin/Tether (BTCUSDT.P) avec des signaux d&#x27;achat et de vente." loading="lazy" onclick="openLightbox('../screenshots/nyKdFpOXe9s/nyKdFpOXe9s_000832_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:32</span>
+                        <span class="caption-text">Graphique TradingView sur une période 4h montrant le contrat perpétuel Bitcoin/Tether (BTCUSDT.P) avec des signaux d&#x27;achat et de vente.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
