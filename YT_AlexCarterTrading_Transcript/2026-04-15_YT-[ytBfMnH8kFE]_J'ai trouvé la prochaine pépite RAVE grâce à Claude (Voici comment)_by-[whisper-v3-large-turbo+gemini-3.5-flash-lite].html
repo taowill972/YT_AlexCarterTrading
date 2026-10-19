@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 J&#x27;ai trouvé la prochaine pépite RAVE grâce à Claude (Voici comment) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 J&#x27;ai trouvé la prochaine pépite RAVE grâce à Claude (Voici comment)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-04-15</span>
+                <span class="badge">⏱️ 00:09:11</span>
+                <span class="badge">🆔 <code>ytBfMnH8kFE</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=ytBfMnH8kFE" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo intitulée **J'ai trouvé la prochaine pépite RAVE grâce à Claude (Voici comment)**, Alex Carter détaille une approche stratégique et pratique du trading et de l'automatisation par agents IA.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **TradingView & Claude Code** : Analyse technique avancée et automatisation algorithmique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- Respect rigoureux du ratio risque/rendement et du money management.<br>- Automatisation méthodique des déclencheurs d'ordres via des agents intelligents.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView &amp; Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Respect rigoureux du ratio risque/rendement et du money management.</span></li><li><span class="point-bullet">✦</span><span>Automatisation méthodique des déclencheurs d&#x27;ordres via des agents intelligents.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:19</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous venez tout juste d&#x27;entendre parler de Rave, vous êtes déjà trop tard. Pendant que vous dormiez, l&#x27;argent intelligent a déjà multiplié sa position par 10. Et en ce moment, ils prennent tranquillement leurs bénéfices sur vos ordres d&#x27;achat. Mais voici ce que personne ne vous dit. Rave n&#x27;était pas le fruit du hasard. Il a suivi un schéma exact. Et j&#x27;ai construit un système en utilisant Claude qui l&#x27;a repéré avant que tout le monde n&#x27;en parle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Réseau social X (Twitter), CoinMarketCap, TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publication de Kierian concernant RaveDAO, graphique du token RAVE avec une performance de +4609.57%, graphique de trading crypto montrant une zone de distribution et une tendance baissière.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et consultation d&#x27;un post Twitter sur RaveDAO, puis analyse graphique d&#x27;une phase de distribution sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000005_seg1.jpg" alt="Capture d&#x27;écran du réseau social X (Twitter) affichant un tweet sur le projet RaveDAO ($RAVE) avec un graphique de prix CoinMarketCap montrant une forte hausse verticale." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000005_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:05</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X (Twitter) affichant un tweet sur le projet RaveDAO ($RAVE) avec un graphique de prix CoinMarketCap montrant une forte hausse verticale.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000010_seg1.jpg" alt="Graphique TradingView en unité de temps 4h (RIVER/TetherUS Perpetual Contract) avec une flèche explicative indiquant la « PHASE 3 Distribution » et une forte baisse." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000010_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Graphique TradingView en unité de temps 4h (RIVER/TetherUS Perpetual Contract) avec une flèche explicative indiquant la « PHASE 3 Distribution » et une forte baisse.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:20 - 00:00:57</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le suivant est déjà en train de se former. Et cette fois, vous allez être en avance. Laissez-moi vous expliquer comment ça fonctionne. Assurez-vous aussi de regarder jusqu&#x27;à la fin parce que je vais également vous montrer comment accéder à tous mes prompts, stratégies et configurations sur la façon d&#x27;intégrer et d&#x27;automatiser votre trading en utilisant TradingView et Telegram. De plus, je vais aussi vous montrer un agent IA que j&#x27;ai créé où vous pouvez créer votre propre bot de trading en utilisant un anglais simple, concourir contre tout le monde sur un classement en direct, et gagner un prix de ma part. Plus de détails à ce sujet plus tard. Entrons dans le vif du sujet. Maintenant, Rave, River, Siren, ces cryptos suivent toutes exactement le même schéma. Graphique plat. Financement négatif et l&#x27;intérêt ouvert est</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web / documentation de cours de trading (style Notion ou plateforme LMS personnalisée).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte descriptif des fonctionnalités (« What It Can Do », « 78 tools give Claude full control over your TradingView desktop »), sections « Chart Reading » et « Chart Control » avec des listes à puces détaillant les actions possibles (lecture des données OHLCV, RSI, MACD, modification des symboles et timeframes).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des capacités d&#x27;intégration et d&#x27;automatisation entre les outils d&#x27;IA et la plateforme de graphiques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000029_seg2.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface d&#x27;un guide ou d&#x27;un site web de tutoriel détaillant les fonctionnalités de contrôle de TradingView via Claude, avec des sections sur la lecture et le contrôle des graphiques." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000029_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:29</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface d&#x27;un guide ou d&#x27;un site web de tutoriel détaillant les fonctionnalités de contrôle de TradingView via Claude, avec des sections sur la lecture et le contrôle des graphiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:57 - 00:01:33</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">tranquillement en train de se construire. Puis, de nulle part, le prix explose par 100 et soudain, tout le monde en parle. La plupart des gens voient ces cryptos après qu&#x27;elles soient déjà sur le fil d&#x27;actualité de tout le monde. Mais à ce moment-là, il est trop tard. Maintenant, j&#x27;ai créé un système qui les attrape en phase un avant même que la hausse ne commence. Avant d&#x27;entrer dans le vif du sujet avec l&#x27;outil, vous devez comprendre le schéma. Chacune de ces cryptos est passée par les mêmes trois étapes. Une fois que vous l&#x27;avez vu, vous ne pouvez plus ne pas le voir. Phase un, l&#x27;accumulation. Le prix est totalement plat. Personne ne parle de la crypto. Les taux de financement sont négatifs parce que les particuliers</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal Claude Code, plateforme TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commandes CLI Claude Code v2.1.109, graphique de prix crypto annoté avec les phases de marché (Phase 1 Accumulation, Phase 2 Squeeze, Phase 3 Distribution)</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie d&#x27;une commande d&#x27;installation de skill et analyse technique d&#x27;un graphique de prix sur TradingView découpé en phases de marché</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000115_seg3.jpg" alt="Interface du terminal Claude Code affichant une ligne de commande pour installer une compétence GitHub Binance." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000115_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Interface du terminal Claude Code affichant une ligne de commande pour installer une compétence GitHub Binance.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000124_seg3.jpg" alt="Graphique TradingView en unité 4h de la paire RIVER/USDT annoté avec les différentes phases de marché (Accumulation, Squeeze, Distribution)." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000124_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Graphique TradingView en unité 4h de la paire RIVER/USDT annoté avec les différentes phases de marché (Accumulation, Squeeze, Distribution).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:02:07</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">est convaincu que le graphique est mort et ils le shortent. Mais voici l&#x27;indice. L&#x27;intérêt ouvert grimpe tranquillement. Quelqu&#x27;un construit des positions. Les teneurs de marché font le plein et appâtent les shorts, préparant le piège pour un short squeeze massif. C&#x27;est là que se trouve l&#x27;opportunité de multiplier par 10 ou 50. C&#x27;est la phase dans laquelle vous voulez être et là où nous allons acheter. Et quand vous trouvez l&#x27;une de ces cryptos, vous voulez déjà être prêt et configuré. Je trade celles-ci sur Binance ou Bybit. Elles ont tendance à avoir les premières cotations sur ces paires perpétuelles plus petites, ce qui est exactement ce dont vous avez besoin lorsque vous essayez d&#x27;obtenir</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Coinglass, TradingView, Binance Futures</p>
+                        <p><strong>Contenu textuel & Code :</strong> Intérêt ouvert, volume des contrats à terme, prix en direct, taux de financement, carnets d&#x27;ordres, bougies japonaises</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse de l&#x27;intérêt ouvert et visualisation d&#x27;une zone d&#x27;accumulation sur graphique de prix pour identifier une configuration de marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000141_seg4.jpg" alt="Tableau de bord Coinglass montrant l&#x27;intérêt ouvert, les volumes et les statistiques des contrats à terme pour RAVE/USDT." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000141_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Tableau de bord Coinglass montrant l&#x27;intérêt ouvert, les volumes et les statistiques des contrats à terme pour RAVE/USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000150_seg4.jpg" alt="Graphique TradingView en bougies japonaises sur 4 heures de la paire RAVE/USDT, mettant en évidence la phase 1 d&#x27;accumulation." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000150_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Graphique TradingView en bougies japonaises sur 4 heures de la paire RAVE/USDT, mettant en évidence la phase 1 d&#x27;accumulation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000158_seg4.jpg" alt="Interface de l&#x27;échange Binance Futures avec le carnet d&#x27;ordres, la liste des paires et le graphique du Bitcoin (BTCUSDT)." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000158_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Interface de l&#x27;échange Binance Futures avec le carnet d&#x27;ordres, la liste des paires et le graphique du Bitcoin (BTCUSDT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:07 - 00:02:39</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">avant tout le monde. Les deux liens sont dans la description. Phase deux, le « squeeze ». Un short squeeze massif fait monter le prix à la verticale. Le financement devient extrêmement positif. La pièce apparaît soudainement sur la timeline de tout le monde. Crypto Twitter publie des captures d&#x27;écran. Si vous êtes entrés dans la phase un, vous profitez déjà de gains qui changent une vie. Si vous venez juste d&#x27;en entendre parler, vous êtes déjà en retard. La plupart des gens se font démolir ici en essayant de shorter une hausse qui continue de monter. Chaque short liquidé pousse le prix de plus en plus haut, et tout cet argent va directement à ceux qui ont acheté</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme Coinglass et graphique TradingView (Binance, RAVE/TetherUS).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Métriques de volume, d&#x27;intérêt ouvert, de liquidations et graphique du taux de financement pondéré (Weighted Funding Rate) ; graphique en chandeliers japonais montrant une zone de prix latérale.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse des données de dérivés sur Coinglass et identification visuelle de la phase d&#x27;accumulation sur le graphique de prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000215_seg5.jpg" alt="Capture d&#x27;écran de la plateforme Coinglass montrant l&#x27;analyse des dérivés de RaveDAO, avec les métriques d&#x27;intérêt ouvert et un graphique du taux de financement pondéré." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000215_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Coinglass montrant l&#x27;analyse des dérivés de RaveDAO, avec les métriques d&#x27;intérêt ouvert et un graphique du taux de financement pondéré.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000223_seg5.jpg" alt="Graphique TradingView en unité de temps 4h pour le contrat perpétuel RAVE/USDT sur Binance, annoté avec la mention &quot;PHASE 1 &#x27;Accumulation&#x27;&quot;." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000223_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:23</span>
+                        <span class="caption-text">Graphique TradingView en unité de temps 4h pour le contrat perpétuel RAVE/USDT sur Binance, annoté avec la mention &quot;PHASE 1 &#x27;Accumulation&#x27;&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:39 - 00:03:02</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">tôt dans la phase un. Phase trois, la distribution ou le &quot;dump&quot;. Les baleines distribuent dans la hype. Le financement reste extrêmement haut. Les particuliers achètent la baisse, mais la baisse continue de baisser. C&#x27;est là que la plupart des gens perdent de l&#x27;argent. Chacune de ces cryptos finit par chuter lourdement à partir de cette phase. La clé est de vendre ici, pas d&#x27;acheter. Une fois que la hausse est terminée, les prix ne retournent jamais aux niveaux qu&#x27;ils ont atteints.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Coinglass et graphique TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Données de dérivés, taux de financement pondéré, et graphique de prix avec mise en évidence de la phase de distribution.
+[DESC_ACTION] Présentation des métriques on-chain et illustration graphique de la phase de distribution descendante pour expliquer le comportement des baleines et des particuliers.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000245_seg6.jpg" alt="Analyse des données de dérivés pour le token River sur Coinglass, montrant les taux de financement et l&#x27;Open Interest." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000245_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:45</span>
+                        <span class="caption-text">Analyse des données de dérivés pour le token River sur Coinglass, montrant les taux de financement et l&#x27;Open Interest.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000251_seg6.jpg" alt="Graphique TradingView en unité 4h du contrat perpétuel RIVER/TetherUS sur Binance, illustrant la Phase 3 &quot;Distribution&quot; avec une flèche de baisse." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000251_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Graphique TradingView en unité 4h du contrat perpétuel RIVER/TetherUS sur Binance, illustrant la Phase 3 &quot;Distribution&quot; avec une flèche de baisse.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:02 - 00:03:21</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La manipulation est faite et la seule issue est la baisse avec quelques rebonds du chat mort en chemin. Maintenant, la stratégie est simple. Trouver des pièces en phase un, surfer pendant la phase deux, et vendre avant la phase trois. C&#x27;est tout. La partie difficile est de trouver les pièces de la phase un avant tout le monde. C&#x27;est ce que la compétence Claude Code automatise.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView et interface de marchés d&#x27;une plateforme d&#x27;échange de cryptomonnaies.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix avec zones surlignées et cerclées, paires de trading, prix en temps réel, variations en pourcentage et volumes.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique d&#x27;un graphique illustrant les phases de marché et visualisation d&#x27;une liste de cryptomonnaies sur un exchange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000307_seg7.jpg" alt="Graphique en chandeliers TradingView montrant l&#x27;évolution du prix d&#x27;un token perpétuel (RIVER/TetherUS) avec des annotations manuscrites et la mention &#x27;PHASE 3: Distribution&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000307_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Graphique en chandeliers TradingView montrant l&#x27;évolution du prix d&#x27;un token perpétuel (RIVER/TetherUS) avec des annotations manuscrites et la mention &#x27;PHASE 3: Distribution&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000316_seg7.jpg" alt="Capture d&#x27;écran d&#x27;une liste de marchés de cryptomonnaies sur une plateforme d&#x27;échange affichant divers tokens (DOGEUSDT, ZECUSDT, BCHUSDT, etc.) avec leurs prix et variations en pourcentage." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000316_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:16</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;une liste de marchés de cryptomonnaies sur une plateforme d&#x27;échange affichant divers tokens (DOGEUSDT, ZECUSDT, BCHUSDT, etc.) avec leurs prix et variations en pourcentage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:21 - 00:03:53</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Claude Code analyse les marchés chaque jour et voit les données avant n&#x27;importe quel trader humain. Lorsque les teneurs de marché s&#x27;apprêtent à manipuler une cryptomonnaie, ils laissent des traces, et Claude les détecte. Voici exactement ce qu&#x27;il fait sous le capot. Chaque pièce des contrats perpetuals de Binance est scannée. Toutes. D&#x27;abord, il se connecte directement à l&#x27;API publique de Binance. Aucune clé d&#x27;API nécessaire, aucune inscription, rien. C&#x27;est totalement gratuit et déjà intégré à la compétence. Ensuite, il récupère chaque cryptomonnaie cotée en perpetual et commence à filtrer. Il vérifie</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView et tableau de cotations/données de marché boursier crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix, zones surlignées, indicateurs de phase de marché, paires de trading (BTCUSDT, ETHUSDT, etc.) avec taux de financement et open interest.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique de la phase de distribution des prix et consultation des données de marché en direct.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000329_seg8.jpg" alt="Graphique TradingView en unité 4h d&#x27;un contrat perpétuel de cryptomonnaie montrant une phase de distribution." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000329_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:29</span>
+                        <span class="caption-text">Graphique TradingView en unité 4h d&#x27;un contrat perpétuel de cryptomonnaie montrant une phase de distribution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000337_seg8.jpg" alt="Tableau de cotations et de marchés des cryptomonnaies listant les prix, variations sur 24h et taux de financement (Funding Rate)." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000337_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:37</span>
+                        <span class="caption-text">Tableau de cotations et de marchés des cryptomonnaies listant les prix, variations sur 24h et taux de financement (Funding Rate).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000345_seg8.jpg" alt="Schéma explicatif d&#x27;une architecture d&#x27;échange avec connexion API, séparant le Spot Trading et le Derivatives Trading." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000345_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:45</span>
+                        <span class="caption-text">Schéma explicatif d&#x27;une architecture d&#x27;échange avec connexion API, séparant le Spot Trading et le Derivatives Trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:53 - 00:04:14</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">que le prix soit stable, que le financement soit négatif, que l&#x27;intérêt ouvert grimpe discrètement, et que la cotation soit relativement récente. C&#x27;est votre empreinte digitale de phase un, voilà. Et si une crypto a déjà fait son mouvement, elle est éliminée automatiquement. Pas de pièges de liquidité de sortie. Ensuite, pour chaque crypto qui passe, il attribue un score de squeeze de 0 à 10.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Coinglass (tableaux de bord de données sur les dérivés crypto) et TradingView (graphique des prix).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Métriques de dérivés, taux de financement pondérés, intérêt ouvert, volumes et données de liquidation (Long/Short).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique et fondamentale illustrant la phase d&#x27;accumulation du prix et le comportement des liquidations sur le marché des contrats perpétuels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000358_seg9.jpg" alt="Interface Coinglass affichant l&#x27;analyse des données de dérivés pour RIVER, incluant les taux de financement et les graphiques d&#x27;intérêt ouvert." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000358_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:58</span>
+                        <span class="caption-text">Interface Coinglass affichant l&#x27;analyse des données de dérivés pour RIVER, incluant les taux de financement et les graphiques d&#x27;intérêt ouvert.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000403_seg9.jpg" alt="Graphique TradingView en bougies japonaises (unité 4h) pour RAVE/USDT, montrant une zone de prix en surbrillance étiquetée &#x27;PHASE 1 Accumulation&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000403_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:03</span>
+                        <span class="caption-text">Graphique TradingView en bougies japonaises (unité 4h) pour RAVE/USDT, montrant une zone de prix en surbrillance étiquetée &#x27;PHASE 1 Accumulation&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000408_seg9.jpg" alt="Tableau de bord Coinglass présentant l&#x27;analyse des liquidations de RAVE avec des statistiques détaillées sur les positions Long et Short." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000408_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:08</span>
+                        <span class="caption-text">Tableau de bord Coinglass présentant l&#x27;analyse des liquidations de RAVE avec des statistiques détaillées sur les positions Long et Short.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:14 - 00:04:32</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Plus le score est élevé, plus cette cryptomonnaie correspond exactement à la configuration que nous avons vue avec Rave, Siren et River. Juste avant qu&#x27;elles n&#x27;explosent. Un 10 signifie un prix stable, un financement profondément négatif, un intérêt ouvert qui grimpe fortement et zéro hausse préalable. C&#x27;est la cryptomonnaie que vous voulez surveiller. Maintenant, laissez-moi vous montrer comment faire tout cela.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, terminal de script/bot de scan personnalisé.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix, niveaux de chandeliers, tableau de métriques de futures (taux de financement négatifs, scores de squeeze, variations d&#x27;intérêt ouvert).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique des phases de marché (accumulation, squeeze, distribution) et présentation des résultats du scanner de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000419_seg10.jpg" alt="Graphique TradingView en chandelier montrant le contrat perpétuel RAVE/USDT avec les annotations &#x27;PHASE 1 Accumulation&#x27;, &#x27;PHASE 2 Squeeze&#x27; et &#x27;PHASE 3 Distribution&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000419_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Graphique TradingView en chandelier montrant le contrat perpétuel RAVE/USDT avec les annotations &#x27;PHASE 1 Accumulation&#x27;, &#x27;PHASE 2 Squeeze&#x27; et &#x27;PHASE 3 Distribution&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000423_seg10.jpg" alt="Interface de terminal affichant un tableau de classement des opportunités de squeeze sur Binance Futures avec des colonnes Ticker, Score, Funding (daily), 14d Chg, 7d OI Chg et Notes." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000423_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:23</span>
+                        <span class="caption-text">Interface de terminal affichant un tableau de classement des opportunités de squeeze sur Binance Futures avec des colonnes Ticker, Score, Funding (daily), 14d Chg, 7d OI Chg et Notes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:32 - 00:05:07</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;installation complète prend environ cinq minutes. Vous avez besoin de CloudCode et d&#x27;un dépôt GitHub gratuit. Pas de clés API, pas d&#x27;outils payants, rien de compliqué. Voici les trois étapes. Étape un, ouvrez CloudCode. Si vous ne l&#x27;avez pas encore, installez-le depuis Anthropic. Cela fonctionne sur Mac et Windows. Ouvrez-le simplement et vous êtes prêt. Pour accéder à CloudCode, vous devez avoir la version Pro ou Max. Le plan Pro à 20 dollars par mois est tout ce dont vous avez vraiment besoin pour commencer. Étape deux, installez le Binance Skills Hub. Allez sur github.com, recherchez le Binance Skills Hub et clonez-le.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande (Claude Code) et navigateur web (site officiel de Claude/Anthropic).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Versions logicielles, lignes de commandes et plans tarifaires (Free, Pro à 17$/mois, Max à partir de 100$/mois).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de Claude Code et consultation des abonnements disponibles sur le site d&#x27;Anthropic.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000441_seg11.jpg" alt="Interface du terminal Claude Code montrant la version v2.1.109 avec l&#x27;indication Opus 4.6." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000441_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Interface du terminal Claude Code montrant la version v2.1.109 avec l&#x27;indication Opus 4.6.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000458_seg11.jpg" alt="Page web de tarification de Claude affichant les offres Free, Pro et Max avec leurs tarifs respectifs." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000458_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:58</span>
+                        <span class="caption-text">Page web de tarification de Claude affichant les offres Free, Pro et Max avec leurs tarifs respectifs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:07 - 00:05:26</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">sur votre machine. Ouvrez ensuite Claude Code depuis l&#x27;intérieur de ce dossier. Je mettrai tous les liens dans la description ci-dessous. Assurez-vous que la sortie réseau est activée dans vos paramètres et définie sur tous les domaines. Sinon, Claude ne peut pas atteindre l&#x27;API Binance. Étape 3. Ouvrez Claude Code et collez ceci. C&#x27;est tout.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de commande (Claude Code)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commande d&#x27;installation : &quot;install this skill https://github.com/binance/binance-skills-hub&quot; et version de Claude Code v2.1.109.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution d&#x27;une commande dans le terminal pour installer les compétences Binance via Claude Code.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000512_seg12.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface en ligne de commande de Claude Code exécutant l&#x27;installation d&#x27;un dépôt GitHub." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000512_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:12</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface en ligne de commande de Claude Code exécutant l&#x27;installation d&#x27;un dépôt GitHub.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:27 - 00:05:47</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cloud se connecte à Binance, analyse chaque paire de contrats à terme et renvoie vos candidats au *squeeze* classés. Quatrième étape, l&#x27;automatiser. Exécuter cela une seule fois est utile, mais le véritable avantage vient du fait d&#x27;en faire une habitude quotidienne. Vous pouvez planifier l&#x27;exécution de cette invite chaque matin automatiquement. Il existe de nombreuses façons de le faire avec Cloud Code, des simples tâches cron aux scripts personnalisés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de terminal CLI / Script d&#x27;automatisation</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau avec les colonnes Ticker, Score, Funding (daily), 14d Chg, 7d OI Chg et Notes. Les paires incluent MSFTUSDT, 1000SHIBUSDT, TRXUSDT, XAUTUSDT, ADAUSDT, HBARUSDT, LTCUSDT, SOLUSDT, XRPUSDT, DOGEUSDT avec des notes explicatives.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse et affichage des candidats au squeeze sur les contrats à terme Binance par un assistant cloud.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000532_seg13.jpg" alt="Un tableau affiché dans une interface de terminal listant les paires de contrats à terme Binance classées par score de squeeze." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000532_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:32</span>
+                        <span class="caption-text">Un tableau affiché dans une interface de terminal listant les paires de contrats à terme Binance classées par score de squeeze.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:48 - 00:06:07</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">L&#x27;idée est simple. Laissez-le scanner toutes les 24 heures. Gardez un journal de l&#x27;évolution des scores au fil du temps et signalez toute pièce qui bondit soudainement à 8 ou plus. Lorsque vous voyez une pièce qui était à 5 la semaine dernière et qui pousse maintenant à 9, c&#x27;est votre signal. Quelque chose a changé. L&#x27;intérêt ouvert augmente. Le financement devient de plus en plus négatif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de terminal ou application de type console (fond bleu sombre avec texte blanc) exécutant un script de scan de marchés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Un tableau de 10 cryptomonnaies/actifs (MSFTUSDT, 1000SHIBUSDT, TRXUSDT, XAUTUSDT, ADAUSDT, HBARUSDT, LTCUSDT, SOLUSDT, XRPUSDT, DOGEUSDT) avec des colonnes de score, taux de financement (funding), variation sur 14 jours, et notes détaillées (ex: range de prix, volume, biais short).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des résultats du scanner automatisé pour identifier les opportunités de squeeze sur les contrats à terme Binance.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000553_seg14.jpg" alt="Un tableau de résultats de scan affiché dans un terminal ou une interface de type console, listant divers tickers de contrats à terme Binance avec leurs scores de squeeze et notes analytiques." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000553_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:53</span>
+                        <span class="caption-text">Un tableau de résultats de scan affiché dans un terminal ou une interface de type console, listant divers tickers de contrats à terme Binance avec leurs scores de squeeze et notes analytiques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:07 - 00:06:43</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La configuration est en train de se former. C&#x27;est à ce moment-là que vous devez commencer à faire attention. Et pendant les prochaines années, deux types de traders existeront. Celui qui utilise l&#x27;IA et se simplifie la vie et celui qui ne le fait pas et fait encore tout manuellement. Et dans le même marché, cela donnera des résultats très différents. Voici comment vous obtenez tout cela. Je lance la communauté AI Trade Edge. Chaque prompt, chaque bot, chaque agent, chaque modèle et chaque guide étape par étape que j&#x27;utilise personnellement, tout au même endroit, et tout ce que je construirai à l&#x27;avenir sera ajouté directement dans le groupe. Chaque nouvelle intégration, chaque nouvelle stratégie, chaque nouveau prompt,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (Whop, site de documentation sur les outils d&#x27;IA pour le trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fonctionnalités logicielles présentées : Whale Scanning (analyse de plus de 33 000 portefeuilles), Sentiment Analysis, Trade Ideas et Wallet Lookup.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des capacités et fonctionnalités de l&#x27;outil d&#x27;IA de trading pour analyser les portefeuilles de baleines et générer des idées de trade.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000634_seg15.jpg" alt="Page de documentation web &#x27;Step Four: What It Can Do&#x27; détaillant les fonctionnalités de suivi des baleines (Whale Scanning), d&#x27;analyse de sentiment, d&#x27;idées de trade et de recherche de portefeuilles connectés à Hyperliquid." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000634_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:34</span>
+                        <span class="caption-text">Page de documentation web &#x27;Step Four: What It Can Do&#x27; détaillant les fonctionnalités de suivi des baleines (Whale Scanning), d&#x27;analyse de sentiment, d&#x27;idées de trade et de recherche de portefeuilles connectés à Hyperliquid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:43 - 00:07:05</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">chaque mise à jour, de l&#x27;intégration de TradingView au trading sur Telegram et au suivi des baleines sur Hyperliquid. Dès l&#x27;instant où vous rejoignez, vous obtenez le tout. Le prix est de 79,99 $ par mois. Et honnêtement, quand on y pense, quand on réalise ce que c&#x27;est vraiment, la configuration de trading par IA la plus avancée disponible pour les traders particuliers en ce moment, constamment mise à jour avec tout inclus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Whop, site web de formation et d&#x27;outils de trading d&#x27;Alex Carter, plateforme de documentation et interface de cours.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tarification d&#x27;abonnement (79,99 $ / mois), liste des fonctionnalités d&#x27;intégration de TradingView (lecture de graphiques, OHLCV, indicateurs RSI, MACD, EMA, contrôle des symboles et timeframes).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages et des fonctionnalités incluses dans l&#x27;offre payante de la formation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000700_seg16.jpg" alt="Page de documentation en ligne intitulée &quot;What It Can Do&quot; détaillant les 78 outils permettant à Claude de contrôler TradingView (Lecture de graphiques, Contrôle, Pine Script, etc.)." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000700_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Page de documentation en ligne intitulée &quot;What It Can Do&quot; détaillant les 78 outils permettant à Claude de contrôler TradingView (Lecture de graphiques, Contrôle, Pine Script, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:06 - 00:07:31</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce n&#x27;est pas beaucoup d&#x27;argent. Un seul bon trade suffit à couvrir ça. Mais les 100 premiers membres bloquent ce tarif définitivement. Après ça, le prix augmente. Donc plus vous entrez tôt, meilleure est l&#x27;offre. Le lien est dans la description. Inscrivez-vous dès maintenant avant que le prix n&#x27;augmente. Vous ne pouvez vraiment pas vous permettre de rater ça. La plupart des traders essaient de faire une de ces deux choses. Ils essaient de rattraper la hausse après qu&#x27;elle a déjà commencé, ce qui est trop tard, ou ils essaient de vendre à découvert au sommet, ce qui est extrêmement dangereux.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, Plateforme Whop</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers 4h de RAVE/USDT, indicateur de prix, zone surbrillante &#x27;PHASE 2 Squeeze&#x27;, interface de commande Whop avec tarif réduit à 79.99$.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique d&#x27;un graphique de cryptomonnaie montrant une forte hausse de prix et présentation d&#x27;une offre commerciale d&#x27;abonnement.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000725_seg17.jpg" alt="Graphique TradingView en chandeliers montrant une phase haussière annotée &#x27;PHASE 2 Squeeze&#x27; sur la paire RAVE/USDT." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000725_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:25</span>
+                        <span class="caption-text">Graphique TradingView en chandeliers montrant une phase haussière annotée &#x27;PHASE 2 Squeeze&#x27; sur la paire RAVE/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:32 - 00:07:53</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les deux sont des stratégies perdantes. Cette approche est différente. Vous ne réagissez pas à l&#x27;évolution des prix. Vous lisez les signaux structurels comme le financement, l&#x27;intérêt ouvert et la compression des prix qui précèdent le mouvement. Les pièces qui explosent cent fois ne le font pas au hasard. Elles se mettent d&#x27;abord en tension. Les données sont là. Il vous suffit de savoir où chercher. Vous avez maintenant un outil qui cherche pour vous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de terminal de scan de données, graphique TradingView et tableau de bord Coinglass.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Scores de compression, taux de financement journaliers, variations de prix, graphiques de contrats perpétuels et données historiques de taux de financement.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse quantitative des signaux structurels, balayage des opportunités de compression (squeeze) et étude de la phase d&#x27;accumulation du prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000737_seg18.jpg" alt="Un tableau de balayage de contrats à terme Binance montrant un classement des opportunités de score de compression (squeeze score) avec des tickers, scores et taux de financement." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000737_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:37</span>
+                        <span class="caption-text">Un tableau de balayage de contrats à terme Binance montrant un classement des opportunités de score de compression (squeeze score) avec des tickers, scores et taux de financement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000742_seg18.jpg" alt="Un graphique en chandeliers affichant l&#x27;actif RAVE avec une zone surlignée annotée &#x27;PHASE 1 Accumulation&#x27; avant une forte hausse verticale des prix." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000742_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:42</span>
+                        <span class="caption-text">Un graphique en chandeliers affichant l&#x27;actif RAVE avec une zone surlignée annotée &#x27;PHASE 1 Accumulation&#x27; avant une forte hausse verticale des prix.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000748_seg18.jpg" alt="Un tableau de bord Coinglass montrant l&#x27;historique des taux de financement (Funding Rate) de RaveDAO (RAVE) avec des graphiques analytiques détaillés." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000748_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:48</span>
+                        <span class="caption-text">Un tableau de bord Coinglass montrant l&#x27;historique des taux de financement (Funding Rate) de RaveDAO (RAVE) avec des graphiques analytiques détaillés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:54 - 00:08:16</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et rappelez-vous de l&#x27;agent PNLI mentionné tout à l&#x27;heure ? C&#x27;est là que ça entre en jeu. C&#x27;est un classement en direct où votre bot concourt contre tous les autres bots de la plateforme. Vous pouvez même copier des stratégies directement depuis le classement. Voir exactement ce que font les meilleurs bots et construire votre propre version. et le trader qui est à la première place avec le P&amp;L le plus élevé et le rendement le plus élevé obtient un prix personnel de ma part.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web AgentPNL (Interface de classement des bots de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau du classement affichant les colonnes : BOT, OWNER, PAIRS, MODEL, PNL, RETURN, TRADES, WIN %, STATUS et STRATEGY avec un bouton &#x27;Copy Strategy&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de classement (Leaderboard) et du tableau comparatif des performances des différents bots de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000759_seg19.jpg" alt="Capture d&#x27;écran de la plateforme AgentPNL montrant la page d&#x27;accueil avec le classement (Leaderboard) des bots de trading IA." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000759_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:59</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme AgentPNL montrant la page d&#x27;accueil avec le classement (Leaderboard) des bots de trading IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:16 - 00:08:54</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc si vous construisez quelque chose de sérieux, rendez-le public et entrez dans la compétition. Le lien est dans la description. Et c&#x27;est tout, les gars. Maintenant, vous savez comment trouver la prochaine pièce 100x avant tout le monde. Assurez-vous d&#x27;être configuré sur Binance dans les semaines à venir pour être prêt à agir lorsque le scanner signalera quelque chose. Les nouveaux utilisateurs de Binance obtiennent jusqu&#x27;à 100 $ de récompenses d&#x27;inscription, et avec WEIX, vous pouvez obtenir jusqu&#x27;à 30 000 USDT de récompenses sur le volume de trading. Les deux liens sont dans la description. Si vous voulez voir une démonstration complète de la façon dont je trade en utilisant seulement mon Telegram et la démonstration complète de tous les cas d&#x27;utilisation sur TradingView, cliquez sur la vidéo qui apparaît à l&#x27;écran dès maintenant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Terminal de script / Interface d&#x27;analyse de données, Plateforme d&#x27;échange Binance, Plateforme d&#x27;échange WEEX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de score de squeeze crypto (MSFTUSDT, 1000SHIBUSDT, TRXUSDT, etc.), taux de financement journalier, variations sur 14 jours, et formulaires d&#x27;inscription avec bonus de parrainage.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse et affichage des résultats du scan de marché pour le repérage de tokens à fort potentiel de hausse, suivis de la présentation des plateformes d&#x27;échange recommandées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000825_seg20.jpg" alt="Un tableau de données affichant un scan des contrats futures sur Binance pour identifier des opportunités de &#x27;squeeze score&#x27;, listant différents tickers cryptos et tokenisés avec leurs scores et taux de financement." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000825_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:25</span>
+                        <span class="caption-text">Un tableau de données affichant un scan des contrats futures sur Binance pour identifier des opportunités de &#x27;squeeze score&#x27;, listant différents tickers cryptos et tokenisés avec leurs scores et taux de financement.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000835_seg20.jpg" alt="La page d&#x27;accueil de la plateforme d&#x27;échange Binance affichant le formulaire d&#x27;inscription et une offre de récompense de bienvenue allant jusqu&#x27;à 100 USD." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000835_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:35</span>
+                        <span class="caption-text">La page d&#x27;accueil de la plateforme d&#x27;échange Binance affichant le formulaire d&#x27;inscription et une offre de récompense de bienvenue allant jusqu&#x27;à 100 USD.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000844_seg20.jpg" alt="La page d&#x27;inscription de l&#x27;échange WEEX affichant une offre de récompense promotionnelle allant jusqu&#x27;à 30 000 $ en partenariat avec LaLiga." loading="lazy" onclick="openLightbox('../screenshots/ytBfMnH8kFE/ytBfMnH8kFE_000844_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:44</span>
+                        <span class="caption-text">La page d&#x27;inscription de l&#x27;échange WEEX affichant une offre de récompense promotionnelle allant jusqu&#x27;à 30 000 $ en partenariat avec LaLiga.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:54 - 00:09:13</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous voulez voir une présentation complète de la façon dont Agent PNL fonctionne, de la manière de construire votre bot, de le mettre en ligne et de l&#x27;inscrire au classement, cliquez également sur la vidéo à l&#x27;écran. Si vous avez trouvé cela utile, laissez un pouce bleu, cela aide vraiment la chaîne, abonnez-vous si ce n&#x27;est pas déjà fait et je vous vois dans la prochaine !</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucune</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
