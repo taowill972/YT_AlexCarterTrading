@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `77 / 186` (`41.4%`)
+- **Vidéos traitées** : `78 / 186` (`41.9%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -94,6 +94,7 @@
 | 2026-05-30 | [Tn_qWmPVKJk](https://www.youtube.com/watch?v=Tn_qWmPVKJk) | **​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)** | [2026-05-30_YT-[Tn_qWmPVKJk]_​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-30_YT-[Tn_qWmPVKJk]_​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-30_YT-[Tn_qWmPVKJk]_​​I Tested AI Trading on OKX and Toobit (Here’s Which One Won)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-28 | [lMSCL4It7tI](https://www.youtube.com/watch?v=lMSCL4It7tI) | **Claim Your FREE iPhone 17 Pro On WEEX With This Method** | [2026-05-28_YT-[lMSCL4It7tI]_Claim Your FREE iPhone 17 Pro On WEEX With This Method_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-28_YT-[lMSCL4It7tI]_Claim Your FREE iPhone 17 Pro On WEEX With This Method_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-28_YT-[lMSCL4It7tI]_Claim Your FREE iPhone 17 Pro On WEEX With This Method_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-27 | [tVs4YIciahY](https://www.youtube.com/watch?v=tVs4YIciahY) | **HYPE Just Broke $63! Here’s My EXACT Plan** | [2026-05-27_YT-[tVs4YIciahY]_HYPE Just Broke $63! Here’s My EXACT Plan_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-27_YT-[tVs4YIciahY]_HYPE Just Broke $63! Here’s My EXACT Plan_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-27_YT-[tVs4YIciahY]_HYPE Just Broke $63! Here’s My EXACT Plan_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-05-26 | [6OWePI2kVSg](https://www.youtube.com/watch?v=6OWePI2kVSg) | **How I Automate A Profitable Strategy In 60 Seconds Using Claude Code** | [2026-05-26_YT-[6OWePI2kVSg]_How I Automate A Profitable Strategy In 60 Seconds Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-26_YT-[6OWePI2kVSg]_How I Automate A Profitable Strategy In 60 Seconds Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-26_YT-[6OWePI2kVSg]_How I Automate A Profitable Strategy In 60 Seconds Using Claude Code_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
