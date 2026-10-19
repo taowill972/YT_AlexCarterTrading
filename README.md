@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `82 / 186` (`44.1%`)
+- **Vidéos traitées** : `83 / 186` (`44.6%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -99,6 +99,7 @@
 | 2026-05-21 | [tORvVEwbzGI](https://www.youtube.com/watch?v=tORvVEwbzGI) | **The Only Copy Trading Exchange Worth Using in 2026 (It’s NOT Who You Think)** | [2026-05-21_YT-[tORvVEwbzGI]_The Only Copy Trading Exchange Worth Using in 2026 (It’s NOT Who You Think)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-21_YT-[tORvVEwbzGI]_The Only Copy Trading Exchange Worth Using in 2026 (It’s NOT Who You Think)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-21_YT-[tORvVEwbzGI]_The Only Copy Trading Exchange Worth Using in 2026 (It’s NOT Who You Think)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-19 | [IxEAU8X3M9s](https://www.youtube.com/watch?v=IxEAU8X3M9s) | **Claude Code + Tradingview = Insane Profitable Strategy** | [2026-05-19_YT-[IxEAU8X3M9s]_Claude Code + Tradingview = Insane Profitable Strategy_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-19_YT-[IxEAU8X3M9s]_Claude Code + Tradingview = Insane Profitable Strategy_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-19_YT-[IxEAU8X3M9s]_Claude Code + Tradingview = Insane Profitable Strategy_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-05-16 | [iusBnt0p98M](https://www.youtube.com/watch?v=iusBnt0p98M) | **I Found The EASIEST Polymarket Strategies That Work Every Time** | [2026-05-16_YT-[iusBnt0p98M]_I Found The EASIEST Polymarket Strategies That Work Every Time_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-16_YT-[iusBnt0p98M]_I Found The EASIEST Polymarket Strategies That Work Every Time_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-16_YT-[iusBnt0p98M]_I Found The EASIEST Polymarket Strategies That Work Every Time_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2026-05-15 | [ayy1T3YfGKU](https://www.youtube.com/watch?v=ayy1T3YfGKU) | **How to Copy Profitable Crypto Traders on Binance (Step-By-Step)** | [2026-05-15_YT-[ayy1T3YfGKU]_How to Copy Profitable Crypto Traders on Binance (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-05-15_YT-[ayy1T3YfGKU]_How to Copy Profitable Crypto Traders on Binance (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-05-15_YT-[ayy1T3YfGKU]_How to Copy Profitable Crypto Traders on Binance (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
