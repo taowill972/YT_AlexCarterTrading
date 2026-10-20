@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment automatiser son trading 24h/24 et 7j/7 avec les bots BingX — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment automatiser son trading 24h/24 et 7j/7 avec les bots BingX</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-16</span>
+                <span class="badge">⏱️ 00:11:19</span>
+                <span class="badge">🆔 <code>RDXJyw5HYtM</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=RDXJyw5HYtM" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo immersive de la chaîne Alex Carter propose un guide exhaustif et technique sur l'automatisation intégrale du trading crypto 24h/24 et 7j/7 grâce à l'écosystème de bots de la plateforme BingX. En tant qu'analyste quantitatif, l'intervenant décortique méthodiquement chaque type de robot d'investissement — du Futures Grid au Martingale en passant par le Spot Grid Infinity et les stratégies de signaux connectées — afin de fournir aux traders une boîte à outils complète adaptée à toutes les configurations de marché (haussier, baissier, stagnant ou fortement volatil).<br><br>L'analyse technique mise en avant couvre non seulement les aspects purs du grid trading (capture de micro-fluctuations, effet de levier, neutralité directionnelle), mais aborde également des notions avancées de gestion des risques (Take Profit, Stop Loss par prix ou par ratio, subventions de trading sur grille et lissage des coûts d'achat). Les démonstrations pratiques guident l'utilisateur pas à pas, de la configuration automatisée par l'algorithme jusqu'au contrôle manuel millimétré, en passant par l'interfaçage d'outils externes pour exécuter des ordres basés sur des conditions graphiques complexes.<br><br>---<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **BingX** : Plateforme d'échange de cryptomonnaies centralisée hébergeant l'ensemble des bots de trading automatisé, des options de dépôt sécurisées et des programmes de bonus de bienvenue.<br>* **Grok Bots** : Outil d'intelligence artificielle et d'automatisation mentionné dans le contexte global de la stratégie pour assister le trader dans sa prise de décision et l'optimisation de ses flux d'exécution.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView utilisé pour coder des indicateurs et des stratégies de trading sur mesure.<br>* **Claude Code** : Assistant de développement par IA employé pour concevoir, structurer et déboguer les scripts d'automatisation et les codes sources des stratégies.<br>* **TradingView** : Plateforme de graphisme et d'analyse technique externe connectée via des webhooks pour piloter les bots de signaux de BingX en temps réel.<br><br>---<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Diversification des bots selon le régime de marché** : Il est impératif d'aligner la stratégie du robot sur la structure du marché (Grid Spot pour le range/stagnation, Martingale Futures pour la volatilité avec attente de rebond, et Grille Futures avec effet de levier pour maximiser les profits bidirectionnels).<br>* **Grid Trading sur Futures** : Permet de générer des profits réguliers sur les fluctuations de prix à l'intérieur d'une fourchette définie, avec trois orientations possibles : Neutre, Long ou Short, associées à un effet de levier paramétrable.<br>* **Gestion automatisée des risques (TP/SL)** : Le paramétrage des niveaux de Take Profit (TP) et de Stop Loss (SL) peut s'effectuer soit par seuil de prix absolu, soit par ratio en pourcentage par rapport au prix d'entrée, garantissant un contrôle strict du capital.<br>* **Filet de sécurité "Bon de subvention"** : L'utilisation de bons de subvention de trading sur grille permet de compenser automatiquement les pertes nettes (P&L négatif) en cas de scénario de marché défavorable.<br>* **Mode Automatique vs Manuel** : Le mode automatique délègue le choix de la fourchette de prix et du profit par grille à l'algorithme de BingX, tandis que le mode manuel offre un contrôle granulaire total sur les bornes de prix et le nombre de grilles.<br>* **Grid Trading Spot sans liquidation** : La version Spot Grid supprime l'effet de levier et le risque de liquidation, constituant une approche conservatrice idéale pour accumuler des actifs de long terme.<br>* **Fonctionnalité "Reinvest" (Mode Poignée)** : Sur les bots spot, cette option réinvestit automatiquement les profits de la grille pour racheter l'actif au prix du marché, combinant la génération de rendement de grille à l'accumulation passive de tokens.<br>* **Spot Infinity Grid** : Conçu pour l'arbitrage non-stop sans limite de prix supérieure, ce bot s'affranchit de tout plafond haussier pour continuer à engranger des gains indéfiniment lors des tendances haussières prolongées.<br>* **Futures Martingale et lissage des coûts** : Le bot ajuste dynamiquement les coûts de position en renforçant les achats à chaque palier de baisse prédéfini, en s'appuyant sur un multiplicateur de montant et un nombre d'ajouts maximaux par round.<br>* **Stratégies de signaux par Webhook** : La passerelle entre TradingView et BingX permet de recevoir des signaux externes en temps réel pour exécuter instantanément des ordres d'ouverture ou de fermeture sur les marchés futures perpétuels.<br>* **Options de clôture intelligentes** : À l'arrêt d'un bot, le système offre la flexibilité de tout revendre immédiatement en USDT de manière automatisée ou de conserver l'actif sous-jacent (ex: BTC) pour une gestion manuelle ultérieure.<br>* **Dollar Cost Averaging (DCA / Achat récurrent)** : Intégré sous la section spot, ce mécanisme lisse l'impact de la volatilité en programmant des achats périodiques et automatiques de cryptomonnaies.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">BingX</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Pine Script</span><span class="tool-tag">Claude Code</span><span class="tool-tag">TradingView</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Diversification des bots selon le régime de marché** : Il est impératif d&#x27;aligner la stratégie du robot sur la structure du marché (Grid Spot pour le range/stagnation, Martingale Futures pour la volatilité avec attente de rebond, et Grille Futures avec effet de levier pour maximiser les profits bidirectionnels).</span></li><li><span class="point-bullet">✦</span><span>Grid Trading sur Futures** : Permet de générer des profits réguliers sur les fluctuations de prix à l&#x27;intérieur d&#x27;une fourchette définie, avec trois orientations possibles : Neutre, Long ou Short, associées à un effet de levier paramétrable.</span></li><li><span class="point-bullet">✦</span><span>Gestion automatisée des risques (TP/SL)** : Le paramétrage des niveaux de Take Profit (TP) et de Stop Loss (SL) peut s&#x27;effectuer soit par seuil de prix absolu, soit par ratio en pourcentage par rapport au prix d&#x27;entrée, garantissant un contrôle strict du capital.</span></li><li><span class="point-bullet">✦</span><span>Filet de sécurité &quot;Bon de subvention&quot;** : L&#x27;utilisation de bons de subvention de trading sur grille permet de compenser automatiquement les pertes nettes (P&amp;L négatif) en cas de scénario de marché défavorable.</span></li><li><span class="point-bullet">✦</span><span>Mode Automatique vs Manuel** : Le mode automatique délègue le choix de la fourchette de prix et du profit par grille à l&#x27;algorithme de BingX, tandis que le mode manuel offre un contrôle granulaire total sur les bornes de prix et le nombre de grilles.</span></li><li><span class="point-bullet">✦</span><span>Grid Trading Spot sans liquidation** : La version Spot Grid supprime l&#x27;effet de levier et le risque de liquidation, constituant une approche conservatrice idéale pour accumuler des actifs de long terme.</span></li><li><span class="point-bullet">✦</span><span>Fonctionnalité &quot;Reinvest&quot; (Mode Poignée)** : Sur les bots spot, cette option réinvestit automatiquement les profits de la grille pour racheter l&#x27;actif au prix du marché, combinant la génération de rendement de grille à l&#x27;accumulation passive de tokens.</span></li><li><span class="point-bullet">✦</span><span>Spot Infinity Grid** : Conçu pour l&#x27;arbitrage non-stop sans limite de prix supérieure, ce bot s&#x27;affranchit de tout plafond haussier pour continuer à engranger des gains indéfiniment lors des tendances haussières prolongées.</span></li><li><span class="point-bullet">✦</span><span>Futures Martingale et lissage des coûts** : Le bot ajuste dynamiquement les coûts de position en renforçant les achats à chaque palier de baisse prédéfini, en s&#x27;appuyant sur un multiplicateur de montant et un nombre d&#x27;ajouts maximaux par round.</span></li><li><span class="point-bullet">✦</span><span>Stratégies de signaux par Webhook** : La passerelle entre TradingView et BingX permet de recevoir des signaux externes en temps réel pour exécuter instantanément des ordres d&#x27;ouverture ou de fermeture sur les marchés futures perpétuels.</span></li><li><span class="point-bullet">✦</span><span>Options de clôture intelligentes** : À l&#x27;arrêt d&#x27;un bot, le système offre la flexibilité de tout revendre immédiatement en USDT de manière automatisée ou de conserver l&#x27;actif sous-jacent (ex: BTC) pour une gestion manuelle ultérieure.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:38</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer comment configurer et utiliser absolument tous les bots de trading sur BingX, étape par étape. Nous aborderons le Futures Grid, le Spot Grid, le Martingale, les stratégies de signaux, l&#x27;achat récurrent, et bien plus encore. Ainsi, à la fin de cette vidéo, vous saurez exactement quel bot utiliser et comment le faire fonctionner. Entrons dans le vif du sujet. Première chose, vous avez besoin d&#x27;un compte BingX. Si vous n&#x27;en avez pas encore un, cliquez sur le lien dans la description. Avec mon lien, vous pouvez obtenir jusqu&#x27;à 9 800 USDT de cadeaux de bienvenue, 30 USDT de récompenses d&#x27;inscription, 500 USDT de récompenses de dépôt, et encore 500 USDT de récompenses de trading.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies BingX (paramétrage de bot et page d&#x27;inscription).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de configuration de bot (Simple Instruction, Webhook URL, Trading Pair, Trade Direction Long/Short, Order Type) et formulaire d&#x27;inscription avec code de parrainage et bonus en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de création d&#x27;un bot de signaux et de la page d&#x27;inscription à la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000009_seg1.jpg" alt="Interface de configuration d&#x27;un bot de trading sur BingX avec les paramètres de stratégie de signaux." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface de configuration d&#x27;un bot de trading sur BingX avec les paramètres de stratégie de signaux.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000019_seg1.jpg" alt="Page d&#x27;inscription et de création de compte sur la plateforme BingX avec offre de bonus de bienvenue." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000019_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Page d&#x27;inscription et de création de compte sur la plateforme BingX avec offre de bonus de bienvenue.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:38 - 00:01:14</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je vais vous montrer exactement comment réclamer cela dans un instant. Une fois que vous êtes connecté, assurez-vous d&#x27;avoir des fonds sur votre compte. Si vous devez faire un dépôt, cliquez sur dépôt dans le coin supérieur droit, sélectionnez USDT, choisissez votre réseau, et envoyez vos fonds depuis votre autre échange ou portefeuille externe. Ils arriveront en quelques minutes. Maintenant, passons aux bots. Tout en haut de la page, cliquez sur bots. Immédiatement, vous pouvez voir cinq types de bots principaux : la grille futures, le martingale futures, la grille spot, la grille spot infinity et les stratégies de signal. Et juste en dessous de la section spot, sur les bots spot, vous trouverez également un bot d&#x27;achat récurrent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de dépôt, sélection de cryptos (USDT, USDC, BTC, ETH, TRX) et bannières promotionnelles.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur l&#x27;interface de dépôt de l&#x27;exchange et présentation des fonctionnalités de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000047_seg2.jpg" alt="Interface de dépôt de la plateforme d&#x27;échange BingX montrant les étapes pour sélectionner la cryptomonnaie et le réseau." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000047_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:47</span>
+                        <span class="caption-text">Interface de dépôt de la plateforme d&#x27;échange BingX montrant les étapes pour sélectionner la cryptomonnaie et le réseau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000056_seg2.jpg" alt="Page d&#x27;accueil de la plateforme BingX mettant en avant une promotion pour gagner 1 BTC (&quot;Feb SuperX: Predict to Win 1 BTC&quot;)." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000056_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme BingX mettant en avant une promotion pour gagner 1 BTC (&quot;Feb SuperX: Predict to Win 1 BTC&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:14 - 00:01:51</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">nous allons aborder les différentes stratégies, chacune d&#x27;entre elles est conçue pour un style de trading différent, alors laissez-moi vous présenter chacune d&#x27;elles en détail avant de commencer à créer des bots. Voici un bref aperçu de ce que fait chacune d&#x27;elles. Grille Futures : cela permet de générer des profits grâce aux fluctuations des prix en plaçant des ordres d&#x27;achat et de vente dans une fourchette de prix définie avec effet de levier. Martingale Futures : cela ajuste automatiquement les coûts de votre position à mesure que le prix baisse. C&#x27;est idéal pour les marchés volatils. Grille Spot : c&#x27;est le même concept que la grille Futures mais sans effet de levier. Le risque est plus faible et c&#x27;est idéal pour les marchés stagnants. Grille Infinie Spot : c&#x27;est une version avancée de la grille Spot sans limite supérieure</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BingX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu des stratégies de trading automatisées : Futures Grid, Martingale, Spot Grid, Spot Infinity Grid, et Signal Strategies avec descriptions textuelles.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et survol des différentes options de bots de trading disponibles sur la plateforme BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000123_seg3.jpg" alt="Interface BingX affichant un menu déroulant des stratégies de trading avec le curseur sur Spot Infinity Grid." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000123_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Interface BingX affichant un menu déroulant des stratégies de trading avec le curseur sur Spot Infinity Grid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000132_seg3.jpg" alt="Interface BingX montrant le menu des stratégies de trading avec le curseur pointant sur Futures Grid." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000132_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:32</span>
+                        <span class="caption-text">Interface BingX montrant le menu des stratégies de trading avec le curseur pointant sur Futures Grid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000141_seg3.jpg" alt="Interface BingX montrant le menu des stratégies de trading avec le curseur pointant sur Spot Grid." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000141_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Interface BingX montrant le menu des stratégies de trading avec le curseur pointant sur Spot Grid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:51 - 00:02:23</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La limite de prix conçue pour l&#x27;arbitrage non-stop et les stratégies de signaux se connecte à des plateformes externes comme TradingView pour exécuter automatiquement des transactions basées sur vos signaux. Lorsque vous cliquez sur n&#x27;importe quel bot, vous pouvez voir l&#x27;investissement total actuellement en cours dans ce bot et combien d&#x27;utilisateurs l&#x27;utilisent activement. Vous pouvez également consulter vos bots en cours d&#x27;exécution et votre historique juste ici. Commençons par le bot de grille futures, l&#x27;un des plus populaires. Cliquez sur grille futures et un nouveau formulaire de commande apparaîtra. Ici, vous avez deux modes, automatique et manuel. En mode automatique, sélectionnez votre paire de cryptos.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BingX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots de trading automatisés (Futures Grid, Martingale, Spot Grid, Spot Infinity Grid, Signal Strategies) et métriques d&#x27;investissement total et d&#x27;utilisateurs.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu des bots de trading et présentation des différentes stratégies automatisées disponibles sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000159_seg4.jpg" alt="Interface de la plateforme BingX montrant le menu déroulant des stratégies de trading avec des options telles que Futures Grid, Martingale, Spot Grid, Spot Infinity Grid et Signal Strategies." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000159_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:59</span>
+                        <span class="caption-text">Interface de la plateforme BingX montrant le menu déroulant des stratégies de trading avec des options telles que Futures Grid, Martingale, Spot Grid, Spot Infinity Grid et Signal Strategies.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000207_seg4.jpg" alt="Interface de la plateforme BingX affichant les différents types de bots de trading (Futures Grid, Spot Grid, Spot Infinity Grid) avec les investissements totaux et le nombre d&#x27;utilisateurs." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000207_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Interface de la plateforme BingX affichant les différents types de bots de trading (Futures Grid, Spot Grid, Spot Infinity Grid) avec les investissements totaux et le nombre d&#x27;utilisateurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:24 - 00:02:46</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour cet exemple, prenons Bitcoin USDT. Vous pouvez sélectionner trois directions, neutre, qui profite d&#x27;un mouvement de prix dans les deux sens, long, qui profite lorsque le prix monte, et court, qui profite lorsque le prix baisse. Si vous choisissez automatique, BingX sélectionnera automatiquement la fourchette de prix et le profit par grille pour vous. Tout ce que vous avez à faire est de définir votre effet de levier et votre montant d&#x27;investissement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BingX (Interface Web d&#x27;échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT à 70290.7 (+1.78%), options de stratégie (Auto/Manual, Neutral/Long/Short), fourchette de prix 64619.1 - 75670.7 USDT, effet de levier 5X.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection des modes de direction de grille (Neutral, Long, Short) et visualisation des paramètres automatiques sur le bot Futures Grid de BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000229_seg5.jpg" alt="Interface de configuration du bot &#x27;Futures Grid&#x27; sur l&#x27;échange BingX pour la paire BTCUSDT, montrant les options de direction (Neutral, Long, Short) et les paramètres de fourchette de prix." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000229_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:29</span>
+                        <span class="caption-text">Interface de configuration du bot &#x27;Futures Grid&#x27; sur l&#x27;échange BingX pour la paire BTCUSDT, montrant les options de direction (Neutral, Long, Short) et les paramètres de fourchette de prix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:46 - 00:03:06</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez également activer le take profit et le stop loss ici. Ceux-ci peuvent être définis par prix, où le bot se ferme lorsqu&#x27;il atteint un niveau de prix spécifique, ou par ratio où il se ferme en fonction d&#x27;un pourcentage de gain ou de perte par rapport à votre entrée. Les deux vous donnent le contrôle sur votre gestion des risques. Vous verrez également une option pour appliquer un bon de subvention de trading sur grille.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (Interface Web - Menu de configuration des options de trading automatisé).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre modale &quot;Futures Grid&quot; affichant les options TP/SL avec les bascules &quot;By Price&quot;, les champs de saisie pour le ratio de déclenchement (&quot;Trigger Ratio&quot;) et des pourcentages prédéfinis (5%, 10%, 25%, 50%, 100%, 150%).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole l&#x27;option &quot;By Price&quot; pour configurer les seuils de Take Profit et de Stop Loss du bot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000251_seg6.jpg" alt="Interface de configuration des paramètres de Take Profit et Stop Loss (TP/SL) pour un bot de Grid Trading sur la plateforme BingX." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000251_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:51</span>
+                        <span class="caption-text">Interface de configuration des paramètres de Take Profit et Stop Loss (TP/SL) pour un bot de Grid Trading sur la plateforme BingX.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:07 - 00:03:25</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En résumé, si votre stratégie se solde par une perte, le système vous émettra automatiquement une subvention en USDT pour compenser ce P&amp;L négatif. C&#x27;est un beau filet de sécurité si vous en avez un de disponible. Si vous voulez plus de contrôle, vous pouvez soit sélectionner directement le mode manuel, soit modifier les paramètres à partir du mode automatique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies BingX (module Grid Trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres du Futures Grid : Price Range (64619.1 - 75670.7 USDT), Leverage 5X, Available Balance (50.9898 USDT), Subsidiary Voucher (No available subsidy), et options TP/SL avec Take Profit.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres d&#x27;un robot de trading en grille (Grid Trading) sur les contrats futures avec sélection de l&#x27;effet de levier et des niveaux de Take Profit/Stop Loss.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000311_seg7.jpg" alt="Fenêtre de configuration d&#x27;un Bot de type Futures Grid sur la plateforme BingX montrant les paramètres de levier, d&#x27;investissement et l&#x27;option TP/SL." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000311_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Fenêtre de configuration d&#x27;un Bot de type Futures Grid sur la plateforme BingX montrant les paramètres de levier, d&#x27;investissement et l&#x27;option TP/SL.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:26 - 00:04:00</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ça basculera automatiquement. Ici, vous pouvez définir votre propre fourchette de prix inférieure et supérieure et choisir votre nombre de grilles. n&#x27;importe où de 2 $ à 200 $. Plus vous définissez de grilles, plus les ordres d&#x27;achat et de vente sont passés dans votre fourchette, capturant des profits plus petits mais plus fréquents. Faites défiler vers le bas et vous trouverez des paramètres avancés où vous pouvez définir à nouveau votre take profit et votre stop loss, ainsi qu&#x27;une option de déclenchement. Le déclencheur vous permet de définir un prix spécifique auquel le bot commencera seulement à fonctionner. Utile si vous voulez attendre que le marché atteigne un certain niveau avant d&#x27;activer la stratégie. Une fois que tout a l&#x27;air bien, cliquez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (interface web de bot de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT, prix actuel 70346.6 (+1.95%), mode manuel, position Short, fourchette de prix (Lower Price: 64619.1, Upper Price: 75670.7), champ &quot;Grid No.&quot; (2 - 200), effet de levier 5X, solde disponible 50.9898 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration manuelle des paramètres d&#x27;un bot Futures Grid (fourchette de prix et nombre de grilles) sur BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000334_seg8.jpg" alt="Interface de configuration manuelle d&#x27;un bot de trading &quot;Futures Grid&quot; sur la plateforme BingX pour la paire BTCUSDT, montrant les champs pour la fourchette de prix, le nombre de grilles (2 à 200) et l&#x27;effet de levier." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000334_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:34</span>
+                        <span class="caption-text">Interface de configuration manuelle d&#x27;un bot de trading &quot;Futures Grid&quot; sur la plateforme BingX pour la paire BTCUSDT, montrant les champs pour la fourchette de prix, le nombre de grilles (2 à 200) et l&#x27;effet de levier.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:00 - 00:04:24</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">créez une grille et votre bot est lancé. Une fois qu&#x27;il est en marche, rendez-vous dans la section en cours. Ici, vous pouvez voir tous vos bots actifs, surveiller les performances et modifier vos take profit et stop loss à tout moment. Si vous voulez arrêter le bot, cliquez simplement sur fermer. Une fenêtre de confirmation apparaîtra pour vous demander. Procédez à la fermeture de la stratégie de grille BTCUSDT et laissez le système vous aider à vendre le BTC contre de l&#x27;USDT.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web / Plateforme de trading BingX (section Grid Trading, onglet Running).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails du bot actif : paire BTCUSDT, effet de levier 6X, statut &quot;Running&quot;, profit total (+0.0000 / +0.00%), APY (+0.00%), investissement de 20.00 USDT, et bouton &quot;Close&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du bot de grille actif et de ses performances en temps réel sur la plateforme BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000406_seg9.jpg" alt="Interface de la plateforme BingX montrant l&#x27;onglet des bots actifs (Running) avec un bot de Grid Trading en cours sur la paire BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000406_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:06</span>
+                        <span class="caption-text">Interface de la plateforme BingX montrant l&#x27;onglet des bots actifs (Running) avec un bot de Grid Trading en cours sur la paire BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:24 - 00:04:58</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, il y a le Spot Grid Bot. Celui-ci fonctionne exactement comme le Futures Grid, mais sans effet de levier. Il n&#x27;y a donc aucun risque de liquidation. C&#x27;est parfait si vous voulez une approche plus sûre et plus conservatrice du grid trading. Cliquez sur créer sur le spot grid. Vous verrez le même formulaire de commande qu&#x27;avant, mais remarquez qu&#x27;il n&#x27;y a pas d&#x27;option de direction. Puisque vous achetez uniquement au comptant, vous êtes toujours acheteur par défaut. Sélectionnez votre crypto et vous pourrez voir l&#x27;APY testé rétrospectivement, la fourchette de prix et le profit par grille juste ici. C&#x27;est idéal pour avoir une idée des performances historiques du bot. Définissez votre take profit et votre stop loss comme</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BingX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de bots de trading (Spot Grid, Spot Infinity Grid), statistiques d&#x27;investissement total et de performance (APY sur 7 jours), et fenêtre de configuration pour BTC/USDT (fourchette de prix, nombre de grilles, montant d&#x27;investissement).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme et sélection du bouton de création du bot &quot;Spot Grid&quot;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000433_seg10.jpg" alt="Interface de la plateforme BingX montrant les différentes options de bots de trading, avec une mise en avant du &quot;Spot Grid&quot;." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000433_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:33</span>
+                        <span class="caption-text">Interface de la plateforme BingX montrant les différentes options de bots de trading, avec une mise en avant du &quot;Spot Grid&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000441_seg10.jpg" alt="Fenêtre de configuration du bot &quot;Spot Grid&quot; sur BingX pour la paire BTC/USDT, affichant les paramètres automatiques et le solde disponible." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000441_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Fenêtre de configuration du bot &quot;Spot Grid&quot; sur BingX pour la paire BTC/USDT, affichant les paramètres automatiques et le solde disponible.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:58 - 00:05:16</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">avant et d&#x27;entrer votre montant d&#x27;investissement. Si vous voulez ajuster les paramètres manuellement, modifiez-les simplement et cela passera en mode manuel où vous pourrez définir votre propre fourchette de prix et votre nombre de grilles. Faites défiler vers le bas et vous trouverez à nouveau le déclencheur dans le paramètre TPSL ainsi que deux nouveaux basculeurs. Vendre toutes les terminaisons.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (Bots de trading - Spot Grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre modale &quot;Spot Grid&quot; affichant la fourchette de prix (Price Range : 65198.36 - 75167.45 USDT), le profit par grille (0.49% - 0.56%, 27 grilles), le champ de saisie &quot;Investment&quot;, le solde du compte (Fund Account : 50.9898 USDT) et les options de Take Profit / Stop Loss (TP/SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie du montant d&#x27;investissement dans le champ dédié de la configuration du bot de grille.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000503_seg11.jpg" alt="Interface de configuration d&#x27;un robot Spot Grid sur la plateforme BingX avec le paramétrage du montant d&#x27;investissement." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000503_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Interface de configuration d&#x27;un robot Spot Grid sur la plateforme BingX avec le paramétrage du montant d&#x27;investissement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:17 - 00:05:50</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Quand le bot s&#x27;arrête, il revend automatiquement tous vos actifs en USDT pour que vous n&#x27;ayez pas à le gérer manuellement. En mode poignée, si vous êtes haussier sur une cryptomonnaie à long terme, ce mode réinvestit vos profits de trading sur grille pour acheter davantage de cette cryptomonnaie au prix du marché. Vous gagnez donc grâce à la grille et accumulez plus de pièces en même temps. Une fois que tout est prêt, cliquez sur créer une grille, comme précédemment. Une fois qu&#x27;il est en marche, vous pouvez le retrouver dans la section en cours. Ajustez votre take profit et stop loss et fermez-le quand vous voulez avec les mêmes options de vente. Vous aurez deux options. Oui, tout vendre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange de cryptomonnaies BingX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration de bots de trading sur grille, options de Take Profit / Stop Loss, et statistiques de performance de bots recommandés (ex: POLS/USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de configuration des bots de grille et survol des options avancées de gestion des positions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000525_seg12.jpg" alt="Interface de configuration d&#x27;un bot Spot Grid sur BingX, montrant les options TP/SL, Sell at termination et HODL mode." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000525_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:25</span>
+                        <span class="caption-text">Interface de configuration d&#x27;un bot Spot Grid sur BingX, montrant les options TP/SL, Sell at termination et HODL mode.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000541_seg12.jpg" alt="Page d&#x27;accueil de la section Grid Trading sur la plateforme BingX, affichant les options Futures Grid, Spot Grid et Spot Infinity Grid." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000541_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:41</span>
+                        <span class="caption-text">Page d&#x27;accueil de la section Grid Trading sur la plateforme BingX, affichant les options Futures Grid, Spot Grid et Spot Infinity Grid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:50 - 00:06:23</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">ordres, où le système convertit automatiquement tout en USDT pour vous, ou non, je vends moi-même, où vous conservez le BTC et gérez la vente manuellement. Choisissez ce qui vous convient le mieux. Vient ensuite le Spot Infinity Grid. Considérez cela comme la version avancée du Spot Grid. Il est conçu pour de l&#x27;arbitrage non-stop sans limite de prix supérieure, de sorte qu&#x27;il continue de fonctionner peu importe à quel faut le prix monte. Cliquez sur créer sur Spot Infinity Grid. Vous verrez des paramètres similaires à ceux d&#x27;avant, mais ici vous remarquerez un rendement annuel sur 30 jours affiché, donnant une performance réelle</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (Bots de trading, Spot Grid et Spot Infinity Grid).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de trading BTC/USDT, options de vente automatique/manuelle des ordres, statistiques d&#x27;investissement et paramètres de grille (Min. Price, Profit/Grid, Investment).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et explication des bots de trading automatisés, confirmation de fermeture de stratégie et configuration du Spot Infinity Grid.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000558_seg13.jpg" alt="Pop-up de confirmation de clôture d&#x27;une stratégie de grille BTC/USDT sur BingX, avec les options de vente automatique en USDT ou manuelle." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000558_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Pop-up de confirmation de clôture d&#x27;une stratégie de grille BTC/USDT sur BingX, avec les options de vente automatique en USDT ou manuelle.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000606_seg13.jpg" alt="Interface de la plateforme BingX montrant les différentes options de bots de trading, dont le Spot Grid et le Spot Infinity Grid." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000606_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:06</span>
+                        <span class="caption-text">Interface de la plateforme BingX montrant les différentes options de bots de trading, dont le Spot Grid et le Spot Infinity Grid.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000614_seg13.jpg" alt="Fenêtre de configuration du bot &#x27;Spot Infinity Grid&#x27; pour la paire BTC/USDT sur BingX avec les paramètres d&#x27;investissement." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000614_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:14</span>
+                        <span class="caption-text">Fenêtre de configuration du bot &#x27;Spot Infinity Grid&#x27; pour la paire BTC/USDT sur BingX avec les paramètres d&#x27;investissement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:23 - 00:06:57</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">repère et un champ de prix minimum au lieu d&#x27;une fourchette supérieure puisqu&#x27;il n&#x27;y a pas de plafond sur celui-ci. Cliquez sur ajuster les paramètres pour passer en mode manuel où vous pouvez définir votre propre prix minimum et profit par grille avec les frais déjà déduits. Ce que vous voyez est donc ce que vous obtenez réellement. Faites défiler vers le bas et vous trouverez toujours les options de déclenchement et de TP/SL comme avant. Une fois que vous êtes satisfait des paramètres, cliquez sur créer une grille et elle est mise en ligne. Passons maintenant au bot Futures Martingale. Celui-ci ajuste automatiquement vos coûts de position lorsque le prix évolue contre vous, ce qui le rend idéal pour les marchés volatils où vous vous attendez à une reprise.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BingX (section Bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de grille manuelle (Min. Price : 21785.35, Profit/Grid : 0.6%, Investment) et sélection de stratégies de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres manuels du bot Spot Infinity Grid sur la plateforme BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000631_seg14.jpg" alt="Interface de configuration manuelle du Spot Infinity Grid sur BingX pour BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000631_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Interface de configuration manuelle du Spot Infinity Grid sur BingX pour BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000649_seg14.jpg" alt="Menu déroulant des stratégies de trading montrant Futures Grid, Martingale, Spot Grid et Spot Infinity Grid." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000649_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:49</span>
+                        <span class="caption-text">Menu déroulant des stratégies de trading montrant Futures Grid, Martingale, Spot Grid et Spot Infinity Grid.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:57 - 00:07:16</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cliquez sur Créer sur Futures Martingale. Sélectionnez votre paire de trading, définissez votre effet de levier, et choisissez votre direction, long ou short. Définissez votre objectif de profit. C&#x27;est le pourcentage de gain que le bot vise avant de clôturer le trade, et votre investissement total. Faites défiler vers le bas et vous verrez quelques paramètres clés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (interface de bot de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT, effet de levier configuré à 5X, boutons de validation (Confirm / Cancel), curseur d&#x27;ajustement de l&#x27;effet de levier.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et ajustement de l&#x27;effet de levier pour le bot de trading Futures Martingale.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000702_seg15.jpg" alt="Fenêtre modale de configuration d&#x27;un effet de levier sur l&#x27;interface de bot Futures Martingale de BingX, avec un curseur positionné sur 5x." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000702_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:02</span>
+                        <span class="caption-text">Fenêtre modale de configuration d&#x27;un effet de levier sur l&#x27;interface de bot Futures Martingale de BingX, avec un curseur positionné sur 5x.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:16 - 00:07:50</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">processus vous montre comment le bot va répartir votre capital sur plusieurs entrées à mesure que le prix évolue. Les paliers de prix définissent la baisse que le prix doit enregistrer avant que le bot n&#x27;ajoute à la position, et le multiplicateur de montant contrôle à quel point chaque achat supplémentaire devient plus important. Par exemple, un multiplicateur de deux signifie que chaque nouvel ordre est le double du précédent. L&#x27;ajout maximal par round limite le nombre de fois que le bot peut ajouter à la position en un seul cycle, vous protégeant ainsi d&#x27;une exposition excessive en cas de forte tendance baissière. Une boucle automatique et lorsqu&#x27;elle est activée, le bot démarre automatiquement un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (interface web de création de bot Futures Martingale)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration : Price Step réglé à 1%, Amount Multiplier réglé à 1.1, First-Round Entry Price à 70427.6, ainsi que les options Auto Loop et Stop Loss (SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres avancés du bot de trading Martingale pour définir la répartition du capital et la gestion des ajouts de positions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000725_seg16.jpg" alt="Interface de configuration du bot de trading Futures Martingale sur l&#x27;échange BingX, montrant les paramètres avancés tels que le pas de prix (Price Step) et le multiplicateur de montant (Amount Multiplier)." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000725_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:25</span>
+                        <span class="caption-text">Interface de configuration du bot de trading Futures Martingale sur l&#x27;échange BingX, montrant les paramètres avancés tels que le pas de prix (Price Step) et le multiplicateur de montant (Amount Multiplier).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:50 - 00:08:12</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">nouveau cycle après avoir atteint l&#x27;objectif de profit. Si vous décochez cette option, il s&#x27;exécute un seul tour et s&#x27;arrête. C&#x27;est utile si vous souhaitez examiner les performances avant de le relancer. Vous pouvez également définir un stop loss ici pour une protection supplémentaire. Une fois que vous avez terminé, cliquez sur créer. Rendez-vous dans la section en cours d&#x27;exécution pour le surveiller, ajuster votre stop loss ou le fermer à tout moment en utilisant la même option de confirmation qu&#x27;auparavant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies BingX (section Futures Martingale Bots).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration du bot (Auto Loop, SL Price, SL Ratio) et suivi de position active sur BTCUSDT (Long 5X, Total Profit: -0,0024 USDT, APY: -2,83%).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des options avancées du bot Martingale puis visualisation du bot en cours d&#x27;exécution.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000756_seg17.jpg" alt="Configuration du bot Futures Martingale sur l&#x27;échange BingX, mettant en avant l&#x27;option Auto Loop et les paramètres de Stop Loss." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000756_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:56</span>
+                        <span class="caption-text">Configuration du bot Futures Martingale sur l&#x27;échange BingX, mettant en avant l&#x27;option Auto Loop et les paramètres de Stop Loss.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000807_seg17.jpg" alt="Vue de l&#x27;onglet &#x27;Running&#x27; du bot Futures Martingale sur BingX montrant une position ouverte sur BTCUSDT avec un profit négatif." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000807_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:07</span>
+                        <span class="caption-text">Vue de l&#x27;onglet &#x27;Running&#x27; du bot Futures Martingale sur BingX montrant une position ouverte sur BTCUSDT avec un profit négatif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:12 - 00:08:32</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, il y a Signal Strategies. C&#x27;est une fonctionnalité puissante qui permet à BingX de recevoir des signaux de plateformes externes comme TradingView pour exécuter automatiquement des transactions sur futures perpétuels. Vous créez et configurez des instructions de trading pour qu&#x27;elles correspondent exactement à votre stratégie. Au bas de la page, vous pouvez voir toutes les instructions que vous avez déjà créées.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web BingX (section Signal Trading / Futures)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif sur la réception de signaux externes (TradingView) pour automatiser les transactions sur futures perpétuels, avec deux types d&#x27;instructions (Simple Instruction et Strategy Instruction) et un bouton &quot;Create&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la fonctionnalité de trading par signaux de la plateforme BingX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000817_seg18.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme BingX montrant la page dédiée au &quot;Signal Trading&quot; et ses instructions de configuration." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000817_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:17</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme BingX montrant la page dédiée au &quot;Signal Trading&quot; et ses instructions de configuration.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:33 - 00:08:55</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cliquez sur Créer. Vous aurez deux modes : Instruction simple et Instruction stratégique. En instruction simple, définissez un nom pour votre stratégie, choisissez votre paire de trading, définissez la direction du trade et le type d&#x27;ordre, et définissez la marge de votre position, soit par ratio, qui est un pourcentage de votre solde disponible, soit par montant fixe, qui est une valeur USDT déterminée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface Web de l&#x27;échange de cryptomonnaies BingX (Bots / TradingView bot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de configuration avec les champs : Name, Trading Pair, Open/Close Type (By Amount / By Ratio), options TP/SL, bouton Create et encadré Webhook URL.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole l&#x27;onglet &#x27;Simple Instruction&#x27; lors de la configuration du bot de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000838_seg19.jpg" alt="Capture d&#x27;écran de l&#x27;interface BingX montrant le formulaire de création de bot de trading avec les onglets &#x27;Simple Instruction&#x27; et &#x27;Strategy Instruction&#x27;, ainsi que les champs pour le nom, la paire de trading et le type de marge." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000838_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:38</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface BingX montrant le formulaire de création de bot de trading avec les onglets &#x27;Simple Instruction&#x27; et &#x27;Strategy Instruction&#x27;, ainsi que les champs pour le nom, la paire de trading et le type de marge.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:55 - 00:09:17</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Configurez vos TP et SL, et voici la partie clé. Vous verrez votre URL de webhook. C&#x27;est l&#x27;URL que vous collerez dans TradingView afin qu&#x27;il puisse envoyer des signaux directement à BingX et déclencher vos trades automatiquement. Dans les instructions de la stratégie, définissez un nom, choisissez votre paire de trading et définissez votre type d&#x27;ouverture et de fermeture, soit par montant, soit par ratio.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BingX, TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de webhook BingX, paramètres de stratégie, options TP/SL, configuration des alertes TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Copie de l&#x27;URL du webhook depuis BingX et collage dans la configuration d&#x27;alerte TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000901_seg20.jpg" alt="Interface de configuration BingX montrant l&#x27;URL du webhook et les paramètres simples de stratégie." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000901_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:01</span>
+                        <span class="caption-text">Interface de configuration BingX montrant l&#x27;URL du webhook et les paramètres simples de stratégie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000906_seg20.jpg" alt="Fenêtre de notification TradingView affichant le champ pour coller l&#x27;URL du webhook BingX." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000906_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:06</span>
+                        <span class="caption-text">Fenêtre de notification TradingView affichant le champ pour coller l&#x27;URL du webhook BingX.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000911_seg20.jpg" alt="Onglet &quot;Strategy Instruction&quot; sur BingX avec les réglages TP (Take Profit) et SL (Stop Loss)." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000911_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:11</span>
+                        <span class="caption-text">Onglet &quot;Strategy Instruction&quot; sur BingX avec les réglages TP (Take Profit) et SL (Stop Loss).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:17 - 00:09:35</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous verrez également l&#x27;URL du webhook sur le côté droit ici. Une fois que tout est configuré, cliquez sur Créer, et votre stratégie de signal est prête à recevoir des instructions. Le dernier emplacement est l&#x27;achat républic, et vous le trouverez juste en dessous de la section des emplacements. C&#x27;est la version de BingX du lissage des coûts d&#x27;achat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Configuration de stratégie de signal, gestion de la marge, Take Profit (TP), Stop Loss (SL), et menu des options de bots et d&#x27;achat récurrent (Recurring Buy).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et validation de la stratégie de signal sur la plateforme BingX en cliquant sur le bouton de création, puis navigation dans les menus pour localiser l&#x27;achat récurrent.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000921_seg21.jpg" alt="Interface BingX montrant les paramètres de configuration d&#x27;un ordre (Type d&#x27;ordre Market, marge de position, TP à 150%, SL à 20%) avec le bouton Create." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000921_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:21</span>
+                        <span class="caption-text">Interface BingX montrant les paramètres de configuration d&#x27;un ordre (Type d&#x27;ordre Market, marge de position, TP à 150%, SL à 20%) avec le bouton Create.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000931_seg21.jpg" alt="Menu déroulant de la plateforme BingX affichant les options de trading, les bots spot et l&#x27;option &quot;Recurring Buy&quot; mise en surbrillance." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000931_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:31</span>
+                        <span class="caption-text">Menu déroulant de la plateforme BingX affichant les options de trading, les bots spot et l&#x27;option &quot;Recurring Buy&quot; mise en surbrillance.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:35 - 00:09:55</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il achète automatiquement de la crypto à des intervalles définis, ce qui vous permet d&#x27;accumuler sans jamais avoir à anticiper le marché. Sélectionnez la crypto avec laquelle vous voulez payer et la crypto que vous voulez recevoir. Pour cet exemple, prenons le BTC. Vous pouvez également ajouter plusieurs cryptos si vous souhaitez faire du DCA sur plus d&#x27;une pièce en même temps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échangeur crypto BingX (section &quot;Recurring Buy&quot;).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de configuration d&#x27;achat récurrent avec sélection de la devise de paiement (USDT), de la crypto à recevoir (BTC), et options pour définir la fréquence d&#x27;investissement.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection des cryptomonnaies pour mettre en place un plan d&#x27;investissement automatisé (DCA).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000940_seg22.jpg" alt="Interface de la plateforme d&#x27;échange BingX montrant l&#x27;outil de configuration d&#x27;un achat récurrent (Recurring Buy) de cryptomonnaies." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_000940_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:40</span>
+                        <span class="caption-text">Interface de la plateforme d&#x27;échange BingX montrant l&#x27;outil de configuration d&#x27;un achat récurrent (Recurring Buy) de cryptomonnaies.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:55 - 00:10:16</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Entrez combien d&#x27;USDT vous voulez dépenser par achat. Sous répéter, sélectionnez votre intervalle d&#x27;achat. Vous pouvez choisir toutes les heures, 6 heures, 12 heures, chaque jour, chaque semaine ou toutes les deux semaines. Sur le côté droit, vous pouvez également définir l&#x27;heure exacte à laquelle vous voulez que l&#x27;achat ait lieu. Utile si vous voulez acheter à un moment précis de la journée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de configuration d&#x27;achat récurrent avec sélection du montant en USDT, choix des cryptos (BTC, ETH), intervalle de répétition (Daily, 00:00 UTC+8) et résumé de l&#x27;investissement (20 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et paramétrage d&#x27;un plan d&#x27;investissement automatisé (DCA).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001000_seg23.jpg" alt="Interface de la plateforme BingX montrant l&#x27;outil &#x27;Recurring Buy&#x27; pour configurer des achats récurrents de cryptomonnaies en USDT." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001000_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:00</span>
+                        <span class="caption-text">Interface de la plateforme BingX montrant l&#x27;outil &#x27;Recurring Buy&#x27; pour configurer des achats récurrents de cryptomonnaies en USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:16 - 00:10:34</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que vous êtes satisfait, cliquez sur confirmer. Si vous cliquez sur avancer, vous pouvez définir un nombre maximal de répétitions, de sorte que le bot s&#x27;arrête après un certain nombre d&#x27;achats, et vous pouvez également modifier le nom du plan pour garder les choses organisées. Lorsque vous êtes prêt, cliquez sur Aperçu pour tout vérifier, puis sur confirmer, et le bot commence à s&#x27;exécuter automatiquement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies BingX (interface web de configuration d&#x27;achat récurrent).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;achat récurrent avec sélection des actifs (USDT vers BTC et ETH), montant par investissement (20 USDT), fréquence quotidienne et paramètres avancés pour limiter le nombre de répétitions.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres avancés du plan d&#x27;achat récurrent sur la plateforme BingX, notamment la définition du nombre maximal de répétitions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001020_seg24.jpg" alt="Interface BingX pour la configuration d&#x27;un achat récurrent (Recurring Buy) montrant les paramètres avancés (Advanced) avec les options de nombre maximal de répétitions et le nom du plan." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001020_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:20</span>
+                        <span class="caption-text">Interface BingX pour la configuration d&#x27;un achat récurrent (Recurring Buy) montrant les paramètres avancés (Advanced) avec les options de nombre maximal de répétitions et le nom du plan.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001025_seg24.jpg" alt="Pop-up BingX permettant de configurer le nombre maximal de répétitions (Max. repeat times) pour l&#x27;achat récurrent." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001025_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:25</span>
+                        <span class="caption-text">Pop-up BingX permettant de configurer le nombre maximal de répétitions (Max. repeat times) pour l&#x27;achat récurrent.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:35 - 00:11:00</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Très bien, donc maintenant vous savez comment utiliser absolument tous les bots de trading sur BingX, de la grille et du martingale jusqu&#x27;aux stratégies de signaux et à l&#x27;achat récurrent. Que vous vouliez profiter de la volatilité, automatiser votre DCA, ou connecter des signaux TradingView, vous avez tout l&#x27;arsenal juste ici. Et n&#x27;oubliez pas, si vous vous êtes inscrit avec mon lien dans la description, vous pouvez réclamer jusqu&#x27;à 9 800 USDT de bonus rien qu&#x27;en déposant et en tradant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange BingX et interface graphique TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Documentation sur le Signal Trading, URL de Webhook (`https://api.blofin.com/...`), formulaires de configuration d&#x27;alertes, et options de bonus de bienvenue de la plateforme.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la section de trading par signaux de BingX et configuration des notifications de webhook sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001041_seg25.jpg" alt="Interface BingX présentant la section &quot;Signal Trading&quot; et la gestion des instructions de trading automatisé." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001041_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:41</span>
+                        <span class="caption-text">Interface BingX présentant la section &quot;Signal Trading&quot; et la gestion des instructions de trading automatisé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001048_seg25.jpg" alt="Fenêtre des paramètres d&#x27;alerte sur TradingView avec l&#x27;URL de webhook configurée vers l&#x27;API de trading." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001048_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:48</span>
+                        <span class="caption-text">Fenêtre des paramètres d&#x27;alerte sur TradingView avec l&#x27;URL de webhook configurée vers l&#x27;API de trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:01 - 00:11:18</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Allez voir la section des récompenses dans votre compte. Il y a de l&#x27;argent gratuit qui vous y attend juste pour avoir utilisé la plateforme. Si vous voulez voir comment configurer des bots de trading sur d&#x27;autres plateformes comme Blowfin et Bybit, regardez les vidéos à l&#x27;écran en ce moment même. J&#x27;ai aussi préparé des guides étape par étape pour celles-là. Merci d&#x27;avoir regardé, et je vous dis à la prochaine dans une nouvelle vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BingX (plateforme d&#x27;échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tâches à durée limitée, bons de récompense en USDT, et robots de trading IA (DOGEUSDT, BTCUSDT, SUIUSDT, SOLUSDT, ETHUSDT, XRPUSDT) avec backtests APR et fourchettes de prix.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de la plateforme pour montrer les récompenses et les bots de trading automatisés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001105_seg26.jpg" alt="Interface de la plateforme BingX montrant la section &quot;Limited-Time Tasks&quot; avec diverses récompenses en USDT." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001105_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:05</span>
+                        <span class="caption-text">Interface de la plateforme BingX montrant la section &quot;Limited-Time Tasks&quot; avec diverses récompenses en USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001110_seg26.jpg" alt="Interface de la plateforme BingX affichant des &quot;AI Bots&quot; de trading pour différentes cryptomonnaies avec leurs performances (APR)." loading="lazy" onclick="openLightbox('../screenshots/RDXJyw5HYtM/RDXJyw5HYtM_001110_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:10</span>
+                        <span class="caption-text">Interface de la plateforme BingX affichant des &quot;AI Bots&quot; de trading pour différentes cryptomonnaies avec leurs performances (APR).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
