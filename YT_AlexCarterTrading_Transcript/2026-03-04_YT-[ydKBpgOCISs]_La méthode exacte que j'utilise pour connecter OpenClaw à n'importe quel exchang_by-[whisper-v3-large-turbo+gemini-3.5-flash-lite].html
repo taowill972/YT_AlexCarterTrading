@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 La méthode exacte que j&#x27;utilise pour connecter OpenClaw à n&#x27;importe quel exchange crypto (Guide étape par étape) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 La méthode exacte que j&#x27;utilise pour connecter OpenClaw à n&#x27;importe quel exchange crypto (Guide étape par étape)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-04</span>
+                <span class="badge">⏱️ 00:10:09</span>
+                <span class="badge">🆔 <code>ydKBpgOCISs</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=ydKBpgOCISs" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo propose un guide technique et stratégique de niveau supérieur présenté par Alex Carter, centré sur l'automatisation du trading multi-exchange grâce à l'agent IA OpenClaw. L'objectif principal est de s'affranchir des limites du trading manuel sur une seule plateforme en connectant simultanément plusieurs bourses majeures. Cette approche permet non seulement de diversifier l'exécution des ordres et d'accéder à des paires de cryptomonnaies exclusives, mais aussi d'optimiser les performances en comparant la qualité d'exécutabilité des stratégies et en cumulant les différents programmes de bonus et structures de frais réduits offerts par les plateformes.<br><br>Au-delà de la simple connexion multi-plateforme, la vidéo détaille méthodiquement les procédures de sécurisation indispensables pour déployer un agent de trading algorithmique. L'analyse met en lumière l'utilisation de sous-comptes dédiés et de clés API aux permissions strictement cloisonnées — autorisant uniquement le passage d'ordres et la gestion des positions sur les contrats à terme ou le marché au comptant, tout en verrouillant impérativement les options de retraits de fonds. À travers des démonstrations pas à pas sur Bybit, MEXC et Blofin, la méthode enseignée garantit une architecture de trading robuste, capable d'exécuter des stratégies de scalping ou de swing de manière totalement autonome tout en minimisant drastiquement le risque systémique et opérationnel.<br><br>---<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **OpenClaw** : Agent d'intelligence artificielle et d'automatisation de pointe conçu pour centraliser, exécuter et piloter des stratégies de trading sur plusieurs exchanges en simultané.<br>* **Bybit** : Exchange crypto majeur offrant des comptes de trading unifiés, des options de clés API générées par le système ou l'utilisateur, et des programmes de récompenses substantiels pour les nouveaux utilisateurs.<br>* **MEXC** : Plateforme d'échange cryptographique disposant de sous-comptes spécifiques axés sur le trading exclusif par API et de bonus incitatifs pour l'automatisation.<br>* **Blofin** : Exchange partenaire permettant d'isoler le capital via des sous-comptes dédiés et de connecter des agents algorithmiques sécurisés pour le trading de contrats à terme.<br>* **Gestionnaire de mots de passe** : Outil de cybersécurité recommandé pour stocker de manière chiffrée et sécurisée les clés API et clés secrètes générées.<br><br>---<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Architecture Multi-Exchange** : Connecter OpenClaw à plusieurs plateformes permet d'exécuter la même stratégie en parallèle, d'identifier les bourses offrant la meilleure exécution et de tirer parti de liquidités et de paires de négociation variées.<br>* **Optimisation des Bonus et Frais** : L'utilisation de liens d'affiliation spécifiques permet de maximiser les retours sur investissement initiaux grâce aux programmes de bonus de dépôt, de KYC et de paliers de volume sur les différents exchanges.<br>* **Isolation par Sous-Compte** : Il est impératif de créer un sous-compte dédié à l'agent IA (ex. "OpenClaw AI Agent") sur chaque exchange pour séparer hermétiquement le capital de trading automatisé du capital géré manuellement.<br>* **Granularité des Permissions API** : Lors de la création des clés API, seules les autorisations strictement nécessaires au trading doivent être activées (placement/gestion des ordres et des positions sur les dérivés ou le spot).<br>* **Verrouillage Absolu des Retraits** : L'option de retrait de fonds sur les clés API doit impérativement rester désactivée pour neutraliser tout risque de fuite de capital en cas de compromission de l'agent.<br>* **Gestion des Restrictions IP** : Bien qu'une configuration sans restriction IP offre plus de flexibilité pour le cloud, l'utilisation d'adresses IP dédiées ou statiques renforce considérablement la sécurité si l'infrastructure le permet.<br>* **Sélection des Clés API** : Privilégier les clés générées par le système pour simplifier la configuration initiale tout en garantissant un niveau de sécurité optimal avec les interfaces des exchanges.<br>* **Sauvegarde Unique des Secrets** : La clé secrète (*Secret Key*) n'étant affichée qu'une seule et unique fois lors de sa création, son enregistrement immédiat dans un gestionnaire de mots de passe est une étape critique non négociable.<br>* **Vérification Initiale du Solde** : Après l'initialisation d'OpenClaw, l'envoi d'une instruction de vérification du solde permet de valider de manière empirique la bonne communication bidirectionnelle entre l'IA et l'API de l'exchange.<br>* **Audits et Revues Régulières** : Maintenir une surveillance active de l'historique des connexions et des activités des clés API dans les paramètres des exchanges pour détecter rapidement toute anomalie comportementale.<br>* **Procédure d'Urgence en Cas de Compromission** : En cas de doute sur la sécurité d'une clé API, la suppression immédiate de cette dernière et la génération de nouvelles paires de clés constituent la seule réponse adaptée pour préserver le portefeuille.<br>* **Responsabilité et Risk Management** : L'automatisation par IA décuple l'efficacité opérationnelle mais exige une discipline de fer en matière de gestion des risques, d'hygiène informatique et de paramétrage des ordres de stop-loss.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">OpenClaw</span><span class="tool-tag">Bybit</span><span class="tool-tag">MEXC</span><span class="tool-tag">Blofin</span><span class="tool-tag">Gestionnaire de mots de passe</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Architecture Multi-Exchange** : Connecter OpenClaw à plusieurs plateformes permet d&#x27;exécuter la même stratégie en parallèle, d&#x27;identifier les bourses offrant la meilleure exécution et de tirer parti de liquidités et de paires de négociation variées.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des Bonus et Frais** : L&#x27;utilisation de liens d&#x27;affiliation spécifiques permet de maximiser les retours sur investissement initiaux grâce aux programmes de bonus de dépôt, de KYC et de paliers de volume sur les différents exchanges.</span></li><li><span class="point-bullet">✦</span><span>Isolation par Sous-Compte** : Il est impératif de créer un sous-compte dédié à l&#x27;agent IA (ex. &quot;OpenClaw AI Agent&quot;) sur chaque exchange pour séparer hermétiquement le capital de trading automatisé du capital géré manuellement.</span></li><li><span class="point-bullet">✦</span><span>Granularité des Permissions API** : Lors de la création des clés API, seules les autorisations strictement nécessaires au trading doivent être activées (placement/gestion des ordres et des positions sur les dérivés ou le spot).</span></li><li><span class="point-bullet">✦</span><span>Verrouillage Absolu des Retraits** : L&#x27;option de retrait de fonds sur les clés API doit impérativement rester désactivée pour neutraliser tout risque de fuite de capital en cas de compromission de l&#x27;agent.</span></li><li><span class="point-bullet">✦</span><span>Gestion des Restrictions IP** : Bien qu&#x27;une configuration sans restriction IP offre plus de flexibilité pour le cloud, l&#x27;utilisation d&#x27;adresses IP dédiées ou statiques renforce considérablement la sécurité si l&#x27;infrastructure le permet.</span></li><li><span class="point-bullet">✦</span><span>Sélection des Clés API** : Privilégier les clés générées par le système pour simplifier la configuration initiale tout en garantissant un niveau de sécurité optimal avec les interfaces des exchanges.</span></li><li><span class="point-bullet">✦</span><span>Sauvegarde Unique des Secrets** : La clé secrète (*Secret Key*) n&#x27;étant affichée qu&#x27;une seule et unique fois lors de sa création, son enregistrement immédiat dans un gestionnaire de mots de passe est une étape critique non négociable.</span></li><li><span class="point-bullet">✦</span><span>Vérification Initiale du Solde** : Après l&#x27;initialisation d&#x27;OpenClaw, l&#x27;envoi d&#x27;une instruction de vérification du solde permet de valider de manière empirique la bonne communication bidirectionnelle entre l&#x27;IA et l&#x27;API de l&#x27;exchange.</span></li><li><span class="point-bullet">✦</span><span>Audits et Revues Régulières** : Maintenir une surveillance active de l&#x27;historique des connexions et des activités des clés API dans les paramètres des exchanges pour détecter rapidement toute anomalie comportementale.</span></li><li><span class="point-bullet">✦</span><span>Procédure d&#x27;Urgence en Cas de Compromission** : En cas de doute sur la sécurité d&#x27;une clé API, la suppression immédiate de cette dernière et la génération de nouvelles paires de clés constituent la seule réponse adaptée pour préserver le portefeuille.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:26</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je connecte OpenClock à trois bourses, afin que vous puissiez automatiser le trading sur toutes en même temps. Et regardez, c&#x27;est vraiment insensé. Alors que la plupart des traders placent manuellement des transactions sur une seule plateforme, vous exécuterez des stratégies sur plusieurs bourses simultanément, en testant celle qui vous offre la meilleure exécution et en cumulant les bonus des trois. C&#x27;est de l&#x27;automatisation de niveau supérieur, alors restez dans les parages car je vais vous montrer exactement comment configurer cela étape par étape.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces Web des bourses crypto (compte et gestion des clés API, page Rewards Hub de Bybit).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de sous-comptes, formulaires de création de clés API, offres de bonus de bienvenue en USDT.
+[DESC_IMAGE_3] Navigation dans les menus de la plateforme d&#x27;échange pour configurer l&#x27;accès et consulter les offres promotionnelles.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000007_seg1.jpg" alt="Interface de gestion des sous-comptes sur une bourse crypto affichant les sous-comptes créés (openclaw24 et OpenClawTrading1)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000007_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:07</span>
+                        <span class="caption-text">Interface de gestion des sous-comptes sur une bourse crypto affichant les sous-comptes créés (openclaw24 et OpenClawTrading1).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000013_seg1.jpg" alt="Page de configuration et de création de clés API avec les options de permissions et restrictions d&#x27;IP." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000013_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:13</span>
+                        <span class="caption-text">Page de configuration et de création de clés API avec les options de permissions et restrictions d&#x27;IP.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000020_seg1.jpg" alt="Page des récompenses et bonus de bienvenue (&quot;100 USDT Welcome Gifts&quot;) de la plateforme Bybit." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000020_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:20</span>
+                        <span class="caption-text">Page des récompenses et bonus de bienvenue (&quot;100 USDT Welcome Gifts&quot;) de la plateforme Bybit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:26 - 00:00:59</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est parti. Très bien, donc avant de plonger dans la configuration technique, laissez-moi vous expliquer pourquoi connecter plusieurs plateformes d&#x27;échange à OpenClaw est si puissant. Voici le truc : différentes plateformes ont une liquidité différente, des paires de négociation différentes et des structures de frais différentes. En connectant OpenClaw à plusieurs plateformes d&#x27;échange, vous pouvez exécuter la même stratégie sur différentes plateformes et voir laquelle est la plus performante. Accédez à des crypto-monnaies qui ne sont peut-être listées que sur une seule plateforme. Vous pouvez également profiter de différentes structures de bonus et de frais réduits. De plus, vous pouvez diversifier votre risque sur plusieurs</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface OpenClaw et plateforme d&#x27;échange MEXC (Spot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration d&#x27;OpenClaw et liste des paires de trading spot avec prix, variations sur 24h, plus hauts/plus bas et volumes sur MEXC.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le tableau de bord OpenClaw et présentation des marchés spot de la plateforme d&#x27;échange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000035_seg2.jpg" alt="Interface OpenClaw affichant le panneau de configuration du tableau de bord avec le menu latéral (Overview, Channels, Instances, etc.)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000035_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:35</span>
+                        <span class="caption-text">Interface OpenClaw affichant le panneau de configuration du tableau de bord avec le menu latéral (Overview, Channels, Instances, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000051_seg2.jpg" alt="Interface de la plateforme d&#x27;échange MEXC montrant les marchés spot avec des paires de cryptomonnaies majeures (BTC/USDT, ETH/USDT, SOL/USDT) et leurs données de prix en temps réel." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000051_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Interface de la plateforme d&#x27;échange MEXC montrant les marchés spot avec des paires de cryptomonnaies majeures (BTC/USDT, ETH/USDT, SOL/USDT) et leurs données de prix en temps réel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:59 - 00:01:31</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">plateformes. Et le meilleur, OpenClaw peut gérer tout cela automatiquement. Vous le configurez une seule fois et il s&#x27;occupe de tout. Maintenant, laissez-moi vous montrer exactement comment faire. Très bien, commençons par Bybit, l&#x27;un des échanges de cryptomonnaies les plus grands et les plus populaires. Si vous n&#x27;avez pas encore de compte Bybit, cliquez sur le lien dans la description. Si vous vous êtes inscrit avec mon lien, vous pouvez réclamer des bonus simplement en déposant et en tradant. Consultez le centre des récompenses dans votre compte. Il y a jusqu&#x27;à 30 000 USDT disponibles, ainsi que d&#x27;autres récompenses pour avoir complété le KYC et atteint des paliers de volume de trading.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web de la plateforme Bybit et éditeur de texte.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface d&#x27;inscription Bybit, montrant les détails des récompenses de bienvenue allant jusqu&#x27;à 30 100 $ et les étapes de vérification, dépôt et trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la page d&#x27;inscription et des bonus de la plateforme d&#x27;échange de cryptomonnaies Bybit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000115_seg3.jpg" alt="Page d&#x27;inscription de la plateforme Bybit avec les bonus de bienvenue et le code de parrainage." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000115_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme Bybit avec les bonus de bienvenue et le code de parrainage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000123_seg3.jpg" alt="Page du &quot;Rewards Hub&quot; de Bybit affichant les différentes étapes et récompenses en USDT (Verify, Deposit, Trade)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000123_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Page du &quot;Rewards Hub&quot; de Bybit affichant les différentes étapes et récompenses en USDT (Verify, Deposit, Trade).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:32 - 00:02:06</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La première étape consiste à créer et à vous connecter à votre compte Bybit. Ensuite, cliquez sur l&#x27;icône de votre profil dans le coin supérieur droit et sélectionnez API. Dans le coin supérieur droit, vous verrez un bouton qui indique créer une nouvelle clé. Cliquez dessus. C&#x27;est là que Bybit est un peu différent. Vous verrez deux options, des clés API générées par le système et générées par l&#x27;utilisateur. Les clés API générées par le système signifient que Bybit génère les deux clés pour vous. Simple et sécurisé. Clés API générées par l&#x27;utilisateur. Cela signifie simplement que vous pouvez créer les clés vous-même et ne partager que la clé publique avec Bybit. Pour la plupart des utilisateurs, je recommande de choisir</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bybit (section de gestion des clés API).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Page de gestion des clés API, paramètres de sécurité et options de configuration de clé API (générée par le système ou par l&#x27;utilisateur).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Bybit et clic sur le bouton pour créer une nouvelle clé API, suivi de l&#x27;affichage de la boîte de dialogue de sélection du type de clé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000141_seg4.jpg" alt="Vue de la page &quot;API Management&quot; sur Bybit avec un curseur pointant sur le bouton orange &quot;Create New Key&quot; dans le coin supérieur droit." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000141_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:41</span>
+                        <span class="caption-text">Vue de la page &quot;API Management&quot; sur Bybit avec un curseur pointant sur le bouton orange &quot;Create New Key&quot; dans le coin supérieur droit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000149_seg4.jpg" alt="Fenêtre modale &quot;Select Your API Key Type&quot; ouverte sur Bybit, proposant le choix entre &quot;System-generated API Keys&quot; et &quot;Self-generated API Keys&quot;." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000149_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Fenêtre modale &quot;Select Your API Key Type&quot; ouverte sur Bybit, proposant le choix entre &quot;System-generated API Keys&quot; et &quot;Self-generated API Keys&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:27</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les clés d&#x27;API générées par le système si vous ne faites que débuter. C&#x27;est plus simple et cela fonctionne parfaitement pour OpenClaw. Ensuite, vous verrez deux options pour l&#x27;utilisation des clés d&#x27;API. Application tierce est préférable si vous avez d&#x27;autres applications tierces. Vous pouvez choisir ceci et sélectionner votre application dans la liste. Mais puisque nous allons utiliser OpenClaw, choisissez transaction d&#x27;API.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;échange de cryptomonnaies (page de création de clé API).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de clé API avec les options &quot;API Transaction&quot; et &quot;Connect to Third-Party Applications&quot;, ainsi que les permissions de lecture/écriture et les restrictions IP.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et sélection des options pour la génération d&#x27;une nouvelle clé API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000212_seg5.jpg" alt="Interface de création d&#x27;une clé API sur une plateforme d&#x27;échange de cryptomonnaies, montrant les options d&#x27;utilisation et les permissions." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000212_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:12</span>
+                        <span class="caption-text">Interface de création d&#x27;une clé API sur une plateforme d&#x27;échange de cryptomonnaies, montrant les options d&#x27;utilisation et les permissions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:28 - 00:02:48</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Lorsque vous faites défiler vers le bas, vous pouvez choisir votre nom d&#x27;API. Je recommande quelque chose comme OpenClaw Bybit Trading. Ainsi, vous pouvez facilement déterminer quelles clés API vous consultez si vous en avez beaucoup. Viennent ensuite les autorisations de la clé API. Maintenant, vous devez choisir lecture et écriture afin d&#x27;exécuter des ordres sur votre bourse. Ensuite, vous verrez la liste blanche des adresses IP.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de Bybit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de création de clé API (nom de la clé, options Read-Write/Read-Only, restrictions IP et permissions détaillées par type de compte).</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie du nom de la clé API et sélection des permissions de lecture/écriture.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000233_seg6.jpg" alt="Interface de configuration d&#x27;une clé API sur un échange, montrant le champ de nom et les options de permissions." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000233_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:33</span>
+                        <span class="caption-text">Interface de configuration d&#x27;une clé API sur un échange, montrant le champ de nom et les options de permissions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:48 - 00:03:09</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous avez deux options ici : IP dédiée. Cela signifie que l&#x27;API ne peut être consultée que depuis une adresse IP spécifique, ou aucune restriction IP. Cela signifie qu&#x27;elle peut être consultée depuis n&#x27;importe quelle connexion IP. Pour la plupart des utilisateurs, je recommande aucune restriction IP pour plus de flexion, en particulier si vous accédez à OpenClaw depuis différents emplacements.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de gestion de clés API d&#x27;un exchange (Bybit).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration de clé API incluant les options &#x27;Only IPs with permissions granted&#x27; et &#x27;No IP restriction&#x27;, ainsi que les permissions de lecture/écriture (Read-Write).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur survole les options de restriction IP pour la configuration de la clé API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000254_seg7.jpg" alt="Interface de configuration d&#x27;une clé API montrant les options de restriction par adresse IP (IP dédiée ou sans restriction)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000254_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:54</span>
+                        <span class="caption-text">Interface de configuration d&#x27;une clé API montrant les options de restriction par adresse IP (IP dédiée ou sans restriction).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:09 - 00:03:33</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">mais si vous voulez une sécurité supplémentaire et que vous avez une IP statique, vous pouvez l&#x27;ajouter ici. Vous pouvez ajouter jusqu&#x27;à 100 adresses IP. Maintenant, lorsque vous faites défiler vers le bas, vous verrez des permissions détaillées. C&#x27;est crucial. Vous voulez seulement que votre agent IA fasse du trading et non pas qu&#x27;il retire des fonds ou fasse autre chose. Pour ce faire, activez uniquement les ordres pour placer et gérer les trades. Les positions pour gérer les positions ouvertes.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de configuration de clé API (probablement un échange de cryptomonnaies tel que Bybit).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de configuration d&#x27;une clé API : champ de saisie pour les adresses IP autorisées, options de permissions (Read-Write, Read-Only, restrictions IP, types de trading unifiés, contrats USDC, Spot).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de sécurité et des restrictions par adresse IP pour la création d&#x27;une nouvelle clé API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000315_seg8.jpg" alt="Interface de configuration d&#x27;une clé API avec l&#x27;option de restriction par adresse IP (jusqu&#x27;à 100 IP) et sélection des permissions détaillées (Read-Write ou Read-Only)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000315_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Interface de configuration d&#x27;une clé API avec l&#x27;option de restriction par adresse IP (jusqu&#x27;à 100 IP) et sélection des permissions détaillées (Read-Write ou Read-Only).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:33 - 00:04:06</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Trading de produits dérivés USDC si vous tradez des paires USDC. Trading au comptant si vous voulez trader sur les marchés au comptant. Vous pouvez également vérifier les autres autorisations, mais puisque nous allons trader sur les contrats à terme, activez uniquement celles-ci. Lorsque vous faites défiler vers le bas jusqu&#x27;aux actifs, assurez-vous que les retraits sont désactivés. C&#x27;est crucial pour protéger vos fonds contre toute sortie de votre compte. Une fois que vous avez vérifié tout ce dont vous avez besoin, cliquez sur soumettre. Il vous sera demandé de vérifier votre identité par vérification par e-mail et par authentification à deux facteurs. Après la vérification, vous verrez une page de confirmation avec le nom de l&#x27;API,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bybit (paramètres de création de clés API).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Cases à cocher pour les permissions de trading (Orders, Positions, USDC Contracts, Spot Trade, Account Transfer) et bouton orange &quot;Submit&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des permissions d&#x27;une clé API sur Bybit en activant spécifiquement les options de trading requises pour l&#x27;utilisation de contrats à terme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000342_seg9.jpg" alt="Capture d&#x27;écran montrant le panneau des autorisations d&#x27;API de Bybit avec les options de trading unifié, contrats et spot (Unified Trading, Spot, Contracts)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000342_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le panneau des autorisations d&#x27;API de Bybit avec les options de trading unifié, contrats et spot (Unified Trading, Spot, Contracts).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000350_seg9.jpg" alt="Suite du panneau de configuration des clés API sur Bybit affichant les autorisations liées aux actifs (Wallet, Exchange) et le bouton de soumission final." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000350_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:50</span>
+                        <span class="caption-text">Suite du panneau de configuration des clés API sur Bybit affichant les autorisations liées aux actifs (Wallet, Exchange) et le bouton de soumission final.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:07 - 00:04:28</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Clé API, clé secrète API et résumé des autorisations. Vous verrez un bouton de copie à côté de chaque clé, copiez-les et enregistrez-les en lieu sûr. Cela ne sera affiché qu&#x27;une seule fois, donc si vous l&#x27;oubliez, vous devrez créer une nouvelle clé. Vous pouvez gérer et modifier les restrictions de vos clés API dans la section de gestion des clés API. Vous pouvez également créer un sous-compte dédié à votre agent IA sur Bybit.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bybit (Plateforme d&#x27;échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Clé API, clé secrète API, permissions Read-Write et options de restriction IP.</p>
+                        <p><strong>Action / Démonstration :</strong> Copie de la clé API et consultation des paramètres de permissions sur le compte Bybit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000412_seg10.jpg" alt="Pop-up de confirmation sur l&#x27;interface Bybit affichant la clé API et la clé secrète nouvellement générées, avec des boutons de copie." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000412_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:12</span>
+                        <span class="caption-text">Pop-up de confirmation sur l&#x27;interface Bybit affichant la clé API et la clé secrète nouvellement générées, avec des boutons de copie.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000423_seg10.jpg" alt="Page de gestion des clés API sur l&#x27;échange Bybit montrant les configurations de permissions et de restrictions IP." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000423_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:23</span>
+                        <span class="caption-text">Page de gestion des clés API sur l&#x27;échange Bybit montrant les configurations de permissions et de restrictions IP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:28 - 00:04:48</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour faire cela, cliquez sur votre profil et cliquez sur basculer slash créer un compte. Une fenêtre pop-up apparaîtra. Entrez le nom du sous-compte, quelque chose comme OpenClaw AI Agent. Choisissez Compte de Trading Unifié comme type de compte. Vous pouvez exiger un mot de passe pour la connexion si vous voulez plus de sécurité. Une fois que tout est correct, cliquez sur Confirmer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bybit (Plateforme d&#x27;échange crypto - Interface de gestion des comptes et API)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus &#x27;Switch/Create Account&#x27;, options de création de sous-compte, champ de nom, sélection du type de compte (Unified Trading Account) et option de mot de passe.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de Bybit pour créer et configurer un nouveau sous-compte dédié au bot de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000433_seg11.jpg" alt="Fenêtre pop-up de gestion des comptes sur Bybit montrant le menu &#x27;Switch/Create Account&#x27; avec le compte principal et le bouton &#x27;Create&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000433_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:33</span>
+                        <span class="caption-text">Fenêtre pop-up de gestion des comptes sur Bybit montrant le menu &#x27;Switch/Create Account&#x27; avec le compte principal et le bouton &#x27;Create&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000438_seg11.jpg" alt="Formulaire de création d&#x27;un sous-compte sur Bybit avec le nom &#x27;OpenClaw AIAgent&#x27; et le type &#x27;Unified Trading Account&#x27; sélectionné." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000438_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:38</span>
+                        <span class="caption-text">Formulaire de création d&#x27;un sous-compte sur Bybit avec le nom &#x27;OpenClaw AIAgent&#x27; et le type &#x27;Unified Trading Account&#x27; sélectionné.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:49 - 00:05:10</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, répétez les étapes de création de l&#x27;API pour le sous-compte. Très bien, maintenant connectons-nous à Mexi. Le processus est très similaire, mais Mexi possède des fonctionnalités uniques. Si vous n&#x27;avez pas encore de compte Mexi, cliquez sur le lien dans la description. Vous obtiendrez un bon de 10 USDT rien que pour la création d&#x27;un nouveau compte. Un autre bon de 10 USDT lorsque vous téléchargez et terminez la connexion sur l&#x27;application Mexi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies MEXC.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface utilisateur de la plateforme d&#x27;échange MEXC, bannières promotionnelles de bonus (10 000 USDT), options d&#x27;inscription et de parrainage.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web de MEXC pour présenter la création de compte et les bonus d&#x27;inscription.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000454_seg12.jpg" alt="Page d&#x27;accueil du site d&#x27;échange de cryptomonnaies MEXC avec une bannière promotionnelle pour le Launchpad GOLD (XAUT)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000454_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:54</span>
+                        <span class="caption-text">Page d&#x27;accueil du site d&#x27;échange de cryptomonnaies MEXC avec une bannière promotionnelle pour le Launchpad GOLD (XAUT).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000459_seg12.jpg" alt="Formulaire d&#x27;inscription sur la plateforme MEXC permettant de créer un compte avec un e-mail ou un numéro de téléphone." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000459_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:59</span>
+                        <span class="caption-text">Formulaire d&#x27;inscription sur la plateforme MEXC permettant de créer un compte avec un e-mail ou un numéro de téléphone.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000505_seg12.jpg" alt="Page &quot;Rewards Hub&quot; de MEXC affichant les bonus et récompenses disponibles pour les nouveaux utilisateurs (jusqu&#x27;à 10 000 USDT)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000505_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:05</span>
+                        <span class="caption-text">Page &quot;Rewards Hub&quot; de MEXC affichant les bonus et récompenses disponibles pour les nouveaux utilisateurs (jusqu&#x27;à 10 000 USDT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:10 - 00:05:43</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En plus de ça, vous obtenez 870 USDT de récompenses pour les nouveaux utilisateurs, incluant des bonus futures, des airdrops de positions et des coupons. La première étape est de créer un sous-compte. Je vous recommande de créer d&#x27;abord un sous-compte pour votre agent IA OpenClaw. Cliquez sur votre profil puis sur gestion des sous-comptes. Dans le coin supérieur milieu-droit, vous verrez &quot;créer un sous-compte&quot;. Cliquez dessus. Vous verrez deux options : API uniquement, ce qui restreint le sous-compte au trading par API uniquement, et compte standard, qui vous permet de trader manuellement sur le sous-compte. Pour cet exemple</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies MEXC (Interface Web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration de compte, options de sous-compte (&quot;API Only (No Web/App Login)&quot; et &quot;Standard Account (Web Login)&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus du compte utilisateur et sélection du type de sous-compte pour l&#x27;agent IA OpenClaw.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000527_seg13.jpg" alt="Interface principale de MEXC montrant le menu déroulant du profil avec l&#x27;option &quot;Sub-Account Management&quot;." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000527_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:27</span>
+                        <span class="caption-text">Interface principale de MEXC montrant le menu déroulant du profil avec l&#x27;option &quot;Sub-Account Management&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000535_seg13.jpg" alt="Page de gestion des sous-comptes sur MEXC avec une fenêtre modale pour sélectionner le type de sous-compte (&quot;API Only&quot; ou &quot;Standard Account&quot;)." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000535_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:35</span>
+                        <span class="caption-text">Page de gestion des sous-comptes sur MEXC avec une fenêtre modale pour sélectionner le type de sous-compte (&quot;API Only&quot; ou &quot;Standard Account&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:43 - 00:06:02</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">nous choisirons API uniquement puisque nous utilisons OpenClaw. Cliquez sur l&#x27;étape suivante. Choisissez un nom d&#x27;utilisateur pour ce sous-compte et ajoutez toutes les remarques que vous voulez comme trading OpenClaw. MEXI enverra un code de vérification de sécurité à votre e-mail ou à votre téléphone. Entrez le code et cliquez sur Soumettre. Vous verrez maintenant votre sous-compte sur le tableau de bord.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies MEXC (section Sub-Account Management).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau de gestion des sous-comptes affichant le nom du sous-compte (openclaw24), la date de création (2026-03-03 14:56:54), le statut (Normal) et les options de vérification et d&#x27;action (Freeze).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation et gestion des sous-comptes créés pour la configuration de l&#x27;API OpenClaw.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000548_seg14.jpg" alt="Capture d&#x27;écran de l&#x27;interface de gestion des sous-comptes sur la plateforme d&#x27;échange MEXC, affichant un sous-compte créé nommé &#x27;openclaw24&#x27;." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000548_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de gestion des sous-comptes sur la plateforme d&#x27;échange MEXC, affichant un sous-compte créé nommé &#x27;openclaw24&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:02 - 00:06:20</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur le même tableau de bord, cliquez sur la section API. Vous verrez un menu déroulant de sous-compte. Cliquez dessus et sélectionnez le sous-compte que vous venez de créer. Maintenant, vous verrez des cases à cocher pour différentes permissions. Je vous recommanderais d&#x27;activer uniquement les options de trading et rien d&#x27;autre. Tradez sur le marché au comptant si vous voulez faire du trading au comptant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;échange de cryptomonnaies (page de gestion des clés API et des sous-comptes).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu déroulant de sélection de sous-compte, cases à cocher pour les permissions Spot (View Account Details, Trade, Transfer) et Futures, champ Notes, et option de liaison d&#x27;adresse IP.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection des permissions et configuration de la clé API pour le sous-compte.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000607_seg15.jpg" alt="Fenêtre de création d&#x27;une clé API sur l&#x27;interface d&#x27;un exchange, montrant le menu déroulant du sous-compte et les options de permissions." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000607_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:07</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;une clé API sur l&#x27;interface d&#x27;un exchange, montrant le menu déroulant du sous-compte et les options de permissions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:20 - 00:06:39</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">passation d&#x27;ordres pour les contrats à terme pour le trading de contrats à terme. Afficher les détails de la commande, facultatif mais utile. Tout ce qui concerne le retrait ou le transfert. Gardez-les décochés. Cela protège vos fonds. Vous pouvez ajouter quelques notes ici pour votre référence, et vous pouvez également lier des adresses IP spécifiques si vous voulez plus de sécurité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de courtier / échange crypto (fenêtre de configuration API).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de clé API avec sections Spot et Futures, options pour les permissions de trading et de consultation des détails d&#x27;ordres, champ de notes et liaison d&#x27;adresse IP.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des permissions de l&#x27;API avec un curseur sur la case &#x27;View Order Details&#x27; pour le Spot, et des cases cochées pour l&#x27;affichage des détails et le passage d&#x27;ordres en Futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000625_seg16.jpg" alt="Fenêtre modale de création d&#x27;une clé API sur une plateforme d&#x27;échange, montrant la sélection des permissions de sous-compte et de trading Futures." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000625_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:25</span>
+                        <span class="caption-text">Fenêtre modale de création d&#x27;une clé API sur une plateforme d&#x27;échange, montrant la sélection des permissions de sous-compte et de trading Futures.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:40 - 00:06:58</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que tout est correct, cliquez sur créer. Vous verrez une vérification de sécurité réapparaître. Entrez le code. Vous verrez alors la clé d&#x27;accès, qui est votre clé API, et la clé secrète juste en dessous. Copiez les deux à l&#x27;aide du bouton de copie, puis cliquez sur confirmer. Une fois que vous l&#x27;avez, vous pouvez la voir sur le tableau de bord de l&#x27;API, prête à être connectée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de gestion de clé API d&#x27;un exchange crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Champs de saisie pour le code de vérification à 6 chiffres envoyé par e-mail et le code d&#x27;authentification (2FA).</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie des codes de sécurité pour valider la création de la clé API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000644_seg17.jpg" alt="Fenêtre de vérification de sécurité demandant un code de confirmation par e-mail et un code d&#x27;authentification à double facteur." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000644_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:44</span>
+                        <span class="caption-text">Fenêtre de vérification de sécurité demandant un code de confirmation par e-mail et un code d&#x27;authentification à double facteur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:59 - 00:07:17</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, connectons-nous à Blofin. Si vous n&#x27;avez pas encore de compte Blofin, cliquez sur le lien dans la description ci-dessous. Si vous vous êtes inscrit avec mon lien dans la description, vous pouvez réclamer jusqu&#x27;à 5 000 $ US de bonus rien que pour vous et la plateforme. Vous obtenez des coupons pour votre inscription et pour avoir réalisé des transactions, alors allez・certainement voir ça.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies Blofin (formulaires d&#x27;inscription et interface utilisateur).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offre promotionnelle de bienvenue « Join Blofin Today and Win Welcome Bonus Up to $5,000! » et détails des récompenses par étapes (inscription, staking, dépôt, trade).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la page d&#x27;inscription et du programme de bonus pour inciter les spectateurs à utiliser le lien affilié.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000703_seg18.jpg" alt="Page d&#x27;inscription de la plateforme Blofin montrant une offre de bonus de bienvenue en partenariat avec Mister Crypto." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000703_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:03</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme Blofin montrant une offre de bonus de bienvenue en partenariat avec Mister Crypto.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000708_seg18.jpg" alt="Page du centre des récompenses (Rewards Hub) de la plateforme Blofin détaillant les bonus pour nouveaux utilisateurs jusqu&#x27;à 5 000 USDT." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000708_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:08</span>
+                        <span class="caption-text">Page du centre des récompenses (Rewards Hub) de la plateforme Blofin détaillant les bonus pour nouveaux utilisateurs jusqu&#x27;à 5 000 USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:17 - 00:07:52</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avant de créer des clés API, je vous recommande vivement de créer un sous-compte dédié à votre agent IA OpenClaw. Cela permet de séparer votre trading automatisé de votre trading manuel. Pour ce faire, cliquez sur votre profil, puis sur sous-compte. Vous verrez le tableau de bord de gestion des sous-comptes. Vous pouvez maintenant créer un nouveau sous-compte spécifiquement pour OpenClaw. Maintenant, que vous utilisiez votre compte principal ou un sous-compte, allez dans les paramètres de votre compte et cliquez sur API. Cliquez sur créer une nouvelle clé API dans le coin supérieur droit. Vous verrez le champ du nom de l&#x27;application. Donnez-lui un nom comme trading open claw.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation du compte, options de sécurité, onglets &quot;Sub-account&quot; et &quot;APIs&quot;, ainsi que le bouton de création de sous-compte.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu du profil pour accéder à la section des sous-comptes afin de séparer le trading automatisé du trading manuel.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000735_seg19.jpg" alt="Tableau de bord de gestion des sous-comptes sur la plateforme BloFin, permettant de créer et configurer un sous-compte dédié à l&#x27;agent IA." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000735_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:35</span>
+                        <span class="caption-text">Tableau de bord de gestion des sous-comptes sur la plateforme BloFin, permettant de créer et configurer un sous-compte dédié à l&#x27;agent IA.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000743_seg19.jpg" alt="Menu déroulant du profil utilisateur sur BloFin avec les options de gestion du compte, des sous-comptes et des clés API." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000743_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:43</span>
+                        <span class="caption-text">Menu déroulant du profil utilisateur sur BloFin avec les options de gestion du compte, des sous-comptes et des clés API.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:52 - 00:08:29</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici la partie cruciale. Vous devez définir les bonnes autorisations. Voici la méthode intelligente pour configurer cela. Activez les autorisations de trading, mais laissez l&#x27;autorisation de retrait désactivée. De cette façon, même si un problème survient, vos fonds ne pourront pas être retirés. Cliquez sur Suivant et vous verrez votre clé API, votre clé secrète, et éventuellement une phrase secrète selon les paramètres. Copiez-les et enregistrez-les dans un endroit sûr, comme un gestionnaire de mots de passe. Vous ne verrez la clé secrète qu&#x27;une seule fois, alors assurez-vous de l&#x27;enregistrer maintenant. Très bien, maintenant que vous avez toutes vos clés API de Bybit, Mexi et Blowfin, connectons-les toutes à OpenClaw. Ouvrez OpenClaw et vous allez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange Blofin (section API Management).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de création de clé API avec les champs &#x27;Application Name&#x27; (Aping), &#x27;API Key Name&#x27; (OpenClawTrading), et les cases à cocher pour les permissions (Read, Trade, Withdraw, Transfer) ainsi que la &#x27;Passphrase&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole ou décoche la case &#x27;Withdraw&#x27; pour désactiver l&#x27;autorisation de retrait des fonds via l&#x27;API.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000802_seg20.jpg" alt="Fenêtre de création d&#x27;une clé API sur la plateforme Blofin montrant les options de configuration et les permissions de sécurité." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000802_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:02</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;une clé API sur la plateforme Blofin montrant les options de configuration et les permissions de sécurité.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:29 - 00:09:03</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">donne-lui des instructions pour se connecter à chaque échange. Je veux que tu te connectes à mon compte en utilisant ces identifiants de clé API et de clé secrète. Une fois que c&#x27;est fait, vérifie le solde de mon compte afin que je puisse voir que tu as réellement accès à mon compte. Et c&#x27;est aussi simple que ça, OpenClaw est maintenant connecté aux trois échanges et prêt à trader sur l&#x27;ensemble d&#x27;entre eux. Écoute, je dois être complètement honnête avec toi concernant la sécurité. Les clés API sont extrêmement puissantes. Si quelqu&#x27;un obtient l&#x27;accès à tes clés API, il peut contrôler ton compte de trading. Voici ce que tu dois faire. Un, ne partage jamais tes clés API avec qui que ce soit. Deux,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Document texte (Google Docs / Word) et interface de plateforme de trading crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte explicatif de configuration d&#x27;API, graphique technique BTCUSDT avec moyennes mobiles, et menu de gestion des clés API (Read-Only / Read-Write).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des étapes de configuration et de connexion d&#x27;un bot ou d&#x27;une intelligence artificielle aux clés API de l&#x27;échange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000838_seg21.jpg" alt="Document de traitement de texte montrant des instructions pour connecter OpenClaw à un échange de cryptomonnaies à l&#x27;aide de clés API." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000838_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:38</span>
+                        <span class="caption-text">Document de traitement de texte montrant des instructions pour connecter OpenClaw à un échange de cryptomonnaies à l&#x27;aide de clés API.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000846_seg21.jpg" alt="Interface de trading d&#x27;une plateforme d&#x27;échange affichant un graphique des prix BTCUSDT en bougies japonaises, le carnet d&#x27;ordres et les options de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000846_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:46</span>
+                        <span class="caption-text">Interface de trading d&#x27;une plateforme d&#x27;échange affichant un graphique des prix BTCUSDT en bougies japonaises, le carnet d&#x27;ordres et les options de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000854_seg21.jpg" alt="Page de gestion des clés API sur une interface de courtier ou d&#x27;échange de cryptomonnaies montrant les paramètres de configuration des permissions." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000854_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:54</span>
+                        <span class="caption-text">Page de gestion des clés API sur une interface de courtier ou d&#x27;échange de cryptomonnaies montrant les paramètres de configuration des permissions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:03 - 00:09:25</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">2. Désactivez toujours les autorisations de retrait sur vos clés API. 3. Utilisez des sous-comptes pour isoler votre trading automatisé. 4. Stockez vos clés en toute sécurité dans un gestionnaire de mots de passe. 5. Examinez régulièrement l&#x27;activité de vos API dans les paramètres de votre échange. Si vous soupçonnez un jour que vos clés API ont été compromises, supprimez-les immédiatement et créez-en de nouvelles.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;un échange de cryptomonnaies (MEXC), section gestion des sous-comptes et configuration des clés API.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de configuration des comptes, tableaux de gestion des sous-comptes, options de permissions d&#x27;API (Read-Write, Read-Only, restrictions IP, contrats, spot).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface d&#x27;administration de l&#x27;échange pour montrer comment isoler le trading avec des sous-comptes et configurer les clés API en toute sécurité.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000908_seg22.jpg" alt="Interface de gestion des sous-comptes sur un échange crypto avec un tableau listant les sous-comptes et un bouton pour en créer un nouveau." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000908_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:08</span>
+                        <span class="caption-text">Interface de gestion des sous-comptes sur un échange crypto avec un tableau listant les sous-comptes et un bouton pour en créer un nouveau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000920_seg22.jpg" alt="Page de configuration et de gestion des clés API sur un échange, montrant les différentes permissions de lecture/écriture et de restriction IP." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000920_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:20</span>
+                        <span class="caption-text">Page de configuration et de gestion des clés API sur un échange, montrant les différentes permissions de lecture/écriture et de restriction IP.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:26 - 00:09:54</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Gardez bien à l&#x27;esprit qu&#x27;OpenClaw est un outil puissant, mais vous devez l&#x27;utiliser de manière responsable. Et c&#x27;est tout, les gars. C&#x27;est ainsi que vous connectez OpenClaw à plusieurs plateformes d&#x27;échange et que vous commencez à automatiser vos transactions sur différentes plateformes. Si vous voulez commencer et réclamer ces bonus, comme jusqu&#x27;à 30 000 dollars sur Bybit, 10 000 USDT sur Mexi et 5 000 dollars de bonus sur Blofen, cliquez sur les liens dans la description ci-dessous. N&#x27;oubliez pas, ces bonus ne sont disponibles que si vous vous inscrivez via mes liens.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Pages web de courtiers/échanges de cryptomonnaies (Bybit, Blofin) et éditeur de texte.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Modèles de connexion API pour OpenClaw, paliers de bonus de bienvenue et offres promotionnelles d&#x27;échange.
+[DESC_IMAGE_1] Modèle de prompt textuel pour l&#x27;automatisation des échanges via API.
+[DESC_IMAGE_2] Interface d&#x27;inscription Bybit avec codes de parrainage et bonus de dépôt.
+[DESC_IMAGE_3] Interface Blofin affichant le centre de récompenses et les bonus de bienvenue.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des plateformes d&#x27;échange compatibles avec l&#x27;outil d&#x27;automatisation.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000940_seg23.jpg" alt="La page d&#x27;inscription de la plateforme Bybit affichant les bonus de bienvenue et le code de parrainage." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000940_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:40</span>
+                        <span class="caption-text">La page d&#x27;inscription de la plateforme Bybit affichant les bonus de bienvenue et le code de parrainage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000947_seg23.jpg" alt="La page d&#x27;accueil de la plateforme Blofin montrant les récompenses exclusives pour les nouveaux utilisateurs." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000947_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:47</span>
+                        <span class="caption-text">La page d&#x27;accueil de la plateforme Blofin montrant les récompenses exclusives pour les nouveaux utilisateurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:54 - 00:10:09</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous voulez plus de détails sur la façon dont OpenClaw, Bybit, Mexi et Blofenworks fonctionnent, consultez les vidéos qui apparaissent à l&#x27;écran dès maintenant. Si vous avez apprécié cette vidéo, n&#x27;oubliez pas de laisser un pouce bleu et de vous abonner à ma chaîne pour plus de tutoriels sur la crypto. Je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bybit (Interface de trading Spot/Dérivés avec graphique TradingView intégré).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC/USDT avec indicateurs techniques, carnet d&#x27;ordres (Order Book) en temps réel et panneau de passage d&#x27;ordres (Long/Short).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du marché des cryptomonnaies et des interfaces de trading présentées en fin de vidéo.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/ydKBpgOCISs/ydKBpgOCISs_000957_seg24.jpg" alt="Interface de trading de la plateforme Bybit affichant un graphique en chandeliers japonais de la paire BTC/USDT, un carnet d&#x27;ordres et le panneau d&#x27;exécution des ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/ydKBpgOCISs/ydKBpgOCISs_000957_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:57</span>
+                        <span class="caption-text">Interface de trading de la plateforme Bybit affichant un graphique en chandeliers japonais de la paire BTC/USDT, un carnet d&#x27;ordres et le panneau d&#x27;exécution des ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
