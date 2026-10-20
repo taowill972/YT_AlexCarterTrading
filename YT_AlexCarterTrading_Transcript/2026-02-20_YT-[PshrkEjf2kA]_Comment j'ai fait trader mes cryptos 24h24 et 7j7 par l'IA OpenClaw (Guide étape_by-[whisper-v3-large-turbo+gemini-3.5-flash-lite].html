@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment j&#x27;ai fait trader mes cryptos 24h/24 et 7j/7 par l&#x27;IA OpenClaw (Guide étape par étape) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment j&#x27;ai fait trader mes cryptos 24h/24 et 7j/7 par l&#x27;IA OpenClaw (Guide étape par étape)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-02-20</span>
+                <span class="badge">⏱️ 00:06:29</span>
+                <span class="badge">🆔 <code>PshrkEjf2kA</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=PshrkEjf2kA" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo présentée par Alex Carter expose une méthode de trading algorithmique entièrement automatisée basée sur l'utilisation d'OpenClaw, un agent IA d'un genre nouveau. Contrairement aux chatbots traditionnels comme ChatGPT ou Claude, limités à la génération de texte ou de code statique, OpenClaw se distingue par sa capacité d'exécution autonome : il écrit, teste, déploie et gère du code en temps réel tout en interagissant directement avec les marchés financiers. La démonstration illustre la transition du trader d'un rôle d'exécutant à un rôle de superviseur stratégique, exploitant la puissance du machine learning et de l'automatisation pour éliminer l'intervention émotionnelle humaine sur les marchés des cryptomonnaies 24h/24 et 7j/7.<br><br>Le cœur de la stratégie repose sur le déploiement d'agents IA capables de concevoir, backtester et faire tourner des stratégies de trading en parallèle sur des plateformes de produits dérivés comme Blowfin, via des clés API sécurisées. La vidéo met en lumière un concept de sélection naturelle des algorithmes : lancer simultanément plusieurs bots aux logiques, cadres temporels (Timeframes) et paramètres distincts, pour n'allouer du capital qu'aux structures s'étant avérées rentables après une phase d'évaluation empirique. De plus, l'intégration des signaux de trading de TradingView via des webhooks permet de coupler des scripts techniques personnalisés à une exécution automatisée instantanée.<br><br>Enfin, l'approche globale démontre l'importance capitale d'une rigueur absolue en matière de gestion du risque (Risk Management), soulignant des configurations de levier maîtrisées, des objectifs de Take Profit (TP) et de Stop Loss (SL) stricts, ainsi que des mesures de sécurité indispensables comme la désactivation des permissions de retrait sur les clés API. Cette synergie entre agents autonomes, indicateurs techniques et infrastructure d'échange moderne offre un aperçu concret et actionnable de ce que sera le trading quantitatif accessible aux particuliers à l'ère de l'intelligence artificielle agentique.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **OpenClaw** : Agent IA orienté développeur capable d'écrire, d'exécuter du code, de s'interfacer avec des API d'échanges et de gérer des stratégies de trading de manière totalement autonome.<br>- **Blowfin** : Plateforme d'échange de cryptomonnaies utilisée pour l'exécution des ordres en direct, offrant des bonus de dépôt et une configuration sans KYC strict.<br>- **TradingView** : Logiciel de graphisme et d'analyse technique de référence utilisé pour concevoir des stratégies visuelles et envoyer des alertes automatisées via webhooks.<br>- **Claude Code / Grok Bots** : Outils d'assistance au codage et à l'analyse mentionnés pour l'ingénierie et l'élaboration des logiques algorithmiques sous-jacentes.<br>- **Pine Script** : Langage de programmation propriétaire de TradingView dédié à la création d'indicateurs et de stratégies de backtesting automatisés.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- **Supériorité des agents IA exécutables** : Contrairement aux LLM classiques, OpenClaw ne se limite pas à des conseils théoriques ; il installe ses propres dépendances, rédige du code exécutable et interagit de manière proactive avec les marchés.<br>- **Architecture de sécurité des API** : Lors de la connexion à un exchange, il est impératif d'activer les permissions de trading tout en désactivant strictement les autorisations de retrait pour prémunir les fonds contre toute faille ou mauvaise manipulation.<br>- **Contexte utilisateur initial** : Avant d'initialiser OpenClaw, fournir un contexte exhaustif (objectifs, appétence au risque, expérience, avantages concurrentiels) optimise drastiquement la pertinence des stratégies générées.<br>- **Évolution et sélection naturelle des stratégies** : Lancer un parc de plusieurs bots en parallèle (par exemple, 5 agents avec 100 dollars chacun) sur une période test permet d'éliminer les algorithmes perdants et de concentrer le capital uniquement sur les plus rentables.<br>- **Automatisation du suivi de tendance** : Utilisation d'instructions en langage naturel pour commander à l'IA de concevoir des stratégies de suivi de tendance (ex. Bitcoin en unité de temps 1 heure) basées sur des données historiques sur 30 jours.<br>- **Exécution d'ordres granulaires** : Capacité à dicter des ordres précis intégrant directement la taille de position, l'effets de levier (ex. levier x5), le Take Profit à 3 % et le Stop Loss à 1 %.<br>- **Analyse macro et structurelle automatisée** : Possibilité de demander à l'agent d'analyser en temps réel un graphique (ex. BTC en 4 heures) pour identifier si le marché évolue en range ou en tendance prononcée avant de se positionner.<br>- **Intégration transparente avec TradingView** : Connexion des alertes techniques de TradingView vers OpenClaw via des webhooks pour déclencher instantanément des positions longues ou courtes sur l'exchange sans latence humaine.<br>- **Scalabilité 24h/24 et 7j/7** : Le principal avantage de l'automatisation par agent réside dans la couverture permanente des marchés crypto, capturant des opportunités de scalping et de swing trading de nuit comme de jour.<br>- **Gestion rigoureuse du capital initial** : Recommandation d'utiliser des réseaux rapides et économiques (comme TRC20 pour l'USDT) pour l'approvisionnement des comptes de trading automatisés afin de minimiser les frais de transaction.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">OpenClaw</span><span class="tool-tag">Blowfin</span><span class="tool-tag">TradingView</span><span class="tool-tag">Claude Code / Grok Bots</span><span class="tool-tag">Pine Script</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Supériorité des agents IA exécutables** : Contrairement aux LLM classiques, OpenClaw ne se limite pas à des conseils théoriques ; il installe ses propres dépendances, rédige du code exécutable et interagit de manière proactive avec les marchés.</span></li><li><span class="point-bullet">✦</span><span>Architecture de sécurité des API** : Lors de la connexion à un exchange, il est impératif d&#x27;activer les permissions de trading tout en désactivant strictement les autorisations de retrait pour prémunir les fonds contre toute faille ou mauvaise manipulation.</span></li><li><span class="point-bullet">✦</span><span>Contexte utilisateur initial** : Avant d&#x27;initialiser OpenClaw, fournir un contexte exhaustif (objectifs, appétence au risque, expérience, avantages concurrentiels) optimise drastiquement la pertinence des stratégies générées.</span></li><li><span class="point-bullet">✦</span><span>Évolution et sélection naturelle des stratégies** : Lancer un parc de plusieurs bots en parallèle (par exemple, 5 agents avec 100 dollars chacun) sur une période test permet d&#x27;éliminer les algorithmes perdants et de concentrer le capital uniquement sur les plus rentables.</span></li><li><span class="point-bullet">✦</span><span>Automatisation du suivi de tendance** : Utilisation d&#x27;instructions en langage naturel pour commander à l&#x27;IA de concevoir des stratégies de suivi de tendance (ex. Bitcoin en unité de temps 1 heure) basées sur des données historiques sur 30 jours.</span></li><li><span class="point-bullet">✦</span><span>Exécution d&#x27;ordres granulaires** : Capacité à dicter des ordres précis intégrant directement la taille de position, l&#x27;effets de levier (ex. levier x5), le Take Profit à 3 % et le Stop Loss à 1 %.</span></li><li><span class="point-bullet">✦</span><span>Analyse macro et structurelle automatisée** : Possibilité de demander à l&#x27;agent d&#x27;analyser en temps réel un graphique (ex. BTC en 4 heures) pour identifier si le marché évolue en range ou en tendance prononcée avant de se positionner.</span></li><li><span class="point-bullet">✦</span><span>Intégration transparente avec TradingView** : Connexion des alertes techniques de TradingView vers OpenClaw via des webhooks pour déclencher instantanément des positions longues ou courtes sur l&#x27;exchange sans latence humaine.</span></li><li><span class="point-bullet">✦</span><span>Scalabilité 24h/24 et 7j/7** : Le principal avantage de l&#x27;automatisation par agent réside dans la couverture permanente des marchés crypto, capturant des opportunités de scalping et de swing trading de nuit comme de jour.</span></li><li><span class="point-bullet">✦</span><span>Gestion rigoureuse du capital initial** : Recommandation d&#x27;utiliser des réseaux rapides et économiques (comme TRC20 pour l&#x27;USDT) pour l&#x27;approvisionnement des comptes de trading automatisés afin de minimiser les frais de transaction.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:21</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer comment j&#x27;utilise OpenClaw pour automatiser mon trading de cryptomonnaies. Et je vais être franc avec vous, c&#x27;est absolument insensé. Ça élabore des stratégies, les teste et fait du trading 24h/24 et 7j/7 sans que je n&#x27;aie à surveiller. Alors restez bien là, car je vais vous montrer exactement comment configurer tout cela et le connecter à votre plateforme d&#x27;échange. Commençons.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de bord OpenClaw, interface de terminal/code source, graphique de trading BloFin</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des agents de trading, tableau de résultats de backtest (Return, Win%, PF, MaxDD, Alpha), graphique de prix Bitcoin avec chandeliers 4h</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du tableau de bord des agents, exécution d&#x27;un backtest de stratégie et visualisation du graphique de marché crypto</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000005_seg1.jpg" alt="Vue d&#x27;ensemble d&#x27;un tableau de bord affichant plusieurs agents de trading automatisés avec leurs performances et soldes en temps réel." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000005_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:05</span>
+                        <span class="caption-text">Vue d&#x27;ensemble d&#x27;un tableau de bord affichant plusieurs agents de trading automatisés avec leurs performances et soldes en temps réel.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000010_seg1.jpg" alt="Interface de terminal affichant les résultats d&#x27;un backtest de différentes stratégies de trading automatisées avec leurs rendements." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000010_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:10</span>
+                        <span class="caption-text">Interface de terminal affichant les résultats d&#x27;un backtest de différentes stratégies de trading automatisées avec leurs rendements.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000015_seg1.jpg" alt="Graphique en chandeliers japonais de Bitcoin (BTC/USDT) en unité de temps 4 heures sur la plateforme BloFin." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000015_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:15</span>
+                        <span class="caption-text">Graphique en chandeliers japonais de Bitcoin (BTC/USDT) en unité de temps 4 heures sur la plateforme BloFin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:21 - 00:00:58</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Très bien, alors qu&#x27;est-ce que c&#x27;est exactement qu&#x27;OpenClaw ? Voilà le truc, OpenClaw n&#x27;est pas juste un autre chatbot. C&#x27;est ce qu&#x27;on appelle un agent IA. Ça veut dire qu&#x27;il peut réellement faire des choses, pas seulement parler. Les IA classiques comme ChatGPT ou Claude, elles peuvent vous donner des conseils, écrire du code, répondre à des questions, mais elles ne peuvent rien exécuter concrètement. Elles vous donnent juste des informations et ça s&#x27;arrête là. OpenClaw est complètement différent. Il peut écrire du code, exécuter ce code, installer les paquets logiciels dont il a besoin, et le plus important pour nous, il peut se connecter directement aux API des exchanges, analyser les marchés, tester des stratégies et trader automatiquement 24 heures sur 24, 7 jours sur 7.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la documentation OpenClaw et l&#x27;interface de ChatGPT.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Lignes de commande d&#x27;installation (`curl -fsSL https://openclaw.ai/install.sh`), spécifications techniques d&#x27;agents IA, prompts pour stratégies quantitatives et métriques de backtest (taux de réussite, rendement, positions SHORT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des capacités de l&#x27;agent IA OpenClaw et affichage de prompts et résultats de backtest de stratégies de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000030_seg2.jpg" alt="Page de documentation officielle de OpenClaw montrant les fonctionnalités principales de l&#x27;agent IA (exécution locale, applications de chat, mémoire persistante, contrôle du navigateur, accès complet au système et compétences/plugins)." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000030_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Page de documentation officielle de OpenClaw montrant les fonctionnalités principales de l&#x27;agent IA (exécution locale, applications de chat, mémoire persistante, contrôle du navigateur, accès complet au système et compétences/plugins).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000040_seg2.jpg" alt="Interface de ChatGPT affichant des instructions de configuration de stratégie de trading, incluant la détection d&#x27;anomalies, le backtest sur 30 jours et le calcul du taux de réussite." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000040_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Interface de ChatGPT affichant des instructions de configuration de stratégie de trading, incluant la détection d&#x27;anomalies, le backtest sur 30 jours et le calcul du taux de réussite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000049_seg2.jpg" alt="Rapport de performance textuel affichant les résultats d&#x27;une stratégie de trading (&#x27;Pure Trending&#x27; avec +8.1% et Alpha vs Buy&amp;Hold de +29.3%) ainsi que des recommandations de stratégies hybrides." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000049_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:49</span>
+                        <span class="caption-text">Rapport de performance textuel affichant les résultats d&#x27;une stratégie de trading (&#x27;Pure Trending&#x27; avec +8.1% et Alpha vs Buy&amp;Hold de +29.3%) ainsi que des recommandations de stratégies hybrides.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:59 - 00:01:33</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et il faut que vous compreniez, cela change littéralement tout. Les personnes qui s&#x27;adaptent au trading par IA dès le début vont avoir un avantage massif. Celles qui l&#x27;ignorent vont se faire dépasser. Bon, alors, première chose à faire, vous devez télécharger OpenClaw. Rendez-vous sur openclaw.ai et vous verrez la page de téléchargement juste ici. Gardez bien à l&#x27;esprit qu&#x27;OpenClaw est un outil axé sur les développeurs, donc le processus d&#x27;installation peut être un peu technique. Vous devrez suivre les instructions sur leur site web en fonction de votre système d&#x27;exploitation. Ils ont des versions pour Mac, Linux et Windows.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, site officiel OpenClaw (openclaw.ai), interfaces de ligne de commande (PowerShell, terminal Bash).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Commandes d&#x27;installation rapide d&#x27;OpenClaw (`iwr -useb https://openclaw.ai/install.ps1 | iex` et `curl -fsSL https://openclaw.ai/install.sh | bash`), logs d&#x27;installation du package npm.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du processus d&#x27;installation et de téléchargement de l&#x27;outil OpenClaw mentionné dans l&#x27;audio.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000116_seg3.jpg" alt="Page web d&#x27;OpenClaw montrant la section Quick Start avec les scripts d&#x27;installation rapide (PowerShell)." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000116_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Page web d&#x27;OpenClaw montrant la section Quick Start avec les scripts d&#x27;installation rapide (PowerShell).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000124_seg3.jpg" alt="Documentation officielle d&#x27;OpenClaw présentant le guide d&#x27;installation rapide en ligne de commande (CLI) avec un terminal intégré." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000124_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:24</span>
+                        <span class="caption-text">Documentation officielle d&#x27;OpenClaw présentant le guide d&#x27;installation rapide en ligne de commande (CLI) avec un terminal intégré.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:34 - 00:02:06</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il suffit de cliquer sur votre système d&#x27;exploitation et de suivre le guide d&#x27;installation. Une fois que vous l&#x27;aurez installé et qu&#x27;il fonctionnera, vous verrez une interface qui ressemble à une fenêtre de chat, semblable à ChatGPT, mais avec beaucoup plus de puissance sous le capot. Maintenant, voici mon conseil avant même de cliquer sur le bouton d&#x27;achat ou de commencer l&#x27;installation. Notez tout ce qui vous intéresse. Votre expérience en trading, vos objectifs, les stratégies que vous aimez, l&#x27;avantage que vous avez, tout cela. Parce que plus vous donnez de contexte à OpenClaw au départ, mieux il pourra travailler pour vous. Pour qu&#x27;OpenClaw puisse réellement trader pour vous, il doit se connecter à votre exchange</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de bord OpenClaw (Gateway Dashboard) avec menu latéral de navigation.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Page de chat nommée &quot;Chat&quot; avec la description &quot;Direct gateway chat session for quick interventions&quot; et un sélecteur d&#x27;agent (agent:main:main).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface utilisateur d&#x27;OpenClaw semblable à une fenêtre de chat.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000142_seg4.jpg" alt="Interface du tableau de bord OpenClaw affichant une section de chat direct pour les interventions rapides." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000142_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:42</span>
+                        <span class="caption-text">Interface du tableau de bord OpenClaw affichant une section de chat direct pour les interventions rapides.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:06 - 00:02:38</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">compte via une API. Et l&#x27;échange que j&#x27;utilise pour cela est Blowfin. Si vous n&#x27;avez pas encore de compte Blowfin ? Cliquez sur le lien dans la description ci-dessous. Vous obtiendrez jusqu&#x27;à 5 USDT rien qu&#x27;en vous inscrivant, plus jusqu&#x27;à 30 USDT de bonus lorsque vous effectuez un dépôt. Étape 1. Créez votre compte Bluffin et déposez. Allez sur Bluffin, inscrivez-vous avec votre e-mail et faites votre premier dépôt. Je recommande d&#x27;utiliser TRC20 pour l&#x27;USDT car c&#x27;est rapide et les frais sont très bas. Étape 2. Générez votre API</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies BloFin (pages d&#x27;inscription et Rewards Hub).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres promotionnelles et bonus de bienvenue : 5 USDT à l&#x27;inscription, bonus de dépôt jusqu&#x27;à 30 USDT, et récompenses pour le trading et le copy trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des étapes pour s&#x27;inscrire sur l&#x27;échange BloFin et bénéficier des bonus de parrainage et de dépôt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000214_seg5.jpg" alt="Page d&#x27;inscription de la plateforme BloFin avec des champs pour l&#x27;e-mail/téléphone et le mot de passe." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000214_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:14</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme BloFin avec des champs pour l&#x27;e-mail/téléphone et le mot de passe.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000222_seg5.jpg" alt="Page du centre de récompenses (Rewards Hub) de BloFin montrant les différents bonus de bienvenue (Mystery Box de 5 USDT, bonus de dépôt de 30 USDT, etc.)." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000222_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Page du centre de récompenses (Rewards Hub) de BloFin montrant les différents bonus de bienvenue (Mystery Box de 5 USDT, bonus de dépôt de 30 USDT, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:38 - 00:03:14</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">clés. Maintenant, allez dans les paramètres de votre compte et cliquez sur API. Cliquez sur créer une nouvelle clé API et donnez-lui un nom, quelque chose comme open claw trading. Vous verrez le nom de votre application, votre clé API et éventuellement une phrase de passe selon les paramètres. Gardez bien à l&#x27;esprit que ces clés sont extrêmement sensibles. Ne les partagez jamais avec personne. Voici une astuce intelligente pour configurer cela. Activez les autorisations de trading, mais laissez les autorisations de retrait désactivées. De cette façon, même si quelque chose tourne mal, vos fonds ne pourront pas être retirés. Cliquez sur suivant et enregistrez votre clé API et votre clé secrète dans un endroit sûr comme un gestionnaire de mots de passe.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange Blofin (section API Management)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de création de clé API comprenant l&#x27;usage, le nom de l&#x27;application, le nom de la clé API (OpenClawTrading), les permissions et le champ de phrase de passe.</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie du nom de la clé API pour configurer l&#x27;accès programmatique sur Blofin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000247_seg6.jpg" alt="Fenêtre de création d&#x27;une clé API sur la plateforme Blofin avec le nom &#x27;OpenClawTrading&#x27; saisi." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000247_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;une clé API sur la plateforme Blofin avec le nom &#x27;OpenClawTrading&#x27; saisi.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:15 - 00:03:48</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Troisième étape, connectez OpenClaw à Blowfin. Ouvrez maintenant OpenClaw et vous allez lui donner une consigne pour vous connecter à votre compte Blowfin. Voici la consigne exacte que vous allez utiliser. Je veux que tu te connectes à mon compte sur l&#x27;échange Blowfin en utilisant ces clés API. Une fois fait, vérifie le solde de mon compte pour que je puisse voir que tu as réellement accès à mon compte. Et c&#x27;est aussi simple que ça, OpenClaw est maintenant connecté à votre échange et prêt à trader. Quatrième étape, commencez à trader. Vous pouvez maintenant lui donner des commandes comme ouvrir une position acheteuse sur le Bitcoin avec 10 dollars en utilisant un effet de levier de cinq fois. Définissez un objectif de take profit à 3 % et un stop loss.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Éditeur de texte / Google Docs et plateforme de trading Blofin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte du prompt avec clé API Wallet Address et Private Key, graphique de prix BTCUSDT, carnet d&#x27;ordres.
+[DESC_IMAGE_1] Présentation du prompt pour connecter OpenClaw à l&#x27;échange Blofin.
+[DESC_IMAGE_2] Affichage de l&#x27;interface de l&#x27;échange Blofin pour illustrer le compte connecté.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000323_seg7.jpg" alt="Un éditeur de texte affichant le prompt exact pour connecter OpenClaw au compte Blofin avec les clés API." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000323_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:23</span>
+                        <span class="caption-text">Un éditeur de texte affichant le prompt exact pour connecter OpenClaw au compte Blofin avec les clés API.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000340_seg7.jpg" alt="L&#x27;interface de trading de la plateforme Blofin affichant le graphique du BTCUSDT Perpetuel, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000340_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">L&#x27;interface de trading de la plateforme Blofin affichant le graphique du BTCUSDT Perpetuel, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:48 - 00:04:23</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à 1 %. OpenClaw exécutera cet échange immédiatement sur votre compte Blofen. Vous pouvez également lui demander d&#x27;analyser le marché. Analysez l&#x27;évolution actuelle du cours du Bitcoin sur le graphique de quatre heures. Dites-moi si nous sommes dans un marché en tendance ou en range et suggérez si je dois me positionner à l&#x27;achat, à la vente, ou rester à l&#x27;écart. Ou vous pouvez créer des stratégies automatisées. Créez une stratégie simple de suivi de tendance pour le Bitcoin sur le graphique d&#x27;une heure. Testez-la en utilisant les données des 30 derniers jours, puis planifiez-la pour qu&#x27;elle s&#x27;exécute automatiquement toutes les heures. C&#x27;est là que ça devient insensé. OpenClaw va écrire le code, tester la stratégie,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Traitement de texte (Google Docs ou équivalent).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte affiché : &quot;Analyzing Market&quot; et la question &quot;Analyze the current Bitcoin price action on the 4-hour chart. Tell me if we&#x27;re in a trending or ranging market, and suggest whether I should go long, short, or stay out&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie ou affichage du prompt textuel destiné à l&#x27;assistant de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000357_seg8.jpg" alt="Un document texte affichant le prompt de la requête d&#x27;analyse de marché pour le Bitcoin." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000357_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:57</span>
+                        <span class="caption-text">Un document texte affichant le prompt de la requête d&#x27;analyse de marché pour le Bitcoin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:23 - 00:04:58</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous montrer les résultats, puis de le programmer pour qu&#x27;il tourne 24 heures sur 24 et 7 jours sur 7 sans que vous ayez à le surveiller. L&#x27;une des meilleures choses que je fais en ce moment, c&#x27;est que je fais tourner plusieurs stratégies en parallèle, comme une compétition entre différents agents IA. Vous pouvez faire cela en disant à Open Claw, crée cinq stratégies de trading Bitcoin différentes avec des paramètres, des cadres temporels et une logique différents. Faites tourner les cinq stratégies en parallèle avec 100 dollars chacune. Après une semaine, analysez quelles stratégies sont rentables et lesquelles perdent de l&#x27;argent. Arrêtez celles qui ne sont pas rentables et laissez les gagnantes continuer à tourner. C&#x27;est fondamentalement</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de bord de suivi d&#x27;agents de trading et traitement de texte.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Classement des agents (Echo, Sage, Voss, etc.) avec leurs performances en SOL, et texte descriptif de la stratégie de trading multi-agents.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du système de compétition entre différents agents d&#x27;intelligence artificielle tournant en parallèle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000432_seg9.jpg" alt="Capture d&#x27;écran montrant un tableau de bord (Agent Overview) avec un classement (Leaderboard) de plusieurs agents de trading IA en compétition." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000432_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:32</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un tableau de bord (Agent Overview) avec un classement (Leaderboard) de plusieurs agents de trading IA en compétition.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000441_seg9.jpg" alt="Document texte numérique affichant le titre &quot;Creating Competing AI Agent Strategy&quot; décrivant la logique de création de stratégies en parallèle." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000441_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:41</span>
+                        <span class="caption-text">Document texte numérique affichant le titre &quot;Creating Competing AI Agent Strategy&quot; décrivant la logique de création de stratégies en parallèle.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:58 - 00:05:32</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">évolution des stratégies de trading. Les meilleures surviennent, les plus faibles sont éliminées, et avec le temps, je me retrouve avec un portefeuille de stratégies hautement rentables. Maintenant, si vous avez déjà des stratégies sur TradingView que vous aimez, vous pouvez connecter OpenClaw à TradingView en utilisant des webhooks. Voici comment cela fonctionne. Lorsque votre stratégie TradingView déclenche une alerte, comme un signal d&#x27;entrée ou de sortie, le webhook avertit automatiquement OpenClaw et il exécute le trade sur votre compte Blofin. Pour configurer cela, donnez simplement une instruction à OpenClaw comme ceci : crée un webhook pour mon</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Tableau de bord propriétaire de gestion d&#x27;agents de trading et interface graphique de TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Classement des agents (Echo, Sage, Voss, etc.) avec leurs soldes et PnL en SOL, ainsi qu&#x27;une boîte de dialogue de création d&#x27;alerte configurée en JSON (`{&quot;text&quot;: &quot;BTCUSD Greater Than 9000&quot;}`).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du portefeuille de stratégies de trading automatisées performantes suivie d&#x27;une démonstration de configuration d&#x27;alerte Webhook sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000507_seg10.jpg" alt="Tableau de bord « Agent Overview » montrant un classement (Leaderboard) et une grille de suivi des différents agents de trading automatisés avec leurs performances en PnL." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000507_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:07</span>
+                        <span class="caption-text">Tableau de bord « Agent Overview » montrant un classement (Leaderboard) et une grille de suivi des différents agents de trading automatisés avec leurs performances en PnL.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000523_seg10.jpg" alt="Interface de configuration d&#x27;alerte TradingView sur une paire BTCUSD, avec un champ de message JSON pour les webhooks." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000523_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:23</span>
+                        <span class="caption-text">Interface de configuration d&#x27;alerte TradingView sur une paire BTCUSD, avec un champ de message JSON pour les webhooks.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:32 - 00:06:05</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">alertes TradingView. Lorsque je reçois un signal d&#x27;entrée, exécute un trade long sur mon compte Blofin. Lorsque je reçois un signal de sortie, ferme la position. OpenClaw génère l&#x27;URL du webhook et il vous suffit de la coller dans les paramètres de vos alertes TradingView. Désormais, vos stratégies TradingView sont entièrement automatisées. Et c&#x27;est tout les amis. C&#x27;est ainsi que j&#x27;utilise OpenClaw pour automatiser mon trading de cryptomonnaies, de la simple exécution de trade à l&#x27;utilisation de plusieurs agents IA en compétition les uns avec les autres. Si vous souhaitez commencer avec Blofin et réclamer ces bonus, cliquez sur le lien tout en haut de la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Document texte, interface de configuration TradingView, tableau de bord d&#x27;agents de trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> URL de webhook OpenClaw (c5fc8379e1124d80ac5807711571bda5), paramètres de notification TradingView (Webhook URL, Play sound), classement des agents avec PnL (SOL).</p>
+                        <p><strong>Action / Démonstration :</strong> Saisie d&#x27;une URL de webhook dans les paramètres d&#x27;alerte TradingView et affichage d&#x27;un tableau de bord de suivi d&#x27;agents.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000548_seg11.jpg" alt="Fenêtre de création d&#x27;alerte TradingView affichant l&#x27;onglet &quot;Notifications&quot; avec le champ &quot;Webhook URL&quot; renseigné." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000548_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;alerte TradingView affichant l&#x27;onglet &quot;Notifications&quot; avec le champ &quot;Webhook URL&quot; renseigné.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000557_seg11.jpg" alt="Tableau de bord &quot;Agent Overview&quot; affichant un classement d&#x27;agents de trading avec leurs métriques de PnL et soldes." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000557_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:57</span>
+                        <span class="caption-text">Tableau de bord &quot;Agent Overview&quot; affichant un classement d&#x27;agents de trading avec leurs métriques de PnL et soldes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:05 - 00:06:28</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Remember, you get up to $5,000 in bonuses just for signing up and depositing and it&#x27;s completely no KYC. If you want more details on how OpenClaw and Blowfin&#x27;s platform works, check out the videos popping on screen right now for a full walkthrough. If you enjoyed this video, don&#x27;t forget to leave a thumbs up and subscribe to my channel for more crypto tutorials. I&#x27;ll see you in the next one.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies BloFin (site web)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres de bonus, récompenses de premier dépôt, boîtes mystères en USDT et promotions exclusives de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme BloFin pour présenter les bonus d&#x27;inscription et le hub de récompenses.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000611_seg12.jpg" alt="Interface de la plateforme BloFin affichant la section &#x27;Rewards Hub&#x27; et les cadeaux de bienvenue pour les nouveaux utilisateurs." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000611_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:11</span>
+                        <span class="caption-text">Interface de la plateforme BloFin affichant la section &#x27;Rewards Hub&#x27; et les cadeaux de bienvenue pour les nouveaux utilisateurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/PshrkEjf2kA/PshrkEjf2kA_000617_seg12.jpg" alt="Page d&#x27;accueil de la plateforme BloFin avec le slogan &#x27;BloFin - Where Whales are Made&#x27; et le bouton &#x27;Trade Now&#x27;." loading="lazy" onclick="openLightbox('../screenshots/PshrkEjf2kA/PshrkEjf2kA_000617_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:17</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme BloFin avec le slogan &#x27;BloFin - Where Whales are Made&#x27; et le bouton &#x27;Trade Now&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
