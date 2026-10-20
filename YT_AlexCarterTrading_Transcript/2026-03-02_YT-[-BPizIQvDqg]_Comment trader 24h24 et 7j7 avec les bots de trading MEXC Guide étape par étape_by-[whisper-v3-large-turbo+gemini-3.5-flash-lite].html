@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment trader 24h/24 et 7j/7 avec les bots de trading MEXC : Guide étape par étape — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment trader 24h/24 et 7j/7 avec les bots de trading MEXC : Guide étape par étape</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-02</span>
+                <span class="badge">⏱️ 00:11:18</span>
+                <span class="badge">🆔 <code>-BPizIQvDqg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=-BPizIQvDqg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résuboite<br>Cette vidéo propose une incursion complète et pragmatique dans l'univers de l'automatisation des investissements cryptographiques, en mettant l'accent sur les outils de trading algorithmique 24h/24 et 7j/7 de la plateforme MEXC. L'animateur y décortique méthodiquement trois piliers majeurs pour générer du rendement en pilotage automatique : l'accumulation passive via les bots Spot DCA (Dollar Cost Averaging), l'exploitation de la volatilité à court et moyen terme grâce aux bots de grille Futures, et la délégation stratégique par le biais de l'AI Copy Trading. Loin de se limiter à de simples présentations d'interfaces, le guide détaille les mécaniques de paramétrage fin (choix des horizons temporels, modes arithmétique ou géométrique, gestion de l'effet de levier) pour transformer des stratégies complexes en plans d'action accessibles, tout en insistant lourdement sur la préservation du capital.<br><br>L'analyse technique et opérationnelle déployée dans ce tutoriel s'articule autour de la maîtrise du risque et de l'optimisation des points d'entrée. Qu'il s'agisse de configurer des plages de prix d'achat pour éviter les sommets de marché en DCA, de calibrer le nombre de grilles sur les contrats Futures pour moduler la fréquence et la taille des profits, ou de sélectionner rigoureusement un trader algorithmique via des ratios de réplication intelligents, chaque concept est pensé pour industrialiser la prise de décision. En combinant des approches quantitatives basées sur des données historiques (ROI sur différentes périodes) et des gardes-fous stricts (Stop Loss, Take Profit, contrôle du ratio de liquidation), la méthode enseignée permet d'éliminer les biais émotionnels inhérents au trading manuel.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **MEXC Spot DCA Bots** : Outil d'investissement programmé permettant d'automatiser des achats périodiques d'actifs numériques (Bitcoin, Ethereum, etc.) sans anticipation du marché.<br>* **MEXC Futures Grid Trading** : Solution de trading algorithmique par grille sur les contrats à terme, conçue pour générer des profits automatiques lors des phases de forte volatilité latérale ou directionnelle.<br>* **MEXC AI Copy Trade** : Fonctionnalité de social/algorithmic trading permettant de répliquer en temps réel et de manière automatisée les performances de traders et d'intelligences artificielles rentables.<br>* **TRC20** : Réseau blockchain recommandé pour l'acheminement des fonds (USDT) sur la plateforme en raison de la rapidité et de la modicité de ses frais de transaction.<br>* **Plans DCA Pré-faits** : Modèles d'investissement clés en main proposés par la plateforme, pré-configurés avec des allocations d'actifs et des intervalles optimisés pour les utilisateurs débutants.<br>* **Modes de grille Arithmétique et Géométrique** : Algorithmes de distribution des ordres d'achat/vente, le premier répartissant les grilles de façon équitable et le second concentrant les ordres près du prix actuel pour les marchés agités.<br>* **Smart Ratio (Copy Trading)** : Mode de réplication intelligent qui ajuste automatiquement l'exposition du portefeuille suiveur en fonction de la stratégie de risque du trader expert.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Accumulation sans biais émotionnel** : Le bot Spot DCA supprime la nécessité de chronométrer parfaitement le marché en lissant le prix d'achat moyen d'actifs majeurs (BTC, ETH, SOL) sur des échelles de temps allant d'un mois à cinq ans.<br>* **Diversification multi-actifs automatisée** : La possibilité de regrouper jusqu'à 10 jetons distincts au sein d'un même plan DCA avec des ratios d'allocation personnalisés permet de construire un panier indiciel sur-mesure.<br>* **Optimisation des zones d'accumulation** : L'activation des paramètres avancés (plage de prix d'achat) permet de restreindre l'action du bot aux seules phases de correction ou de consolidation, évitant ainsi d'exposer le capital lors de surchauffes haussières.<br>* **Exploitation de la volatilité latérale** : Le bot de grille Futures transforme les oscillations horizontales des cours en une source de profits récurrents, en achetant automatiquement sur les replis et en revendant sur les rebonds au sein d'une fourchette définie.<br>* **Hiérarchisation des horizons temporels IA** : L'utilisation des configurations pilotées par l'intelligence artificielle (allant de 7 jours à 6 mois) permet d'adapter instantanément la structure des grilles au profil de risque et à l'horizon d'investissement de l'opérateur.<br>* **Maîtrise de l'effet de levier et du risque de liquidation** : Sur les marchés dérivés, l'utilisation d'un effet de levier modéré (entre 5x et 10x maximum pour les débutants) est impérative pour éviter une liquidation prématurée du collatéral en cas de mouvement de marché violent.<br>* **Validation des modes de grille (Arithmétique vs Géométrique)** : Le choix d'une grille géométrique doit être privilégié sur les cryptomonnaies hautement volatiles, car elle resserre les ordres autour du prix spot actuel pour maximiser le nombre de micro-transactions rentables.<br>* **Implémentation systématique de Stop Loss et Take Profit** : La configuration obligatoire de seuils d'invalidation (par prix ou par pourcentage de PNL) sur les bots Futures garantit une gestion rigoureuse du risque de ruine et protège les gains accumulés.<br>* **Sélection multicritère des traders en Copy Trading** : L'évaluation d'un trader ne doit pas se limiter à son rendement sur 7 jours, mais doit intégrer son PNL sur 180 jours, son taux de réussite et son historique de pertes pour valider la robustesse de sa stratégie.<br>* **Allocation granulaire du capital de suivi** : Il est fortement déconseillé de concentrer l'intégralité de son capital sur un seul opérateur en copy trading ; la diversification des sources de réplication protège le portefeuille global d'un cygne noir individuel.<br>* **Préférer le Smart Ratio pour débuter** : Le mode de réplication par ratio intelligent est le paramètre par défaut recommandé pour les novices en copy trading, car il délégue la gestion proportionnelle du risque au trader expert tout en s'adaptant à la taille du portefeuille suiveur.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">MEXC Spot DCA Bots</span><span class="tool-tag">MEXC Futures Grid Trading</span><span class="tool-tag">MEXC AI Copy Trade</span><span class="tool-tag">TRC20</span><span class="tool-tag">Plans DCA Pré-faits</span><span class="tool-tag">Modes de grille Arithmétique et Géométrique</span><span class="tool-tag">Smart Ratio (Copy Trading)</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Accumulation sans biais émotionnel** : Le bot Spot DCA supprime la nécessité de chronométrer parfaitement le marché en lissant le prix d&#x27;achat moyen d&#x27;actifs majeurs (BTC, ETH, SOL) sur des échelles de temps allant d&#x27;un mois à cinq ans.</span></li><li><span class="point-bullet">✦</span><span>Diversification multi-actifs automatisée** : La possibilité de regrouper jusqu&#x27;à 10 jetons distincts au sein d&#x27;un même plan DCA avec des ratios d&#x27;allocation personnalisés permet de construire un panier indiciel sur-mesure.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des zones d&#x27;accumulation** : L&#x27;activation des paramètres avancés (plage de prix d&#x27;achat) permet de restreindre l&#x27;action du bot aux seules phases de correction ou de consolidation, évitant ainsi d&#x27;exposer le capital lors de surchauffes haussières.</span></li><li><span class="point-bullet">✦</span><span>Exploitation de la volatilité latérale** : Le bot de grille Futures transforme les oscillations horizontales des cours en une source de profits récurrents, en achetant automatiquement sur les replis et en revendant sur les rebonds au sein d&#x27;une fourchette définie.</span></li><li><span class="point-bullet">✦</span><span>Hiérarchisation des horizons temporels IA** : L&#x27;utilisation des configurations pilotées par l&#x27;intelligence artificielle (allant de 7 jours à 6 mois) permet d&#x27;adapter instantanément la structure des grilles au profil de risque et à l&#x27;horizon d&#x27;investissement de l&#x27;opérateur.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de l&#x27;effet de levier et du risque de liquidation** : Sur les marchés dérivés, l&#x27;utilisation d&#x27;un effet de levier modéré (entre 5x et 10x maximum pour les débutants) est impérative pour éviter une liquidation prématurée du collatéral en cas de mouvement de marché violent.</span></li><li><span class="point-bullet">✦</span><span>Validation des modes de grille (Arithmétique vs Géométrique)** : Le choix d&#x27;une grille géométrique doit être privilégié sur les cryptomonnaies hautement volatiles, car elle resserre les ordres autour du prix spot actuel pour maximiser le nombre de micro-transactions rentables.</span></li><li><span class="point-bullet">✦</span><span>Implémentation systématique de Stop Loss et Take Profit** : La configuration obligatoire de seuils d&#x27;invalidation (par prix ou par pourcentage de PNL) sur les bots Futures garantit une gestion rigoureuse du risque de ruine et protège les gains accumulés.</span></li><li><span class="point-bullet">✦</span><span>Sélection multicritère des traders en Copy Trading** : L&#x27;évaluation d&#x27;un trader ne doit pas se limiter à son rendement sur 7 jours, mais doit intégrer son PNL sur 180 jours, son taux de réussite et son historique de pertes pour valider la robustesse de sa stratégie.</span></li><li><span class="point-bullet">✦</span><span>Allocation granulaire du capital de suivi** : Il est fortement déconseillé de concentrer l&#x27;intégralité de son capital sur un seul opérateur en copy trading ; la diversification des sources de réplication protège le portefeuille global d&#x27;un cygne noir individuel.</span></li><li><span class="point-bullet">✦</span><span>Préférer le Smart Ratio pour débuter** : Le mode de réplication par ratio intelligent est le paramètre par défaut recommandé pour les novices en copy trading, car il délégue la gestion proportionnelle du risque au trader expert tout en s&#x27;adaptant à la taille du portefeuille suiveur.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:25</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer exactement comment configurer des bots de trading sur Mexi qui fonctionnent 24h/24 et 7j/7 en pilotage automatique. Je vais aborder les bots DCA pour l&#x27;achat automatique, les bots de grille pour profiter de la volatilité, et le copy trading par IA où vous copiez automatiquement des traders rentables. Tout est expliqué étape par étape et vous aurez votre premier bot actif en moins de cinq minutes. Commençons. Première chose à faire, vous avez besoin d&#x27;un compte Mexi. Si vous n&#x27;en avez pas encore un, cliquez sur le lien dans la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies MEXC (sections plans DCA et copy trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste de cryptomonnaies (BTC, ETH, SOL, XRP, GOLD, USDC, BNB, DOGE), pourcentages de ROI historique, profils de traders en copy trading avec rendements sur 7 jours (+120.64%, +448.28%, +89.22%) et messages de confirmation.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation à travers les options de configuration de bots d&#x27;investissement automatisé (DCA et copy trading) et création d&#x27;un plan DCA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000006_seg1.jpg" alt="Interface de plans DCA sur une plateforme d&#x27;échange affichant une liste de tokens avec leur RSI historique et un bouton de création de bot." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000006_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:06</span>
+                        <span class="caption-text">Interface de plans DCA sur une plateforme d&#x27;échange affichant une liste de tokens avec leur RSI historique et un bouton de création de bot.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000012_seg1.jpg" alt="Page de la compétition de copy trading par IA sur l&#x27;échange MEXC, montrant des recommandations de traders avec leurs performances." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000012_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:12</span>
+                        <span class="caption-text">Page de la compétition de copy trading par IA sur l&#x27;échange MEXC, montrant des recommandations de traders avec leurs performances.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000019_seg1.jpg" alt="Fenêtre pop-up de confirmation indiquant qu&#x27;un plan DCA pour le Bitcoin (BTC) a été créé avec succès." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000019_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:19</span>
+                        <span class="caption-text">Fenêtre pop-up de confirmation indiquant qu&#x27;un plan DCA pour le Bitcoin (BTC) a été créé avec succès.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:25 - 00:00:45</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous obtiendrez un bon d&#x27;achat de 10 USDT rien qu&#x27;en créant un nouveau compte. Un autre bon d&#x27;achat de 10 USDT lorsque vous téléchargez et vous connectez sur l&#x27;application Mexi. En plus de cela, vous obtenez 770 USDT de récompenses pour les nouveaux utilisateurs, y compris des bonus futures, des airdrops de positions et des bons d&#x27;achat. Alors utilisez définitivement le lien dans la description.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies MEXC.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bons d&#x27;achat de 10 USDT, bonus futures de 50 USDT, et récompenses totales de 770 USDT pour les nouveaux utilisateurs.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page des récompenses pour nouveaux utilisateurs de la plateforme MEXC.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000030_seg2.jpg" alt="Interface de la plateforme MEXC montrant les tâches quotidiennes et les récompenses pour nouveaux utilisateurs, notamment un bon d&#x27;achat de 10 USDT pour le téléchargement de l&#x27;application." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000030_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:30</span>
+                        <span class="caption-text">Interface de la plateforme MEXC montrant les tâches quotidiennes et les récompenses pour nouveaux utilisateurs, notamment un bon d&#x27;achat de 10 USDT pour le téléchargement de l&#x27;application.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000035_seg2.jpg" alt="Interface de la plateforme MEXC affichant les récompenses exclusives pour les nouveaux utilisateurs, avec un total pouvant atteindre 770 USDT en bonus." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000035_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:35</span>
+                        <span class="caption-text">Interface de la plateforme MEXC affichant les récompenses exclusives pour les nouveaux utilisateurs, avec un total pouvant atteindre 770 USDT en bonus.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:11</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ces bonus sont uniquement disponibles via mon lien, et c&#x27;est littéralement de l&#x27;argent gratuit avec lequel vous pouvez commencer à trader. Une fois connecté, assurez-vous d&#x27;avoir des fonds sur votre compte. Si vous devez faire un dépôt, cliquez sur dépôt dans le coin supérieur droit et cliquez sur dépôt en chaîne. Sélectionnez USDT, choisissez votre réseau. Je recommande TRC20 pour des frais bas et envoyez vos fonds depuis votre autre exchange ou portefeuille. Ils arriveront en quelques minutes. Maintenant, passons aux bots.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies MEXC.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Promitions promotionnelles de trading, frais à 0%, options de dépôt en cryptomonnaies (USDT, TRX).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site MEXC et visualisation de la procédure de dépôt de fonds.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000052_seg3.jpg" alt="Page d&#x27;accueil de la plateforme d&#x27;échange MEXC mettant en avant une promotion &#x27;Commodity Zero-Fee Gala&#x27; avec un grand &#x27;0%&#x27; et un bouton &#x27;Deposit Now&#x27;." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000052_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:52</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme d&#x27;échange MEXC mettant en avant une promotion &#x27;Commodity Zero-Fee Gala&#x27; avec un grand &#x27;0%&#x27; et un bouton &#x27;Deposit Now&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000105_seg3.jpg" alt="Interface de dépôt de la plateforme MEXC montrant la sélection de la crypto (USDT), du réseau (Tron TRC20) et l&#x27;adresse de dépôt avec un QR code." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000105_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:05</span>
+                        <span class="caption-text">Interface de dépôt de la plateforme MEXC montrant la sélection de la crypto (USDT), du réseau (Tron TRC20) et l&#x27;adresse de dépôt avec un QR code.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:12 - 00:01:30</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le premier endroit que nous allons couvrir est le bot SpotDCA. C&#x27;est parfait si vous voulez faire des achats périodiques par dollar (dollar cost average) en Bitcoin, en Ethereum, ou dans n&#x27;importe quelle autre cryptomonnaie automatiquement sans avoir à anticiper le marché. Pour y accéder, passez votre curseur sur Spot dans le menu supérieur et sélectionnez Spot DCA Bots. Cela vous amène au tableau de bord.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échangeur de cryptomonnaies MEXC.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Allocation des jetons (BTC à 100%, ETH à 1%), intervalle DCA (tous les 1 jours à 15:00), montant par tour en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus pour accéder au service Spot DCA et configuration d&#x27;un plan d&#x27;investissement automatique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000116_seg4.jpg" alt="Page d&#x27;accueil du bot Spot DCA sur l&#x27;échangeur MEXC avec les options de création de bot." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000116_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:16</span>
+                        <span class="caption-text">Page d&#x27;accueil du bot Spot DCA sur l&#x27;échangeur MEXC avec les options de création de bot.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000121_seg4.jpg" alt="Fenêtre modale de configuration pour créer un plan DCA avec sélection des jetons (BTC, ETH), intervalle et montant." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000121_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Fenêtre modale de configuration pour créer un plan DCA avec sélection des jetons (BTC, ETH), intervalle et montant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000125_seg4.jpg" alt="Menu déroulant de la plateforme MEXC montrant l&#x27;accès à la section Spot DCA." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000125_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:25</span>
+                        <span class="caption-text">Menu déroulant de la plateforme MEXC montrant l&#x27;accès à la section Spot DCA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:31 - 00:01:49</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Tout en haut, vous pouvez voir vos avoirs, vos profits et pertes, et combien de bots vous avez actuellement actifs. Faites défiler un peu vers le bas et vous verrez différentes catégories. Vous avez les principaux jetons, les jetons POW ou preuve de travail, les pièces de chaînes publiques, et plus encore. Cela facilite la recherche du type d&#x27;actifs dans lequel vous souhaitez investir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies MEXC (section Spot DCA).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Métriques du compte (My Holdings, Total PNL, Active bots), catégories de jetons avec leurs ROI sur 1 an (Major Tokens à -21,21 %, POW à -8,21 %, Public chain coins à -20,85 %) et listes de plans DCA.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différentes options de bots DCA et des catégories de jetons sur la plateforme MEXC.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000135_seg5.jpg" alt="Interface MEXC Spot DCA affichant le solde, le PNL total, les bots actifs et les catégories de jetons (Major Tokens, POW, Public chain coins)." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000135_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Interface MEXC Spot DCA affichant le solde, le PNL total, les bots actifs et les catégories de jetons (Major Tokens, POW, Public chain coins).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000140_seg5.jpg" alt="Défilement de la page MEXC Spot DCA révélant les différentes catégories de plans DCA et les jetons disponibles." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000140_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Défilement de la page MEXC Spot DCA révélant les différentes catégories de plans DCA et les jetons disponibles.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:08</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, dans le cadre des plans DCA, vous pouvez voir des jetons individuels comme Bitcoin, Ethereum et Solana. Pour chaque jeton, vous pouvez voir le ROI historique. Cela vous montre à quel point une stratégie DCA aurait performé au fil du temps. Vous pouvez basculer le ROI historique en fonction de différentes périodes ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Application ou plateforme Web de gestion de plans DCA (Dollar Cost Averaging) avec interface sombre.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des jetons avec leur retour sur investissement (ROI) historique sur différentes périodes (5Y, 3Y, 1Y, 6M, 3M, 1M) et boutons de création de bot DCA.</p>
+                        <p><strong>Action / Démonstration :</strong> Survol ou sélection de la ligne Ethereum (ETH) pour afficher les détails du ROI historique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000154_seg6.jpg" alt="Tableau des plans DCA affichant la liste des jetons (BTC, ETH, SOL, XRP, GOLD, USDC, BNB, DOGE), leur ROI historique et les options temporelles associées." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000154_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:54</span>
+                        <span class="caption-text">Tableau des plans DCA affichant la liste des jetons (BTC, ETH, SOL, XRP, GOLD, USDC, BNB, DOGE), leur ROI historique et les options temporelles associées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:08 - 00:02:36</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez choisir entre cinq ans, trois ans, un an, et tout descendre jusqu&#x27;à un mois. Cela vous donne une bonne idée de la régularité du DCA pour cet actif spécifique. Une fois que vous avez trouvé la crypto-monnaie dans laquelle vous souhaitez investir, cliquez sur Créer un bot DCA. C&#x27;est ici que vous créez votre plan. D&#x27;abord, vous pouvez ajouter des jetons. Vous pouvez sélectionner jusqu&#x27;à 10 jetons différents si vous souhaitez diversifier votre stratégie de DCA sur plusieurs pièces. Ensuite, vous verrez le ratio d&#x27;allocation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de bot DCA / plateforme crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des jetons avec ROI historique (ex: BTC à -30.74%, ETH à +36.09%, SOL à +497.43%) et boutons &quot;Create DCA Bot&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Un curseur de souris clique sur la période d&#x27;un mois (1M) pour la ligne du Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000215_seg7.jpg" alt="Interface de plans DCA affichant une liste de cryptomonnaies (BTC, ETH, SOL, XRP, etc.) avec leurs performances historiques (ROI) et des options de sélection temporelle (5Y, 3Y, 1Y, 6M, 3M, 1M)." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000215_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:15</span>
+                        <span class="caption-text">Interface de plans DCA affichant une liste de cryptomonnaies (BTC, ETH, SOL, XRP, etc.) avec leurs performances historiques (ROI) et des options de sélection temporelle (5Y, 3Y, 1Y, 6M, 3M, 1M).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:37 - 00:03:12</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici comment vous voulez répartir votre investissement par crypto-monnaie. Par exemple, si vous investissez dans le Bitcoin et l&#x27;Ethereum, vous pouvez allouer 50 % à chacun ou 70 % au Bitcoin et 30 % à l&#x27;Ethereum, selon vos préférences. Maintenant, définissez votre intervalle de DCA. Vous pouvez choisir entre horaire, quotidien, hebdomadaire ou mensuel. Cliquez sur plus d&#x27;options ici pour voir tous les intervalles disponibles. Vous pouvez également sélectionner à quelle heure de la journée vous voulez que le bot achète. C&#x27;est utile si vous voulez acheter à un moment précis où vous pensez que le marché est généralement plus bas. Il y a aussi une option pour lancer le premier investissement immédiatement. Si vous activez ceci,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de DCA (Dollar-Cost Averaging) sur une plateforme crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Allocation de 70 % pour le BTC et 30 % pour l&#x27;ETH, sélection de l&#x27;intervalle DCA et du montant par cycle.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et paramétrage d&#x27;un plan d&#x27;investissement automatisé (DCA).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000246_seg8.jpg" alt="Fenêtre de création d&#x27;un plan de DCA montrant la répartition des pourcentages entre le Bitcoin et l&#x27;Ethereum." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000246_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:46</span>
+                        <span class="caption-text">Fenêtre de création d&#x27;un plan de DCA montrant la répartition des pourcentages entre le Bitcoin et l&#x27;Ethereum.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:13 - 00:03:47</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le bot fera son premier achat dès que vous l&#x27;activerez. Ensuite, entrez combien d&#x27;USDT vous voulez investir par tour. C&#x27;est le montant que le bot dépensera à chaque fois qu&#x27;il achètera selon votre intervalle. Maintenant, si vous cliquez sur les paramètres avancés, vous obtenez encore plus de contrôle. Ici, vous pouvez modifier le nom de votre bot DCA. C&#x27;est utile si vous faites fonctionner plusieurs bots et que vous voulez les garder organisés. Vous pouvez également activer la plage de prix d&#x27;achat. Lorsque vous activez ceci, vous pouvez définir un prix inférieur et un prix supérieur. Cela signifie que le bot n&#x27;achètera que lorsque le prix sera dans cette plage. C&#x27;est utile</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de création de bot DCA (Type DCA Plans / Exchange crypto).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Configuration du plan DCA : DCA Tokens (BTC 70%, ETH 30%), DCA Interval (Every 1 days at 15:00), case &quot;Start First Investment&quot; cochée, champ &quot;Amount Per Round&quot; avec solde disponible de 55 USDT, et section &quot;Advanced Settings&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris survole le champ de saisie du montant par tour (&quot;Amount Per Round&quot;) pour configurer le capital investi à chaque intervalle.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000321_seg9.jpg" alt="Fenêtre modale de création d&#x27;un plan DCA montrant l&#x27;allocation des tokens (BTC et ETH), l&#x27;intervalle, l&#x27;option de premier investissement et le champ du montant par tour en USDT." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000321_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:21</span>
+                        <span class="caption-text">Fenêtre modale de création d&#x27;un plan DCA montrant l&#x27;allocation des tokens (BTC et ETH), l&#x27;intervalle, l&#x27;option de premier investissement et le champ du montant par tour en USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:47 - 00:04:20</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">si vous voulez éviter d&#x27;acheter pendant des hausses extrêmes et seulement accumuler pendant les baisses ou la consolidation. Une fois que vous avez terminé, cliquez sur créer un plan et votre bot DCA est actif. Il va maintenant investir automatiquement à l&#x27;intervalle que vous avez choisi sans que vous ayez à faire quoi que ce soit. Maintenant, si vous voulez rendre cela encore plus facile, remontez et découvrez les plans pré-faits. Ici, Mexi a déjà créé des plans DCA pour vous. Vous pouvez voir les pièces, l&#x27;allocation, les intervalles, et plus encore. Tout est fait pour vous. Tout ce que vous avez à faire est d&#x27;entrer le montant par tour que vous voulez investir. Une fois que vous avez entré votre montant, il suffit</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de trading et de gestion de robots d&#x27;investissement DCA (Dollar Cost Averaging).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Allocation des actifs (BTC, ETH, SOL), fréquences d&#x27;investissement, montants par tour en USDT et performances historiques (ROI).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et paramétrage d&#x27;un plan d&#x27;investissement automatisé (bot DCA) en sélectionnant les cryptomonnaies et les intervalles de temps.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000355_seg10.jpg" alt="Fenêtre modale &quot;Create Plan&quot; affichant les détails du plan DCA pour Bitcoin et Ethereum avec un bouton de confirmation." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000355_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Fenêtre modale &quot;Create Plan&quot; affichant les détails du plan DCA pour Bitcoin et Ethereum avec un bouton de confirmation.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000404_seg10.jpg" alt="Interface principale de gestion des &quot;DCA Plans&quot; listant différents jetons (BTC, ETH, SOL, XRP, GOLD) avec leurs performances et options de bot." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000404_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Interface principale de gestion des &quot;DCA Plans&quot; listant différents jetons (BTC, ETH, SOL, XRP, GOLD) avec leurs performances et options de bot.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000412_seg10.jpg" alt="Fenêtre modale de création de plan DCA permettant d&#x27;allouer des pourcentages de jetons (BTC 50%, ETH 30%, SOL 20%) et de définir l&#x27;intervalle d&#x27;investissement." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000412_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:12</span>
+                        <span class="caption-text">Fenêtre modale de création de plan DCA permettant d&#x27;allouer des pourcentages de jetons (BTC 50%, ETH 30%, SOL 20%) et de définir l&#x27;intervalle d&#x27;investissement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:20 - 00:04:42</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">cliquez sur créer un plan et vous avez terminé. C&#x27;est le moyen le plus rapide de commencer avec le DCA si vous ne voulez pas tout personnaliser vous-même. Le suivant est le robot de grille Futures. C&#x27;est idéal pour les marchés volatils où vous voulez profiter automatiquement des fluctuations de prix. Pour y accéder, survolez futures dans le menu supérieur et sélectionnez grid trading. Cela vous amène au panneau de trading sur grille futures.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies MEXC (interface de trading Futures Grid).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix en chandeliers 15m, moyennes mobiles (MA10, MA30, MA60), et options de robot de grille Futures (Short-to-Mid Term Volatility, Mid-Term Volatility).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation et configuration d&#x27;un robot de grille Futures sur MEXC.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000431_seg11.jpg" alt="Interface de trading MEXC montrant un graphique de prix en chandelier (15m) avec moyennes mobiles et le panneau &#x27;Futures Grid&#x27; sur le côté droit." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000431_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:31</span>
+                        <span class="caption-text">Interface de trading MEXC montrant un graphique de prix en chandelier (15m) avec moyennes mobiles et le panneau &#x27;Futures Grid&#x27; sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:42 - 00:05:20</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela ressemble à une interface de contrats à terme normale. Vous avez votre graphique de trading au milieu, le panneau de configuration sur le côté droit, et vos positions en bas. Vous pouvez sélectionner votre paire de trading en haut à gauche. Prenons BTC slash USDT pour cet exemple. Vous pouvez rechercher n&#x27;importe quelle paire que vous voulez ici. Faites maintenant défiler vers le bas jusqu&#x27;au panneau des positions en bas. Une fois que vous avez un bot en cours d&#x27;exécution, vous verrez tous les détails importants ici. La paire de trading, la durée de fonctionnement, la fourchette de prix, le nombre de grilles, le montant de l&#x27;investissement, le PNL total, le nombre de profits de grille, le prix de liquidation, le take profit et le stop loss, le statut du bot et les actions que vous pouvez entreprendre. Sur le côté droit,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies MEXC (Interface Futures Grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandelier ( timeframe 15m), prix actuel du BTC/USDT à 66,037.2, moyennes mobiles (MA5, MA10, MA30, MA60), panneau de configuration des bots de grille (Futures Grid) à droite, et tableau des positions en cours en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading de contrats à terme, sélection de la paire BTC/USDT et explication de la disposition des différents panneaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000452_seg12.jpg" alt="Interface de trading de contrats à terme de la plateforme MEXC montrant le graphique de la paire BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000452_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:52</span>
+                        <span class="caption-text">Interface de trading de contrats à terme de la plateforme MEXC montrant le graphique de la paire BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:20 - 00:05:40</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous verrez deux options, Mexi AI et créer manuellement. Commençons par la sélection de Mexi AI. Ici, vous pouvez choisir entre long, court et neutre, selon vos perspectives de marché. Mexi propose une sélection de bots IA selon votre horizon temporel. Vous pouvez choisir de 7 à 30 jours, de 1 à 2 mois, ou même de 3 à 6 mois.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies MEXC (section Futures Grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT avec moyennes mobiles (MA), options du bot de grille (AI / Manually Create), sélections Long/Short/Neutral et plages de volatilité (Short-to-Mid Term Volatility 7-30 Days, Mid-Term Volatility 1-2 Months).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de l&#x27;option IA (AI) et du paramètre Long pour configurer un bot de trading de grille automatisé.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000525_seg13.jpg" alt="Interface de trading de la plateforme MEXC montrant un graphique des prix de BTCUSDT en chandelier 15m à gauche, et le panneau de configuration d&#x27;un bot &#x27;Futures Grid&#x27; avec les options &#x27;AI&#x27; et &#x27;Manually Create&#x27; ainsi que les perspectives de marché &#x27;Long&#x27;, &#x27;Short&#x27;, &#x27;Neutral&#x27; à droite." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000525_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:25</span>
+                        <span class="caption-text">Interface de trading de la plateforme MEXC montrant un graphique des prix de BTCUSDT en chandelier 15m à gauche, et le panneau de configuration d&#x27;un bot &#x27;Futures Grid&#x27; avec les options &#x27;AI&#x27; et &#x27;Manually Create&#x27; ainsi que les perspectives de marché &#x27;Long&#x27;, &#x27;Short&#x27;, &#x27;Neutral&#x27; à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:40 - 00:06:05</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est formidable parce que vous pouvez adapter le bot à votre style de trading. Pour chaque bot IA, vous pouvez voir le nom, la fourchette de prix, le nombre de grilles à utiliser et le profit estimé par grille. Lorsque vous cliquez sur copier, cela montre sur le graphique exactement où les grilles vont acheter ou vendre. Cela vous donne une représentation visuelle de la façon dont le bot va trader. Sur le côté droit, vous pouvez voir toutes vos informations. Ici, vous saisissez votre montant d&#x27;investissement et votre effet de levier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;échange de cryptomonnaies (MEXC) avec module Futures Grid.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en unités de 15 minutes avec moyennes mobiles (MA5, MA10, MA30) et panneaux de bots IA (&quot;Short-to-Mid Term Volatility&quot; avec Price Range: 59,788.6 - 72,435.4, No. of Grids: 43, Estimated Profit per Grid: 0.45%).</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation et survol des options de bots de grille IA disponibles sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000547_seg14.jpg" alt="Interface de trading affichant un graphique de prix en chandeliers japonais à gauche et un panneau de configuration de bots de grille IA sur le côté droit." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000547_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:47</span>
+                        <span class="caption-text">Interface de trading affichant un graphique de prix en chandeliers japonais à gauche et un panneau de configuration de bots de grille IA sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:05 - 00:06:40</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez sélectionner jusqu&#x27;à cinquante fois de effet de levier ici, mais si vous êtes débutant, restez sur un faible effet de levier, peut-être cinq à dix fois. Un effet de levier élevé augmente votre risque de liquidation, alors faites vraiment attention à cela. Maintenant, si vous cliquez sur les paramètres avancés, vous verrez des options supplémentaires. La première est le mode de contrôle des risques. Décocher cette option diminue l&#x27;exigence d&#x27;investissement et augmente la taille de la position, mais cela augmente également le risque de liquidation. La cocher réduit le risque, mais peut ne pas réduire les besoins d&#x27;investissement si vous utilisez un effet de levier élevé et des grilles larges. Je recommande de garder cette option cochée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading de contrats futures (MEXC)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Réglage de l&#x27;effet de levier (10x), curseur de levier, paramètres de grille, options de gestion des risques (Risk-Controlled Mode).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et ajustement de l&#x27;effet de levier et des paramètres de risque du bot de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000614_seg15.jpg" alt="Fenêtre contextuelle de sélection de l&#x27;effet de levier réglée sur 10x avec un curseur allant de 1x à 50x." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000614_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:14</span>
+                        <span class="caption-text">Fenêtre contextuelle de sélection de l&#x27;effet de levier réglée sur 10x avec un curseur allant de 1x à 50x.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000623_seg15.jpg" alt="Interface de trading affichant les paramètres du bot de grille avec une infobulle sur le mode contrôlé par le risque." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000623_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:23</span>
+                        <span class="caption-text">Interface de trading affichant les paramètres du bot de grille avec une infobulle sur le mode contrôlé par le risque.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:40 - 00:07:14</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">si vous ne faites que débuter. Vous pouvez également voir le prix d&#x27;activation. C&#x27;est le prix auquel le bot commencera à trader. Ensuite, vous pouvez définir votre take profit et votre stop loss. Vous pouvez les définir par prix, par PNL, ou par pourcentage de PNL. Je recommande vivement de définir un stop loss pour protéger votre capital. Une fois que vous avez tout examiné, cliquez sur créer le bot et votre bot de grille futures est lancé. Maintenant, si vous voulez une approche plus manuelle, cliquez sur définir les paramètres manuellement. Ici, vous pouvez soit créer à partir de zéro, soit modifier les paramètres fournis par l&#x27;IA. Cela vous donne un contrôle total sur chaque aspect</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface d&#x27;échange de cryptomonnaies (MEXC)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de configuration du bot incluant les paramètres avancés, le prix d&#x27;activation, et les champs TP/SL (Take Profit/Stop Loss).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de Take Profit et de Stop Loss pour le bot de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000648_seg16.jpg" alt="Interface de configuration d&#x27;un bot de trading avec un graphique en arrière-plan et le panneau latéral affichant les options de configuration comme le prix d&#x27;activation et le TP/SL." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000648_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:48</span>
+                        <span class="caption-text">Interface de configuration d&#x27;un bot de trading avec un graphique en arrière-plan et le panneau latéral affichant les options de configuration comme le prix d&#x27;activation et le TP/SL.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:14 - 00:07:32</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">du bot. Vous pouvez toujours voir la direction, long, court ou neutre. Ensuite, définissez votre plage de prix. C&#x27;est la plage où le bot placera les ordres d&#x27;achat et de vente. Choisissez ensuite le nombre de grilles. Vous pouvez définir entre 200 et 300 grilles. Plus de grilles signifient des transactions plus fréquentes mais des profits plus petits par transaction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies MEXC (graphique et panneau Futures Grid)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTCUSDT 15m avec moyennes mobiles, panneau de configuration de bot de grille (options Long/Short/Neutral, Price Range 59788.6 - 72435.4, No. of Grids 43, effet de levier 10X)</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et paramétrage d&#x27;un bot de trading de type Futures Grid sur la plateforme MEXC (sélection de la direction, de la plage de prix et du nombre de grilles).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000719_seg17.jpg" alt="Interface d&#x27;échange affichant un graphique de prix BTCUSDT avec le panneau de configuration d&#x27;un bot de trading &#x27;Futures Grid&#x27; sur la droite." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000719_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:19</span>
+                        <span class="caption-text">Interface d&#x27;échange affichant un graphique de prix BTCUSDT avec le panneau de configuration d&#x27;un bot de trading &#x27;Futures Grid&#x27; sur la droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:33 - 00:08:07</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Moins de grilles signifie des transactions moins fréquentes mais des profits plus importants par transaction. Vous pouvez également choisir le mode, arithmétique ou géométrique. L&#x27;arithmétique place les grilles de manière égale sur toute la plage de prix. La géométrique place plus de grilles près du prix actuel, ce qui est meilleur pour les marchés volatils. Après cela, vous avez toujours les mêmes paramètres qu&#x27;avant : le montant de l&#x27;investissement, l&#x27;effet de levier, et les mêmes paramètres avancés disponibles dans le mode IA. Une fois que tout semble correct, cliquez sur Créer le bot. Vous pouvez voir tous vos bots en cours d&#x27;exécution dans la partie inférieure du panneau. C&#x27;est ici que vous surveillerez leurs performances et effectuerez des ajustements si nécessaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies MEXC (Futures Grid Bot)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique du BTCUSDT en unité 15m avec moyennes mobiles, paramètres du bot Grid (plage de prix 59788.6 - 72435.4, sélection du mode Arithmetic/Geometric visible, montant d&#x27;investissement 55.0 USDT disponibles).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et explication des paramètres d&#x27;un bot de trading de type Grid, en se concentrant sur le choix entre les modes arithmétique et géométrique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000741_seg18.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading montrant le panneau de configuration d&#x27;un Bot Futures Grid avec le menu déroulant du mode de grille (Arithmetic/Geometric) ouvert." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000741_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:41</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading montrant le panneau de configuration d&#x27;un Bot Futures Grid avec le menu déroulant du mode de grille (Arithmetic/Geometric) ouvert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:07 - 00:08:27</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La dernière fonctionnalité de bot que je veux vous montrer est l&#x27;AI Copy Trade. Cela vous permet de copier automatiquement des traders IA rentables sur Mexi. Pour y accéder, passez votre curseur sur Futures et sélectionnez AI Copy Trade. Une fois sur le tableau de bord, vous pouvez voir vos capitaux, les coûts de copy trade, le P&amp;L total et le P&amp;L des 7 derniers jours en haut.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> MEXC Exchange (Interface Web)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation Futures, paramètres de Copy Trade (Smart Ratio), statistiques de traders (ROI sur 7 jours, PNL, correspondance IA)</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus de la plateforme MEXC et sélection des options de configuration du Copy Trading IA.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000812_seg19.jpg" alt="Interface MEXC affichant les paramètres de configuration du mode Copy Trade (Smart Ratio, Fixed Amount, Fixed Ratio)." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000812_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:12</span>
+                        <span class="caption-text">Interface MEXC affichant les paramètres de configuration du mode Copy Trade (Smart Ratio, Fixed Amount, Fixed Ratio).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000817_seg19.jpg" alt="Page d&#x27;accueil de la plateforme MEXC montrant la navigation supérieure avec le menu &quot;Futures&quot;." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000817_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:17</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme MEXC montrant la navigation supérieure avec le menu &quot;Futures&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000822_seg19.jpg" alt="Tableau de bord MEXC AI Copy Trading montrant les soldes du compte et les suggestions de traders recommandés par l&#x27;IA." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000822_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:22</span>
+                        <span class="caption-text">Tableau de bord MEXC AI Copy Trading montrant les soldes du compte et les suggestions de traders recommandés par l&#x27;IA.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:27 - 00:08:50</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, faites défiler vers le bas et regardez sur le côté gauche. Mexi propose cette fonctionnalité appelée Trader Match. Cela vous mettra en correspondance avec le trader IA le plus proche en fonction de vos préférences, comme les actifs que vous souhaitez négocier, votre tolérance au risque et la fréquence de vos transactions. Sur le côté droit, vous pouvez voir les recommandations de l&#x27;IA. Pour chaque trader, vous pouvez voir son retour sur investissement sur 7 jours, le nombre de ses abonnés et sa préférence en matière de jetons.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme Mexi (section copy trading / Trader Match).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Règles de correspondance (choix des actifs, tendance de marché), et cartes de recommandation de traders IA affichant les performances (ROI sur 7 jours, taux de correspondance, PNL et boutons « Copy Trade »).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et sélection des préférences utilisateur pour associer les traders IA correspondants.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000833_seg20.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de la fonctionnalité « Trader Match » sur la plateforme Mexi, avec les options de préférences de trading à gauche et les profils de traders IA recommandés à droite." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000833_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:33</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de la fonctionnalité « Trader Match » sur la plateforme Mexi, avec les options de préférences de trading à gauche et les profils de traders IA recommandés à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:51 - 00:09:13</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Faites défiler vers le bas et vous verrez le classement complet des traders en IA avec leur PNL sur 180 jours, leur PNL sur 7 jours, leur meilleur trade et leur taux de réussite. Cela vous donne une vue d&#x27;ensemble de leurs performances. Une fois que vous avez trouvé un trader qui vous plaît, cliquez sur le bouton Copier le trade sur le côté droit de son profil. Mexi propose trois modes de copy trading : Ratio intelligent, Montant fixe et Ratio fixe.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies MEXC (section Copy Trade).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Classement des bots/traders IA (Trend_Hunter, Greed_Ninja, Pair_Trader, AI_Grid), métriques de PNL, taux de réussite, et options de configuration de copy trading (montant, stop-loss).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le classement des traders IA et sélection d&#x27;un trader pour configurer le copy trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000857_seg21.jpg" alt="Tableau de classement des traders en IA sur une plateforme avec leurs performances (PNL 180j, PNL 7j, meilleur trade, taux de réussite, abonnés)." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000857_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:57</span>
+                        <span class="caption-text">Tableau de classement des traders en IA sur une plateforme avec leurs performances (PNL 180j, PNL 7j, meilleur trade, taux de réussite, abonnés).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000908_seg21.jpg" alt="Interface de paramètres de copy trading sur MEXC pour le trader sélectionné (Trend_Hunter), incluant les préférences de futures et les réglages de montant." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000908_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:08</span>
+                        <span class="caption-text">Interface de paramètres de copy trading sur MEXC pour le trader sélectionné (Trend_Hunter), incluant les préférences de futures et les réglages de montant.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:14 - 00:09:47</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Smart Ratio est recommandé pour les débutants. Il permet au trader expert de gérer automatiquement le risque de votre portefeuille. Montant Fixe signifie que vous copiez un montant en dollars fixe par trade, comme 10 $ par position. Ratio Fixe copie un pourcentage de votre portefeuille qui correspond à l&#x27;allocation du trader. Pour les débutants, je recommande smart ratio. D&#x27;abord, entrez votre montant de copy trading. C&#x27;est le total que vous investirez pour copier ce trader. Ne mettez pas tous vos fonds sur un seul trader. Ensuite, définissez le stop loss de votre compte. Lorsque vos capitaux propres atteignent ce niveau, le copy trading s&#x27;arrêtera automatiquement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies MEXC (interface Web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre modale &quot;Copy Trade Mode&quot; avec les options : Smart Ratio, Fixed Amount (sélectionné par un curseur de souris) et Fixed Ratio.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du mode de copy trading &quot;Fixed Amount&quot; pour configurer la gestion des risques et des montants investis par position.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000922_seg22.jpg" alt="Interface de configuration du Copy Trading sur la plateforme MEXC montrant les différents modes de trading (Smart Ratio, Fixed Amount et Fixed Ratio)." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000922_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:22</span>
+                        <span class="caption-text">Interface de configuration du Copy Trading sur la plateforme MEXC montrant les différents modes de trading (Smart Ratio, Fixed Amount et Fixed Ratio).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:47 - 00:10:21</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et fermez toutes les positions. Cliquez sur plus de paramètres pour des options supplémentaires. Ici, vous pouvez choisir quelles paires de contrats à terme copier. Je recommande de commencer uniquement avec Bitcoin et Ethereum. Vous pouvez également définir des ratios de take profit et de stop loss pour un ordre unique. Par exemple, définissez un take profit à 20 % et un stop loss à 10 % pour gérer automatiquement chaque trade. Pour le mode de marge, je recommande vivement la marge isolée pour les débutants car elle limite votre risque à ce trade spécifique. Vous pouvez également personnaliser votre effet de levier. Vous pouvez suivre l&#x27;effet de levier du trader ou définir votre propre effet de levier fixe. Sur le côté gauche,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de copy trading (échange crypto)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu &quot;More Settings&quot; avec les sections &quot;Futures for Copy Trade&quot; (BTCUSDT, ETHUSDT, etc.), &quot;Risk Control Settings&quot;, &quot;Margin Mode&quot; et &quot;Leverage &amp; Slippage Settings&quot;, ainsi qu&#x27;un graphique en camembert des préférences futures à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et explication des options avancées et des paramètres de risque pour configurer le copy trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_000956_seg23.jpg" alt="Capture d&#x27;écran montrant les paramètres avancés de copy trading sur une plateforme d&#x27;échange, avec des options de sélection de paires de contrats à terme et de gestion du risque." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_000956_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:56</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les paramètres avancés de copy trading sur une plateforme d&#x27;échange, avec des options de sélection de paires de contrats à terme et de gestion du risque.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:21 - 00:10:56</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous pouvez voir l&#x27;aperçu du profil du trader, y compris son P&amp;L sur sept jours, son taux de réussite et son ratio de partage des profits, qui se situe généralement entre 10 et 20 %. C&#x27;est ce que le trader gagne sur vos bénéfices. Une fois que tout semble correct, cliquez sur l&#x27;étape suivante et soumettez. Votre copy trading est désormais actif. Très bien, vous savez donc maintenant exactement comment utiliser chaque bot de trading sur Mexi. Que vous souhaitiez automatiser votre stratégie DCA, profiter du grid trading sur des marchés volatils, ou copier des traders IA qui génèrent déjà des rendements réguliers, vous avez les outils en main. Et n&#x27;oubliez pas, si vous vous êtes inscrit</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> MEXC (Exchange crypto) - Paramètres de Copy Trading et Interface de Grid Trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> ROI sur 7 jours (2,67%), P&amp;L (2 186,65 $), taux de réussite (45,20%), ratio de partage des profits (1%), graphiques de prix BTCUSDT avec moyennes mobiles (MA10, MA30, MA60) et options de configuration de bot (prix, nombre de grilles, effet de levier 10X).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de copy trading et paramétrage d&#x27;un bot de trading en grille sur MEXC.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_001030_seg24.jpg" alt="Aperçu du profil d&#x27;un trader nommé Trend_Hunter sur la plateforme MEXC, affichant son P&amp;L sur sept jours, son taux de réussite et ses préférences de futures." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_001030_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:30</span>
+                        <span class="caption-text">Aperçu du profil d&#x27;un trader nommé Trend_Hunter sur la plateforme MEXC, affichant son P&amp;L sur sept jours, son taux de réussite et ses préférences de futures.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_001047_seg24.jpg" alt="Interface de trading de contrats futures et configuration de bot en grille (Futures Grid) sur MEXC avec un graphique des prix du BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_001047_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:47</span>
+                        <span class="caption-text">Interface de trading de contrats futures et configuration de bot en grille (Futures Grid) sur MEXC avec un graphique des prix du BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:56 - 00:11:18</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">avec mon lien dans la description, vous pouvez réclamer jusqu&#x27;à 10 000 USDT de bonus rien qu&#x27;en utilisant la plateforme. Vous obtenez des coupons pour votre inscription, le téléchargement de l&#x27;application et l&#x27;exécution de transactions. Alors n&#x27;hésitez surtout pas à y jeter un œil. Si vous voulez plus de tutoriels sur le trading de cryptos ou voir une présentation complète de la plateforme MEXC, regardez la vidéo qui s&#x27;affiche à l&#x27;écran. Merci d&#x27;avoir regardé et je vous retrouve dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies MEXC.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres promotionnelles, bonus en USDT (jusqu&#x27;à 10 000 USDT), conditions de dépôt et de volume de trading futures.
+[DESC_IMAGE_1] Présentation de la page d&#x27;inscription et des bonus de bienvenue sur l&#x27;exchange MEXC.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_001101_seg25.jpg" alt="Page d&#x27;inscription de la plateforme MEXC affichant une offre de bonus de 10 000 USDT pour les nouveaux utilisateurs." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_001101_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:01</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme MEXC affichant une offre de bonus de 10 000 USDT pour les nouveaux utilisateurs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_001107_seg25.jpg" alt="Interface de la plateforme MEXC montrant les défis pour nouveaux utilisateurs et les récompenses liées au trading de futures." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_001107_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:07</span>
+                        <span class="caption-text">Interface de la plateforme MEXC montrant les défis pour nouveaux utilisateurs et les récompenses liées au trading de futures.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/-BPizIQvDqg/-BPizIQvDqg_001113_seg25.jpg" alt="Section &quot;Deposit Dash&quot; de la plateforme MEXC affichant des bonus instantanés basés sur les dépôts nets en USDT." loading="lazy" onclick="openLightbox('../screenshots/-BPizIQvDqg/-BPizIQvDqg_001113_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:13</span>
+                        <span class="caption-text">Section &quot;Deposit Dash&quot; de la plateforme MEXC affichant des bonus instantanés basés sur les dépôts nets en USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
