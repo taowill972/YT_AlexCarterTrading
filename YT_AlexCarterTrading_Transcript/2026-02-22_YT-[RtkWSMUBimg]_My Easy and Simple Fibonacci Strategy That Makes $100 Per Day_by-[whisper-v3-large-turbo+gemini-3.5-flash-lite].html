@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 My Easy and Simple Fibonacci Strategy That Makes $100 Per Day — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 My Easy and Simple Fibonacci Strategy That Makes $100 Per Day</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-02-22</span>
+                <span class="badge">⏱️ 00:09:44</span>
+                <span class="badge">🆔 <code>RtkWSMUBimg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=RtkWSMUBimg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo de la chaîne Alex Carter propose une méthode de scalping de crypto-actifs sur dérivés (visant environ 100 dollars par jour) basée sur une utilisation rigoureuse et confluente du retracement de Fibonacci. Loin d'utiliser Fibonacci de manière isolée — erreur commise par la majorité des débutants —, l'analyste démontre comment filtrer les mouvements de prix avec l'indicateur des fractales (réglé à une période de 10) pour identifier des sommets et des creux de swing fiables sur des unités de temps courtes (notamment le graphique en 5 minutes).<br><br>Le cœur de la stratégie repose sur le concept de la « zone dorée », située entre les niveaux de Fibonacci 0,382 et 0,618. Pour transformer cette zone en un signal à très haute probabilité, la méthodologie exige l'alignement de quatre confluences techniques majeures : le retracement dans la zone dorée, un retest de niveau de support ou de résistance (ancien pivot cassé), la présence de la Moyenne Mobile Exponentielle (EMA) à 200 périodes, et l'utilisation d'un VWAP ancré positionné au point d'origine de la tendance. <br><br>Enfin, la vidéo aborde l'aspect opérationnel en présentant des plateformes de trading de crypto-dérivés adaptées (Blowfin et Mexi) et pose des bases strictes de *Risk Management*. L'utilisation de la marge isolée, le placement méthodique du stop-loss sous le niveau 0,618 de Fibonacci, et la fixation d'objectifs via un ratio risque-rendement de 1:2 ou 1:3 permettent d'encadrer rigoureusement chaque position acheteuse ou vendeuse.<br><br>---<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **TradingView** : Plateforme de graphitage incontournable utilisée pour configurer les indicateurs techniques, tracer les niveaux de Fibonacci et analyser l'action des prix en temps réel.<br>* **Retracement de Fibonacci** : Outil d'analyse technique configuré avec les niveaux clés (0, 0,382, 0,5, 0,618, 1) pour anticiper les replis et la continuation des tendances de marché.<br>* **Indicateur de Fractales** : Outil de détection de sommets et creux configuré ici sur une période de 10 pour filtrer le bruit de marché et identifier les points de swing majeurs.<br>* **Moyenne Mobile Exponentielle (EMA 200)** : Indicateur de tendance à long terme jouant un rôle de support ou de résistance dynamique fort au sein de la zone de confluence.<br>* **VWAP Ancré** : Indicateur de volume et de prix moyen pondéré ancré au début d'une forte impulsion haussière ou baissière pour repérer des zones dynamiques de rebond.<br>* **Blowfin** : Exchange de crypto-dérivés principal recommandé pour son absence de KYC obligatoire sur les comptes basiques et ses bonus incitatifs pour nouveaux utilisateurs.<br>* **Mexi** : Plateforme alternative de trading offrant un large choix de paires et une flexibilité entre CEX et perpétuels décentralisés (avec vérification KYC rapide).<br>* **Claude Code** : Outil d'assistance en intelligence artificielle et automatisation mentionné dans le positionnement d'analyse quantitatif de la chaîne.<br>* **Grok Bots** : Assistants conversationnels et agents d'IA utilisés pour le développement et l'optimisation de scripts de trading algorithmique.<br>* **Pine Script** : Langage de programmation propriétaire de TradingView dédié à la création d'indicateurs et de stratégies automatisées sur mesure.<br><br>---<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Sélection de l'unité de temps** : Privilégier le graphique en 5 minutes ou 15 minutes pour le scalping rapide, tout en sachant que la logique de Fibonacci s'applique jusqu'au TF 4 heures.<br>* **Maîtrise de la « Zone Dorée »** : Concentrer toute l'attention sur la zone comprise entre les niveaux 0,382 et 0,618 de Fibonacci, reconnue comme la zone statistique optimale de retournement et de continuation.<br>* **Filtrage par les Fractales** : Ajuster la période de l'indicateur de fractales à 10 pour éliminer les fluctuations erratiques et isoler uniquement les swing lows et swing highs pertinents.<br>* **Tracé méthodique de Fibonacci** : Toujours relier le fractal rouge (le plus bas d'une forte impulsion haussière) au fractal vert (le plus haut) pour tracer correctement le retracement.<br>* **Confluence des 4 indicateurs** : Ne valider un trade que lorsque la zone dorée de Fibonacci coïncide simultanément avec un retest de support/résistance, l'EMA 200 et le VWAP ancré.<br>* **Validation par l'action des prix** : Attendre l'apparition d'une figure de chandelier japonais de rebond (comme un chandelier haussier de confirmation) à l'intérieur de la zone dorée avant d'exécuter l'entrée.<br>* **Gestion du risque par la Marge Isolée** : Utiliser systématiquement la marge isolée sur les plateformes de dérivés pour cloisonner le risque à un seul trade et éviter la liquidation du portefeuille global.<br>* **Effet de levier mesuré** : Limiter l'effet de levier entre 5x et 10x pour les débutants, le temps d'assimiler la volatilité des crypto-monnaies sur les graphiques à court terme.<br>* **Placement chirurgical du Stop-Loss** : Positionner l'ordre de stop-loss juste en dessous de la zone dorée (généralement sous le niveau critique de 0,618) pour invalider rapidement le scénario en cas de cassure.<br>* **Ratio Risque-Rendement (RRR)** : Viser des objectifs de take profit situés au sommet précédent du mouvement ou appliquer un ratio strict de 1:2 ou 1:3 pour garantir la rentabilité à long terme.<br>* **Phase d'entraînement obligatoire** : Tester et valider la stratégie sur un compte de simulation (paper trading) avant d'engager le moindre capital réel sur les marchés dérivés.<br>* **Optimisation des bonus de plateforme** : Profiter des programmes de bienvenue et des volumes de dépôt sur Blowfin ou Mexi pour maximiser le capital initial de trading sans risque additionnel.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView</span><span class="tool-tag">Retracement de Fibonacci</span><span class="tool-tag">Indicateur de Fractales</span><span class="tool-tag">Moyenne Mobile Exponentielle (EMA 200)</span><span class="tool-tag">VWAP Ancré</span><span class="tool-tag">Blowfin</span><span class="tool-tag">Mexi</span><span class="tool-tag">Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Sélection de l&#x27;unité de temps** : Privilégier le graphique en 5 minutes ou 15 minutes pour le scalping rapide, tout en sachant que la logique de Fibonacci s&#x27;applique jusqu&#x27;au TF 4 heures.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de la « Zone Dorée »** : Concentrer toute l&#x27;attention sur la zone comprise entre les niveaux 0,382 et 0,618 de Fibonacci, reconnue comme la zone statistique optimale de retournement et de continuation.</span></li><li><span class="point-bullet">✦</span><span>Filtrage par les Fractales** : Ajuster la période de l&#x27;indicateur de fractales à 10 pour éliminer les fluctuations erratiques et isoler uniquement les swing lows et swing highs pertinents.</span></li><li><span class="point-bullet">✦</span><span>Tracé méthodique de Fibonacci** : Toujours relier le fractal rouge (le plus bas d&#x27;une forte impulsion haussière) au fractal vert (le plus haut) pour tracer correctement le retracement.</span></li><li><span class="point-bullet">✦</span><span>Confluence des 4 indicateurs** : Ne valider un trade que lorsque la zone dorée de Fibonacci coïncide simultanément avec un retest de support/résistance, l&#x27;EMA 200 et le VWAP ancré.</span></li><li><span class="point-bullet">✦</span><span>Validation par l&#x27;action des prix** : Attendre l&#x27;apparition d&#x27;une figure de chandelier japonais de rebond (comme un chandelier haussier de confirmation) à l&#x27;intérieur de la zone dorée avant d&#x27;exécuter l&#x27;entrée.</span></li><li><span class="point-bullet">✦</span><span>Gestion du risque par la Marge Isolée** : Utiliser systématiquement la marge isolée sur les plateformes de dérivés pour cloisonner le risque à un seul trade et éviter la liquidation du portefeuille global.</span></li><li><span class="point-bullet">✦</span><span>Effet de levier mesuré** : Limiter l&#x27;effet de levier entre 5x et 10x pour les débutants, le temps d&#x27;assimiler la volatilité des crypto-monnaies sur les graphiques à court terme.</span></li><li><span class="point-bullet">✦</span><span>Placement chirurgical du Stop-Loss** : Positionner l&#x27;ordre de stop-loss juste en dessous de la zone dorée (généralement sous le niveau critique de 0,618) pour invalider rapidement le scénario en cas de cassure.</span></li><li><span class="point-bullet">✦</span><span>Ratio Risque-Rendement (RRR)** : Viser des objectifs de take profit situés au sommet précédent du mouvement ou appliquer un ratio strict de 1:2 ou 1:3 pour garantir la rentabilité à long terme.</span></li><li><span class="point-bullet">✦</span><span>Phase d&#x27;entraînement obligatoire** : Tester et valider la stratégie sur un compte de simulation (paper trading) avant d&#x27;engager le moindre capital réel sur les marchés dérivés.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:26</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">In this video, I&#x27;m going to show you how to use Fibonacci retracement the right way, because most traders are using it completely wrong and losing money. This is a simple high probability strategy that beginners are using to make around $100 per day trading crypto derivatives. It works on the five minute chart and higher timeframes. And I&#x27;m going to break down every single step from drawing your fib levels correctly to timing your entries perfectly.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de l&#x27;indicateur &quot;Auto Fib Retracement&quot; avec les niveaux de Fibonacci (0, 0.382, 0.618, etc.), graphiques en chandeliers de Bitcoin/USDT, volume en bas de l&#x27;écran.</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur de la souris clique pour modifier ou configurer les niveaux de l&#x27;indicateur de retracement de Fibonacci.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000007_seg1.jpg" alt="Fenêtre de configuration de l&#x27;indicateur Auto Fib Retracement par-dessus un graphique en chandeliers japonais affichant le cours du Bitcoin." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000007_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:07</span>
+                        <span class="caption-text">Fenêtre de configuration de l&#x27;indicateur Auto Fib Retracement par-dessus un graphique en chandeliers japonais affichant le cours du Bitcoin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:26 - 00:00:45</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">So make sure you watch until the end. All right, guys, step number one, choosing the right crypto exchange. For this strategy, we&#x27;re going to be using Blowfin as our primary platform. Blowfin doesn&#x27;t require mandatory KYC verification for basic trading, which means you can start trading immediately.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant l&#x27;échange de cryptomonnaies BloFin et un site de revue spécialisé (Crypto Vanguards).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des bonus de dépôt BloFin (de 30$ à 1000$ selon le montant) et texte confirmant l&#x27;absence de KYC obligatoire sur BloFin.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme BloFin et de ses conditions d&#x27;utilisation sans vérification d&#x27;identité (KYC).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000031_seg2.jpg" alt="Page d&#x27;inscription de la plateforme BloFin avec un tableau des bonus de dépôt affiché à gauche." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000031_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:31</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme BloFin avec un tableau des bonus de dépôt affiché à gauche.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000040_seg2.jpg" alt="Article du site Crypto Vanguards répondant à la question &quot;Does Blofin Require KYC?&quot;." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000040_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Article du site Crypto Vanguards répondant à la question &quot;Does Blofin Require KYC?&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:45 - 00:01:07</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Plus, new users can earn up to 5,000 USDT through deposit and trading volume bonuses. Now, if you want an alternative with even more trading pairs and the ability to toggle between centralized exchange features and decentralized perpetuals trading, you can use Mexi. They&#x27;re offering up to 10,000 USDT in bonuses for new users right now.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin, MEXC (interface de trading et DEX/Airdrop).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bonus de dépôt (5 000 USDT), paires de trading perpétuelles USDT-M, carnets d&#x27;ordres, liquidité et capitalisation boursière de tokens Solana.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des interfaces de courtage et des programmes de bonus/airdrops pour les nouveaux utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000051_seg3.jpg" alt="Interface de la plateforme BloFin montrant le programme de récompenses &quot;5,000 USDT Deposit Blast-Off Rewards&quot;." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000051_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:51</span>
+                        <span class="caption-text">Interface de la plateforme BloFin montrant le programme de récompenses &quot;5,000 USDT Deposit Blast-Off Rewards&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000056_seg3.jpg" alt="Interface de trading de la plateforme MEXC affichant les paires de contrats perpétuels (BTCUSDT, ETHUSDT) et le carnet d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000056_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:56</span>
+                        <span class="caption-text">Interface de trading de la plateforme MEXC affichant les paires de contrats perpétuels (BTCUSDT, ETHUSDT) et le carnet d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000101_seg3.jpg" alt="Tableau de bord MEXC affichant la section &quot;Airdrop Season 2&quot; avec la liste des tokens (SANTA/SOL, SPANKMAS/SOL, etc.) et leurs métriques." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000101_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Tableau de bord MEXC affichant la section &quot;Airdrop Season 2&quot; avec la liste des tokens (SANTA/SOL, SPANKMAS/SOL, etc.) et leurs métriques.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:07 - 00:01:39</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Both platforms work perfectly for this strategy, so choose whichever fits your needs. To sign up for Blofen, click the first link in the description. You&#x27;ll be taken to the signup page where you simply enter your details and create an account. no KYC needed you can start trading right away if you prefer Mexi use the second link below you will need to complete quick KYC verification on Mexi but it&#x27;s fast and secure personally I have accounts on both platforms depending on what I&#x27;m trading step number two is depositing funds let me</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange BloFin (page de création de compte et promotion des bonus).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;inscription (Email/Téléphone, Mot de passe, code de parrainage) et tableau des bonus (de 30$ à 1 000$ selon le montant du dépôt en USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la page d&#x27;inscription de la plateforme BloFin et des bonus de dépôt associés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000115_seg4.jpg" alt="Page d&#x27;inscription de l&#x27;échange BloFin avec un tableau des bonus de dépôt affiché sur le côté gauche." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000115_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Page d&#x27;inscription de l&#x27;échange BloFin avec un tableau des bonus de dépôt affiché sur le côté gauche.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:39 - 00:02:00</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">show you how to do this quickly before we jump into the strategy once you&#x27;re logged into your platform click assets at the top right then choose overview Once you&#x27;re on the overview page, click on deposit. Choose the coin you want to deposit. I recommend USDT and select the correct blockchain network. Make sure you choose the right network to avoid losing your funds.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;exchange de cryptomonnaies BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Soldes de compte à zéro, sections Funding, Spot et Futures, et options de gestion de portefeuille (Deposit, Buy Crypto, Withdraw, Transfer).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme BloFin pour montrer comment accéder à la section des actifs et effectuer un dépôt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000144_seg5.jpg" alt="Page d&#x27;accueil de la plateforme d&#x27;échange BloFin montrant le menu principal avec le bouton &#x27;Assets&#x27; en haut à droite." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000144_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:44</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme d&#x27;échange BloFin montrant le menu principal avec le bouton &#x27;Assets&#x27; en haut à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000150_seg5.jpg" alt="Page &#x27;Overview&#x27; des actifs sur BloFin affichant un solde total de 0.00 USDT et les options de dépôt, retrait et transfert." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000150_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:50</span>
+                        <span class="caption-text">Page &#x27;Overview&#x27; des actifs sur BloFin affichant un solde total de 0.00 USDT et les options de dépôt, retrait et transfert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:01 - 00:02:21</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Confirmez les détails, puis scannez le code QR ou copiez l&#x27;adresse de dépôt pour transférer vos fonds depuis votre portefeuille ou un autre échange. Si vous souhaitez déposer en monnaie fiduciaire, cherchez l&#x27;option d&#x27;achat de crypto en haut du menu, puis sélectionnez l&#x27;achat rapide. Choisissez votre devise, entrez le montant, sélectionnez votre mode de paiement et cliquez sur continuer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces des plateformes d&#x27;échange Bybit et Blofin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails de retrait (TRC20, frais de 1 USDT), cours des cryptomonnaies (BTC, ETH, SOL, XRP) et interface d&#x27;achat par carte bancaire (Visa/Mastercard).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme Blofin et démonstration des options de dépôt et d&#x27;achat de crypto en monnaie fiduciaire.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000206_seg6.jpg" alt="Fenêtre de confirmation de retrait sur Bybit montrant les détails de la transaction (adresse, réseau TRON, montant et frais)." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000206_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:06</span>
+                        <span class="caption-text">Fenêtre de confirmation de retrait sur Bybit montrant les détails de la transaction (adresse, réseau TRON, montant et frais).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000211_seg6.jpg" alt="Page d&#x27;accueil de la plateforme Blofin mettant en avant le programme exclusif pour les nouveaux utilisateurs et les récompenses." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000211_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:11</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Blofin mettant en avant le programme exclusif pour les nouveaux utilisateurs et les récompenses.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000216_seg6.jpg" alt="Interface « Buy Crypto » sur Blofin permettant d&#x27;acheter des cryptomonnaies par carte bancaire avec conversion en EUR/USDT." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000216_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Interface « Buy Crypto » sur Blofin permettant d&#x27;acheter des cryptomonnaies par carte bancaire avec conversion en EUR/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:21 - 00:02:41</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois vos fonds déposés, il est temps d&#x27;ouvrir une position. L&#x27;étape numéro trois consiste à ouvrir votre première position. Survolez l&#x27;onglet « futures » dans le menu supérieur, puis sélectionnez « USDT-M futures ». Cela vous mènera à l&#x27;interface de trading où toute la magie opère. Choisissez l&#x27;actif que vous souhaitez négocier dans le coin supérieur gauche.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Blofin (interface web et interface de trading futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de trading (BTCUSDT Perpetual), prix en temps réel (91,114.9), options de menu (Futures, USDT-M Futures, Spot, etc.), carnet d&#x27;ordres et panneau d&#x27;achat/vente (Buy long / Sell short).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus de la plateforme Blofin pour sélectionner l&#x27;option USDT-M futures et accéder à l&#x27;interface de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000226_seg7.jpg" alt="Page d&#x27;accueil de la plateforme Blofin affichant l&#x27;onglet &quot;Rewards Hub&quot; et les options de menu supérieur." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000226_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:26</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Blofin affichant l&#x27;onglet &quot;Rewards Hub&quot; et les options de menu supérieur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000231_seg7.jpg" alt="Menu déroulant sur la plateforme Blofin montrant l&#x27;option &quot;USDT-M Futures&quot; survolée par le curseur." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000231_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Menu déroulant sur la plateforme Blofin montrant l&#x27;option &quot;USDT-M Futures&quot; survolée par le curseur.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000236_seg7.jpg" alt="Interface de trading de contrats futures BTCUSDT sur Blofin, avec le graphique en chandeliers, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000236_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:36</span>
+                        <span class="caption-text">Interface de trading de contrats futures BTCUSDT sur Blofin, avec le graphique en chandeliers, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:41 - 00:03:18</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour cet exemple, je vais utiliser Bitcoin, BTC slash USDT, mais cette stratégie fonctionne sur n&#x27;importe quelle paire crypto. Après cela, sélectionnez votre type d&#x27;ordre, limite ou marché. Pour les débutants, je recommande de commencer par des ordres au marché pour une exécution instantanée. Ensuite, choisissez votre type de levier. Vous pouvez utiliser la marge croisée ou la marge isolée. Personnellement, j&#x27;utilise toujours la marge isolée car elle limite votre risque à cette position spécifique seulement. Si le trade tourne mal, vous perdez seulement ce que vous avez mis dans le trade. Vous pouvez utiliser un effet de levier élevé sur ces plateformes, mais pour les débutants, je recommande de commencer par un levier de cinq à dix fois jusqu&#x27;à ce que vous soyez à l&#x27;aise avec les mouvements du marché.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Blofin (plateforme d&#x27;échange de crypto-monnaies - section Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpétuel, graphique en chandeliers 5 minutes, carnet d&#x27;ordres en temps réel, options de types d&#x27;ordres (Limit, Market, Trigger) et modes de marge (Cross, Isolated).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du type d&#x27;ordre (Market) et du mode de marge pour configurer une position sur le Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000250_seg8.jpg" alt="Interface de trading Blofin affichant le graphique BTCUSDT et le panneau de passage d&#x27;ordres avec sélection entre Limit et Market." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000250_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Interface de trading Blofin affichant le graphique BTCUSDT et le panneau de passage d&#x27;ordres avec sélection entre Limit et Market.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000300_seg8.jpg" alt="Fenêtre modale &quot;Change Margin Mode&quot; sur Blofin permettant de basculer entre Cross et Isolated." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000300_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:00</span>
+                        <span class="caption-text">Fenêtre modale &quot;Change Margin Mode&quot; sur Blofin permettant de basculer entre Cross et Isolated.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000309_seg8.jpg" alt="Interface de trading Blofin centrée sur le panneau de saisie du montant pour un ordre au marché." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000309_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:09</span>
+                        <span class="caption-text">Interface de trading Blofin centrée sur le panneau de saisie du montant pour un ordre au marché.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:18 - 00:03:47</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Entrez les détails de votre trade, vérifiez que tout est correct, puis cliquez sur acheter (long) ou vendre (short) pour ouvrir votre position. Une fois vos ordres exécutés, vous pouvez les voir sous l&#x27;onglet des positions en bas de l&#x27;écran. Maintenant que vous savez comment naviguer sur la plateforme, passons à la stratégie proprement dite qui peut vous faire gagner 100 dollars par jour. Très bien les gars, c&#x27;est là que ça devient excitant. Cette stratégie utilise l&#x27;outil de retracement de Fibonacci combiné à des indicateurs techniques clés pour identifier des points d&#x27;entrée à forte probabilité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin, TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perp, prix du marché à 86,551.6, carnet d&#x27;ordres, panneau d&#x27;exécution d&#x27;ordres (Buy long / Sell short), tableau des positions ouvertes avec levier 5X et prix de liquidation.</p>
+                        <p><strong>Action / Démonstration :</strong> Exécution d&#x27;un ordre d&#x27;achat (long) sur Bitcoin et vérification de la position ouverte dans l&#x27;onglet dédié en bas de l&#x27;interface.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000325_seg9.jpg" alt="Interface de trading BloFin affichant un graphique de prix BTCUSDT avec une notification de confirmation d&#x27;ordre &quot;Order placed&quot;." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000325_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:25</span>
+                        <span class="caption-text">Interface de trading BloFin affichant un graphique de prix BTCUSDT avec une notification de confirmation d&#x27;ordre &quot;Order placed&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000332_seg9.jpg" alt="Vue de l&#x27;onglet des positions ouvertes en bas de l&#x27;écran sur BloFin montrant la position BTCUSDT active (Buy 5X)." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000332_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:32</span>
+                        <span class="caption-text">Vue de l&#x27;onglet des positions ouvertes en bas de l&#x27;écran sur BloFin montrant la position BTCUSDT active (Buy 5X).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000340_seg9.jpg" alt="Graphique TradingView intégré montrant l&#x27;évolution du contrat perpétuel Bitcoin/USD sur l&#x27;exchange BloFin." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000340_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:40</span>
+                        <span class="caption-text">Graphique TradingView intégré montrant l&#x27;évolution du contrat perpétuel Bitcoin/USD sur l&#x27;exchange BloFin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:47 - 00:04:08</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Les traders utilisent Fibonacci depuis des années pour identifier les niveaux de support et de résistance, et les informations recueillies vous aident à placer des ordres au bon moment. Identifiez les niveaux de stop loss et définissez des objectifs de prix précis. Tout d&#x27;abord, rendez-vous sur TradingView. J&#x27;ai un lien dans la description qui vous offre une réduction si vous voulez la version premium. Choisissez la paire de trading que vous souhaitez trader.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading intégrée (type TradingView / interface de courtier BloFin).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT, indicateur &quot;Auto Fib Retracement 3 10&quot;, niveaux de Fibonacci (1, 0.786, 0.618, 0.5, 0.382, 0.236, 0) avec les prix associés, et volumes en bas de graphique.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique d&#x27;une baisse des cours de Bitcoin à l&#x27;aide des niveaux de support et résistance de Fibonacci.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000352_seg10.jpg" alt="Graphique en chandeliers japonais illustrant l&#x27;indicateur de retracement de Fibonacci automatique sur une paire crypto." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000352_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:52</span>
+                        <span class="caption-text">Graphique en chandeliers japonais illustrant l&#x27;indicateur de retracement de Fibonacci automatique sur une paire crypto.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:09 - 00:04:42</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour cet exemple, j&#x27;utilise Bitcoin contre USDT. Configurez votre graphique sur l&#x27;unité de temps de cinq minutes. C&#x27;est parfait pour les trades de scalping rapides. Mais rappelez-vous, cette stratégie fonctionne sur n&#x27;importe quelle unité de temps, de cinq minutes jusqu&#x27;au graphique de quatre heures. Allez dans l&#x27;onglet des indicateurs tout en haut, tapez retracement de Fibonacci, et sélectionnez l&#x27;outil Fibonacci standard. Maintenant, voici quelque chose de vraiment important. Le marché évolue par schémas. Vous verrez une grande tendance haussière ou baissière, puis un repli ou retracement, et enfin une continuation. L&#x27;outil de retracement de Fibonacci</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (intégré à la plateforme Blofin)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT en unité de temps 5m, affichant le cours actuel autour de 90 750 $ et le volume des transactions en bas de graphique.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration du graphique sur l&#x27;unité de temps de 5 minutes pour illustrer la stratégie de scalping sur Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000417_seg11.jpg" alt="Graphique en chandeliers japonais du contrat perpétuel Bitcoin/USD sur l&#x27;unité de temps de 5 minutes." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000417_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:17</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du contrat perpétuel Bitcoin/USD sur l&#x27;unité de temps de 5 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:42 - 00:05:04</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">nous aide à prédire exactement où ce repli va se terminer, afin que nous puissions entrer au moment parfait et maximiser les gains tout en minimisant le risque. Cliquez sur les paramètres de Fibonacci et assurez-vous d&#x27;utiliser ces niveaux : 0, 0,382, 0,5, 0,618 et 1. Ce sont les niveaux de Fibonacci les plus importants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading BioFin avec graphique de prix intégré (style TradingView).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Niveaux de retracement de Fibonacci affichés (0, 0.236, 0.382, 0.5, 0.618, 0.786, 1), volumes de transactions en bas, et paires de devises BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du repli du marché du Bitcoin à l&#x27;aide des niveaux de Fibonacci et des zones de support/résistance.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000448_seg12.jpg" alt="Graphique en chandeliers japonais illustrant le contrat perpétuel Bitcoin/USD sur l&#x27;échange BioFin, avec l&#x27;utilisation de l&#x27;outil de retracement de Fibonacci pour analyser la baisse des prix." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000448_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:48</span>
+                        <span class="caption-text">Graphique en chandeliers japonais illustrant le contrat perpétuel Bitcoin/USD sur l&#x27;échange BioFin, avec l&#x27;utilisation de l&#x27;outil de retracement de Fibonacci pour analyser la baisse des prix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:05 - 00:05:39</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La zone entre 0,382 et 0,618 est appelée la zone dorée. C&#x27;est là que le prix a le plus de chances de se retourner et de continuer dans la direction de la tendance initiale. Maintenant, une erreur fréquente que font les traders est de ne pas savoir où placer l&#x27;outil de Fibonacci. Pour y remédier, nous allons utiliser les fractales. Retournez dans l&#x27;onglet des indicateurs, tapez fractales, et sélectionnez l&#x27;indicateur. Vous verrez des flèches vertes pour les fractales haussières et des flèches rouges pour les fractales baissières. Mais vous remarquerez qu&#x27;il y a trop de fractales qui s&#x27;affichent. Pour ne filtrer que les principaux points de retournement, cliquez sur l&#x27;indicateur de fractales.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading BloFin / graphique type TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT, indicateur Auto Fib Retracement avec les niveaux 0 (91295.3), 0.382 (91663.0), 0.5 (91776.6), 0.618 (91890.1) et 1 (92257.8).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique illustrant le placement du retracement de Fibonacci et la zone dorée (Golden Zone) lors d&#x27;une tendance baissière.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000514_seg13.jpg" alt="Graphique en chandeliers japonais du Bitcoin (BTC/USD) sur BloFin affichant l&#x27;outil de retracement de Fibonacci avec la « GOLDEN ZONE » mise en évidence en jaune entre les niveaux 0.382 et 0.618." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000514_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:14</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du Bitcoin (BTC/USD) sur BloFin affichant l&#x27;outil de retracement de Fibonacci avec la « GOLDEN ZONE » mise en évidence en jaune entre les niveaux 0.382 et 0.618.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:39 - 00:06:13</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">paramètres et changez les périodes à 10. Maintenant, vous ne verrez plus que les points de swing les plus forts. Concentrez-vous sur les tendances fortes. N&#x27;utilisez pas ceci sur une action de prix faible et saccadée. Une fois que vous repérez une forte tendance haussière, utilisez l&#x27;outil de retracement de Fibonacci pour la marquer du fractal rouge, le bas, au fractal vert, le haut. Vous verrez la zone dorée apparaître sur votre graphique. Lorsque le prix retrace dans cette zone, c&#x27;est votre signal pour chercher une entrée. Mais nous n&#x27;avons pas terminé. Pour rendre cette stratégie encore plus puissante, nous devons ajouter de la confluence. Cherchez des niveaux de support et de résistance qui s&#x27;alignent avec le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading BloFin (TradingView intégré).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers (bougies vertes et rouges), volumes en bas, niveaux de retracement de Fibonacci (Auto Fib Retracement 3 10), et une &quot;Golden Zone&quot; surlignée en jaune.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du cours du Bitcoin et affichage des niveaux de retracement de Fibonacci avec la zone dorée.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000548_seg14.jpg" alt="Un graphique en chandeliers japonais montrant le contrat perpétuel Bitcoin/USD sur BloFin, avec l&#x27;indicateur Auto Fib Retracement et une zone dorée (&quot;Golden Zone&quot;)." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000548_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:48</span>
+                        <span class="caption-text">Un graphique en chandeliers japonais montrant le contrat perpétuel Bitcoin/USD sur BloFin, avec l&#x27;indicateur Auto Fib Retracement et une zone dorée (&quot;Golden Zone&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:13 - 00:06:44</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">zone dorée. Par exemple, si le prix franchit un niveau de résistance puis y revient, cette ancienne résistance agit désormais comme un support. C&#x27;est ce qu&#x27;on appelle un retest. Si ce niveau de retest se situe dans la zone dorée, vous avez une forte confirmation pour votre trade. Ensuite, allez dans l&#x27;onglet des indicateurs, tapez EMA et sélectionnez la moyenne mobile exponentielle. Cliquez sur les paramètres et changez la longueur à 200. La moyenne mobile exponentielle à 200 sur des unités de temps plus grandes agit comme un niveau fort de support et de résistance.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique TradingView intégré à l&#x27;interface de l&#x27;exchange BloFin (unité de temps 5 minutes).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Contrat perpétuel BITCOIN/USD TETHER (BTC/USDT), indicateurs Auto Fib Retracement, Fractals, niveaux de support et zone dorée de Fibonacci.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique illustrant le franchissement d&#x27;un niveau de résistance devenu support (retest) dans la zone dorée de Fibonacci.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000621_seg15.jpg" alt="Graphique TradingView sur l&#x27;exchange BloFin montrant Bitcoin (BTC/USDT) avec des niveaux de Fibonacci, une zone dorée mise en évidence et des flèches illustrant le retest d&#x27;un support." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000621_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:21</span>
+                        <span class="caption-text">Graphique TradingView sur l&#x27;exchange BloFin montrant Bitcoin (BTC/USDT) avec des niveaux de Fibonacci, une zone dorée mise en évidence et des flèches illustrant le retest d&#x27;un support.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:45 - 00:07:18</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans une tendance haussière, le prix rebondit souvent sur la moyenne mobile exponentielle à 200 périodes comme support. Dans une tendance baissière, elle agit comme une résistance. Si la moyenne mobile exponentielle à 200 périodes se situe également dans votre zone dorée, c&#x27;est une couche de confirmation supplémentaire. Enfin, cliquez sur la barre d&#x27;outils de gauche, trouvez le VWAP ancré, et placez-le au début de votre forte tendance, juste là où se trouve le fractal rouge. Allez dans les paramètres, cliquez sur style, et décochez toutes les lignes supplémentaires afin de ne voir que la ligne VWAP principale. Le VWAP ancré fonctionne de manière similaire.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading TradingView (plateforme de graphiques financiers).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Indicateurs techniques : EMA 200, Auto Fib Retracement, Fractals, et Anchored VWAP.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique de la réaction du prix sur la moyenne mobile exponentielle à 200 périodes et configuration de l&#x27;indicateur VWAP ancré.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000653_seg16.jpg" alt="Graphique TradingView de Bitcoin montrant l&#x27;EMA 200 agissant comme une résistance dans une tendance baissière." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000653_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:53</span>
+                        <span class="caption-text">Graphique TradingView de Bitcoin montrant l&#x27;EMA 200 agissant comme une résistance dans une tendance baissière.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000710_seg16.jpg" alt="Interface de configuration des paramètres de l&#x27;indicateur Anchored VWAP par-dessus le graphique des prix." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000710_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:10</span>
+                        <span class="caption-text">Interface de configuration des paramètres de l&#x27;indicateur Anchored VWAP par-dessus le graphique des prix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:18 - 00:07:56</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">à la EMA. Le prix a tendance à rebondir sur cette ligne et elle agit comme un support ou une résistance dynamique. Maintenant, vous avez quatre confluences puissantes. La zone dorée, le retest du support ou de la résistance, la EMA 200 et le VWAP ancré. Lorsque ces quatre éléments s&#x27;alignent, vous avez une configuration de trade à très forte probabilité. Laissez-moi vous montrer un exemple. Regardez ce fort mouvement haussier sur le graphique en cinq minutes. En utilisant les fractales, j&#x27;identifie le bas et le haut du mouvement et je dessine mon retracement de Fibonacci. La zone dorée apparaît juste ici. Maintenant, je vérifie : y a-t-il un retest de support ou de résistance ? Oui, le prix</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading BloFin intégrée avec les graphiques et outils graphiques.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bitcoin/USD Tether Perpetual Swap, indicateurs Volume, Auto Fib Retracements, Fractals, et EMA 200 close.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique illustrant le rebond du prix sur les niveaux de support, la zone dorée et la moyenne mobile exponentielle 200.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000728_seg17.jpg" alt="Graphique en chandelier du Bitcoin sur l&#x27;échange BloFin (unité de temps 5 minutes) montrant une zone de support dorée avec un retracement de Fibonacci et une flèche explicative." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000728_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:28</span>
+                        <span class="caption-text">Graphique en chandelier du Bitcoin sur l&#x27;échange BloFin (unité de temps 5 minutes) montrant une zone de support dorée avec un retracement de Fibonacci et une flèche explicative.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000747_seg17.jpg" alt="Graphique du cours du Bitcoin sur BloFin avec la moyenne mobile EMA 200, des indicateurs fractals et des annotations manuscrites sur le graphique." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000747_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:47</span>
+                        <span class="caption-text">Graphique du cours du Bitcoin sur BloFin avec la moyenne mobile EMA 200, des indicateurs fractals et des annotations manuscrites sur le graphique.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:56 - 00:08:30</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">a cassé ce niveau de résistance et maintenant il agit comme un support. Est-ce que la moyenne mobile exponentielle à 200 périodes s&#x27;aligne ? Oui, elle est juste dans la zone dorée. Est-ce que le VWAP ancré s&#x27;aligne ? Oui, il est aussi dans la zone dorée. Les quatre confluences sont présentes. C&#x27;est un signal d&#x27;entrée parfait. Voici comment exécuter le trade. Entrez votre position acheteuse lorsque le prix touche la zone dorée et montre des signes de rebond, comme une figure de chandelier haussière. Placez votre ordre stop loss juste en dessous de la zone dorée, généralement sous le niveau 0,618. Fixez votre take profit au sommet précédent du mouvement ou utilisez un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique TradingView intégré à la plateforme BloFin.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BITCOIN/USD TETHER PERPETUAL SWAP CONTRACT (intervalle de 5 minutes), indicateur Auto Fib Retracement 3 10, EMA 200 (réglée à 87,917.3), Fractals, et une zone de retracement de Fibonacci dorée surlignée en jaune (niveaux 0.382 à 0.618).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse de la confluence des indicateurs techniques, montrant le prix s&#x27;alignant avec la moyenne mobile exponentielle à 200 périodes et la zone dorée de Fibonacci.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000805_seg18.jpg" alt="Graphique en chandeliers japonais du Bitcoin (BTC/USD) sur BloFin montrant l&#x27;analyse technique avec des niveaux de Fibonacci et la zone dorée." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000805_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:05</span>
+                        <span class="caption-text">Graphique en chandeliers japonais du Bitcoin (BTC/USD) sur BloFin montrant l&#x27;analyse technique avec des niveaux de Fibonacci et la zone dorée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:30 - 00:09:04</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">un ratio risque-rendement de 2 pour 1 ou de 3 pour 1. Dans cet exemple, le prix rebondit parfaitement sur la zone dorée et s&#x27;envole pour atteindre notre objectif de profit. C&#x27;est un gain net de plus de 100 dollars selon la taille de votre position et votre effet de levier. Et les gars, si vous ne vous êtes pas encore inscrits, assurez-vous d&#x27;utiliser mes liens ci-dessous pour réclamer ces bonus. C&#x27;est littéralement de l&#x27;argent gratuit qui peut augmenter votre capital de trading. Et c&#x27;est ainsi que vous utilisez la stratégie de retracement de Fibonacci pour trouver des trades à haute probabilité et réaliser des profits réguliers en faisant du trading de produits dérivés cryptographiques. Cette stratégie fonctionne sur n&#x27;importe quelle unité de temps, mais personnellement, j&#x27;adore l&#x27;utiliser sur</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, BloFin, MEXC</p>
+                        <p><strong>Contenu textuel & Code :</strong> Auto Fib Retracement, Fractals 10, EMA 200, ratio risque/rendement (Risk/Reward Ratio: 1.99), niveaux de prix Bitcoin.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse d&#x27;un trade sur le Bitcoin montrant le rebond sur une zone dorée de Fibonacci et l&#x27;atteinte de l&#x27;objectif de profit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000839_seg19.jpg" alt="Graphique de trading en chandeliers montrant une position Bitcoin/USDT avec les niveaux de retracement de Fibonacci et un ratio risque/rendement validé." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000839_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:39</span>
+                        <span class="caption-text">Graphique de trading en chandeliers montrant une position Bitcoin/USDT avec les niveaux de retracement de Fibonacci et un ratio risque/rendement validé.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000856_seg19.jpg" alt="Graphique de trading montrant le cours du Bitcoin/USDT avec des zones de support et un indicateur technique de retracement de Fibonacci." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000856_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:56</span>
+                        <span class="caption-text">Graphique de trading montrant le cours du Bitcoin/USDT avec des zones de support et un indicateur technique de retracement de Fibonacci.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:04 - 00:09:38</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les graphiques de 5 minutes et de 15 minutes pour des scalps rapides tout au long de la journée. Assurez-vous de vous entraîner d&#x27;abord sur un compte de démonstration avant risquer de l&#x27;argent réel. Familiarisez-vous avec l&#x27;identification des tendances fortes, le tracé de vos niveaux de Fibonacci et le repérage de ces confluences. Et si vous voulez une présentation plus détaillée sur le fonctionnement de Blowfin ou de Mexi, incluant les fonctionnalités avancées, les taux de financement et la gestion des risques, consultez les guides complets de la plateforme que j&#x27;ai, les vidéos apparaissent sur l&#x27;écran en ce moment même, si vous avez trouvé cette vidéo utile, explosez ce bouton J&#x27;aime et abonnez-vous à la chaîne, je créerai encore plus de contenu avancé</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> BloFin (interface Futures &amp; Demo Trading), graphiques TradingView intégrés.</p>
+                        <p><strong>Contenu textuel & Code :</strong> BTCUSDT Perpetual, indicateur Auto Fib Retracement, EMA 200, carnet d&#x27;ordres (Order Book), outil de mesure de risque/rendement (Risk/Reward Ratio).</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique et configuration de niveaux de Fibonacci sur le graphique en unités de 5 minutes pour la préparation de scalps.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000913_seg20.jpg" alt="Interface de trading BloFin en mode compte démo montrant le graphique 5 minutes du Bitcoin (BTCUSDT) avec le carnet d&#x27;ordres et le panneau d&#x27;exécution." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000913_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:13</span>
+                        <span class="caption-text">Interface de trading BloFin en mode compte démo montrant le graphique 5 minutes du Bitcoin (BTCUSDT) avec le carnet d&#x27;ordres et le panneau d&#x27;exécution.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000921_seg20.jpg" alt="Graphique TradingView intégré montrant un contrat perpétuel Bitcoin avec des niveaux de retracement de Fibonacci, une moyenne mobile EMA 200 et un outil de gestion de position (Stop Loss / Take Profit)." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000921_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:21</span>
+                        <span class="caption-text">Graphique TradingView intégré montrant un contrat perpétuel Bitcoin avec des niveaux de retracement de Fibonacci, une moyenne mobile EMA 200 et un outil de gestion de position (Stop Loss / Take Profit).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/RtkWSMUBimg/RtkWSMUBimg_000930_seg20.jpg" alt="Interface de trading BloFin en mode compte démo affichant les données du marché en temps réel pour le BTCUSDT sur un graphique de 5 minutes." loading="lazy" onclick="openLightbox('../screenshots/RtkWSMUBimg/RtkWSMUBimg_000930_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:30</span>
+                        <span class="caption-text">Interface de trading BloFin en mode compte démo affichant les données du marché en temps réel pour le BTCUSDT sur un graphique de 5 minutes.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:38 - 00:09:46</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">stratégies et partager ma configuration de trading personnelle avec vous les gars merci d&#x27;avoir regardé et je vous vois dans la prochaine</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Aucune interface visible.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Aucun contenu informatif ou technique affiché.</p>
+                        <p><strong>Action / Démonstration :</strong> Aucune action ou démonstration en cours.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
