@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment je copie les meilleurs traders de Polymarket grâce à cet outil — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment je copie les meilleurs traders de Polymarket grâce à cet outil</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-03-14</span>
+                <span class="badge">⏱️ 00:10:16</span>
+                <span class="badge">🆔 <code>Ee1jwQ7M7b0</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=Ee1jwQ7M7b0" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo présentée par la chaîne Alex Carter explore en profondeur l'automatisation des investissements sur les marchés de prédiction grâce au copy trading, en se concentrant sur la plateforme TradeFox. L'analyste y détaille comment s'affranchir de la recherche fondamentale exténuante et de la surveillance constante des actualités (politique, sports, météo) en répliquant automatiquement les transactions de traders à fort rendement. La démonstration guide le spectateur de l'inscription sans KYC et du dépôt multichrypto de fonds jusqu'au paramétrage chirurgical des ordres de copie.<br><br>L'analyse technique de la plateforme met en avant des fonctionnalités avancées de filtrage du "smart money" et des baleines, ainsi qu'une panoplie de réglages de gestion des risques. Sont notamment passés au crible les modes de réplication (fixe versus pourcentage), les options de sortie (miroir ou manuelle), ainsi que les paramètres avancés de plafonnement du slippage, de volume minimal de liquidité et d'automatisation des take-profit et stop-loss. En outre, la vidéo met en lumière des aspects uniques comme l'intégration de TradeFox AI pour simuler les performances et l'accès stratégique aux participants des tournois de trading.<br><br>Enfin, l'intervenant conclut sur l'opportunité de monétisation de la plateforme via un programme de parrainage multiniveau agressif (sur trois degrés). Cette approche systémique offre aux traders un cadre opérationnel clés en main, transformant un processus d'analyse complexe et chronophage en une stratégie d'investissement passive, hautement structurée et quantitative.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **TradeFox** : Agrégateur de marchés de prédiction centralisant Polymarket et d'autres plateformes, doté de fonctionnalités natives de copy trading et sans exigence de KYC.<br>* **TradeFox AI** : Outil d'intelligence artificielle intégré permettant de simuler et d'obtenir un aperçu analytique des résultats potentiels basés sur les configurations de copy trading choisies.<br>* **Polymarket** : Principal marché de prédiction décentralisé source des données de flux et des portefeuilles cibles analysés et copiés.<br>* **Metamask** : Portefeuille Web3 externe compatible pour l'authentification et les transferts de fonds sur l'agrégateur.<br>* **Coinbase Wallet** : Solution de portefeuille alternatif utilisée pour approvisionner le compte de trading en crypto-monnaies.<br>* **Rainbow** : Portefeuille crypto mobile pris en charge pour la connexion rapide et sécurisée sans KYC à la plateforme.<br>* **Réseau BSC (Binance Smart Chain)** : Infrastructure blockchain privilégiée dans le tutoriel pour exécuter des transferts de fonds rapides et à faible coût.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Suppression de la charge cognitive** : Élimination totale de la recherche fondamentale et du suivi des actualités en déléguant la prise de décision à des traders et des robots déjà rentables.<br>* **Onboarding frictionnel réduit** : Inscription simplifiée via e-mail, compte X ou portefeuilles externes, exempte de procédures KYC lourdes pour un accès immédiat aux marchés.<br>* **Flexibilité des dépôts multi-actifs** : Capacité à alimenter le compte TradeFox en USDC, ETH, ARB, BNB ou Solana depuis n'importe quel réseau, avec un focus sur la BSC pour son compromis vitesse/frais.<br>* **Segmentation granulaire du "Smart Money"** : Classement et filtrage des portefeuilles cibles par catégories spécialisées (baleines, robots, acteurs manuels, sports, météo) pour cibler des alpha spécifiques.<br>* **Mode Fixe vs Mode Pourcentage** : Choix entre une taille de position constante pour un risque prévisible et une allocation proportionnelle reflétant la conviction changeante du trader copié.<br>* **Modes Miroir vs Manuel** : Distinction entre la réplication totale des mouvements d'achat et de vente (miroir) et le contrôle exclusif des entrées couplé à une gestion autonome des prises de profits (manuel).<br>* **Contrôle strict du slippage et de la liquidité** : Paramétrage des volumes minimaux par marché et de la liquidité requise pour éviter l'impact des ordres importants sur des carnets d'ordres peu profonds.<br>* **Filtres de juste valeur et d'horizon temporel** : Utilisation de fourchelles de prix minimales et maximales pour rejeter les achats à l'extrême, combinée à un filtre de temps maximum avant résolution.<br>* **Automatisation des sorties (Take-Profit & Stop-Loss)** : Définition de seuils de sortie personnalisés pour verrouiller les gains ou couper les pertes indépendamment de la stratégie de conservation du trader d'origine.<br>* **Exploitation des tournois de trading** : Stratégie consistant à copier les participants des tournois TradeFox, ces derniers tradant à leur plus haut niveau de compétitivité pour maximiser la qualité des signaux.<br>* **Monétisation par parrainage multiniveau** : Intégration d'un système d'affiliation sur trois degrés (35 %, 10 % et 5 %) générant des revenus passifs récurrents sur les frais de réseau.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradeFox</span><span class="tool-tag">TradeFox AI</span><span class="tool-tag">Polymarket</span><span class="tool-tag">Metamask</span><span class="tool-tag">Coinbase Wallet</span><span class="tool-tag">Rainbow</span><span class="tool-tag">Réseau BSC (Binance Smart Chain)</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Suppression de la charge cognitive** : Élimination totale de la recherche fondamentale et du suivi des actualités en déléguant la prise de décision à des traders et des robots déjà rentables.</span></li><li><span class="point-bullet">✦</span><span>Onboarding frictionnel réduit** : Inscription simplifiée via e-mail, compte X ou portefeuilles externes, exempte de procédures KYC lourdes pour un accès immédiat aux marchés.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité des dépôts multi-actifs** : Capacité à alimenter le compte TradeFox en USDC, ETH, ARB, BNB ou Solana depuis n&#x27;importe quel réseau, avec un focus sur la BSC pour son compromis vitesse/frais.</span></li><li><span class="point-bullet">✦</span><span>Segmentation granulaire du &quot;Smart Money&quot;** : Classement et filtrage des portefeuilles cibles par catégories spécialisées (baleines, robots, acteurs manuels, sports, météo) pour cibler des alpha spécifiques.</span></li><li><span class="point-bullet">✦</span><span>Mode Fixe vs Mode Pourcentage** : Choix entre une taille de position constante pour un risque prévisible et une allocation proportionnelle reflétant la conviction changeante du trader copié.</span></li><li><span class="point-bullet">✦</span><span>Modes Miroir vs Manuel** : Distinction entre la réplication totale des mouvements d&#x27;achat et de vente (miroir) et le contrôle exclusif des entrées couplé à une gestion autonome des prises de profits (manuel).</span></li><li><span class="point-bullet">✦</span><span>Contrôle strict du slippage et de la liquidité** : Paramétrage des volumes minimaux par marché et de la liquidité requise pour éviter l&#x27;impact des ordres importants sur des carnets d&#x27;ordres peu profonds.</span></li><li><span class="point-bullet">✦</span><span>Filtres de juste valeur et d&#x27;horizon temporel** : Utilisation de fourchelles de prix minimales et maximales pour rejeter les achats à l&#x27;extrême, combinée à un filtre de temps maximum avant résolution.</span></li><li><span class="point-bullet">✦</span><span>Automatisation des sorties (Take-Profit &amp; Stop-Loss)** : Définition de seuils de sortie personnalisés pour verrouiller les gains ou couper les pertes indépendamment de la stratégie de conservation du trader d&#x27;origine.</span></li><li><span class="point-bullet">✦</span><span>Exploitation des tournois de trading** : Stratégie consistant à copier les participants des tournois TradeFox, ces derniers tradant à leur plus haut niveau de compétitivité pour maximiser la qualité des signaux.</span></li><li><span class="point-bullet">✦</span><span>Monétisation par parrainage multiniveau** : Intégration d&#x27;un système d&#x27;affiliation sur trois degrés (35 %, 10 % et 5 %) générant des revenus passifs récurrents sur les frais de réseau.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:37</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer comment je copie les transactions de certains des traders de marchés de prédiction les plus rentables sur Polymarket en utilisant TradeFox. Si vous avez déjà négocié sur des marchés de prédiction, vous savez à quel point cela peut être épuisant, à rechercher constamment, à analyser des données et à surveiller les actualités juste pour comprendre où le marché pourrait évoluer. Mais au lieu de faire tout ce travail vous-même, vous pouvez simplement copier les transactions de traders qui réalisent déjà des milliers de dollars de profit automatiquement. Plongeons dans le vif du sujet. Alors tout d&#x27;abord, qu&#x27;est-ce que Tradefox ? Tradefox est essentiellement un agrégateur de marchés de prédiction. Cela signifie qu&#x27;il rassemble tous les marchés de Polymarket et d&#x27;autres plateformes dans</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradeFox (plateforme de trading et d&#x27;agrégation pour les marchés de prédiction)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Statistiques de trading (valeur du portefeuille à 165 111,13 $, PnL global de +10 618 054 $, volume total de 242 797 444,53 $, taux de réussite de 52,6%) et texte descriptif de la plateforme TradeFox.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme TradeFox pour analyser les performances d&#x27;un trader rentable et consulter la présentation de l&#x27;outil.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000009_seg1.jpg" alt="Interface TradeFox montrant le profil d&#x27;un trader (kch123) avec ses statistiques de performance (Overall PnL de +10 618 054 $), un graphique d&#x27;évolution du PnL et un bouton de copie de transactions." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface TradeFox montrant le profil d&#x27;un trader (kch123) avec ses statistiques de performance (Overall PnL de +10 618 054 $), un graphique d&#x27;évolution du PnL et un bouton de copie de transactions.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000028_seg1.jpg" alt="Page &quot;About&quot; du site web TradeFox détaillant la vision de la plateforme en tant qu&#x27;agrégateur de marchés de prédiction et courtier principal." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000028_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:28</span>
+                        <span class="caption-text">Page &quot;About&quot; du site web TradeFox détaillant la vision de la plateforme en tant qu&#x27;agrégateur de marchés de prédiction et courtier principal.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:37 - 00:01:10</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">un seul endroit. Donc vous n&#x27;avez pas besoin de passer d&#x27;un site à un autre. Tout est ici. Et voici le point important. Tradefox propose un programme de parrainage généreux. Je vous montrerai exactement comment cela fonctionne plus tard dans la vidéo. Mais sachez simplement que le lien que j&#x27;ai mis dans la description vous donnera des récompenses bien meilleures que si vous vous inscrivez normalement. Très bien, donc d&#x27;abord vous allez avoir besoin d&#x27;un compte sur Tradefox. Cliquez sur le lien dans la description et l&#x27;inscription est super simple. Vous pouvez utiliser votre email, votre compte X, ou un portefeuille externe comme Metamask, Coinbase Wallet, Rainbow, et plus encore. Avec Tradefox,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme Tradefox (documentation et interface de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications textuelles du programme de parrainage (35% pour les filleuls directs, 10% de 2e degré, 5% de 3e degré) et options de connexion (Email, X, Wallet).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans la documentation de Tradefox et affichage de la fenêtre contextuelle de connexion.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000045_seg2.jpg" alt="Page de documentation de Tradefox détaillant le programme de parrainage avec des explications sur les gains par niveau." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000045_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Page de documentation de Tradefox détaillant le programme de parrainage avec des explications sur les gains par niveau.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000102_seg2.jpg" alt="Interface principale de la plateforme Tradefox affichant un graphique de marché avec une fenêtre modale de connexion." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000102_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:02</span>
+                        <span class="caption-text">Interface principale de la plateforme Tradefox affichant un graphique de marché avec une fenêtre modale de connexion.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:10 - 00:01:40</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">tu n&#x27;as même pas besoin de KYC, ce qui est génial parce que ça signifie que tu peux commencer à trader tout de suite. Pour ce tutoriel, je vais utiliser mon compte Google pour m&#x27;inscrire. Une fois que tu y es, tu vas devoir déposer des fonds. Et le truc cool avec TradeFox, c&#x27;est qu&#x27;une fois que tu as un compte Polymarket ou Calci, tu peux déposer et transférer à peu près n&#x27;importe quelle crypto. ARB, BNB, ETH, USDC, Solana, et plus encore. Quoi que tu aies, tu peux le transférer directement sur le portefeuille qu&#x27;ils te donnent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading TradeFox (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire de connexion (champ email) et menu déroulant de sélection des jetons/réseaux (USDC, Polygon, ARB, BNB, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et démonstration de la procédure d&#x27;inscription et de dépôt sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000117_seg3.jpg" alt="Interface de TradeFox affichant une fenêtre modale de connexion ou d&#x27;inscription par email." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000117_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Interface de TradeFox affichant une fenêtre modale de connexion ou d&#x27;inscription par email.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000132_seg3.jpg" alt="Fenêtre de transfert de crypto sur TradeFox montrant la liste des jetons et chaînes supportés." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000132_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:32</span>
+                        <span class="caption-text">Fenêtre de transfert de crypto sur TradeFox montrant la liste des jetons et chaînes supportés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:40 - 00:02:01</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Laissez-moi vous montrer. Une fois que vous êtes sur ce menu et que je veux déposer, disons de l&#x27;USDC, après cela je sélectionne un réseau. Je choisis généralement le réseau BSC parce qu&#x27;il est rapide et bon marché. Ensuite, je copie simplement cette adresse de portefeuille, je vais sur mon autre portefeuille, et j&#x27;envoie les fonds. En quelques minutes, boum, ça apparaît sur mon compte TradeFox et je suis prêt à trader. Pour cette démo, j&#x27;ai 20 dollars chargés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;échange ou de portefeuille crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu déroulant des réseaux supportés avec les montants de dépôt minimum (ex: Polygon Min $3, Ethereum Min $10, BSC Min $3), QR code et adresse de dépôt du portefeuille.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du réseau blockchain pour effectuer un dépôt d&#x27;USDC.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000145_seg4.jpg" alt="Fenêtre modale &quot;Transfer Crypto&quot; affichant la sélection du jeton USDC et du réseau de transfert (Polygon, Ethereum, Solana, BSC, Base, Arbitrum, Optimism, etc.)." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000145_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:45</span>
+                        <span class="caption-text">Fenêtre modale &quot;Transfer Crypto&quot; affichant la sélection du jeton USDC et du réseau de transfert (Polygon, Ethereum, Solana, BSC, Base, Arbitrum, Optimism, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:02 - 00:02:24</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc maintenant nous sommes prêts à commencer. Très bien, voici maintenant la partie qui m&#x27;enthousiasme le plus, le copy trading. C&#x27;est honnêtement la raison pour laquelle j&#x27;ai transféré la plupart de mes trades sur les marchés de prédiction vers TradeFox. Cliquez sur copy dans la barre supérieure. Vous pouvez voir trois sections ici, following, smart money et leaderboard. Dans following, vous pouvez rechercher l&#x27;adresse de portefeuille d&#x27;un utilisateur spécifique que vous souhaitez copier depuis Polymarket et la coller ici.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading TradeFox (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de classement &quot;High-PnL Investors&quot; et &quot;Most Copied By Category&quot; affichant des données financières chiffrées (Total PnL, Win Rate, Volume, 30D Return).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page de copy trading de la plateforme TradeFox pour présenter les meilleurs traders à copier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000207_seg5.jpg" alt="Capture d&#x27;écran de l&#x27;interface de TradeFox montrant la section dédiée au copy trading avec le classement des investisseurs et leurs performances (PnL, volume, taux de réussite)." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000207_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:07</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de TradeFox montrant la section dédiée au copy trading avec le classement des investisseurs et leurs performances (PnL, volume, taux de réussite).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:25 - 00:02:45</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir ici les traders que vous copiez et tous les traders que vous suivez. Vous pouvez voir leur profil ou leur adresse, leur P&amp;L, la valeur de leur position, leur volume, leur dernière activité et leurs actions. Dans la section &quot;smart money&quot;, vous pouvez voir les investisseurs à fort P&amp;L. Ce sont les investisseurs qui ont un P&amp;L élevé et qui ont été le plus copiés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de copy trading Tradefox</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux avec colonnes &quot;Profile or Address&quot;, &quot;PnL&quot;, &quot;Position Value&quot;, &quot;Volume&quot;, &quot;Last Active&quot; et &quot;Actions&quot;</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;onglet de suivi des traders et présentation des sections de copy trading</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000230_seg6.jpg" alt="Interface de la plateforme Tradefox affichant les sections &quot;Following&quot;, &quot;Smart Money&quot; et &quot;Leaderboard&quot;, avec les listes des traders suivis et copiés." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000230_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:30</span>
+                        <span class="caption-text">Interface de la plateforme Tradefox affichant les sections &quot;Following&quot;, &quot;Smart Money&quot; et &quot;Leaderboard&quot;, avec les listes des traders suivis et copiés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:45 - 00:03:05</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir leur nom, quel genre de trader ils sont, leur rendement sur 30 jours et leur volume. Vous pouvez aussi suivre leurs transactions sans les copier. Lorsque vous faites défiler vers le bas, vous pouvez voir des catégories. Vous pouvez également vérifier chaque trader par catégorie comme &quot;Sur le point de lier&quot;, &quot;Baleines&quot;, &quot;Robots de trading&quot;, &quot;Acteurs manuels&quot;, &quot;Sports&quot;, &quot;Météo&quot; et plus encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox (interface web de copy trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Noms des traders (kch123, DrPufferfish, RN1), catégories (Manual Traders, Sports Traders), rendement sur 30 jours (30D Return), volumes totaux et classements par catégorie.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des profils d&#x27;investisseurs et des métriques de performance pour le copy trading sur la plateforme Tradefox.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000250_seg7.jpg" alt="Capture d&#x27;écran de la plateforme Tradefox montrant la section de copy trading avec les investisseurs à haut PnL et les catégories de traders." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000250_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Tradefox montrant la section de copy trading avec les investisseurs à haut PnL et les catégories de traders.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:05 - 00:03:29</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir les classements sur le côté droit, leur nom, le rendement sur 30 jours et le volume. Lorsque vous faites un peu plus défiler vers le bas, vous pouvez voir les investisseurs à fort volume. Ce sont des investisseurs qui ont le volume le plus élevé sur 12 mois. Vous pouvez consulter les statistiques de chaque trader en cliquant sur son profil. Vous pouvez voir le volume total de leur portefeuille, leur P&amp;L global, leur volume et leurs récompenses de LP ou de pool de liquidité.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de copy trading Tradefox.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Classement des 10 meilleurs traders par catégorie avec leurs volumes respectifs (ex: kch123, DrPufferfish, gmanas) et rendements sur 30 jours, ainsi que la section « High-Volume Investors » en bas de page.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des classements de copy trading et des volumes des investisseurs sur la plateforme Tradefox.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000311_seg8.jpg" alt="Capture d&#x27;écran de la plateforme Tradefox montrant le classement des traders (« Most Copied By Category ») avec les noms d&#x27;utilisateurs, le rendement sur 30 jours et le volume." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000311_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:11</span>
+                        <span class="caption-text">Capture d&#x27;écran de la plateforme Tradefox montrant le classement des traders (« Most Copied By Category ») avec les noms d&#x27;utilisateurs, le rendement sur 30 jours et le volume.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:30 - 00:03:50</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir la visualisation également au milieu avec leur courbe de P&amp;L. Vous pouvez voir d&#x27;autres statistiques sur la droite, telles que le P&amp;L non réalisé, le P&amp;L réalisé, et leurs statistiques sur les 6 dernières heures, 24 heures, 7 jours et 30 jours. Lorsque vous faites défiler un peu vers le bas, vous pouvez voir leurs positions actuelles et l&#x27;historique de leurs trades.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Valeur totale du portefeuille (96 077,37 $), P&amp;L global (+5 013 726,00 $), volume total, récompenses LP, taux de réussite (53,1 %), graphique de P&amp;L au centre, P&amp;L non réalisé (-2 641 115,75 $), P&amp;L réalisé (+7 654 841,93 $), et statistiques sur différentes périodes (6 heures, 24 heures, 7 jours, 30 jours).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la vue d&#x27;ensemble du profil de trading et des performances d&#x27;un utilisateur sur Tradefox.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000335_seg9.jpg" alt="Interface de la plateforme Tradefox affichant les statistiques de trading, le graphique de P&amp;L global et les positions en cours d&#x27;un utilisateur." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000335_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:35</span>
+                        <span class="caption-text">Interface de la plateforme Tradefox affichant les statistiques de trading, le graphique de P&amp;L global et les positions en cours d&#x27;un utilisateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:50 - 00:04:08</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez voir le résultat, le prix moyen auquel ils ont acheté, le prix actuel, la quantité, le prix de revient et la valeur actuelle de la position. Une fois que vous cliquez sur copier les trades, cela vous donnera le formulaire d&#x27;ordre pour ce trader. Vous pouvez voir les options sur la façon dont vous voulez copier le trade. Vous pouvez voir deux modes, le mode fixe et le mode pourcentage.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web Tradefox (plateforme de copy trading et de prédictions).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableaux de positions (Market, Outcome, Avg Price, Current Price, Quantity, Avg Cost Basis, Current Position Value, Unrealized PnL, Realized PnL) et formulaire de configuration de copy trading (Fixed Mode, Percentage Mode, Total Allocated Funds, Mirror/Manual).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le tableau des positions puis ouverture du formulaire de configuration après un clic sur le bouton &quot;Copy Trades&quot;.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000355_seg10.jpg" alt="Image montrant le tableau des positions actuelles sur l&#x27;interface Tradefox avec les détails des marchés, prix et quantités." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000355_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:55</span>
+                        <span class="caption-text">Image montrant le tableau des positions actuelles sur l&#x27;interface Tradefox avec les détails des marchés, prix et quantités.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000404_seg10.jpg" alt="Image montrant la fenêtre contextuelle de configuration du copy trading (Copy Trades) sur Tradefox avec les modes Fixed Mode et Percentage Mode." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000404_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Image montrant la fenêtre contextuelle de configuration du copy trading (Copy Trades) sur Tradefox avec les modes Fixed Mode et Percentage Mode.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:09 - 00:04:28</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le mode fixe signifie que vous copiez chaque trade à une taille constante. Pas de dimensionnement dynamique et un risque prévisible par trade. C&#x27;est idéal si vous voulez de la cohérence et que vous ne voulez pas que la taille de vos positions change en fonction de l&#x27;allocation du trader. Le mode pourcentage signifie que la taille de votre position évolue proportionnellement à l&#x27;allocation du trader.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de copy trading Tradefox avec une pop-up de configuration des paramètres de trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration du copy trading : &#x27;Fixed Mode&#x27;, &#x27;Percentage Mode&#x27;, allocation de fonds, montant fixe par trade, limites min/max par marché, options &#x27;Mirror&#x27; et &#x27;Manual&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du mode fixe (&#x27;Fixed Mode&#x27;) pour configurer la copie des trades à taille constante.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000414_seg11.jpg" alt="Fenêtre modale de configuration du copy trading sur la plateforme Tradefox, affichant l&#x27;onglet &#x27;Fixed Mode&#x27; sélectionné." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000414_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:14</span>
+                        <span class="caption-text">Fenêtre modale de configuration du copy trading sur la plateforme Tradefox, affichant l&#x27;onglet &#x27;Fixed Mode&#x27; sélectionné.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:29 - 00:04:47</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc s&#x27;ils voient plus grand sur un trade, vous voyez plus grand aussi. Cela reflète leur niveau de conviction sur chaque trade. Ensuite, c&#x27;est le montant des fonds que vous souhaitez allouer à ce trader. Vous pouvez voir votre solde disponible juste ici. Si vous choisissez le mode fixe, vous verrez l&#x27;option du montant fixe par trade. Ce sera le montant exact que vous copierez sur chaque trade.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading TradeFox (interface web de copy trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Solde disponible de 20,75 $, options de configuration (&quot;Total Allocated Funds&quot;, &quot;Percentage Mode&quot;, modes &quot;Proportional&quot;, &quot;Mirror&quot;, &quot;Manual&quot;), et statistiques de performance du trader en arrière-plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et configuration des paramètres de copy trading (allocation des fonds et mode de réplication des trades).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000433_seg12.jpg" alt="Interface de configuration du copy trading sur la plateforme TradeFox, affichant la fenêtre modale de paramétrage avec les modes &quot;Fixed Mode&quot; et &quot;Percentage Mode&quot;." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000433_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:33</span>
+                        <span class="caption-text">Interface de configuration du copy trading sur la plateforme TradeFox, affichant la fenêtre modale de paramétrage avec les modes &quot;Fixed Mode&quot; et &quot;Percentage Mode&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:47 - 00:05:08</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Simple et prévisible. Si vous choisissez le mode pourcentage, vous verrez l&#x27;option du pourcentage par trade. Cela signifie que vous copiez un pourcentage de votre allocation totale sur chaque trade. Donc, si vous allouez 100 $ et définissez 10 % par trade, chaque trade sera de 10 $. Mais si la taille du trader augmente, votre pourcentage reste le même, vous reflétez donc sa stratégie de manière proportionnelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de copy trading Tradefox.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration : Total Allocated Funds, Available Balance ($20.75), Percentage of each trade (0%), Min/Max amount per market, modes Proportional, Mirror, et Manual.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et explication des paramètres du mode pourcentage pour le copy trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000452_seg13.jpg" alt="Fenêtre de configuration du copy trading sur la plateforme Tradefox en mode pourcentage." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000452_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:52</span>
+                        <span class="caption-text">Fenêtre de configuration du copy trading sur la plateforme Tradefox en mode pourcentage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:09 - 00:05:30</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ensuite, il s&#x27;agit de configurer les montants minimum et maximum par marché. Cela vous permet de contrôler votre risque. Le minimum garantit que vous ne copiez pas des transactions trop petites pour avoir de l&#x27;importance, et le maximum plafonne votre exposition, afin de ne pas tout miser sur un seul marché. Vous pouvez également choisir entre le mode miroir et le mode manuel. Lorsque vous choisissez le mode miroir, vous vendez le même montant absolu que le trader.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de copy trading Tradefox (interface web sombre).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration du copy trading : mode pourcentage, allocation des fonds, pourcentage maximum par trade, montants minimum et maximum par marché (fixés à 0 $).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur survole les champs de configuration des montants minimum et maximum par marché pour le copy trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000514_seg14.jpg" alt="Fenêtre modale de configuration du copy trading sur la plateforme Tradefox, affichant les champs pour les montants minimum et maximum par marché." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000514_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:14</span>
+                        <span class="caption-text">Fenêtre modale de configuration du copy trading sur la plateforme Tradefox, affichant les champs pour les montants minimum et maximum par marché.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:31 - 00:05:53</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si votre position est plus petite, votre position entière peut être vendue. Vous reproduisez donc essentiellement leurs mouvements exacts, achats et ventes. Si vous choisissez le mode manuel, cela copie uniquement les achats, et vous avez un contrôle total sur toutes les sorties et la prise de profits. Vous pouvez donc laisser le trade durer plus longtemps ou le couper tôt selon votre propre stratégie. Lorsque vous cliquez sur le mode pourcentage, vous pouvez également voir la vente proportionnelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox, interface web de copy trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de configuration du copy trading : modes (Fixed Mode, Percentage Mode), allocation de fonds, pourcentage par trade, et modes d&#x27;exécution (Proportional, Mirror, Manual).</p>
+                        <p><strong>Action / Démonstration :</strong> Le curseur survole et sélectionne le mode &quot;Mirror&quot; pour configurer le suivi des trades.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000536_seg15.jpg" alt="Interface de la plateforme Tradefox affichant une fenêtre de configuration de copy trading avec la sélection du mode &quot;Mirror&quot;." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000536_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:36</span>
+                        <span class="caption-text">Interface de la plateforme Tradefox affichant une fenêtre de configuration de copy trading avec la sélection du mode &quot;Mirror&quot;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:54 - 00:06:12</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela signifie que cela se vend proportionnellement à votre allocation. Par exemple, si vous avez alloué 50 % et que le trader vend 1 000 actions, vous vendez automatiquement 500 actions. Vous évoluez donc avec eux, et vous ne copiez pas le nombre exact d&#x27;actions. Une fois que vous cliquez sur les paramètres avancés dans l&#x27;un ou l&#x27;autre mode, vous pouvez voir le montant maximal de copie par transaction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading Tradefox, avec une fenêtre pop-up de configuration &quot;Copy gmanas&quot;.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de copy trading avec les modes &quot;Fixed Mode&quot; et &quot;Percentage Mode&quot;, allocation de fonds, pourcentage par trade, et la sélection active du mode &quot;Proportional&quot; avec description textuelle détaillée.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de répartition proportionnelle pour copier automatiquement les trades d&#x27;un utilisateur selon l&#x27;allocation définie.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000558_seg16.jpg" alt="Fenêtre modale de configuration du copy trading sur la plateforme Tradefox, affichant les options de mode proportionnel." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000558_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:58</span>
+                        <span class="caption-text">Fenêtre modale de configuration du copy trading sur la plateforme Tradefox, affichant les options de mode proportionnel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:13 - 00:06:32</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela limite le montant que vous êtes prêt à risquer sur un seul trade, même si le trader voit plus grand. Volume minimum de chaque marché. Cela élimine les marchés à faible liquidité où le slippage pourrait vous nuire. Liquidité minimum par marché. Semblable au volume, cela garantit que le marché a suffisamment de profondeur pour que vos ordres ne fassent pas trop bouger le prix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading TradeFox avec une fenêtre pop-up de paramètres.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres visibles : &quot;Max copy amount per trade&quot;, &quot;Min volume of each market&quot;, &quot;Min liquidity per market&quot;, &quot;Market price range&quot;, &quot;Max time-until resolution&quot;, options de &quot;Take Profit&quot; et &quot;Stop Loss&quot;. Valeurs du portefeuille en arrière-plan ($96,077.37).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et survol des options de gestion des risques pour le copy trading dans les paramètres avancés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000618_seg17.jpg" alt="Capture d&#x27;écran de l&#x27;interface TradeFox affichant une fenêtre modale de configuration des paramètres avancés (&quot;Advanced Settings&quot;) pour le copy trading." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000618_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:18</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface TradeFox affichant une fenêtre modale de configuration des paramètres avancés (&quot;Advanced Settings&quot;) pour le copy trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:32 - 00:06:50</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Fourchette de prix du marché avec minimum et maximum. Cela vous évite de copier des transactions qui sont trop éloignées de la juste valeur. Donc si un trader achète à un prix extrême, vous ne suivrez pas. Temps maximum. Jusqu&#x27;à la résolution, cela filtre les marchés à long terme si vous préférez des transactions plus rapides qui se résolvent rapidement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de copy trading Tradefox avec interface de paramètres avancés (Advanced Settings)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres affichés : &quot;Max copy amount per trade&quot;, &quot;Min volume of each market&quot;, &quot;Min liquidity per market&quot;, &quot;Market price range&quot;, &quot;Max time until resolution&quot; (avec options Any, 2 days, 7 days, 30 days, 90 days), &quot;Take Profit&quot;, &quot;Stop Loss&quot;, et &quot;Force Min Order Size&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des filtres de risque et des limites de temps pour le copy trading de marchés prédictifs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000636_seg18.jpg" alt="Capture d&#x27;écran montrant la fenêtre des paramètres avancés (Advanced Settings) sur la plateforme Tradefox, illustrant les options de configuration pour le copy trading." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000636_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:36</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant la fenêtre des paramètres avancés (Advanced Settings) sur la plateforme Tradefox, illustrant les options de configuration pour le copy trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:51 - 00:07:12</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pourcentage de prise de bénéfice et de stop-loss. Cela automatise vos sorties. Ainsi, même si le trader conserve sa position, vous pouvez verrouiller vos gains ou couper vos pertes à vos propres niveaux. Vous pouvez également activer la taille de commande minimale forcée, ce qui garantit l&#x27;exécution en arrondissant les petits ordres au minimum de la plateforme. Mais cela peut entraîner une taille de position relative plus importante pour les petits trades.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox, interface web de copy trading.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de gestion des risques incluant &#x27;Take Profit (% gain)&#x27;, &#x27;Stop Loss (% loss)&#x27;, &#x27;Force Min Order Size&#x27;, ainsi que des filtres de volume et de liquidité.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des niveaux automatisés de prise de bénéfice et de stop-loss pour le copy trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000656_seg19.jpg" alt="Fenêtre modale des paramètres avancés (Advanced Settings) sur la plateforme Tradefox, affichant les options pour configurer le Take Profit (% gain), le Stop Loss (% loss) et la taille de commande minimale forcée." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000656_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:56</span>
+                        <span class="caption-text">Fenêtre modale des paramètres avancés (Advanced Settings) sur la plateforme Tradefox, affichant les options pour configurer le Take Profit (% gain), le Stop Loss (% loss) et la taille de commande minimale forcée.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:12 - 00:07:33</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Gardez donc cela à l&#x27;esprit. Vous pouvez également découvrir leur fonctionnalité sympa, TradeFox AI. Cela vous donnera un aperçu des résultats possibles en fonction de vos données. C&#x27;est donc comme un aperçu de la façon dont votre configuration de copy trading pourrait fonctionner. Une fois que vous êtes satisfait, cliquez sur commencer à copier et votre copy trade sera désormais en ligne. En retournant sur le tableau de bord, vous pouvez voir la section du classement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme TradeFox.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de copy trading avec le mode pourcentage sélectionné, allocation de fonds, pourcentage maximum par trade (2%), et un panneau TradeFox AI affichant un aperçu d&#x27;analyse.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;une stratégie de copy trading et consultation de l&#x27;outil TradeFox AI pour estimer les résultats potentiels.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000718_seg20.jpg" alt="Fenêtre modale de configuration du copy trading sur TradeFox avec l&#x27;outil d&#x27;analyse TradeFox AI Sanity Check ouvert." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000718_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:18</span>
+                        <span class="caption-text">Fenêtre modale de configuration du copy trading sur TradeFox avec l&#x27;outil d&#x27;analyse TradeFox AI Sanity Check ouvert.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:33 - 00:07:52</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, vous pouvez voir les 50 meilleurs traders selon leur P&amp;L total. Vous pouvez voir leurs statistiques telles que le retour sur investissement, le taux de réussite, les transactions qu&#x27;ils ont effectuées, le volume et le style de leurs transactions. Vous pouvez également effectuer un tri en haut de la page en fonction de ces métriques. Vous pouvez ajuster la période pour afficher tous les temps, 30 jours, 7 jours et 24 heures.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox, section Leaderboard.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau affichant le classement (Rank), les adresses de portefeuille (Wallet), le PnL réalisé, le PnL total, le retour sur investissement (ROI), le taux de réussite (Win rate), le nombre de transactions (Trades), le volume et le style de trading avec des filtres de recherche.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation du classement des traders et de leurs performances sur la plateforme de copy trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000738_seg21.jpg" alt="Capture d&#x27;écran montrant le classement (Leaderboard) de la plateforme Tradefox avec les statistiques des meilleurs traders." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000738_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:38</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le classement (Leaderboard) de la plateforme Tradefox avec les statistiques des meilleurs traders.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:53 - 00:08:15</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que vous cliquez sur l&#x27;action de copy trading sur le côté droit, le même écran d&#x27;ordre apparaîtra. Et voilà le truc. Je n&#x27;ai pas besoin de faire de recherches. Je n&#x27;ai pas besoin de surveiller les marchés. Je n&#x27;ai pas besoin de savoir ce qui se passe dans la politique américaine ou le sport ou peu importe. Je trouve juste quelqu&#x27;un qui fait déjà le travail difficile et je le copie. Ne serait-ce pas plus facile ? Alors pourquoi ferais-je toutes ces recherches alors que je peux simplement copier quelqu&#x27;un qui cartonne déjà ?</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox (onglet Copy &gt; Leaderboard)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Classement de traders avec adresses de portefeuille masquées, PnL réalisé, PnL total, ROI en pourcentage, taux de réussite (Win rate), nombre de trades, volume et style de trading (Whale, Active Trader, Value Hunter).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et visualisation de la liste des meilleurs traders disponibles pour le copy trading avec un bouton &quot;Copy Trades&quot; sur la droite.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000758_seg22.jpg" alt="Capture d&#x27;écran de l&#x27;interface de copy trading de la plateforme Tradefox montrant le classement des traders (Leaderboard) avec leurs performances." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000758_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:58</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de copy trading de la plateforme Tradefox montrant le classement des traders (Leaderboard) avec leurs performances.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:15 - 00:08:48</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez également voir ici en haut l&#x27;option du tournoi. Ici, vous pouvez rejoindre le tournoi TradeFox où vous pouvez gagner des prix allant jusqu&#x27;à 3 000 dollars. Vous pouvez voir ici le volume du tournoi, votre classement actuel et le boost de récompense dont vous disposez. Vous pouvez également voir ici le temps restant avant la fin du tournoi. Vous pouvez voir tous les participants et leur classement du 1er au 25e. Donc, si vous êtes compétitif et que vous voulez tester vos compétences contre d&#x27;autres traders, c&#x27;est une fonctionnalité plutôt sympa. Et le meilleur dans tout ça, c&#x27;est que vous pouvez aussi copier les trades de ces traders du tournoi.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading en ligne TradeFox (page du tournoi)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails du tournoi TradeFox: Season 2, volume total, compte à rebours de fin, prix (Alpha Fox : 3 000 $, Silver Fox : 2 000 $, Bronze Fox : 1 300 $) et tableau du classement des utilisateurs avec volumes et variations sur 24h.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface du tournoi TradeFox, visualisation des prix et du classement des traders.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000823_seg23.jpg" alt="Interface du tableau de bord du tournoi TradeFox montrant les détails de la saison 2, les prix à gagner et le classement des participants." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000823_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:23</span>
+                        <span class="caption-text">Interface du tableau de bord du tournoi TradeFox montrant les détails de la saison 2, les prix à gagner et le classement des participants.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:48 - 00:09:08</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je pense que c&#x27;est absolument insensé parce que les traders que vous copiez ici concourent à leur tout meilleur niveau. Vous pouvez donc vous attendre à des trades de haute qualité et ciblés. Ils essaient littéralement de gagner. Leur stratégie va donc être pointue. Très bien. Alors avant de conclure, laissez-moi vous montrer rapidement le programme de parrainage parce que c&#x27;est vraiment insensé.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading TradeFox (interface web de courtage/copie de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de copy trading (fonds alloués, solde disponible, modes fixe et pourcentage), graphique de prix XRP, carnet d&#x27;ordres avec prix et volumes, et options d&#x27;achat/vente.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un profil de copy trading sur TradeFox puis visualisation du marché XRP avec le carnet d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000853_seg24.jpg" alt="Interface TradeFox affichant la fenêtre de configuration du copy trading avec les options de fonds alloués et les modes de réplication." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000853_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:53</span>
+                        <span class="caption-text">Interface TradeFox affichant la fenêtre de configuration du copy trading avec les options de fonds alloués et les modes de réplication.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000903_seg24.jpg" alt="Interface de trading TradeFox montrant un graphique de prix pour XRP, le carnet d&#x27;ordres (Order Book) et le panneau d&#x27;exécution d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000903_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:03</span>
+                        <span class="caption-text">Interface de trading TradeFox montrant un graphique de prix pour XRP, le carnet d&#x27;ordres (Order Book) et le panneau d&#x27;exécution d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:08 - 00:09:26</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Donc, si vous allez en haut à droite et que vous cliquez sur « Parrainer un ami », vous verrez votre lien de parrainage. Vous n&#x27;avez qu&#x27;à le copier et à le partager avec vos amis ou vos abonnés. Et voici ce que vous gagnez : vous obtenez 35 % de tous les frais de vos parrainages directs, 10 % des parrainages de deuxième degré, et 5 % des parrainages de troisième degré.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading en ligne Tradefox avec panneau de parrainage (« Refer a Friend »)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau latéral affichant les détails du programme de parrainage, les bonus totaux (0,00 $), les paliers de parrainage (Direct, 2e et 3e degré) et le bouton « Copy Referral Link ».</p>
+                        <p><strong>Action / Démonstration :</strong> Clic sur le bouton de parrainage dans le coin supérieur droit pour afficher le lien de partage et les commissions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000913_seg25.jpg" alt="Interface de la plateforme de trading Tradefox montrant le panneau contextuel du programme de parrainage ouvert sur le côté droit." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000913_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:13</span>
+                        <span class="caption-text">Interface de la plateforme de trading Tradefox montrant le panneau contextuel du programme de parrainage ouvert sur le côté droit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:26 - 00:10:02</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est donc un système à trois niveaux, ce qui est plutôt cool. Donc si vous êtes sérieux à ce sujet, vous pouvez vous faire pas mal d&#x27;argent rien qu&#x27;avec les parrainages. Très bien, c&#x27;est donc pratiquement tout. TradeVox est honnêtement l&#x27;une des meilleures plateformes de marchés de prédiction que j&#x27;ai utilisées. Vous avez tous les marchés au même endroit, vous bénéficiez d&#x27;outils de trading avancés, et surtout, vous pouvez copier les meilleurs traders sans faire aucun de leurs travaux vous-même. Et je sais, pour avoir tradé la crypto, que les personnes qui avaient les meilleurs outils avant tout le monde avaient un énorme avantage. Donc si vous voulez cet avantage sur les marchés de prédiction, allez jeter un œil à TradeVox. Très bien, c&#x27;est tout pour cette vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme TradeVox (Markets / Sports Mode).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau listant divers marchés (Solana, Bitcoin, XRP, Ethereum Up or Down) avec prix (50c), probabilité (50%), volume ($0.00), liquidité et boutons de transaction rapide (&quot;Buy YES&quot; / &quot;Buy NO&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des marchés de prédiction et des options de trading sur TradeVox.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000935_seg26.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface des marchés de prédiction de TradeVox avec la liste des nouveaux marchés et les options de paris." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_000935_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:35</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface des marchés de prédiction de TradeVox avec la liste des nouveaux marchés et les options de paris.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:02 - 00:10:16</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez trouvé cela utile, explosez ce bouton J&#x27;aime, abonnez-vous pour plus de contenu sur la crypto et les marchés de prédiction. Et si vous voulez un guide complet sur le fonctionnement de Polymarket, regardez la vidéo qui apparaît à l&#x27;écran en ce moment même. Je vous vois dans la prochaine.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading Tradefox (marchés de prédiction).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de probabilité d&#x27;un événement (« Khamenei out as Supreme Leader of Iran by January... ») avec une chance évaluée à 1,6 %, carnet d&#x27;ordres (Order Book), volume de 44 825 558,41 $ et panneau d&#x27;achat (Buy).</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation de l&#x27;interface de marché de prédiction et des carnets d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_001005_seg27.jpg" alt="Interface de trading de marchés de prédiction montrant un graphique de probabilité, un carnet d&#x27;ordres et les options d&#x27;achat." loading="lazy" onclick="openLightbox('../screenshots/Ee1jwQ7M7b0/Ee1jwQ7M7b0_001005_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:05</span>
+                        <span class="caption-text">Interface de trading de marchés de prédiction montrant un graphique de probabilité, un carnet d&#x27;ordres et les options d&#x27;achat.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
