@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `145 / 186` (`78.0%`)
+- **Vidéos traitées** : `146 / 186` (`78.5%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -162,6 +162,7 @@
 | 2026-01-03 | [aswDEa96vkw](https://www.youtube.com/watch?v=aswDEa96vkw) | **Your First Crypto Trade on Bitget (Beginner Spot Trading Step-by-Step)** | [2026-01-03_YT-[aswDEa96vkw]_Your First Crypto Trade on Bitget (Beginner Spot Trading Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-01-03_YT-[aswDEa96vkw]_Your First Crypto Trade on Bitget (Beginner Spot Trading Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-01-03_YT-[aswDEa96vkw]_Your First Crypto Trade on Bitget (Beginner Spot Trading Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `4` |
 | 2026-01-02 | [ZQyEBAyCzWQ](https://www.youtube.com/watch?v=ZQyEBAyCzWQ) | **How to Spot Trade on LBank for Beginners (Step-by-Step 2026)** | [2026-01-02_YT-[ZQyEBAyCzWQ]_How to Spot Trade on LBank for Beginners (Step-by-Step 2026)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-01-02_YT-[ZQyEBAyCzWQ]_How to Spot Trade on LBank for Beginners (Step-by-Step 2026)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-01-02_YT-[ZQyEBAyCzWQ]_How to Spot Trade on LBank for Beginners (Step-by-Step 2026)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2026-01-01 | [3r7u6q-egP8](https://www.youtube.com/watch?v=3r7u6q-egP8) | **Comment Claude révolutionne à jamais le trading crypto** | [2026-01-01_YT-[3r7u6q-egP8]_Comment Claude révolutionne à jamais le trading crypto_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-01-01_YT-[3r7u6q-egP8]_Comment Claude révolutionne à jamais le trading crypto_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-01-01_YT-[3r7u6q-egP8]_Comment Claude révolutionne à jamais le trading crypto_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `43` |
+| 2025-12-25 | [7ZB59g1QoXE](https://www.youtube.com/watch?v=7ZB59g1QoXE) | **How To Copy Pro Traders on Lbank (Simple Beginners Guide)** | [2025-12-25_YT-[7ZB59g1QoXE]_How To Copy Pro Traders on Lbank (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-25_YT-[7ZB59g1QoXE]_How To Copy Pro Traders on Lbank (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-25_YT-[7ZB59g1QoXE]_How To Copy Pro Traders on Lbank (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
