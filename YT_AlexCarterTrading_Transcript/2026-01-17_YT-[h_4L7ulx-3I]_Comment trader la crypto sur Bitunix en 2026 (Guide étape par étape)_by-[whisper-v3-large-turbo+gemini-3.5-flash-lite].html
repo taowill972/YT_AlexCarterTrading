@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment trader la crypto sur Bitunix en 2026 (Guide étape par étape) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment trader la crypto sur Bitunix en 2026 (Guide étape par étape)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-01-17</span>
+                <span class="badge">⏱️ 00:15:00</span>
+                <span class="badge">🆔 <code>h_4L7ulx-3I</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=h_4L7ulx-3I" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo signée Alex Carter propose un guide pratique et méthodique pour maîtriser la plateforme de trading de cryptomonnaies Bitunix en 2026, s'adressant aussi bien aux débutants qu'aux opérateurs cherchant à optimiser leur exécution. L'analyse détaille l'architecture des comptes de la bourse (comptes Spot, Futures, Staking et Copy Trading) et l'importance cruciale de l'utilisation d'un lien d'affiliation exclusif pour débloquer des bonus de bienvenue incitatifs, tels que 20 USDT offerts pour un dépôt minimum de 100 USDT, ainsi que des dotations matérielles d'envergure. <br><br>Sur le plan opérationnel et stratégique, le tutoriel décortique l'ensemble des méthodes d'alimentation de compte — de l'achat par carte de crédit/débit et virements SEPA aux solutions P2P et aux passerelles tierces. L'accent est mis sur les bonnes pratiques de sécurité, notamment l'utilisation du réseau TRC20 (Tron) pour sa rapidité et la modicité de ses frais, tout en recommandant l'envoi systématique d'un montant test préalable afin d'éviter toute perte de capitaux liée à une erreur de routage.<br><br>Enfin, la démonstration technique s'oriente vers la transition opérationnelle des fonds du portefeuille Spot vers le compartiment Futures (USDT-M), prérequis indispensable au trading sur marge. Sont passés en revue l'interface de négociation, les outils graphiques de TradingView intégrés, l'analyse du carnet d'ordres en temps réel ainsi que la gestion rigoureuse des leviers et des types d'ordres, posant les bases méthodologiques d'une exécution de marché maîtrisée.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **Bitunix** : Plateforme centrale d'échange de cryptomonnaies offrant des services de trading Spot, des contrats Futures avec un effet de levier allant jusqu'à 200x, et des programmes d'épargne.<br>* **TradingView** : Outil d'analyse technique de pointe intégré directement dans l'interface de Bitunix pour l'étude des graphiques de prix et l'application d'indicateurs personnalisés.<br>* **Réseau TRC20 (Tron)** : Protocole blockchain recommandé pour les transferts d'USDT en raison de ses frais réduits et de ses délais de confirmation rapides.<br>* **Grok Bots** : Outil d'intelligence artificielle évoqué dans l'écosystème global d'automatisation des stratégies pour assister le trader dans sa prise de décision.<br>* **Claude Code** : Environnement et assistant de développement IA mobilisé pour concevoir, tester et déboguer des scripts de trading algorithmique.<br>* **Pine Script** : Langage de programmation dédié à TradingView permettant de coder des indicateurs sur mesure et des stratégies de scalping automatisées.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Architecture multicompte cloisonnée** : Utiliser le compte Spot pour l'acquisition et la détention d'actifs au comptant, le compte Futures pour le levier et l'optimisation des bonus, et le compte d'épargne pour générer des rendements passifs (fixes ou flexibles).<br>* **Optimisation des bonus d'inscription** : S'enregistrer via un lien de parrainage exclusif pour maximiser l'éligibilité aux campagnes promotionnelles, aux airdrops et aux récompenses de volume (ex. : 20 USDT débloqués pour 100 USDT déposés).<br>* **Protocole de sécurité des transferts** : Effectuer systématiquement une transaction test de faible montant (10 à 20 dollars) avant tout transfert d'envergure pour valider la compatibilité des réseaux et l'exactitude des adresses de dépôt.<br>* **Sélection rigoureuse des réseaux de paiement** : Privilégier le réseau TRC20 (Tron) pour les transferts d'USDT afin de minimiser l'impact négatif des frais de transaction sur le capital initial.<br>* **Flexibilité des passerelles d'achat Fiat** : Exploiter l'achat en un clic, les dépôts SEPA, les cartes bancaires (Visa/Mastercard) ou le trading P2P selon les contraintes géographiques et bancaires pour acquérir instantanément des cryptomonnaies.<br>* **Conversion sans frais sur le carnet Spot** : Utiliser la fonction de conversion instantanée ou les ordres au marché sur les paires Spot (comme BTC/USDT) pour transformer ses actifs sans impacter la performance par des frais superflus.<br>* **Gestion du collatéral pour les Futures** : Réaliser impérativement le transfert interne des fonds du portefeuille Spot vers le compartiment Futures (USDT-M) pour disposer de la marge nécessaire à l'ouverture de positions à effet de levier.<br>* **Préférence pour les contrats USDT-M** : Pour les débutants, privilégier les contrats perpétuels réglés en USDT (USDT-M) par rapport au Coin-M en raison d'une liquidité supérieure et d'une lecture du risque plus intuitive.<br>* **Exploitation de TradingView pour l'analyse technique** : S'appuyer sur les graphiques professionnels intégrés pour identifier les zones de support/résistance et paramétrer des unités de temps adaptées à sa méthodologie de scalping ou de swing trading.<br>* **Lecture fine du carnet d'ordres** : Analyser la profondeur du marché en temps réel (chiffres rouges pour les ordres de vente, verts pour les ordres d'achat) afin d'anticiper la pression acheteuse/vendeuse et d'éviter les glissements de prix (*slippage*).
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Bitunix</span><span class="tool-tag">TradingView</span><span class="tool-tag">Réseau TRC20 (Tron)</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">Claude Code</span><span class="tool-tag">Pine Script</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Architecture multicompte cloisonnée** : Utiliser le compte Spot pour l&#x27;acquisition et la détention d&#x27;actifs au comptant, le compte Futures pour le levier et l&#x27;optimisation des bonus, et le compte d&#x27;épargne pour générer des rendements passifs (fixes ou flexibles).</span></li><li><span class="point-bullet">✦</span><span>Optimisation des bonus d&#x27;inscription** : S&#x27;enregistrer via un lien de parrainage exclusif pour maximiser l&#x27;éligibilité aux campagnes promotionnelles, aux airdrops et aux récompenses de volume (ex. : 20 USDT débloqués pour 100 USDT déposés).</span></li><li><span class="point-bullet">✦</span><span>Protocole de sécurité des transferts** : Effectuer systématiquement une transaction test de faible montant (10 à 20 dollars) avant tout transfert d&#x27;envergure pour valider la compatibilité des réseaux et l&#x27;exactitude des adresses de dépôt.</span></li><li><span class="point-bullet">✦</span><span>Sélection rigoureuse des réseaux de paiement** : Privilégier le réseau TRC20 (Tron) pour les transferts d&#x27;USDT afin de minimiser l&#x27;impact négatif des frais de transaction sur le capital initial.</span></li><li><span class="point-bullet">✦</span><span>Flexibilité des passerelles d&#x27;achat Fiat** : Exploiter l&#x27;achat en un clic, les dépôts SEPA, les cartes bancaires (Visa/Mastercard) ou le trading P2P selon les contraintes géographiques et bancaires pour acquérir instantanément des cryptomonnaies.</span></li><li><span class="point-bullet">✦</span><span>Conversion sans frais sur le carnet Spot** : Utiliser la fonction de conversion instantanée ou les ordres au marché sur les paires Spot (comme BTC/USDT) pour transformer ses actifs sans impacter la performance par des frais superflus.</span></li><li><span class="point-bullet">✦</span><span>Gestion du collatéral pour les Futures** : Réaliser impérativement le transfert interne des fonds du portefeuille Spot vers le compartiment Futures (USDT-M) pour disposer de la marge nécessaire à l&#x27;ouverture de positions à effet de levier.</span></li><li><span class="point-bullet">✦</span><span>Préférence pour les contrats USDT-M** : Pour les débutants, privilégier les contrats perpétuels réglés en USDT (USDT-M) par rapport au Coin-M en raison d&#x27;une liquidité supérieure et d&#x27;une lecture du risque plus intuitive.</span></li><li><span class="point-bullet">✦</span><span>Exploitation de TradingView pour l&#x27;analyse technique** : S&#x27;appuyer sur les graphiques professionnels intégrés pour identifier les zones de support/résistance et paramétrer des unités de temps adaptées à sa méthodologie de scalping ou de swing trading.</span></li><li><span class="point-bullet">✦</span><span>Lecture fine du carnet d&#x27;ordres** : Analyser la profondeur du marché en temps réel (chiffres rouges pour les ordres de vente, verts pour les ordres d&#x27;achat) afin d&#x27;anticiper la pression acheteuse/vendeuse et d&#x27;éviter les glissements de prix (*slippage*).</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:29</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez voulu trader des cryptos sur Bitunix mais que vous ne savez pas par où commencer, ce tutoriel vous emmènera de débutant complet à l&#x27;exécution de vos premiers trades en toute confiance. Je vais vous guider à travers tout : la configuration du compte, les dépôts, les différentes interfaces de trading, et des instructions étape par étape pour exécuter votre premier trade. La plateforme Bitunix a l&#x27;air compliquée au début, mais une fois que vous aurez compris les bases et les différents types de comptes, c&#x27;est en réalité l&#x27;une des plateformes d&#x27;échange les plus faciles et conviviales à utiliser.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading crypto Bitunix (interface de futures et page d&#x27;accueil promotionnelle).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTCUSDT, carnet d&#x27;ordres en temps réel, prix du Bitcoin (environ 92 098 $), options de levier (Cross/Isolated, 20X, 5X), et avis d&#x27;utilisateurs.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme d&#x27;échange, visualisation du carnet d&#x27;ordres et démonstration d&#x27;exécution d&#x27;un ordre d&#x27;achat (Open long).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000007_seg1.jpg" alt="Interface de trading de la plateforme Bitunix affichant un graphique des prix BTCUSDT avec un ordre d&#x27;achat long exécuté (Market, 5X)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000007_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:07</span>
+                        <span class="caption-text">Interface de trading de la plateforme Bitunix affichant un graphique des prix BTCUSDT avec un ordre d&#x27;achat long exécuté (Market, 5X).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000015_seg1.jpg" alt="Interface de trading Bitunix avec le carnet d&#x27;ordres (Orderbook), le graphique en chandeliers et le panneau de passage d&#x27;ordres à cours limité (Limit)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000015_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:15</span>
+                        <span class="caption-text">Interface de trading Bitunix avec le carnet d&#x27;ordres (Orderbook), le graphique en chandeliers et le panneau de passage d&#x27;ordres à cours limité (Limit).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:30 - 00:00:49</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La plupart des tutoriels sautent soit des étapes et des fonctionnalités importantes, soit partent du principe que vous savez déjà des choses que les nouveaux traders ignorent vraiment. Cela ne va pas se produire ici. Et avec mon lien exclusif dans la description, vous débloquez des récompenses de bienvenue massives. Les nouveaux utilisateurs peuvent gagner jusqu&#x27;à 20 USDT rien qu&#x27;en déposant 100 USDT ou plus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme d&#x27;échange Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Section &quot;Reviews of Bitunix&quot; et &quot;Task Center&quot; avec des bannières de récompenses de dépôt.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site de Bitunix pour illustrer les récompenses et la fiabilité de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000035_seg2.jpg" alt="Page web de la plateforme Bitunix affichant des critiques de médias mondiaux comme Benzinga Pro, The News Crypto, Yahoo Finance et NewsBTC." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000035_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:35</span>
+                        <span class="caption-text">Page web de la plateforme Bitunix affichant des critiques de médias mondiaux comme Benzinga Pro, The News Crypto, Yahoo Finance et NewsBTC.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000040_seg2.jpg" alt="Centre des tâches (Task Center) de la plateforme Bitunix montrant les récompenses de dépôt initial." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000040_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:40</span>
+                        <span class="caption-text">Centre des tâches (Task Center) de la plateforme Bitunix montrant les récompenses de dépôt initial.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:50 - 00:01:26</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est littéralement de l&#x27;argent gratuit. En plus de ça, vous avez une chance de gagner une Tesla, une montre Rolex, des iPhones et d&#x27;autres prix physiques incroyables. Je vais vous montrer exactement comment réclamer tout cela. À la fin de cette vidéo, vous saurez exactement comment utiliser Bitunix et comment maximiser chaque bonus disponible. Maintenant, voici pourquoi Bitunix est l&#x27;un de mes meilleurs choix de plateformes d&#x27;échange. Bitunix est une plateforme de confiance et en croissance rapide dans l&#x27;industrie de la crypto, conçue à la fois pour les débutants et les traders professionnels. Bitunix offre une inscription rapide et simple, où vous pouvez commencer à trader en quelques minutes, même sans KYC pour les services de base.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange Bitunix et site d&#x27;agrégation CoinGecko.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Étapes de parrainage/inscription, volume de trading requis, récompenses en USDT, listes de cryptomonnaies (Brevis, Lighter, Dolomite, Safe).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme d&#x27;échange pour montrer les bonus de bienvenue et les conditions d&#x27;obtention des prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000059_seg3.jpg" alt="Image montrant la section &#x27;Futures Volume Challenge&#x27; sur Bitunix avec des coffres mystères et des récompenses potentielles." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000059_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:59</span>
+                        <span class="caption-text">Image montrant la section &#x27;Futures Volume Challenge&#x27; sur Bitunix avec des coffres mystères et des récompenses potentielles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000108_seg3.jpg" alt="Page d&#x27;accueil de la plateforme Bitunix avec un guide en 3 étapes (Register, Deposit, Trade) et un bouton &#x27;Join Now&#x27;." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000108_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:08</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Bitunix avec un guide en 3 étapes (Register, Deposit, Trade) et un bouton &#x27;Join Now&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000117_seg3.jpg" alt="Capture d&#x27;écran de CoinGecko affichant le volume de trading sur 24h, le score de confiance (8/10), les nouvelles cotations et les plus fortes hausses." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000117_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:17</span>
+                        <span class="caption-text">Capture d&#x27;écran de CoinGecko affichant le volume de trading sur 24h, le score de confiance (8/10), les nouvelles cotations et les plus fortes hausses.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:26 - 00:02:01</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">fonctionnalités. C&#x27;est énorme pour les personnes qui veulent commencer immédiatement. Bitunix dispose d&#x27;une forte liquidité. Cela signifie que vos ordres s&#x27;exécutent au prix que vous voyez et avec un faible écart acheteur-vendeur, même avec effet de levier. Pas de glissement de prix qui grignote vos profits. Ils offrent une large gamme de pièces, du Bitcoin et de l&#x27;Ethereum à des centaines d&#x27;altcoins. Bitunix est connu pour lister les nouveaux jetons plus rapidement que la plupart des bourses, ce qui signifie que vous pouvez vous positionner tôt sur les projets. De multiples options de trading, du trading au comptant, des contrats à terme avec un effet de levier allant jusqu&#x27;à 200 fois, et même des outils de trading avancés pour les traders expérimentés.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web d&#x27;évaluation/statistiques de marché (Trust Score).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Volume de trading affiché à 477 086 210 $, écart acheteur-vendeur (Average Bid-Ask Spread) à 0.338%, et percentiles de volume et de carnet d&#x27;ordres.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des métriques de liquidité et du spread pour illustrer la fiabilité et la profondeur du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000135_seg4.jpg" alt="Capture d&#x27;écran montrant les métriques de liquidité et de score de confiance d&#x27;une plateforme de trading sur un site web de type agrégateur (CoinGecko ou CoinMarketCap)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000135_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:35</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant les métriques de liquidité et de score de confiance d&#x27;une plateforme de trading sur un site web de type agrégateur (CoinGecko ou CoinMarketCap).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:02 - 00:02:36</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Bitunix est aussi connue comme une plateforme généreuse qui offre d&#x27;énormes opportunités de bonus. Bitunix combine facilité d&#x27;utilisation, sécurité, diversité et récompenses massives, ce qui la rend parfaite pour les débutants comme pour les traders avancés. Maintenant que vous savez pourquoi j&#x27;aime la plateforme, commençons. Tout d&#x27;abord, cliquez sur le lien dans la description. Utiliser ce lien est crucial pour débloquer tous les bonus exclusifs que je viens de mentionner. Vous pouvez vous inscrire avec votre adresse e-mail ou votre numéro de téléphone, ou continuer avec Google, Apple, et même vos comptes Facebook et X. Pour ce tutoriel, j&#x27;utiliserai Gmail. Juste après votre inscription,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des cryptomonnaies populaires en futures (BTCUSDT à 92 283,3 $, ETHUSDT à 3 139,24 $, SOLUSDT à 141,96 $) avec leurs variations sur 24h, prix haut, volume et graphiques miniatures.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de la plateforme Bitunix illustrant les opportunités de trading et la diversité des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000210_seg5.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme d&#x27;échange Bitunix montrant la section des cryptomonnaies tendance." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000210_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:10</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme d&#x27;échange Bitunix montrant la section des cryptomonnaies tendance.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:03:10</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">votre compte est actif et vous pouvez commencer à déposer des fonds immédiatement. Une fois connecté, vous verrez votre tableau de bord principal. En haut à droite, cliquez sur l&#x27;icône du portefeuille. Vous verrez différentes options et types de compte. Bartunix utilise différents types de compte pour vous aider à organiser vos transactions. Voici ce que chacun signifie. Compte au comptant. C&#x27;est là que vos dépôts atterrissent en premier. Ici, vous pouvez acheter et vendre des cryptomonnaies aux prix du marché sans effet de levier. C&#x27;est idéal pour détenir des actifs ou pour du trading simple. Compte futures. C&#x27;est pour le trading avec effet de levier, vous permettant de prendre des positions plus importantes</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitunix</p>
+                        <p><strong>Contenu textuel & Code :</strong> Types de comptes (Spot, Futures, Earn, Copy), graphique des prix BTC/USDT avec indicateurs techniques, carnet d&#x27;ordres et options de commande (Limit Order, Market Order).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu du portefeuille et présentation de l&#x27;interface de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000244_seg6.jpg" alt="Page d&#x27;accueil de la plateforme Bitunix avec un menu déroulant affichant le solde total et les différents types de comptes (Spot, Futures, Earn, Copy)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000244_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:44</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Bitunix avec un menu déroulant affichant le solde total et les différents types de comptes (Spot, Futures, Earn, Copy).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000301_seg6.jpg" alt="Interface de trading spot de Bitunix affichant un graphique des prix du BTC/USDT, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000301_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:01</span>
+                        <span class="caption-text">Interface de trading spot de Bitunix affichant un graphique des prix du BTC/USDT, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:10 - 00:03:45</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">que ne le permet votre solde. C&#x27;est ici que vous utiliserez vos bonus et gagnerez des récompenses basées sur votre volume de trading. Vous pouvez trader avec l&#x27;USDT comme marge et cela débloque toutes les récompenses de bonus dont nous avons parlé plus tôt. Ensuite, vous pouvez voir le compte d&#x27;épargne. Cela vous permet de staker vos coins et de gagner des récompenses passives au fil du temps. Ici, vous pouvez voir les taux de pourcentage annuel pour chaque coin dans des types de staking comme fixe et flexible. Et puis il y a le compte de copy trading. Cette option vous permet de refléter automatiquement des traders expérimentés sans avoir besoin d&#x27;analyser chaque trade vous-même. Pour transférer des fonds entre les comptes, vous allez simplement sur</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitunix (plateforme d&#x27;échange de cryptomonnaies et interface de trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais pour BTCUSDT (Timeframe 15m, prix actuel à 91 998,3), liste des contrats Futures (BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT, DOGEUSDT), options de marge USDT-M, USDC-M, Coin-M, et boutons pour ouvrir des ordres long ou short.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de la paire BTCUSDT dans le panneau de recherche des contrats futures de la plateforme Bitunix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000319_seg7.jpg" alt="Interface de la plateforme de trading Bitunix affichant un graphique de prix BTCUSDT en unités de 15 minutes et un menu déroulant de sélection des paires de cryptomonnaies sur les contrats futures." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000319_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:19</span>
+                        <span class="caption-text">Interface de la plateforme de trading Bitunix affichant un graphique de prix BTCUSDT en unités de 15 minutes et un menu déroulant de sélection des paires de cryptomonnaies sur les contrats futures.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:45 - 00:04:19</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">votre portefeuille, cliquez sur transfert, et déplacez des USDT du compte au comptant vers les futures. Je vais vous montrer exactement comment faire cela dans un instant. Sur la barre de navigation, vous pouvez également voir différentes sections comme les marchés pour un aperçu du marché et les opportunités, les promotions pour les annonces d&#x27;airdrops et les campagnes, et ici vous pouvez également voir le centre des tâches pour vos récompenses. Vous pouvez aussi voir ici la section des partenaires pour le programme d&#x27;affiliation. Et lorsque vous cliquez sur plus, c&#x27;est là que vous pouvez voir les supports d&#x27;apprentissage, le blog, la communauté, et tout ce qui concerne la plateforme Bitunix. Tout est clairement organisé pour que vous puissiez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site Web de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Barre de navigation supérieure affichant les sections Buy Crypto, Markets, Futures, Spot, Earn, Promotions, ainsi qu&#x27;une bannière publicitaire &#x27;Ultra 4ward Begins!&#x27; avec un gâteau d&#x27;anniversaire graphique.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page d&#x27;accueil de la plateforme Bitunix pour présenter les différentes sections du site.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000353_seg8.jpg" alt="Page d&#x27;accueil de la plateforme d&#x27;échange Bitunix montrant une promotion anniversaire avec une bannière pour gagner des prix en USDT et un bouton &#x27;Deposit Now&#x27;." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000353_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme d&#x27;échange Bitunix montrant une promotion anniversaire avec une bannière pour gagner des prix en USDT et un bouton &#x27;Deposit Now&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:19 - 00:04:55</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">trouvez ce dont vous avez besoin rapidement. Maintenant que vous connaissez les bases, mettons de l&#x27;argent sur votre compte et commençons à réclamer des bonus. Allez sur l&#x27;icône du portefeuille dans le menu supérieur, puis cliquez sur dépôt. Vous verrez une liste de cryptomonnaies que vous pouvez déposer. Pour ce tutoriel, je vous recommande de choisir l&#x27;USDT car c&#x27;est la principale paire de trading pour les contrats à terme sur Bitunix. Ensuite, sélectionnez votre réseau. Je recommande d&#x27;utiliser le réseau TRC20 Tron car il a des frais très bas et des temps de confirmation rapides. Une fois que vous aurez sélectionné l&#x27;USDT et le TRC20, Bitunix générera votre adresse de dépôt personnelle. Copiez-la soigneusement. Faites</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitunix (plateforme d&#x27;échange de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de dépôt, options de sélection de cryptomonnaies (USDT, BTC, ETH, USDC), sélection de réseau (Tron TRC-20) et adresse de dépôt avec QR code.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de la plateforme d&#x27;échange pour accéder au menu de dépôt et configurer un transfert de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000428_seg9.jpg" alt="Image #1 @ 00:04:28 : Interface de la plateforme Bitunix montrant le menu du portefeuille et l&#x27;option &quot;Deposit&quot;." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000428_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Image #1 @ 00:04:28 : Interface de la plateforme Bitunix montrant le menu du portefeuille et l&#x27;option &quot;Deposit&quot;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000437_seg9.jpg" alt="Image #2 @ 00:04:37 : Page de dépôt de cryptomonnaies sur Bitunix avec les options de sélection de coin (USDT, BTC, ETH, USDC)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000437_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:37</span>
+                        <span class="caption-text">Image #2 @ 00:04:37 : Page de dépôt de cryptomonnaies sur Bitunix avec les options de sélection de coin (USDT, BTC, ETH, USDC).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000446_seg9.jpg" alt="Image #3 @ 00:04:46 : Page de dépôt de Bitunix affichant l&#x27;adresse de dépôt, le réseau Tron (TRC-20) et le QR code associé." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000446_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:46</span>
+                        <span class="caption-text">Image #3 @ 00:04:46 : Page de dépôt de Bitunix affichant l&#x27;adresse de dépôt, le réseau Tron (TRC-20) et le QR code associé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:55 - 00:05:27</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">assurez-vous de copier l&#x27;adresse entière. Ensuite, allez sur votre échange ou portefeuille actuel. Collez l&#x27;adresse et envoyez vos cryptos. Cela prend généralement 5 à 15 minutes pour arriver. Conseil de pro, envoyez toujours d&#x27;abord un petit montant test, peut-être 10 à 20 dollars, et vérifiez bien que le réseau correspond des deux côtés. Cela vous évite de perdre des fonds à cause d&#x27;un mauvais réseau. Maintenant, c&#x27;est là que l&#x27;un des principaux bonus commence à entrer en jeu. Si vous déposez au moins 100 USDT, vous pouvez gagner des récompenses d&#x27;une valeur allant jusqu&#x27;à 20 USDT.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces des plateformes d&#x27;échange de crypto-monnaies Toobit et Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails d&#x27;une transaction de retrait d&#x27;USDT, frais de réseau (1 USDT), réseau TRX, adresse de portefeuille et aperçu des actifs du compte (26,76 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Validation d&#x27;une opération de retrait de fonds et vérification du solde sur les interfaces de courtage.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000503_seg10.jpg" alt="Interface de l&#x27;échange Toobit montrant une fenêtre pop-up de confirmation de retrait de crypto-monnaie (USDT) avec l&#x27;adresse de destination, les frais et le réseau TRX." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000503_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:03</span>
+                        <span class="caption-text">Interface de l&#x27;échange Toobit montrant une fenêtre pop-up de confirmation de retrait de crypto-monnaie (USDT) avec l&#x27;adresse de destination, les frais et le réseau TRX.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000511_seg10.jpg" alt="Interface de gestion d&#x27;actifs de l&#x27;échange Bitunix affichant un aperçu du portefeuille avec un solde de 26,76 USDT." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000511_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:11</span>
+                        <span class="caption-text">Interface de gestion d&#x27;actifs de l&#x27;échange Bitunix affichant un aperçu du portefeuille avec un solde de 26,76 USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:27 - 00:05:47</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est littéralement de l&#x27;argent gratuit juste pour avoir fait un dépôt. Donc il ne faut vraiment pas passer à côté. Si vous n&#x27;avez pas encore de crypto, vous pouvez en acheter directement sur Bitunix en utilisant votre monnaie locale. Allez sur Acheter des cryptos dans le menu supérieur. Vous verrez cinq options : Achat en un clic, Dépôt en monnaie fiat, Carte de crédit ou de débit, Trading P2P, Tiers.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitunix (pages promotionnelles et de récompenses).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres de bonus de dépôt (« First-Time Deposit », « First Futures Trade ») et gains potentiels en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site de Bitunix pour présenter les bonus de dépôt et les promotions en cours.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000532_seg11.jpg" alt="Page des récompenses et bonus de premier dépôt sur l&#x27;échange Bitunix montrant les différentes offres." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000532_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:32</span>
+                        <span class="caption-text">Page des récompenses et bonus de premier dépôt sur l&#x27;échange Bitunix montrant les différentes offres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000537_seg11.jpg" alt="Page promotionnelle de l&#x27;anniversaire de Bitunix affichant les étapes d&#x27;inscription, de dépôt et de trade." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000537_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:37</span>
+                        <span class="caption-text">Page promotionnelle de l&#x27;anniversaire de Bitunix affichant les étapes d&#x27;inscription, de dépôt et de trade.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:47 - 00:06:07</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avec l&#x27;achat en un clic, vous pouvez acheter de l&#x27;USDT instantanément en utilisant Visa, MasterCard ou d&#x27;autres méthodes de paiement. Choisissez simplement votre devise et sélectionnez USDT du côté de la réception et choisissez un mode de paiement. Ici, vous pouvez choisir entre le dépôt en monnaie fiat via SEPA, une carte de crédit ou de débit, Google Pay, Apple Pay et plus encore.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange cryptographique pour l&#x27;achat instantané de jetons.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de paiement (Visa, Mastercard, SEPA, Google Pay, Apple Pay) et formulaires d&#x27;achat avec conversion EUR/USD vers USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface d&#x27;achat instantané et sélection des méthodes de paiement disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000552_seg12.jpg" alt="Interface d&#x27;achat de cryptomonnaie en un clic montrant le choix de la devise (EUR) et le montant à payer pour recevoir de l&#x27;USDT, avec les différentes étapes." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000552_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:52</span>
+                        <span class="caption-text">Interface d&#x27;achat de cryptomonnaie en un clic montrant le choix de la devise (EUR) et le montant à payer pour recevoir de l&#x27;USDT, avec les différentes étapes.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000602_seg12.jpg" alt="Fenêtre modale de sélection du mode de paiement affichant les options par carte bancaire, P2P et tiers (ACH) avec les taux de change correspondants." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000602_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:02</span>
+                        <span class="caption-text">Fenêtre modale de sélection du mode de paiement affichant les options par carte bancaire, P2P et tiers (ACH) avec les taux de change correspondants.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:07 - 00:06:26</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Avec le dépôt en monnaie fiduciaire, le processus est presque le même. Entrez le montant et choisissez une méthode de dépôt. Batunix ne facture pas de frais, mais votre banque peut appliquer des frais de virement. Si vous utilisez une carte de débit ou de crédit, vous pouvez sélectionner votre devise, sélectionner la crypto que vous souhaitez recevoir, et payer par carte, que vous ayez Visa ou MasterCard.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitunix (section Fiat Deposit / Credit Card).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de dépôt SEPA, SEPA Instant, questions fréquentes sur les frais de virement et sélection des devises fiat (USD, EUR, PHP, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le processus de dépôt en monnaie fiduciaire et consultation des méthodes de paiement sur l&#x27;exchange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000612_seg13.jpg" alt="Sélection de la méthode de dépôt fiat sur l&#x27;interface Bitunix avec les options SEPA et SEPA Instant." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000612_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:12</span>
+                        <span class="caption-text">Sélection de la méthode de dépôt fiat sur l&#x27;interface Bitunix avec les options SEPA et SEPA Instant.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000617_seg13.jpg" alt="Section FAQ sur Bitunix détaillant les frais de dépôt et les conditions de virement bancaire." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000617_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:17</span>
+                        <span class="caption-text">Section FAQ sur Bitunix détaillant les frais de dépôt et les conditions de virement bancaire.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000621_seg13.jpg" alt="Interface d&#x27;achat de crypto par carte bancaire sur Bitunix avec sélection de la devise (USD)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000621_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:21</span>
+                        <span class="caption-text">Interface d&#x27;achat de crypto par carte bancaire sur Bitunix avec sélection de la devise (USD).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:26 - 00:06:46</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez également voir le dernier prix d&#x27;un USDT dans votre devise préférée. Si vous n&#x27;avez pas de compte bancaire ou de carte de crédit ou de débit pour acheter des cryptos, vous pouvez choisir le trading P2P. Ici, vous pouvez acheter des USDT directement auprès d&#x27;autres utilisateurs. Vous sélectionnez un vendeur, suivez ses instructions de paiement, et l&#x27;USDT est versé sur votre portefeuille au comptant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;achat par carte, options de paiement, et carnet d&#x27;offres P2P avec les prix (0.997 à 1.000 USD) et limites par marchand.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation vers le module de trading P2P et consultation des offres directes entre utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000631_seg14.jpg" alt="Interface d&#x27;achat de cryptomonnaie par carte bancaire avec affichage du prix estimé de l&#x27;USDT." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000631_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Interface d&#x27;achat de cryptomonnaie par carte bancaire avec affichage du prix estimé de l&#x27;USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000636_seg14.jpg" alt="Navigation sur la plateforme Bitunix avec le curseur pointant sur l&#x27;onglet P2P Trading." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000636_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:36</span>
+                        <span class="caption-text">Navigation sur la plateforme Bitunix avec le curseur pointant sur l&#x27;onglet P2P Trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000641_seg14.jpg" alt="Tableau des offres P2P affichant les marchands, les prix en USD, les quantités et les méthodes de paiement." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000641_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:41</span>
+                        <span class="caption-text">Tableau des offres P2P affichant les marchands, les prix en USD, les quantités et les méthodes de paiement.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:46 - 00:07:04</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">il. La dernière option est d&#x27;acheter des cryptos via un tiers. C&#x27;est le même processus que l&#x27;achat en un clic et c&#x27;est pris en charge avec plus de 30 monnaies fiat. Pour la plupart des gens, l&#x27;achat par carte est l&#x27;option la plus rapide. Si vous avez déposé du Bitcoin ou une autre crypto mais que vous avez besoin d&#x27;USDT pour trader, voici comment le convertir.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Bitunix (pages d&#x27;achat tiers et de gestion de portefeuille).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;achat de cryptos avec devises fiat (USD vers USDT) et liste des soldes de portefeuilles (0.00010764 BTC, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme pour présenter l&#x27;option d&#x27;achat par tiers et l&#x27;affichage des soldes de crypto-monnaies déposées.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000650_seg15.jpg" alt="Interface Bitunix montrant l&#x27;option d&#x27;achat de cryptomonnaies via un tiers (Third-party) avec un widget de commande et de paiement par carte." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000650_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:50</span>
+                        <span class="caption-text">Interface Bitunix montrant l&#x27;option d&#x27;achat de cryptomonnaies via un tiers (Third-party) avec un widget de commande et de paiement par carte.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000700_seg15.jpg" alt="Interface de portefeuille Bitunix affichant les soldes des différentes cryptomonnaies détenues (USDT, Bitcoin, Ethereum)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000700_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Interface de portefeuille Bitunix affichant les soldes des différentes cryptomonnaies détenues (USDT, Bitcoin, Ethereum).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:05 - 00:07:35</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Allez dans le Spot Trading depuis le menu principal et cliquez sur Spot. Recherchez votre paire de trading. Par exemple, BTC slash USDT. Sélectionnez un ordre au marché, choisissez vendre, entrez le montant de Bitcoin que vous souhaitez convertir, et cliquez sur vendre BTC. Cela convertit instantanément votre Bitcoin en USDT, qui apparaît ensuite dans votre portefeuille spot. Vous pouvez également choisir de convertir instantanément. Pour ce hacer, allez sur spot et cherchez l&#x27;option de conversion. La fonction de conversion de Bitunix n&#x27;a aucuns frais et vous offre une conversion instantanée aux taux du marché.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers BTC/USDT, carnet d&#x27;ordres (Orderbook), prix en temps réel (92,161.03), menu de navigation Spot avec la liste des paires de trading (BTC/USDT, ETH/USDT, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu principal pour accéder au trading spot et sélection de la paire de trading BTC/USDT sur l&#x27;échange Bitunix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000712_seg16.jpg" alt="Interface de trading spot de Bitunix affichant un graphique de prix en chandeliers pour la paire BTC/USDT, un carnet d&#x27;ordres à gauche et le panneau de passage d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000712_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:12</span>
+                        <span class="caption-text">Interface de trading spot de Bitunix affichant un graphique de prix en chandeliers pour la paire BTC/USDT, un carnet d&#x27;ordres à gauche et le panneau de passage d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000728_seg16.jpg" alt="Vue du menu principal de la plateforme Bitunix avec le menu déroulant &quot;Spot&quot; ouvert, permettant de sélectionner les options Spot, Convert ou Spot Auto-Invest." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000728_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:28</span>
+                        <span class="caption-text">Vue du menu principal de la plateforme Bitunix avec le menu déroulant &quot;Spot&quot; ouvert, permettant de sélectionner les options Spot, Convert ou Spot Auto-Invest.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:36 - 00:07:54</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Après cela, vos fonds apparaîtront dans votre portefeuille au comptant, prêts à être transférés vers votre compte futures afin que vous puissiez commencer le trading avec effet de levier. Maintenant, avant de pouvoir trader sur les futures, vous devez déplacer vos USDT de votre compte au comptant vers votre compte futures. Allez dans portefeuille et cliquez sur compte au comptant. Après cela, dans le coin supérieur droit, cliquez sur transférer.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Bitunix (interface web de gestion des comptes et portefeuille).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Solde du compte au comptant (Spot Account) affichant 26,67 USDT et le détail des actifs en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu du portefeuille de l&#x27;échange Bitunix pour accéder au compte Futures depuis le compte Spot.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000740_seg17.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;échange Bitunix montrant le portefeuille Spot (Spot Account) avec un solde de 26,67 USDT et le curseur de la souris pointant vers le menu du compte Futures." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000740_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:40</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;échange Bitunix montrant le portefeuille Spot (Spot Account) avec un solde de 26,67 USDT et le curseur de la souris pointant vers le menu du compte Futures.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:55 - 00:08:34</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sélectionnez USDT comme devise. Choisissez parmi le compte au comptant ou futures. Entrez le montant avec lequel vous souhaitez trader et cliquez sur soumettre. Cette étape est importante car si votre USDT reste dans le portefeuille au comptant, vous ne pourrez pas ouvrir de positions futures. Une fois le transfert terminé, vous verrez votre USDT apparaître dans votre compte futures et vous êtes prêt à commencer à trader. Passons maintenant à ce que vous attendez, le trading de futures. Allez dans futures dans la navigation principale, puis cliquez sur futures USDT-M. Vous pouvez également choisir USDCM si vous préférez l&#x27;USDC à l&#x27;USDT, mais pour les débutants, je recommande d&#x27;utiliser USDT-M.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la bourse de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Soldes de comptes spot, cryptomonnaies listées (USDT, BTCUSDT, ETHUSDT, etc.) et options de contrats futures.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et gestion des fonds entre le compte spot et les comptes de trading futures sur l&#x27;échange Bitunix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000805_seg18.jpg" alt="Vue du compte Spot (Spot Account) sur la plateforme Bitunix, affichant une notification de transfert réussi et un solde en USDT." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000805_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:05</span>
+                        <span class="caption-text">Vue du compte Spot (Spot Account) sur la plateforme Bitunix, affichant une notification de transfert réussi et un solde en USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000824_seg18.jpg" alt="Menu déroulant de sélection des marchés Futures (USDT-M Futures, USDC-M Futures, Coin-M Futures) sur la plateforme Bitunix." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000824_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:24</span>
+                        <span class="caption-text">Menu déroulant de sélection des marchés Futures (USDT-M Futures, USDC-M Futures, Coin-M Futures) sur la plateforme Bitunix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:34 - 00:08:57</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">parce que c&#x27;est le plus courant et qu&#x27;il a la plus forte liquidité. Vous pouvez également voir une autre option ici appelée Coin-M. Cela vous permet de faire du trading de produits dérivés réglés en crypto, également connu sous le nom de trading inversé. Après avoir cliqué sur USDT et futures, cela vous amènera au tableau de bord du trading de futures. C&#x27;est ici que vous ferez la majeure partie de votre trading. Je vais décomposer chaque section pour que tout soit parfaitement clair.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de sélection des marchés futures (USDT-M, USDC-M, Coin-M) et interface de trading avec graphique en chandeliers, carnet d&#x27;ordres et options d&#x27;effet de levier.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de l&#x27;option Coin-M Futures dans le menu déroulant puis navigation vers l&#x27;interface de trading de contrats futures de Bitunix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000840_seg19.jpg" alt="Interface de la plateforme Bitunix montrant le menu déroulant des options de futures avec Coin-M Futures mis en surbrillance." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000840_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:40</span>
+                        <span class="caption-text">Interface de la plateforme Bitunix montrant le menu déroulant des options de futures avec Coin-M Futures mis en surbrillance.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000852_seg19.jpg" alt="Interface de trading de contrats futures sur Bitunix affichant le graphique des prix du Bitcoin (BTCUSDT), le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000852_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:52</span>
+                        <span class="caption-text">Interface de trading de contrats futures sur Bitunix affichant le graphique des prix du Bitcoin (BTCUSDT), le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:58 - 00:09:30</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Voici ce que vous verrez sur l&#x27;écran de trading. Sélection de la paire de trading. Tout en haut à gauche, c&#x27;est ici que vous choisissez quelle crypto trader comme BTC slash USDT, ETH slash USDT, ou n&#x27;importe quel autre altcoin. Bitunix propose des centaines de paires disponibles. Vous pouvez voir le graphique des prix sur le côté droit. Il montre l&#x27;historique des mouvements de prix et vous pouvez changer l&#x27;unité de temps comme vous le souhaitez. Bitunix utilise les graphiques de TradingView, qui sont la norme de l&#x27;industrie et très puissants pour l&#x27;analyse technique. Vous pouvez voir le carnet d&#x27;ordres au milieu à gauche. Les chiffres rouges sont les ordres de vente,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bitunix (vue Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des paires de trading disponibles (BTCUSDT à 92,098.9, ETHUSDT, SOLUSDT, XRPUSDT, DOGEUSDT) et graphique en chandeliers japonais en unité de temps 15m.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection de la paire de trading dans le menu en haut à gauche de l&#x27;interface.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000906_seg20.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;échange Bitunix montrant le menu déroulant de sélection de la paire de trading (BTC/USDT, ETH/USDT, etc.) et le graphique des prix du Bitcoin en arrière-plan." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000906_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:06</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;échange Bitunix montrant le menu déroulant de sélection de la paire de trading (BTC/USDT, ETH/USDT, etc.) et le graphique des prix du Bitcoin en arrière-plan.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:30 - 00:10:04</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et les chiffres verts sont les ordres d&#x27;achat. Cela montre la profondeur du marché en temps réel, afin que vous puissiez voir où se trouve la liquidité. Panneau de placement des ordres. Tout à gauche, c&#x27;est là que vous placerez vos transactions, définirez l&#x27;effet de levier et entrerez la taille de votre position. C&#x27;est le centre de contrôle pour ouvrir et fermer les transactions et le panneau des positions. En bas, cela montre vos transactions actives, vos ordres ouverts, l&#x27;historique des ordres et l&#x27;historique des positions, et plus encore. C&#x27;est là que vous surveillez tout une fois que votre transaction est en direct. Tout ce dont vous avez besoin est ici sur un seul écran, prêt à trader. Avant de placer un</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Carnet d&#x27;ordres (Orderbook) avec les prix d&#x27;achat et de vente, panneau de placement des ordres (limite, effet de levier 20x, boutons Open long / Open short), et graphique des chandeliers BTCUSDT en unité 15m.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading et des différents panneaux de la plateforme (carnet d&#x27;ordres et placement des transactions).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000939_seg21.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading Bitunix montrant le carnet d&#x27;ordres, le panneau de placement des ordres à gauche et le graphique des prix BTCUSDT au centre." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_000939_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:39</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading Bitunix montrant le carnet d&#x27;ordres, le panneau de placement des ordres à gauche et le graphique des prix BTCUSDT au centre.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:04 - 00:10:23</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">trade, you need to configure two important settings. First, choose your margin mode. Batunix offers two options. First is isolated margin. This protects the rest of your account. If the trade goes wrong, you only lose what you put into that specific position. The rest of your balance is safe. Second one is cross margin.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;exchange Bitunix (Futures)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Options de configuration : mode Cross (marge partagée avec le solde du compte) et mode Isolated (marge limitée à la position spécifique), avec boutons &#x27;Cancel&#x27; et &#x27;Confirm&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de marge pour le trading de contrats futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001009_seg22.jpg" alt="Fenêtre modale de sélection du mode de marge (Cross ou Isolated) sur l&#x27;interface de trading Bitunix pour la paire BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001009_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:09</span>
+                        <span class="caption-text">Fenêtre modale de sélection du mode de marge (Cross ou Isolated) sur l&#x27;interface de trading Bitunix pour la paire BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:24 - 00:10:42</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Toutes les positions partagent le même solde de marge. Si une transaction est liquidée, cela peut affecter l&#x27;ensemble de votre compte. C&#x27;est plus risqué. Pour les débutants, utilisez toujours la marge isolée pour protéger votre compte. Deuxièmement, définissez votre effet de levier. Bitunix autorise jusqu&#x27;à 200 fois l&#x27;effet de levier sur certaines paires, mais n&#x27;utilisez pas un effet de levier élevé en tant que débutant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading de la bourse Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu « Margin mode » affichant les options « Cross » (marge croisée) et « Isolated » (marge isolée) avec leurs descriptions respectives, ainsi que les boutons de confirmation.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du mode de marge croisée ou isolée pour la gestion du risque en trading de contrats futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001028_seg23.jpg" alt="Fenêtre modale de sélection du mode de marge (Cross ou Isolated) sur la plateforme d&#x27;échange Bitunix." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001028_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:28</span>
+                        <span class="caption-text">Fenêtre modale de sélection du mode de marge (Cross ou Isolated) sur la plateforme d&#x27;échange Bitunix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:42 - 00:11:13</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Limitez-vous à 5 fois à 10 fois maximum. Voici comment cela fonctionne. Si vous avez un solde de 10 dollars avec un effet de levier de 5 fois, vous obtenez 50 dollars de pouvoir d&#x27;achat de position. Cela signifie que vous contrôlez pour 50 dollars de Bitcoin avec seulement 10 dollars de votre propre argent. Un effet de levier plus élevé signifie un risque plus élevé. Votre prix de liquidation se rapproche de votre entrée, donc un seul faux pas peut anéantir votre position. Pour cet exemple, j&#x27;utilise un effet de levier de 5 fois sur marge isolée. Bon, maintenant, plaçons un trade long. Parier que le Bitcoin va monter.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;exchange de cryptomonnaies Bitunix (fenêtre modale de paramétrage du levier).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paramètres de levier réglés à 5X pour &quot;Open Long&quot; et &quot;Open Short&quot;, curseur gradué de 1X à 200X, valeur nominale maximale de position (80 000 000 USDT), et message d&#x27;avertissement réglementaire.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration et ajustement de l&#x27;effet de levier sur une position de trading de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001050_seg24.jpg" alt="Fenêtre pop-up de réglage de l&#x27;effet de levier (Adjust Leverage) sur la plateforme d&#x27;échange Bitunix montrant un effet de levier réglé sur 5X pour les positions Long et Short." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001050_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:50</span>
+                        <span class="caption-text">Fenêtre pop-up de réglage de l&#x27;effet de levier (Adjust Leverage) sur la plateforme d&#x27;échange Bitunix montrant un effet de levier réglé sur 5X pour les positions Long et Short.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:14 - 00:11:35</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Choisissez un ordre au marché pour qu&#x27;il s&#x27;exécute instantanément au prix actuel du marché. Vous verrez les options de saisie des ordres. La valeur du montant. Il s&#x27;agit d&#x27;une quantité de contrats libellée en BTC. La valeur du coût. Il s&#x27;agit du coût d&#x27;ouverture et il ne change pas avec un effet de levier. La valeur nominale. Il s&#x27;agit de la valeur de marché de l&#x27;actif sous-jacent où le coût d&#x27;ouverture change avec l&#x27;effet de levier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bitunix (section Futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de configuration affichant : &quot;BTC (Quantity Unit)&quot;, &quot;USDT (Cost Value)&quot; avec la description &quot;When placing orders based on the cost value, adjusting the leverage will not affect the cost&quot;, et &quot;USDT (Nominal Value)&quot;. En arrière-plan, le carnet d&#x27;ordres et le graphique de BTCUSDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des unités de saisie des ordres pour le trading de contrats Futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001119_seg25.jpg" alt="Fenêtre modale des paramètres d&#x27;unité des contrats Futures sur la plateforme Bitunix, affichant les options BTC (Quantity Unit), USDT (Cost Value) et USDT (Nominal Value)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001119_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:19</span>
+                        <span class="caption-text">Fenêtre modale des paramètres d&#x27;unité des contrats Futures sur la plateforme Bitunix, affichant les options BTC (Quantity Unit), USDT (Cost Value) et USDT (Nominal Value).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:35 - 00:11:54</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour ce tutoriel, j&#x27;utiliserai une valeur nominale car elle s&#x27;ajuste avec votre effet de levier, ce qui facilite le contrôle de la taille de votre position. Définissez la taille de votre position. Par exemple, une position de 50 $. Avec un effet de levier de 5 fois, cela représente 10 $ de vos propres capitaux. Maintenant, définissez toujours un stop loss et un take profit. C&#x27;est non négociable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange de cryptomonnaies Bitunix (carnet d&#x27;ordres, graphique TradingView BTCUSDT en unités 15m, panneau de passage d&#x27;ordres au marché).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de trading BTCUSDT, effet de levier 5x en mode isolé, option de valeur nominale configurée à 50 USDT, coût estimé de 9,41 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur configure la taille de la position en saisissant une valeur nominale de 50 $ avec un effet de levier de 5x.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001140_seg26.jpg" alt="Interface de trading Bitunix montrant le carnet d&#x27;ordres et le graphique BTCUSDT, avec le champ de valeur nominale à zéro." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001140_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:40</span>
+                        <span class="caption-text">Interface de trading Bitunix montrant le carnet d&#x27;ordres et le graphique BTCUSDT, avec le champ de valeur nominale à zéro.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001149_seg26.jpg" alt="Interface de trading Bitunix montrant la configuration d&#x27;un ordre avec une valeur nominale de 50 $ et un effet de levier de 5x." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001149_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:49</span>
+                        <span class="caption-text">Interface de trading Bitunix montrant la configuration d&#x27;un ordre avec une valeur nominale de 50 $ et un effet de levier de 5x.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:54 - 00:12:29</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cliquez sur TP slash SL pour ouvrir les paramètres. Définissez votre stop loss à un prix où vous perdriez 2 $ et votre take profit à un prix où vous gagneriez 6 $. Un ratio risque-rendement de 1 sur 3. Une fois que tout est défini, cliquez sur ouvrir un long. Votre trade est maintenant actif. Vous le verrez dans le panneau des positions. Votre prix d&#x27;entrée, vos profits et pertes actuels, et votre prix de liquidation. Pour shorter le marché, choisissez simplement ouvrir un court au lieu de long. Même processus, mais vous pariez que le prix va baisser. Et rappelez-vous, votre volume de trading sur les contrats à terme aide à débloquer des bonus comme 20 USDT</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading (broker/échange) avec carnet d&#x27;ordres et graphique TradingView intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Panneau de configuration des ordres avec les champs TP/SL configurés (PnL à 6 $ et -2 $), le sélecteur de taille (Nominal Value 50 USDT), et les boutons d&#x27;exécution &quot;Open long&quot; et &quot;Open short&quot;.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres de Take Profit (TP) et Stop Loss (SL) en vue d&#x27;ouvrir une position longue avec un ratio risque-rendement défini.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001203_seg27.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading montrant le carnet d&#x27;ordres, le panneau de configuration des ordres au marché avec l&#x27;option TP/SL activée, et un graphique en chandeliers." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001203_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:03</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading montrant le carnet d&#x27;ordres, le panneau de configuration des ordres au marché avec l&#x27;option TP/SL activée, et un graphique en chandeliers.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-28">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:29 - 00:12:49</span>
+                <span class="segment-idx">Segment #28</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour avoir atteint 10 000 USDT de volume d&#x27;échange. La boîte mystère vaut jusqu&#x27;à 20 000 USDT pour le défi d&#x27;enregistrement de 24 semaines. Des chances de gagner une Tesla, une Rolex, des iPhones et plus encore. Ne manquez donc surtout pas ça. Au fur et à mesure que votre trade évolue en votre faveur, vous pouvez ajuster votre stop loss pour sécuriser vos profits.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Page de promotion affichant les détails du défi de check-in sur 24 semaines, nécessitant un volume de trading hebdomadaire de futures de 20 000 USDT pour gagner des récompenses (boîtes mystères valant jusqu&#x27;à 20 000 USDT, bonus, iPhones, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des conditions du défi promotionnel et des récompenses associées sur la plateforme d&#x27;échange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001234_seg28.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Bitunix montrant la page du défi &quot;24-Week Trading Check-In Challenge&quot; avec des boîtes mystères verrouillées." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001234_seg28.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:34</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Bitunix montrant la page du défi &quot;24-Week Trading Check-In Challenge&quot; avec des boîtes mystères verrouillées.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-29">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:12:49 - 00:13:23</span>
+                <span class="segment-idx">Segment #29</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Une fois que vous êtes en bénéfice de quelques dollars, déplacez votre stop loss au seuil de rentabilité afin de ne pas pouvoir perdre d&#x27;argent sur le trade. Vous pouvez également augmenter ou réduire votre position pendant qu&#x27;elle est active en utilisant les boutons d&#x27;ajustement de marge dans le panneau des positions. Pour clôturer votre trade, vous avez plusieurs options. Laissez votre TP ou SL le clôturer automatiquement lorsque le prix atteint votre objectif. Clôturez manuellement avec le bouton de clôture. Clôturez un pourcentage de la position si vous souhaitez prendre des profits partiels. Ajustez le TP slash SL directement sur le graphique en faisant glisser les lignes. Astuce de pro, ne soyez pas trop gourmand. Si vous atteignez votre objectif de take profit,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading de contrats futures (type exchange crypto/Bitunix) avec graphique de prix et carnet d&#x27;ordres.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre pop-up &quot;Adjust Margin&quot; permettant d&#x27;augmenter ou de réduire la marge d&#x27;une position active, avec affichage des marges actuelle et maximale, ainsi que le prix de liquidation estimé. Graphique en unités 15 minutes montrant une position ouverte sur BTCUSDT avec SL et TP.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de l&#x27;ajustement de la marge d&#x27;une position active et visualisation de la gestion du stop loss et du take profit sur le graphique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001258_seg29.jpg" alt="Interface de trading affichant une fenêtre modale d&#x27;ajustement de marge (Increase/Reduce Margin) avec les détails de la position actuelle en USDT." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001258_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:12:58</span>
+                        <span class="caption-text">Interface de trading affichant une fenêtre modale d&#x27;ajustement de marge (Increase/Reduce Margin) avec les détails de la position actuelle en USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001306_seg29.jpg" alt="Interface de trading complète avec carnet d&#x27;ordres à gauche, graphique des prix au centre montrant un ordre long ouvert avec des niveaux de Stop Loss (SL) et Take Profit (TP)." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001306_seg29.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:06</span>
+                        <span class="caption-text">Interface de trading complète avec carnet d&#x27;ordres à gauche, graphique des prix au centre montrant un ordre long ouvert avec des niveaux de Stop Loss (SL) et Take Profit (TP).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-30">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:23 - 00:13:41</span>
+                <span class="segment-idx">Segment #30</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">clôturez le trade. Le marché vous donnera toujours une autre opportunité. Avant de terminer, voici les règles essentielles pour trader sur Botunics. Première règle, commencez avec de petites tailles de position. Ne risquez pas plus de 2 % à 5 % de votre capital par trade. Cela préserve votre capital même si vous enchaînez quelques trades perdants.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading de la plateforme Bitunix avec graphique de prix intégré et carnet d&#x27;ordres.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de la paire BTCUSDT en unité de temps 15m, carnet d&#x27;ordres en temps réel, niveaux de Take Profit (TP) et Stop Loss (SL) positionnés sur le graphique, et indicateur de volume (Volume SMA 9).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;une position ouverte en cours avec ses paramètres de gestion du risque (TP/SL) sur le graphique du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001328_seg30.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading montrant un graphique en chandeliers japonais, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001328_seg30.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:28</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading montrant un graphique en chandeliers japonais, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-31">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:13:42 - 00:14:02</span>
+                <span class="segment-idx">Segment #31</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La deuxième règle est d&#x27;utiliser toujours des stops de protection. C&#x27;est non négociable. Chaque transaction a besoin d&#x27;un stop de protection avant d&#x27;entrer. Cela vous protège contre des pertes massives. La troisième est de tenir un journal de trading. Notez chaque transaction que vous effectuez, le prix d&#x27;entrée, le prix de sortie, pourquoi vous l&#x27;avez prise, ce que vous avez appris. C&#x27;est ainsi que vous vous améliorez avec le temps.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de courtier crypto / exchange avec carnet d&#x27;ordres et graphique intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT, position Long en mode isolé (5x), Open Price à 92120.1, Mark Price à 92176.0, PnL non réalisé positif (+0.02795 USDT / +0.30%).</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation de la position ouverte et des détails de marge dans l&#x27;onglet des positions du courtier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001347_seg31.jpg" alt="Interface de trading affichant une position ouverte sur BTCUSDT avec les détails de marge et le carnet d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001347_seg31.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:13:47</span>
+                        <span class="caption-text">Interface de trading affichant une position ouverte sur BTCUSDT avec les détails de marge et le carnet d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-32">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:02 - 00:14:24</span>
+                <span class="segment-idx">Segment #32</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Quatrièmement, ne courez jamais après les pompes. Si vous avez raté un mouvement, attendez la prochaine configuration. Le FOMO est le moyen le plus rapide de perdre de l&#x27;argent dans la crypto. Et enfin, ne risquez jamais plus que ce que vous pouvez vous permettre de perdre. Le trading peut vous offrir la liberté financière, mais il peut aussi être risqué si vous ne gérez pas correctement votre risque. Le trading est une compétence qui demande du temps, de la répétition et de la discipline.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Bitunix (interface de trading spot/futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTCUSDT en unité de temps 15 minutes, carnet d&#x27;ordres (Orderbook), prix actuel à 92,169.7, indicateur de volume (SMA 9), et paramètres de prise de profit (TP) / stop loss (SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation de l&#x27;interface de trading et observation des carnets d&#x27;ordres en lien avec les conseils de gestion des risques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001408_seg32.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading Bitunix montrant le carnet d&#x27;ordres et un graphique de prix pour BTCUSDT." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001408_seg32.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:08</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading Bitunix montrant le carnet d&#x27;ordres et un graphique de prix pour BTCUSDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-33">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:24 - 00:14:43</span>
+                <span class="segment-idx">Segment #33</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Mais si vous suivez ces règles, vous aurez une longueur d&#x27;avance sur la plupart des débutants. Très bien, voilà donc l&#x27;analyse complète de la façon de trader les contrats à terme sur Batunix. De l&#x27;inscription au dépôt, jusqu&#x27;à l&#x27;ouverture et la gestion de votre premier trade. Avant de partir, n&#x27;oubliez pas, utilisez mon lien dans la description pour réclamer tous les bonus dont j&#x27;ai parlé plus tôt.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Promos, étapes de trading (Register, Deposit, Trade) et centre de tâches pour les dépôts.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme pour présenter les étapes d&#x27;inscription et de dépôt.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001429_seg33.jpg" alt="Page d&#x27;accueil de la plateforme Bitunix affichant une promotion anniversaire &#x27;Ultra 4ward Begins&#x27; avec les étapes d&#x27;inscription, de dépôt et de trade." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001429_seg33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:29</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Bitunix affichant une promotion anniversaire &#x27;Ultra 4ward Begins&#x27; avec les étapes d&#x27;inscription, de dépôt et de trade.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001438_seg33.jpg" alt="Centre des tâches (&#x27;Task Center&#x27;) de la plateforme Bitunix montrant les récompenses de dépôt initial." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001438_seg33.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:38</span>
+                        <span class="caption-text">Centre des tâches (&#x27;Task Center&#x27;) de la plateforme Bitunix montrant les récompenses de dépôt initial.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-34">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:14:43 - 00:15:01</span>
+                <span class="segment-idx">Segment #34</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Commencez petit, concentrez-vous sur l&#x27;apprentissage, et ne courez pas après les profits au début. Maîtrisez les bases, développez vos compétences, et les profits viendront. Je mettrai également en ligne d&#x27;autres tutoriels Batunix. Alors abonnez-vous et activez la cloche de notification pour ne pas les rater. Merci d&#x27;avoir regardé et je vous vois dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Bitunix (interface de trading spot/futures).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT, prix actuel à 92,169.8, carnet d&#x27;ordres (Orderbook), options de levier (20x), panneau de passage d&#x27;ordres (Market/Limit), et graphique de prix intégrant des niveaux de Take Profit (TP) et Stop Loss (SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation du marché et des positions de trading sur la plateforme Bitunix en lien avec les explications sur la gestion des risques et la maîtrise des bases.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001448_seg34.jpg" alt="Interface de trading de Bitunix affichant la paire BTCUSDT avec le carnet d&#x27;ordres et un graphique de prix en temps réel." loading="lazy" onclick="openLightbox('../screenshots/h_4L7ulx-3I/h_4L7ulx-3I_001448_seg34.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:14:48</span>
+                        <span class="caption-text">Interface de trading de Bitunix affichant la paire BTCUSDT avec le carnet d&#x27;ordres et un graphique de prix en temps réel.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
