@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Krach sur le marché crypto (Regardez ceci avant de vendre dans la panique) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Krach sur le marché crypto (Regardez ceci avant de vendre dans la panique)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-02-06</span>
+                <span class="badge">⏱️ 00:07:34</span>
+                <span class="badge">🆔 <code>iyXscYJ3mfc</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=iyXscYJ3mfc" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo intitulée **Krach sur le marché crypto (Regardez ceci avant de vendre dans la panique)**, Alex Carter détaille une approche stratégique et pratique du trading et de l'automatisation par agents IA.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **TradingView & Claude Code** : Analyse technique avancée et automatisation algorithmique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- Respect rigoureux du ratio risque/rendement et du money management.<br>- Automatisation méthodique des déclencheurs d'ordres via des agents intelligents.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView &amp; Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Respect rigoureux du ratio risque/rendement et du money management.</span></li><li><span class="point-bullet">✦</span><span>Automatisation méthodique des déclencheurs d&#x27;ordres via des agents intelligents.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:35</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ethereum vient de s&#x27;effondrer de 19 % en 24 heures. Le Bitcoin a atteint son niveau le plus bas depuis 14 mois. Plus d&#x27;un milliard de dollars de liquidations ont été balayés en une seule journée. Le marché des cryptos est dans un chaos absolu en ce moment, et je vois de la panique partout. Mais voici ce que personne ne vous dit. Ce crash suit exactement le même schéma que celui que nous avons vu avant chaque hausse majeure dans l&#x27;histoire de la crypto. Et dans les cinq prochaines minutes, je vais vous montrer exactement ce qui se passe, pourquoi cela prépare en réalité l&#x27;une des plus grandes opportunités de ce cycle. Et surtout, ce que vous devez faire dès maintenant pour vous positionner avant le retournement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Niveaux de support horizontaux (&quot;Major Support Level&quot; à 2 344 USDT, 1 768 USDT et 1 370 USDT), lignes verticales de repère temporel (mai/juin 2025), volume en bas d&#x27;écran, cours actuel chutant vers 1 787 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Identification technique des niveaux clés de support historiques suite à un crash violent du marché crypto.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000018_seg1.jpg" alt="Graphique TradingView en chandeliers montrant une chute brutale du cours avec plusieurs niveaux horizontaux étiquetés &quot;Major Support Level&quot; (notamment à 2344.01, 1768.13 et 1370.04)." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000018_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Graphique TradingView en chandeliers montrant une chute brutale du cours avec plusieurs niveaux horizontaux étiquetés &quot;Major Support Level&quot; (notamment à 2344.01, 1768.13 et 1370.04).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:36 - 00:00:55</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parce que si vous comprenez ce que je m&#x27;apprête à vous montrer, ce krach pourrait bien être la meilleure chose qui soit arrivée à votre portefeuille. Plongeons dans le vif du sujet. Très bien, décortiquons exactement ce qui vient de se passer sur le marché des cryptomonnaies. Ethereum est passé d&#x27;environ 2 150 dollars à 1 740 dollars en seulement 24 heures.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Bybit (Graphique de prix crypto)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire ETHUSDT SPOT, UT 2D, niveaux de support horizontal (&#x27;Major Support Level&#x27;), curseur de volume en bas, prix actuels et données OHLC en haut à gauche.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du cours d&#x27;Ethereum mettant en évidence des zones de support clés et la baisse récente du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000041_seg2.jpg" alt="Graphique en chandeliers japonais de l&#x27;ETHUSDT sur l&#x27;échange Bybit en unité de temps 2D, montrant l&#x27;évolution des prix avec des lignes horizontales étiquetées comme &#x27;Major Support Level&#x27; et des repères temporels verticaux." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000041_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Graphique en chandeliers japonais de l&#x27;ETHUSDT sur l&#x27;échange Bybit en unité de temps 2D, montrant l&#x27;évolution des prix avec des lignes horizontales étiquetées comme &#x27;Major Support Level&#x27; et des repères temporels verticaux.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:55 - 00:01:18</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est un crash de 19 %. Le Bitcoin a chuté de plus de 17 %, passant de 71 900 $ à 60 000 $, atteignant son niveau le plus bas depuis octobre 2024. Et ce n&#x27;était pas juste un petit repli. Nous avons vu plus d&#x27;un milliard de dollars de liquidations sur l&#x27;ensemble du marché crypto au cours des dernières 24 heures. C&#x27;est massif.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:19 - 00:01:37</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, voici ce qui a déclenché ce krach. Premièrement, nous avons eu Vitalik Buterin, le cofondateur d&#x27;Ethereum, qui a vendu 2 962 Ethereum. Cela représente environ 6,69 millions de dollars sur seulement trois jours. Maintenant, avant de paniquer, c&#x27;était très probablement à des fins philanthropiques. Mais le marché se moque des intentions.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant un site d&#x27;actualité sur les cryptomonnaies (CryptoCurrency News).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Articles de presse avec des chiffres précis : 2 962 Ethereum vendus, prix d&#x27;Ethereum sous 2 000 dollars, volume d&#x27;environ 6,69 millions de dollars.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;articles de presse et de rapports de données sur la chute du marché et les transactions de Vitalik Buterin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000123_seg4.jpg" alt="Capture d&#x27;écran d&#x27;un article d&#x27;actualité crypto montrant le titre &#x27;Ethereum breaks $2,000 floor as Vitalik Buterin sells nearly 3,000 ETH&#x27;." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000123_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article d&#x27;actualité crypto montrant le titre &#x27;Ethereum breaks $2,000 floor as Vitalik Buterin sells nearly 3,000 ETH&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000128_seg4.jpg" alt="Capture d&#x27;écran de la suite de l&#x27;article détaillant les points clés (TL;DR) de la chute d&#x27;Ethereum et la vente de Vitalik Buterin." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000128_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:28</span>
+                        <span class="caption-text">Capture d&#x27;écran de la suite de l&#x27;article détaillant les points clés (TL;DR) de la chute d&#x27;Ethereum et la vente de Vitalik Buterin.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:38 - 00:02:14</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Quand les gens voient le fondateur vendre, ils paniquent. Deuxièmement, nous avons eu la nomination de Kevin Warsh comme nouveau président de la Fed, et le marché intègre une politique monétaire plus stricte. Cela signifie des taux d&#x27;intérêt plus élevés pendant plus longtemps, ce qui est traditionnellement baissier pour les actifs risqués comme la crypto. Et troisièmement, et c&#x27;est la partie la plus importante, nous avons cassé des niveaux de support technique clés. Ethereum a chuté sous les 2 200 dollars, ce qui était un support majeur, et Bitcoin a testé le support des 74 200 dollars qu&#x27;il tenait depuis fin 2024. Mais voici le hic, et c&#x27;est là que ça devient intéressant. Nous avons vu exactement ce</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web (Invesco) / Plateforme de graphiques boursiers (TradingView).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte biographique sur Kevin Warsh / Graphique de prix avec des niveaux de &quot;Major Support Level&quot; étiquetés à 2250, 1768 et 1370, et des volumes de trading élevés.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation du contexte macroéconomique puis analyse technique d&#x27;un graphique montrant une forte baisse des prix cassant les supports.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000156_seg5.jpg" alt="Graphique en chandeliers affichant un mouvement de baisse important et cassant des niveaux de support majeurs." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000156_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:56</span>
+                        <span class="caption-text">Graphique en chandeliers affichant un mouvement de baisse important et cassant des niveaux de support majeurs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:14 - 00:02:48</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">déjà en place auparavant. À de multiples reprises et à chaque fois, ce qui ressemblait à un krach s&#x27;est transformé en la configuration pour la prochaine jambe explosive à la hausse. Laissez-moi vous montrer quelque chose qui va vous épater. Si vous regardez l&#x27;évolution du prix d&#x27;Ethereum au cours de l&#x27;année écoulée, nous avons vu ce schéma se répéter encore et encore. En mars dernier, Ethereum a balayé la liquidité sous les creux précédents. Tout le monde a paniqué. Et qu&#x27;est-ce qui s&#x27;est passé ensuite ? Un retournement massif à la hausse. Puis en mai, exactement la même chose s&#x27;est produite. Nous avons cassé sous le support, déclenché des ordres stop, le sentiment est devenu extrêmement baissier. Et puis boum,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / WEEX (contrat perpétuel BTC/USDT en vue journalière 1D).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Niveaux de support horizontaux identifiés en jaune à 74 236,3 USDT (« Major Support Level November 2024 ») et 59 080,5 USDT (« Major Support Level Oct 2024 »), indicateur de volume, annotations manuelles mettant en évidence une précédente zone de consolidation.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse chartiste mettant en parallèle les précédentes corrections de marché avec la configuration actuelle pour illustrer la mise en place d&#x27;un rebond haussier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000222_seg6.jpg" alt="Graphique journalier du Bitcoin (BTC/USDT) sur WEEX montrant une structure corrective avec deux niveaux de support clés annotés et un tracé comparatif au stylet." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000222_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Graphique journalier du Bitcoin (BTC/USDT) sur WEEX montrant une structure corrective avec deux niveaux de support clés annotés et un tracé comparatif au stylet.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:49 - 00:03:15</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Un retournement violent à la hausse. Et là, en ce moment même, nous le voyons se reproduire. L&#x27;Ethereum vient de balayer la liquidité sous le niveau de support des 2 300 dollars. Le Bitcoin a testé les 65 000 dollars. Et comme réglé comme du papier à musique, tout le monde panique. Je vois des gens sur Twitter annoncer un Bitcoin à 50 000 dollars, un Ethereum à 1 500 dollars. Certains disent même que le marché haussier est terminé. Mais c&#x27;est exactement ce qui se produit avant chaque retournement majeur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de TradingView (Bybit) et interface de navigation sur le réseau social X.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Niveaux de support étiquetés « Major Support Level », graphiques de prix ETHUSDT, volumes de transactions et fils d&#x27;actualité sur le Bitcoin.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique des niveaux de support d&#x27;Ethereum et consultation des réactions de la communauté sur les réseaux sociaux suite à la baisse du marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000255_seg7.jpg" alt="Graphique en chandeliers japonais sur deux jours (2D) de la paire ETHUSDT Spot sur Bybit, montrant les niveaux de support majeurs et une cassure de prix encerclée." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000255_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:55</span>
+                        <span class="caption-text">Graphique en chandeliers japonais sur deux jours (2D) de la paire ETHUSDT Spot sur Bybit, montrant les niveaux de support majeurs et une cassure de prix encerclée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000308_seg7.jpg" alt="Interface du réseau social X (Twitter) affichant un tweet concernant Ethereum sous les 1500$, avec des actualités sur le marché crypto à droite." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000308_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:08</span>
+                        <span class="caption-text">Interface du réseau social X (Twitter) affichant un tweet concernant Ethereum sous les 1500$, avec des actualités sur le marché crypto à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:15 - 00:03:44</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est un prélèvement de liquidité typique de manuel. Les teneurs de marché éliminent les mains faibles, déclenchent tous les ordres stop, puis repartent violemment à la hausse. Et voici la partie intéressante. Nous sommes actuellement en train de retester l&#x27;ancienne résistance comme nouveau support. Regardez ce graphique. Ethereum a été rejeté au niveau de son précédent record historique, autour de 4 900 dollars. Maintenant, nous sommes redescendus et ce niveau commence à agir comme un support. C&#x27;est l&#x27;un des signaux haussiers les plus puissants que l&#x27;on puisse obtenir en analyse technique.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique TradingView intégré sur la plateforme Bybit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire ETHUSDT SPOT, unité de temps 2D, niveaux étiquetés « Major Support Level » autour de 2215.15, 1879.50, 1768.13 et 1370.04, ainsi que des histogrammes de volume en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du cours de l&#x27;Ethereum illustrant un mouvement baissier violent testant les niveaux de support clés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000322_seg8.jpg" alt="Graphique en chandeliers (2D) de la paire ETHUSDT Spot sur Bybit montrant une forte baisse des prix avec des volumes importants et des niveaux de support majeurs tracés." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000322_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:22</span>
+                        <span class="caption-text">Graphique en chandeliers (2D) de la paire ETHUSDT Spot sur Bybit montrant une forte baisse des prix avec des volumes importants et des niveaux de support majeurs tracés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:44 - 00:04:17</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">We saw it here, we saw it here, and now we&#x27;re seeing it again. Every single time this happens, the result is the same. A powerful breakout to the upside. Back in June, when we fell below the major support, what happened next? A massive reversal. This is a classic shakeout pattern before the next leg up. So here&#x27;s exactly what you need to do right now, and this is critical, so pay attention. Step one, do not panic sell. I know it&#x27;s tempting. I know it feels like the market is going to zero, but this is exactly when the smart money is accumulating. When everyone</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView (données de marché Bybit ETHUSDT Spot)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire ETHUSDT SPOT 2D, prix actuel à 1 883,98 USDT, niveaux clés « Major Support Level » à 2 215,15, 1 768,13 et 1 370,04 USDT, repères temporels verticaux (mars et mai 2025), histogramme des volumes.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique comparative mettant en évidence des configurations récurrentes de fausses cassures sous des supports clés (« shakeouts ») suivies de puissants retournements haussiers.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000352_seg9.jpg" alt="Graphique TradingView de la paire ETH/USDT en bougies 2 jours (2D) sur Bybit, montrant des niveaux horizontaux de support majeurs et des zones de fausses cassures (shakeouts) entourées en blanc." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000352_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:52</span>
+                        <span class="caption-text">Graphique TradingView de la paire ETH/USDT en bougies 2 jours (2D) sur Bybit, montrant des niveaux horizontaux de support majeurs et des zones de fausses cassures (shakeouts) entourées en blanc.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:17 - 00:04:55</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">else is panicking, that&#x27;s when you need to be greedy. Step two, start accumulating spot positions. If you have capital on the sidelines, this is your opportunity. I&#x27;m personally using Bybit for my spot accumulation right now. The reason I like Bybit for spot is simple. Low fees, deep liquidity, and they have some of the best execution in the market. For spot accumulation, you want to dollar cost average into positions. Don&#x27;t try to catch the exact bottom. Instead, scale in at key support levels. For Ethereum, I&#x27;m looking at $1,800, $1,900, and $2,000 as accumulation zones. For Bitcoin,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:56 - 00:05:33</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">$65,000, $63,000, and $60,000 if we get there. Step three, if you&#x27;re an experienced trader and you want to trade this volatility, use 2Bit for futures trading. Now I&#x27;m not telling you to go 100 times leverage and gamble your life savings, but if you understand risk management and you want to take advantage of these swings, 2Bit has some of the lowest fees in the market. And the key here is a risk management. Use isolated margin, keep your leverage low, five times to 10 times maximum if you&#x27;re just starting out, and always, always use stop losses. Step four, watch the key levels.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:33 - 00:06:05</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">for Ethereum if we hold above $1,800 I&#x27;m extremely bullish that&#x27;s the line in the sand for Bitcoin $63,000 is the critical support if we hold these levels I expect a violent bounce back toward $2,400 for ETH and $70,000 for Bitcoin and here&#x27;s the thing once we reclaim those levels the FOMO is going to be insane everyone who panicked sold at the bottom is going to be rushing back in and that&#x27;s when we see the explosive moves. Now let&#x27;s zoom out and look at the bigger picture because</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique TradingView / WEEX (BITCOIN / TETHERUS PERPETUAL CONTRACT 1h).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Cours de BTC/USDT (prix actuel à ~64 119,5 $), histogramme de volume, lignes de niveaux clés à 74 236,3 USDT et 59 080,5 USDT, annotation manuscrite circulaire autour du récent rebond sur le support.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique de la structure de prix du Bitcoin montrant le test et le maintien du niveau de support critique autour de 63 000 - 64 000 $.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000541_seg12.jpg" alt="Graphique en bougies 1h du contrat perpétuel BTC/USDT montrant la zone de prix actuelle entourée en blanc entre les niveaux de support majeurs (&quot;Major Support Level November 2024&quot; à 74 236,3 $ et &quot;Major Support Level Oct 2024&quot; à 59 080,5 $)." loading="lazy" onclick="openLightbox('../screenshots/iyXscYJ3mfc/iyXscYJ3mfc_000541_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:41</span>
+                        <span class="caption-text">Graphique en bougies 1h du contrat perpétuel BTC/USDT montrant la zone de prix actuelle entourée en blanc entre les niveaux de support majeurs (&quot;Major Support Level November 2024&quot; à 74 236,3 $ et &quot;Major Support Level Oct 2024&quot; à 59 080,5 $).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:05 - 00:06:42</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Oui, ce crash a l&#x27;air effrayant sur les graphiques à court terme, mais quand on dézoome, nous sommes toujours dans un marché haussier. La liquidité mondiale continue d&#x27;augmenter. Le Bitcoin et l&#x27;Ethereum ont simplement été à la traîne, et c&#x27;est en réalité haussier car cela signifie que nous avons de la marge pour rattraper notre retard. Mes objectifs prudents pour ce cycle sont toujours de 5 000 à 7 000 pour l&#x27;Ethereum et de 100 000 à 120 000 pour le Bitcoin, et honnêtement, je ne serais pas surpris que l&#x27;on voie l&#x27;ETH à 10 000 avant la fin du cycle. Mais tout dépend du maintien de ces niveaux de support clés. Si nous perdons les 1 800 $ sur l&#x27;ETH ou les 60 000 $ sur le Bitcoin, alors oui, nous pourrions avoir besoin de réévaluer la situation.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:43 - 00:07:03</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">But as long as we hold, I&#x27;m extremely bullish. So here&#x27;s the bottom line. This crypto crash is not the end. It&#x27;s an opportunity. History is repeating itself. And if you understand the pattern, you know exactly what&#x27;s coming next. Start accumulating spot on Bybit. If you&#x27;re a trading futures, use 2-bit with proper risk management. Both exchanges are linked down below.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:04 - 00:07:29</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Watch those key support levels. And most importantly, do not panic. The smart money is accumulating right now while everyone else is panicking. And in a few weeks, when Ethereum is back at $2,500 and Bitcoin is back at $75,000, you&#x27;re going to be glad you acted when others were afraid. If you found this video helpful, smash that like button, subscribe to the channel, and drop a comment below telling me what you&#x27;re buying in this dip.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:29 - 00:07:33</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">I&#x27;ll see you in the next video. Stay safe out there, and remember, this is your opportunity.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
