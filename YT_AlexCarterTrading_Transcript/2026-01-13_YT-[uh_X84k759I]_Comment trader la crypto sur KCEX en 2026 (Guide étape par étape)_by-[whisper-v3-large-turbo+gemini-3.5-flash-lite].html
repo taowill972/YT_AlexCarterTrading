@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Comment trader la crypto sur KCEX en 2026 (Guide étape par étape) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Comment trader la crypto sur KCEX en 2026 (Guide étape par étape)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-01-13</span>
+                <span class="badge">⏱️ 00:11:16</span>
+                <span class="badge">🆔 <code>uh_X84k759I</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=uh_X84k759I" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Cette vidéo présentée par Alex Carter constitue un guide pratique et méthodologique complet pour appréhender le trading de cryptomonnaies sur la plateforme KCEX, en mettant un accent particulier sur la transition du marché au comptant (spot) vers le marché des contrats à terme (futures). L'analyse démontre comment naviguer efficacement au sein d'une infrastructure d'échange moderne en combinant une exécution rigoureuse des ordres et une optimisation des incitations financières (bonus de dépôt, de vérification et de volume). Les démonstrations pratiques couvrent l'ensemble du cycle de vie d'un ordre : depuis le dépôt sécurisé de fonds via le réseau TRC20 jusqu'à la configuration des paramètres avancés de position.<br><br>Au cœur de la stratégie présentée résident les fondements indispensables du risk management et de l'optimisation structurelle des trades. L'analyste détaille l'utilisation des graphiques TradingView intégrés, le paramétrage des types d'ordres (marché, coût, quantité) et l'application stricte de ratios risque/rendement asymétriques (notamment un ratio de 1:3). À travers des cas pratiques démontrant l'utilisation conjointe d'un effet de levier modéré (5x) et d'un mode de marge isolée, la démonstration illustre comment prémunir son capital contre la liquidation tout en maximisant l'efficacité opérationnelle des capitaux engagés.<br><br>Enfin, le tutoriel aborde la psychologie opérationnelle et la gestion active des positions ouvertes. Il est démontré comment sécuriser les profits intermédiaires en déplaçant dynamiquement les niveaux de stop-loss au seuil de rentabilité (*break-even*), tout en exploitant les outils de réduction ou d'augmentation des tailles de positions en cours de route. L'objectif global est d'amener le trader débutant à structurer une approche professionnelle, méthodique et hautement sécurisée des marchés dérivés cryptographiques.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **KCEX** : Plateforme d'échange de cryptomonnaies centralisée offrant des frais réduits, un tableau de bord macroéconomique interactif et des marchés spot et futures avec un effet de levier allant jusqu'à 125x.<br>* **TradingView** : Moteur de graphiques boursiers de référence intégré à la plateforme pour l'analyse technique des prix et l'étude de l'historique des marchés.<br>* **USDT (Tether)** : Actif pivot de cotation et de marge utilisé pour standardiser les transactions, le calcul des PNL et l'évaluation des performances sur les contrats à terme.<br>* **Réseau TRC20** : Protocole blockchain ultrarapide et économique utilisé pour sécuriser les transferts de fonds et minimiser les frais de transaction lors des dépôts.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Sécurisation des avantages initiaux** : L'utilisation d'un lien d'affiliation exclusif permet de débloquer des structures de frais maker/taker amoindries et des récompenses cumulatives en USDT liées aux tâches d'apprentissage et de vérification.<br>* **Analyse macro-contextuelle** : Le tableau de bord de KCEX intègre des données fondamentales cruciales, incluant le sentiment de marché, la dominance du Bitcoin, les liquidations globales et les flux institutionnels des ETF.<br>* **Architecture des comptes cloisonnés** : La distinction nette entre le compte au comptant (dépôts, détention, trading sans levier) et le compte futures (marge USDT, bonus, gestion du PNL) garantit une organisation rigoureuse du capital.<br>* **Méthodologie de dépôt sécurisé** : L'adoption systématique d'une transaction test préliminaire (10 à 20 dollars) couplée à la vérification minutieuse du réseau (TRC20) prévient les pertes irréversibles de fonds.<br>* **Hiérarchisation des types de marge** : L'utilisation impérative du mode de marge isolée pour les débutants compartimente le risque et protège le solde global du compte en cas de liquidation de position, contrairement à la marge croisée.<br>* **Maîtrise de l'effet de levier** : Un effet de levier élevé (théoriquement disponible jusqu'à 125x) doit être drastiquement restreint à des multiplicateurs conservateurs de 5x ou 10x maximum pour s'éloigner du seuil critique de liquidation.<br>* **Dimensionnement par la quantité en USDT** : L'utilisation d'ordres par quantité libellés en USDT simplifie le calcul de l'exposition au risque, indépendamment des variations de l'effet de levier appliqué.<br>* **Inviolabilité du Stop-Loss et Take-Profit** : Aucun trade de futures ne doit être exécuté sans la configuration préalable de seuils de sortie automatique, garantissant une discipline émotionnelle totale.<br>* **Application d'un ratio risque/rendement asymétrique** : La configuration démontrée cible un ratio de 1:3 (risquer 2 $ pour tenter d'en gagner 6 $), assurant la rentabilité globale de la stratégie même avec un taux de réussite inférieur à 50 %.<br>* **Gestion dynamique du trade** : Dès qu'une position évolue favorablement, le déplacement du stop-loss au prix d'entrée (*break-even*) permet de transformer le trade en opération sans risque financier.<br>* **Exploitation des incitations de volume** : L'atteinte de seuils de volume spécifiques sur les marchés spot et futures ainsi que le déclenchement de paramètres TP/SL débloquent automatiquement des bonus de trading incrémentaux.<br>* **Flexibilité opérationnelle des positions** : Les boutons d'ajout ou de réduction de position permettent d'ajuster dynamiquement l'exposition en cours de route en fonction de l'évolution de la structure de marché.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">KCEX</span><span class="tool-tag">TradingView</span><span class="tool-tag">USDT (Tether)</span><span class="tool-tag">Réseau TRC20</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Sécurisation des avantages initiaux** : L&#x27;utilisation d&#x27;un lien d&#x27;affiliation exclusif permet de débloquer des structures de frais maker/taker amoindries et des récompenses cumulatives en USDT liées aux tâches d&#x27;apprentissage et de vérification.</span></li><li><span class="point-bullet">✦</span><span>Analyse macro-contextuelle** : Le tableau de bord de KCEX intègre des données fondamentales cruciales, incluant le sentiment de marché, la dominance du Bitcoin, les liquidations globales et les flux institutionnels des ETF.</span></li><li><span class="point-bullet">✦</span><span>Architecture des comptes cloisonnés** : La distinction nette entre le compte au comptant (dépôts, détention, trading sans levier) et le compte futures (marge USDT, bonus, gestion du PNL) garantit une organisation rigoureuse du capital.</span></li><li><span class="point-bullet">✦</span><span>Méthodologie de dépôt sécurisé** : L&#x27;adoption systématique d&#x27;une transaction test préliminaire (10 à 20 dollars) couplée à la vérification minutieuse du réseau (TRC20) prévient les pertes irréversibles de fonds.</span></li><li><span class="point-bullet">✦</span><span>Hiérarchisation des types de marge** : L&#x27;utilisation impérative du mode de marge isolée pour les débutants compartimente le risque et protège le solde global du compte en cas de liquidation de position, contrairement à la marge croisée.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de l&#x27;effet de levier** : Un effet de levier élevé (théoriquement disponible jusqu&#x27;à 125x) doit être drastiquement restreint à des multiplicateurs conservateurs de 5x ou 10x maximum pour s&#x27;éloigner du seuil critique de liquidation.</span></li><li><span class="point-bullet">✦</span><span>Dimensionnement par la quantité en USDT** : L&#x27;utilisation d&#x27;ordres par quantité libellés en USDT simplifie le calcul de l&#x27;exposition au risque, indépendamment des variations de l&#x27;effet de levier appliqué.</span></li><li><span class="point-bullet">✦</span><span>Inviolabilité du Stop-Loss et Take-Profit** : Aucun trade de futures ne doit être exécuté sans la configuration préalable de seuils de sortie automatique, garantissant une discipline émotionnelle totale.</span></li><li><span class="point-bullet">✦</span><span>Application d&#x27;un ratio risque/rendement asymétrique** : La configuration démontrée cible un ratio de 1:3 (risquer 2 $ pour tenter d&#x27;en gagner 6 $), assurant la rentabilité globale de la stratégie même avec un taux de réussite inférieur à 50 %.</span></li><li><span class="point-bullet">✦</span><span>Gestion dynamique du trade** : Dès qu&#x27;une position évolue favorablement, le déplacement du stop-loss au prix d&#x27;entrée (*break-even*) permet de transformer le trade en opération sans risque financier.</span></li><li><span class="point-bullet">✦</span><span>Exploitation des incitations de volume** : L&#x27;atteinte de seuils de volume spécifiques sur les marchés spot et futures ainsi que le déclenchement de paramètres TP/SL débloquent automatiquement des bonus de trading incrémentaux.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:33</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous avez eu envie de trader des cryptomonnaies sur KCX mais que vous ne savez pas par où commencer, ce tutoriel vous emmènera du stade de grand débutant à celui où vous placerez vos premiers trades en toute confiance. Je vais vous guider à travers tout : la configuration du compte, les dépôts, les différentes interfaces de trading, et des instructions étape par étape pour exécuter votre premier trade. KCEX peut sembler compliqué au début, mais une fois que vous aurez compris les bases, c&#x27;est en réalité l&#x27;une des plateformes d&#x27;échange les plus faciles et les plus puissantes à utiliser. La plupart des tutoriels omettent des étapes importantes ou partent du principe que vous savez déjà certaines choses.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies KCX (interface de trading futures avec graphiques TradingView intégrés).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT Perpetual, prix du Bitcoin autour de 90 600 - 90 700 USDT, moyennes mobiles (EMA/SMA), carnets d&#x27;ordres en temps réel, niveaux de Take Profit configurés à 92 481.1 USDT et Stop Loss à 88 854.4 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Passage d&#x27;un ordre d&#x27;achat au marché (Market order), configuration des paramètres de gestion des risques (TP/SL) et suivi de position active.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000008_seg1.jpg" alt="Graphique des prix BTC/USDT en bougies japonaises sur l&#x27;interface de l&#x27;échange KCX avec notification de confirmation de l&#x27;ordre d&#x27;achat." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000008_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:08</span>
+                        <span class="caption-text">Graphique des prix BTC/USDT en bougies japonaises sur l&#x27;interface de l&#x27;échange KCX avec notification de confirmation de l&#x27;ordre d&#x27;achat.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000016_seg1.jpg" alt="Fenêtre modale de configuration des niveaux de Take Profit (TP) et Stop Loss (SL) pour la position ouverte sur le Bitcoin." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000016_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:16</span>
+                        <span class="caption-text">Fenêtre modale de configuration des niveaux de Take Profit (TP) et Stop Loss (SL) pour la position ouverte sur le Bitcoin.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000025_seg1.jpg" alt="Vue d&#x27;ensemble de la plateforme KCX affichant le carnet d&#x27;ordres, le graphique de trading en direct et le panneau de gestion des positions." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000025_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:25</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de la plateforme KCX affichant le carnet d&#x27;ordres, le graphique de trading en direct et le panneau de gestion des positions.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:01:10</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">les débutants ne le font pas. Cela ne va absolument pas se produire ici. Et avec mon lien exclusif, vous obtenez des frais de maker et de taker plus bas, ainsi que des récompenses en USDT pour la vérification, les tâches d&#x27;apprentissage, les trades au comptant et à terme de base, la configuration du TP/SL et la liaison de votre compte X. À la fin de cette vidéo, vous saurez exactement comment utiliser KCEX et comment réclamer chaque bonus disponible. Maintenant, voici pourquoi KCX est l&#x27;un de mes meilleurs choix d&#x27;échanges. KCX est une plateforme d&#x27;échange de confiance et en croissance rapide dans l&#x27;industrie de la crypto, conçue à la fois pour les débutants et les traders professionnels, avec pour valeur fondamentale les utilisateurs d&#x27;abord,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme KCEX et tableau de classement de plateformes d&#x27;échange crypto.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres de bonus pour nouveaux utilisateurs, primes en USDT, informations sur les frais de maker/taker et volumes d&#x27;échange.
+[COMPORTEMENT] Navigation sur la plateforme KCEX et présentation des avantages liés au lien d&#x27;affiliation exclusif.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000042_seg2.jpg" alt="Capture montrant le Rewards Center d&#x27;une plateforme d&#x27;échange, détaillant les tâches pour nouveaux utilisateurs et les récompenses en USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000042_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:42</span>
+                        <span class="caption-text">Capture montrant le Rewards Center d&#x27;une plateforme d&#x27;échange, détaillant les tâches pour nouveaux utilisateurs et les récompenses en USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000052_seg2.jpg" alt="Page d&#x27;accueil de la plateforme KCEX mettant en avant les frais de trading réduits et le trading de futures sur altcoins." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000052_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:52</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme KCEX mettant en avant les frais de trading réduits et le trading de futures sur altcoins.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000101_seg2.jpg" alt="Tableau comparatif ou classement d&#x27;échanges crypto listant différentes plateformes avec leurs notes, volumes et graphiques de tendance." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000101_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:01</span>
+                        <span class="caption-text">Tableau comparatif ou classement d&#x27;échanges crypto listant différentes plateformes avec leurs notes, volumes et graphiques de tendance.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:11 - 00:01:49</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">la sécurité avant tout. KCX a l&#x27;un des frais les plus bas du marché. Cela signifie que vos ordres auront moins de coûts que sur les autres plateformes d&#x27;échange. Ils proposent une inscription rapide et simple. Ici, vous pouvez commencer à trader en quelques minutes, même sans vérification d&#x27;identité pour les fonctionnalités de base. KCX offre un large éventail de pièces, du Bitcoin et de l&#x27;Ethereum à des centaines d&#x27;altcoins et des milliers de paires de négociation. KCEX propose également de nombreuses options de trading telles que le comptant et les contrats à terme avec un effet de levier élevé pouvant aller jusqu&#x27;à 125 fois sur certaines paires. KCEX propose également un tableau de bord interactif où vous pouvez voir l&#x27;ensemble du marché des cryptomonnaies.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies KCX.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;inscription, tableau des tendances du marché (prix et variations en pourcentage), graphique de prix TradingView, carnet d&#x27;ordres et panneau de passage d&#x27;ordres (Market, Limit, effet de levier).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface d&#x27;inscription, des paires de trading tendances et du terminal de trading de l&#x27;échange KCX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000120_seg3.jpg" alt="Page d&#x27;inscription de la plateforme KCX mettant en avant les récompenses pour les nouveaux utilisateurs et les frais bas." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000120_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:20</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme KCX mettant en avant les récompenses pour les nouveaux utilisateurs et les frais bas.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000130_seg3.jpg" alt="Tableau des tendances du marché sur KCX affichant les principales cryptomonnaies (BTC, ETH, SOL, etc.) et leurs variations de prix." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000130_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:30</span>
+                        <span class="caption-text">Tableau des tendances du marché sur KCX affichant les principales cryptomonnaies (BTC, ETH, SOL, etc.) et leurs variations de prix.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000139_seg3.jpg" alt="Interface de trading principale de KCX montrant un graphique TradingView, le carnet d&#x27;ordres et les options d&#x27;ordres d&#x27;achat/vente (Long/Short)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000139_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:39</span>
+                        <span class="caption-text">Interface de trading principale de KCX montrant un graphique TradingView, le carnet d&#x27;ordres et les options d&#x27;ordres d&#x27;achat/vente (Long/Short).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:49 - 00:02:10</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous pouvez y accéder via l&#x27;option de marché dans la barre de navigation, où vous trouverez le sentiment du marché, la dominance du Bitcoin, les liquidations et les données sur la capitalisation boursière. Vous pouvez également consulter les actifs négociables, les données de la blockchain publique, les indices de marché, les actualités économiques, les entrées et sorties de fonds des ETF des principales institutions, et même les flux de capitaux des investisseurs institutionnels.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme de trading avec onglets Market, Assets, Public Blockchain, Market Index, Information, ETF, Smart Money.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Indicateurs de sentiment du marché (Neutral à 0), dominance du BTC (0,00%), Altcoin Season Index (0/100), liquidations sur 24 heures ($0), capitalisation des stablecoins USDT et USDC, et liste des crypto-monnaies principales (BTC à 90 702,13 $ et ETH à 3 110,17 $).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des données globales du marché des crypto-monnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000154_seg4.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de l&#x27;option de marché sur une plateforme crypto, affichant le sentiment du marché, la dominance du Bitcoin, les liquidations et la capitalisation boursière." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000154_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:54</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de l&#x27;option de marché sur une plateforme crypto, affichant le sentiment du marché, la dominance du Bitcoin, les liquidations et la capitalisation boursière.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:10 - 00:02:32</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">KCEX combine facilité d&#x27;utilisation, sécurité, diversité et récompenses, ce qui le rend parfait pour les débutants comme pour les traders avancés. Maintenant que vous savez pourquoi j&#x27;aime cette plateforme, passons aux choses sérieuses. Tout d&#x27;abord, cliquez sur le lien dans la description. Utiliser ce lien est crucial pour débloquer tous les bonus exclusifs. Vous pouvez vous inscrire avec votre e-mail ou votre téléphone, ou vous connecter via Google ou Apple.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la bourse de cryptomonnaies KCEX</p>
+                        <p><strong>Contenu textuel & Code :</strong> Informations sur les frais de trading (Spot Taker 0.00%, Futures Taker 0.01%, etc.) et formulaire d&#x27;inscription avec code de parrainage (KCOX8798-ALEX).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site KCEX et présentation de la page d&#x27;inscription pour les nouveaux utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000216_seg5.jpg" alt="Page d&#x27;accueil de la plateforme KCEX avec le menu de navigation supérieur et une bannière de Noël." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000216_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:16</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme KCEX avec le menu de navigation supérieur et une bannière de Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000221_seg5.jpg" alt="Page d&#x27;inscription de la plateforme KCEX affichant les détails des frais de transaction et le formulaire de création de compte." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000221_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:21</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme KCEX affichant les détails des frais de transaction et le formulaire de création de compte.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:33 - 00:02:52</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour ce tutoriel, j&#x27;utiliserai Gmail. Une fois que vous êtes inscrit, vous êtes dans votre compte KCX et prêt à commencer. Des bonus seront débloqués au fur et à mesure que vous accomplirez certaines actions, ce que je vais vous montrer. Juste après vous être inscrit, vous pouvez réclamer vos premières récompenses en effectuant la vérification du compte. C&#x27;est un moyen simple de gagner deux USDT dès maintenant.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de crypto-monnaies KCX (site web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface utilisateur affichant des offres promotionnelles, des récompenses pour nouveaux utilisateurs (2 USDT), et des options de vérification KYC.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme KCX pour présenter le compte utilisateur et les bonus d&#x27;inscription.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000237_seg6.jpg" alt="Page d&#x27;accueil de la plateforme KCX mettant en avant les frais de trading bas et une illustration de Noël." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000237_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:37</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme KCX mettant en avant les frais de trading bas et une illustration de Noël.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000247_seg6.jpg" alt="Section &#x27;New User Rewards&#x27; sur KCX montrant les récompenses en USDT pour la complétion des informations de compte et l&#x27;apprentissage." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000247_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:47</span>
+                        <span class="caption-text">Section &#x27;New User Rewards&#x27; sur KCX montrant les récompenses en USDT pour la complétion des informations de compte et l&#x27;apprentissage.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:52 - 00:03:12</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous terminez les tâches d&#x27;apprentissage avancées, c&#x27;est encore deux USDT instantanément. Une fois que vous êtes connecté, vous pouvez voir votre tableau de bord principal. Ici, vous pouvez voir en haut différentes options. KCX utilise différents types de comptes pour vous aider à organiser votre trading. Voici ce que signifie chacun des comptes : Compte au comptant. c&#x27;est là que vos dépôts atterrissent en premier.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies KCX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Solde estimé à 0 USDT, PnL du jour à 0.00 USD, frais Maker et Taker à 0 %, liste des actifs et détails du compte Spot.
+[DESC_IMAGE_SUIVANTE] Sans objet.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le tableau de bord du compte utilisateur pour présenter les différentes options et sections de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000257_seg7.jpg" alt="Page des récompenses utilisateur de la plateforme KCX, montrant différentes tâches (KYC, apprentissage futures, dépôt spot) avec les gains en USDT associés." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000257_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:57</span>
+                        <span class="caption-text">Page des récompenses utilisateur de la plateforme KCX, montrant différentes tâches (KYC, apprentissage futures, dépôt spot) avec les gains en USDT associés.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000307_seg7.jpg" alt="Tableau de bord principal du compte Spot de KCX, affichant le solde estimé, le PnL, les frais de trading (Maker/Taker à 0%) et la liste des actifs." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000307_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:07</span>
+                        <span class="caption-text">Tableau de bord principal du compte Spot de KCX, affichant le solde estimé, le PnL, les frais de trading (Maker/Taker à 0%) et la liste des actifs.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:12 - 00:03:31</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, vous pouvez également acheter et vendre des cryptomonnaies aux prix du marché. C&#x27;est idéal pour détenir des actifs ou trader sans effet de levier. Compte futures. C&#x27;est pour le trading avec effet de levier, vous permettant de prendre des positions plus importantes que ne le permet votre solde. Il débloque également des récompenses en bonus basées sur vos transferts et votre volume de trading.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;échange de cryptomonnaies (Blofin / WEEX / Bybit)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Solde estimé à 0 USDT, PNL du jour à 0.00 USD (0.00%), Frais de Maker et Taker à 0%, et liste des actifs.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la section Spot du compte pour l&#x27;achat et la détention d&#x27;actifs sans effet de levier.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000317_seg8.jpg" alt="Vue d&#x27;ensemble du compte Spot sur une plateforme d&#x27;échange de cryptomonnaies, affichant le solde estimé et les frais de trading." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000317_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:17</span>
+                        <span class="caption-text">Vue d&#x27;ensemble du compte Spot sur une plateforme d&#x27;échange de cryptomonnaies, affichant le solde estimé et les frais de trading.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:31 - 00:03:53</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ici, vous pouvez trader avec l&#x27;USDT comme marge. C&#x27;est ici que vous gagnerez vos futures, vos bonus de trading et vos récompenses de tâches quotidiennes. Vous pouvez également voir votre analyse de PNL, votre rapport de transactions et votre historique d&#x27;épargne. Sur KCEX, les utilisateurs peuvent gagner jusqu&#x27;à 5 % de taux annuel en pourcentage, et les utilisateurs peuvent également retirer des fonds à tout moment, ce qui s&#x27;accompagne de rendements stables.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies KCEX (interface web).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tâches de bonus (Futures Trading 2 USDT, TP/SL, liaison de compte X), historique des transactions, épargne flexible (5% APY).
+[DESC_IMAGE_1] Navigation dans les sections de récompenses et d&#x27;historique de la plateforme KCEX.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000337_seg9.jpg" alt="Interface montrant des bonus de tâches quotidiennes et de trading sur KCEX (Futures Trading, Experience Futures TP/SL, Bind X Account)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000337_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:37</span>
+                        <span class="caption-text">Interface montrant des bonus de tâches quotidiennes et de trading sur KCEX (Futures Trading, Experience Futures TP/SL, Bind X Account).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000342_seg9.jpg" alt="Page d&#x27;historique des transactions (Transaction History) avec onglets Dépôt, Retrait, Transfert et filtres de dates." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000342_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Page d&#x27;historique des transactions (Transaction History) avec onglets Dépôt, Retrait, Transfert et filtres de dates.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000348_seg9.jpg" alt="Section présentant les options d&#x27;épargne flexible avec un rendement allant jusqu&#x27;à 5% APY sur KCEX." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000348_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:48</span>
+                        <span class="caption-text">Section présentant les options d&#x27;épargne flexible avec un rendement allant jusqu&#x27;à 5% APY sur KCEX.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:54 - 00:04:14</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur la barre de navigation, vous pouvez également voir le centre des événements. Ici, vous pouvez voir les récompenses pour les nouveaux utilisateurs, où vous pouvez suivre vos bonus de nouveaux utilisateurs et la progression de vos tâches quotidiennes. Vous pouvez également voir ici le dépôt pour les cotations et la compétition de trading de contrats à terme. Maintenant que vous connaissez les bases, mettons de l&#x27;argent sur votre compte et commençons à réclamer des bonus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange de cryptomonnaies KCEX (KCEX.com).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menus de navigation de la plateforme, sections &#x27;Event Center&#x27;, &#x27;New User Rewards&#x27;, &#x27;Spot Deposit&#x27; (100 USDT), &#x27;Spot Trading&#x27; (200 USDT) et gains en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu &#x27;Event Center&#x27; puis affichage des tâches et récompenses pour nouveaux utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000359_seg10.jpg" alt="Page d&#x27;accueil de la plateforme KCEX montrant le menu déroulant &#x27;Event Center&#x27; avec l&#x27;option &#x27;New User Rewards&#x27; sélectionnée." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000359_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:59</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme KCEX montrant le menu déroulant &#x27;Event Center&#x27; avec l&#x27;option &#x27;New User Rewards&#x27; sélectionnée.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000404_seg10.jpg" alt="Page des récompenses pour nouveaux utilisateurs sur KCEX détaillant les tâches telles que &#x27;Advanced Learning&#x27;, &#x27;Spot Deposit&#x27; et &#x27;Spot Trading&#x27;." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000404_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:04</span>
+                        <span class="caption-text">Page des récompenses pour nouveaux utilisateurs sur KCEX détaillant les tâches telles que &#x27;Advanced Learning&#x27;, &#x27;Spot Deposit&#x27; et &#x27;Spot Trading&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:14 - 00:04:33</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cliquez sur votre profil en haut à droite, puis choisissez portefeuilles, puis cliquez sur dépôt. Sur sélectionner une crypto, choisissez USDT. L&#x27;USDT est idéal pour le trading, mais Bitcoin ou Ethereum fonctionnent aussi. Lors de la sélection de votre réseau, choisissez le réseau TRC20 pour des frais bas. Vous verrez votre adresse de dépôt personnelle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web d&#x27;une plateforme d&#x27;échange de cryptomonnaies.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection de cryptomonnaies et liste des réseaux de dépôt disponibles avec leurs frais ou montants minimums (TRC20, BSC, ERC20, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans l&#x27;interface de dépôt pour sélectionner une cryptomonnaie (USDT) et son réseau de transfert (TRC20).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000419_seg11.jpg" alt="Page de dépôt d&#x27;une plateforme d&#x27;échange avec les options de sélection de crypto (USDT, USDC, BTC, ETH)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000419_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:19</span>
+                        <span class="caption-text">Page de dépôt d&#x27;une plateforme d&#x27;échange avec les options de sélection de crypto (USDT, USDC, BTC, ETH).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000428_seg11.jpg" alt="Fenêtre modale de sélection du réseau de dépôt affichant TRC20, BSC, ERC20, Polygon et autres." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000428_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:28</span>
+                        <span class="caption-text">Fenêtre modale de sélection du réseau de dépôt affichant TRC20, BSC, ERC20, Polygon et autres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:33 - 00:05:00</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Copiez-la soigneusement. Ensuite, allez sur votre échange ou portefeuille actuel, collez l&#x27;adresse et envoyez vos cryptos. Cela prend généralement 5 à 15 minutes. Un conseil de pro, envoyez toujours d&#x27;abord un petit montant test, peut-être 10 à 20 dollars, et vérifiez bien que le réseau correspond des deux côtés. C&#x27;est là que les bonus commencent à entrer en jeu. Si vous effectuez un seul trade au comptant avec un montant de transaction équivalant à plus de 200 USDT, vous pouvez obtenir un bonus de trading au comptant d&#x27;un USDT.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interfaces de plateformes d&#x27;échange de cryptomonnaies (Toobit et autre broker).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails de retrait (19 USDT, réseau TRX, frais de 1 USDT), solde du portefeuille spot (20.9 USDT), et programme de bonus pour nouveaux utilisateurs.</p>
+                        <p><strong>Action / Démonstration :</strong> Validation d&#x27;une transaction de retrait et consultation du solde de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000440_seg12.jpg" alt="Fenêtre de confirmation de retrait sur la plateforme Toobit montrant les détails de la transaction (montant, réseau TRX, frais, adresse)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000440_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:40</span>
+                        <span class="caption-text">Fenêtre de confirmation de retrait sur la plateforme Toobit montrant les détails de la transaction (montant, réseau TRX, frais, adresse).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000447_seg12.jpg" alt="Vue du portefeuille Spot sur une plateforme d&#x27;échange affichant un solde estimé de 20.9 USDT et la liste des actifs." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000447_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:47</span>
+                        <span class="caption-text">Vue du portefeuille Spot sur une plateforme d&#x27;échange affichant un solde estimé de 20.9 USDT et la liste des actifs.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000453_seg12.jpg" alt="Page des récompenses pour nouveaux utilisateurs (New User Rewards) avec des tâches pour gagner des USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000453_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:53</span>
+                        <span class="caption-text">Page des récompenses pour nouveaux utilisateurs (New User Rewards) avec des tâches pour gagner des USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:00 - 00:05:22</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous effectuez un seul trade de futures avec un montant de transaction équivalant à plus de 2 000 USDT, vous pouvez obtenir un bonus de 2 USDT. Et un autre bonus de 2 USDT si vous déclenchez un TP ou un SL sur le trading de futures. En plus de cela, KCEX propose des taux de frais réduits pour tous vos trades, ce qui signifie que vous économisez de l&#x27;argent sur chaque transaction.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange KCEX (section des tâches ou bonus).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails des conditions de bonus : Spot Trading (200 USDT pour 1 USDT), Futures Trading (2000 USDT pour 2 USDT), et Experience Futures TP/SL (2 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Survol ou présentation des différentes tâches de trading permettant de gagner des bonus en USDT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000506_seg13.jpg" alt="Interface montrant les différentes tâches de bonus sur la plateforme KCEX, notamment les conditions pour le trading de futures et les récompenses en USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000506_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:06</span>
+                        <span class="caption-text">Interface montrant les différentes tâches de bonus sur la plateforme KCEX, notamment les conditions pour le trading de futures et les récompenses en USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:22 - 00:05:45</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">La plateforme vérifie que vous êtes un trader légitime et si vous êtes qualifié, le bonus sera crédité automatiquement. Si vous avez déposé du Bitcoin ou une autre cryptomonnaie mais que vous avez besoin d&#x27;USDT pour trader, voici comment le convertir. Allez dans le trading au comptant en cliquant sur comptant. Recherchez votre paire, par exemple, BTC slash USDT. Sélectionnez l&#x27;ordre au marché, choisissez vendre, entrez le montant et cliquez sur vendre, BTC.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies KCEX (Trading Spot).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Liste des paires de trading (BTC/USDT, ETH/USDT, SOL/USDT, etc.), carnet d&#x27;ordres en temps réel, graphiques de prix et panneau d&#x27;achat/vente au comptant.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation vers l&#x27;interface de trading au comptant pour effectuer des conversions de cryptomonnaies.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000539_seg14.jpg" alt="Interface de trading au comptant (Spot) de la plateforme KCEX avec le carnet d&#x27;ordres, le graphique des prix et la liste des cryptomonnaies." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000539_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:39</span>
+                        <span class="caption-text">Interface de trading au comptant (Spot) de la plateforme KCEX avec le carnet d&#x27;ordres, le graphique des prix et la liste des cryptomonnaies.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:45 - 00:06:05</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela convertit instantanément vos Bitcoins en USDT, qui apparaissent ensuite dans votre portefeuille spot. Passons maintenant à ce que vous attendez, le trading de futures. Pour ouvrir des futures, cliquez sur futures dans la navigation principale. Après avoir cliqué sur futures, cela vous amènera au tableau de bord des futures. C&#x27;est ici que vous ferez la plupart de vos transactions.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies KCEX, comprenant les sections Spot et Futures.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Soldes de comptes en USDT, graphiques de prix Bitcoin (BTC/USDT) avec indicateurs EMA, et carnet d&#x27;ordres en temps réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation depuis le portefeuille spot vers la section de trading de futures pour préparer l&#x27;ouverture de positions.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000550_seg15.jpg" alt="Vue du portefeuille spot affichant la liste des actifs avec le solde en USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000550_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:50</span>
+                        <span class="caption-text">Vue du portefeuille spot affichant la liste des actifs avec le solde en USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000555_seg15.jpg" alt="Page d&#x27;accueil de la plateforme de trading de futures affichant les frais de transaction." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000555_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:55</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme de trading de futures affichant les frais de transaction.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000600_seg15.jpg" alt="Interface complète de trading de futures avec un graphique TradingView du Bitcoin et le carnet d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000600_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:00</span>
+                        <span class="caption-text">Interface complète de trading de futures avec un graphique TradingView du Bitcoin et le carnet d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:05 - 00:06:25</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je vais décortiquer chaque section pour que tout soit parfaitement clair. Voici ce que vous verrez sur l&#x27;écran de trading. La sélection de la paire de trading se trouve en haut à gauche. C&#x27;est ici que vous choisissez quelle crypto trader, comme BTC / USDT ou ETH / USDT ou n&#x27;importe quel autre altcoin. KCEX propose des centaines de paires disponibles.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading web (échange de crypto-monnaies intégrant un graphique TradingView)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais pour la paire BTC/USDT avec des indicateurs de type moyennes mobiles (EMA 5, 10, 30, 60), un carnet d&#x27;ordres (Order Book), le prix actuel autour de 90 719 USDT, et le panneau de gestion des ordres à droite (Open Long / Open Short).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading et de la sélection de la paire BTC/USDT en haut à gauche.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000610_seg16.jpg" alt="Capture d&#x27;écran montrant l&#x27;interface de trading d&#x27;une plateforme d&#x27;échange de cryptomonnaies avec le graphique de la paire BTC/USDT en timeframe 15 minutes, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000610_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:10</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant l&#x27;interface de trading d&#x27;une plateforme d&#x27;échange de cryptomonnaies avec le graphique de la paire BTC/USDT en timeframe 15 minutes, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:26 - 00:06:45</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le graphique des prix est au centre. Il montre l&#x27;historique des mouvements de prix et vous pouvez changer l&#x27;horizon temporel comme vous le souhaitez. KCEX utilise des graphiques TradingView qui sont la norme de l&#x27;industrie. Sur le côté droit, vous trouverez le carnet d&#x27;ordres. Les chiffres rouges sont les ordres de vente et les chiffres verts sont les ordres d&#x27;achat. Cela montre la profondeur du marché en temps réel.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange KCEX intégrant des graphiques TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers pour BTC/USDT sur l&#x27;unité de temps 15 minutes, affichant plusieurs moyennes mobiles (EMA 5, 10, 30, 60), le carnet d&#x27;ordres en temps réel avec les chiffres rouges et verts, ainsi que les options de trading (Market, Limit, Open Long/Short).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de trading, pointant sur l&#x27;horizon temporel et le carnet d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000631_seg17.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading KCEX montrant le graphique de prix BTC/USDT au centre, le carnet d&#x27;ordres à droite et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000631_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading KCEX montrant le graphique de prix BTC/USDT au centre, le carnet d&#x27;ordres à droite et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:45 - 00:07:14</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le panneau de passage d&#x27;ordres est tout à droite. C&#x27;est ici que vous passerez vos transactions, réglerez l&#x27;effet de levier et entrerez la taille de votre position. Enfin, tout en bas, se trouve le panneau des positions. Il affiche vos transactions actives, vos ordres ouverts, l&#x27;historique des ordres, l&#x27;historique de vos transactions, ainsi que les profits et pertes par crypto-monnaie. Tout ce dont vous avez besoin est juste ici, sur un seul écran, prêt à trader. Avant de placer le moindre trade, configurez trois paramètres importants. Premièrement, choisissez votre mode de marge. KCEX propose deux options, la marge isolée.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading KCEX avec graphiques TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers 15m du BTC/USDT, indicateurs EMA (5, 10, 30, 60), carnet d&#x27;ordres en temps réel et options de levier (20X).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents panneaux de l&#x27;interface de trading de la plateforme (passage d&#x27;ordres et gestion des positions).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000653_seg18.jpg" alt="Vue d&#x27;ensemble de l&#x27;interface de trading montrant le graphique BTC/USDT, le carnet d&#x27;ordres central et le panneau de passage d&#x27;ordres situé tout à droite." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000653_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:53</span>
+                        <span class="caption-text">Vue d&#x27;ensemble de l&#x27;interface de trading montrant le graphique BTC/USDT, le carnet d&#x27;ordres central et le panneau de passage d&#x27;ordres situé tout à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000700_seg18.jpg" alt="Gros plan sur le panneau inférieur des positions affichant les onglets des transactions actives, ordres ouverts et historiques." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000700_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Gros plan sur le panneau inférieur des positions affichant les onglets des transactions actives, ordres ouverts et historiques.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000707_seg18.jpg" alt="Vue générale de la plateforme avec le menu supérieur de la bourse et le récapitulatif du marché BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000707_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:07</span>
+                        <span class="caption-text">Vue générale de la plateforme avec le menu supérieur de la bourse et le récapitulatif du marché BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:14 - 00:07:35</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela protège le reste de votre compte. Si le trade tourne mal, vous perdez seulement ce que vous avez mis dans cette position spécifique. En mode marge croisée, toutes les positions partagent le même solde de marge. En cas de liquidation, les traders risquent de perdre l&#x27;intégralité du solde de marge ainsi que toutes les positions ouvertes. Pour les débutants, utilisez toujours la marge isolée pour protéger votre compte.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading d&#x27;échange (type KCEX / plateforme similaire) avec graphique de prix et panneau de configuration des ordres.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Menu de sélection du mode de marge affichant les options « Isolated » (Marge isolée) et « Cross » (Marge croisée) avec leurs descriptions textuelles respectives, ainsi que la case à cocher « Applies to all futures ».</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et explication visuelle des modes de marge (isolée et croisée) pour le trading de contrats futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000720_seg19.jpg" alt="Fenêtre modale de sélection du mode de marge (Isolated vs Cross) superposée sur l&#x27;interface de trading de crypto-monnaies." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000720_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:20</span>
+                        <span class="caption-text">Fenêtre modale de sélection du mode de marge (Isolated vs Cross) superposée sur l&#x27;interface de trading de crypto-monnaies.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:36 - 00:07:56</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Deuxièmement, définissez votre effet de levier. KCX permet un effet de levier élevé, jusqu&#x27;à 125 fois sur certaines paires, mais n&#x27;utilisez pas un effet de levier élevé en tant que débutant. Limitez-vous à 5 fois ou 10 fois maximum. Voici comment cela fonctionne. Par exemple, si vous avez un solde de 10 dollars avec un effet de levier de 5 fois, vous obtenez 50 dollars de pouvoir d&#x27;achat en position.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange KCX (Futures Trading)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de réglage du levier (réglé à 20X, curseur affichant des paliers de 1x à 125x), graphique du cours BTC/USDT en arrière-plan avec indicateurs EMA.</p>
+                        <p><strong>Action / Démonstration :</strong> Le présentateur manipule ou montre la fenêtre de sélection de l&#x27;effet de levier sur la plateforme KCX.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000741_seg20.jpg" alt="Capture d&#x27;écran de l&#x27;interface de l&#x27;échange KCX montrant la fenêtre pop-up de configuration du levier avec un curseur allant jusqu&#x27;à 125x." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000741_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:41</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de l&#x27;échange KCX montrant la fenêtre pop-up de configuration du levier avec un curseur allant jusqu&#x27;à 125x.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:57 - 00:08:16</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Cela signifie que vous contrôlez pour 50 dollars de Bitcoin avec seulement 10 dollars de votre propre argent. Un effet de levier plus élevé signifie un risque plus élevé. Votre prix de liquidation se rapproche de votre entrée, donc un seul faux pas peut effacer votre position. Pour cet exemple, j&#x27;utilise un effet de levier de 5 fois sur marge isolée. Plaçons un ordre d&#x27;achat.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading de cryptomonnaies (KCEX)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Fenêtre de réglage du levier positionnée à 5X, graphique en arrière-plan BTC/USDT en unité 15 minutes avec indicateurs EMA.</p>
+                        <p><strong>Action / Démonstration :</strong> Réglage ou sélection du niveau de levier (5X) pour le trading de contrats futures sur Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000802_seg21.jpg" alt="Interface d&#x27;échange de cryptomonnaies montrant une fenêtre contextuelle pour le réglage du levier (5X) avec un curseur allant de 1x à 125x." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000802_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:02</span>
+                        <span class="caption-text">Interface d&#x27;échange de cryptomonnaies montrant une fenêtre contextuelle pour le réglage du levier (5X) avec un curseur allant de 1x à 125x.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:16 - 00:08:50</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parier que le Bitcoin va monter. Choisissez l&#x27;ordre au marché pour qu&#x27;il s&#x27;exécute instantanément. Vous verrez les options de saisie d&#x27;ordre. Ordre par quantité. La quantité de la position de contrats à terme avec effet de levier appliqué. Cela peut être libellé en BTC et en USDT. Ordre par coût. Le coût ici n&#x27;est pas affecté par l&#x27;effet de levier. Pour ce tutoriel, j&#x27;utiliserai l&#x27;ordre par quantité en USDT car cela facilite le dimensionnement de la position. Définissez la taille de votre position. Par exemple, une position de 50 dollars. Avec un effet de levier de 5 fois, cela représente 10 dollars de vos propres capitaux. Définissez toujours un stop loss et un take</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading de contrats à terme (Futures) sur une plateforme d&#x27;échange de cryptomonnaies.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC/USDT avec moyennes mobiles (EMA), carnet d&#x27;ordres, et configuration de la taille de position (50 USDT, effet de levier 5x).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration des paramètres d&#x27;unités de contrats à terme puis saisie du montant de l&#x27;ordre pour un achat au marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000825_seg22.jpg" alt="Fenêtre contextuelle des paramètres d&#x27;unités de contrats à terme affichant les options de saisie d&#x27;ordre par quantité (en BTC ou USDT) ou par coût (USDT)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000825_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:25</span>
+                        <span class="caption-text">Fenêtre contextuelle des paramètres d&#x27;unités de contrats à terme affichant les options de saisie d&#x27;ordre par quantité (en BTC ou USDT) ou par coût (USDT).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000841_seg22.jpg" alt="Interface de trading affichant le graphique du BTC/USDT en unités de 15 minutes avec le panneau de saisie d&#x27;un ordre au marché de 50 USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000841_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:41</span>
+                        <span class="caption-text">Interface de trading affichant le graphique du BTC/USDT en unités de 15 minutes avec le panneau de saisie d&#x27;un ordre au marché de 50 USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-23">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:50 - 00:09:10</span>
+                <span class="segment-idx">Segment #23</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">bénéfice. C&#x27;est non négociable. Cliquez sur TPSL pour ouvrir les paramètres. Définissez votre stop loss à un prix où vous perdez 2 $ et votre take profit à un prix où vous gagneriez 6 $, soit un ratio risque/rendement de 1 pour 3. Une fois que tout est défini, cliquez sur ouvrir long. Votre trade est maintenant actif. Vous le verrez dans le panneau des positions.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading crypto (type KCEX ou similaire) avec graphique TradingView, carnet d&#x27;ordres et panneau de passage d&#x27;ordres.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Configuration du ratio risque/rendement 1:3 avec un Take Profit de 6 $ et un Stop Loss de -2 $ sur une position Long BTC/USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Clic sur TP/SL pour configurer les paramètres de gestion des risques, saisie des valeurs de take profit et de stop loss, puis clic sur le bouton d&#x27;ouverture de position longue.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000855_seg23.jpg" alt="Image 1 montre l&#x27;interface de trading avec le curseur sur le bouton TP/SL pour configurer les paramètres de sortie de position." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000855_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:55</span>
+                        <span class="caption-text">Image 1 montre l&#x27;interface de trading avec le curseur sur le bouton TP/SL pour configurer les paramètres de sortie de position.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000900_seg23.jpg" alt="Image 2 montre la fenêtre contextuelle de configuration Market Price TP/SL avec le take profit réglé sur 6 $ et le stop loss sur -2 $." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000900_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:00</span>
+                        <span class="caption-text">Image 2 montre la fenêtre contextuelle de configuration Market Price TP/SL avec le take profit réglé sur 6 $ et le stop loss sur -2 $.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000905_seg23.jpg" alt="Image 3 montre l&#x27;interface de trading principale avec les paramètres TP/SL validés et le curseur sur le bouton &#x27;Open Long&#x27;." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000905_seg23.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:05</span>
+                        <span class="caption-text">Image 3 montre l&#x27;interface de trading principale avec les paramètres TP/SL validés et le curseur sur le bouton &#x27;Open Long&#x27;.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-24">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:10 - 00:09:47</span>
+                <span class="segment-idx">Segment #24</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">votre prix d&#x27;entrée, votre P&amp;L actuel et votre prix de liquidation. Pour shorter les marchés, choisissez simplement ouvrir un short au lieu d&#x27;un long. Même processus, mais vous pariez que le prix va baisser. Et n&#x27;oubliez pas, votre volume de trading sur les contrats à terme aide à débloquer des bonus comme le bonus de trading de contrats à terme de deux USDT et le bonus d&#x27;expérience TPSL de deux USDT. Ne manquez donc surtout pas cela. Au fur et à mesure que votre trade évolue en votre faveur, ajustez votre stop loss pour sécuriser vos profits. Une fois que vous avez gagné quelques dollars, déplacez votre stop loss au seuil de rentabilité. Vous pouvez également augmenter ou réduire votre position pendant qu&#x27;elle est active en utilisant l&#x27;option d&#x27;ajout slash</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> KCEX (plateforme de trading de cryptomonnaies)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC/USDT Perpetual, indicateurs EMA, carnet d&#x27;ordres, panneau de passage d&#x27;ordres (Open Long / Open Short), informations sur les positions ouvertes (prix d&#x27;entrée, P&amp;L, prix de liquidation) et liste de tâches pour bonus en USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la plateforme de trading, observation d&#x27;une position longue ouverte et consultation des bonus de trading disponibles.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000919_seg24.jpg" alt="Interface de trading crypto montrant un graphique des prix BTC/USDT, un carnet d&#x27;ordres et les boutons d&#x27;exécution d&#x27;ordres long et short." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000919_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:19</span>
+                        <span class="caption-text">Interface de trading crypto montrant un graphique des prix BTC/USDT, un carnet d&#x27;ordres et les boutons d&#x27;exécution d&#x27;ordres long et short.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000928_seg24.jpg" alt="Page de récompenses et de bonus de la plateforme affichant différentes tâches de trading et de configuration pour gagner des USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000928_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:28</span>
+                        <span class="caption-text">Page de récompenses et de bonus de la plateforme affichant différentes tâches de trading et de configuration pour gagner des USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000937_seg24.jpg" alt="Interface de trading affichant les détails d&#x27;une position ouverte sur le Bitcoin en mode long avec effet de levier (Isolated 5X)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000937_seg24.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:37</span>
+                        <span class="caption-text">Interface de trading affichant les détails d&#x27;une position ouverte sur le Bitcoin en mode long avec effet de levier (Isolated 5X).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-25">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:47 - 00:10:22</span>
+                <span class="segment-idx">Segment #25</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">réduire les boutons. Pour fermer, laissez TP ou SL fermer automatiquement. Fermez manuellement avec le bouton de fermeture. Fermez un pourcentage de la position si vous voulez prendre des profits partiels. Ajustez le TP et le SL directement sur le graphique en faisant glisser les lignes. Astuce de pro, ne soyez pas gourmand. Si vous atteignez votre objectif de take profit, fermez le trade. Le marché vous donnera toujours une autre opportunité. Avant de conclure, voici les règles essentielles pour trader. Commencez avec de petites tailles de position. Ne risquez pas plus de 2 à 5 % par trade pour garder votre capital intact. Utilisez toujours des stop-loss. C&#x27;est non négociable lorsque vous faites</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme de trading crypto (interface de type échange de contrats perpétuels).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTC/USDT en timeframe 15m, carnet d&#x27;ordres, informations sur la position ouverte, niveaux de Take Profit (TP) et Stop Loss (SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration de la fermeture partielle d&#x27;une position et de l&#x27;ajustement des niveaux de risque directement sur le graphique.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_000955_seg25.jpg" alt="Fenêtre contextnelle de fermeture de position sur la plateforme de trading avec curseur de pourcentage." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_000955_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:55</span>
+                        <span class="caption-text">Fenêtre contextnelle de fermeture de position sur la plateforme de trading avec curseur de pourcentage.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_001004_seg25.jpg" alt="Interface de trading affichant un graphique de prix avec des niveaux de TP et SL modifiables." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_001004_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:04</span>
+                        <span class="caption-text">Interface de trading affichant un graphique de prix avec des niveaux de TP et SL modifiables.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_001013_seg25.jpg" alt="Interface complète avec le carnet d&#x27;ordres et les positions ouvertes en bas de l&#x27;écran." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_001013_seg25.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:13</span>
+                        <span class="caption-text">Interface complète avec le carnet d&#x27;ordres et les positions ouvertes en bas de l&#x27;écran.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-26">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:22 - 00:11:00</span>
+                <span class="segment-idx">Segment #26</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">trading. Chaque transaction a besoin d&#x27;un stop loss avant d&#x27;entrer. Tenez un journal de trading. Notez chaque transaction que vous effectuez. Prix d&#x27;entrée, prix de sortie, pourquoi vous l&#x27;avez prise, ce que vous avez appris. C&#x27;ici que vous vous améliorez. Ne courez jamais après les hausses. Si vous avez raté un mouvement, attendez la configuration suivante. Le FOMO est le moyen le plus rapide de perdre de l&#x27;argent. Et enfin, ne risquez jamais plus que ce que vous pouvez vous permettre de perdre. Le trading est une compétence qui peut vous donner de la liberté, mais il peut aussi devenir risqué. Cela demande de la répétition et de la discipline. Très bien, c&#x27;est donc l&#x27;analyse complète de la façon de trader les contrats à terme sur KCEX. De l&#x27;inscription au dépôt jusqu&#x27;à l&#x27;ouverture</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading d&#x27;une plateforme d&#x27;échange (type exchange crypto avec graphique TradingView intégré).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers 15m pour BTC/USDT, indicateurs EMA (5, 10, 30, 60), carnet d&#x27;ordres (Order Book), options d&#x27;effet de levier (5x puis 20x), et types d&#x27;ordres (Market, Limit, TP/SL).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de trading, illustrant le passage d&#x27;ordres d&#x27;achat/vente (Open Long / Open Short) avec gestion du levier et des risques.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_001031_seg26.jpg" alt="Interface de trading montrant un graphique BTC/USDT en unités de 15 minutes avec le carnet d&#x27;ordres et les options de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_001031_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:31</span>
+                        <span class="caption-text">Interface de trading montrant un graphique BTC/USDT en unités de 15 minutes avec le carnet d&#x27;ordres et les options de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_001050_seg26.jpg" alt="Interface de trading avec l&#x27;affichage de moyennes mobiles exponentielles (EMA) sur le graphique du cours du Bitcoin (BTC/USDT)." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_001050_seg26.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:50</span>
+                        <span class="caption-text">Interface de trading avec l&#x27;affichage de moyennes mobiles exponentielles (EMA) sur le graphique du cours du Bitcoin (BTC/USDT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-27">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:11:00 - 00:11:15</span>
+                <span class="segment-idx">Segment #27</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">et à gérer votre premier trade. Avant de partir, rappelez-vous, utilisez mon lien dans la description pour réclamer tous les bonus. Commencez petit, concentrez-vous sur l&#x27;apprentissage, et ne courez pas après les profits au début. Si vous avez des questions, laissez-les dans les commentaires ci-dessous, et je vous vois dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> KCEX (Interface d&#x27;échange de cryptomonnaies / Futures)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTC/USDT Perpetuel, prix actuel autour de 90 667$, effet de levier 5x en mode isolé, PnL non réalisé à -0.05 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Gestion et visualisation d&#x27;une position longue ouverte sur le Bitcoin avec affichage du carnet d&#x27;ordres et du solde disponible.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_001107_seg27.jpg" alt="Interface de trading de KCEX sur la paire BTC/USDT avec graphique de prix, carnet d&#x27;ordres et panneau de passage d&#x27;ordre." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_001107_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:07</span>
+                        <span class="caption-text">Interface de trading de KCEX sur la paire BTC/USDT avec graphique de prix, carnet d&#x27;ordres et panneau de passage d&#x27;ordre.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/uh_X84k759I/uh_X84k759I_001111_seg27.jpg" alt="Interface de trading de KCEX montrant en bas le panneau des positions ouvertes avec les détails du trade en cours sur le BTC/USDT." loading="lazy" onclick="openLightbox('../screenshots/uh_X84k759I/uh_X84k759I_001111_seg27.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:11:11</span>
+                        <span class="caption-text">Interface de trading de KCEX montrant en bas le panneau des positions ouvertes avec les détails du trade en cours sur le BTC/USDT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
