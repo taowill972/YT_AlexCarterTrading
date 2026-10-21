@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `147 / 186` (`79.0%`)
+- **Vidéos traitées** : `148 / 186` (`79.6%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -164,6 +164,7 @@
 | 2026-01-01 | [3r7u6q-egP8](https://www.youtube.com/watch?v=3r7u6q-egP8) | **Comment Claude révolutionne à jamais le trading crypto** | [2026-01-01_YT-[3r7u6q-egP8]_Comment Claude révolutionne à jamais le trading crypto_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2026-01-01_YT-[3r7u6q-egP8]_Comment Claude révolutionne à jamais le trading crypto_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2026-01-01_YT-[3r7u6q-egP8]_Comment Claude révolutionne à jamais le trading crypto_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `43` |
 | 2025-12-25 | [7ZB59g1QoXE](https://www.youtube.com/watch?v=7ZB59g1QoXE) | **How To Copy Pro Traders on Lbank (Simple Beginners Guide)** | [2025-12-25_YT-[7ZB59g1QoXE]_How To Copy Pro Traders on Lbank (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-25_YT-[7ZB59g1QoXE]_How To Copy Pro Traders on Lbank (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-25_YT-[7ZB59g1QoXE]_How To Copy Pro Traders on Lbank (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-12-23 | [UDXwT8QunxA](https://www.youtube.com/watch?v=UDXwT8QunxA) | **How to Trade Crypto on LBank 2026 (Step-by-Step)** | [2025-12-23_YT-[UDXwT8QunxA]_How to Trade Crypto on LBank 2026 (Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-23_YT-[UDXwT8QunxA]_How to Trade Crypto on LBank 2026 (Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-23_YT-[UDXwT8QunxA]_How to Trade Crypto on LBank 2026 (Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2025-12-19 | [4sQGPX8KdBI](https://www.youtube.com/watch?v=4sQGPX8KdBI) | **Withdrawing Crypto To Bank With Bitget For Beginners** | [2025-12-19_YT-[4sQGPX8KdBI]_Withdrawing Crypto To Bank With Bitget For Beginners_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-19_YT-[4sQGPX8KdBI]_Withdrawing Crypto To Bank With Bitget For Beginners_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-19_YT-[4sQGPX8KdBI]_Withdrawing Crypto To Bank With Bitget For Beginners_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
