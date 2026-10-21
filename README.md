@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `149 / 186` (`80.1%`)
+- **Vidéos traitées** : `150 / 186` (`80.6%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -166,6 +166,7 @@
 | 2025-12-23 | [UDXwT8QunxA](https://www.youtube.com/watch?v=UDXwT8QunxA) | **How to Trade Crypto on LBank 2026 (Step-by-Step)** | [2025-12-23_YT-[UDXwT8QunxA]_How to Trade Crypto on LBank 2026 (Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-23_YT-[UDXwT8QunxA]_How to Trade Crypto on LBank 2026 (Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-23_YT-[UDXwT8QunxA]_How to Trade Crypto on LBank 2026 (Step-by-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-12-19 | [4sQGPX8KdBI](https://www.youtube.com/watch?v=4sQGPX8KdBI) | **Withdrawing Crypto To Bank With Bitget For Beginners** | [2025-12-19_YT-[4sQGPX8KdBI]_Withdrawing Crypto To Bank With Bitget For Beginners_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-19_YT-[4sQGPX8KdBI]_Withdrawing Crypto To Bank With Bitget For Beginners_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-19_YT-[4sQGPX8KdBI]_Withdrawing Crypto To Bank With Bitget For Beginners_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-12-17 | [LyjQrQUZrQM](https://www.youtube.com/watch?v=LyjQrQUZrQM) | **Claim Your FREE $200 USDT on Bitget** | [2025-12-17_YT-[LyjQrQUZrQM]_Claim Your FREE $200 USDT on Bitget_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-17_YT-[LyjQrQUZrQM]_Claim Your FREE $200 USDT on Bitget_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-17_YT-[LyjQrQUZrQM]_Claim Your FREE $200 USDT on Bitget_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2025-12-15 | [aP1S_DRqeMA](https://www.youtube.com/watch?v=aP1S_DRqeMA) | **How to Copy Pro Traders on Bitget (Full Beginner Tutorial 2025)** | [2025-12-15_YT-[aP1S_DRqeMA]_How to Copy Pro Traders on Bitget (Full Beginner Tutorial 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-12-15_YT-[aP1S_DRqeMA]_How to Copy Pro Traders on Bitget (Full Beginner Tutorial 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-12-15_YT-[aP1S_DRqeMA]_How to Copy Pro Traders on Bitget (Full Beginner Tutorial 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
