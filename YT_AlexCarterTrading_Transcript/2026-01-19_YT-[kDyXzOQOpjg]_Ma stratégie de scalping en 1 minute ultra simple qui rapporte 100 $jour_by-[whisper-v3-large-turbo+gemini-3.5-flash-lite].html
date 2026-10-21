@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Ma stratégie de scalping en 1 minute ultra simple qui rapporte 100 $/jour — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Ma stratégie de scalping en 1 minute ultra simple qui rapporte 100 $/jour</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2026-01-19</span>
+                <span class="badge">⏱️ 00:07:04</span>
+                <span class="badge">🆔 <code>kDyXzOQOpjg</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=kDyXzOQOpjg" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br><br>Cette vidéo d'Alex Carter propose une incursion directe dans l'univers du scalping à haute fréquence sur une unité de temps d'une minute, ciblant l'exploitation des micro-mouvements de prix sur les marchés cryptographiques dérivés. L'analyse se concentre sur une méthode mécanique combinant trois indicateurs techniques majeurs pour filtrer le bruit des marchés et générer des opportunités de trading rapides et répétées. L'approche met l'accent sur la simplicité opérationnelle et la rigueur dans l'exécution, tout en s'appuyant sur des plateformes d'échange alternatives pour optimiser l'accès au marché et bénéficier de leviers adaptés.<br><br>Au cœur de la stratégie, l'indicateur des bougies de régression linéaire, couplé au fameux *UT Bot Alerts* et à l'indicateur *STC* (Schaff Trend Cycle), sert de système de feux tricolores pour valider chaque impulsion directionnelle. L'intervenant détaille précisément les conditions requises pour s'affranchir des faux signaux : un alignement parfait entre la clôture des prix par rapport à la ligne de régression, le signal d'alerte algorithmique et la polarité chromique du STC. Cette architecture technique vise à maximiser le ratio de réussite sur des actifs à forte volatilité tels que le BTC/USDT.<br><br>Enfin, la démonstration intègre une dimension pratique incontournable axée sur l'infrastructure de trading et la gestion du risque. De l'inscription sur des bourses décentralisées ou régulées sans KYC lourd (Bitunix et LBank) jusqu'à la configuration des ordres au marché et de la marge isolée, chaque étape est pensée pour encadrer le capital du trader débutant ou avancé. Le contrôle de l'effet de levier et l'utilisation de stop-loss dynamiques basés sur l'inversion des signaux techniques garantissent une approche structurée pour viser la régularité des gains quotidiens.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br><br>* **TradingView (mentionné comme Trade Viewer)** : Plateforme de graphisme incontournable utilisée gratuitement pour configurer les indicateurs techniques et surveiller l'unité de temps d'une minute.<br>* **Bougies de Régression Linéaire (Linear Regression Candles)** : Indicateur graphique paramétré avec un lissage de signal à 7, servant à identifier la dynamique de tendance et à situer les prix par rapport à une ligne directrice médiane.<br>* **UT Bot Alerts** : Indicateur algorithmique configuré avec une valeur clé de 2 et un ATR de 11, agissant comme le déclencheur principal des signaux d'achat et de vente.<br>* **STC (Schaff Trend Cycle)** : Indicateur de momentum et de cycle de tendance utilisé comme filtre anti-faux signaux, validant les entrées uniquement lorsqu'il adopte une couleur verte (long) ou rouge (short).<br>* **Bitunix** : Bourse de produits dérivés principale recommandée pour le trading de contrats à terme (USDT-M), offrant une structure de bonus de dépôt et un effet de levier allant jusqu'à 200x.<br>* **LBank** : Échange alternatif proposé pour les utilisateurs ne souhaitant pas se soumettre à des vérifications KYC strictes, doté de programmes incitatifs exclusifs.<br>* **Claude Code / Grok Bots** : Outils d'intelligence artificielle et d'automatisation évoqués dans l'écosystème analytique global de la chaîne pour concevoir, coder et optimiser des stratégies algorithmiques (dans le cadre de l'expertise de la chaîne).<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br><br>* **Spécificité du Scalping en 1 Minute** : L'horizon temporel à court terme permet de multiplier les prises de position quotidiennes sans subir l'attente prolongée inhérente au swing trading, en capturant des impulsions de prix immédiates.<br>* **Sélection et Paramétrage de la Régression Linéaire** : L'indicateur de bougies de régression linéaire doit être configuré avec un lissage de signal réglé à 7, et une épaisseur visuelle renforcée pour identifier clairement la cassure de la ligne blanche centrale.<br>* **Calibrage de l'indicateur UT Bot Alerts** : Pour affiner la sensibilité des signaux d'entrée, la valeur clé doit être fixée à 2 et l'Average True Range (ATR) ajusté à 11, servant de boussole directionnelle incontournable.<br>* **Filtrage des Faux Signaux via le STC** : L'indicateur Schaff Trend Cycle (STC) agit comme un filtre de confirmation impératif : aucun trade ne doit être exécuté si la couleur de la ligne ne correspond pas strictement au sens de la position (vert pour l'achat, rouge pour la vente).<br>* **Conditions d'Entrée en Position Longue (Achat)** : L'alignement requis combine un signal d'achat émis par l'UT Bot, une bougie de régression linéaire verte clôturant au-dessus de la ligne blanche, et un indicateur STC de couleur verte.<br>* **Conditions d'Entrée en Position Courte (Vente)** : L'inverse exact s'applique pour un short : un signal de vente de l'UT Bot, une bougie de régression linéaire rouge clôturant en dessous de la ligne blanche, et un STC de couleur rouge.<br>* **Gestion du Risque par la Marge Isolée** : L'utilisation de la marge isolée est fortement préconisée pour compartimenter le risque de chaque transaction et empêcher qu'une position perdante ne compromette l'intégralité du capital du compte.<br>* **Maîtrise de l'Effet de Levier** : Bien que les plateformes proposent des leviers massifs (jusqu'à 200x), il est stratégiquement recommandé aux débutants de se limiter à une fourchette de 5x à 10x, et aux traders avancés de ne pas excéder 25x pour préserver leur capital.<br>* **Placement et Sortie par Stop-Loss Dynamique** : Le stop-loss initial est placé de part et d'autre de la ligne blanche directrice, mais la sortie effective de position est dictée par l'apparition d'un signal technique opposé (clôture d'une bougie de régression dans le sens inverse).<br>* **Optimisation des Bonus d'Échange** : L'utilisation de liens affiliés spécifiques sur des plateformes comme Bitunix ou LBank permet de maximiser le capital initial grâce à des bonus de dépôt et des récompenses sur le premier trade de contrats à terme.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView (mentionné comme Trade Viewer)</span><span class="tool-tag">Bougies de Régression Linéaire (Linear Regression Candles)</span><span class="tool-tag">UT Bot Alerts</span><span class="tool-tag">STC (Schaff Trend Cycle)</span><span class="tool-tag">Bitunix</span><span class="tool-tag">LBank</span><span class="tool-tag">Claude Code / Grok Bots</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Spécificité du Scalping en 1 Minute** : L&#x27;horizon temporel à court terme permet de multiplier les prises de position quotidiennes sans subir l&#x27;attente prolongée inhérente au swing trading, en capturant des impulsions de prix immédiates.</span></li><li><span class="point-bullet">✦</span><span>Sélection et Paramétrage de la Régression Linéaire** : L&#x27;indicateur de bougies de régression linéaire doit être configuré avec un lissage de signal réglé à 7, et une épaisseur visuelle renforcée pour identifier clairement la cassure de la ligne blanche centrale.</span></li><li><span class="point-bullet">✦</span><span>Calibrage de l&#x27;indicateur UT Bot Alerts** : Pour affiner la sensibilité des signaux d&#x27;entrée, la valeur clé doit être fixée à 2 et l&#x27;Average True Range (ATR) ajusté à 11, servant de boussole directionnelle incontournable.</span></li><li><span class="point-bullet">✦</span><span>Filtrage des Faux Signaux via le STC** : L&#x27;indicateur Schaff Trend Cycle (STC) agit comme un filtre de confirmation impératif : aucun trade ne doit être exécuté si la couleur de la ligne ne correspond pas strictement au sens de la position (vert pour l&#x27;achat, rouge pour la vente).</span></li><li><span class="point-bullet">✦</span><span>Conditions d&#x27;Entrée en Position Longue (Achat)** : L&#x27;alignement requis combine un signal d&#x27;achat émis par l&#x27;UT Bot, une bougie de régression linéaire verte clôturant au-dessus de la ligne blanche, et un indicateur STC de couleur verte.</span></li><li><span class="point-bullet">✦</span><span>Conditions d&#x27;Entrée en Position Courte (Vente)** : L&#x27;inverse exact s&#x27;applique pour un short : un signal de vente de l&#x27;UT Bot, une bougie de régression linéaire rouge clôturant en dessous de la ligne blanche, et un STC de couleur rouge.</span></li><li><span class="point-bullet">✦</span><span>Gestion du Risque par la Marge Isolée** : L&#x27;utilisation de la marge isolée est fortement préconisée pour compartimenter le risque de chaque transaction et empêcher qu&#x27;une position perdante ne compromette l&#x27;intégralité du capital du compte.</span></li><li><span class="point-bullet">✦</span><span>Maîtrise de l&#x27;Effet de Levier** : Bien que les plateformes proposent des leviers massifs (jusqu&#x27;à 200x), il est stratégiquement recommandé aux débutants de se limiter à une fourchette de 5x à 10x, et aux traders avancés de ne pas excéder 25x pour préserver leur capital.</span></li><li><span class="point-bullet">✦</span><span>Placement et Sortie par Stop-Loss Dynamique** : Le stop-loss initial est placé de part et d&#x27;autre de la ligne blanche directrice, mais la sortie effective de position est dictée par l&#x27;apparition d&#x27;un signal technique opposé (clôture d&#x27;une bougie de régression dans le sens inverse).</span></li><li><span class="point-bullet">✦</span><span>Optimisation des Bonus d&#x27;Échange** : L&#x27;utilisation de liens affiliés spécifiques sur des plateformes comme Bitunix ou LBank permet de maximiser le capital initial grâce à des bonus de dépôt et des récompenses sur le premier trade de contrats à terme.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:36</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous montrer une stratégie de scalping d&#x27;une minute que les débutants et les traders avancés utilisent pour gagner rapidement des centaines, voire des milliers de dollars sur Bitunix et LBank. Nous parlons de plusieurs trades par jour avec des entrées et des sorties rapides. Cette méthode de scalping est parfaite si vous voulez capturer des mouvements de prix rapides tout au long de la journée au lieu d&#x27;attendre des heures qu&#x27;un setup apparaisse enfin. Je vais vous l&#x27;expliquer étape par étape et vous montrer les indicateurs exacts et les paramètres que j&#x27;utilise personnellement. Assurez-vous donc de regarder jusqu&#x27;à la fin. Très bien, les gars, étape numéro une, inscrivez-vous sur un échange. Pour cette stratégie, nous allons utiliser Bitunix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitunix et graphique TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT, carnet d&#x27;ordres (Orderbook), indicateur LinReg Candles, UT Bot Alerts et volumes de trading en bas de page.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading Bitunix et démonstration d&#x27;une stratégie de scalping d&#x27;une minute sur graphique TradingView avec des signaux d&#x27;achat et de vente.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000009_seg1.jpg" alt="Interface de trading de la plateforme Bitunix montrant le carnet d&#x27;ordres et un graphique du BTCUSDT avec une forte baisse." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Interface de trading de la plateforme Bitunix montrant le carnet d&#x27;ordres et un graphique du BTCUSDT avec une forte baisse.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000018_seg1.jpg" alt="Graphique TradingView sur le contrat perpétuel BTCUSDT montrant des bougies en unités de 1 minute, avec des indicateurs techniques et des signaux d&#x27;achat/vente (Buy/Sell)." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000018_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:18</span>
+                        <span class="caption-text">Graphique TradingView sur le contrat perpétuel BTCUSDT montrant des bougies en unités de 1 minute, avec des indicateurs techniques et des signaux d&#x27;achat/vente (Buy/Sell).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:36 - 00:01:13</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est l&#x27;une des principales bourses que j&#x27;utilise en ce moment pour le trading de produits dérivés, et ils proposent des bonus absolument fous en ce moment. Vous pouvez obtenir jusqu&#x27;à 20 USDT rien que pour votre premier dépôt, plus 20 USDT supplémentaires pour avoir effectué votre premier trade sur les contrats à terme. Si Bitunix n&#x27;est pas disponible dans votre pays ou si vous ne voulez pas faire de KYC, vous pouvez utiliser LBank comme alternative. Et le meilleur dans tout ça ? LBank ne requiert pas de vérification KYC pour le trading de base. LBank propose également 50 000 USDT de bonus exclusifs. Je mettrai les liens des deux ci-dessous, mais pour cette vidéo, nous allons utiliser Bitunix.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitunix et site web d&#x27;information Crypto Vanguards.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offre promotionnelle de bonus &quot;First-Time Deposit&quot; offrant jusqu&#x27;à 20 USDT en boîte mystère pour un dépôt minimum de 100 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page des promotions et des bonus d&#x27;inscription de la plateforme d&#x27;échange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000045_seg2.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la bourse Bitunix montrant la section des récompenses et bonus pour le premier dépôt (&quot;First-Time Deposit&quot;)." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000045_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:45</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la bourse Bitunix montrant la section des récompenses et bonus pour le premier dépôt (&quot;First-Time Deposit&quot;).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:13 - 00:01:46</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour vous inscrire sur Batunix et réclamer vos bonus, cliquez sur le lien tout en haut de la description. Vous serez redirigé vers la page d&#x27;inscription où il vous suffit d&#x27;entrer votre e-mail, de créer un mot de passe fort et de créer un compte. La deuxième étape consiste à déposer des fonds. Laissez-moi vous montrer comment déposer des fonds avant que nous ne plongeions dans la stratégie. Une fois connecté à Bitunix, allez dans le coin supérieur droit, cliquez sur l&#x27;icône du portefeuille, puis cliquez sur dépôt. Choisissez la pièce que vous souhaitez déposer. Je recommande l&#x27;USDT et sélectionnez le réseau de blockchain correct. Assurez-vous de choisir le bon réseau pour éviter de perdre</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de la plateforme d&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;inscription, bannières promotionnelles (« Ultra 4ward Begins! ») et menu de sélection de cryptomonnaies pour le dépôt.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du processus d&#x27;inscription et de dépôt de fonds sur Bitunix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000121_seg3.jpg" alt="Page d&#x27;inscription de la plateforme Bitunix avec les champs e-mail et mot de passe." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000121_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:21</span>
+                        <span class="caption-text">Page d&#x27;inscription de la plateforme Bitunix avec les champs e-mail et mot de passe.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000129_seg3.jpg" alt="Page d&#x27;accueil promotionnelle de Bitunix affichant les étapes : Register, Deposit, Trade." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000129_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:29</span>
+                        <span class="caption-text">Page d&#x27;accueil promotionnelle de Bitunix affichant les étapes : Register, Deposit, Trade.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000138_seg3.jpg" alt="Interface de dépôt de cryptomonnaies sur Bitunix avec la liste des actifs sélectionnables (BTC, USDT, ETH, etc.)." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000138_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Interface de dépôt de cryptomonnaies sur Bitunix avec la liste des actifs sélectionnables (BTC, USDT, ETH, etc.).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:46 - 00:02:22</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vos fonds. Confirmez les détails, puis scannez le code QR ou copiez l&#x27;adresse de dépôt pour transférer vos fonds depuis votre portefeuille ou un autre échange. Si vous souhaitez déposer en monnaie fiat, cliquez sur Acheter des cryptos en haut du menu, puis sélectionnez Achat en un clic. Choisissez votre devise, entrez le montant, et après cela sélectionnez votre mode de paiement. Une fois vos fonds déposés, il est temps d&#x27;ouvrir une position. L&#x27;étape numéro trois consiste à ouvrir votre première position. Cliquez sur Futures dans le menu supérieur, puis sélectionnez USDT-M Futures. Cela vous amènera à l&#x27;interface de trading. Choisissez l&#x27;actif que vous voulez</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Bitunix.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Solde du portefeuille de 26.76 USDT, options de dépôt, de retrait et méthodes de paiement par fiat avec différents taux de change.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le tableau de bord utilisateur de la plateforme d&#x27;échange et sélection des méthodes de paiement pour le dépôt en monnaie fiduciaire.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000155_seg4.jpg" alt="Vue d&#x27;ensemble des actifs (Asset Overview) sur la plateforme Bitunix affichant un solde total de 26.76 USDT." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000155_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:55</span>
+                        <span class="caption-text">Vue d&#x27;ensemble des actifs (Asset Overview) sur la plateforme Bitunix affichant un solde total de 26.76 USDT.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000204_seg4.jpg" alt="Fenêtre contextuelle de sélection du mode de paiement (Select Payment Method) pour l&#x27;achat de cryptomonnaies par tiers (ACH, Google Pay, Apple Pay)." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000204_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:04</span>
+                        <span class="caption-text">Fenêtre contextuelle de sélection du mode de paiement (Select Payment Method) pour l&#x27;achat de cryptomonnaies par tiers (ACH, Google Pay, Apple Pay).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000213_seg4.jpg" alt="Page d&#x27;accueil promotionnelle de la plateforme Bitunix affichant un événement anniversaire pour gagner une Tesla et des prix en or." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000213_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Page d&#x27;accueil promotionnelle de la plateforme Bitunix affichant un événement anniversaire pour gagner une Tesla et des prix en or.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:22 - 00:02:56</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">pour placer votre transaction dans le coin supérieur gauche. Pour cet exemple, j&#x27;utiliserai BTCUSDT, mais vous pouvez trader n&#x27;importe quel altcoin ici si vous le souhaitez. Sélectionnez votre type d&#x27;ordre, limite ou au marché. Je recommande de commencer par des ordres au marché pour une exécution instantanée. Entrez les détails de votre transaction tels que la quantité et le prix. Ensuite, choisissez votre type de levier. Vous pouvez utiliser la marge croisée ou la marge isolée. Personnellement, j&#x27;utilise la marge isolée car elle limite votre risque uniquement à cette position spécifique. Vous pouvez utiliser jusqu&#x27;à 200 fois de levier sur Bitunix, mais il est important de ne pas utiliser un effet de levier élevé car c&#x27;est très risqué. Pour les débutants,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Bitunix (trading de futures crypto).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT en unités de 15 minutes, carnet d&#x27;ordres en temps réel, sélecteur de type d&#x27;ordre (Limit/Market) et options de mode de marge (Cross/Isolated).</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection du type d&#x27;ordre au marché et configuration du mode de marge isolé pour la paire BTCUSDT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000231_seg5.jpg" alt="Interface de trading Bitunix affichant la paire BTCUSDT avec le panneau de carnet d&#x27;ordres et un graphique en chandeliers." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000231_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:31</span>
+                        <span class="caption-text">Interface de trading Bitunix affichant la paire BTCUSDT avec le panneau de carnet d&#x27;ordres et un graphique en chandeliers.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000248_seg5.jpg" alt="Fenêtre modale de sélection du mode de marge (Cross ou Isolated) sur la plateforme Bitunix." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000248_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:48</span>
+                        <span class="caption-text">Fenêtre modale de sélection du mode de marge (Cross ou Isolated) sur la plateforme Bitunix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:56 - 00:03:34</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Je recommande de commencer par un levier de 5 à 10 fois maximum jusqu&#x27;à ce que vous soyez à l&#x27;aise. Si vous êtes très avancé, vous pourriez aller jusqu&#x27;à peut-être 25 fois. Confirmez les détails de votre ordre, puis cliquez sur ouvrir long si vous pensez que le prix va monter, ou short si vous vous attendez à ce que le prix baisse. Pour cet exemple, je vais cliquer sur long. Une fois votre ordre exécuté, vous pouvez le voir sous l&#x27;onglet des positions en bas de l&#x27;écran. Maintenant que vous savez comment utiliser les produits dérivés sur Bitunix, passons à la stratégie réelle qui peut vous faire gagner des centaines de dollars par jour. Très bien, il s&#x27;agit donc d&#x27;une stratégie de scalping et c&#x27;est une stratégie de trading à court terme que les traders peuvent utiliser pour réaliser des profits fréquents grâce à</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de trading crypto (type plateforme d&#x27;échange de contrats futures) avec graphique des prix et carnet d&#x27;ordres intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Réglage du levier à 5X, paire BTCUSDT, carnet d&#x27;ordres en temps réel, et confirmation d&#x27;ordre exécuté (&quot;Order placed&quot; / &quot;Open Long 5X&quot;).</p>
+                        <p><strong>Action / Démonstration :</strong> Ajustement du levier à 5x puis passage et confirmation d&#x27;un ordre d&#x27;achat au marché (Open Long).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000306_seg6.jpg" alt="Fenêtre de réglage du levier (Adjust Leverage) affichant un effet de levier fixé à 5X pour les positions long et short, avec un curseur allant jusqu&#x27;à 200X." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000306_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:06</span>
+                        <span class="caption-text">Fenêtre de réglage du levier (Adjust Leverage) affichant un effet de levier fixé à 5X pour les positions long et short, avec un curseur allant jusqu&#x27;à 200X.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000315_seg6.jpg" alt="Interface de trading complète montrant le carnet d&#x27;ordres, un graphique des prix BTCUSDT avec une forte baisse, et une notification confirmant l&#x27;exécution d&#x27;un ordre d&#x27;achat (Open Long) à 5X." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000315_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Interface de trading complète montrant le carnet d&#x27;ordres, un graphique des prix BTCUSDT avec une forte baisse, et une notification confirmant l&#x27;exécution d&#x27;un ordre d&#x27;achat (Open Long) à 5X.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:34 - 00:04:06</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">petits mouvements de prix au quotidien. Donc nous entrons et sortons rapidement au lieu de faire du swing trading à plus long terme. Passons maintenant directement à la configuration de la stratégie. D&#x27;abord, vous devez obtenir un compte Trade Viewer. Le lien sera en bas pour Trade and View. C&#x27;est une version gratuite, donc c&#x27;est tout à fait bien de l&#x27;utiliser sans payer pour la version pro. Sélectionnez maintenant la paire de trading ici. Dans ce cas, je vais choisir BTC contre USDT. La prochaine chose à faire est de sélectionner l&#x27;unité de temps juste ici. Comme il s&#x27;agit d&#x27;une stratégie de scalping d&#x27;une minute, je recommande la minute.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais, graphiques de volume, sélection d&#x27;actifs (BTCUSDT, MEXC, Bybit, OKX, etc.)</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et sélection d&#x27;un symbole sur la plateforme de graphiques TradingView pour la configuration de la stratégie.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000342_seg7.jpg" alt="Graphique TradingView affichant le cours du Bitcoin (BTCUSDT) en unités de 5 minutes sur la bourse MEXC, montrant l&#x27;évolution des prix et des volumes de trading." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000342_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:42</span>
+                        <span class="caption-text">Graphique TradingView affichant le cours du Bitcoin (BTCUSDT) en unités de 5 minutes sur la bourse MEXC, montrant l&#x27;évolution des prix et des volumes de trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000358_seg7.jpg" alt="Fenêtre de recherche de symboles (&quot;Symbol Search&quot;) ouverte sur TradingView avec la requête &quot;BTCUSDT&quot;, affichant une liste de contrats perpétuels sur différentes plateformes (Bybit, OKX, Bitget, Binance)." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000358_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:58</span>
+                        <span class="caption-text">Fenêtre de recherche de symboles (&quot;Symbol Search&quot;) ouverte sur TradingView avec la requête &quot;BTCUSDT&quot;, affichant une liste de contrats perpétuels sur différentes plateformes (Bybit, OKX, Bitget, Binance).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:06 - 00:04:41</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">période de temps pour obtenir les meilleurs résultats. Allez maintenant dans l&#x27;onglet des indicateurs, tapez bougies de régression linéaire et sélectionnez celui-ci ici. Ajoutez-le au graphique et ouvrez les paramètres de l&#x27;indicateur en cliquant juste ici. Dans la section des entrées, ajustez le lissage du signal à 7. Cliquez sur le style et augmentez l&#x27;épaisseur de la ligne de tracé pour une meilleure visibilité. Encore une fois, retournez dans l&#x27;onglet des indicateurs. Recherchez alertes UT bot et sélectionnez celui-ci. Allez dans les paramètres et cliquez ici dans l&#x27;onglet des entrées. Changez la valeur clé à 2 et changez l&#x27;ATR à 11 et cliquez sur OK. Cet indicateur sera votre confirmation d&#x27;entrée. Quand</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Bybit (Graphique de trading en ligne)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpetual Contract, bougies japonaises et indicateur technique &quot;LinReg Candles 11 11&quot; affiché avec sa courbe de régression linéaire blanche.</p>
+                        <p><strong>Action / Démonstration :</strong> Sélection et survol des options de l&#x27;indicateur Linear Regression Candles sur le graphique pour préparer la modification des paramètres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000415_seg8.jpg" alt="Graphique des cours de BTCUSDT sur un échange avec l&#x27;indicateur &quot;LinReg Candles&quot; appliqué et un curseur pointant sur les options de l&#x27;indicateur." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000415_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:15</span>
+                        <span class="caption-text">Graphique des cours de BTCUSDT sur un échange avec l&#x27;indicateur &quot;LinReg Candles&quot; appliqué et un curseur pointant sur les options de l&#x27;indicateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:41 - 00:05:15</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">il donne un signal d&#x27;achat, vous ouvrez une position acheteuse. Quand il donne un signal de vente, vous ouvrez une position vendeuse. Pour le dernier indicateur, allez dans l&#x27;onglet des indicateurs, tapez STC, et choisissez celui-ci ici. Cet indicateur vous aidera à éviter les faux signaux. Vous entrerez uniquement dans un trade acheteur lorsque la ligne devient verte et dans un trade vendeur lorsqu&#x27;elle devient rouge. Maintenant, pour avoir les conditions d&#x27;ouverture d&#x27;un trade, d&#x27;abord pour une position acheteuse, l&#x27;indicateur UTBOT alerts doit afficher un signal d&#x27;achat. Vous avez besoin d&#x27;une bougie de régression linéaire verte qui clôture au-dessus de la ligne blanche. L&#x27;indicateur STC doit être de couleur verte. Une fois que ces conditions sont réunies,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Barre de recherche avec le texte &#x27;stc&#x27; et liste des indicateurs correspondants (STC Indicator - A Better MACD, STC Price Action Zone, etc.).</p>
+                        <p><strong>Action / Démonstration :</strong> Recherche et sélection de l&#x27;indicateur STC pour filtrer les faux signaux.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000450_seg9.jpg" alt="Fenêtre de recherche des indicateurs sur TradingView avec la requête &#x27;stc&#x27; affichant une liste de résultats communautaires." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000450_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:50</span>
+                        <span class="caption-text">Fenêtre de recherche des indicateurs sur TradingView avec la requête &#x27;stc&#x27; affichant une liste de résultats communautaires.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:15 - 00:05:42</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous y allez et vous entrez dans une position longue. Et n&#x27;oubliez pas, si vous utilisez mon lien sous cette vidéo vers Bitunix, vous pouvez réellement obtenir jusqu&#x27;à 40 USDT de bonus juste pour avoir déposé et complété votre premier trade, mais seulement avec mon lien. Une chose cruciale dans n&#x27;importe quel trade est de placer un stop loss. Pour cela, vous pouvez placer un stop loss en dessous de la ligne blanche, mais vous attendrez qu&#x27;une bougie de régression linéaire clôture en rouge, et c&#x27;est à ce moment-là que vous sortez de votre position.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Bitunix (échange crypto) et TradingView (graphique financier).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offre promotionnelle de 20 à 40 USDT de bonus sur dépôt, graphique en chandeliers BTCUSDT, signaux d&#x27;achat/vente et indicateur de momentum/oscillateur en bas de page.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;offre de parrainage/bonus d&#x27;échange suivie d&#x27;une analyse technique illustrant l&#x27;ouverture d&#x27;une position longue sur le Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000522_seg10.jpg" alt="Page de promotion de la plateforme Bitunix affichant les récompenses pour le premier dépôt et les bonus de trading." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000522_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:22</span>
+                        <span class="caption-text">Page de promotion de la plateforme Bitunix affichant les récompenses pour le premier dépôt et les bonus de trading.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000535_seg10.jpg" alt="Graphique TradingView affichant une position longue en cours sur la paire BTCUSDT avec des indicateurs techniques de type oscillateur." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000535_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:35</span>
+                        <span class="caption-text">Graphique TradingView affichant une position longue en cours sur la paire BTCUSDT avec des indicateurs techniques de type oscillateur.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:42 - 00:06:03</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans ce cas, vous clôtureriez votre position juste ici. Dans cet exemple, vous pouvez voir que la bougie de régression linéaire est verte et a également clôturé au-dessus de la ligne blanche. Vous pouvez également voir que les alertes UTBOT ont émis un signal d&#x27;achat ici, et que la ligne de l&#x27;indicateur STC est verte. Pour avoir les conditions nécessaires afin d&#x27;entrer dans une position courte, vous ferez l&#x27;exact opposé d&#x27;une position longue.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTCUSDT Perpetual Contract, bougies japonaises, indicateur de régression linéaire (ligne blanche), signaux d&#x27;achat/vente (UTBOT), indicateur de volume et indicateur de momentum dans le panneau inférieur.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse d&#x27;un signal d&#x27;achat et démonstration de la clôture d&#x27;une position de trading.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000547_seg11.jpg" alt="Un graphique de trading en chandeliers montrant une bougie verte de régression linéaire clôturant au-dessus d&#x27;une ligne blanche, avec un signal d&#x27;achat UTBOT." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000547_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:47</span>
+                        <span class="caption-text">Un graphique de trading en chandeliers montrant une bougie verte de régression linéaire clôturant au-dessus d&#x27;une ligne blanche, avec un signal d&#x27;achat UTBOT.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:03 - 00:06:25</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pour une position vendeuse, vous devez voir une bougie de régression linéaire rouge clôturer en dessous de la ligne blanche. Vous avez besoin que les alertes UTBOT montrent un signal de vente. L&#x27;indicateur STC doit être rouge. Vous pouvez voir que toutes ces conditions ont été remplies ici, vous pouvez donc entrer en position vendeuse. Vous placerez un stop loss ici, juste au dessus de la ligne blanche, et laisserez votre trade courir jusqu&#x27;à ce que vous voyiez un signal opposé, qui sera votre sortie.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Bybit (BTCUSDT Perpetual Contract)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Bougies de prix, ligne de régression linéaire blanche, signaux UTBOT (étiquettes &quot;Sell&quot; et &quot;Buy&quot;), indicateur de volume, et indicateur STC (Schaff Trend Cycle) en bas.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse graphique illustrant les conditions requises pour une position vendeuse (bougie rouge clôturant sous la ligne blanche, signal de vente UTBOT et indicateur STC rouge).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000609_seg12.jpg" alt="Un graphique de trading affichant les bougies de prix, une ligne de régression linéaire blanche, des signaux UTBOT (Sell/Buy) et l&#x27;indicateur STC en bas." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000609_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:09</span>
+                        <span class="caption-text">Un graphique de trading affichant les bougies de prix, une ligne de régression linéaire blanche, des signaux UTBOT (Sell/Buy) et l&#x27;indicateur STC en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:26 - 00:06:47</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et c&#x27;est tout, les gars. C&#x27;est la stratégie complète de scalping d&#x27;une minute pour débutants. Si vous voulez commencer à utiliser cette stratégie dès maintenant, cliquez sur le lien tout en haut de la description pour vous inscrire sur Bitunix et réclamer vos bonus. Et n&#x27;oubliez pas, si Bitunix n&#x27;est pas disponible dans votre pays ou si vous préférez l&#x27;absence de KYC, LBank est votre alternative avec 50 000 USDT de bonus.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView, interface d&#x27;échange Bitunix, site web Crypto Vanguards.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTCUSDT avec indicateurs techniques, niveaux de take profit et stop loss, bonus de premier dépôt Bitunix, informations sur le KYC de LBank.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une stratégie de scalping sur graphique, incitation à l&#x27;inscription sur une bourse crypto avec bonus et revue d&#x27;informations KYC.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000631_seg13.jpg" alt="Graphique de trading TradingView montrant le contrat perpétuel BTCUSDT avec des signaux d&#x27;achat et de vente." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000631_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:31</span>
+                        <span class="caption-text">Graphique de trading TradingView montrant le contrat perpétuel BTCUSDT avec des signaux d&#x27;achat et de vente.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000637_seg13.jpg" alt="Interface de la plateforme d&#x27;échange Bitunix affichant la section des bonus et des dépôts (&quot;First-Time Deposit&quot;)." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000637_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:37</span>
+                        <span class="caption-text">Interface de la plateforme d&#x27;échange Bitunix affichant la section des bonus et des dépôts (&quot;First-Time Deposit&quot;).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000642_seg13.jpg" alt="Page web du site Crypto Vanguards avec un article concernant les exigences KYC de la bourse LBank." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000642_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:42</span>
+                        <span class="caption-text">Page web du site Crypto Vanguards avec un article concernant les exigences KYC de la bourse LBank.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:48 - 00:07:05</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et si vous voulez plus de détails sur le fonctionnement des plateformes Bitunix et LBank, regardez la vidéo qui s&#x27;affiche à l&#x27;écran dès maintenant pour une visite guidée complète. Si vous avez apprécié cette vidéo, n&#x27;oubliez pas de laisser un pouce bleu et de vous abonner à ma chaîne pour plus de tutoriels de trading. Je vous vois dans la prochaine vidéo.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT Perpetual Contract, indicateurs LinReg Candles et UT Bot Alerts, et histogramme de volume.</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation d&#x27;un graphique de trading avec des signaux techniques (Buy/Sell).</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000652_seg14.jpg" alt="Graphique TradingView affichant la paire BTCUSDT en contrat perpétuel avec des bougies japonaises, des indicateurs de régression linéaire et des signaux d&#x27;achat/vente." loading="lazy" onclick="openLightbox('../screenshots/kDyXzOQOpjg/kDyXzOQOpjg_000652_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:52</span>
+                        <span class="caption-text">Graphique TradingView affichant la paire BTCUSDT en contrat perpétuel avec des bougies japonaises, des indicateurs de régression linéaire et des signaux d&#x27;achat/vente.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
