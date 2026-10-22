@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Tutoriel Toobit Débutants 2025 (Guide Complet) — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Tutoriel Toobit Débutants 2025 (Guide Complet)</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-08-11</span>
+                <span class="badge">⏱️ 00:10:37</span>
+                <span class="badge">🆔 <code>q-X2ve1AHyo</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=q-X2ve1AHyo" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Ce tutoriel complet guidé par Alex Carter plonge au cœur de l'écosystème de la plateforme de trading de cryptomonnaies Toobit (souvent phonétiquement retranscrite "2Bit"), positionnée comme un acteur incontournable du marché en 2025 pour les traders recherchant une solution sans KYC (sans vérification d'identité). L'analyse démontre comment passer rapidement de l'inscription à l'exécution de stratégies de contrats à terme (futures) en exploitant l'infrastructure de pointe de la bourse, soutenue à ses débuts par des géants industriels comme Bybit et Huobi. La vidéo détaille minutieusement la structure des portefeuilles isolés (financement, comptant, futures), l'optimisation des flux de capitaux via l'USDT, et l'intégration d'outils graphiques professionnels pour maximiser l'efficacité opérationnelle des débutants comme des traders confirmés.<br><br>Au-delà de la prise en main ergonomique, la démonstration met un accent particulier sur la gestion agressive des avantages de démarrage : un package promotionnel exclusif pouvant atteindre 6 850 USDT en fonds d'essai et l'attribution instantanée d'un statut VIP 2. Sur le plan purement méthodologique, Carter insiste sur l'importance cruciale du découpage des risques, de la maîtrise des effets de levier modérés (3x à 5x) et de l'implémentation rigoureuse d'ordres *stop-loss* et *take-profit*. Cette approche vise à prémunir les opérateurs contre la liquidation tout en profitant de frais de transaction parmi les plus compétitifs et bas de l'industrie, redéfinissant ainsi les standards du trading retail moderne.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Toobit (2Bit)** : Échangeur centralisé de cryptomonnaies fondé en 2022, sans KYC, reconnu pour ses frais ultra-faibles et ses incitations financières agressives.<br>* **TradingView** : Moteur graphique de pointe intégré nativement à l'interface de Toobit pour l'analyse technique professionnelle et le suivi des carnets d'ordres.<br>* **Portefeuille de Financement Toobit** : Module de stockage centralisé dédié à la réception des dépôts initiaux en monnaie fiduciaire ou en cryptomonnaies.<br>* **Portefeuille Comptant (Spot Wallet)** : Espace d'exécution pour l'échange direct de tokens sans effet de levier, optimisé pour les conversions en USDT à 0 % de frais.<br>* **Portefeuille Futures Toobit** : Compartiment de marge dédié aux produits dérivés et au trading spéculatif à effet de levier.<br>* **USDT (Tether)** : Actif numérique stable indexé sur le dollar américain, utilisé comme monnaie de base pivot pour le trading de contrats perpétuels et l'optimisation des frais.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Accessibilité sans KYC** : Possibilité d'ouvrir un compte, de déposer des fonds et de trader immédiatement de manière anonyme ou semi-anonyme sans soumettre de documents d'identité.<br>* **Garantie de robustesse institutionnelle** : Soutien partiel et cofondation par Bybit et Huobi, conférant à la plateforme un niveau de crédibilité et de liquidité supérieur aux nouveaux exchanges opportunistes.<br>* **Architecture de portefeuilles cloisonnés** : Séparation stricte entre le portefeuille de financement, le portefeuille comptant et le portefeuille futures pour éliminer les risques de sur-levier accidentel et isoler les capitaux engagés.<br>* **Optimisation des frais via l'USDT** : Conversion préalable des actifs en USDT pour bénéficier de frais de comptoir nuls (0 %) sur de nombreuses paires et fluidifier la transition vers les marchés dérivés.<br>* **Gestion agressive des bonus de démarrage** : Exploitation d'un package promotionnel via lien affilié offrant 50 USDT de fonds d'essai sans dépôt, un passage immédiat au niveau VIP 2, et des bonus progressifs allant jusqu'à 6 850 USDT.<br>* **Règle d'or de l'effet de levier initial** : Limitation stricte de l'effet de levier entre 3x et 5x pour les débutants sur les contrats perpétuels afin d'éviter une liquidation rapide tout en s'exposant aux mouvements de marché.<br>* **Hiérarchisation des paires liquides** : Concentration initiale des efforts sur les paires majeures à forte liquidité (BTC/USDT et ETH/USDT) avant d'explorer les altcoins à haute volatilité.<br>* **Automatisation du Risk Management** : Implantation systématique et obligatoire d'ordres *stop-loss* (coupe-perte) et *take-profit* (prise de bénéfice) avant la validation de chaque position longue ou courte.<br>* **Onboarding fiduciaire instantané** : Utilisation de cartes de crédit/débit ou de virements bancaires pour acquérir des cryptomonnaies en quelques minutes, réduisant à néant les barrières à l'entrée des nouveaux investisseurs.<br>* **Avantage compétitif sur les frais de courtage** : Utilisation délibérée de structures de frais de futures extrêmement basses pour maximiser les profits nets sur le long terme, notamment pour les stratégies de trading à haute fréquence.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Toobit (2Bit)</span><span class="tool-tag">TradingView</span><span class="tool-tag">Portefeuille de Financement Toobit</span><span class="tool-tag">Portefeuille Comptant (Spot Wallet)</span><span class="tool-tag">Portefeuille Futures Toobit</span><span class="tool-tag">USDT (Tether)</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Accessibilité sans KYC** : Possibilité d&#x27;ouvrir un compte, de déposer des fonds et de trader immédiatement de manière anonyme ou semi-anonyme sans soumettre de documents d&#x27;identité.</span></li><li><span class="point-bullet">✦</span><span>Garantie de robustesse institutionnelle** : Soutien partiel et cofondation par Bybit et Huobi, conférant à la plateforme un niveau de crédibilité et de liquidité supérieur aux nouveaux exchanges opportunistes.</span></li><li><span class="point-bullet">✦</span><span>Architecture de portefeuilles cloisonnés** : Séparation stricte entre le portefeuille de financement, le portefeuille comptant et le portefeuille futures pour éliminer les risques de sur-levier accidentel et isoler les capitaux engagés.</span></li><li><span class="point-bullet">✦</span><span>Optimisation des frais via l&#x27;USDT** : Conversion préalable des actifs en USDT pour bénéficier de frais de comptoir nuls (0 %) sur de nombreuses paires et fluidifier la transition vers les marchés dérivés.</span></li><li><span class="point-bullet">✦</span><span>Gestion agressive des bonus de démarrage** : Exploitation d&#x27;un package promotionnel via lien affilié offrant 50 USDT de fonds d&#x27;essai sans dépôt, un passage immédiat au niveau VIP 2, et des bonus progressifs allant jusqu&#x27;à 6 850 USDT.</span></li><li><span class="point-bullet">✦</span><span>Règle d&#x27;or de l&#x27;effet de levier initial** : Limitation stricte de l&#x27;effet de levier entre 3x et 5x pour les débutants sur les contrats perpétuels afin d&#x27;éviter une liquidation rapide tout en s&#x27;exposant aux mouvements de marché.</span></li><li><span class="point-bullet">✦</span><span>Hiérarchisation des paires liquides** : Concentration initiale des efforts sur les paires majeures à forte liquidité (BTC/USDT et ETH/USDT) avant d&#x27;explorer les altcoins à haute volatilité.</span></li><li><span class="point-bullet">✦</span><span>Automatisation du Risk Management** : Implantation systématique et obligatoire d&#x27;ordres *stop-loss* (coupe-perte) et *take-profit* (prise de bénéfice) avant la validation de chaque position longue ou courte.</span></li><li><span class="point-bullet">✦</span><span>Onboarding fiduciaire instantané** : Utilisation de cartes de crédit/débit ou de virements bancaires pour acquérir des cryptomonnaies en quelques minutes, réduisant à néant les barrières à l&#x27;entrée des nouveaux investisseurs.</span></li><li><span class="point-bullet">✦</span><span>Avantage compétitif sur les frais de courtage** : Utilisation délibérée de structures de frais de futures extrêmement basses pour maximiser les profits nets sur le long terme, notamment pour les stratégies de trading à haute fréquence.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:23</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Dans cette vidéo, je vais vous emmener de zéro à trader pleinement sur 2Bit. Nous passerons en revue chaque étape, de l&#x27;ouverture de votre compte au dépôt de fonds, à l&#x27;achat de votre première cryptomonnaie, et même au trading de contrats à terme avec effet de levier. Vous obtiendrez également mon avis honnête sur la plateforme et je la comparerai avec d&#x27;autres exchanges afin que vous compreniez exactement où se situe 2Bit sur le marché actuellement.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange Toobit et site web Cryptonews.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique TradingView BTCUSDT perpétuel, carnet d&#x27;ordres (Order Book), effet de levier 50X, notes d&#x27;évaluation de Toobit (8.5/10).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading à effet de levier de Toobit et revue détaillée de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000006_seg1.jpg" alt="Interface de trading de la plateforme Toobit montrant un graphique BTCUSDT en chandelier 15m, un carnet d&#x27;ordres et le panneau de passage d&#x27;ordres avec effet de levier 50X." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000006_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:06</span>
+                        <span class="caption-text">Interface de trading de la plateforme Toobit montrant un graphique BTCUSDT en chandelier 15m, un carnet d&#x27;ordres et le panneau de passage d&#x27;ordres avec effet de levier 50X.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000017_seg1.jpg" alt="Page Web d&#x27;un article de revue sur Cryptonews consacrée à l&#x27;échange Toobit, affichant une note globale de 8.5/10 et des détails sur ses fonctionnalités." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000017_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:17</span>
+                        <span class="caption-text">Page Web d&#x27;un article de revue sur Cryptonews consacrée à l&#x27;échange Toobit, affichant une note globale de 8.5/10 et des détails sur ses fonctionnalités.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:24 - 00:00:57</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">2Bit est ce qu&#x27;on appelle un échangeur de crypto sans KYC, ce qui signifie que vous pouvez créer un compte et commencer à trader sans avoir à télécharger votre passeport ou à passer par quelque forme de vérification d&#x27;identité que ce soit. Il a été fondé en 2022 et voici quelque chose que beaucoup de gens ignorent. Il a été partiellement soutenu et même cofondé par Bybit et Huobi, qui sont deux des noms les plus grands et les plus respectés de l&#x27;industrie de la crypto. Cela confère instantanément à 2Bit une énorme crédibilité et un grand capital de confiance par rapport à d&#x27;autres nouveaux échangeurs qui semblent surgir de nulle part. Dès l&#x27;instant où vous vous connectez,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant la plateforme Toobit et un article d&#x27;actualité financière.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Interface utilisateur de l&#x27;échange Toobit, bonus de bienvenue en USDT, et texte de présentation mentionnant le lancement en 2022 et le volume de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur le site web de l&#x27;échangeur Toobit et lecture d&#x27;un article de présentation de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000032_seg2.jpg" alt="Page d&#x27;accueil officielle de l&#x27;échangeur de crypto Toobit, affichant le slogan &#x27;Better crypto trading starts here&#x27; et des options d&#x27;inscription." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000032_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:32</span>
+                        <span class="caption-text">Page d&#x27;accueil officielle de l&#x27;échangeur de crypto Toobit, affichant le slogan &#x27;Better crypto trading starts here&#x27; et des options d&#x27;inscription.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000041_seg2.jpg" alt="Article de presse en ligne intitulé &#x27;Toobit: Unpacking A Full-Service Crypto Exchange For Modern Traders&#x27; détaillant les fonctionnalités de la plateforme." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000041_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:41</span>
+                        <span class="caption-text">Article de presse en ligne intitulé &#x27;Toobit: Unpacking A Full-Service Crypto Exchange For Modern Traders&#x27; détaillant les fonctionnalités de la plateforme.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:57 - 00:01:33</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Vous remarquerez que l&#x27;interface de 2Bit est rapide, épurée et conçue à la fois pour les débutants et les traders expérimentés. Ils l&#x27;ont construite d&#x27;une manière qui semble familière si vous avez utilisé d&#x27;autres grandes plateformes, mais elle est aussi dépourvue de superflu inutile afin que vous puissiez vous concentrer sur le trading. Une autre chose qui fait sortir 2Bit du lot, c&#x27;est la rapidité de sa croissance. Ils ajoutent constamment de nouvelles cryptomonnaies, de nouvelles paires de trading et de nouvelles fonctionnalités. Et parce qu&#x27;ils sont encore dans cette phase de croissance, ils essaient activement d&#x27;attirer de nouveaux utilisateurs, c&#x27;est pourquoi les frais sont extrêmement compétitifs et c&#x27;est pourquoi ils proposent le genre de package de bonus que j&#x27;ai pu négocier pour vous.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web et plateforme de trading de l&#x27;échange Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de cryptomonnaies, prix du marché, graphique en chandeliers TradingView, carnet d&#x27;ordres (Order Book) et options de levier (50X).</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans les menus de sélection des contrats et présentation de l&#x27;interface de trading principale de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000106_seg3.jpg" alt="Page d&#x27;accueil de la plateforme Toobit affichant le menu des produits dérivés et la liste des paires de trading populaires (BTCUSDT, ETHUSDT, etc.)." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000106_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:06</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Toobit affichant le menu des produits dérivés et la liste des paires de trading populaires (BTCUSDT, ETHUSDT, etc.).</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000115_seg3.jpg" alt="Interface de trading de Toobit montrant un graphique de prix BTCUSDT en unités de 15 minutes, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000115_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:15</span>
+                        <span class="caption-text">Interface de trading de Toobit montrant un graphique de prix BTCUSDT en unités de 15 minutes, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:33 - 00:01:54</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Maintenant, parlons de ce bonus, car honnêtement, c&#x27;est l&#x27;un des meilleurs que j&#x27;aie jamais vus de la part d&#x27;un échange, surtout un qui ne требует pas de KYC. Si vous cliquez sur mon lien dans la description et que vous vous inscrivez, la première chose qui se produit, c&#x27;est que vous recevrez 50 USDT crédités directement sur votre compte sous forme de fonds d&#x27;essai. C&#x27;généralement juste pour l&#x27;inscription. Aucun dépôt requis.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Toobit et interface de gestion YouTube.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Montants de bonus affichés : 50 USD à l&#x27;inscription, bonus de dépôt de 20 à 800 USD, et récompenses de contrats perpétuels jusqu&#x27;à 6000 USD.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages du lien d&#x27;affiliation et des bonus de trading de l&#x27;échange Toobit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000138_seg4.jpg" alt="Présentation des bonus Toobit avec le détail des récompenses d&#x27;inscription et de dépôt s&#x27;élevant jusqu&#x27;à 6850 USD." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000138_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:38</span>
+                        <span class="caption-text">Présentation des bonus Toobit avec le détail des récompenses d&#x27;inscription et de dépôt s&#x27;élevant jusqu&#x27;à 6850 USD.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000149_seg4.jpg" alt="Vue similaire ou identique à l&#x27;image 1 détaillant les paliers de bonus de dépôt et d&#x27;inscription sur l&#x27;échange Toobit." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000149_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:49</span>
+                        <span class="caption-text">Vue similaire ou identique à l&#x27;image 1 détaillant les paliers de bonus de dépôt et d&#x27;inscription sur l&#x27;échange Toobit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:54 - 00:02:12</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En plus de cela, 2Bit vous passera immédiatement au niveau VIP 2 pendant un mois entier. Cela signifie que vous commencerez avec des frais de trading réduits dès le premier jour, ce qui est un énorme avantage par rapport à un démarrage en tant qu&#x27;utilisateur classique. Mais ce n&#x27;est que le début. Une fois que vous effectuez un dépôt, les bonus augmentent en fonction du montant que vous y mettez.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page promotionnelle de la plateforme d&#x27;échange Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte indiquant &quot;Register, Deposit &amp; Trade Get $6,850 Trial Fund&quot;, étape 1 avec obtention de 50 USDT et upgrade VIP 2, et tableau des bonus de dépôt (ex: 100 USDT de dépôt pour 20 USDT, jusqu&#x27;à 4 000 USDT de dépôt pour 800 USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Affichage des conditions de l&#x27;offre de parrainage et des paliers de bonus pour les nouveaux utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000158_seg5.jpg" alt="Présentation des bonus et avantages promotionnels de la plateforme Toobit en partenariat avec Alex Carter, détaillant les récompenses de dépôt et le statut VIP 2." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000158_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:58</span>
+                        <span class="caption-text">Présentation des bonus et avantages promotionnels de la plateforme Toobit en partenariat avec Alex Carter, détaillant les récompenses de dépôt et le statut VIP 2.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:12 - 00:02:49</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Par exemple, si vous déposez 100 USDT, vous recevrez 20 USDT supplémentaires en fonds d&#x27;essai. Déposez 600 USDT et vous obtiendrez 120 USDT en bonus. Si vous allez jusqu&#x27;à 1 000 USDT, vous obtenez 200 de plus. À 2 000 USDT, le bonus grimpe à 400 et si vous déposez 4 000 USDT, vous débloquez le maximum de 800 USDT en fonds d&#x27;essai. Et c&#x27;est là que ça devient encore plus fou. Si vous commencez à trader des contrats futures perpétuels sur 2Bit, vous pouvez débloquer 6 000 USDT supplémentaires en récompenses. Cela signifie que le bonus total potentiel</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Page web / interface promotionnelle de l&#x27;échangeur de cryptomonnaies Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des bonus de dépôt : 100 USDT pour 20 USDT de bonus, 600 USDT pour 120 USDT, 1 000 USDT pour 200 USDT, 2 000 USDT pour 400 USDT, et 4 000 USDT pour 800 USDT de fonds d&#x27;essai (Trial Funds). Mention globale de 6 850 $ de fonds d&#x27;essai au total.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle des paliers de récompenses et des bonus de dépôt pour inciter l&#x27;utilisateur à s&#x27;inscrire et déposer des fonds.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000222_seg6.jpg" alt="Interface promotionnelle de la plateforme Toobit en partenariat avec Alex Carter détaillant les paliers de bonus de dépôt." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000222_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:22</span>
+                        <span class="caption-text">Interface promotionnelle de la plateforme Toobit en partenariat avec Alex Carter détaillant les paliers de bonus de dépôt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:49 - 00:03:07</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le pack vaut 6 850 USDT, entièrement à votre disposition gratuitement rien qu&#x27;en vous inscrivant avec mon lien exclusif. La raison pour laquelle c&#x27;est si précieux est que les fonds d&#x27;essai vous donnent la chance de trader, de tester des stratégies et même potentiellement de faire des profits sans risquer autant de votre propre capital.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Échange de cryptomonnaies Toobit et outil de graphique TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Détails de l&#x27;offre promotionnelle (fonds d&#x27;essai de 6 850 USDT, paliers de dépôt de 100 à 4 000 USDT) sur l&#x27;image 1 ; graphique BTCUSDT, carnet d&#x27;ordres, effet de levier (50X), et options de trading (Long/Short, Demo) sur l&#x27;image 2.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages et des bonus de parrainage de la plateforme Toobit suivie d&#x27;une démonstration de l&#x27;interface de trading futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000253_seg7.jpg" alt="Interface promotionnelle de l&#x27;échange Toobit détaillant l&#x27;offre exclusive de 6 850 USDT en fonds d&#x27;essai et les paliers de dépôt." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000253_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:53</span>
+                        <span class="caption-text">Interface promotionnelle de l&#x27;échange Toobit détaillant l&#x27;offre exclusive de 6 850 USDT en fonds d&#x27;essai et les paliers de dépôt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000258_seg7.jpg" alt="Interface de trading de l&#x27;échange Toobit affichant un graphique de prix BTCUSDT en chandeliers japonais sur TradingView avec carnet d&#x27;ordres et panneau de position." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000258_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:58</span>
+                        <span class="caption-text">Interface de trading de l&#x27;échange Toobit affichant un graphique de prix BTCUSDT en chandeliers japonais sur TradingView avec carnet d&#x27;ordres et panneau de position.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:07 - 00:03:40</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est fondamentalement des munitions gratuites pour votre parcours de trading. L&#x27;ouverture d&#x27;un compte sur 2Bit prend moins d&#x27;une minute. Il vous suffit de cliquer sur le lien dans la description, et je n&#x27;insérerai jamais assez là-dessus, vous devez utiliser ce lien si vous voulez que ces bonus s&#x27;appliquent. Ensuite, entrez votre adresse e-mail, choisissez un mot de passe, et c&#x27;est tout. Comme il n&#x27;y a pas d&#x27;exigence de KYC, vous êtes prêt à déposer et à trader immédiatement. En vous connectant, vous verrez que 2Bit utilise plusieurs portefeuilles. C&#x27;est quelque chose qui perturbe les débutants au début, alors laissez-moi vous l&#x27;expliquer clairement. Votre portefeuille de financement est l&#x27;endroit où tous les dépôts</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échangeur de cryptomonnaies Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres de bonus jusqu&#x27;à 15 000 USDT, champs de saisie pour la création de compte et ID de parrainage &#x27;alexct&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la procédure d&#x27;inscription sur la plateforme d&#x27;échange Toobit via le lien affilié.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000315_seg8.jpg" alt="Page d&#x27;inscription de l&#x27;échangeur Toobit montrant les bonus d&#x27;inscription de 15 000 USDT et le code de parrainage &#x27;alexct&#x27;." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000315_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Page d&#x27;inscription de l&#x27;échangeur Toobit montrant les bonus d&#x27;inscription de 15 000 USDT et le code de parrainage &#x27;alexct&#x27;.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000332_seg8.jpg" alt="Page d&#x27;accueil de la plateforme Toobit affichant le slogan &#x27;Better crypto trading starts here&#x27; et les options de dépôt." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000332_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:32</span>
+                        <span class="caption-text">Page d&#x27;accueil de la plateforme Toobit affichant le slogan &#x27;Better crypto trading starts here&#x27; et les options de dépôt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:40 - 00:04:16</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">que vous ferez va arriver. C&#x27;est comme votre compte bancaire principal sur 2Bit. Si vous voulez acheter ou vendre des cryptos sans effet de levier, vous déplacerez des fonds dans votre portefeuille au comptant. Et si vous voulez trader avec effet de levier, ce que nous aborderons plus tard, vous devrez transférer des fonds dans votre portefeuille de contrats à terme. Cette séparation est en fait une bonne chose car elle vous évite de risquer accidentellement des fonds que vous n&#x27;aviez pas l&#x27;intention d&#x27;utiliser pour un type de trade particulier. Financer votre compte sur 2-Bit est un processus très simple, et il y a en fait plusieurs façons différentes de le faire selon votre préférence. La méthode la plus courante consiste à envoyer des cryptos depuis un autre portefeuille ou une autre bourse. Par exemple,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Toobit (interface web de gestion des actifs).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Résumé des actifs (Asset Summary) affichant une valorisation totale de 0,00000000 USDT et les différents sous-comptes : Spot Account, Futures Account, DEX+ Account, Copy Trading, Earn Account et Trading Bots, tous à 0,00 USDT.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation des différents types de portefeuilles disponibles sur la bourse Toobit, illustrant la distinction entre le compte au comptant (Spot) et le compte futures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000349_seg9.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit montrant la page &quot;Asset Summary&quot; avec les différents types de comptes (Spot, Futures, DEX+, Copy Trading, Earn)." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000349_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:49</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme Toobit montrant la page &quot;Asset Summary&quot; avec les différents types de comptes (Spot, Futures, DEX+, Copy Trading, Earn).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:16 - 00:04:50</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Si vous possédez déjà du Bitcoin, de l&#x27;Ethereum ou de l&#x27;USDT sur une autre plateforme, vous pouvez simplement le retirer de là et le déposer sur votre compte 2-Bit. Le système générera automatiquement une adresse de dépôt unique pour vous, et en quelques minutes, vos fonds apparaîtront dans votre portefeuille de financement, prêts à être utilisés. Mais ce qui est vraiment formidable pour les débutants, c&#x27;est que vous n&#x27;avez pas réellement besoin de posséder déjà des cryptos pour commencer. 2-Bit vous permet d&#x27;acheter directement avec de la monnaie fiduciaire, c&#x27;est-à-dire votre monnaie locale. Cela peut se faire en utilisant une carte de crédit, une carte de débit, ou même un virement bancaire, selon l&#x27;option qui est la plus pratique dans votre pays. L&#x27;interface vous guidera à travers</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web de l&#x27;échange Toobit (page de dépôt)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Sélection de l&#x27;actif (BTC, ETH, USDC, SOL, USDT), réseau de transfert (BTC Bitcoin), et section &#x27;Deposit Details&#x27; avec un bouton &#x27;Get Address&#x27;.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation sur la page de dépôt et préparation de la génération d&#x27;une adresse unique pour le Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000425_seg10.jpg" alt="Interface de dépôt de la plateforme Toobit montrant la sélection des cryptomonnaies et le bouton pour générer une adresse de dépôt." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000425_seg10.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:25</span>
+                        <span class="caption-text">Interface de dépôt de la plateforme Toobit montrant la sélection des cryptomonnaies et le bouton pour générer une adresse de dépôt.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:50 - 00:05:15</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">le processus étape par étape. Vous choisissez simplement votre devise, sélectionnez le montant que vous voulez acheter, et confirmez la transaction. Dans la plupart des cas, les fonds apparaîtront dans votre portefeuille de financement en quelques minutes seulement, vous pouvez donc littéralement passer de zéro à trader en moins d&#x27;une heure. Personnellement, je recommande de commencer avec un montant avec lequel vous êtes à l&#x27;aise, puis de vous familiariser avec la plateforme avant d&#x27;en ajouter davantage. La clé ici, c&#x27;est que 2-bit rend le processus d&#x27;intégration incroyablement rapide et sans douleur.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Toobit (interface web d&#x27;achat direct par carte).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Formulaire d&#x27;achat de crypto avec montants en EUR (50) et conversion estimée en USDT (56.1397), sélection des processeurs de paiement (Simplex, MoonPay, Advcash).</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration du montant d&#x27;achat en euros et sélection du mode de paiement par carte bancaire pour obtenir des USDT.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (3) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-3">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000456_seg11.jpg" alt="Interface de la plateforme Toobit montrant le formulaire d&#x27;achat de cryptomonnaies avec un montant de 50 EUR." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000456_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:56</span>
+                        <span class="caption-text">Interface de la plateforme Toobit montrant le formulaire d&#x27;achat de cryptomonnaies avec un montant de 50 EUR.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000502_seg11.jpg" alt="Sélection des méthodes de paiement tierces (Simplex, MoonPay, Advcash) sur l&#x27;interface Toobit." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000502_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:02</span>
+                        <span class="caption-text">Sélection des méthodes de paiement tierces (Simplex, MoonPay, Advcash) sur l&#x27;interface Toobit.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000509_seg11.jpg" alt="Formulaire d&#x27;achat de cryptomonnaies Toobit actualisé affichant le montant converti en USDT (56.1397 USDT)." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000509_seg11.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:09</span>
+                        <span class="caption-text">Formulaire d&#x27;achat de cryptomonnaies Toobit actualisé affichant le montant converti en USDT (56.1397 USDT).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:15 - 00:05:48</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Pas de longs temps d&#x27;attente, pas de complications inutiles. Le trading au comptant est essentiellement le moyen le plus direct d&#x27;acheter et de vendre des cryptomonnaies. Vous échangez une pièce contre une autre au prix du marché actuel sans utiliser de levier. C&#x27;|est la forme de trading la plus simple et c&#x27;|est généralement là que la plupart des débutants commencent. Sur 2Bit, le trading au comptant est un plaisir à utiliser car la plateforme offre l&#x27;une des plus grandes sélections de paires de trading du marché. Que vous souhaitiez vous en tenir aux grandes pièces établies comme Bitcoin et Ethereum ou explorer des altcoins plus petits et plus de niche avec une volatilité potentielle plus élevée,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de la plateforme d&#x27;échange Toobit et graphique intégré TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paires de cryptomonnaies populaires (BTC/USDT, ETH/USDT, SOL/USDT), graphique des prix en chandelier pour BTC/USDT sur un intervalle de 15 minutes, carnet d&#x27;ordres en temps réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation dans le menu principal de la plateforme pour sélectionner la section de trading au comptant (Spot) et visualisation du graphique de marché et du carnet d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000523_seg12.jpg" alt="Capture d&#x27;écran montrant le menu de la plateforme d&#x27;échange Toobit, avec le curseur sur l&#x27;option &#x27;Spot&#x27; et les différentes paires de trading disponibles." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000523_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:23</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant le menu de la plateforme d&#x27;échange Toobit, avec le curseur sur l&#x27;option &#x27;Spot&#x27; et les différentes paires de trading disponibles.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000531_seg12.jpg" alt="Interface de trading spot de Toobit affichant le graphique TradingView de la paire BTC/USDT, le carnet d&#x27;ordres et les options d&#x27;achat/vente au comptant." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000531_seg12.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:31</span>
+                        <span class="caption-text">Interface de trading spot de Toobit affichant le graphique TradingView de la paire BTC/USDT, le carnet d&#x27;ordres et les options d&#x27;achat/vente au comptant.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:48 - 00:06:20</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">vous les trouverez ici. Le carnet d&#x27;ordres est facile à lire, les graphiques sont alimentés par TradingView pour une analyse de qualité professionnelle, et le processus d&#x27;achat-vente est assez intuitif pour les débutants tout en offrant tous les outils dont les traders avancés ont besoin. Une chose que je recommande, surtout si vous prévoyez de passer au trading de contrats à terme plus tard, est de convertir d&#x27;abord vos fonds en USDT, qui est une cryptomonnaie stable indexée sur le dollar américain. Il y a deux raisons principales à cela. Premièrement, l&#x27;USDT est la monnaie de base la plus courante pour le trading avec effet de levier, donc avoir votre solde en USDT rendra la transition plus fluide.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme de trading Toobit avec graphique TradingView intégré.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais de la paire BTC/USDT (unité 15m), volume avec indicateur Volume SMA 9, carnet d&#x27;ordres (Order Book) en temps réel et panneau de passage d&#x27;ordres (Limit, Market, Trigger Order).</p>
+                        <p><strong>Action / Démonstration :</strong> Visualisation globale de l&#x27;interface de trading comprenant le carnet d&#x27;ordres et les graphiques de prix.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000556_seg13.jpg" alt="Interface de trading affichant le graphique BTC/USDT en unité de temps 15 minutes avec le carnet d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000556_seg13.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:05:56</span>
+                        <span class="caption-text">Interface de trading affichant le graphique BTC/USDT en unité de temps 15 minutes avec le carnet d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:21 - 00:06:46</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Deuxièmement, 2Bit propose actuellement des frais de comptoir de 0 % sur de nombreuses paires impliquant l&#x27;USDT, ce qui signifie que vous pouvez convertir sans payer le moindre supplément. C&#x27;est essentiellement un mouvement gratuit. C&#x27;est l&#x27;un de ces petits détails mais importants qui peuvent vous faire économiser de l&#x27;argent au fil du temps et rendre votre expérience de trading plus efficace. Une fois que vous avez votre solde en USDT dans votre portefeuille au comptant, l&#x27;étape suivante, si vous souhaitez trader avec effet de levier, est de le transférer dans votre portefeuille de futures.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de l&#x27;échange Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique de prix BTC/USDT (unité de temps 15m), volume SMA 9, liste des paires avec l&#x27;onglet USDT sélectionné et mention &#x27;0 Fees&#x27;, carnet d&#x27;ordres en temps réel.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et présentation de l&#x27;interface de trading spot sur Toobit avec affichage des paires sans frais.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000627_seg14.jpg" alt="Interface de trading de la plateforme Toobit montrant la paire BTC/USDT avec les graphiques de prix, la liste des paires USDT à gauche et le carnet d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000627_seg14.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:27</span>
+                        <span class="caption-text">Interface de trading de la plateforme Toobit montrant la paire BTC/USDT avec les graphiques de prix, la liste des paires USDT à gauche et le carnet d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:47 - 00:07:05</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sur 2Bit, ce transfert est instantané, gratuit et incroyablement simple. Vous cliquez simplement sur transférer, vous sélectionnez le montant que vous souhaitez déplacer, vous confirmez, et vos fonds sont prêts à être négociés immédiatement. Cette séparation entre les portefeuilles peut sembler inutile au premier abord, mais c&#x27;est en réalité une excellente fonctionnalité de gestion des risques.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface web de l&#x27;échange de cryptomonnaies Toobit (section gestion des actifs et des transferts).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Résumé des actifs avec une valorisation totale à 0,00000000 USDT et interface de paramétrage d&#x27;un transfert interne de fonds.</p>
+                        <p><strong>Action / Démonstration :</strong> Démonstration du processus de transfert de fonds entre les différents portefeuilles de la plateforme d&#x27;échange.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000651_seg15.jpg" alt="Fenêtre de transfert ouverte sur la plateforme Toobit, permettant de déplacer des fonds du compte Spot vers le compte Futures M." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000651_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:06:51</span>
+                        <span class="caption-text">Fenêtre de transfert ouverte sur la plateforme Toobit, permettant de déplacer des fonds du compte Spot vers le compte Futures M.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000700_seg15.jpg" alt="Vue d&#x27;ensemble du tableau de bord &#x27;Asset Summary&#x27; sur Toobit montrant les soldes des différents comptes (Spot, Futures, DEX+, Copy Trading)." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000700_seg15.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:00</span>
+                        <span class="caption-text">Vue d&#x27;ensemble du tableau de bord &#x27;Asset Summary&#x27; sur Toobit montrant les soldes des différents comptes (Spot, Futures, DEX+, Copy Trading).</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-16">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:05 - 00:07:41</span>
+                <span class="segment-idx">Segment #16</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En gardant vos fonds au comptant et vos fonds de contrats à terme séparés, vous évitez le risque de sur-leverager accidentellement l&#x27;ensemble de votre solde. C&#x27;est comme avoir des comptes séparés pour différents types d&#x27;investissements. Cela maintient les choses organisées et plus sûres. Le trading est là où les choses deviennent plus avancées et, pour de nombreux traders, plus excitantes. C&#x27;est la partie de la plateforme où vous pouvez utiliser l&#x27;effet de levier pour amplifier vos gains potentiels, mais bien sûr, cela amplifie également vos pertes potentielles, vous devez donc l&#x27;aborder avec précaution. Sur la plateforme de contrats à terme de 2bit, vous commencez par sélectionner votre paire de trading souhaitée. La plupart des gens commencent par BTC slash USDT ou ETH slash USDT parce que</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de cryptomonnaies Toobit (interface de trading de contrats à terme / dérivés).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandelier BTCUSDT (15m), carnet d&#x27;ordres en temps réel, indicateur Volume SMA 9, mode de marge Cross avec levier 50x, solde disponible de 10000.0 USDT (compte démo), et boutons d&#x27;exécution Open Long / Close Short.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading de contrats à terme et illustration de la gestion du levier et des paramètres de marge.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000714_seg16.jpg" alt="Capture d&#x27;écran de l&#x27;interface de la plateforme de trading Toobit montrant le graphique de la paire BTCUSDT en unités de 15 minutes, avec un panneau de passage d&#x27;ordres configuré en mode Cross avec un effet de levier de 50x." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000714_seg16.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:14</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de la plateforme de trading Toobit montrant le graphique de la paire BTCUSDT en unités de 15 minutes, avec un panneau de passage d&#x27;ordres configuré en mode Cross avec un effet de levier de 50x.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-17">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:41 - 00:08:14</span>
+                <span class="segment-idx">Segment #17</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Ce sont les plus liquides. Ensuite, vous choisissez votre effet de levier. Je ne le répéterai jamais assez. Si vous débutez dans les contrats à terme, commencez petit. Un effet de levier de trois à cinq fois est largement suffisant pour commencer. Un effet de levier plus élevé peut être tentant, mais il rend aussi beaucoup plus facile d&#x27;être liquidé. Après avoir choisi votre effet de levier, vous décidez si vous voulez prendre une position longue, ce qui signifie que vous pensez que le prix va monter, ou courte, ce qui signifie que vous pensez que le prix va baisser. Avant de cliquer sur ce bouton de confirmation, assurez-vous de définir un ordre stop-loss pour vous protéger contre des pertes importantes si le marché évolue en votre défaveur, et un ordre take-profit pour verrouiller automatiquement vos gains lorsque le</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange de crypto-monnaies (Toobit), graphique intégré TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT perpetual, prix actuel à 120,681.2 USDT, indicateur de volume (Volume SMA 9), carnet d&#x27;ordres en temps réel, réglage du levier configuré à 5X en mode Cross.</p>
+                        <p><strong>Action / Démonstration :</strong> Configuration d&#x27;un ordre de trading sur les contrats à terme avec un effet de levier de 5x et visualisation du carnet d&#x27;ordres.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000749_seg17.jpg" alt="Interface de trading de la plateforme Toobit montrant la paire BTCUSDT perpetual, avec un graphique des prix en chandeliers 15m, un carnet d&#x27;ordres et les options de levier." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000749_seg17.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:07:49</span>
+                        <span class="caption-text">Interface de trading de la plateforme Toobit montrant la paire BTCUSDT perpetual, avec un graphique des prix en chandeliers 15m, un carnet d&#x27;ordres et les options de levier.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-18">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:14 - 00:08:36</span>
+                <span class="segment-idx">Segment #18</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Le prix atteint votre objectif. Une fois que le trade est actif, vous pouvez suivre sa progression en temps réel, ajuster vos niveaux de stop loss ou de take profit, ou fermer la position manuellement à tout moment. Le trading de futures demande plus d&#x27;attention que le trading au comptant, mais avec une gestion des risques appropriée, cela peut être un outil incroyablement puissant. L&#x27;un des grands avantages de trader sur Tubic en ce moment, ce sont les frais ultra-faibles.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Interface de la plateforme d&#x27;échange Toobit (Trading de Futures / Dérivés)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire BTCUSDT perpetual, prix actuel à 120 551.1 USDT, effet de levier 5X en mode Cross, graphique de prix en chandeliers avec volumes (Volume SMA 9), niveaux de Take Profit et Stop Loss affichés sur le graphique, carnet d&#x27;ordres (Order Book) et onglet Positions actives.</p>
+                        <p><strong>Action / Démonstration :</strong> Suivi en temps réel de la progression d&#x27;un trade actif sur les futures, visualisation du PnL et gestion des niveaux de Take Profit et Stop Loss.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000820_seg18.jpg" alt="Interface de trading de futures sur Toobit montrant un graphique BTCUSDT en unités de 15 minutes avec un trade ouvert, le carnet d&#x27;ordres à droite et le panneau de gestion des positions en bas." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000820_seg18.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:20</span>
+                        <span class="caption-text">Interface de trading de futures sur Toobit montrant un graphique BTCUSDT en unités de 15 minutes avec un trade ouvert, le carnet d&#x27;ordres à droite et le panneau de gestion des positions en bas.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-19">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:08:36 - 00:09:09</span>
+                <span class="segment-idx">Segment #19</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">En fait, leurs frais pour le trading de contrats à terme sont parmi les plus bas de toute l&#x27;industrie. Ils ont clairement indiqué qu&#x27;ils maintiennent des frais délibérément bas pour attirer des traders d&#x27;autres plateformes, ce qui est une excellente nouvelle pour nous en tant qu&#x27;utilisateurs. Cela signifie qu&#x27;une plus grande partie de vos profits reste dans votre poche au lieu d&#x27;aller à la bourse, et avec le temps, cela peut faire une énorme différence, surtout si vous tradez fréquemment. Il est également important de noter que 2-Bit propose parfois des promotions spéciales avec des frais de trading nuls pour certaines paires, il est donc toujours conseillé de consulter leur section d&#x27;annonces pour voir s&#x27;il y a une offre en cours lorsque vous vous inscrivez.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site Web de l&#x27;échange de cryptomonnaies Toobit (page sur les frais de trading).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Tableau des frais détaillés : niveaux VIP (VIP0 à VIP6), exigences de solde et de volume sur 30 jours, frais Futures (Maker à partir de 0.0200% et Taker à partir de 0.0600% pour VIP0), et frais Spot.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation visuelle et explication de la grille tarifaire et des frais de trading de la plateforme Toobit.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000844_seg19.jpg" alt="Capture d&#x27;écran du site Web de l&#x27;échange Toobit montrant un tableau détaillé des grilles tarifaires (Fee rate) pour les contrats Futures et Spot." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000844_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:44</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Web de l&#x27;échange Toobit montrant un tableau détaillé des grilles tarifaires (Fee rate) pour les contrats Futures et Spot.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000852_seg19.jpg" alt="Capture d&#x27;écran identique montrant le tableau des taux de frais de Toobit, avec les niveaux VIP de VIP0 à VIP6 et les pourcentages Maker/Taker associés." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000852_seg19.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:08:52</span>
+                        <span class="caption-text">Capture d&#x27;écran identique montrant le tableau des taux de frais de Toobit, avec les niveaux VIP de VIP0 à VIP6 et les pourcentages Maker/Taker associés.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-20">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:09 - 00:09:44</span>
+                <span class="segment-idx">Segment #20</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">J&#x27;ai testé beaucoup de plateformes d&#x27;échange au fil des ans, certaines qui sont immenses et bien établies, et d&#x27;autres qui sont apparues et ont disparu en l&#x27;espace d&#x27;un an. 2Bit s&#x27;est démarqué pour moi dès le premier jour pour quelques raisons clés. Premièrement, c&#x27;est sécurisé et bénéficie d&#x27;un soutien solide de la part de grands noms de l&#x27;industrie. Deuxièmement, c&#x27;est rapide et réactif, ce qui est crucial lorsque vous tradez sur un marché volatil où les secondes peuvent faire la différence entre profit et perte. Le fait qu&#x27;il soit encore relativement nouveau joue en notre faveur parce qu&#x27;ils sont en pleine phase de croissance, se battent agressivement pour de nouveaux utilisateurs, déployant des mises à jour constantes, ajoutant de nouvelles cryptos, et offrant des bonus que vous ne trouverez tout simplement pas sur des plateformes plus anciennes, plus</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web affichant le site d&#x27;actualités et d&#x27;analyses crypto Cryptonews.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Évaluation détaillée de la plateforme Toobit incluant les notes par catégorie, les fonctionnalités supportées, ainsi qu&#x27;une liste comparative des avantages et inconvénients.</p>
+                        <p><strong>Action / Démonstration :</strong> Navigation et lecture d&#x27;une revue d&#x27;échange de cryptomonnaies à l&#x27;écran pour illustrer la présentation de la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000917_seg20.jpg" alt="Capture d&#x27;écran du site Cryptonews affichant une revue détaillée de l&#x27;échange Toobit avec une note globale de 8.5/10." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000917_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:17</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Cryptonews affichant une revue détaillée de l&#x27;échange Toobit avec une note globale de 8.5/10.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000926_seg20.jpg" alt="Capture d&#x27;écran du site Cryptonews présentant les points forts (Pros) et les points faibles (Cons) de la plateforme Toobit." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000926_seg20.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:26</span>
+                        <span class="caption-text">Capture d&#x27;écran du site Cryptonews présentant les points forts (Pros) et les points faibles (Cons) de la plateforme Toobit.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-21">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:09:44 - 00:10:21</span>
+                <span class="segment-idx">Segment #21</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">bourses établies. Si vous voulez une plateforme où vous pouvez vous inscrire instantanément, éviter les longs délais de KYC, commencer à trader le jour même et accéder à des milliers de dollars de fonds d&#x27;essai, 2Bit est facilement l&#x27;un des meilleurs choix que vous puissiez faire en 2025. Très bien, voici donc ce que je vous suggère de faire ensuite. Cliquez sur le lien dans la description dès maintenant. Il faut moins d&#x27;une minute pour s&#x27;inscrire, et en le faisant via mon lien, vous débloquerez automatiquement le pack de bonus exclusif d&#x27;une valeur allant jusqu&#x27;à 6 850 USDT. Il s&#x27;agit d&#x27;un capital de trading gratuit que vous pouvez utiliser immédiatement pour tester des stratégies, prendre des positions et potentiellement réaliser des profits sans risquer autant de votre propre argent.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Navigateur web, site de revue Cryptonews, interface YouTube Studio et slide promotionnelle Toobit.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Notes d&#x27;évaluation d&#x27;exchange, détails des paliers de dépôt et des fonds d&#x27;essai (jusqu&#x27;à 6 850 $ de bonus en USDT).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des avantages et des bonus de la plateforme de trading Toobit pour les nouveaux utilisateurs.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000953_seg21.jpg" alt="Capture d&#x27;écran d&#x27;un article web évaluant la plateforme Toobit avec une note globale de 8.5/10." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_000953_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:09:53</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article web évaluant la plateforme Toobit avec une note globale de 8.5/10.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_001012_seg21.jpg" alt="Visuel promotionnel détaillé affichant le partenariat entre Toobit et Alex Carter avec le détail des bonus de fonds d&#x27;essai jusqu&#x27;à 6 850 $." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_001012_seg21.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:12</span>
+                        <span class="caption-text">Visuel promotionnel détaillé affichant le partenariat entre Toobit et Alex Carter avec le détail des bonus de fonds d&#x27;essai jusqu&#x27;à 6 850 $.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-22">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:10:21 - 00:10:37</span>
+                <span class="segment-idx">Segment #22</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">argent. Rappelez-vous, cette offre n&#x27;est disponible nulle part ailleurs, et je ne sais honnêtement pas combien de temps 2Bit la gardera active. Donc si vous regardez ceci en ce moment même, c&#x27;est votre chance de la saisir tant qu&#x27;elle est toujours d&#x27;actualité. Je vous retrouverai sur la plateforme et j&#x27;ai hâte d&#x27;entendre parler de vos premiers trades.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site Web de l&#x27;échange de cryptomonnaies Toobit</p>
+                        <p><strong>Contenu textuel & Code :</strong> Texte promotionnel &quot;Level Up with Alex Carter: Get 6850 USDT!&quot; et mention du code d&#x27;invitation &quot;alexct&quot; pour les récompenses de bienvenue.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;offre spéciale et du code de parrainage pour l&#x27;inscription sur la plateforme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_001025_seg22.jpg" alt="Capture d&#x27;écran de la page de la plateforme Toobit affichant une promotion exclusive en partenariat avec Alex Carter pour obtenir jusqu&#x27;à 6850 USDT de bonus." loading="lazy" onclick="openLightbox('../screenshots/q-X2ve1AHyo/q-X2ve1AHyo_001025_seg22.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:10:25</span>
+                        <span class="caption-text">Capture d&#x27;écran de la page de la plateforme Toobit affichant une promotion exclusive en partenariat avec Alex Carter pour obtenir jusqu&#x27;à 6850 USDT de bonus.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
