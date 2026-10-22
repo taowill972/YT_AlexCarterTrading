@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `178 / 186` (`95.7%`)
+- **Vidéos traitées** : `179 / 186` (`96.2%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -195,6 +195,7 @@
 | 2025-07-08 | [fe6umRjySRQ](https://www.youtube.com/watch?v=fe6umRjySRQ) | **Why BONK is EXPLODING (Watch Before You Buy)** | [2025-07-08_YT-[fe6umRjySRQ]_Why BONK is EXPLODING (Watch Before You Buy)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-08_YT-[fe6umRjySRQ]_Why BONK is EXPLODING (Watch Before You Buy)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-08_YT-[fe6umRjySRQ]_Why BONK is EXPLODING (Watch Before You Buy)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `27` |
 | 2025-07-07 | [6syIj5hqlXI](https://www.youtube.com/watch?v=6syIj5hqlXI) | **Bybit vs Blofin : Quelle plateforme crypto l'emporte en 2025 ?** | [2025-07-07_YT-[6syIj5hqlXI]_Bybit vs Blofin Quelle plateforme crypto l'emporte en 2025_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-07_YT-[6syIj5hqlXI]_Bybit vs Blofin Quelle plateforme crypto l'emporte en 2025_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-07_YT-[6syIj5hqlXI]_Bybit vs Blofin Quelle plateforme crypto l'emporte en 2025_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `12` |
 | 2025-07-06 | [bB0Hm8a9nNo](https://www.youtube.com/watch?v=bB0Hm8a9nNo) | **Test & Avis Bybit Card 2025 : Tout ce que vous devez savoir** | [2025-07-06_YT-[bB0Hm8a9nNo]_Test & Avis Bybit Card 2025 Tout ce que vous devez savoir_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-06_YT-[bB0Hm8a9nNo]_Test & Avis Bybit Card 2025 Tout ce que vous devez savoir_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-06_YT-[bB0Hm8a9nNo]_Test & Avis Bybit Card 2025 Tout ce que vous devez savoir_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `26` |
+| 2025-07-02 | [Za8YbqYd3Wg](https://www.youtube.com/watch?v=Za8YbqYd3Wg) | **RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)** | [2025-07-02_YT-[Za8YbqYd3Wg]_RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-02_YT-[Za8YbqYd3Wg]_RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-02_YT-[Za8YbqYd3Wg]_RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `17` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
