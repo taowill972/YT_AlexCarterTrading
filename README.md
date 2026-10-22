@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `166 / 186` (`89.2%`)
+- **Vidéos traitées** : `167 / 186` (`89.8%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -183,6 +183,7 @@
 | 2025-08-14 | [xsRpaKNAFdo](https://www.youtube.com/watch?v=xsRpaKNAFdo) | **How to Copy Profitable Crypto Traders on Toobit (Step-By-Step)** | [2025-08-14_YT-[xsRpaKNAFdo]_How to Copy Profitable Crypto Traders on Toobit (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-08-14_YT-[xsRpaKNAFdo]_How to Copy Profitable Crypto Traders on Toobit (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-08-14_YT-[xsRpaKNAFdo]_How to Copy Profitable Crypto Traders on Toobit (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-08-13 | [7VbzIb5J2_k](https://www.youtube.com/watch?v=7VbzIb5J2_k) | **Obtenez 6 850 $ de bonus GRATUIT + des avantages VIP sur Toobit !** | [2025-08-13_YT-[7VbzIb5J2_k]_Obtenez 6 850 $ de bonus GRATUIT + des avantages VIP sur Toobit !_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-08-13_YT-[7VbzIb5J2_k]_Obtenez 6 850 $ de bonus GRATUIT + des avantages VIP sur Toobit !_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-08-13_YT-[7VbzIb5J2_k]_Obtenez 6 850 $ de bonus GRATUIT + des avantages VIP sur Toobit !_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `13` |
 | 2025-08-11 | [q-X2ve1AHyo](https://www.youtube.com/watch?v=q-X2ve1AHyo) | **Tutoriel Toobit Débutants 2025 (Guide Complet)** | [2025-08-11_YT-[q-X2ve1AHyo]_Tutoriel Toobit Débutants 2025 (Guide Complet)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-08-11_YT-[q-X2ve1AHyo]_Tutoriel Toobit Débutants 2025 (Guide Complet)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-08-11_YT-[q-X2ve1AHyo]_Tutoriel Toobit Débutants 2025 (Guide Complet)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `35` |
+| 2025-08-02 | [QEAEKSM2MyA](https://www.youtube.com/watch?v=QEAEKSM2MyA) | **Obtenez 1 000 $ de bonus GRATUIT – Sans dépôt requis (Plus que 5 jours...)** | [2025-08-02_YT-[QEAEKSM2MyA]_Obtenez 1 000 $ de bonus GRATUIT – Sans dépôt requis (Plus que 5 jours...)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-08-02_YT-[QEAEKSM2MyA]_Obtenez 1 000 $ de bonus GRATUIT – Sans dépôt requis (Plus que 5 jours...)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-08-02_YT-[QEAEKSM2MyA]_Obtenez 1 000 $ de bonus GRATUIT – Sans dépôt requis (Plus que 5 jours...)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `13` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
