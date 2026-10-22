@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Prédiction du prix du XRP : Tout le monde se trompe — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Prédiction du prix du XRP : Tout le monde se trompe</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-07-29</span>
+                <span class="badge">⏱️ 00:05:29</span>
+                <span class="badge">🆔 <code>SNp28nL_Da8</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=SNp28nL_Da8" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo, Alex Carter décortique la dynamique explosive du XRP, qui se négocie actuellement à 3,12 dollars, en adoptant une approche d'analyste quantitatif axée sur l'analyse macroéconomique des cycles et la gestion rigoureuse du capital. Loin de céder à la panique ou de prendre des bénéfices hâtifs après des années de stagnation réglementaire et de FUD, Carter démontre par les chiffres que ce mouvement haussier n'est qu'un rattrapage historique, propulsé par la fin du procès de la SEC, les perspectives d'ETF, et une adoption institutionnelle massive. Il expose sa stratégie hybride de gestion de portefeuille : sanctuariser un stock long terme intouchable sur hardware wallet tout en exploitant la volatilité à court terme via le scalping et le trading sur marge.<br><br>Pour maximiser l'efficacité de cette approche, Carter combine l'analyse comparative des cycles historiques (en prenant l'exemple du Bitcoin et de l'Ethereum) avec des outils de pointe et des plateformes de trading performantes. Il illustre l'impact d'une exécution tactique précise en partageant ses propres performances, comme ce trade récent transformant 2 000 dollars en près de 60 000 dollars de profit. En s'appuyant sur l'automatisation potentielle via des agents de trading (Grok Bots) et des scripts de rétro-test (Pine Script sur TradingView), l'analyse met en lumière la nécessité d'allier la conviction psychologique à des outils algorithmiques stricts pour naviguer dans le marché haussier de 2025.<br><br>Enfin, la vidéo insiste sur l'importance cruciale du *Risk Management* dans l'optimisation des rendements. En utilisant des plateformes offrant des conditions de liquidité et des bonus de dépôt attractifs (comme WOOX / Weeks), l'analyste rappelle que le succès en trading quantitatif ne repose pas sur le hasard, mais sur la maîtrise des flux, la structure des graphiques et une discipline de fer. L'objectif est clair : capitaliser sur la force de frappe de la communauté XRP et sur les inefficacités du marché pour transformer la volatilité en une machine à générer du cash-flow, tout en préparant le terrain pour des projections de prix oscillant entre 10 et 30 dollars pour ce cycle.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>* **Pine Script** : Langage de programmation propriétaire de TradingView utilisé pour concevoir, backtester et automatiser des stratégies de trading algorithmique et des indicateurs sur mesure.<br>* **Claude Code** : Assistant de développement par intelligence artificielle avancé, mobilisé pour optimiser, déboguer et structurer les scripts de trading et les codes d'automatisation des stratégies.<br>* **Grok Bots** : Agents conversationnels et bots de trading pilotés par l'IA de xAI, exploités pour analyser le sentiment du marché, détecter les tendances en temps réel et exécuter des ordres de scalping automatisés.<br>* **TradingView** : Plateforme de graphisme boursier incontournable servant à l'analyse technique multi-temporelle, au tracé des niveaux de support/résistance et au déploiement des scripts Pine.<br>* **WOO X (Weeks)** : Exchange de cryptomonnaies centralisé hautement performant offrant une liquidité profonde, des options de levier avancées et des bonus de dépôt majeurs (jusqu'à 30 000 $) pour le trading à court terme.<br>* **Ledger** : Portefeuille matériel (*hardware wallet*) sécurisé hors-ligne utilisé pour la conservation à long terme et l'isolation des actifs principaux ("le sac intouchable") contre le risque de contrepartie des exchanges.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>* **Dissociation des portefeuilles (Core vs Trading)** : Séparation stricte entre les avoirs à long terme stockés sur un Ledger (intouchables) et le capital spéculatif alloué au trading actif sur les exchanges pour surfer sur la volatilité.<br>* **Analyse comparative des cycles macroéconomiques** : Utilisation des multiplicateurs historiques du Bitcoin (x3,5) et de l'Ethereum (x3) lors des cycles précédents pour modéliser par analogie un objectif plancher de 9 $ à 12 $ pour le XRP.<br>* **Rattrapage temporel et structurel** : Prise en compte du coût d'opportunité lié au procès de la SEC, suggérant que le XRP accuse un retard de valorisation qui amplifie la violence de la cassure haussière actuelle vers les 3,12 $ et au-delà.<br>* **Effet de levier de la psychologie de marché** : Analyse de la force de la communauté XRP et de sa faible propension à vendre à bas prix, créant une contraction de l'offre circulante et une pression acheteuse organique massive.<br>* **Gestion du risque (*Risk Management*) asymétrique** : Engagement d'un capital de départ limité (ex: 2 000 $) sur des configurations à fort effet de levier pour viser des rendements exponentiels (ex: 60 000 $ de profit) sans compromettre le capital global.<br>* **Exploitation des inefficacités de court terme** : Mise en place de stratégies de scalping sur les unités de temps inférieures (UT) pour capitaliser sur les mouvements de panique haussière et baissière sans toucher au capital macro.<br>* **Optimisation du capital via les incitations** : Utilisation stratégique des bonus de dépôt institutionnels et des offres promotionnelles des plateformes (jusqu'à 30 000 $ sur WOO X) pour accroître artificiellement la marge de manœuvre et le collatéral de trading.<br>* **Validation fondamentale par l'utilité réelle** : Intégration des catalyseurs fondamentaux (demandes d'ETF, intégrations bancaires, DeFi et tokenisation d'actifs) dans les modèles de valorisation quantitative pour justifier des objectifs de 20 $ à 30 $ d'ici 2025.<br>* **Automatisation et rigueur algorithmique** : Recours combiné à Pine Script, Claude Code et Grok Bots pour éliminer les biais émotionnels humains et exécuter des entrées/sorties chirurgicales basées sur la data.<br>* **Planification des prises de profits étagées** : Refus des visions utopiques irréalistes (100 $ et plus pour ce cycle) tout en maintenant un plan de sortie dynamique aligné sur l'extension des vagues de Elliott et la liquidité globale du marché crypto.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">Pine Script</span><span class="tool-tag">Claude Code</span><span class="tool-tag">Grok Bots</span><span class="tool-tag">TradingView</span><span class="tool-tag">WOO X (Weeks)</span><span class="tool-tag">Ledger</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Dissociation des portefeuilles (Core vs Trading)** : Séparation stricte entre les avoirs à long terme stockés sur un Ledger (intouchables) et le capital spéculatif alloué au trading actif sur les exchanges pour surfer sur la volatilité.</span></li><li><span class="point-bullet">✦</span><span>Analyse comparative des cycles macroéconomiques** : Utilisation des multiplicateurs historiques du Bitcoin (x3,5) et de l&#x27;Ethereum (x3) lors des cycles précédents pour modéliser par analogie un objectif plancher de 9 $ à 12 $ pour le XRP.</span></li><li><span class="point-bullet">✦</span><span>Rattrapage temporel et structurel** : Prise en compte du coût d&#x27;opportunité lié au procès de la SEC, suggérant que le XRP accuse un retard de valorisation qui amplifie la violence de la cassure haussière actuelle vers les 3,12 $ et au-delà.</span></li><li><span class="point-bullet">✦</span><span>Effet de levier de la psychologie de marché** : Analyse de la force de la communauté XRP et de sa faible propension à vendre à bas prix, créant une contraction de l&#x27;offre circulante et une pression acheteuse organique massive.</span></li><li><span class="point-bullet">✦</span><span>Gestion du risque (*Risk Management*) asymétrique** : Engagement d&#x27;un capital de départ limité (ex: 2 000 $) sur des configurations à fort effet de levier pour viser des rendements exponentiels (ex: 60 000 $ de profit) sans compromettre le capital global.</span></li><li><span class="point-bullet">✦</span><span>Exploitation des inefficacités de court terme** : Mise en place de stratégies de scalping sur les unités de temps inférieures (UT) pour capitaliser sur les mouvements de panique haussière et baissière sans toucher au capital macro.</span></li><li><span class="point-bullet">✦</span><span>Optimisation du capital via les incitations** : Utilisation stratégique des bonus de dépôt institutionnels et des offres promotionnelles des plateformes (jusqu&#x27;à 30 000 $ sur WOO X) pour accroître artificiellement la marge de manœuvre et le collatéral de trading.</span></li><li><span class="point-bullet">✦</span><span>Validation fondamentale par l&#x27;utilité réelle** : Intégration des catalyseurs fondamentaux (demandes d&#x27;ETF, intégrations bancaires, DeFi et tokenisation d&#x27;actifs) dans les modèles de valorisation quantitative pour justifier des objectifs de 20 $ à 30 $ d&#x27;ici 2025.</span></li><li><span class="point-bullet">✦</span><span>Automatisation et rigueur algorithmique** : Recours combiné à Pine Script, Claude Code et Grok Bots pour éliminer les biais émotionnels humains et exécuter des entrées/sorties chirurgicales basées sur la data.</span></li><li><span class="point-bullet">✦</span><span>Planification des prises de profits étagées** : Refus des visions utopiques irréalistes (100 $ et plus pour ce cycle) tout en maintenant un plan de sortie dynamique aligné sur l&#x27;extension des vagues de Elliott et la liquidité globale du marché crypto.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:37</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">XRP est en train d&#x27;exploser. En ce moment, il se négocie à 3,12 dollars et la dynamique derrière lui est absolument folle. Mais voici une vraie question. Jusqu&#x27;où peut-il monter ? Personnellement, j&#x27;achète du XRP depuis les creux du marché baissier et, même maintenant, j&#x27;en achète encore plus chaque jour. Et dans cette vidéo, je vais vous montrer exactement où je prévois de vendre, jusqu&#x27;où je pense que XRP peut réellement monter, et surtout la logique étape par étape et les calculs que j&#x27;utilise pour déterminer ces objectifs. Car voici la vérité, alors que la plupart des gens se concentrent sur ce qui s&#x27;est déjà produit, nous sommes ici pour gagner de l&#x27;argent sur ce qui va arriver.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique de trading (type TradingView)</p>
+                        <p><strong>Contenu textuel & Code :</strong> Courbe de prix montrant une explosion haussière verticale sur la droite, avec le texte &quot;How high&quot; affiché au premier plan.</p>
+                        <p><strong>Action / Démonstration :</strong> Illustration visuelle de la flambée du cours du XRP et de la question sur son potentiel de hausse.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000009_seg1.jpg" alt="Un graphique de prix en forte hausse avec le texte &quot;How high&quot; superposé." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000009_seg1.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:09</span>
+                        <span class="caption-text">Un graphique de prix en forte hausse avec le texte &quot;How high&quot; superposé.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:37 - 00:01:02</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Entrons dans le vif du sujet. Alors d&#x27;abord, pourquoi est-ce que j&#x27;achète encore du XRP, même à 3,12 $ ? Pourquoi est-ce que je n&#x27;ai pas encore vendu ? Soyons honnêtes, 3,12 $ c&#x27;est déjà une victoire énorme par rapport à là où nous en étions. Pour beaucoup de gens, ce serait le moment de prendre leurs profits et de verrouiller tout ça. Mais pour moi, je suis dans ce milieu depuis trop longtemps pour abandonner juste au moment où ça devient intéressant. Nous avons traversé des années de suppression, de poursuites judiciaires, de FUD et de frustration.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique TradingView affichant l&#x27;historique des prix de la cryptomonnaie XRP de 2022 à 2025.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Chandeliers japonais hebdomadaires montrant une longue période de consolidation à bas prix (0,40$ - 0,60$) suivie d&#x27;une forte explosion haussière en 2025 atteignant un niveau proche de 3,12$ à 3,50$. Le cours actuel affiché sur l&#x27;axe des ordonnées est de 3,1501$.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;évolution macroéconomique et de la flambée récente du cours du XRP pour illustrer la performance actuelle du jeton.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000043_seg2.jpg" alt="Graphique en chandeliers japonais en unité de temps hebdomadaire (1W) pour la paire XRP/TetherUS sur Binance." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000043_seg2.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:00:43</span>
+                        <span class="caption-text">Graphique en chandeliers japonais en unité de temps hebdomadaire (1W) pour la paire XRP/TetherUS sur Binance.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:03 - 00:01:31</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Et maintenant que la cassure se produit enfin, ce n&#x27;est pas le moment d&#x27;encaisser. C&#x27;est le moment de surfer sur la vague. Je me dis depuis des années que 10 dollars par XRP, ce n&#x27;est rien. Et honnêtement, je l&#x27;ai tellement dit que j&#x27;ai fini par y croire sincèrement. À l&#x27;époque où je parlais d&#x27;un XRP atteignant 10 dollars, les gens riaient. Mais nous avons continué à accumuler. Nous avons continué à y croire. Et toutes ces discussions sur le procès de la SEC et la pression réglementaire, tout cela n&#x27;a fait que mener à ce moment précis.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> TradingView / Binance</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire XRP/USDT, chandeliers hebdomadaires (1W), ligne de tendance baissière bleue tracée sur plusieurs années, prix actuel autour de 3,15 $ avec une forte impulsion haussière récente.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique du graphique du XRP mettant en évidence la cassure de la ligne de résistance oblique de long terme.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000110_seg3.jpg" alt="Graphique en chandeliers japonais en unité de temps hebdomadaire (1W) pour la paire XRP/TetherUS sur Binance, illustrant une longue tendance de consolidation suivie d&#x27;une cassure haussière majeure." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000110_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:10</span>
+                        <span class="caption-text">Graphique en chandeliers japonais en unité de temps hebdomadaire (1W) pour la paire XRP/TetherUS sur Binance, illustrant une longue tendance de consolidation suivie d&#x27;une cassure haussière majeure.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:32 - 00:02:05</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Parce que maintenant, toute cette frustration se transforme en carburant. Et c&#x27;est pour ça que je suis toujours là, plus optimiste que jamais. Laissez-moi vous dire quelque chose d&#x27;important. La plupart des gens n&#x27;ont aucune idée de la force réelle de la communauté XRP. Quand on demande aux détenteurs à quel prix ils préviennent de vendre, ils ne disent pas 4 dollars. Ils ne disent pas 10 dollars. Ils disent, je ne vends pas en dessous de 100 dollars. Certains disent même 500 ou 1 000 dollars. Maintenant, je ne dis pas que ce sont des objectifs réalistes pour ce cycle. Mais le fait est que, lorsque les gens croient en un projet aussi fortement et lorsqu&#x27;ils refusent de vendre,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Réseau social X (anciennement Twitter).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Publications de comptes crypto sur X évoquant des prédictions de prix haussières pour le XRP (objectifs allant de 33 $ à 1 000 $) et graphiques d&#x27;analyse technique associés.</p>
+                        <p><strong>Action / Démonstration :</strong> Consultation et présentation de publications communautaires sur X illustrant l&#x27;optimisme et les prédictions de prix haussières des détenteurs de XRP.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000140_seg4.jpg" alt="Capture d&#x27;écran du réseau social X montrant une publication de la communauté XRP par l&#x27;utilisateur Xaif Crypto, relayant une analyse de Sistine Research prédisant le XRP entre 33 $ et 55 $, avec un objectif potentiel de 77 $ à 100 $." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000140_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:40</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X montrant une publication de la communauté XRP par l&#x27;utilisateur Xaif Crypto, relayant une analyse de Sistine Research prédisant le XRP entre 33 $ et 55 $, avec un objectif potentiel de 77 $ à 100 $.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000157_seg4.jpg" alt="Capture d&#x27;écran du réseau social X affichant un tweet de Ripple Queen concernant une prédiction de prix pour le XRP, mentionnant un objectif à 1 000 $ et incluant un graphique de tendance haussière." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000157_seg4.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:57</span>
+                        <span class="caption-text">Capture d&#x27;écran du réseau social X affichant un tweet de Ripple Queen concernant une prédiction de prix pour le XRP, mentionnant un objectif à 1 000 $ et incluant un graphique de tendance haussière.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:05 - 00:02:35</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">cela crée une pression haussière énorme. Et c&#x27;est exactement ce qui se passe en ce moment. Laissez-moi être clair. Je n&#x27;ai absolument aucun projet de vendre le XRP que je detiens sur mon Ledger. C&#x27;est du long terme. C&#x27;est intouchable. À la place, ce que je fais, c&#x27;est trader les mouvements sur Weeks. En fait, l&#x27;un de mes trades récents sur le XRP a transformé 2 000 dollars en près de 60 000 dollars de profit. En ce moment, si vous vous inscrivez sur Weeks en utilisant le lien ci-dessous, vous pouvez obtenir accès à un bonus allant jusqu&#x27;à 30 000 dollars rien qu&#x27;en déposant et en tradant. Ce n&#x27;est pas une blague.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange WEEX (interface de trading Futures) et interface de lecteur vidéo YouTube.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique en chandeliers japonais XRP/USDT (prix actuel autour de 3.1496 USD), indicateur de volume (Volume SMA 9), carnet d&#x27;ordres en temps réel et panneau de configuration des ordres de trading.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme WEEX et analyse technique de la paire XRP/USDT sur graphique de 4 heures.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000213_seg5.jpg" alt="Capture d&#x27;écran de l&#x27;interface de trading de la plateforme WEEX affichant le graphique de la paire XRP/USDT en unités de 4 heures, avec le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres sur la droite." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000213_seg5.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:13</span>
+                        <span class="caption-text">Capture d&#x27;écran de l&#x27;interface de trading de la plateforme WEEX affichant le graphique de la paire XRP/USDT en unités de 4 heures, avec le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres sur la droite.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:36 - 00:03:05</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;est la plus haute offre de bonus que j&#x27;ai vue en 2025 jusqu&#x27;à présent. Donc si vous voulez suivre ma configuration de trading exacte, consultez le lien dans la description. Parlons des objectifs de prix. En 2017, le XRP a atteint 3,50 $. Le Bitcoin est passé de 20 000 $ à 70 000 $ lors du dernier cycle, soit une multiplication par 3,5. L&#x27;Ethereum est passé de 1 500 $ à 4 500 $, soit une multiplication par 3. Donc logiquement, je pensais que le XRP passerait de 3,50 $ à au moins 9 $ à 12 $ dans ce cycle.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> WEEX et TradingView</p>
+                        <p><strong>Contenu textuel & Code :</strong> Offres de bonus et coupons pour nouveaux utilisateurs (10-100 coupon, 20 USDT de dépôt) sur WEEX ; graphique en chandeliers Bitcoin avec données de prix historiques et indicateurs de volume sur TradingView.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation des bonus de la plateforme d&#x27;échange et analyse historique des prix du Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000243_seg6.jpg" alt="Interface de la plateforme d&#x27;échange WEEX affichant la section des récompenses pour les nouveaux utilisateurs (New User Rewards) avec des coupons et bonus de dépôt." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000243_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:43</span>
+                        <span class="caption-text">Interface de la plateforme d&#x27;échange WEEX affichant la section des récompenses pour les nouveaux utilisateurs (New User Rewards) avec des coupons et bonus de dépôt.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000250_seg6.jpg" alt="Graphique TradingView en chandeliers montrant l&#x27;historique des prix du Bitcoin (BTCUSD) sur une période pluriannuelle avec des outils de mesure de prix." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000250_seg6.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:02:50</span>
+                        <span class="caption-text">Graphique TradingView en chandeliers montrant l&#x27;historique des prix du Bitcoin (BTCUSD) sur une période pluriannuelle avec des outils de mesure de prix.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:06 - 00:03:42</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">C&#x27;était mon estimation prudente et elle est basée sur des cycles historiques, pas sur du &quot;hopium&quot;. Mais ensuite, j&#x27;ai réalisé quelque chose. Si le XRP avait réellement participé au bull run de 2021, il aurait probablement atteint 9 dollars à l&#x27;époque, et maintenant nous viserions 18 dollars ou plus. Donc, d&#x27;une certaine manière, ce mouvement actuel rattrape le temps perdu. Souvenez-vous, le XRP a été la deuxième cryptomonnaie en termes de capitalisation boursière pendant longtemps. Même pendant le procès, il est resté dans le top 10, ce qui est du jamais vu. Maintenant que le procès est terminé et que les rumeurs d&#x27;ETF arrivent, le XRP obtient enfin la reconnaissance et l&#x27;utilité qu&#x27;il mérite.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Graphique financier sur TradingView et site web de cotations crypto de type CoinGecko.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Données de prix historiques du XRP, prix actuel à 3.1553 USD, volumes et statistiques clés, ainsi que tableau de classement des cryptomonnaies par capitalisation boursière.</p>
+                        <p><strong>Action / Démonstration :</strong> Analyse technique des cycles historiques du cours du XRP et visualisation des performances de marché.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (1) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-1">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000315_seg7.jpg" alt="Capture d&#x27;écran montrant un graphique TradingView de la paire XRP/USD en unités hebdomadaires sur Binance, affichant l&#x27;évolution historique des prix et le cours actuel à 3.1553 USD." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000315_seg7.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:15</span>
+                        <span class="caption-text">Capture d&#x27;écran montrant un graphique TradingView de la paire XRP/USD en unités hebdomadaires sur Binance, affichant l&#x27;évolution historique des prix et le cours actuel à 3.1553 USD.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:43 - 00:04:23</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Nous voyons des intégrations avec les systèmes bancaires. Nous voyons une adoption dans le monde réel. Nous voyons des demandes de ETF, des intégrations DeFi, la tokenisation d&#x27;actifs. Et c&#x27;est pourquoi je crois que le XRP à 10 dollars n&#x27;est que le début. Je ne dis pas que le XRP atteindra 100 dollars demain. Ce n&#x27;est pas réaliste dans ce cycle. Mais si nous voyons déjà une multiplication par 3 ou 4 à partir d&#x27;ici en l&#x27;espace de quelques mois, et que le marché haussier se poursuit jusqu&#x27;en 2025, alors 20 à 30 dollars ne semble plus si fou que ça. Et encore une fois, si le Bitcoin monte plus haut, ces objectifs augmentent en conséquence. Alors, comment est-ce que je joue le coup ? Simple. Je conserve du XRP à long terme sur mon</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Site web financier &#x27;AIinvest&#x27; et plateforme de graphiques boursiers TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Articles d&#x27;actualité financière, barres de cotation (BAC, ETH, SOL, XRP) et graphique de prix avec axes temporels (2018 à 2027) et indicateurs de performance de XRP.</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation d&#x27;une analyse comparative sur la tokenisation d&#x27;actifs et visualisation de l&#x27;évolution technique à long terme du cours de XRP sur TradingView.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000353_seg8.jpg" alt="Capture d&#x27;écran d&#x27;un article financier sur le site &#x27;AIinvest&#x27; intitulé &#x27;XRP vs. Solana: The Long Game in Real-World Asset Tokenization&#x27;, illustrant la tokenisation d&#x27;actifs réels." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000353_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:03:53</span>
+                        <span class="caption-text">Capture d&#x27;écran d&#x27;un article financier sur le site &#x27;AIinvest&#x27; intitulé &#x27;XRP vs. Solana: The Long Game in Real-World Asset Tokenization&#x27;, illustrant la tokenisation d&#x27;actifs réels.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000403_seg8.jpg" alt="Graphique TradingView en chandeliers japonais de la paire XRP/USD (échelle logarithmique), montrant l&#x27;évolution historique des prix et la dynamique haussière récente." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000403_seg8.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:03</span>
+                        <span class="caption-text">Graphique TradingView en chandeliers japonais de la paire XRP/USD (échelle logarithmique), montrant l&#x27;évolution historique des prix et la dynamique haussière récente.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:23 - 00:05:00</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">grand livre, et je trade les hausses et les baisses à court terme sur WOO X. Je ne veux jamais vendre mes avoirs principaux, mais le trading me permet de profiter de la volatilité sans toucher à mon sac principal. Et grâce au bonus allant jusqu&#x27;à 30 000 $ sur WOO X, il n&#x27;a jamais été aussi facile de commencer. Déposez, tradez et gagnez. C&#x27;est aussi simple que ça. Laissez-moi résumer. XRP explose, mais je pense toujours que c&#x27;est le début. Ce n&#x27;est pas le moment de paniquer ou de douter. C&#x27;est le début de la cassure que nous attendons tous. Si vous êtes déjà dedans, félicitations. Si ce n&#x27;est pas le cas, faites vos recherches, étudiez les graphiques,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> WEEX (interface de trading et page promotionnelle) et graphique TradingView (Binance).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Paire XRP/USDT, chandeliers hebdomadaires, volumes, carnet d&#x27;ordres et interface de passage d&#x27;ordres (Limit/Market).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de l&#x27;interface de trading et visualisation historique des prix d&#x27;une cryptomonnaie avec l&#x27;outil Replay.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000432_seg9.jpg" alt="Interface de trading de la plateforme WEEX montrant le graphique XRP/USDT en unités hebdomadaires avec le carnet d&#x27;ordres à droite." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000432_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:32</span>
+                        <span class="caption-text">Interface de trading de la plateforme WEEX montrant le graphique XRP/USDT en unités hebdomadaires avec le carnet d&#x27;ordres à droite.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/SNp28nL_Da8/SNp28nL_Da8_000450_seg9.jpg" alt="Graphique en chandeliers japonais TradingView (XRP/TetherUS en données hebdomadaires sur Binance) avec l&#x27;outil de relecture (Replay) actif." loading="lazy" onclick="openLightbox('../screenshots/SNp28nL_Da8/SNp28nL_Da8_000450_seg9.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:04:50</span>
+                        <span class="caption-text">Graphique en chandeliers japonais TradingView (XRP/TetherUS en données hebdomadaires sur Binance) avec l&#x27;outil de relecture (Replay) actif.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:00 - 00:05:30</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">comprenez les cycles, parce que cette course ne fait que commencer. Assurez-vous d&#x27;aimer la vidéo, de vous abonner à la chaîne et d&#x27;activer la cloche parce que nous allons aller loin dans ce marché haussier et je serai là à chaque étape et si vous voulez rejoindre weeks réclamez votre bonus et commencez à trader avec moi le lien est juste en dessous et si vous voulez connaître les dix autres altcoins que j&#x27;achète en ce moment et qui pourraient faire x30 cliquez sur la vidéo sur votre écran dès maintenant rendons cette saison légendaire</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> YouTube (Interface web de visionnage et de navigation de chaînes).</p>
+                        <p><strong>Contenu textuel & Code :</strong> Titres de vidéos, vignettes de tutoriels sur WEEX et Bybit, ainsi que des listes de lecture de cryptomonnaies.
+[DESC_IMAGE_3] Navigation dans les vidéos de la chaîne pour illustrer les offres et bonus mentionnés dans l&#x27;audio.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
