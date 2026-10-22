@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `173 / 186` (`93.0%`)
+- **Vidéos traitées** : `174 / 186` (`93.5%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -190,6 +190,7 @@
 | 2025-07-19 | [vULzp2_N-9A](https://www.youtube.com/watch?v=vULzp2_N-9A) | **Comment acheter des USDT pour trader (simple et économique)** | [2025-07-19_YT-[vULzp2_N-9A]_Comment acheter des USDT pour trader (simple et économique)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-19_YT-[vULzp2_N-9A]_Comment acheter des USDT pour trader (simple et économique)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-19_YT-[vULzp2_N-9A]_Comment acheter des USDT pour trader (simple et économique)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `18` |
 | 2025-07-18 | [ZLX-jX4lIaQ](https://www.youtube.com/watch?v=ZLX-jX4lIaQ) | **Pourquoi XRP explose (À voir avant d'acheter)** | [2025-07-18_YT-[ZLX-jX4lIaQ]_Pourquoi XRP explose (À voir avant d'acheter)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-18_YT-[ZLX-jX4lIaQ]_Pourquoi XRP explose (À voir avant d'acheter)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-18_YT-[ZLX-jX4lIaQ]_Pourquoi XRP explose (À voir avant d'acheter)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `13` |
 | 2025-07-17 | [DcbP6TmO8JM](https://www.youtube.com/watch?v=DcbP6TmO8JM) | **These 10 Altcoins Will 30X In 3 Months (URGENT)** | [2025-07-17_YT-[DcbP6TmO8JM]_These 10 Altcoins Will 30X In 3 Months (URGENT)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-17_YT-[DcbP6TmO8JM]_These 10 Altcoins Will 30X In 3 Months (URGENT)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-17_YT-[DcbP6TmO8JM]_These 10 Altcoins Will 30X In 3 Months (URGENT)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `29` |
+| 2025-07-17 | [JADhglih8nI](https://www.youtube.com/watch?v=JADhglih8nI) | **How to Find 100x Memecoins Before Everyone Else** | [2025-07-17_YT-[JADhglih8nI]_How to Find 100x Memecoins Before Everyone Else_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-17_YT-[JADhglih8nI]_How to Find 100x Memecoins Before Everyone Else_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-17_YT-[JADhglih8nI]_How to Find 100x Memecoins Before Everyone Else_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `37` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
