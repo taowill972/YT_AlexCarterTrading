@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `157 / 186` (`84.4%`)
+- **Vidéos traitées** : `158 / 186` (`84.9%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -174,6 +174,7 @@
 | 2025-09-27 | [beCvIU12e6Q](https://www.youtube.com/watch?v=beCvIU12e6Q) | **Ethereum: The Same Setup Before Every Massive Rally** | [2025-09-27_YT-[beCvIU12e6Q]_Ethereum The Same Setup Before Every Massive Rally_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-09-27_YT-[beCvIU12e6Q]_Ethereum The Same Setup Before Every Massive Rally_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-09-27_YT-[beCvIU12e6Q]_Ethereum The Same Setup Before Every Massive Rally_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-09-10 | [mmmfEV6SD4Q](https://www.youtube.com/watch?v=mmmfEV6SD4Q) | **The Best Crypto Card in 2025 (3% Cashback, No Limits)** | [2025-09-10_YT-[mmmfEV6SD4Q]_The Best Crypto Card in 2025 (3% Cashback, No Limits)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-09-10_YT-[mmmfEV6SD4Q]_The Best Crypto Card in 2025 (3% Cashback, No Limits)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-09-10_YT-[mmmfEV6SD4Q]_The Best Crypto Card in 2025 (3% Cashback, No Limits)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-09-05 | [45wYoTxQv_Q](https://www.youtube.com/watch?v=45wYoTxQv_Q) | **How to Trade on Hyperliquid! (Simple Beginners Guide)** | [2025-09-05_YT-[45wYoTxQv_Q]_How to Trade on Hyperliquid! (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-09-05_YT-[45wYoTxQv_Q]_How to Trade on Hyperliquid! (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-09-05_YT-[45wYoTxQv_Q]_How to Trade on Hyperliquid! (Simple Beginners Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2025-09-01 | [AlqCVr5kS3A](https://www.youtube.com/watch?v=AlqCVr5kS3A) | **Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups** | [2025-09-01_YT-[AlqCVr5kS3A]_Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-09-01_YT-[AlqCVr5kS3A]_Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-09-01_YT-[AlqCVr5kS3A]_Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `2` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*

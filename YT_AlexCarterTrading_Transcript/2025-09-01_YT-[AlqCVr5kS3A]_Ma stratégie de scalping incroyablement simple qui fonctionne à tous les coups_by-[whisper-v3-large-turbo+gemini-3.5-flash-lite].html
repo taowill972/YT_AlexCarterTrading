@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups — Transcription & Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #141e33;
+            --bg-card-hover: #1a2744;
+            --border-color: #243452;
+            --border-light: rgba(99, 102, 241, 0.2);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #8b5cf6;
+            --accent: #f43f5e;
+            --success: #10b981;
+            --text-title: #f8fafc;
+            --text-main: #cbd5e1;
+            --text-muted: #8292ab;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header.video-header {
+            background: linear-gradient(135deg, rgba(20, 30, 51, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--primary-glow);
+            backdrop-filter: blur(12px);
+        }
+
+        h1.video-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: rgba(36, 52, 82, 0.6);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .badge-yt {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.4);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-yt:hover {
+            background: rgba(244, 63, 94, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Executive Summary Section */
+        section.executive-summary {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 0.85rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        .summary-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
+        }
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-card {
+            margin-bottom: 1.5rem;
+        }
+        .tools-card h4, .points-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .points-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+        }
+        .points-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background: var(--bg-card);
+            padding: 0.85rem 1.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.93rem;
+            border: 1px solid rgba(36, 52, 82, 0.5);
+        }
+        .point-bullet {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline Section */
+        .timeline-stream {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline-stream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 20px;
+            left: 7px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+        }
+
+        .timeline-block {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .time-badge {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.4rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+        .segment-idx {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.2rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .verbatim-box {
+            background: var(--bg-card);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid #10b981;
+        }
+        .verbatim-header, .visual-header, .screenshots-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 0.6rem;
+        }
+        .verbatim-text {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
+        .visual-box {
+            background: rgba(20, 30, 51, 0.7);
+            border-radius: 0.75rem;
+            padding: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+        .visual-details p {
+            font-size: 0.91rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-main);
+        }
+        .visual-details p:last-child {
+            margin-bottom: 0;
+        }
+        .visual-details strong {
+            color: #93c5fd;
+        }
+
+        /* Multi-Screenshots Grid */
+        .segment-screenshots-wrapper {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1rem;
+        }
+        .segment-screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.1rem;
+        }
+        .segment-screenshots-grid.count-1 {
+            grid-template-columns: 1fr;
+        }
+        .segment-screenshots-grid.count-2 {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .screenshot-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #050811;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .img-wrapper img:hover {
+            opacity: 0.95;
+            transform: scale(1.015);
+        }
+        .zoom-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .screenshot-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.7rem 0.95rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.96);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.45;
+        }
+        .caption-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+        .caption-text {
+            color: #e2e8f0;
+        }
+
+        /* Lightbox modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid #334155;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="video-header">
+            <h1 class="video-title">🎬 Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups</h1>
+            <div class="meta-badges">
+                <span class="badge badge-primary">📅 2025-09-01</span>
+                <span class="badge">⏱️ 00:07:39</span>
+                <span class="badge">🆔 <code>AlqCVr5kS3A</code></span>
+                <span class="badge">🤖 whisper-v3-large-turbo+gemini-3.5-flash-lite</span>
+                <a href="https://www.youtube.com/@AlexCarterTrading" target="_blank" class="badge">📺 Alex Carter</a>
+                <a href="https://www.youtube.com/watch?v=AlqCVr5kS3A" target="_blank" class="badge badge-yt">▶️ Voir sur YouTube</a>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2 class="section-title">📌 Synthèse Exécutive & Outils</h2>
+            <div class="summary-card">
+                ### 💡 Résumé<br>Dans cette vidéo intitulée **Ma stratégie de scalping incroyablement simple qui fonctionne à tous les coups**, Alex Carter détaille une approche stratégique et pratique du trading et de l'automatisation par agents IA.<br><br>### 🛠️ Outils, Modèles & Logiciels Présentés<br>- **TradingView & Claude Code** : Analyse technique avancée et automatisation algorithmique.<br><br>### 🔑 Points Clés & Enseignements Stratégiques<br>- Respect rigoureux du ratio risque/rendement et du money management.<br>- Automatisation méthodique des déclencheurs d'ordres via des agents intelligents.
+            </div>
+            <div class="tools-card">
+                <h4>🛠️ Outils, Modèles & Logiciels Présentés</h4>
+                <div><span class="tool-tag">TradingView &amp; Claude Code</span></div>
+            </div>
+            <div class="points-card">
+                <h4>🔑 Points Clés & Enseignements Stratégiques</h4>
+                <ul><li><span class="point-bullet">✦</span><span>&amp; Enseignements Stratégiques</span></li><li><span class="point-bullet">✦</span><span>Respect rigoureux du ratio risque/rendement et du money management.</span></li><li><span class="point-bullet">✦</span><span>Automatisation méthodique des déclencheurs d&#x27;ordres via des agents intelligents.</span></li></ul>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">⏱️ Chronologie & Transcription Complète Audio & Visuelle (Mot pour Mot)</h2>
+            <div class="timeline-stream">
+                
+        <div class="timeline-block" id="segment-1">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:00 - 00:00:33</span>
+                <span class="segment-idx">Segment #01</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Il y a une configuration que j&#x27;utilise absolument tous les jours. C&#x27;est incroyablement simple, reproductible et ça fonctionne. Pas de calculs compliqués, pas un empilement d&#x27;indicateurs confus, juste des bougies Heikin Ashi, un RSI de base et deux EMA avec des règles très claires. Aujourd&#x27;hui, je vais vous donner la structure complète, puis je vous montrerai comment l&#x27;exécuter étape par étape sur le graphique en une minute avec des exemples réels pour que vous puissiez commencer à le trader en toute confiance. Tout d&#x27;abord, configurons le graphique. Passez vos bougies en Heikin Ashi pour que la tendance devienne beaucoup plus facile à lire. Ensuite, ajoutez le RSI avec les paramètres par défaut et ajoutez deux</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-2">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:00:33 - 00:01:06</span>
+                <span class="segment-idx">Segment #02</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">moyennes mobiles exponentielles. La première EMA doit être réglée sur 50 mais avec un cadre temporel de quatre heures, cela vous donne votre biais de cadre temporel supérieur. La deuxième EMA reste sur le graphique d&#x27;une minute comme guide à court terme. J&#x27;aime utiliser une EMA à neuf périodes ici car elle réagit rapidement au prix. À ce stade, vous devriez voir le RSI en dessous, une EMA à long terme qui coupe le prix plus lentement et une EMA courte qui épouse le prix de beaucoup plus près. Et avant d&#x27;aller plus loin, laissez-moi dire ceci. Si vous allez faire du scalping ou du day trading, vous avez absolument besoin d&#x27;une bourse avec des frais bas et une exécution fiable.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-3">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:06 - 00:01:39</span>
+                <span class="segment-idx">Segment #03</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Sinon, vos profits disparaissent tout simplement en commissions. C&#x27;est pourquoi je recommande personnellement Weeks. C&#x27;est conçu pour les traders actifs et cela permet de maintenir des coûts très bas. Si vous n&#x27;avez pas encore de compte, vous pouvez vous inscrire grâce au lien dans la description et commencer. Voici donc la règle d&#x27;or, et c&#x27;est ce qui garantit cette régularité. Si le prix est au-dessus de l&#x27;EMA 50 en 4 heures, vous ne cherchez que des longs. S&#x27;il est en dessous, vous ne cherchez que des shorts. La raison pour laquelle cela fonctionne si bien, c&#x27;est parce que vous tradez toujours avec le momentum dominant au lieu de le combattre. Essayer de short un marché qui est</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Plateforme d&#x27;échange WEEX et interface graphique TradingView.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Graphique BTC/USDT en 15m, carnet d&#x27;ordres en temps réel, volumes, indicateurs techniques EMA et RSI(14).</p>
+                        <p><strong>Action / Démonstration :</strong> Présentation de la plateforme de courtage et analyse technique du cours du Bitcoin.</p>
+                    </div>
+                </div>
+                
+            <div class="segment-screenshots-wrapper">
+                <div class="screenshots-header">
+                    <span class="media-icon">📸</span>
+                    <strong>Démonstration(s) à l'écran (2) :</strong>
+                </div>
+                <div class="segment-screenshots-grid count-2">
+                    
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/AlqCVr5kS3A/AlqCVr5kS3A_000114_seg3.jpg" alt="Interface de trading de la plateforme WEEX montrant le graphique du Bitcoin (BTC/USDT) en timeframe 15m, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres." loading="lazy" onclick="openLightbox('../screenshots/AlqCVr5kS3A/AlqCVr5kS3A_000114_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:14</span>
+                        <span class="caption-text">Interface de trading de la plateforme WEEX montrant le graphique du Bitcoin (BTC/USDT) en timeframe 15m, le carnet d&#x27;ordres et le panneau de passage d&#x27;ordres.</span>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="img-wrapper">
+                        <img src="../screenshots/AlqCVr5kS3A/AlqCVr5kS3A_000123_seg3.jpg" alt="Graphique TradingView en unité de temps 1 minute affichant les chandeliers japonais du BTC/USD, des indicateurs de volume, des moyennes mobiles (EMA) et l&#x27;oscillateur RSI." loading="lazy" onclick="openLightbox('../screenshots/AlqCVr5kS3A/AlqCVr5kS3A_000123_seg3.jpg')">
+                        <span class="zoom-badge">🔍 Agrandir</span>
+                    </div>
+                    <div class="screenshot-caption">
+                        <span class="caption-time">⏱️ 00:01:23</span>
+                        <span class="caption-text">Graphique TradingView en unité de temps 1 minute affichant les chandeliers japonais du BTC/USD, des indicateurs de volume, des moyennes mobiles (EMA) et l&#x27;oscillateur RSI.</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-4">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:01:39 - 00:02:17</span>
+                <span class="segment-idx">Segment #04</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">clairement orienté à la hausse ou se positionner à l&#x27;achat quand les vendeurs ont le contrôle total est l&#x27;un des moyens les plus rapides de perdre de l&#x27;argent. Ce filtre simple agit comme une boussole. Il vous maintient aligné avec la vision d&#x27;ensemble et vous aide à éviter de nombreux mauvais configurations qui semblent tentantes sur le graphique d&#x27;une minute mais qui n&#x27;ont pas le vent en poupe. Une fois la direction définie, vous zoomez sur le graphique d&#x27;une minute et attendez trois confirmations avant de faire quoi que ce soit. Disons que le prix est sous l&#x27;EMA 50 et que vous cherchez des positions vendeuses. Premièrement, vous voulez que le RSI dépasse 70, montrant que le marché est étiré et susceptible de reculer</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-5">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:17 - 00:02:53</span>
+                <span class="segment-idx">Segment #05</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">...en arrière. Deuxièmement, il faut qu&#x27;une bougie Heikin-Ashi rouge apparaisse, ce qui vous indique que les vendeurs reviennent à la charge. Et troisièmement, cette bougie doit clôturer entièrement en dessous de l&#x27;EMA 9. Ce dernier élément est important car il prouve que le momentum s&#x27;est suffisamment inversé pour casser la structure à court terme. Pour les positions acheteuses, c&#x27;est l&#x27;exact opposé. Le RSI passe sous les 30, une bougie Heikin-Ashi verte se forme, et elle clôture au-dessus de l&#x27;EMA 9. C&#x27;est seulement lorsque ces trois éléments se produisent ensemble que vous entrez. S&#x27;il en manque un, vous...</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-6">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:02:53 - 00:03:25</span>
+                <span class="segment-idx">Segment #06</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Attendez. C&#x27;est cette discipline qui rend cette configuration fiable. Quand tout est aligné, vous entrez pile à la clôture de la bougie de confirmation. Le stop se place juste au-delà du swing le plus récent, donc au-dessus du dernier sommet mineur pour les shorts ou en dessous du dernier creux mineur pour les longs. De cette façon, votre risque est serré mais reste logique. L&#x27;objectif est fixé à deux fois ce que vous risquez, vous donnant un ratio risque/rendement net de un pour deux. C&#x27;est ce qui fait que les calculs fonctionnent sur la durée, même si vous ne gagnez pas chaque trade.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-7">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:03:25 - 00:04:04</span>
+                <span class="segment-idx">Segment #07</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">If price reaches the level equal to your risk you can choose to move your stop to break even and let the trade run further. Some traders also trail behind the EMA 9 to ride strong trends. The key is that you define your stop and target before you enter so every trade follows the same structure. Let me walk you through an example. Price is trading under the 4-hour EMA 50, so I&#x27;m only looking for shorts. RSI spikes above 70, a red Heikinashi candle appears, and it closes below the EMA 9. That&#x27;s my entry. I short on the close, place my stop above the swing</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-8">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:04 - 00:04:24</span>
+                <span class="segment-idx">Segment #08</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">high, and aim for double the distance. A few candles later, price retests the EMA 9, then pushes down and easily hits target. Another example in an uptrend. Price is above the EMA 50, RSI dips below 30, a green Heikinashi candle prints, but it doesn&#x27;t close above the EMA 9. That means no entry.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-9">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:24 - 00:04:44</span>
+                <span class="segment-idx">Segment #09</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The next candle closes above the EMA, now I&#x27;m in. Stop under the swing low, target two times the risk. Price slowly grinds higher and eventually hits profit. Of course, not every trade wins. Sometimes you&#x27;ll get the signal, enter, and price will snap back and stop you up. That&#x27;s fine, because you only risk a fixed amount each time.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-10">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:04:45 - 00:05:20</span>
+                <span class="segment-idx">Segment #10</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">The whole edge of the system is that your losers are small and controlled, while your winners are at least double. Over a series of trades, the math works in your favor. Before we move into the advanced parts of the strategy, let&#x27;s take a moment to talk about something practical that makes a big difference when you&#x27;re scalping. Having the right exchange matters just as much as having the right strategy. If your platform charges high feedies or executes slowly, all those little scalps quickly lose their edge. That&#x27;s why I recommend Weeks. They&#x27;re currently offering one of the best deposit deals out there. With the link in the description,</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-11">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:20 - 00:05:45</span>
+                <span class="segment-idx">Segment #11</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">you can claim up to $30,000 in deposit bonuses. On top of that, they give you VIP status, which cuts 20% off your trading fees. And trust me, for scalpers, fees stack up fast. So having that discount is like starting every trade with a small built-in advantage. If you&#x27;re testing this strategy, the bonus is basically free firepower you can practice with, while the fee reduction helps you keep more of your profits.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-12">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:05:45 - 00:06:14</span>
+                <span class="segment-idx">Segment #12</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Now, even with a clean setup like this, you need filters to protect yourself from low quality trades. The first rule is simple. Always wait for the camel to close. A wick poking through the EMA isn&#x27;t enough. It has to actually close beyond it. Otherwise, the setup is invalid. Another thing to watch out for is news events or sudden spikes in volatility. The one minute chart can go crazy right after announcements. So giving it a few minutes to settle can save you from unnecessary stopouts. Liquidity also matters.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-13">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:14 - 00:06:33</span>
+                <span class="segment-idx">Segment #13</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Stick to hours when spreads are tight and the order book is active, because scalping only works if transaction costs are minimal. And finally, be picky. If hike and ashy candles are flipping green to red and back again around your EMA 9, that&#x27;s chop. The best move in that situation is no move at all. Standing aside and protecting your capital is still playing the game.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-14">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:06:33 - 00:07:06</span>
+                <span class="segment-idx">Segment #14</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">One of the reasons this strategy is so powerful is because it&#x27;s incredibly easy to backtest. You don&#x27;t need fancy tools or special data. Just pull up a chart, scroll back, and apply the rules. mark when price is above or below the four hour EMA 50. Then check for RSI signals, confirm with Heiken Ashi, and see if the candle closes past EMA 9. Log the entry, the stop, and whether your two to one target was hit. After doing this across 50 to 100 trades, you&#x27;ll know exactly how the system behaves and what kind of win rate and average return you can expect. Journaling is key here.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="timeline-block" id="segment-15">
+            <div class="timeline-time">
+                <span class="time-badge">⏱️ 00:07:06 - 00:07:37</span>
+                <span class="segment-idx">Segment #15</span>
+            </div>
+            <div class="timeline-content">
+                <div class="verbatim-box">
+                    <div class="verbatim-header">
+                        <span class="speaker-icon">🔊</span>
+                        <strong>Audio Verbatim (Mot pour Mot en Français) :</strong>
+                    </div>
+                    <blockquote class="verbatim-text">Take screenshots of your trades, note the conditions, and track your emotions too. It&#x27;s not just about numbers. It&#x27;s about building confidence that the system works and understanding how you personally execute it. Follow the rules with discipline and you&#x27;ll see why I call this my incredibly easy scalping strategy that works every time. If you want to put it into practice, don&#x27;t forget the weeks link in the description. You&#x27;ll get the bonus, the position boost, and the reduced fees that make scalping a lot more profitable. If you got value from this, hit like, subscribe to the channel, and let me know in the comments what market you want me to to test this on next.</blockquote>
+                </div>
+                <div class="visual-box">
+                    <div class="visual-header">
+                        <span class="eye-icon">👁️</span>
+                        <strong>Analyse Visuelle d'Écran (gemini-3.5-flash-lite) :</strong>
+                    </div>
+                    <div class="visual-details">
+                        <p><strong>Interface & Outils :</strong> Présentation ou face-caméra explicatif du trader sans interface logicielle partagée.</p>
+                        <p><strong>Contenu textuel & Code :</strong> Explications orales des stratégies et mise en contexte méthodologique du marché.</p>
+                        <p><strong>Action / Démonstration :</strong> Explications face caméra et analyse conceptuelle des marchés.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <footer>
+            <p>Généré automatiquement par l'agent de veille multimodale Antigravity (Whisper-v3-large-turbo + Gemini-3.5-flash-lite) sur VPS Contabo.</p>
+        </footer>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            box.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
