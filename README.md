@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `180 / 186` (`96.8%`)
+- **Vidéos traitées** : `181 / 186` (`97.3%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -197,6 +197,7 @@
 | 2025-07-06 | [bB0Hm8a9nNo](https://www.youtube.com/watch?v=bB0Hm8a9nNo) | **Test & Avis Bybit Card 2025 : Tout ce que vous devez savoir** | [2025-07-06_YT-[bB0Hm8a9nNo]_Test & Avis Bybit Card 2025 Tout ce que vous devez savoir_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-06_YT-[bB0Hm8a9nNo]_Test & Avis Bybit Card 2025 Tout ce que vous devez savoir_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-06_YT-[bB0Hm8a9nNo]_Test & Avis Bybit Card 2025 Tout ce que vous devez savoir_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `26` |
 | 2025-07-02 | [Za8YbqYd3Wg](https://www.youtube.com/watch?v=Za8YbqYd3Wg) | **RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)** | [2025-07-02_YT-[Za8YbqYd3Wg]_RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-02_YT-[Za8YbqYd3Wg]_RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-02_YT-[Za8YbqYd3Wg]_RÉCUPÉREZ 100 $ GRATUITS – Sans dépôt requis sur WEEX (Tutoriel)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `17` |
 | 2025-07-02 | [5NE19404CbQ](https://www.youtube.com/watch?v=5NE19404CbQ) | **Bybit EU: How To Trade (Simple Beginners Tutorial)** | [2025-07-02_YT-[5NE19404CbQ]_Bybit EU How To Trade (Simple Beginners Tutorial)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-02_YT-[5NE19404CbQ]_Bybit EU How To Trade (Simple Beginners Tutorial)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-02_YT-[5NE19404CbQ]_Bybit EU How To Trade (Simple Beginners Tutorial)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2025-07-01 | [fgmPBqsPY7c](https://www.youtube.com/watch?v=fgmPBqsPY7c) | **Bybit EU Has Launched (Everything You Need To Know)** | [2025-07-01_YT-[fgmPBqsPY7c]_Bybit EU Has Launched (Everything You Need To Know)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-01_YT-[fgmPBqsPY7c]_Bybit EU Has Launched (Everything You Need To Know)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-01_YT-[fgmPBqsPY7c]_Bybit EU Has Launched (Everything You Need To Know)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
