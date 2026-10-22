@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `170 / 186` (`91.4%`)
+- **Vidéos traitées** : `171 / 186` (`91.9%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -187,6 +187,7 @@
 | 2025-07-29 | [SNp28nL_Da8](https://www.youtube.com/watch?v=SNp28nL_Da8) | **Prédiction du prix du XRP : Tout le monde se trompe** | [2025-07-29_YT-[SNp28nL_Da8]_Prédiction du prix du XRP Tout le monde se trompe_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-29_YT-[SNp28nL_Da8]_Prédiction du prix du XRP Tout le monde se trompe_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-29_YT-[SNp28nL_Da8]_Prédiction du prix du XRP Tout le monde se trompe_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `13` |
 | 2025-07-24 | [GVkLXAuDvqk](https://www.youtube.com/watch?v=GVkLXAuDvqk) | **Pourquoi PENGU EXPLOSE (À regarder avant d'acheter)** | [2025-07-24_YT-[GVkLXAuDvqk]_Pourquoi PENGU EXPLOSE (À regarder avant d'acheter)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-24_YT-[GVkLXAuDvqk]_Pourquoi PENGU EXPLOSE (À regarder avant d'acheter)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-24_YT-[GVkLXAuDvqk]_Pourquoi PENGU EXPLOSE (À regarder avant d'acheter)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `17` |
 | 2025-07-21 | [CTLPzDVXAZ8](https://www.youtube.com/watch?v=CTLPzDVXAZ8) | **Comment acheter du XRP pour débutants — Réalisez de gros profits** | [2025-07-21_YT-[CTLPzDVXAZ8]_Comment acheter du XRP pour débutants — Réalisez de gros profits_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-21_YT-[CTLPzDVXAZ8]_Comment acheter du XRP pour débutants — Réalisez de gros profits_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-21_YT-[CTLPzDVXAZ8]_Comment acheter du XRP pour débutants — Réalisez de gros profits_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `24` |
+| 2025-07-19 | [vULzp2_N-9A](https://www.youtube.com/watch?v=vULzp2_N-9A) | **Comment acheter des USDT pour trader (simple et économique)** | [2025-07-19_YT-[vULzp2_N-9A]_Comment acheter des USDT pour trader (simple et économique)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-19_YT-[vULzp2_N-9A]_Comment acheter des USDT pour trader (simple et économique)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-19_YT-[vULzp2_N-9A]_Comment acheter des USDT pour trader (simple et économique)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `18` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
