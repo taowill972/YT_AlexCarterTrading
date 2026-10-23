@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `184 / 186` (`98.9%`)
+- **Vidéos traitées** : `185 / 186` (`99.5%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -201,6 +201,7 @@
 | 2025-07-01 | [DG-Z5eN4BXk](https://www.youtube.com/watch?v=DG-Z5eN4BXk) | **Beginner Scalping Strategy on Blofin (Makes $100 Per Hour)** | [2025-07-01_YT-[DG-Z5eN4BXk]_Beginner Scalping Strategy on Blofin (Makes $100 Per Hour)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-07-01_YT-[DG-Z5eN4BXk]_Beginner Scalping Strategy on Blofin (Makes $100 Per Hour)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-07-01_YT-[DG-Z5eN4BXk]_Beginner Scalping Strategy on Blofin (Makes $100 Per Hour)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-06-25 | [_f266cN4LYM](https://www.youtube.com/watch?v=_f266cN4LYM) | **Buying Your First Crypto Made Easy (Step-by-Step Guide)** | [2025-06-25_YT-[_f266cN4LYM]_Buying Your First Crypto Made Easy (Step-by-Step Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-25_YT-[_f266cN4LYM]_Buying Your First Crypto Made Easy (Step-by-Step Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-25_YT-[_f266cN4LYM]_Buying Your First Crypto Made Easy (Step-by-Step Guide)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-06-23 | [8R3dsVwAkH0](https://www.youtube.com/watch?v=8R3dsVwAkH0) | **Claim Your $30,000 WEEX Bonus (Simple and Easy)** | [2025-06-23_YT-[8R3dsVwAkH0]_Claim Your $30,000 WEEX Bonus (Simple and Easy)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-23_YT-[8R3dsVwAkH0]_Claim Your $30,000 WEEX Bonus (Simple and Easy)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-23_YT-[8R3dsVwAkH0]_Claim Your $30,000 WEEX Bonus (Simple and Easy)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2025-06-22 | [OHQZk8mX0gI](https://www.youtube.com/watch?v=OHQZk8mX0gI) | **Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)** | [2025-06-22_YT-[OHQZk8mX0gI]_Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-22_YT-[OHQZk8mX0gI]_Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-22_YT-[OHQZk8mX0gI]_Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `12` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
