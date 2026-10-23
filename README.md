@@ -7,7 +7,7 @@
 - Les captures d'écran par timeline sont archivées dans : **`screenshots/<video_id>/`**
 
 ## 📊 Statistiques de l'Automatisation
-- **Vidéos traitées** : `187 / 186` (`100.5%`)
+- **Vidéos traitées** : `188 / 186` (`101.1%`)
 - **Modèle Audio & Synthèse** : `whisper-v3-large-turbo` (100% Verbatim Français intégral mot pour mot)
 - **Modèle Vision d'écran** : `gemini-3.5-flash-lite` (Analyse des graphiques TradingView, prompts, Pine Script, brokers)
 - **Signature de traitement** : `whisper-v3-large-turbo+gemini-3.5-flash-lite`
@@ -204,6 +204,7 @@
 | 2025-06-22 | [OHQZk8mX0gI](https://www.youtube.com/watch?v=OHQZk8mX0gI) | **Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)** | [2025-06-22_YT-[OHQZk8mX0gI]_Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-22_YT-[OHQZk8mX0gI]_Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-22_YT-[OHQZk8mX0gI]_Gagner 100 $ par jour avec le copytrading WEEX (Tutoriel 2025)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `12` |
 | 2025-06-22 | [BcvLtaf4XXU](https://www.youtube.com/watch?v=BcvLtaf4XXU) | **How to Trade Crypto on WEEX (Simple Beginners Tutorial)** | [2025-06-22_YT-[BcvLtaf4XXU]_How to Trade Crypto on WEEX (Simple Beginners Tutorial)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-22_YT-[BcvLtaf4XXU]_How to Trade Crypto on WEEX (Simple Beginners Tutorial)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-22_YT-[BcvLtaf4XXU]_How to Trade Crypto on WEEX (Simple Beginners Tutorial)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 | 2025-06-20 | [LMVJ6Gjix14](https://www.youtube.com/watch?v=LMVJ6Gjix14) | **Blofin Tutorial for Beginners 2025 (Start Trading on Blofin)** | [2025-06-20_YT-[LMVJ6Gjix14]_Blofin Tutorial for Beginners 2025 (Start Trading on Blofin)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-20_YT-[LMVJ6Gjix14]_Blofin Tutorial for Beginners 2025 (Start Trading on Blofin)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-20_YT-[LMVJ6Gjix14]_Blofin Tutorial for Beginners 2025 (Start Trading on Blofin)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
+| 2025-06-19 | [L59sLHyovug](https://www.youtube.com/watch?v=L59sLHyovug) | **How to Copy Profitable Crypto Traders on Blofin (Step-By-Step)** | [2025-06-19_YT-[L59sLHyovug]_How to Copy Profitable Crypto Traders on Blofin (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md](YT_AlexCarterTrading_Transcript/2025-06-19_YT-[L59sLHyovug]_How to Copy Profitable Crypto Traders on Blofin (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].md) | [Voir Rapport HTML](YT_AlexCarterTrading_Transcript/2025-06-19_YT-[L59sLHyovug]_How to Copy Profitable Crypto Traders on Blofin (Step-By-Step)_by-[whisper-v3-large-turbo+gemini-3.5-flash-lite].html) | `0` |
 
 ---
 *Généré automatiquement par l'agent de veille multimodale Antigravity sur VPS Contabo.*
